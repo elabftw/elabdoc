@@ -102,23 +102,7 @@ Miscellaneous
 * add a plugin to your editor to show trailing whitespaces in red
 * add a plugin to your editor to show PSR-1 errors
 * remove BOM
-* if you make a change to the documentation, you can regenerate the HTML with `grunt doc`
-* install grunt with :
-
-.. code-block:: bash
-
-    $ npm install grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
-    $ npm install -g grunt-cli
-
-
-API Documentation
-`````````````````
-
-You can find a PHP Docblock generated documentation on classes `here <../../../doc/api/namespaces/Elabftw.Elabftw.html>`_ (local link).
-
-Have a look at the errors report to check that you commented all functions properly.
-
-To generate it: `grunt api`
+* if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 
 Automation
 ``````````
@@ -126,20 +110,33 @@ Automation
 Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and concatenate files (JS and CSS). Have a look at Gruntfile.js to see what it does. Install grunt-cli and run it if you make changes to any of those files.
 Grunt can also be used to build the documentation or run the tests.
 
+* install grunt with :
+
 .. code-block:: bash
 
+    $ npm install grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
+    $ npm install -g grunt-cli
+
+    # usage examples
     $ grunt # will minify and concatenate JS and CSS
-    $ grunt doc # will build this documentation
-    $ grunt api # will build the API documentation
-    $ grunt test # will run the tests with codeception
+    $ grunt css # will minify CSS
+    $ grunt unit # will run the unit tests
+    $ grunt test # will run the unit and acceptance tests
 
-.. note:: You need to have a running `Selenium server <http://docs.seleniumhq.org/download/>`_ to do the acceptance tests
+.. note:: You need to have a running `PhantomJS 1.9.8 server <https://bitbucket.org/ariya/phantomjs/downloads>`_ to do the acceptance tests.
 
+API Documentation
+`````````````````
 
-Reminders
-`````````
+To generate a PHP Docblock documentation:
 
-* for a new version, one needs to edit app/classes/Update.php, package.json and doc/conf.py
+.. code-block:: bash
+
+    $ grunt api
+
+Then, point your browser to the `_api/index.html`.
+
+You can have a look at the errors report to check that you commented all new functions properly.
 
 Make a gif
 ``````````
