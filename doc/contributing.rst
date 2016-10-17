@@ -104,26 +104,38 @@ Miscellaneous
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 
-Automation
-``````````
+Grunt
+`````
 
-Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and concatenate files (JS and CSS). Have a look at Gruntfile.js to see what it does. Install grunt-cli and run it if you make changes to any of those files.
-Grunt can also be used to build the documentation or run the tests.
+Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and concatenate files (JS and CSS), among other things.
 
-* install grunt with :
+* Install grunt with :
 
 .. code-block:: bash
 
     $ npm install grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
-    $ npm install -g grunt-cli
+    $ sudo npm install -g grunt-cli
 
-    # usage examples
+Regenerate assets (JS/CSS)
+``````````````````````````
+
+.. code-block:: bash
+
     $ grunt # will minify and concatenate JS and CSS
     $ grunt css # will minify CSS
+
+Tests
+`````
+Get the version 1.9.8 of `PhantomJS <https://bitbucket.org/ariya/phantomjs/downloads>`_. There is a bug in the most recent version, so grab 1.9.8.
+
+.. code-block:: bash
+
+    # start phantomjs
+    $ ./phantomjs --ignore-ssl-errors=true --webdriver=4444
     $ grunt unit # will run the unit tests
     $ grunt test # will run the unit and acceptance tests
 
-.. note:: You need to have a running `PhantomJS 1.9.8 server <https://bitbucket.org/ariya/phantomjs/downloads>`_ to do the acceptance tests.
+For code coverage you need to enable the xdebug PHP extension and run `grunt coverage`.
 
 API Documentation
 `````````````````
