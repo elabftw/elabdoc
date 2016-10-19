@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.3.1
+-------------
+
+* Bug fixes:
+
+  * fix bug where admin of a team didn't receive an email whene a new user registered
+  * fix bug where scheduler was not working on some browser/operating system combinations
+
 Version 1.3.0
 -------------
 
