@@ -137,4 +137,4 @@ Please report bugs on `github <https://github.com/elabftw/elabftw/issues>`_.
 
 It's a good idea to subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_, to know when new releases are out (you can also see that from the Sysadmin panel).
 
-~Thank you for using `eLabFTW <http://www.elabftw.net>`_ :)
+~Thank you for using `eLabFTW <https://www.elabftw.net>`_ :)

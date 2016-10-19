@@ -13,7 +13,7 @@ Several teams can be hosted on the same install. Check out the :doc:`list of fea
 
 There is an online demo directly accessible at this address: https://demo.elabftw.net
 
-The official website is here: http://www.elabftw.net
+The official website is here: https://www.elabftw.net
 
 There are multiple ways to install elabftw, see the left menu to choose which one you want.
 
