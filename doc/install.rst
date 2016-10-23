@@ -21,8 +21,6 @@ eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. So you n
 * install `Docker <https://docs.docker.com/engine/installation/linux/>`_, the container engine
 * and that's it!
 
-.. note:: If you don't want to use Docker or cannot install it, have a look at :ref:`installing eLabFTW old school<install-oldschool>`.
-
 Install eLabFTW
 ---------------
 
