@@ -38,6 +38,8 @@ By default, it is setup to use `pki.dfn.de <https://www.pki.dfn.de/zeitstempeldi
 
 So if you need a stronger certification, you should go with a commercial solution providing an :rfc:`3161` way of timestamping documents. We recommend Universign.eu, as they are one of the most serious and recognized :abbr:`TSA (TimeStampingAuthority)` out there, but feel free to use the one you prefer.
 
+You need to add the root certificate of the TSA somewhere where elabftw can read it for this to work.
+
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
 Update often
