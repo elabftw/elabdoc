@@ -3,6 +3,36 @@
 Changelog
 =========
 
+Version 1.4.0
+-------------
+
+* **IMPORTANT CHANGE**:
+
+  * The `vendor` directory is not tracked by git anymore. This doesn't impact Docker users. For git users, you now need to install `composer <https://getcomposer.org>`_. For this update, do like this:
+
+  .. code-block:: bash
+
+      cd /path/to/elabftw
+      rm -rf vendor #only for this time
+      git pull
+      composer install --no-dev
+
+* New features:
+
+  * Autosave feature when editing an experiment
+
+* Enhancements:
+
+  * Improve responsive design for mobile
+  * Show installed version even if we can't access latest
+  * Show date of latest release in sysadmin panel
+
+* Dev corner:
+
+  * The git repository got ligther. Documentation is now in `elabftw/elabdoc`. API doc is untracked. www.elabftw.net website is no more on the gh-pages branch but on `elabftw/elabweb`. With the removal of the `vendor` dir, this brings the total size of the repo down by about 50%.
+  * img/ dir moved to app/
+
+
 Version 1.3.1
 -------------
 
