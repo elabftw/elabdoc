@@ -22,17 +22,17 @@ Create your droplet
 
 .. image:: img/digitalocean.png
     :align: center
-    :alt: digitalocean
+    :alt: digitalocean logo
 
 * Create a droplet with Docker (from the One-click Apps tab), select a size and a region.
 
-.. image:: img/image-selection.png
+.. image:: img/docker-select.gif
     :align: center
-    :alt: digitalocean
+    :alt: select docker app
 
 * Optional: enable backups (might be a good idea)
 
-* Optional: add your SSH key (`documentation <https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets>`_)
+* Optional but highly recommended: add your SSH key (`documentation <https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets>`_)
 
 * Create the droplet (it takes a minute)
 
