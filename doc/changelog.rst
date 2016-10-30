@@ -6,6 +6,8 @@ Changelog
 Version 1.4.0
 -------------
 
+.. warning:: This release contains an important change! Read below.
+
 * **IMPORTANT CHANGE**:
 
   * The `vendor` directory is not tracked by git anymore. This doesn't impact Docker users. For git users, you now need to install `composer <https://getcomposer.org>`_. For this update, do like this:
@@ -14,7 +16,8 @@ Version 1.4.0
 
       cd /path/to/elabftw
       git pull
-      rm -rf vendor #only for this time
+      rm -rf vendor # only for this time
+      # see https://getcomposer.org to install composer
       composer install --no-dev
 
 * New features:
