@@ -13,13 +13,13 @@ Version 1.4.0
   .. code-block:: bash
 
       cd /path/to/elabftw
-      rm -rf vendor #only for this time
       git pull
+      rm -rf vendor #only for this time
       composer install --no-dev
 
 * New features:
 
-  * Autosave feature when editing an experiment
+  * Autosave feature when editing an experiment or an item
 
 * Enhancements:
 

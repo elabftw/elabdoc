@@ -20,9 +20,11 @@ To update, cd in the `elabftw` folder and do:
 .. code-block:: bash
 
     git pull
+    # see https://getcomposer.org to install composer
+    composer install --no-dev
 
-If you are using Docker
-^^^^^^^^^^^^^^^^^^^^^^^
+If you are using Docker without elabctl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the directory where you have the `docker-compose.yml` file:
 
@@ -37,3 +39,10 @@ If you installed it from a .zip or .tar.gz archive
 
 1. Get the `latest archive <https://github.com/elabftw/elabftw/releases/latest>`_
 2. Unpack it on your server, overwriting all the files.
+
+3. Install composer dependencies:
+
+.. code-block:: bash
+
+    # see https://getcomposer.org to install composer
+    composer install --no-dev
