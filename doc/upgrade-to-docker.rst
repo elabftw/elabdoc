@@ -52,7 +52,14 @@ Editing the config file
 
 Copy the uploaded files
 ```````````````````````
-* Copy your `uploads` folder to `/var/elabftw/web`
+* Rename your `uploads` folder to `/var/elabftw/web`:
+
+.. code-block:: bash
+
+    mkdir -p /var/elabftw/web
+    cp -r /path/to/uploads/* /var/elabftw/web
+    # fix permissions
+    chown -R 100:101 /var/elabftw/web
 
 About HTTPS (SSL/TLS)
 `````````````````````
