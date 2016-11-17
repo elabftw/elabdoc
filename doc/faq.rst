@@ -18,9 +18,11 @@ But more importantly, you cannot trust your data with something that acts like a
 What about patents and intellectual property?
 ---------------------------------------------
 
-eLabFTW allows rock solid `timestamping of your experiments <https://en.wikipedia.org/wiki/Trusted_timestamping#Trusted_.28digital.29_timestamping>`_, you can timestamp a pdf export with any TimeStamping Authority allowing :rfc:`3161` timestamping.
+Since March 2013, the USA modified their law (see `America Invents Act <https://www.uspto.gov/patent/laws-and-regulations/leahy-smith-america-invents-act-implementation>`_) to switch from first-to-invent to first-inventor-to-file. This means that proving that you did this experiment before someone else has become less critical. It is only needed if you invented something, before someone put a patent on it (and you can prove it), and you want to keep using it as **prior user**.
 
-The timestamp system is integrated to eLabFTW and you are just one click away from having a legally certified experiment :)
+Fortunately, eLabFTW allows rock solid `timestamping of your experiments <https://en.wikipedia.org/wiki/Trusted_timestamping#Trusted_.28digital.29_timestamping>`_. With just one click of a mouse, and for free, you can timestamp your work.
+
+If needed, you can also choose another TimeStamping Authority allowing :rfc:`3161` timestamping.
 
 Why use eLabFTW?
 ----------------
