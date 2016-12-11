@@ -23,6 +23,7 @@ Version 1.4.0
 * New features:
 
   * Autosave feature when editing an experiment or an item
+  * Admin can now see experiments with visibility set to 'only me' (fix #307)
 
 * Enhancements:
 
@@ -30,11 +31,19 @@ Version 1.4.0
   * Show installed version even if we can't access latest
   * Show date of latest release in sysadmin panel
 
+* Bugfixes:
+
+  * Redirect to the install folder directly after install if SQL is not imported
+
+* Internationalization:
+
+  * Translated to Slovenian at 100% (thanks to Petra Kaferle)
+  * Translated to Portuguese (Brazilian) at 100% (thanks to Carlos Kikuti)
+
 * Dev corner:
 
   * The git repository got ligther. Documentation is now in `elabftw/elabdoc`. API doc is untracked. www.elabftw.net website is no more on the gh-pages branch but on `elabftw/elabweb`. With the removal of the `vendor` dir, this brings the total size of the repo down by about 50%.
   * img/ dir moved to app/
-
 
 Version 1.3.1
 -------------
