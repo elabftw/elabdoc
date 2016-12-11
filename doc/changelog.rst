@@ -20,6 +20,8 @@ Version 1.4.0
       # see https://getcomposer.org to install composer
       composer install --no-dev
 
+  Read the :ref:`new way to update here <how-to-update>`.
+
 * New features:
 
   * Autosave feature when editing an experiment or an item
