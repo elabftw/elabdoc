@@ -22,6 +22,8 @@ Version 1.4.0
 
   Read the :ref:`new way to update here <how-to-update>`.
 
+  * The docker repo changed from elabftw/docker-elabftw to elabftw/elabimg. In order to get the latest version, make sure to edit /etc/elabftw.yml and change the line "image:"; replace "docker-elabftw" with "elabimg".
+
 * New features:
 
   * Autosave feature when editing an experiment or an item
@@ -41,6 +43,12 @@ Version 1.4.0
 
   * Translated to Slovenian at 100% (thanks to Petra Kaferle)
   * Translated to Portuguese (Brazilian) at 100% (thanks to Carlos Kikuti)
+
+* Docker image
+
+  * Repository is now named elabftw/elabimg
+  * Some capabilities are dropped
+  * Composer is now installed in order to populate the vendor/ dir
 
 * Dev corner:
 
