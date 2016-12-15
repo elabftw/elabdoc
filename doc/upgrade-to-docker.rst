@@ -65,7 +65,7 @@ About HTTPS (SSL/TLS)
 `````````````````````
 As you know, eLabFTW can only run with HTTPS. So if you were running it before, there are good chances that you already have a certificate. If it's a self-signed one, nothing needs to be done. The Docker image will generate a new certificate when the container is created. But your users will get a warning when they access the website, which is not ideal.
 
-One solution to this is to request a certificate from `Let's Encrypt <https://letsencrypt.org>`_. It's free and you get a real proper certificate. See the documentation on Let's Encrypt website on how to request a certificate for your website. You will need to have a domain name (it doesn't work if you just have an IP address or if the server is not accessible from outside a company's network) pointing to the server.
+One solution to this is to request a certificate from `Let's Encrypt <https://letsencrypt.org>`_. It's free and you get a real proper certificate. See the documentation on Let's Encrypt website on how to request a certificate for your website. You will need to have a domain name pointing to the server. It doesn't work if you only have an IP address or if the server is not accessible from outside a company's network.
 
 Another solution is to use the certificate you already have.
 
