@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.5.0
+-------------
+
+* Enhancements:
+
+  * Improve handling of uploaded structure files that are not macromolecules (contribution by @Athemis)
+
 Version 1.4.0
 -------------
 
