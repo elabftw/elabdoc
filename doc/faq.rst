@@ -53,6 +53,8 @@ Why use eLabFTW?
 * You can import your old database stored in an excel file
 * :doc:`and much more… <features>`
 
+You also have to consider the fact that installing eLabFTW on your own server means that no one will be able to snoop on your data. If you have ever used Evernote or basically any online ELN that says «Free», read carefully the privacy policy, you might be surprised what they allow themselves to do under the cover of «to improve your experience»…
+
 
 Is this system stable? Can I trust my data with it?
 ---------------------------------------------------

@@ -41,10 +41,12 @@ Version 1.4.0
   * Improve responsive design for mobile
   * Show installed version even if we can't access latest
   * Show date of latest release in sysadmin panel
+  * Allow use of unencrypted SMTP server
 
 * Bugfixes:
 
   * Redirect to the install folder directly after install if SQL is not imported
+  * Allow scrolling of text if it is very wide instead of just hiding it (fix #314)
 
 * Internationalization:
 
