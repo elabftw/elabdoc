@@ -38,6 +38,13 @@ Now we need to fix the permissions. Open the terminal and type:
     mkdir -p uploads/tmp
     sudo chmod -R 777 .
 
+Now we need to install `composer <https://getcomposer.org/>`_ to get the PHP dependencies. Please refer to the `composer <https://getcomposer.org/>`_ website for instructions on how to install it. Once installed:
+
+.. code-block:: bash
+
+    composer install --no-dev
+
+
 Setup a database
 ----------------
 
