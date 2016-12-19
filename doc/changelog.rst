@@ -13,11 +13,11 @@ Version 1.5.0
 Version 1.4.0
 -------------
 
-.. warning:: This release contains an important change! Read below.
+.. warning:: This release contains TWO important changes! Read below.
 
-* **IMPORTANT CHANGE**:
+* **IMPORTANT CHANGE N°1**:
 
-  * The `vendor` directory is not tracked by git anymore. This doesn't impact Docker users. For git users, you now need to install `composer <https://getcomposer.org>`_. For this update, do like this:
+  * The `vendor` directory is not tracked by git anymore. This doesn't impact Docker users BUT THE OTHER POINT BELOW DOES. For git users, you now need to install `composer <https://getcomposer.org>`_. For this update, do like this:
 
   .. code-block:: bash
 
@@ -28,6 +28,8 @@ Version 1.4.0
       composer install --no-dev
 
   Read the :ref:`new way to update here <how-to-update>`.
+
+* **IMPORTANT CHANGE N°2**:
 
   * The docker repo changed from elabftw/docker-elabftw to elabftw/elabimg. In order to get the latest version, make sure to edit /etc/elabftw.yml and change the line "image:"; replace "docker-elabftw" with "elabimg".
 
