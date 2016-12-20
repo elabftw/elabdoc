@@ -46,7 +46,7 @@ You now have a configuration file `/etc/elabftw.yml`. Edit it with your favorite
 Editing the config file
 ```````````````````````
 * Open the `config.php` file located in your `elabftw` folder of the current install
-* Copy the SECRET_KEY value from the `config.php` file to the `docker-compose.yml` file
+* Copy the SECRET_KEY value from the `config.php` file to `/etc/elabftw.yml` file
 * Port: change "443:443" to "8080:443" or "444:443" or "9000:443" because your current server is already using port 443
 * If you are running MySQL 5.5 or 5.6, edit the 5.7 in the `image: mysql:5.7` line to the appropriate version. You can upgrade later.
 
@@ -95,14 +95,14 @@ This will create an empty database in `/var/elabftw/mysql`. But of course, what 
     docker cp dump.sql mysql:/
     docker exec -it mysql bash
     mysql -uroot -p
-    # here you type the password you put in MYSQL_ROOT_PASSWORD in the docker-compose.yml file
+    # here you type the password you put in MYSQL_ROOT_PASSWORD in the /etc/elabftw.yml file
     Mysql> drop database elabftw;
     Mysql> create database elabftw;
     Mysql> use elabftw;
     Mysql> source dump.sql;
     Mysql> exit;
 
-You should now have your old database running. If you were upgrading from an old version, make sure to read the release note of each version. Specifically the 1.2.1 one where there is a manual step to copy the new SECRET_KEY to the docker-compose.yml.
+You should now have your old database running. If you were upgrading from an old version, make sure to read the release note of each version. Specifically the 1.2.1 one where there is a manual step to copy the new SECRET_KEY to `/etc/elabftw.yml`.
 
 Test everything is working by clicking everything. Report any problem in the present documentation so it can be improved.
 
