@@ -10,7 +10,7 @@ If there is only one thing to do after an install, it's setting up email. Otherw
 
 If a mail server is present, it will work out of the box. However, it is recommended to use an authenticated SMTP account to avoid the emails going to the spam folders of recipients. That is, unless your mail server is perfectly configured (with DKIM and SPF).
 
-Go to the Sysadmin panel (`sysconfig.php`) and add the requested infos.
+Go to the Sysadmin panel (a link is at the bottom left of a page) and add the requested infos.
 
 If you don't know what to do, register a new account on `Mailgun <http://www.mailgun.com>`_. This service will give you a free SMTP account that you can use for eLabFTW. :)
 
