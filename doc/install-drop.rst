@@ -52,3 +52,15 @@ Install eLabFTW
     ssh root@<DROPLET_IP_ADDRESS>
 
 * Follow the :ref:`steps for a normal install <normal-install>`.
+
+
+Video tutorial
+--------------
+
+This video shows all the steps from above:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/K8CbQl7H5WA" frameborder="0" allowfullscreen></iframe>
+
+
