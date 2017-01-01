@@ -18,7 +18,7 @@ If you don't have a (sub)domain already, you can get one from `OVH <https://www.
 Create your droplet
 -------------------
 
-* Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_
+* Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_. Use this referral link to have 10$ offered.
 
 .. image:: img/digitalocean.png
     :align: center
