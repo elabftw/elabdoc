@@ -3,12 +3,19 @@
 Changelog
 =========
 
-Version 1.5.0
+Version 1.4.1
 -------------
 
 * Enhancements:
 
+  * The TODOlist is now stored in the MySQL database. Items can be reordered and edited (fix #124)
   * Improve handling of uploaded structure files that are not macromolecules (contribution by @Athemis)
+  * Change div overflow from hidden to scroll (fix #314)
+
+* Bugfixes:
+
+  * Update Swiftmailer, fixing a vulnerability related to the php mail() function (https://thehackernews.com/2017/01/phpmailer-swiftmailer-zendmail.html)
+  * Update the link for documentation to an external link, now that the documentation is no longer local
 
 Version 1.4.0
 -------------
