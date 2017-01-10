@@ -12,7 +12,7 @@ If a mail server is present, it will work out of the box. However, it is recomme
 
 Go to the Sysadmin panel (a link is at the bottom left of a page) and add the requested infos.
 
-If you don't know what to do, register a new account on `Mailgun <http://www.mailgun.com>`_. This service will give you a free SMTP account that you can use for eLabFTW. :)
+If you don't know what to do, register a new account on `SMTP2GO <https://www.smtp2go.com/signup>`_. Once logged in, it will provide you with a login and password to connect to the SMTP server "mail.smtp2go.com". Input these credentials on the Sysadmin panel and test sending an email.
 
 Make sure that the `uploads` folder cannot be accessed
 ------------------------------------------------------
