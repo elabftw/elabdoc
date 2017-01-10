@@ -3,12 +3,22 @@
 ## Description
 Source files for the [elabftw documentation](https://elabftw.readthedocs.io).
 
-## Usage
+## Installation
 
 ~~~bash
 $ git clone https://github.com/elabftw/elabdoc
-$ cd elabdoc/doc
-$ make html
+$ cd elabdoc
+$ npm install grunt grunt-shell
+$ sudo npm install -g grunt-cli
+$ sudo pip install sphinx sphinx_rtd_theme
+~~~
+
+## Usage
+
+To generate the HTML documentation:
+
+~~~bash
+$ grunt doc
 ~~~
 
 Then point your browser to the `doc/_build/html` folder.
