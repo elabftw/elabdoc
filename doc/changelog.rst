@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 1.4.2
+-------------
+
+* Bugfixes:
+
+  * Use TIMESTAMP instead of DATETIME for Mysql 5.5 users
+
+* Enhancements:
+
+  * Better UI for SMTP password field on Sysconfig page
+
 Version 1.4.1
 -------------
 
