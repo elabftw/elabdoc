@@ -54,6 +54,7 @@ Environment installation
 * Edit the docker-compose configuration file `/etc/elabftw.yml`
 * Change the `volumes:` line so it points to the `elabftw` folder, not `elabftw/uploads`. So the line should look like : /home/user/elabftw:/elabftw
 * Change the line `image:` and replace it with `elabftw/dev`
+* In the elabftw folder install composer dependencies: `composer install`
 * Optionaly change the port binding from 443 to something else (example: 9999:443)
 * Start the containers:
 
