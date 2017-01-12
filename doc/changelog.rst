@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 1.5.0
+-------------
+
+* New features:
+
+  * Add possibility to order experiments by Comment (fix #320)
+
+* Enhancements:
+
+  * Remove autocomplete from some password inputs
+
 Version 1.4.2
 -------------
 
