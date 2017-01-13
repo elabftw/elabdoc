@@ -42,6 +42,30 @@ You need to add the root certificate of the TSA somewhere where elabftw can read
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
+Set up a cronjob to rewew TLS certificates :sup:`(optionnal)`
+-------------------------------------------------------------
+
+If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
+
+Create a script containing:
+
+.. code-block:: bash
+
+    # stop webserver
+    docker exec elabftw supervisorctl stop nginx
+    # renew certificate
+    /var/elabftw/letsencrypt/letsencrypt-auto renew --quiet --no-self-upgrade
+    # and start the webserver again
+    docker exec elabftw supervisorctl start nginx
+
+Add this script as a cronjob:
+
+.. code-block:: bash
+
+    0 4 1 * * /root/renew.sh
+
+This line will run the script at 4am every 1st day of the month.
+
 Update often
 ------------
 
