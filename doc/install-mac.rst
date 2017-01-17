@@ -42,7 +42,7 @@ Now we need to install `composer <https://getcomposer.org/>`_ to get the PHP dep
 
 .. code-block:: bash
 
-    composer install --no-dev
+    php composer.phar install --no-dev
 
 
 Setup a database
