@@ -43,6 +43,7 @@ There are multiple ways to install elabftw, see the left menu to choose which on
     features
     docker-doc
     upgrade-to-docker
+    api
 
 .. toctree::
     :caption: Miscellaneous
