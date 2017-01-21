@@ -26,6 +26,8 @@ Create your droplet
 
 * Create a droplet with Docker (from the One-click Apps tab), select a size and a region.
 
+.. danger:: There is currently a bug with Docker version 1.12.6. Be sure to select the 1.12.4!
+
 .. image:: img/docker-select.gif
     :align: center
     :alt: select docker app
