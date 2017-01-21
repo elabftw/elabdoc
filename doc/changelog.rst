@@ -8,15 +8,23 @@ Version 1.5.0
 
 * New features:
 
+  * Add an API so external programs can interact with eLabFTW (fix #328)
   * Add possibility to order experiments by Comment (fix #320)
   * Add possibility to read the asn1 encoded timestamping token (fix #315)
   * Add title of experiment/item in the page title (fix #324)
+  * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
 
 * Enhancements:
 
   * Suggest SMTP2GO instead of mailgun for SMTP configuration
   * Remove autocomplete from some password inputs
   * Better 404 page
+  * Send an email to all admins if there are several upon new user registration
+
+* Developer corner:
+
+  * Add canRead and canWrite properties to Entity objects
+  * Rename bgcolor to color and drop unused columns
 
 Version 1.4.2
 -------------
