@@ -31,11 +31,6 @@ Getting the files
 
 The first part is to get the `eLabFTW` files on your server.
 
-Option 1 : Using git
-^^^^^^^^^^^^^^^^^^^^
-
-This is the preferred method as it allows easier updating.
-
 Connect to your server with SSH:
 
 .. code-block:: bash
@@ -68,13 +63,17 @@ The `--depth 1` option is to avoid downloading the whole history.
         $ export https_proxy="proxy.example.com:3128"
         $ git config --global http.proxy http://proxy.example.com:8080
 
+Install php dependencies with composer:
 
-Option 2 : Download archive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: bash
 
-Download the latest release from `this page <https://github.com/elabftw/elabftw/releases/latest>`_ as a zip archive or a tarball.
+    $ cd elabftw
+    # step not described: install composer
+    # see https://getcomposer.org/download/
+    $ composer.phar install --no-dev
 
-Copy it to your server with FTP or SCP, or directly wget it from the server.
+This will populate the `vendor` directory.
+
 
 SQL part
 --------
