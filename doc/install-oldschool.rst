@@ -68,7 +68,8 @@ Install php dependencies with composer:
 .. code-block:: bash
 
     $ cd elabftw
-    # install composer see https://getcomposer.org/download/
+    # step not described: install composer
+    # see https://getcomposer.org/download/
     $ composer.phar install --no-dev
 
 This will populate the `vendor` directory.
