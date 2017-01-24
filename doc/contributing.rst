@@ -86,6 +86,15 @@ Code organization
 * PHP dependencies are managed through `Composer <https://getcomposer.org/>`_
 * JavaScript dependencies are managed through `Bower <https://bower.io/>`_
 
+  Install them with:
+
+.. code-block:: bash
+
+    # php dependencies
+    composer install
+    # javascript dependencies
+    bower install jquery jquery-ui bootstrap colorpicker fancybox jeditable jquery.complexify.js keymaster moment fullcalendar tinymce dropzone file-saver.js
+
 i18n
 ````
 * for internationalization, we use gettext
