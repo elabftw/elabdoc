@@ -13,8 +13,8 @@ Getting started
 
 Copy your API Key from your profile page (click on your username once logged in). This key allows access to your account, keep it secret and secure!
 
-Using cURL
-----------
+Using Bash/cURL
+---------------
 
 .. note:: If your installation has a self-signed certificate, add the '-k' flag to cURL.
 
@@ -33,30 +33,65 @@ Using cURL
 Using Python
 ------------
 
+A module named `elabapy` is provided for easy access to eLabFTW's API.
+
+How to install
+``````````````
+
+You can install elabapy using **pip**
+
+.. code-block:: bash
+
+    pip install -U elabapy
+
+or via sources:
+
+.. code-block:: bash
+
+    python setup.py install
+
+Features
+````````
+
+elabapy support all the features provided via
+eLabFTW API, such as:
+
+-  Get user's Experiments/Items
+-  Update an Experiment/Item
+-  Upload a file to an Experiment/Item
+
+Examples
+````````
+
+Initialization
+^^^^^^^^^^^^^^
+
 .. code-block:: python
 
+    import elabapy
+    import json
+    # get your token from your profile page
+    manager = elabapy.Manager(token="def502005a0f...", endpoint="https://elab.example.org/api/v1/")
 
-    #!/bin/env python
-    import requests
+Listing the experiments
+^^^^^^^^^^^^^^^^^^^^^^^
 
-    # load the key
-    API_KEY = 'def50200445ccfaa9d...'
-    # your elabftw server
-    URL='https://elab.local/'
-    # because my certificate is self-signed we need this
-    TLS_CERT='/etc/nginx/server.pem'
+This example shows how to list all the experiments:
 
-    mydata = {
-            'title': 'From python',
-            'date': '20170119',
-            'body': 'This was sent through the API'
-    }
+.. code-block:: python
 
-    # update the content of an experiment
-    # you can set verify=False here, too.
-    r = requests.post(URL + 'api/v1/experiments/21',
-    data=mydata,
-    verify=TLS_CERT,
-    headers={'Authorization': API_KEY})
+    experiments = manager.get_all_experiments()
 
-    print(r.text)
+Get info for an experiment
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This example shows how to print data from experiment with ID 1:
+
+.. code-block:: python
+
+    # get data for experiment 1
+    exp = manager.get_experiment(1)
+    # show the title
+    print(exp["title"])
+    # pretty print everything
+    print(json.dumps(exp, indent=4, sort_keys=True))
