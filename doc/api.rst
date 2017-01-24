@@ -95,3 +95,14 @@ This example shows how to print data from experiment with ID 1:
     print(exp["title"])
     # pretty print everything
     print(json.dumps(exp, indent=4, sort_keys=True))
+
+Nginx configuration
+-------------------
+
+If you are not running the Docker image provided, you'll need to edit your nginx configuration and add this part for the eLabFTW server:
+
+.. code-block:: nginx
+
+    location ~ ^/api/v1/(.*)/?$ {
+         rewrite /api/v1/(.*)$ /app/controllers/ApiController.php?req=$1? last;
+    }
