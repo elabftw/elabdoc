@@ -17,7 +17,26 @@ If you don't know what to do, register a new account on `SMTP2GO <https://www.sm
 Make sure that the `uploads` folder cannot be accessed
 ------------------------------------------------------
 
-Just visit `/uploads/` (add this at the end of the URL) and see if you see the files there (or at least the `tmp` folder). If you see a white page, all is good. If not, either configure Apache to AllowOverride All (so the .htaccess will work), or put an empty index.php file in the folder.
+This is only if you installed it **without** docker:
+
+Just visit `https://your-elabftw-server.org/uploads/` and see if you see the files there (or at least the `tmp` folder). If you see a white page, all is good. If not, either configure your webserver to deny access to this folder.
+
+For Apache:
+
+.. code-block:: apache
+
+    <Directory /var/www/elabftw/uploads>
+        Options -Indexes
+    </Directory>
+
+For Nginx:
+
+.. code-block:: nginx
+
+    location /uploads {
+        deny all;
+        return 403;
+    }
 
 Set up backup
 -------------
