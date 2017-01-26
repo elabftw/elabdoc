@@ -11,20 +11,36 @@ Version 1.5.0
   * Add an API so external programs can interact with eLabFTW (fix #328)
   * Add possibility to order experiments by Comment (fix #320)
   * Add possibility to read the asn1 encoded timestamping token (fix #315)
+  * Add possibility to draw something (doodle) (fix #198)
   * Add title of experiment/item in the page title (fix #324)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
 
 * Enhancements:
 
   * Suggest SMTP2GO instead of mailgun for SMTP configuration
-  * Remove autocomplete from some password inputs
-  * Better 404 page
   * Send an email to all admins if there are several upon new user registration
+  * Use less and better formed SQL queries, making the app 2 times faster
+
+* Docker:
+
+  * Add a custom 404 page introducing Wally the wallaby
+  * Unset env var once config.php is written
+  * Add API redirect in nginx.conf
+  * Merge common parts of nginx.conf
+  * Drop SYS_PTRACE capability
+  * Set alpine version to 3.5
+  * Use libressl instead of openssl
+  * Remove sha384sum on composer install
+  * Use labels
 
 * Developer corner:
 
   * Add canRead and canWrite properties to Entity objects
   * Rename bgcolor to color and drop unused columns
+  * Move locale folder inside app/
+  * Remove functions in functions.inc.php
+  * Remove js/, add compiled files in app/js, rest is in bower_components
+  * A lot of class instanciation/usage have been redefined to be more efficient and easy to use
 
 Version 1.4.2
 -------------
