@@ -8,12 +8,17 @@ Version 1.5.0
 
 * New features:
 
+  * Faster generation of pages
   * Add an API so external programs can interact with eLabFTW (fix #328)
   * Add possibility to order experiments by Comment (fix #320)
   * Add possibility to read the asn1 encoded timestamping token (fix #315)
   * Add possibility to draw something (doodle) (fix #198)
   * Add title of experiment/item in the page title (fix #324)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
+
+* Bugfixes:
+
+  * Fix an issue where two uploaded files with same name resulted in only one file in a zip archive
 
 * Enhancements:
 
@@ -35,6 +40,7 @@ Version 1.5.0
 
 * Developer corner:
 
+  * Use Twig as template engine
   * Add canRead and canWrite properties to Entity objects
   * Rename bgcolor to color and drop unused columns
   * Move locale folder inside app/
