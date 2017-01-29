@@ -13,6 +13,7 @@ Version 1.5.0
   * Add possibility to order experiments by Comment (fix #320)
   * Add possibility to read the asn1 encoded timestamping token (fix #315)
   * Add possibility to draw something (doodle) (fix #198)
+  * Add possibility to filter experiments through visibility (or groups) (fix #335)
   * Add title of experiment/item in the page title (fix #324)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
 
