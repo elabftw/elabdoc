@@ -93,7 +93,7 @@ Code organization
     # php dependencies
     composer install
     # javascript dependencies
-    bower install jquery jquery-ui bootstrap colorpicker fancybox jeditable jquery.complexify.js keymaster moment fullcalendar tinymce dropzone file-saver.js
+    bower install jquery jquery-ui bootstrap colorpicker fancybox jeditable jquery.complexify.js keymaster moment fullcalendar tinymce tinymce-mention dropzone file-saver.js
 
 i18n
 ````
