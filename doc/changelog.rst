@@ -16,6 +16,7 @@ Version 1.5.0
   * Add possibility to filter experiments through visibility (or groups) (fix #335)
   * Add title of experiment/item in the page title (fix #324)
   * Add possibility to select the source of the mention plugin (fix #334)
+  * Add possibility to select default visibility for new experiments (fix #312)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
 
 * Bugfixes:
