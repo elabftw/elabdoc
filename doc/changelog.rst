@@ -8,13 +8,14 @@ Version 1.5.0
 
 * New features:
 
-  * Faster generation of pages
+  * Page building time improved greatly thanks to the use of a templating engine
   * Add an API so external programs can interact with eLabFTW (fix #328)
   * Add possibility to order experiments by Comment (fix #320)
   * Add possibility to read the asn1 encoded timestamping token (fix #315)
   * Add possibility to draw something (doodle) (fix #198)
   * Add possibility to filter experiments through visibility (or groups) (fix #335)
   * Add title of experiment/item in the page title (fix #324)
+  * Add possibility to select the source of the mention plugin (fix #334)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
 
 * Bugfixes:
@@ -23,9 +24,11 @@ Version 1.5.0
 
 * Enhancements:
 
+  * Use less and better formed SQL queries, making the app 2 times faster
   * Suggest SMTP2GO instead of mailgun for SMTP configuration
   * Send an email to all admins if there are several upon new user registration
-  * Use less and better formed SQL queries, making the app 2 times faster
+  * Uploaded files are now stored in a subfolder of uploads/ (max subfolders: 256)
+  * Update composer dependencies to latest version
 
 * Docker:
 
@@ -48,6 +51,7 @@ Version 1.5.0
   * Remove functions in functions.inc.php
   * Remove js/, add compiled files in app/js, rest is in bower_components
   * A lot of class instanciation/usage have been redefined to be more efficient and easy to use
+  * Improve code coverage
 
 Version 1.4.2
 -------------
