@@ -18,6 +18,7 @@ Version 1.5.0
   * Add possibility to select the source of the mention plugin (fix #334)
   * Add possibility to select default visibility for new experiments (fix #312)
   * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
+  * Add search with multiple tags (fix #332)
 
 * Bugfixes:
 
