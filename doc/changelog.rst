@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.4.3
+-------------
+
+* Bugfixes:
+
+  * Use TIMESTAMP instead of DATETIME for Mysql 5.5 users on install, too!
+
 Version 1.4.2
 -------------
 
