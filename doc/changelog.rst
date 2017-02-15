@@ -50,7 +50,7 @@ Version 1.5.0
   * Add canRead and canWrite properties to Entity objects
   * Rename bgcolor to color and drop unused columns
   * Move locale folder inside app/
-  * Remove functions in functions.inc.php
+  * Remove functions.inc.php
   * Remove js/, add compiled files in app/js, rest is in bower_components
   * A lot of class instanciation/usage have been redefined to be more efficient and easy to use
   * Improve code coverage
