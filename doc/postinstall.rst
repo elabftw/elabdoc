@@ -17,7 +17,26 @@ If you don't know what to do, register a new account on `SMTP2GO <https://www.sm
 Make sure that the `uploads` folder cannot be accessed
 ------------------------------------------------------
 
-Just visit `/uploads/` (add this at the end of the URL) and see if you see the files there (or at least the `tmp` folder). If you see a white page, all is good. If not, either configure Apache to AllowOverride All (so the .htaccess will work), or put an empty index.php file in the folder.
+This is only if you installed it **without** docker:
+
+Just visit `https://your-elabftw-server.org/uploads/` and see if you see the files there (or at least the `tmp` folder). If you see a white page, all is good. If not, either configure your webserver to deny access to this folder.
+
+For Apache:
+
+.. code-block:: apache
+
+    <Directory /var/www/elabftw/uploads>
+        Options -Indexes
+    </Directory>
+
+For Nginx:
+
+.. code-block:: nginx
+
+    location /uploads {
+        deny all;
+        return 403;
+    }
 
 Set up backup
 -------------
@@ -41,6 +60,30 @@ So if you need a stronger certification, you should go with a commercial solutio
 You need to add the root certificate of the TSA somewhere where elabftw can read it for this to work.
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
+
+Set up a cronjob to rewew TLS certificates :sup:`(optionnal)`
+-------------------------------------------------------------
+
+If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
+
+Create a script containing:
+
+.. code-block:: bash
+
+    # stop webserver
+    docker exec elabftw supervisorctl stop nginx
+    # renew certificate
+    /var/elabftw/letsencrypt/letsencrypt-auto renew --quiet --no-self-upgrade
+    # and start the webserver again
+    docker exec elabftw supervisorctl start nginx
+
+Add this script as a cronjob:
+
+.. code-block:: bash
+
+    0 4 1 * * /root/renew.sh
+
+This line will run the script at 4am every 1st day of the month.
 
 Update often
 ------------

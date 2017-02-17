@@ -30,3 +30,5 @@ Follow the steps below to install eLabFTW on your system:
 **Final step** wait that the previous command finishes and click here: https://192.168.99.100/install
 
 .. note:: Remember to keep your installation :doc:`backuped <backup>` and :doc:`updated <how-to-update>` ;)
+
+.. note:: If you need to access eLabFTW from another computer, or if you installed it on a Windows server, you'll need to forward ports to the VirtualBox instance.

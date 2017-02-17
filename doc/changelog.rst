@@ -3,6 +3,59 @@
 Changelog
 =========
 
+Version 1.5.0
+-------------
+
+* New features:
+
+  * Page building time improved greatly thanks to the use of a templating engine
+  * Add an API so external programs can interact with eLabFTW (fix #328)
+  * Add possibility to order experiments by Comment (fix #320)
+  * Add possibility to read the asn1 encoded timestamping token (fix #315)
+  * Add possibility to draw something (doodle) (fix #198)
+  * Add possibility to filter experiments through visibility (or groups) (fix #335)
+  * Add title of experiment/item in the page title (fix #324)
+  * Add possibility to select the source of the mention plugin (fix #334)
+  * Add possibility to select default visibility for new experiments (fix #312)
+  * Add a "Read changelog" button when a new release is available (in Sysadmin panel)
+  * Add search with multiple tags (fix #332)
+
+* Bugfixes:
+
+  * Fix an issue where two uploaded files with same name resulted in only one file in a zip archive
+  * Fix an issue where you couldn't create a zip/pdf of a list containing an experiment which is not yours
+
+* Enhancements:
+
+  * Use less and better formed SQL queries, making the app 2 times faster
+  * Suggest SMTP2GO instead of mailgun for SMTP configuration
+  * Send an email to all admins if there are several upon new user registration
+  * Uploaded files are now stored in a subfolder of uploads/ (max subfolders: 256)
+  * Update composer dependencies to latest version
+
+* Docker:
+
+  * Add a custom 404 page introducing Wally the wallaby
+  * Unset env var once config.php is written
+  * Add API redirect in nginx.conf
+  * Merge common parts of nginx.conf
+  * Drop SYS_PTRACE capability
+  * Set alpine version to 3.5
+  * Use libressl instead of openssl
+  * Remove sha384sum on composer install
+  * Use labels
+
+* Developer corner:
+
+  * Use Twig as template engine
+  * Add canRead and canWrite properties to Entity objects
+  * Rename bgcolor to color and drop unused columns
+  * Move locale folder inside app/
+  * Remove functions.inc.php
+  * Remove js/, add compiled files in app/js, rest is in bower_components
+  * A lot of class instanciation/usage have been redefined to be more efficient and easy to use
+  * Improve code coverage
+
 Version 1.4.3
 -------------
 
