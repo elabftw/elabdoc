@@ -49,11 +49,12 @@ Note the `.` at the end that means `current folder`.
 
 Get latest stable version via git:
 
-.. code-block:: bash
+.. we have to use parsed-literal here and not code-block otherwise the substitution doesn't work :/
 
-    $ git clone --depth 1 https://github.com/elabftw/elabftw.git
+.. parsed-literal::
 
-(this will create a folder `elabftw`)
+    $ git clone -b |release| --depth 1 https://github.com/elabftw/elabftw.git
+
 The `--depth 1` option is to avoid downloading the whole history.
 
 .. tip:: If you cannot connect, it's probably the proxy setting missing; try one of these two commands:
