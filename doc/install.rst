@@ -64,7 +64,7 @@ Once started, you will see something like: nginx entered RUNNING state. You can 
 
 * Register a Sysadmin account:
 
-    Point your browser to **\https://<your-elabftw-site.org>** (or **\https://<IP address>**)
+    Point your browser to **\https://<your-elabftw-site.org/install>** (or **\https://<IP address>/install**)
 
 Post install
 ------------
