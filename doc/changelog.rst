@@ -32,6 +32,7 @@ Version 1.5.0
   * Send an email to all admins if there are several upon new user registration
   * Uploaded files are now stored in a subfolder of uploads/ (max subfolders: 256)
   * Update composer dependencies to latest version
+  * Exported PDF are now in PDF/A format specification (better for long term archiving)
 
 * Docker:
 
@@ -44,6 +45,7 @@ Version 1.5.0
   * Use libressl instead of openssl
   * Remove sha384sum on composer install
   * Use labels
+  * Allow more memory for PHP (fix #333 #347)
 
 * Developer corner:
 
