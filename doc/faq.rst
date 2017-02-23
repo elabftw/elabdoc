@@ -173,7 +173,7 @@ Failed creating *uploads/* directory
 
 If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (www-data on Debian/Ubuntu) didn't have the necessary rights. To fix it you need to:
 
-1. Find what is the user/group of the web server. There is a good chance that it is www-data. But it might also be something else. Run the `install.sh` script in the `install` folder.
+1. Find what is the user/group of the web server. There is a good chance that it is www-data. But it might also be something else.
 
 2. Now that you know the user/group of the webserver, you can do that (example is shown with www-data, but adapt to your need):
 
@@ -182,7 +182,6 @@ If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (
     cd /path/to/elabftw
     mkdir -p uploads/tmp
     chown -R www-data:www-data uploads
-    chmod -R 755 .
     chmod 400 config.php
 
 The last line is to keep your config file secure. It might fail because the file is not there yet. Finish the install and do it after then.

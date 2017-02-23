@@ -71,7 +71,7 @@ Install php dependencies with `composer <https://getcomposer.org/download/>`_:
     $ cd elabftw
     # step not described: install composer
     # see https://getcomposer.org/download/
-    $ composer.phar install --no-dev
+    $ ./composer.phar install --no-dev
 
 This will populate the `vendor` directory.
 
