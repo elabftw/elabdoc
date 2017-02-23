@@ -64,14 +64,14 @@ The `--depth 1` option is to avoid downloading the whole history.
         $ export https_proxy="proxy.example.com:3128"
         $ git config --global http.proxy http://proxy.example.com:8080
 
-Install php dependencies with composer:
+Install php dependencies with `composer <https://getcomposer.org/download/>`_:
 
 .. code-block:: bash
 
     $ cd elabftw
     # step not described: install composer
     # see https://getcomposer.org/download/
-    $ composer.phar install --no-dev
+    $ ./composer.phar install --no-dev
 
 This will populate the `vendor` directory.
 
