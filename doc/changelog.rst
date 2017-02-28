@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.5.1
+-------------
+
+* Bugfix:
+
+  * Fix bug preventing the use of the todolist
+
 Version 1.5.0
 -------------
 
