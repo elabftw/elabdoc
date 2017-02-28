@@ -27,7 +27,7 @@ Follow the steps below to install eLabFTW on your system:
     cd Desktop #(or wherever you saved docker-compose.yml)
     docker-compose.exe up -d
 
-**Final step** wait that the previous command finishes and click here: https://192.168.99.100/install
+**Final step** wait that the previous command finishes and click here: https://192.168.99.100/
 
 .. note:: Remember to keep your installation :doc:`backuped <backup>` and :doc:`updated <how-to-update>` ;)
 

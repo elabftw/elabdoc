@@ -129,9 +129,9 @@ Do like this:
 Final step
 ----------
 
-Finally, point your browser to the install folder (install/) and read onscreen instructions.
+Finally, point your browser to your server and read onscreen instructions.
 
-For example: https://12.34.56.78/elabftw/install
+For example: https://12.34.56.78/elabftw
 
 Please report bugs on `github <https://github.com/elabftw/elabftw/issues>`_.
 
