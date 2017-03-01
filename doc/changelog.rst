@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.5.2
+-------------
+
+* Bugfixes:
+
+  * Fix bug on search page preventing listing experiments of team users (fix #353)
+  * Fix list buttons disappearance on TinyMCE editor (fix #351)
+
 Version 1.5.1
 -------------
 
