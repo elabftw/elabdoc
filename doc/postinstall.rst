@@ -85,6 +85,18 @@ Add this script as a cronjob:
 
 This line will run the script at 4am every 1st day of the month.
 
+
+If the code above doesn't work, try this:
+
+.. code-block:: bash
+
+    # stop everything
+    elabctl stop
+    # renew certificate
+    /var/elabftw/letsencrypt/letsencrypt-auto renew --quiet --no-self-upgrade
+    # start elabftw
+    elabctl start
+
 Update often
 ------------
 
