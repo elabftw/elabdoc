@@ -43,12 +43,12 @@ Set up backup
 
 See the :ref:`backup <backup>` page.
 
-Set up the teams :sup:`(optionnal)`
+Set up the teams :sup:`(optional)`
 -----------------------------------
 
 The Sysadmin panel (`sysconfig.php`) allows you to add another team to your install. You should also edit your team name.
 
-Set up timestamping :sup:`(optionnal)`
+Set up timestamping :sup:`(optional)`
 --------------------------------------
 
 eLabFTW provides an easy way to do `Trusted Timestamping <https://en.wikipedia.org/wiki/Trusted_timestamping>`_ for your experiments, so you can have strong legal value for your lab notebook.
@@ -61,7 +61,7 @@ You need to add the root certificate of the TSA somewhere where elabftw can read
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
-Set up a cronjob to rewew TLS certificates :sup:`(optionnal)`
+Set up a cronjob to rewew TLS certificates :sup:`(optional)`
 -------------------------------------------------------------
 
 If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
@@ -84,6 +84,19 @@ Add this script as a cronjob:
     0 4 1 * * /root/renew.sh
 
 This line will run the script at 4am every 1st day of the month.
+
+Use mod_proxy to run elabftw docker container behind apache2 :sup:`(optional)`
+------------------------------------------------------------------------------
+
+If eLabFTW's docker container runs on a machine with several web applications you can use mod_proxy to access the application without opening another port on your server.
+
+The following example forwards the URL https://your.domain/elabftw/ to the docker URL https://localhost:444. The default docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "444:443".
+
+.. code-block:: bash
+
+    SSLProxyEngine on
+    ProxyPass /elabftw/ https://localhost:444/ 
+    ProxyPassReverse /elabftw/ https://localhost:444/ 
 
 Update often
 ------------
