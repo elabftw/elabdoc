@@ -43,12 +43,12 @@ Set up backup
 
 See the :ref:`backup <backup>` page.
 
-Set up the teams :sup:`(optionnal)`
+Set up the teams :sup:`(optional)`
 -----------------------------------
 
 The Sysadmin panel (`sysconfig.php`) allows you to add another team to your install. You should also edit your team name.
 
-Set up timestamping :sup:`(optionnal)`
+Set up timestamping :sup:`(optional)`
 --------------------------------------
 
 eLabFTW provides an easy way to do `Trusted Timestamping <https://en.wikipedia.org/wiki/Trusted_timestamping>`_ for your experiments, so you can have strong legal value for your lab notebook.
@@ -61,7 +61,7 @@ You need to add the root certificate of the TSA somewhere where elabftw can read
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
-Set up a cronjob to rewew TLS certificates :sup:`(optionnal)`
+Set up a cronjob to rewew TLS certificates :sup:`(optional)`
 -------------------------------------------------------------
 
 If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
@@ -85,7 +85,6 @@ Add this script as a cronjob:
 
 This line will run the script at 4am every 1st day of the month.
 
-
 If the code above doesn't work, try this:
 
 .. code-block:: bash
@@ -105,4 +104,3 @@ It is important to keep your install up to date with the latest bug fixes and ne
 `Subscribe to the newsletter <http://eepurl.com/bTjcMj>`_ to be warned when a new release is out.
 
 See instructions on updating eLabFTW on :ref:`how-to-update`.
-

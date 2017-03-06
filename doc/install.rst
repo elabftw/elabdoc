@@ -72,3 +72,57 @@ Post install
 Don't forget to read :ref:`the post install page <postinstall>`, setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
 
 ENJOY! :D
+
+----
+
+
+Documentation for unusual setups
+--------------------------------
+
+Using mod_proxy to run eLabFTW Docker container behind Apache
+`````````````````````````````````````````````````````````````
+
+If eLabFTW's Docker container runs on a machine with several web applications you can use mod_proxy to access the application without opening another port on your server.
+
+The following example forwards the URL https://your.domain/elabftw/ to the docker URL https://localhost:444. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "444:443".
+
+.. code-block:: apache
+
+    SSLProxyEngine on
+    ProxyPass /elabftw/ https://localhost:444/ 
+    ProxyPassReverse /elabftw/ https://localhost:444/ 
+
+Using nginx to run eLabFTW Docker container
+```````````````````````````````````````````
+
+If you already have nginx running, you'll want to use the proxy capapbilities of nginx to forward packets to the Docker container.
+
+The following example forwards the URL https://demo.elabftw.net to the docker URL http://localhost:3148. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "3148:443". In this example, nginx is listening to port 8888, because HAProxy is doing SSL termination. Adapt to your needs.
+
+.. code-block:: nginx
+
+	server {
+        server_name demo.elabftw.net;
+
+        listen 8888;
+        listen [::]:8888;
+
+        access_log /var/log/nginx/demo.elabftw.net.log proxy;
+
+        location / {
+            proxy_pass       http://localhost:3148;
+            proxy_set_header Host      $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+
+
+Add this to /etc/nginx/nginx.conf to get the real IP address in the logs:
+
+.. code-block:: nginx
+
+     log_format proxy '$proxy_add_x_forwarded_for - $remote_user [$time_local] '
+                      '"$request" $status $body_bytes_sent '
+                      '"$http_referer" "$http_user_agent" "$gzip_ratio"';
+
