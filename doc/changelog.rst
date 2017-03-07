@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.5.3
+-------------
+
+* Bugfixes:
+
+  * Fix proper redirection to install page after a fresh install
+  * Fix editing templates
+
 Version 1.5.2
 -------------
 
