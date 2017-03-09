@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.5.4
+-------------
+
+* Bugfixes:
+
+  * Fix a bug limiting uploaded files to 2Mo
+
 Version 1.5.3
 -------------
 
