@@ -9,6 +9,8 @@ Version 1.5.4
 * Bugfixes:
 
   * Fix a bug limiting uploaded files to 2Mo
+  * Fix a bug on Safari where text was not visible in the search bar (contribution from @oli-ver)
+  * Fix a bug on Admin panel where you could not resize the template input textarea without messing everything up
 
 Version 1.5.3
 -------------
