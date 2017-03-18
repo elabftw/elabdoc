@@ -13,6 +13,7 @@ Version 1.5.4
   * Fix a bug on Admin panel where you could not resize the template input textarea without messing everything up
   * Fix a bug where the server port was not correctly detected (fix #362)
   * Fix the display of uploaded images as album with Fancybox
+  * Fix API key generation when not admin
 
 Version 1.5.3
 -------------
