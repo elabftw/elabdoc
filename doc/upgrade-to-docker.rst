@@ -47,7 +47,12 @@ Editing the config file
 ```````````````````````
 * Open the `config.php` file located in your `elabftw` folder of the current install
 * Copy the SECRET_KEY value from the `config.php` file to `/etc/elabftw.yml` file
-* Port: change "443:443" to "8080:443" or "444:443" or "9000:443" because your current server is already using port 443
+* If your webserver (Apache, nginx) is only serving eLabFTW, turn it off now and also make sure it won't start after reboot.
+
+If you are using your webserver for something else, change the "ports:" value from "443:443" to "8080:443" or "444:443" or "9000:443" because your current server is already using port 443.
+
+Now, either you open a port on your server's firewall to accept traffic on the new port you set, or you might also want to use your current webserver as a proxy and forward packets to the docker container: see :ref:`documentation for unusual setups <install>`.
+
 * If you are running MySQL 5.5 or 5.6, edit the 5.7 in the `image: mysql:5.7` line to the appropriate version. You can upgrade later.
 
 Copy the uploaded files
