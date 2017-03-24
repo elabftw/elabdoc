@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 1.5.5
+-------------
+
+* Bugfixes:
+
+  * Fix a bug where the number of unvalidated users was not shown in the footer
+  * Fix a bug in the admin panel where parts of it were not accessible
+  * Fix a bug where the Title would display escaped special characters
+
 Version 1.5.4
 -------------
 
