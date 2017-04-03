@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.5.6
+-------------
+
+* Bugfixes:
+
+  * Fix a bug where the team groups were not showing in the user control panel for default visibility
+  * Fix a bug where the star rating were not working
+
 Version 1.5.5
 -------------
 
