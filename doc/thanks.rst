@@ -15,7 +15,7 @@ eLabFTW uses open source code from others. A big thanks to them for making their
 * `Jeditable <http://www.appelsiini.net/projects/jeditable>`_
 * `Star Rating <http://www.fyneworks.com/jquery/star-rating/>`_
 * `Complexify <https://www.danpalmer.me/jquery-complexify>`_
-* `Fancybox <http://fancyapps.com/fancybox/>`_
+* `Fancybox <http://fancyapps.com/fancybox/3/>`_
 * `Keymaster <https://github.com/madrobby/keymaster>`_
 * `TinyMCE <https://www.tinymce.com/>`_
 * `Cornify <http://www.cornify.com/>`_

@@ -10,6 +10,13 @@ Version 1.5.6
 
   * Fix a bug where the team groups were not showing in the user control panel for default visibility
   * Fix a bug where the star rating were not working
+  * Fix the Save button from edit mode
+
+* Enhancements:
+
+  * Update fancybox to latest version (image viewer for attached pictures)
+  * Update the JS dependencies to latest version
+  * Update the PHP dependencies to latest version
 
 Version 1.5.5
 -------------
