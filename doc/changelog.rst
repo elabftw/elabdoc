@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.5.7
+-------------
+
+* Bugfixes:
+
+  * Fix a bug on the link generation of linked items in edit mode of experiments
+  * Bring back the show related icon on db items view mode
+
 Version 1.5.6
 -------------
 
