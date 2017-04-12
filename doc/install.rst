@@ -80,7 +80,7 @@ Documentation for unusual setups
 --------------------------------
 
 Using mod_proxy to run eLabFTW Docker container behind Apache2 (https enabled)
-`````````````````````````````````````````````````````````````
+``````````````````````````````````````````````````````````````````````````````
 
 If eLabFTW's Docker container runs on a machine with several web applications you can use mod_proxy to access the application without opening another port on your server.
 
@@ -93,11 +93,11 @@ The following example forwards the URL https://your.domain/elabftw/ to the docke
     ProxyPassReverse /elabftw/ https://localhost:444/ 
 
 Using mod_proxy to run eLabFTW Docker container behind Apache2 (https disabled)
-`````````````````````````````````````````````````````````````
+```````````````````````````````````````````````````````````````````````````````
 
 It is also possible to disable https in the elabftw docker container's web server, if Apache2 handles SSL:
 
-.. code-block:: /etc/elabftw.yml
+.. code-block:: yaml
 
 	DISABLE_HTTPS=true
 	

@@ -9,10 +9,19 @@ Install on Mac OS X
 
 .. warning:: eLabFTW should be installed on a server, not a personal computer. Installing it on your personal computer is totally fine, but in the end, what you want is to install it on a server so everyone in your team (or institute/company) can benefit from it. See :ref:`install in the cloud<install-drop>` if you don't have a server.
 
-The steps below describe an installation of a web server (XAMPP) directly on your Mac. When Docker for Mac will work, we'll use that.
+Ok so you read the warning above and you still want to install it on your Mac? It's fine by me, but keep in mind that it's best to ask your IT department to install it on a server.
 
-Install XAMPP
--------------
+There are two ways to install eLabFTW on a Mac OS X computer, either with Docker (recommended), or with XAMPP.
+
+Install with Docker
+-------------------
+
+Follow the instructions for :doc:`installing on Windows <install-windows>`. It's more or less the same: you install Docker, then you edit a docker-compose.yml file, and you start the containers with docker-compose.
+
+Because I don't own a Mac, these instructions are untested, but should work nonetheless.
+
+Install with XAMPP
+------------------
 
 Download `XAMPP for OS X <https://www.apachefriends.org/download.html>`_. Take the greatest version number. Versions below 5.6 will **NOT** work.
 
