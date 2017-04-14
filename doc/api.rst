@@ -96,6 +96,19 @@ This example shows how to print data from experiment with ID 1:
     # pretty print everything
     print(json.dumps(exp, indent=4, sort_keys=True))
 
+Change the body, title and date
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Here is how you can update your experiment body, title and date:
+
+.. code-block:: python
+
+    # payload is a dict
+    params = {"title": "New title", "body": "Experiment updated through API", "date": "20170415"}
+    manager.post_experiment(1, params)
+    # or for an item
+    manager.post_item(1, params)
+
 Nginx configuration
 -------------------
 
