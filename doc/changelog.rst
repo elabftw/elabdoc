@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.6.0
+-------------
+
+* New features:
+
+  * Add possibility to login through SAML with an Identity Provider (IDP) (fix #47)
+
 Version 1.5.7
 -------------
 
