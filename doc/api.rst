@@ -109,6 +109,17 @@ Here is how you can update your experiment body, title and date:
     # or for an item
     manager.post_item(1, params)
 
+Upload a file
+^^^^^^^^^^^^^
+
+Here is how you can attach a file to an experiment (or item):
+
+.. code-block:: python
+
+    files = {'file': open('report.xls', 'rb')}
+    print(manager.upload_to_experiment(94, files))
+    print(manager.upload_to_item(17, files))
+
 Nginx configuration
 -------------------
 
