@@ -6,9 +6,33 @@ Changelog
 Version 1.6.0
 -------------
 
+.. warning::
+
+    BREAKING CHANGE: if you are not using Docker, you'll need to install the gmagick PHP extension!
+
 * New features:
 
   * Add possibility to login through SAML with an Identity Provider (IDP) (fix #47)
+  * Add thumbnails for tiff, pdf and svg files (fix #292 #346)
+
+* Bugfixes:
+
+  * Fix a bug where the permissions could not be correctly checked with the API
+
+* Improvements:
+
+  * Json in zip archive now contains more info (fix #381)
+  * Admin can now write to experiments (fix #381)
+  * Add image tools to edit an image in the body (fix #228)
+  * Use a temporary path for pdf generation of zip archives (fix #382)
+  * Externalisation and minimization of Javascript code
+  * More pages use templates now
+  * Code is getting cleaner and more elegant with each release :)
+
+* Docker image:
+
+  * Add gmagick extension
+  * Use PHP's opcache to cache opcode and improve speed
 
 Version 1.5.7
 -------------
