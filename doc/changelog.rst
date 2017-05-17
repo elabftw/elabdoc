@@ -18,9 +18,11 @@ Version 1.6.0
 * Bugfixes:
 
   * Fix a bug where the permissions could not be correctly checked with the API
+  * Fix search with multiple tags (thx @oli-ver) (fix #385)
 
-* Improvements:
+* Enhancements:
 
+  * New CSS design allowing more space for content, with a columns layout
   * Json in zip archive now contains more info (fix #381)
   * Admin can now write to experiments (fix #381)
   * Add image tools to edit an image in the body (fix #228)
