@@ -23,6 +23,7 @@ Version 1.6.0
 * Enhancements:
 
   * New CSS design allowing more space for content, with a columns layout
+  * CSS is now more responsive than ever
   * Json in zip archive now contains more info (fix #381)
   * Admin can now write to experiments (fix #381)
   * Add image tools to edit an image in the body (fix #228)
