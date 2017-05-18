@@ -89,8 +89,9 @@ The following example forwards the URL https://your.domain/elabftw/ to the docke
 .. code-block:: apache
 
     SSLProxyEngine on
-    ProxyPass /elabftw/ https://localhost:444/ 
-    ProxyPassReverse /elabftw/ https://localhost:444/ 
+    ProxyPreserveHost On
+    ProxyPass /elabftw/ https://localhost:444/
+    ProxyPassReverse /elabftw/ https://localhost:444/
 
 Using mod_proxy to run eLabFTW Docker container behind Apache2 (https disabled)
 ```````````````````````````````````````````````````````````````````````````````
@@ -100,12 +101,13 @@ It is also possible to disable https in the elabftw docker container's web serve
 .. code-block:: yaml
 
 	DISABLE_HTTPS=true
-	
+
 One can then forward to elabftw without the option SSLProxyEngine on, if the HTTP_X_FORWARDED_PROTO header is set:
 
 .. code-block:: apache
 
 	RequestHeader set X-Forwarded-Proto "https"
+    ProxyPreserveHost On
 	ProxyPass /elabftw/ http://localhost:444/
 	ProxyPassReverse /elabftw/ http://localhost:444/
 
