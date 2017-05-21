@@ -84,7 +84,7 @@ Code organization
 Ðependencies
 ````````````
 * PHP dependencies are managed through `Composer <https://getcomposer.org/>`_
-* JavaScript dependencies are managed through `Bower <https://bower.io/>`_
+* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_
 
   Install them with:
 
@@ -93,7 +93,7 @@ Code organization
     # php dependencies
     composer install
     # javascript dependencies
-    bower install jquery jquery-ui bootstrap colorpicker fancybox jeditable jquery.complexify.js keymaster moment fullcalendar tinymce tinymce-mention dropzone file-saver.js
+    yarn add jquery vanderlee-colorpicker jquery-ui-dist dropzone @fancyapps/fancybox file-saver fullcalendar jquery.complexify keymaster tinymce tinymce-mention bootstrap grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
 
 i18n
 ````
