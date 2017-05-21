@@ -27,6 +27,7 @@ Version 1.6.0
   * Json in zip archive now contains more info (fix #381)
   * Admin can now write to experiments (fix #381)
   * Add image tools to edit an image in the body (fix #228)
+  * Better JSON informations in zip export (fix #381)
   * Use a temporary path for pdf generation of zip archives (fix #382)
   * Externalisation and minimization of Javascript code
   * More pages use templates now
@@ -36,6 +37,11 @@ Version 1.6.0
 
   * Add gmagick extension
   * Use PHP's opcache to cache opcode and improve speed
+
+* Dev corner:
+
+  * Use docker for acceptance testing
+  * Use yarn instead of bower for JS dependencies
 
 Version 1.5.7
 -------------
