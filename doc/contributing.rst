@@ -93,7 +93,7 @@ Code organization
     # php dependencies
     composer install
     # javascript dependencies
-    yarn add jquery vanderlee-colorpicker jquery-ui-dist dropzone @fancyapps/fancybox file-saver fullcalendar jquery.complexify keymaster tinymce tinymce-mention bootstrap grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
+    yarn install
 
 i18n
 ````
