@@ -93,7 +93,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
 .. code-block:: bash
 
    sudo elabctl start
-   # allow up to 2 minutes for the container to start
+   # allow up to 2 minutes for the web container to start
 
 * Enable debug mode to disable the caching of Twig templates
 
