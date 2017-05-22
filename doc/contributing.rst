@@ -85,7 +85,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > /etc/elabftw.yml
 
 * Edit the docker-compose configuration file `/etc/elabftw.yml`
-* Change the SECRET_KEY variable
+* Add a SECRET_KEY
 * Change the `volumes:` line so it points to your `$dev/elabftw` folder.
 * The container orchestration is done with `Docker Compose <https://docs.docker.com/compose/>`_. Install it.
 * Start the containers:
