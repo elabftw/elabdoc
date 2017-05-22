@@ -75,15 +75,6 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     # javascript dependencies (node_modules/ directory)
     yarn install
 
-* Git clone the docker image repo and build a dev image:
-
-.. code-block:: bash
-
-    cd $dev
-    git clone -b dev https://github.com/elabftw/elabimg
-    cd elabimg
-    docker build -t elabftw/dev .
-
 * Install *elabctl* and the configuration file
 
 .. code-block:: bash
@@ -94,7 +85,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > /etc/elabftw.yml
 
 * Edit the docker-compose configuration file `/etc/elabftw.yml`
-* Optionaly change the port binding from 443 to something else (example: 9999:443). Useful if you already have a webserver listening on port 443.
+* Change the SECRET_KEY variable
 * Change the `volumes:` line so it points to your `$dev/elabftw` folder.
 * The container orchestration is done with `Docker Compose <https://docs.docker.com/compose/>`_. Install it.
 * Start the containers:
