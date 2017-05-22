@@ -40,27 +40,81 @@ Contributing to the code
 
 Environment installation
 ````````````````````````
-* Fork `the repository <https://github.com/elabftw/elabftw>`_ on GitHub
-* From your fork page, clone it on your machine (let's say it's in `/home/user/elabftw`)
-* :ref:`Install eLabFTW <install>` normally (with **elabctl**) but don't start it
+
+Here is a step-by-step for installing an eLabFTW dev setup:
+
+* First let's define a directory for dev (adapt to your needs):
+
+.. code-block:: bash
+
+    export dev='/home/<YOUR USERNAME>/elabdev'
+    mkdir -p $dev
+    cd $dev
+
+* Go on `the repository on GitHub <https://github.com/elabftw/elabftw>`_
+* Click the Fork button in the top right of the screen
+* From your fork page, clone it with SSH on your machine:
+
+.. code-block:: bash
+
+    git clone git@github.com:<YOUR USERNAME>/elabftw.git
+    cd elabftw
+    # switch to the hypernext branch
+    git checkout hypernext
+    # create your feature branch from the hypernext branch
+    git checkout -b my-feature
+
+* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. Install it.
+* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. Install it.
+* Now install the PHP and JavaScript dependencies (they are not tracked by git):
+
+.. code-block:: bash
+
+    # php dependencies (vendor/ directory)
+    composer install
+    # javascript dependencies (node_modules/ directory)
+    yarn install
+
 * Git clone the docker image repo and build a dev image:
 
 .. code-block:: bash
 
+    cd $dev
     git clone -b dev https://github.com/elabftw/elabimg
     cd elabimg
     docker build -t elabftw/dev .
 
+* Install *elabctl* and the configuration file
+
+.. code-block:: bash
+
+    # you need root permissions for these commands
+    sudo su
+    wget -qO- https://get.elabftw.net > /usr/bin/elabctl && chmod +x /usr/bin/elabctl
+    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > /etc/elabftw.yml
+
 * Edit the docker-compose configuration file `/etc/elabftw.yml`
-* Change the `volumes:` line so it points to the `elabftw` folder, not `elabftw/uploads`. So the line should look like : /home/user/elabftw:/elabftw
-* Change the line `image:` and replace it with `elabftw/dev`
-* In the elabftw folder install composer dependencies: `composer install`
-* Optionaly change the port binding from 443 to something else (example: 9999:443)
+* Optionaly change the port binding from 443 to something else (example: 9999:443). Useful if you already have a webserver listening on port 443.
+* Change the `volumes:` line so it points to your `$dev/elabftw` folder.
+* The container orchestration is done with `Docker Compose <https://docs.docker.com/compose/>`_. Install it.
 * Start the containers:
 
 .. code-block:: bash
 
    sudo elabctl start
+   # allow up to 2 minutes for the container to start
+
+* Enable debug mode to disable the caching of Twig templates
+
+.. code-block:: bash
+
+    docker exec -it mysql bash
+    # you are now inside the mysql container
+    mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
+    # you are now on the mysql command line
+    mysql> update config set conf_value = '1' where conf_name = 'debug';
+    exit
+    exit
 
 * You now should have a running local eLabFTW, and changes made to the code will be immediatly visible
 
@@ -81,31 +135,13 @@ Code organization
 * a new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
 
-Ðependencies
-````````````
-* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_
-* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_
-
-  Install them with:
-
-.. code-block:: bash
-
-    # php dependencies
-    composer install
-    # javascript dependencies
-    yarn install
-
 i18n
 ````
-* for internationalization, we use gettext
-* i18n related things are in the `locale` folder
-* the script `locale/genpo.sh` is used to merge the french .po file from extracted strings
-* if you add a string shown to the user, it needs to be gettexted _('like this')
+* To be written.
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to put add an update function in `app/classes/Update.php` and also modify `install/elabftw.sql` accordingly
-* instead of adding your functions to `app/functions.inc.php`, create a proper class
+* if you make a change to the SQL stucture, you need to add an update function in `app/classes/Update.php` and also modify `install/elabftw.sql` accordingly
 * you can use the constant ELAB_ROOT (which ends with a /) to have a full path
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
@@ -116,32 +152,25 @@ Miscellaneous
 
 Grunt
 `````
-
 Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and concatenate files (JS and CSS), among other things.
 
 * Install grunt with :
 
 .. code-block:: bash
 
-    $ npm install grunt grunt-contrib-uglify grunt-contrib-watch grunt-contrib-cssmin grunt-shell
-    $ sudo npm install -g grunt-cli
-
-Regenerate assets (JS/CSS)
-``````````````````````````
-
-.. code-block:: bash
-
-    $ grunt # will minify and concatenate JS and CSS
-    $ grunt css # will minify CSS
+    sudo npm install -g grunt-cli
+    # regenerate JS and CSS
+    grunt
+    # only css (faster)
+    grunt css
 
 Tests
 `````
-Get the version 1.9.8 of `PhantomJS <https://bitbucket.org/ariya/phantomjs/downloads>`_. There is a bug in the most recent version, so grab 1.9.8.
+
+The tests run on the Codeception framework. The acceptance tests will need to download the Selernium + Chrome headless docker image.
 
 .. code-block:: bash
 
-    # start phantomjs
-    $ ./phantomjs --ignore-ssl-errors=true --webdriver=4444
     $ grunt unit # will run the unit tests
     $ grunt test # will run the unit and acceptance tests
 
@@ -161,7 +190,7 @@ Then, point your browser to the `_api/index.html`.
 You can have a look at the errors report to check that you commented all new functions properly.
 
 Make a gif
-``````````
+----------
 
 * make a capture with xvidcap, it outputs .xwd
 
