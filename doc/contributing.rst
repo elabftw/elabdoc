@@ -104,7 +104,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
     # you are now on the mysql command line
     mysql> update config set conf_value = '1' where conf_name = 'debug';
-    exit
+    exit;
     exit
 
 * Now head to https://localhost:3148

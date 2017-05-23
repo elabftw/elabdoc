@@ -39,6 +39,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     install-mac
     install-windows
     install-oldschool
+    install-freebsd
 
 .. toctree::
     :caption: Usage
