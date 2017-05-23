@@ -107,6 +107,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     exit
     exit
 
+* Now head to https://localhost:3148
 * You now should have a running local eLabFTW, and changes made to the code will be immediatly visible
 
 Making a pull request
