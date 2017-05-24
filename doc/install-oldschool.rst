@@ -18,8 +18,8 @@ Prerequisites
 Please refer to your distribution's documentation to install :
 
 * A webserver (like nginx, Apache, lighttpd, cherokee or caddy)
-* PHP version > 5.6
-* MySQL version > 5.5
+* PHP version > 5.6 (7.1 recommended)
+* MySQL version > 5.5 (5.7 recommended)
 * Git (optional but recommended)
 
 .. tip:: If you don't know how to do that, or can't update php, have a look at :ref:`installing eLabFTW on a drop <install-drop>` or :ref:`in a docker container <install>`.
