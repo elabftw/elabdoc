@@ -32,6 +32,8 @@ Version 1.6.0
   * Better JSON informations in zip export (fix #381)
   * Use a temporary path for pdf generation of zip archives (fix #382)
   * Externalisation and minimization of Javascript code
+  * Add more supported extensions for 3Dmol.js (fix #398)
+  * Add more highlighted languages (fix #398)
   * More pages use templates now
   * Code is getting cleaner and more elegant with each release :)
 
