@@ -9,6 +9,7 @@ Version 1.6.0
 .. warning::
 
     BREAKING CHANGE: if you are not using Docker, you'll need to install the gmagick PHP extension!
+    You can install it with: pecl install gmagick-2.0.4RC1
 
 * New features:
 
