@@ -20,6 +20,7 @@ Version 1.6.0
 
   * Fix a bug where the permissions could not be correctly checked with the API
   * Fix search with multiple tags (thx @oli-ver) (fix #385)
+  * Fix a bug where a bogus error message was shown to the user when updating profile (thx @mjeltsch)
 
 * Enhancements:
 
