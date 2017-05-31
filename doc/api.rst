@@ -33,7 +33,7 @@ Using Bash/cURL
 Using Python
 ------------
 
-A module named `elabapy` is provided for easy access to eLabFTW's API.
+A module named `elabapy` is provided for easy access to eLabFTW's API. You need to use Python 3. Versions below 3 will not work.
 
 How to install
 ``````````````

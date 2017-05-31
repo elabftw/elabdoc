@@ -16,7 +16,7 @@ The IDP can lookup identity on an LDAP directory and deal with two factors authe
 Setup the Service Provider
 --------------------------
 
-The service provider is the elabftw install. Head to the Sysadmin panel, click the authentication tab.
+The service provider is the elabftw install. Head to the Sysadmin panel, click the SAML tab.
 
 * Debug mode: Set to "No". We don't want to print errors
 * Strict mode: Set to "Yes". Otherwise the mechanism is not secure
