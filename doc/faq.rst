@@ -6,7 +6,7 @@ Frequently asked questions
 Is it totally free?
 -------------------
 
-YES. eLabFTW is free software, so it is totally free of charge and always will be. `Read more about the free software philosophy <https://www.gnu.org/philosophy/free-sw.html>`_.
+YES. eLabFTW is free/libre software, so it is totally free of charge and always will be. `Read more about the free software philosophy <https://www.gnu.org/philosophy/free-sw.html>`_.
 
 But how is it better than something I can buy?
 ----------------------------------------------
@@ -59,14 +59,16 @@ You also have to consider the fact that installing eLabFTW on your own server me
 Is this system stable? Can I trust my data with it?
 ---------------------------------------------------
 
-New features are added very often and they don't break what exists already. However, having an automated :ref:`backup <backup>` strategy is mandatory in order to be sure **nothing will be lost**.
+Yes. It is used in numerous research centers all over the world since a few years now and if an issue is found it is quickly reported and fixed.
+
+However, having an automated :ref:`backup <backup>` strategy is mandatory in order to be sure **nothing will be lost**.
 
 Being able to do backups is yet another advantage over paper (you can't backup paper !).
 
 Who else is using it?
 ---------------------
 
-Here are some places running eLabFTW:
+Here are some places running eLabFTW (non-exhaustive list):
 
 * Cardiff University
 * Hannover Medical School
@@ -95,11 +97,11 @@ Here are some places running eLabFTW:
 Is the data encrypted?
 ----------------------
 
-The MySQL database can be installed on a encrypted drive. And backup can be encrypted, too. But this has to be done by your system admininstrator.
+The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2 with modern ciphers).
 
-Also, as you need an account to access the data, no external individual can see your data !
+The passwords are not recoverable in case of a breach.
 
-Finally, eLabFTW works fully in HTTPS for added security.
+Only manually validated accounts can interact with the software. It is secure by default.
 
 Is eLabFTW still maintained?
 ----------------------------
@@ -119,7 +121,7 @@ Sure, there is a demo online here : `eLabFTW live DEMO <https://demo.elabftw.net
 But what about the others ELN out there?
 ----------------------------------------
 
-First I'll only speak about the others free and open source lab notebook. Because there is no point in comparing free and privative software, as it's not the same philosophy at all !
+First I'll only speak about the others free and open source lab notebook. Because there is no point in comparing free and privative software, as it's not the same philosophy at all!
 
 * Labtrove : labtrove is a glorified Wordpress plugin. Unfortunately, I didn't manage to install it so I can't really talk about it... Also, it wasn't updated since 2011 so it probably won't work with latest versions of Wordpress.
 
@@ -127,7 +129,7 @@ First I'll only speak about the others free and open source lab notebook. Becaus
 
 * Electronic laboratory notebook on sourceforge : Looks like it was made in 1999, poorly written, only client (no server), java.
 
-* MediaWiki : although it's very nice to have a wiki in your team, this is not designed to be an electronic lab notebook. So you should definitely have a wiki, but don't use it to store your experiments !
+* MediaWiki : although it's very nice to have a wiki in your team, this is not designed to be an electronic lab notebook. So you should definitely have a wiki, but don't use it to store your experiments!
 
 * Mylabbook : nothing to see here. It's an empty shell.
 
@@ -159,7 +161,7 @@ The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, mak
 * PHP version > 5.6
 * MySQL version > 5.5
 * HTTPS enabled
-* PHP extensions openssl, gd, hash and zip activated
+* PHP extensions openssl, gmagick, hash and zip activated
 
 **Requirements for the client**
 - Any operating system with any browser (recent version).
