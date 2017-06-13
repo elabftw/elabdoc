@@ -49,5 +49,5 @@ Go to the Server tab of the Sysadmin panel. From there you can disable local log
 How does it work?
 -----------------
 
-When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either (attribute "memberOf"), it is created on the fly.
+When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either, it is created on the fly.
 
