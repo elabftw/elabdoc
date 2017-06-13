@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 1.6.1
+-------------
+
+.. warning::
+
+    BREAKING CHANGE: if you are not using Docker, you'll need to install the gmagick PHP extension!
+    You can install it with: pecl install gmagick-2.0.4RC1
+
+* Bugfixes:
+
+  * Workaround an issue when uploading SVG images containing text (#415) Thanks to @Athemis
+  * Fix wrong redirect in to admin panel from sysadmin panel (#404)
+
+* Updates:
+
+  * Update Colorpicker, Fancybox and Tinymce
+
+* Dockerfile:
+
+  * Workaround a bug in Firefox (https://bugzilla.redhat.com/show_bug.cgi?id=1204670): generate random CN for self-signed certificate
+  * Add freetype font (for SVG with text)
+  * Modify CSP headers to allow blob: fix #406
+
 Version 1.6.0
 -------------
 
