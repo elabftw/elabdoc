@@ -11,6 +11,8 @@ Because Docker on FreeBSD is not working. We'll need to install it the old schoo
 
 This howto was made on FreeBSD 11.0. It uses nginx as a webserver. I'll describe all the steps, but you don't need to follow all of them if you already have a webserver running of course. eLabFTW version is 1.6.0.
 
+If you want to use OpenBSD, I have made a full tutorial `here <https://nicolascarpi.github.io/install/2017/07/11/openbsd.html>`_.
+
 Installing a FEMP stack
 -----------------------
 

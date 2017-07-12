@@ -20,6 +20,8 @@ Create your droplet
 
 * Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_. Use this referral link to have 10$ offered.
 
+* Alternatively, you can use `Vultr <http://www.vultr.com/?ref=7164540>`_. Use this referral link to register an account! The rest of this tutorial is for DigitalOcean.
+
 .. image:: img/digitalocean.png
     :align: center
     :alt: digitalocean logo
