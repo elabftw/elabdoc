@@ -22,6 +22,8 @@ Using Bash/cURL
 
     # store your key in an environment variable
     export API_KEY=380915ea6baa5f08061ea49ef7ace19b9d37b40607f34bf8019d5a772c9d855459151c5e1bba35164d42
+    # create an experiment
+    curl -X POST -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments"
     # read experiment with id 3
     curl -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
     # read database item with id 5
