@@ -8,6 +8,19 @@ What's that?
 
 It's a way to read or write data to eLabFTW from an external program (like a Python script).
 
+Prerequisite
+------------
+
+If you are not running the Docker image provided, you'll need to edit your webserver configuration to redirect correctly the API calls:
+
+Here is the configuration for Nginx:
+
+.. code-block:: nginx
+
+    location ~ ^/api/v1/(.*)/?$ {
+         rewrite /api/v1/(.*)$ /app/controllers/ApiController.php?req=$1? last;
+    }
+
 Getting started
 ---------------
 
@@ -50,6 +63,8 @@ or via sources:
 
 .. code-block:: bash
 
+    git clone https://github.com/elabftw/elabapy
+    cd elabapy
     python setup.py install
 
 Features
@@ -133,13 +148,3 @@ Here is how you can attach a file to an experiment (or item):
     print(manager.upload_to_experiment(94, files))
     print(manager.upload_to_item(17, files))
 
-Nginx configuration
--------------------
-
-If you are not running the Docker image provided, you'll need to edit your nginx configuration and add this part for the eLabFTW server:
-
-.. code-block:: nginx
-
-    location ~ ^/api/v1/(.*)/?$ {
-         rewrite /api/v1/(.*)$ /app/controllers/ApiController.php?req=$1? last;
-    }
