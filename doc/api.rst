@@ -98,6 +98,17 @@ This example shows how to print data from experiment with ID 1:
     # pretty print everything
     print(json.dumps(exp, indent=4, sort_keys=True))
 
+Create an experiment
+^^^^^^^^^^^^^^^^^^^^
+
+This example shows how to create a new experiment and read its ID:
+
+.. code-block:: python
+
+    # create experiment
+    exp = manager.create_experiment()
+    print("Created a new experiment with id:", exp["id"])
+
 Change the body, title and date
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
