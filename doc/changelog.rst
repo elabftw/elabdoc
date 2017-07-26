@@ -3,6 +3,34 @@
 Changelog
 =========
 
+Version 1.6.2
+-------------
+
+.. warning::
+
+    BREAKING CHANGE for 1.6.x: if you are not using Docker, you'll need to install the gmagick PHP extension!
+    You can install it with: pecl install gmagick-2.0.4RC1
+
+* Bugfixes:
+
+  * Fix instert image in text button not working after upload of file (#439)
+
+* Enhancements:
+
+  * Add a way to bind internal (organisation) id to a team (for SAML auth)
+  * Add possibility to create an experiment through API (#443)
+
+* Updates:
+
+  * Update php dependencies
+  * Update dropzone to 5.1.1
+  * Update tinymce to 4.6.4
+
+* Docker:
+
+  * Bring back php-gd because it is needed by mpdf (#438)
+  * Remove listen directives for IPv6 in nginx conf (#440)
+
 Version 1.6.1
 -------------
 
