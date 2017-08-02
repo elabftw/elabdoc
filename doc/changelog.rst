@@ -13,7 +13,7 @@ Version 1.6.2
 
 * Bugfixes:
 
-  * Fix instert image in text button not working after upload of file (#439)
+  * Fix insert image in text button not working after upload of file (#439)
 
 * Enhancements:
 
