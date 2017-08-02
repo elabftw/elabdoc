@@ -1,16 +1,23 @@
 .. elabftw documentation master file, created by
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
-.. image:: img/elabftw-logo.png
-    :align: center
-    :alt: elabftw logo
-
 Welcome to elabftw's documentation!
 ===================================
 
-* `Website <https://www.elabftw.net>`_
-* `Live demo <https://demo.elabftw.net>`_
-* `Git repo <https://github.com/elabftw/elabftw>`_
+.. image:: img/elabftw-logo.png
+    :align: left
+    :alt: elabftw logo
+
+:Website:  https://www.elabftw.net
+:Live demo: https://demo.elabftw.net
+:Chat:
+    .. image:: https://badges.gitter.im/elabftw/elabftw.svg
+        :alt: Gitter
+        :target: https://gitter.im/elabftw/elabftw
+:License:
+    .. image:: https://img.shields.io/badge/license-AGPL-blue.svg
+        :alt: AGPL
+        :target: https://www.gnu.org/licenses/agpl-3.0.en.html
 
 Introduction
 ------------
