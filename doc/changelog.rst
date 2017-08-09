@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 1.7.0
+-------------
+
+* Bugfixes:
+
+  * Fix permissions issue on team groups (fix #428)
+
+* Enhancements:
+
+  * Add the timestamped pdf to the zip archive (see #446)
+  * Add an edit button in show mode
+  * Add a default Order by and Sort option in profile (fix #370)
+  * Check if deleted image is in body. Show warning (fix #432)
+  * Add a user preference for generating PDF with CJK fonts (fix #350)
+  * Submit the select-order-sort on change (fix #451)
+  * Add user pref for single column layout (fix #410)
+
 Version 1.6.2
 -------------
 
