@@ -168,6 +168,13 @@ The tests run on the Codeception framework. The acceptance tests will need to do
 
 For code coverage you need to enable the xdebug PHP extension and run `grunt coverage`.
 
+To run a SonarQube analysis, first start a SonarQube server and then start the scanner from the code root:
+
+.. code-block:: bash
+
+    $ cd $dev/sonarqube-6.3/bin/linux-x86-64 && ./sonar.sh start
+    $ cd $dev/elabftw && $dev/sonar-scanner-2.9.0.670/bin/sonar-scanner
+
 API Documentation
 `````````````````
 
