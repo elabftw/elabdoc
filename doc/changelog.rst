@@ -12,13 +12,25 @@ Version 1.7.0
 
 * Enhancements:
 
+  * Add Steps to experiments (fix #309)
   * Add the timestamped pdf to the zip archive (see #446)
   * Add an edit button in show mode
+  * Add a checkbox on items in show mode and a menu to apply an action to several items (fix #427)
   * Add a default Order by and Sort option in profile (fix #370)
   * Check if deleted image is in body. Show warning (fix #432)
   * Add a user preference for generating PDF with CJK fonts (fix #350)
   * Submit the select-order-sort on change (fix #451)
   * Add user pref for single column layout (fix #410)
+  * Better performances in page loading speed
+  * Add possibility to change the item type from edit mode
+  * Gmagick is now optional. The code will fallback to gd if you don't have gmagick installed
+
+* Dev corner:
+
+  * Use Symfony HttpFoundation components (Request/Response/Session/Cookies)
+  * Use Guzzle for the requests instead of php-curl
+  * Proper documentation of class fields
+  * ...and a lot of code moved around, cleaned up, optimized, refactored, obliterated, fixed, ...
 
 Version 1.6.2
 -------------
