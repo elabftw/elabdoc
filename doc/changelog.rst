@@ -24,6 +24,7 @@ Version 1.7.0
   * Better performances in page loading speed
   * Add possibility to change the item type from edit mode
   * Gmagick is now optional. The code will fallback to gd if you don't have gmagick installed
+  * Update ChemDoodle to 8.0.0
 
 * Dev corner:
 
