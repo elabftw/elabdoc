@@ -13,6 +13,7 @@ Version 1.7.0
 * Enhancements:
 
   * Add Steps to experiments (fix #309)
+  * Add tags to templates (fix #456)
   * Add the timestamped pdf to the zip archive (see #446)
   * Add an edit button in show mode
   * Add a checkbox on items in show mode and a menu to apply an action to several items (fix #427)
