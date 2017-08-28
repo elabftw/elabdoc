@@ -124,16 +124,17 @@ Code organization
 * app/models will contain classes with CRUD (Create, Read, Update, Destroy)
 * app/views will contain classes to generate and display HTML
 * app/classes will contain services or utility classes
-* a new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
+* A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
+* To get a good view of the relations between the classes, run `grunt api` and visit `_api/index.html`. Now check the Class hierarchy diagram from the top right menu.
 
 i18n
 ````
-* To be written.
+* Use the script `app/locale/genPo.sh` to generate the .po file in French.
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to add an update function in `app/classes/Update.php` and also modify `install/elabftw.sql` accordingly
+* if you make a change to the SQL stucture, you need to add an update function in `app/classes/Update.php` and also modify `install/elabftw.sql` and `tests/_data/phpunit.sql` accordingly
 * you can use the constant ELAB_ROOT (which ends with a /) to have a full path
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_

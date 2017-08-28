@@ -9,29 +9,40 @@ Version 1.7.0
 * Bugfixes:
 
   * Fix permissions issue on team groups (fix #428)
+  * Several minor bugfixes throughout the code were fixed
 
-* Enhancements:
+* New features:
 
   * Add Steps to experiments (fix #309)
   * Add tags to templates (fix #456)
-  * Add the timestamped pdf to the zip archive (see #446)
-  * Add an edit button in show mode
   * Add a checkbox on items in show mode and a menu to apply an action to several items (fix #427)
   * Add a default Order by and Sort option in profile (fix #370)
-  * Check if deleted image is in body. Show warning (fix #432)
   * Add a user preference for generating PDF with CJK fonts (fix #350)
-  * Submit the select-order-sort on change (fix #451)
   * Add user pref for single column layout (fix #410)
+  * Add possibility to use Markdown in the text editor (fix #302)
+
+* Enhancements:
+
+  * Add the timestamped pdf to the zip archive (see #446)
+  * Add an edit button in show mode
+  * Check if deleted image is in body. Show warning (fix #432)
+  * Submit the select-order-sort on change (fix #451)
   * Better performances in page loading speed
   * Add possibility to change the item type from edit mode
   * Gmagick is now optional. The code will fallback to gd if you don't have gmagick installed
   * Update ChemDoodle to 8.0.0
+  * Remove forced capitalization of names (fix #461)
 
+* Internationalization:
+
+  * 100% translated in French
+  * New strings need to be translated! See the contributing page to help
 * Dev corner:
 
   * Use Symfony HttpFoundation components (Request/Response/Session/Cookies)
   * Use Guzzle for the requests instead of php-curl
   * Proper documentation of class fields
+  * Better use of Twig templates
   * ...and a lot of code moved around, cleaned up, optimized, refactored, obliterated, fixed, ...
 
 Version 1.6.2
