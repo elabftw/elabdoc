@@ -73,7 +73,7 @@ Install php dependencies with `composer <https://getcomposer.org/download/>`_:
     # see https://getcomposer.org/download/
     $ ./composer.phar install --no-dev
 
-This will populate the `vendor` directory.
+This will populate the `vendor` directory and also complain about missing php extensions that you should install.
 
 
 SQL part
