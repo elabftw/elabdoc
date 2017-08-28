@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.7.1
+-------------
+
+* Bugfix:
+
+  * Fix issue with not correctly detecting HTTPS behind a proxy
+
 Version 1.7.0
 -------------
 
