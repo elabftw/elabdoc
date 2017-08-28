@@ -87,7 +87,7 @@ Option 1: Command line way
 .. code-block:: bash
 
     # first we connect to mysql
-    $ mysql -u root -p
+    $ mysql -uroot -p
     # we create the database (note the ; at the end !)
     mysql> create database elabftw;
     # we create the user that will connect to the database.
