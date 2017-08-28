@@ -194,21 +194,6 @@ If you have problems updating (git pull is failing because of permissions), read
 
     usermod -a -G www-data `whoami`
 
-Extension is not loaded
------------------------
-
-Install everything needed by elabftw:
-
-.. code-block:: bash
-
-    sudo apt-get install php-gettext php5-gd php5-curl libapache2-mod-php5
-
-Now reload the Apache server:
-
-.. code-block:: bash
-
-    sudo service apache2 reload
-
 I can't upload a file bigger than 2 Mb
 --------------------------------------
 
