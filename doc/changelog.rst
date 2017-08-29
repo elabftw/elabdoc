@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 1.7.3
+-------------
+
+* Bugfix:
+
+  * Fix issue updating if the database name was different from 'elabftw' (see #462)
+
+Version 1.7.2
+-------------
+
+* Bugfix:
+
+  * Fix issue with PHP version 5.6.x (fix #462)
+
 Version 1.7.1
 -------------
 
