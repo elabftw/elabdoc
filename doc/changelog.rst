@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 1.7.4
+-------------
+
+* Bugfixes:
+
+  * Fix issue with checkboxes in show mode in Chrome/Safari (fix #465)
+  * Fix issue with delete from checkboxes in show mode (fix #465)
+
 Version 1.7.3
 -------------
 
