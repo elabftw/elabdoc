@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 1.7.5
+-------------
+
+* Bugfixes:
+
+  * Fix bad redirect to install folder for old school install in subfolder of domain
+  * Fix issues with the change status/delete menu in show mode
+  * Fix issue with body overflowing when you toggle it from show mode (fix #469)
+  * Fix bad display of checkbox in show mode
+  * Fix issue with get_all_ functions in API
+
+* Enhancement:
+
+  * Add name of the experimenter on search page (fix #470)
+  * Updated composer components
+  * Updated tinymce and fullcalendar
+
 Version 1.7.4
 -------------
 
