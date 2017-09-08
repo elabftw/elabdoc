@@ -160,7 +160,7 @@ Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and c
 Tests
 `````
 
-The tests run on the Codeception framework. The acceptance tests will need to download the Selernium + Chrome headless docker image.
+The tests run on the Codeception framework. The acceptance tests will need to download the Selenium + Chrome headless docker image.
 
 .. code-block:: bash
 

@@ -43,14 +43,15 @@ Why use eLabFTW?
 * You can export one or several experiments as a ZIP archive
 * You can duplicate experiments in one click
 * There is advanced search capabilities
+* You can write in Markdown
 * The tagging system allows you to keep track of family of experiments
 * Experiments can have color coded statuses (that you can edit at will)
 * You can link an experiment with an item from the database to retrieve in a click the plasmid/sirna/antibody/chemical you used
 * And it works the other way around, you can find all experiments done with a particular item from the database !
 * There is a locking mechanism preventing further edition
-* You can prevent users from deleting experiments
 * You can comment on an experiment (if it's not your experiment)
 * You can import your old database stored in an excel file
+* You can use it in your language
 * :doc:`and much more… <features>`
 
 You also have to consider the fact that installing eLabFTW on your own server means that no one will be able to snoop on your data. If you have ever used Evernote or basically any online ELN that says «Free», read carefully the privacy policy, you might be surprised what they allow themselves to do under the cover of «to improve your experience»…
@@ -118,25 +119,6 @@ Can I try it before I install it?
 
 Sure, there is a demo online here : `eLabFTW live DEMO <https://demo.elabftw.net>`_
 
-But what about the others ELN out there?
-----------------------------------------
-
-First I'll only speak about the others free and open source lab notebook. Because there is no point in comparing free and privative software, as it's not the same philosophy at all!
-
-* Labtrove : labtrove is a glorified Wordpress plugin. Unfortunately, I didn't manage to install it so I can't really talk about it... Also, it wasn't updated since 2011 so it probably won't work with latest versions of Wordpress.
-
-* Indigo : It's for chemists only and it's in Java :/
-
-* Electronic laboratory notebook on sourceforge : Looks like it was made in 1999, poorly written, only client (no server), java.
-
-* MediaWiki : although it's very nice to have a wiki in your team, this is not designed to be an electronic lab notebook. So you should definitely have a wiki, but don't use it to store your experiments!
-
-* Mylabbook : nothing to see here. It's an empty shell.
-
-* Labbook : a perl based software, still stuck in 1999 and virtually impossible to install/use.
-
-* Cynote : has some qualities, but UI is terrible and the project is dead since 2010.
-
 What about compliance to standards?
 -----------------------------------
 eLabFTW tries to comply to the following standards :
@@ -157,11 +139,10 @@ The operating system of the server can be any.
 
 The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, make sure to have:
 
-* a webserver (nginx, apache, cherokee, lighttpd, …)
-* PHP version > 5.6
-* MySQL version > 5.5
-* HTTPS enabled
-* PHP extensions openssl, gmagick, hash and zip activated
+* a webserver (nginx, apache, cherokee, lighttpd, …) with HTTPS enabled
+* `PHP <https://secure.php.net/>`_ version > 5.6
+* `Composer <https://getcomposer.org/>`_
+* `MySQL <https://www.mysql.com/>`_ version > 5.5
 
 **Requirements for the client**
 - Any operating system with any browser (recent version).
@@ -187,12 +168,6 @@ If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (
     chmod 400 config.php
 
 The last line is to keep your config file secure. It might fail because the file is not there yet. Finish the install and do it after then.
-
-If you have problems updating (git pull is failing because of permissions), read more about GNU/Linux permissions and groups. For instance, you can add your user to the www-data group:
-
-.. code-block:: bash
-
-    usermod -a -G www-data `whoami`
 
 I can't upload a file bigger than 2 Mb
 --------------------------------------

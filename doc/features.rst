@@ -18,9 +18,10 @@ Experiments
 ^^^^^^^^^^^
 * custom status
 * visibility setting
-* rich wysiwyg editor
+* rich wysiwyg editor (or write in Markdown)
 * insert images into text
 * upload multiple files
+* steps list
 * duplicate experiments
 * export as pdf
 * export/import as zip archive
@@ -35,6 +36,7 @@ Experiments
 * molecule drawer (optional)
 * molecular structure files are previewed
 * user groups to restrict read access among a team
+* doodle canvas
 
 Database
 ^^^^^^^^
