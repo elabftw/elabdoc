@@ -61,7 +61,7 @@ You need to add the root certificate of the TSA somewhere where elabftw can read
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
-Set up a cronjob to rewew TLS certificates :sup:`(optional)`
+Set up a cronjob to renew TLS certificates :sup:`(optional)`
 -------------------------------------------------------------
 
 If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
