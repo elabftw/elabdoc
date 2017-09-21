@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 1.7.6
+-------------
+
+* Bugfixes:
+
+  * Fix issue with the change-pass page (fix #481)
+  * Fix issue with incorrect auth leading to SQL error display
+
+* Updates:
+
+  * Update Tinymce
+  * Update Fancybox
+  * Update Fullcalendar
+
 Version 1.7.5
 -------------
 
