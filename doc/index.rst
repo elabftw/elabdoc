@@ -43,7 +43,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
 
     install
     install-drop
-    install-qnap-nas
+    install-nas
     install-mac
     install-windows
     install-oldschool

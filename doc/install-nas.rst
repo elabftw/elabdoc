@@ -1,4 +1,4 @@
-.. _install-qnap-nas:
+.. _install-nas:
 
 Install on a Qnap NAS
 =====================
@@ -8,6 +8,8 @@ Install on a Qnap NAS
     :alt: qnap
 
 Tested with firmware version 4.3.3 on a TVS-EC1080.
+
+.. note:: This has been reported to work on a Synology NAS
 
 This page describes the installation of eLabFTW on a Qnap NAS. The procedure is different than on a normal GNU/Linux server.
 
