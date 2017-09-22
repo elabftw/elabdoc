@@ -527,7 +527,7 @@ Version 1.2.1
 
 * update the crypto lib to 2.0
 
-WARNING DOCKER USERS !!!!! IMPORTANT READ BELOW:
+WARNING DOCKER USERS!!!!! IMPORTANT READ BELOW:
 
 Once you pull the new version and visit a page, the config file will be updated with a new secret key. You need to copy it from inside the container to your docker-compose.yml file!
 
@@ -729,12 +729,12 @@ Version 1.1.6
 Version 1.1.5-p2
 ----------------
 
-* Hotfix : fix bug in permissions on DB items export (zip/pdf) (#183)
+* Hotfix: fix bug in permissions on DB items export (zip/pdf) (#183)
 
 Version 1.1.5-p1
 ----------------
 
-* Hotfix : fix bug in smtp password encryption (#182)
+* Hotfix: fix bug in smtp password encryption (#182)
 
 Version 1.1.5
 -------------
@@ -898,7 +898,7 @@ Version 0.12.5
 Version 0.12.4
 --------------
 
-* add languages : Catalan, Spanish, German and Italian
+* add languages: Catalan, Spanish, German and Italian
 * easier install on docker
 * fix a bug where wrong admin was informed of new user
 
@@ -973,7 +973,7 @@ Version 0.9.4.2
 * Add URL in CSV export
 * Show the lock on database item
 * Removed the html from zip export
-* Fix div blocks not passing the filter and losing formatting (thx David !)
+* Fix div blocks not passing the filter and losing formatting (thx David!)
 * Fix a bug with lock/unlock of items
 * Fix a bug in zip generation
 

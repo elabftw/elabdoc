@@ -152,7 +152,7 @@ What happens when you timestamp an experiment :
 - they timestamp it
 - we get a token back
 
-More info here : https://en.wikipedia.org/wiki/Trusted_timestamping
+More info here: https://en.wikipedia.org/wiki/Trusted_timestamping
 
 eLabFTW uses :rfc:`3161` for timestamping. So any TSA providing a :rfc:`3161` compatible way of timestamping will work.
 
@@ -162,7 +162,7 @@ You can also use a different timestamping provider. For instance `SafeCreative <
 
 elabid
 ``````
-In the bottom right part of the experiment, you can see something like : «Unique elabid : 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment. You can use it to reference an experiment with an external database.
+In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment. You can use it to reference an experiment with an external database.
 
 Comments
 ````````

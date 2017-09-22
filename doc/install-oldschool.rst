@@ -88,7 +88,7 @@ Option 1: Command line way
 
     # first we connect to mysql
     $ mysql -uroot -p
-    # we create the database (note the ; at the end !)
+    # we create the database (note the ; at the end!)
     mysql> create database elabftw;
     # we create the user that will connect to the database.
     mysql> grant usage on *.* to elabftw@localhost identified by 'YOUR_PASSWORD';
@@ -112,7 +112,7 @@ You need to install the package `phpmyadmin` if it's not already done.
 
 Now you will connect to the phpmyadmin panel from your browser on your computer. Type the IP address of the server followed by /phpmyadmin.
 
-Example : https://12.34.56.78/phpmyadmin
+Example: https://12.34.56.78/phpmyadmin
 
 Login with the root user on PhpMyAdmin panel (use the password you setup for mysql root user).
 
