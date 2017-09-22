@@ -1,7 +1,7 @@
 # elabdoc
 
 ## Description
-Source files for the [elabftw documentation](https://elabftw.readthedocs.io).
+Source files for the [elabftw documentation](https://doc.elabftw.net).
 
 ## Installation
 
