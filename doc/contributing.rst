@@ -8,8 +8,8 @@ Contributing
     :alt: contributing
     :target: http://mimiandeunice.com/
 
-What can you do to help this project ?
---------------------------------------
+What can you do to help this project?
+-------------------------------------
 
 * `Star it on GitHub <https://github.com/elabftw/elabftw>`_
 * Talk about it to your colleagues, spread the word!
@@ -25,7 +25,7 @@ Translating
 
 Do you know several languages? Are you willing to help localize eLabFTW? You're in the right place.
 
-How to translate ?
+How to translate?
 
 * `Join the project on poeditor.com <https://poeditor.com/join/project?hash=aeeef61cdad663825bfe49bb7cbccb30>`_
 * Select elabftw

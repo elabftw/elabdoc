@@ -8,7 +8,7 @@ suggestions to this project.
 
 Special thanks for the contributors on internationalization. There are more than 40 translators for the project :)
 
-eLabFTW uses open source code from others. A big thanks to them for making their code available !
+eLabFTW uses open source code from others. A big thanks to them for making their code available!
 
 * `jQuery <https://jquery.com>`_
 * `jQuery UI <https://jqueryui.com>`_

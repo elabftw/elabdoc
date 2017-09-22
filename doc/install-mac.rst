@@ -66,7 +66,7 @@ With XAMPP comes phpmyadmin. We will use this interface to do this part easily.
 Final step
 ----------
 
-Browse to : https://localhost/elabftw and follow onscreen instructions.
+Browse to: https://localhost/elabftw and follow onscreen instructions.
 
 .. hint:: There is no password for the mysql user root. So put root as mysql username and no password.
 

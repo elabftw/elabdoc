@@ -13,7 +13,7 @@ But how is it better than something I can buy?
 
 The difference is huge. Because eLabFTW is not only free (as in beer), but it is free (as in speech). This means that you can have a look at the code (and improve it) and you can also redistribute the code with your improvements.
 
-But more importantly, you cannot trust your data with something that acts like a **black box**. What if the data you upload on the server of a company can be read by someone else ? With eLabFTW, you install it on your own server, and you are the master of your data at all time.
+But more importantly, you cannot trust your data with something that acts like a **black box**. What if the data you upload on the server of a company can be read by someone else? With eLabFTW, you install it on your own server, and you are the master of your data at all time.
 
 What about patents and intellectual property?
 ---------------------------------------------
@@ -47,7 +47,7 @@ Why use eLabFTW?
 * The tagging system allows you to keep track of family of experiments
 * Experiments can have color coded statuses (that you can edit at will)
 * You can link an experiment with an item from the database to retrieve in a click the plasmid/sirna/antibody/chemical you used
-* And it works the other way around, you can find all experiments done with a particular item from the database !
+* And it works the other way around, you can find all experiments done with a particular item from the database!
 * There is a locking mechanism preventing further edition
 * You can comment on an experiment (if it's not your experiment)
 * You can import your old database stored in an excel file
@@ -64,7 +64,7 @@ Yes. It is used in numerous research centers all over the world since a few year
 
 However, having an automated :ref:`backup <backup>` strategy is mandatory in order to be sure **nothing will be lost**.
 
-Being able to do backups is yet another advantage over paper (you can't backup paper !).
+Being able to do backups is yet another advantage over paper (you can't backup paper!).
 
 Who else is using it?
 ---------------------
@@ -117,7 +117,7 @@ Yes, in the admin panel, click on the Import CSV link and follow the instruction
 Can I try it before I install it?
 ---------------------------------
 
-Sure, there is a demo online here : `eLabFTW live DEMO <https://demo.elabftw.net>`_
+Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_
 
 What about compliance to standards?
 -----------------------------------
@@ -178,7 +178,7 @@ Edit the file php.ini and change the value of upload_max_filesize to something b
 
     upload_max_filesize = 128M
 
-.. warning:: Don't forget to remove the `;` at the beginning of the line !
+.. warning:: Don't forget to remove the `;` at the beginning of the line!
 
 I can't export my (numerous) experiments in zip, I get an error 500
 -------------------------------------------------------------------
