@@ -17,6 +17,15 @@ What can you do to help this project?
 * Help with the translation
 * Open GitHub issues to discuss bugs or suggest features
 
+Reporting a security issue
+--------------------------
+
+If you've found a security issue, please report it by email to the address associated to my GPG key:
+
+.. code-block:: bash
+
+    gpg --search-keys "Nicolas CARPi"
+
 .. image:: img/i18n.png
     :align: right
 
