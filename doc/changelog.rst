@@ -3,6 +3,26 @@
 Changelog
 =========
 
+Version 1.7.7
+-------------
+
+* New feature:
+
+  * Add simple markdown editor (#486) by @Athemis
+
+* Enhancements:
+
+  * Employ neutral pronouns to refer to the users (#497) by @Armavica
+  * Add rel='noopener' to links with _blank target
+  * Code cleanup
+
+* Updates:
+
+  * Update Tinymce to 4.7.1
+  * Update Dropzone to 5.2.0
+  * Update Fullcalendar to 3.5.1
+  * Update PHP dependencies
+
 Version 1.7.6
 -------------
 
@@ -26,9 +46,9 @@ Version 1.7.5
   * Fix issues with the change status/delete menu in show mode
   * Fix issue with body overflowing when you toggle it from show mode (fix #469)
   * Fix bad display of checkbox in show mode
-  * Fix issue with get_all_ functions in API
+  * Fix issue with get_all functions in API
 
-* Enhancement:
+* Enhancements:
 
   * Add name of the experimenter on search page (fix #470)
   * Updated composer components
