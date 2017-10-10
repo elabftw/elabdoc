@@ -198,8 +198,8 @@ Then, point your browser to the `_api/index.html`.
 
 You can have a look at the errors report to check that you commented all new functions properly.
 
-Make a gif
-----------
+Making a gif
+------------
 
 * make a capture with xvidcap, it outputs .xwd
 
@@ -225,3 +225,13 @@ Make a gif
     $ ffmpeg -i out.gif -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" out-final.gif
 
 * upload to original one to gfycat and the smaller one to imgur
+
+Updating tinymce
+----------------
+
+* edit package.json and increment version
+* yarn install && grunt
+* rm -r app/js/{plugins,skins,themes}
+* cp -r node_modules/tinymce/{plugins,skins,themes} app/js
+* cp -r node_modules/tinymce-mention/mention app/js/plugins/
+
