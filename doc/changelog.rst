@@ -26,7 +26,7 @@ Version 1.7.7
 
   * Update Tinymce to 4.7.1
   * Update Dropzone to 5.2.0
-  * Update Fullcalendar to 3.6.1
+  * Update Fullcalendar to 3.6.2
   * Update PHP dependencies
 
 Version 1.7.6
