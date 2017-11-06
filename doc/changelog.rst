@@ -12,6 +12,7 @@ Version 1.7.7
 
 * Bugfixes:
 
+  * Fix CJK font not displayed inside a table in a pdf (#350)
   * Fix issue in check for update function on sysadmin page behind a proxy (#514) by @zommak
   * Always feed body of experiments to md2html (#510) by @Athemis
   * Fix permission issue on experiments (#498)
