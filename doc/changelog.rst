@@ -10,6 +10,12 @@ Version 1.7.7
 
   * Add simple markdown editor (#486) by @Athemis
 
+* Bugfixes:
+
+  * Fix issue in check for update function on sysadmin page behind a proxy (#514) by @zommak
+  * Always feed body of experiments to md2html (#510) by @Athemis
+  * Fix permission issue on experiments (#498)
+
 * Enhancements:
 
   * Employ neutral pronouns to refer to the users (#497) by @Armavica
