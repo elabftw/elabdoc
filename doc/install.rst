@@ -54,14 +54,6 @@ Install eLabFTW
 
     elabctl start
 
-This step can take up to 3 minutes to complete because it'll generate strong Diffie-Hellman parameters. You can follow the output with:
-
-.. code-block:: bash
-
-    docker logs -f elabftw
-
-Once started, you will see something like: nginx entered RUNNING state. You can now finalize the install with the last step.
-
 * Register a Sysadmin account:
 
     Point your browser to **\https://<your-elabftw-site.org>** (or **\https://<IP address>**)
