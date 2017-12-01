@@ -27,6 +27,10 @@ Version 1.7.9
 
   * Remove unsafe-inline and unsafe-eval from the Content Security Policy header. Now elabftw can be used with a very restrictive CSP header.
 
+* Bugfixes:
+
+  * Fix bug where very long titles without spaces would break the layout (#517)
+
 Version 1.7.8
 -------------
 
