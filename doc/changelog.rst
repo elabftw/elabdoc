@@ -3,6 +3,35 @@
 Changelog
 =========
 
+Version 1.7.9
+-------------
+
+* New features:
+
+  * Add possibility to bulk change visibility for experiments (#527)
+  * Add user option to prevent pdf from displaying attached files (#502)
+  * Add possibility to add a tag from the API (#468)
+
+* Enhancements:
+
+  * Add link to revisions from view mode (#536)
+
+* Updates:
+
+  * Update Tinymce to 4.7.3
+  * Update Fancybox to 3.2.5
+  * Update Fullcalendar to 3.7.0
+  * Update 3Dmol.js to 1.3.0
+
+* Docker:
+
+  * Remove unsafe-inline and unsafe-eval from the Content Security Policy header. Now elabftw can be used with a very restrictive CSP header.
+
+Version 1.7.8
+-------------
+
+* Fix incorrect schema version
+
 Version 1.7.7
 -------------
 
