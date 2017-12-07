@@ -3,7 +3,7 @@
 Changelog
 =========
 
-Version 1.7.9
+Version 1.8.0
 -------------
 
 * New features:
@@ -11,25 +11,42 @@ Version 1.7.9
   * Add possibility to bulk change visibility for experiments (#527)
   * Add user option to prevent pdf from displaying attached files (#502)
   * Add possibility to add a tag from the API (#468)
+  * Add option to disable PDF/A generation and make pdf lighter (no embedded fonts)
+  * Add option to change paper format of PDF (A4, Letter, Royal)
+  * Add possibility to allow anonymous logins (#279)
+  * Add Public visibility to experiments. Will be visible to anonymous users
+  * Add possibility to archive a user. The user can then create another account in another team (#483)
+  * Add possibility to see and import templates from other members of the team
 
 * Enhancements:
 
   * Add link to revisions from view mode (#536)
+  * Add pagination
 
 * Updates:
 
-  * Update Tinymce to 4.7.3
+  * Update Tinymce to 4.7.4
   * Update Fancybox to 3.2.5
   * Update Fullcalendar to 3.7.0
   * Update 3Dmol.js to 1.3.0
+  * Update mPDF to version 7.0.2
 
 * Docker:
 
   * Remove unsafe-inline and unsafe-eval from the Content Security Policy header. Now elabftw can be used with a very restrictive CSP header.
+  * Make the Diffie-Hellman parameters generation in background for faster webserver startup
+  * Disable unsafe functions in php.ini
+  * Enable open_basedir restriction
+  * Use longer SID, store sessions in separate directory with restrictive permissions
+  * Disable allow_url_fopen
+  * Add config for PHP timezone
 
 * Bugfixes:
 
   * Fix bug where very long titles without spaces would break the layout (#517)
+  * Fix bug where deleting a tag would result in another tag of the same item being deleted (#504)
+  * Restrict scheduler slots edit to owner (#506)
+  * Fix a display issue with very long titles with no spaces (#517)
 
 Version 1.7.8
 -------------
