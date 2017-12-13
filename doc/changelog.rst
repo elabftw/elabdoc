@@ -17,6 +17,7 @@ Version 1.8.0
   * Add Public visibility to experiments. Will be visible to anonymous users
   * Add possibility to archive a user. The user can then create another account in another team (#483)
   * Add possibility to see and import templates from other members of the team
+  * Add button to replace existing uploaded file with new version (#501)
 
 * Enhancements:
 
@@ -33,13 +34,14 @@ Version 1.8.0
 
 * Docker:
 
-  * Remove unsafe-inline and unsafe-eval from the Content Security Policy header. Now elabftw can be used with a very restrictive CSP header.
+  * Remove unsafe-inline and unsafe-eval from the Content Security Policy header: now elabftw can be used with a very restrictive CSP header
   * Make the Diffie-Hellman parameters generation in background for faster webserver startup
   * Disable unsafe functions in php.ini
   * Enable open_basedir restriction
   * Use longer SID, store sessions in separate directory with restrictive permissions
   * Disable allow_url_fopen
   * Add config for PHP timezone
+  * Add config for setting "set_real_ip_from" in nginx config
 
 * Bugfixes:
 
@@ -47,6 +49,7 @@ Version 1.8.0
   * Fix bug where deleting a tag would result in another tag of the same item being deleted (#504)
   * Restrict scheduler slots edit to owner (#506)
   * Fix a display issue with very long titles with no spaces (#517)
+  * Fix incorrect redirection in subfolder install (#549)
 
 Version 1.7.8
 -------------
