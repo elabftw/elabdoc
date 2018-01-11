@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 1.8.1
+-------------
+
+* Bugfixes:
+
+  * Fix bad URL generation sent by email after new user registration (#587)
+
+* Dev corner:
+
+  * Add Snyk test for vuln detection
+
 Version 1.8.0
 -------------
 
