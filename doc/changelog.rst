@@ -9,6 +9,8 @@ Version 1.8.1
 * Bugfixes:
 
   * Fix bad URL generation sent by email after new user registration (#587)
+  * Fix problem in API (#569)
+  * Fix PHP.ini bad sed (docker only)
 
 * Dev corner:
 
