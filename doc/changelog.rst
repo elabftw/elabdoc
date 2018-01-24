@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 1.8.2
+-------------
+
+* Bugfixes:
+
+  * Fig bug where templates from other teams would show up in the Team page
+
+* Updates:
+
+  * Update jQuery, TinyMCE, DropZone and snyk
+
 Version 1.8.1
 -------------
 
