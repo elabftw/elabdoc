@@ -53,6 +53,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     :caption: Usage
 
     postinstall
+    quickstart
     manual
     backup
     how-to-update
