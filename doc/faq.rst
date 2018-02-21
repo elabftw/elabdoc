@@ -81,7 +81,6 @@ Here are some places running eLabFTW (non-exhaustive list):
 * Karolinska Institutet
 * Kuwait University
 * Max-Planck-Institute of Quantum Optics
-* MRC Laboratory of Molecular Biology
 * Texas Tech University
 * UMC Utrecht
 * University of Alberta
