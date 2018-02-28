@@ -3,6 +3,24 @@
 Changelog
 =========
 
+Version 1.8.3
+-------------
+
+* Bugfixes:
+
+  * Fix issue when user stays on edit page long enough for the server session to end and data could not be saved
+
+* Enhancements:
+
+  * The tag is saved with onBlur event (because it was not obvious that you had to press enter to save it)
+  * The cookies checkbox is now checked by default
+  * Add option to specify the full URL of the install to prevent issues with URL guessing on some setups (#567)
+
+* Updates:
+
+  * Update TinyMCE from 4.7.5 to 4.7.9
+  * Update jquery-jeditable to 2.0.0
+
 Version 1.8.2
 -------------
 
