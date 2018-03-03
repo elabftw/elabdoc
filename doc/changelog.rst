@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.8.4
+-------------
+
+* Bugfix:
+
+  * Fix password reset
+
 Version 1.8.3
 -------------
 
