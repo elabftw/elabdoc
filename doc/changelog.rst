@@ -3,6 +3,65 @@
 Changelog
 =========
 
+Version 2.0.0
+-------------
+
+WARNING: BREAKING CHANGES IN THIS RELEASE!
+
+Please read carefully theses notes before upgrading your installation.
+
+For Docker users: because you chose to use Docker, you have absolutely nothing to do, you can upgrade, sit back and relax. That's the advantage of using Docker: even if I move everything around in the image, for you it's transparent!
+
+For non-Docker users: you need to perform the following steps in order to get your installation up and running.
+
+Note: eLabFTW 2.0 branch is now requiring at least php version 7.1. If your version of PHP is below 7.1 you can either keep the 1.8 branch, or convert your installation to a Docker install.
+
+Upgrading guide from 1.8.x to 2.0.x (remember this is only for non-docker users):
+
+Before upgrading:
+
+* Install `yarn`. See `install page <https://yarnpkg.com/en/docs/install>`_.
+* Install `composer`. See `install page <https://getcomposer.org/download/>`_.
+
+
+.. code-block:: bash
+
+    # get the latest version
+    git pull
+    # OR download the zip and overwrite the files (but seriously, use git, we're not in the middle age anymore…)
+
+    # now create the minified javascripts
+    yarn run build
+    grunt
+
+    # install the php dependencies
+    composer install --no-dev
+
+    # create the cache directory
+    mkdir cache
+    # showing example with www-data but adapt it to your webserver user (can be nginx or httpd for instance)
+    chown www-data:www-data cache
+    chmod 700 cache
+
+    # move the config file to its new place
+    mv config.php web/
+
+Okay now you need to edit your webserver's config file to point the root directory of elabftw to the web folder (previously it was the elabftw folder).
+
+For nginx:
+
+.. code-block:: nginx
+
+    root /path/to/elabftw/web;
+
+For Apache:
+
+.. code-block:: apache
+
+    DocumentRoot "/path/to/elabftw/web"
+
+And reload the webserver.
+
 Version 1.8.4
 -------------
 
