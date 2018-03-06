@@ -135,7 +135,7 @@ Code organization
 * app/classes will contain services or utility classes
 * A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
-* To get a good view of the relations between the classes, run `grunt api` and visit `_api/index.html`. Now check the Class hierarchy diagram from the top right menu.
+* To get a good view of the relations between the classes, get `phpDocumentor.phar <http://phpdoc.org/phpDocumentor.phar>`_, run `grunt api` and visit `_api/index.html`. Now check the Class hierarchy diagram from the top right menu.
 
 i18n
 ````

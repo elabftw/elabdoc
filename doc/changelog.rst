@@ -14,9 +14,25 @@ For Docker users: because you chose to use Docker, you have absolutely nothing t
 
 For non-Docker users: you need to perform the following steps in order to get your installation up and running.
 
-Note: eLabFTW 2.0 branch is now requiring at least php version 7.1. If your version of PHP is below 7.1 you can either keep the 1.8 branch, or convert your installation to a Docker install.
+Note: eLabFTW 2.0 branch is now requiring at least php version 7.1. If your version of PHP is below 7.1 you can either keep the 1.8 branch, convert your installation to a Docker install, or install php 7.1 on your server.
 
-Upgrading guide from 1.8.x to 2.0.x (remember this is only for non-docker users):
+Why this update?
+````````````````
+Sometimes, you have to break things to make them better. With the version 2 I could remove support for php 5.6, allowing me to use the latest version of Swiftmailer. I could move the web served directory to a separate directory that is not the root directory of the repo. This means the `uploads` folder is not in the webdir anymore which is better for security. I could update different components to a major version (bootstrap, twig), use Webpack to deal better with the Javascripts, remove all the minified files from the git tracking. This means more work to install it without Docker, but the Docker method being the recommended one it's ok. It also means the repository is smaller and faster to clone. So basically with 2.0 I felt free to break everything and then rebuild it better after, without having to worry about anything (as long as I can write a proper upgrade documentation for non docker users!).
+
+What changed?
+`````````````
+* Require php 7.1
+* Update SwiftMailer to version 6
+* Update Twig to version 2
+* Update Bootstrap to version 4
+* Use Webpack 4 to create bundles (using tree shaking feature to make smaller bundles)
+* Use ES6 for Javascript
+* Drop phpdocumentor dependency in composer.json, use the phar instead
+
+Upgrading guide from 1.8.x to 2.0.x
+```````````````````````````````````
+(remember this is only for non-docker users):
 
 Before upgrading:
 
