@@ -16,6 +16,7 @@ What can you do to help this project?
 * Have a look at `the current issues <https://github.com/elabftw/elabftw/issues>`_
 * Help with the translation
 * Open GitHub issues to discuss bugs or suggest features
+* `Star it on GitHub really <https://github.com/elabftw/elabftw>`_
 
 Reporting a security issue
 --------------------------
@@ -50,6 +51,8 @@ Contributing to the code
 Environment installation
 ````````````````````````
 
+So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker, but you'll need to install locally some dev tools (like yarn, or phpDocumentor).
+
 Here is a step-by-step for installing an eLabFTW dev setup:
 
 * First let's define a directory for dev (adapt to your needs):
@@ -73,17 +76,6 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     # create your feature branch from the hypernext branch
     git checkout -b my-feature
 
-* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. Install it.
-* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. Install it.
-* Now install the PHP and JavaScript dependencies (they are not tracked by git):
-
-.. code-block:: bash
-
-    # php dependencies (vendor/ directory)
-    composer install
-    # javascript dependencies (node_modules/ directory)
-    yarn install
-
 * Install *elabctl* and the configuration file
 
 .. code-block:: bash
@@ -102,7 +94,18 @@ Here is a step-by-step for installing an eLabFTW dev setup:
 .. code-block:: bash
 
    sudo elabctl start
-   # allow up to 2 minutes for the web container to start
+
+
+* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. But you don't need to install it because we'll use the one in the container (so all php extensions are correctly loaded).
+* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. Install it.
+* Now install the PHP and JavaScript dependencies (they are not tracked by git):
+
+.. code-block:: bash
+
+    # php dependencies (vendor/ directory)
+    docker run -it elabftw composer install
+    # javascript dependencies (node_modules/ directory)
+    yarn install
 
 * Enable debug mode to disable the caching of Twig templates
 
@@ -128,30 +131,30 @@ Making a pull request
 
 Code organization
 `````````````````
-* Real accessible pages are in the root directory (experiments.php, database.php, login.php, etc…)
-* The rest is in app/
-* app/models will contain classes with CRUD (Create, Read, Update, Destroy)
-* app/views will contain classes to generate and display HTML
-* app/classes will contain services or utility classes
+* Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)
+* The rest is in app/ or src/ for PHP classes
+* src/models will contain classes with CRUD (Create, Read, Update, Destroy)
+* src/views will contain classes to generate and display HTML
+* src/classes will contain services or utility classes
 * A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
-* To get a good view of the relations between the classes, get `phpDocumentor.phar <http://phpdoc.org/phpDocumentor.phar>`_, run `grunt api` and visit `_api/index.html`. Now check the Class hierarchy diagram from the top right menu.
 
 i18n
 ````
-* Use the script `app/locale/genPo.sh` to generate the .po file in French.
+* Use the script `web/app/locale/genpo.sh` to generate the .po file in French.
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to add an update function in `app/classes/Update.php` and also modify `install/elabftw.sql` and `tests/_data/phpunit.sql` accordingly
-* you can use the constant ELAB_ROOT (which ends with a /) to have a full path
+* if you make a change to the SQL stucture, you need to add an update function in `src/classes/Update.php` and also modify `web/install/elabftw.sql` and `tests/_data/phpunit.sql` accordingly
+* you can use the constant ELAB_ROOT (which ends with a /) to have an absolute path
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
 * add a plugin to your editor to show PSR-1 errors
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
-* if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_.
+* if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
+* use `yarn run build` to build the JS bundles
 
 Grunt
 `````
@@ -188,6 +191,7 @@ To run a SonarQube analysis, first start a SonarQube server and then start the s
 
 API Documentation
 `````````````````
+To get a good view of the relations between the classes, get `phpDocumentor.phar <http://phpdoc.org/phpDocumentor.phar>`_.
 
 To generate a PHP Docblock documentation:
 
