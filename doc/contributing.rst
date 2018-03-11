@@ -154,21 +154,32 @@ Miscellaneous
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 * if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
-* use `yarn run build` to build the JS bundles
 
-Grunt
+Build
 `````
-Since version 1.1.7, elabftw uses `grunt <http://gruntjs.com/>`_ to minify and concatenate files (JS and CSS), among other things.
+Since version 2.0.0, you need to build the minified files before using the app.
 
-* Install grunt with :
+* Install grunt with:
 
 .. code-block:: bash
 
-    sudo npm install -g grunt-cli
-    # regenerate JS and CSS
+    npm install -g grunt-cli
+
+* Now start minifying files:
+
+.. code-block:: bash
+
+    # build bundles
+    # see builder.js
+    yarn run build
+    # build some JS and CSS
+    # see Gruntfile.js
     grunt
-    # only css (faster)
+    # build only css
     grunt css
+    # build all JS and CSS
+    # see builder.js + Gruntfile.js
+    yarn run buildall
 
 Tests
 `````
@@ -177,10 +188,10 @@ The tests run on the Codeception framework. The acceptance tests will need to do
 
 .. code-block:: bash
 
-    $ grunt unit # will run the unit tests
-    $ grunt test # will run the unit and acceptance tests
+    $ yarn run unit # will run the unit tests
+    $ yarn run test # will run the unit and acceptance tests
 
-For code coverage you need to enable the xdebug PHP extension and run `grunt coverage`.
+For code coverage you need to enable the xdebug PHP extension and run `yarn run coverage`.
 
 To run a SonarQube analysis, first start a SonarQube server and then start the scanner from the code root:
 
@@ -191,17 +202,37 @@ To run a SonarQube analysis, first start a SonarQube server and then start the s
 
 API Documentation
 `````````````````
-To get a good view of the relations between the classes, get `phpDocumentor.phar <http://phpdoc.org/phpDocumentor.phar>`_.
+To get a good view of the relations between the classes, get `phpDocumentor <https://phpdoc.org>`_ and make sure you can execute it:
+
+.. code-block:: bash
+
+    $ wget https://phpdoc.org/phpDocumentor.phar
+    $ chmod +x phpDocumentor.phar
+    $ sudo mv phpDocumentor.phar /usr/local/bin/phpDocumentor
 
 To generate a PHP Docblock documentation:
 
 .. code-block:: bash
 
-    $ grunt api
+    $ yarn run srcdoc
 
-Then, point your browser to the `_api/index.html`.
+Then, point your browser to the `_srcdoc/index.html`.
 
 You can have a look at the errors report to check that you commented all new functions properly.
+
+To generate the documentation for the API, you'll need `apidoc <http://apidocjs.com/>`_, install it first:
+
+.. code-block:: bash
+
+    $ npm install -g apidoc
+
+Make sure the npm `bin` folder is in your $PATH.
+
+.. code-block:: bash
+
+    $ yarn run apidoc
+
+Then, point your browser to the `_apidoc/index.html`.
 
 Making a gif
 ------------
