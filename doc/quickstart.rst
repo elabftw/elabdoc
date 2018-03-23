@@ -27,7 +27,7 @@ Tags
 
 The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
 
-To add a tag, start typing the tag (an autocompletion menu will show up if you already have some tags) and press ENTER to validate the tag. If you don't press ENTER, the tag will not be saved!
+To add a tag, start typing the tag (an autocompletion menu will show up if you already have some tags) and press ENTER to save the tag (clicking outside the input field will also save it).
 
 .. image:: img/quick_tags.gif
 
