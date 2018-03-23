@@ -47,6 +47,9 @@ Translations are updated before a release.
 Contributing to the code
 ------------------------
 
+STOP RIGHT HERE. This documentation is for 1.8.x version. But I'm currently working on 2.0.0 so you should have a look at the 2.0.0 version of the doc. Clone elabftw/elabdoc, checkout the next branch and `grunt doc`. Then point your browser to the index.html in the build folder.
+
+
 Environment installation
 ````````````````````````
 
