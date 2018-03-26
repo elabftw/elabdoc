@@ -5,6 +5,8 @@ How to update
 
 .. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
 
+.. note:: If you are running out of disk space, you can do "docker system prune -a" to free up some space taken by old images.
+
 If you installed it with elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -46,3 +48,4 @@ If you installed it from a .zip or .tar.gz archive
 
     # see https://getcomposer.org to install composer
     composer install --no-dev
+
