@@ -162,8 +162,8 @@ If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (
 .. code-block:: bash
 
     cd /path/to/elabftw
-    mkdir -p uploads/tmp
-    chown -R www-data:www-data uploads
+    mkdir uploads
+    chown www-data:www-data uploads
     chmod 400 config.php
 
 The last line is to keep your config file secure. It might fail because the file is not there yet. Finish the install and do it after then.
