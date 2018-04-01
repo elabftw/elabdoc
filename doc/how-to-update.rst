@@ -69,6 +69,26 @@ If you are using Docker, you don't need to do anything. Just update normally, th
 
 If you are not using Docker you'll want to read the following paragraphs carefully.
 
+PHP version
+-----------
+
+The minimum PHP version is now 7.1. If you are running an earlier version than that you'll need to update your PHP to at least 7.1. It is possible to have several versions of PHP running at the same time. But if you cannot update to a more recent version of PHP there are two things you can do:
+
+* Stay on branch 1.8 for the time being
+* :ref:`Convert your installation to Docker <upgrade-to-docker>`
+
+Now before you open a GitHub issue ranting about why I do not support PHP < 7.1, let me tell you a few reasons why this was done:
+
+* eLabFTW is a Docker first project, it means that although using it outside Docker is possible (and always will be), running into versions problems is inherent to any non docker process. As I said above, you can install Docker and convert your install to a Docker install and forget about missing PHP extensions and versions mismatchs.
+* Some dependencies used by eLabFTW require PHP 7.1 like SwiftMailer (to send emails) and HTTPFoundation. Because the rest of the ecosystem is moving forward, and eLabFTW being a modern web app is also moving forward.
+* There is a 2X speed improvement between PHP 5.6 and 7.x.
+* PHP 7.1 allows me to use strict typing, which will highly reduce the possibility of bugs.
+* Making PHP 7.1 allows me to remove the fixes that I had to make to be compatible with PHP 5.6.
+* PHP 5.6 and 7.0 are already in Security Fixes only mode (see `PHP supported versions <https://secure.php.net/supported-versions.php>`_).
+* PHP 5.6 and 7.0 support ends at the end of 2018, so you'll have to update anyway.
+* It is the responsability of the developer to push forward for new versions. Wordpress can still be run with PHP 5.2 and that's an issue. It makes the code ancient and bad, forbidding devs to use modern solutions implemented in the most recent iterations of the language. This also enables users to keep insecure versions of PHP installed on their webserver. I'm pretty concerned about security, so I have absolutely no intent to keep supporting old versions that do not receive security fixes anymore.
+* It might push users to finally use Docker. The Docker version of eLabFTW is much more secure than a 'normal install' because I've taken numerous steps to configure all the components tightly. Something I cannot do if you're running eLabFTW outside a container.
+
 Web root
 --------
 
