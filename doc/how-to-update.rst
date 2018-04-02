@@ -98,7 +98,7 @@ For Apache 2.4:
 
 .. code-block:: apache
 
-    DocumentRoot /path/to/elabftw/web
+    DocumentRoot "/path/to/elabftw/web"
 
 For nginx:
 
@@ -131,3 +131,13 @@ Previously all the temporary files were written to `uploads/tmp`, now there is a
     chmod 700 cache
 
 In the example above I'm using the user/group `www-data` because it's the most common, but you'll need to adapt it to your needs. It might be nginx, httpd or anything else. Refer to the configuration of your webserver to see under which user the webserver is executed.
+
+Config.php
+----------
+
+It must be moved to the `web` directory:
+
+.. code-block:: bash
+
+    # move the config file to its new place
+    mv config.php web/

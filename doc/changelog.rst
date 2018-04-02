@@ -22,61 +22,22 @@ Sometimes, you have to break things to make them better. With the version 2 I co
 
 What changed?
 `````````````
-* Require php 7.1
+
+Under the hood:
+
+* Mininum PHP version is now 7.1
 * Update SwiftMailer to version 6
 * Update Twig to version 2
 * Update Bootstrap to version 4
 * Use Webpack 4 to create bundles (using tree shaking feature to make smaller bundles)
-* Use ES6 for Javascript
+* Use ES6 syntax for Javascript (const/let instead of var for instance)
 * Drop phpdocumentor dependency in composer.json, use the phar instead
+* Use strict_types
+* Use type hinting
 
-Upgrading guide from 1.8.x to 2.0.x
-```````````````````````````````````
-(remember this is only for non-docker users):
+New features:
 
-Before upgrading:
-
-* Install `yarn`. See `install page <https://yarnpkg.com/en/docs/install>`_.
-* Install `composer`. See `install page <https://getcomposer.org/download/>`_.
-
-
-.. code-block:: bash
-
-    # get the latest version
-    git pull
-    # OR download the zip and overwrite the files (but seriously, use git, we're not in the middle age anymore…)
-
-    # now create the minified javascripts
-    yarn run build
-    grunt
-
-    # install the php dependencies
-    composer install --no-dev
-
-    # create the cache directory
-    mkdir cache
-    # showing example with www-data but adapt it to your webserver user (can be nginx or httpd for instance)
-    chown www-data:www-data cache
-    chmod 700 cache
-
-    # move the config file to its new place
-    mv config.php web/
-
-Okay now you need to edit your webserver's config file to point the root directory of elabftw to the web folder (previously it was the elabftw folder).
-
-For nginx:
-
-.. code-block:: nginx
-
-    root /path/to/elabftw/web;
-
-For Apache:
-
-.. code-block:: apache
-
-    DocumentRoot "/path/to/elabftw/web"
-
-And reload the webserver.
+* Database items now have comments (fix #508)
 
 Version 1.8.4
 -------------
