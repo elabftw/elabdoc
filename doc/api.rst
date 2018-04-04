@@ -43,6 +43,10 @@ Using Bash/cURL
     curl -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/items/5"
     # upload a file to experiment 3
     curl -X POST -F "file=@your-file.jpg" -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
+    # add a link to an experiment
+    curl -X POST -F "link=195" -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
+    # add a tag to an experiment
+    curl -X POST -F "tag=my-super-tag" -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
 
 
 Using Python
