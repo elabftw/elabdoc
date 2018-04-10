@@ -153,7 +153,7 @@ The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, mak
 Failed creating *uploads/* directory
 ------------------------------------
 
-If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (www-data on Debian/Ubuntu) didn't have the necessary rights. To fix it you need to:
+If eLabFTW couldn't create an *uploads/* or *cache/* folder, that's because the httpd user (www-data on Debian/Ubuntu) didn't have the necessary rights. To fix it you need to:
 
 1. Find what is the user/group of the web server. There is a good chance that it is www-data. But it might also be something else.
 
@@ -162,8 +162,8 @@ If eLabFTW couldn't create an *uploads/* folder, that's because the httpd user (
 .. code-block:: bash
 
     cd /path/to/elabftw
-    mkdir uploads
-    chown www-data:www-data uploads
+    mkdir uploads cache
+    chown www-data:www-data uploads cache
     chmod 400 config.php
 
 The last line is to keep your config file secure. It might fail because the file is not there yet. Finish the install and do it after then.
