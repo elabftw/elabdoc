@@ -42,10 +42,6 @@ Connect to your server with SSH:
 .. code-block:: bash
 
     $ cd /var/www/html
-    # make the directory writable by your user (if it's not already the case)
-    $ sudo chown `whoami`:`whoami` .
-
-Note the `.` at the end that means `current folder`.
 
 Get latest stable version via git:
 
@@ -75,6 +71,12 @@ Install php dependencies with `composer <https://getcomposer.org/download/>`_:
 
 This will populate the `vendor` directory and also complain about missing php extensions that you should install.
 
+Install and build JavaScript with `yarn <https://yarnpkg.com/en/docs/install>`_:
+
+.. code-block:: bash
+
+    $ yarn install
+    $ yarn buildall
 
 SQL part
 --------
