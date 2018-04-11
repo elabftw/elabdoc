@@ -192,6 +192,8 @@ Then restart your webserver:
 
     sudo service apache2 restart
 
+For nginx, you can also add `fastcgi_read_timeout 300;` in the `http` section.
+
 Languages don't work
 --------------------
 
