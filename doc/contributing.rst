@@ -169,17 +169,11 @@ Since version 2.0.0, you need to build the minified files before using the app.
 
 .. code-block:: bash
 
-    # build bundles
-    # see builder.js
-    yarn run build
-    # build some JS and CSS
-    # see Gruntfile.js
-    grunt
-    # build only css
-    grunt css
-    # build all JS and CSS
-    # see builder.js + Gruntfile.js
+    # install the packages
+    yarn install
     yarn run buildall
+
+Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn) and `Gruntfile.js` (grunt).
 
 Tests
 `````
