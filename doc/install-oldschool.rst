@@ -128,6 +128,44 @@ Do like this:
 
 .. image:: img/phpmyadmin.png
 
+Configuring the webserver correctly
+-----------------------------------
+
+The Docker image of eLabFTW contains a lot of little configuration tweaks to improve the security of the web application. Here are some of them that you can apply to your web server configuration.
+
+Nginx or Apache config
+^^^^^^^^^^^^^^^^^^^^^^
+See the `nginx config files <https://github.com/elabftw/elabimg/blob/master/src/nginx/https.conf>`_ from Docker image.
+
+* Add security headers (IMPORTANT). See the end of `this file <https://github.com/elabftw/elabimg/blob/master/src/nginx/common.conf>`_.
+* Use a proper TLS certificate, not a self-signed one
+* Use DH params of 2048 bits
+* Disable session tickets
+* Only use TLS version > 1.2
+* Use a modern cipher list
+
+PHP config
+^^^^^^^^^^
+
+See the phpfpmConf() and phpConf() functions from `run.sh <https://github.com/elabftw/elabimg/blob/master/src/run.sh>`_.
+
+* Hide PHP version (`expose_php` in php.ini)
+* Set cookies httponly and secure
+* Use strict mode for sessions
+* Store sessions in a separate directory with restrictive permissions
+* disable `url_fopen`
+* enable opcache
+* configure `open_basedir`
+* use longer session id length (`session.sid_lenght`)
+* disable unused functions (see the list in the run.sh script)
+
+Note: these configuration changes will affect all the PHP apps on the server, so you can really only do that if the server is only serving eLabFTW (do you see now why Docker is great? :p).
+
+Miscellaneous config
+^^^^^^^^^^^^^^^^^^^^
+
+* Put restrictive permissions on the `uploads` and `cache` folders (and `config.php` file).
+
 Final step
 ----------
 
