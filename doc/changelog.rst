@@ -12,9 +12,7 @@ Please read carefully theses notes before upgrading your installation.
 
 For Docker users: because you chose to use Docker, you have absolutely nothing to do, you can upgrade, sit back and relax. That's the advantage of using Docker: even if I move everything around in the image, for you it's transparent!
 
-For non-Docker users: you need to perform the following steps in order to get your installation up and running.
-
-Note: eLabFTW 2.0 branch is now requiring at least php version 7.1. If your version of PHP is below 7.1 you can either keep the 1.8 branch, convert your installation to a Docker install, or install php 7.1 on your server.
+For non-Docker users: you need to perform manual steps in order to get your installation up and running for version 2.0.0. See the `Complete upgrade guide from 1.8.x to 2.0.0` on the :ref:`How to update <how-to-update>` page.
 
 Why this update?
 ````````````````
@@ -23,7 +21,34 @@ Sometimes, you have to break things to make them better. With the version 2 I co
 What changed?
 `````````````
 
-Under the hood:
+New features:
+
+* Add Slovak lang − thanks to Martin Petriska from Bratislava
+* Database items now have comments (#508)
+* Add option in user control panel to allow experiment edition from members of the team (#498)
+* Allow creation of Links through API (#599)
+
+Enhancements:
+
+* Allow to search for tags with string from the middle of the tag (#702)
+* Better user interface for Steps, Links and Todolist (#559)
+* Show steps in view mode
+* Use SVG icons instead of PNG
+* Show owner in show mode if not current user for experiments (#616)
+* Add relative moment for displaying a date
+* Display locked date in view mode when hovering the lock icon (#189)
+* Add Steps to PDFs (#189)
+* Add more actions to the top right menu
+* Page load is cleaner
+
+Bugfixes:
+
+* Display edit icon in show mode for admins (#498)
+* Fix permission issue when deleting experiment from show mode
+* Fix order by category not working for experiments (#698)
+* Fix revisions for admin (#662)
+
+Dev corner:
 
 * Mininum PHP version is now 7.1
 * Update SwiftMailer to version 6
@@ -32,12 +57,15 @@ Under the hood:
 * Use Webpack 4 to create bundles (using tree shaking feature to make smaller bundles)
 * Use ES6 syntax for Javascript (const/let instead of var for instance)
 * Drop phpdocumentor dependency in composer.json, use the phar instead
-* Use strict_types
 * Use type hinting
+* Use strict_types
+* Replace strlen() by mb_strlen()
+* Use dirname(__DIR__) instead of relative paths
+* Move the `cache` folder outside of `uploads`
+* Split code in `web` and `src` folders
+* Function signatures are more coherent
+* Use random_bytes() to get random numbers
 
-New features:
-
-* Database items now have comments (fix #508)
 
 Version 1.8.4
 -------------
