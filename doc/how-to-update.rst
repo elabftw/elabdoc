@@ -80,14 +80,14 @@ The minimum PHP version is now 7.1. If you are running an earlier version than t
 Now before you open a GitHub issue ranting about why I do not support PHP < 7.1, let me tell you a few reasons why this was done:
 
 * eLabFTW is a Docker first project, it means that although using it outside Docker is possible (and always will be), running into versions problems is inherent to any non docker process. As I said above, you can install Docker and convert your install to a Docker install and forget about missing PHP extensions and versions mismatchs.
-* Some dependencies used by eLabFTW require PHP 7.1 like SwiftMailer (to send emails) and HTTPFoundation. Because the rest of the ecosystem is moving forward, and eLabFTW being a modern web app is also moving forward.
-* There is a 2X speed improvement between PHP 5.6 and 7.x.
+* Some dependencies used by eLabFTW require PHP 7.1 like SwiftMailer (to send emails) and HTTPFoundation. Because the rest of the ecosystem is moving forward, and eLabFTW being a modern web app, it is also moving forward.
+* There is a ~2X speed improvement between PHP 5.6 and 7.x.
 * PHP 7.1 allows me to use strict typing, which will highly reduce the possibility of bugs.
 * Making PHP 7.1 allows me to remove the fixes that I had to make to be compatible with PHP 5.6.
 * PHP 5.6 and 7.0 are already in Security Fixes only mode (see `PHP supported versions <https://secure.php.net/supported-versions.php>`_).
 * PHP 5.6 and 7.0 support ends at the end of 2018, so you'll have to update anyway.
 * It is the responsability of the developer to push forward for new versions. Wordpress can still be run with PHP 5.2 and that's an issue. It makes the code ancient and bad, forbidding devs to use modern solutions implemented in the most recent iterations of the language. This also enables users to keep insecure versions of PHP installed on their webserver. I'm pretty concerned about security, so I have absolutely no intent to keep supporting old versions that do not receive security fixes anymore.
-* It might push users to finally use Docker. The Docker version of eLabFTW is much more secure than a 'normal install' because I've taken numerous steps to configure all the components tightly. Something I cannot do if you're running eLabFTW outside a container.
+* It might push users to finally use Docker. The Docker version of eLabFTW is much more secure than a 'normal install' because I've taken numerous steps to configure all the components tightly. Something that can only be replicated outside Docker in certain conditions.
 
 Web root
 --------
@@ -131,13 +131,3 @@ Previously all the temporary files were written to `uploads/tmp`, now there is a
     chmod 700 cache
 
 In the example above I'm using the user/group `www-data` because it's the most common, but you'll need to adapt it to your needs. It might be nginx, httpd or anything else. Refer to the configuration of your webserver to see under which user the webserver is executed.
-
-Config.php
-----------
-
-It must be moved to the `web` directory:
-
-.. code-block:: bash
-
-    # move the config file to its new place
-    mv config.php web/
