@@ -141,12 +141,11 @@ Code organization
 
 i18n
 ````
-* Use the script `web/app/locale/genpo.sh` to generate the .po file in French.
+* Use the script `src/langs/genpo.sh` to generate the .po file in French.
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to add an update function in `src/classes/Update.php` and also modify `web/install/elabftw.sql` and `tests/_data/phpunit.sql` accordingly
-* you can use the constant ELAB_ROOT (which ends with a /) to have an absolute path
+* if you make a change to the SQL stucture, you need to add an update function in `src/classes/Update.php` and also modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` accordingly
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
@@ -154,6 +153,10 @@ Miscellaneous
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 * if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
+
+Glossary
+````````
+* Experiments + Database items = Entities. So when you see Entity it means it can be an experiment or a database item
 
 Build
 `````
@@ -169,7 +172,7 @@ Since version 2.0.0, you need to build the minified files before using the app.
 
 .. code-block:: bash
 
-    # install the packages
+    # install the packages first
     yarn install
     yarn run buildall
 
