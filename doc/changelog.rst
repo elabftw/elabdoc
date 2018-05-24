@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 1.8.5
+-------------
+
+* Bugfix:
+
+  * Fix issue with SAML2 login for non existing local user
+
 Version 1.8.4
 -------------
 
