@@ -20,7 +20,7 @@ Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
 
 .. code-block:: bash
 
-    pkg install nginx mysql57-server php71 php71-session php71-mcrypt php71-json php71-openssl php71-ctype php71-curl php71-mbstring php71-dom php71-gettext php71-filter php71-iconv php71-zlib php71-pdo php71-pdo_mysql php71-phar php71-zip php71-extensions
+    pkg install nginx mysql57-server php71 php71-session php71-mcrypt php71-json php71-openssl php71-ctype php71-curl php71-mbstring php71-dom php71-gettext php71-gd php71-filter php71-fileinfo php71-iconv php71-zlib php71-pdo php71-pdo_mysql php71-phar php71-zip php71-extensions
     echo 'php_fpm_enable="YES"' >> /etc/rc.conf
     echo 'nginx_enable="YES"' >> /etc/rc.conf
     echo 'mysql_enable="YES"' >> /etc/rc.conf
@@ -37,6 +37,7 @@ Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
 Installing the gmagick extension
 --------------------------------
 
+Note that this step is optional. eLabFTW will use GD if gmagick is not installed. Gmagick can deal with PDF and Tif files, unlike GD.
 The package pecl-gmagick is bound to php version 5.6. But we want 7.1. So we'll compile it ourselves.
 
 .. code-block:: bash
@@ -44,7 +45,7 @@ The package pecl-gmagick is bound to php version 5.6. But we want 7.1. So we'll 
     pkg install gcc-ecj binutils giflib gcc webp libwmf lcms2 GraphicsMagick mpfr mpc autoconf
     fetch https://pecl.php.net/get/gmagick
     tar xf gmagick
-    cd gmagick-2.0.4RC1
+    cd gmagick-2.0.5RC1
     phpize
     ./configure
     make
@@ -61,9 +62,19 @@ Installing elabftw
     cd elabftw
     # install composer: see https://getcomposer.org/download/
     php composer.phar install --no-dev
-    mkdir -p uploads/tmp
-    chown -R . nobody:nobody
-    chmod -R 777 uploads
+    mkdir cache
+    mkdir uploads
+    chown nobody:nobody cache uploads
+    chmod 700 cache uploads
+
+Now we need to install yarn to build the javascript files required. Install node.js first, and then yarn, and finally build the minified files.
+
+.. code-block:: bash
+
+    pkg install node
+    curl -o- -L https://yarnpkg.com/install.sh | bash
+    yarn install
+    yarn buildall
 
 Creating the database
 ---------------------
@@ -84,10 +95,16 @@ Final step
 At this point you should have:
 
 * a working nginx with php + https
+
+I had to change the file `/usr/local/etc/nginx/fastcgi_params`, and modify the SCRIPT_NAME line to this:
+`fastcgi_params SCRIPT_NAME $document_root$fastcgi_script_name;`
+
+For a working nginx config, see the files here: https://github.com/elabftw/elabimg/tree/master/src/nginx
+
 * a mysql server with an `elabftw` database
 * the `elabftw` php files
 
-Go to https://<YOUR_SERVER>/elabftw
+Go to https://<YOUR_SERVER>/elabftw or the address you configured in nginx to point to the `web/` folder of elabftw.
 
 It'll probably let you download the `config.php` file. Upload this file to the root directory of `elabftw` and reload the page.
 
