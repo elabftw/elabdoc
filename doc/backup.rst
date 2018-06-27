@@ -111,3 +111,44 @@ Now we import the SQL database (the mysql container must be running):
     Mysql> exit;
 
 Now you should have your old install back :)
+
+
+How to backup a NAS
+-------------------
+
+If you've installed elabftw on a NAS, you don't have `elabctl` nor a config file. So you'll need to issue the commands manually (you can make a script after of course).
+
+So the first thing is to create a folder where you'll put the backups:
+
+.. code-block:: bash
+
+    export BACKUP_FOLDER=/path/to/your/backup/folder
+    mkdir -p $BACKUP_FOLDER
+
+Next we'll save the database:
+
+.. code-block:: bash
+
+    docker exec mysql bash -c 'mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
+
+The environment variables will be correctly replaced; convenient, isn't it? So just copy paste this and it'll work.
+
+Next we copy the `dump.sql` file out of the container, and move it to our backup place:
+
+.. code-block:: bash
+
+    export DUMP_FILE=${BACKUP_FOLDER}/$(date --iso-8601)-dump.sql
+    docker cp mysql:dump.sql $DUMP_FILE
+    # compress it
+    gzip -f --best $DUMP_FILE
+
+Finally we make a zip of the uploaded files:
+
+.. code-block:: bash
+
+    export ZIP_FILE=${BACKUP_FOLDER}/$(date --iso-8601)-uploaded_files.zip
+    zip -rq "$ZIP_FILE" /path/to/elabftw/files/web -x /path/to/elabftw/files/web/tmp\*
+
+I'm not sure if you can export the config of the containers from the GUI menu. So maybe take a screenshot or save it manually. Worst case scenario if you lose completely this config it's not a big deal.
+
+Put all of the above in a script so you can run it easily next time (make a cronjob if possible). See the backup function of elabctl: https://github.com/elabftw/elabctl/blob/master/elabctl.sh#L40 for inspiration.
