@@ -134,12 +134,12 @@ eLabFTW is a server software that should be installed on a server.
 
 **Requirements for the server**
 
-The operating system of the server can be any.
+The operating system of the server can be any. At least 2Gb of RAM, a decent processor (> 2GHz) and an SSD disk with at least 1 Gb free.
 
 The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, make sure to have:
 
 * a webserver (nginx, apache, cherokee, lighttpd, …) with HTTPS enabled
-* `PHP <https://secure.php.net/>`_ version > 5.6
+* `PHP <https://secure.php.net/>`_ version > 7.1
 * `Composer <https://getcomposer.org/>`_
 * `MySQL <https://www.mysql.com/>`_ version > 5.5
 
