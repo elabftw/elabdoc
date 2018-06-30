@@ -13,7 +13,7 @@ Installing eLabFTW on Windows is not your typical Setup.exe > Next > Next > Fini
 
 Follow the steps below to install eLabFTW on your system:
 
-#. Read the documentation and install `Docker Toolbox for Windows <https://docs.docker.com/toolbox/toolbox_install_windows/>`_
+#. Read the documentation and install `Docker for Windows <https://docs.docker.com/docker-for-windows/install/>`_
 #. `Download this configuration file template <https://raw.githubusercontent.com/elabftw/elabimg/master/src/docker-compose.yml-EXAMPLE>`_
 #. Save it as docker-compose.yml
 #. Edit it with `Notepad++ <https://notepad-plus-plus.org/>`_ or any editor you like but not plain old Notepad.
@@ -27,7 +27,7 @@ Follow the steps below to install eLabFTW on your system:
     cd Desktop #(or wherever you saved docker-compose.yml)
     docker-compose.exe up -d
 
-**Final step** wait for the above command to finish. Then click here: https://192.168.99.100/
+**Final step** wait for the above command to finish. Then click here: https://localhost
 
 .. note:: Remember to keep your installation :doc:`backuped <backup>` and :doc:`updated <how-to-update>` ;)
 
