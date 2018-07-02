@@ -3,7 +3,7 @@
 Install in the cloud
 ====================
 
-Some people make you pay to have a 'cloud service'. What I'm providing here is a very simple way to install eLabFTW on your own server (drop), cutting the middleman.
+Some people make you pay to have a 'cloud service'. What I'm providing here is a very simple way to install eLabFTW on your own server in the cloud, cutting the middleman.
 
 This way you get to keep total control over your data. It will cost you less than 5$ a month. No setup fee, no annual licence, no overpriced features, welcome to open source software ;)
 
@@ -13,7 +13,9 @@ Your eLabFTW installation will run in a `Docker <https://www.docker.com>`_ conta
 
 Everything will be configured properly and automagically.
 
-If you don't have a (sub)domain already, you can get one from `OVH <https://www.ovh.com>`_, `Gandi <https://www.gandi.net>`_, `1&1 <https://www.1and1.com>`_ or any other domain name registrar. You can get one for half a dollar per year.
+If you don't have a (sub)domain already, you can get one from `OVH <https://www.ovh.com>`_, `Gandi <https://www.gandi.net>`_, `1&1 <https://www.1and1.com>`_ or any other domain name registrar. You can get one for half a dollar per year. It is highly recommended to have a domain name, it's much more friendly than an IP addresses!
+
+.. note:: If you don't want to deal with server administration, you can `use Softaculous to install eLabFTW <https://www.softaculous.com/apps/educational/eLabFTW>`_
 
 Create your droplet
 -------------------
@@ -36,7 +38,7 @@ Create your droplet
 
 * Optional but highly recommended: add your SSH key (`documentation <https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets>`_)
 
-* Create the droplet (it takes a minute)
+* Create the droplet (it takes less than a minute)
 
 * Copy the IP address
 
