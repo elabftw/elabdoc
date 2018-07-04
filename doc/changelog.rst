@@ -16,7 +16,7 @@ For non-Docker users: you need to perform manual steps in order to get your inst
 
 Why this update?
 ````````````````
-Sometimes, you have to break things to make them better. With the version 2 I could remove support for php 5.6, allowing me to use the latest version of Swiftmailer. I could move the web served directory to a separate directory that is not the root directory of the repo. This means the `uploads` folder is not in the webdir anymore which is better for security. I could update different components to a major version (bootstrap, twig), use Webpack to deal better with the Javascripts, remove all the minified files from the git tracking. This means more work to install it without Docker, but the Docker method being the recommended one it's ok. It also means the repository is smaller and faster to clone. So basically with 2.0 I felt free to break everything and then rebuild it better after, without having to worry about anything (as long as I can write a proper upgrade documentation for non docker users!).
+Sometimes, you have to break things to make them better. With the version 2 I can remove support for php 5.6, allowing me to use the latest versions of some dependencies, and also type hinting, a new feature of the PHP language. I can move the web served directory to a separate directory that is not the root directory of the repo. This means the `uploads` folder is not in the webdir anymore which is better for security. I can update different components to a major version (bootstrap, twig), use Webpack to deal better with the Javascripts, remove all the minified files from the git tracking. This means more work to install it without Docker, but the Docker method being the recommended one it's ok. It also means the repository is smaller and faster to clone. So basically with 2.0 I felt free to break everything and then rebuild it better after, without having to worry about anything (as long as I can write a proper upgrade documentation for non docker users!).
 
 What changed?
 `````````````
@@ -27,6 +27,7 @@ New features:
 * Database items now have comments (#508)
 * Add option in user control panel to allow experiment edition from members of the team (#498)
 * Allow creation of Links through API (#599)
+* Add a Tag Manager in the admin panel so the admin can correct typos or remove tags (#715)
 
 Enhancements:
 
@@ -40,6 +41,7 @@ Enhancements:
 * Add Steps to PDFs (#189)
 * Add more actions to the top right menu
 * Page load is cleaner
+* Add a version query string to assets to prevent caching of old versions
 
 Bugfixes:
 
