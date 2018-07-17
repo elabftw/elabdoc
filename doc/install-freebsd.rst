@@ -37,7 +37,7 @@ Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
 Installing the gmagick extension
 --------------------------------
 
-Note that this step is optional. eLabFTW will use GD if gmagick is not installed. Gmagick can deal with PDF and Tif files, unlike GD.
+Note that this step is optional. eLabFTW will use GD if gmagick is not installed (pkg install php71-gd). Gmagick can deal with PDF and Tif files, unlike GD.
 The package pecl-gmagick is bound to php version 5.6. But we want 7.1. So we'll compile it ourselves.
 
 .. code-block:: bash
