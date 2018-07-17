@@ -26,8 +26,8 @@ Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
     echo 'mysql_enable="YES"' >> /etc/rc.conf
     # configure nginx.conf properly (user nobody, proper php-fpm config, TLS)
     # modify php-fpm config
-    sed -ie 's/user=www/user=nobody/' /usr/local/etc/php-fpm.d/www.conf
-    sed -ie 's/group=www/group=nobody/' /usr/local/etc/php-fpm.d/www.conf
+    sed -ie 's/user = www/user = nobody/' /usr/local/etc/php-fpm.d/www.conf
+    sed -ie 's/group = www/group = nobody/' /usr/local/etc/php-fpm.d/www.conf
     service nginx start
     service php-fpm start
     service mysql-server start
