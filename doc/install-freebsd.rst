@@ -55,26 +55,7 @@ The package pecl-gmagick is bound to php version 5.6. But we want 7.1. So we'll 
 Installing elabftw
 ------------------
 
-.. code-block:: bash
-
-    cd /usr/local/www/nginx/ # or wherever you configured nginx to serve
-    git clone --depth 1 https://github.com/elabftw/elabftw
-    cd elabftw
-    # install composer: see https://getcomposer.org/download/
-    php composer.phar install --no-dev
-    mkdir cache
-    mkdir uploads
-    chown nobody:nobody cache uploads
-    chmod 700 cache uploads
-
-Now we need to install yarn to build the javascript files required. Install node.js first, and then yarn, and finally build the minified files.
-
-.. code-block:: bash
-
-    pkg install node
-    curl -o- -L https://yarnpkg.com/install.sh | bash
-    yarn install
-    yarn buildall
+Follow instructions from :ref:`Install without Docker page <install-oldschool>`.
 
 Creating the database
 ---------------------

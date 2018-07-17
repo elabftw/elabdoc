@@ -78,6 +78,14 @@ Install and build JavaScript with `yarn <https://yarnpkg.com/en/docs/install>`_:
     $ yarn install
     $ yarn buildall
 
+Now create the cache and uploads directory with restrictive permissions:
+
+.. code-block:: bash
+
+    $ mkdir cache uploads
+    $ chown www-data:www-data cache uploads
+    $ chmod 700 cache uploads
+
 SQL part
 --------
 
