@@ -117,6 +117,15 @@ The minified files are not tracked by git anymore. This means you'll need to bui
 
 The first command will create the `node_modules` directory with all the javascript dependencies, and the second command will build all the necessary minified files (JS and CSS). You will need to do these commands after each update.
 
+PHP Dependencies
+----------------
+
+Like usual, update the PHP dependencies with composer:
+
+.. code-block:: bash
+
+    composer install --no-dev -a
+
 The cache directory
 -------------------
 
