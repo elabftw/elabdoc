@@ -108,7 +108,7 @@ For nginx:
 Minified files
 --------------
 
-The minified files are not tracked by git anymore. This means you'll need to build them before the installation can work. For that you'll need to install `yarn <https://yarnpkg.com/en/docs/install>`_. Once `yarn` is installed on your system, issue these two commands:
+The minified files are not tracked by git anymore. This means you'll need to build them before the installation can work. For that you'll need to install `yarn <https://yarnpkg.com/en/docs/install>`_. Once `yarn` is installed on your system, issue these two commands from the elabftw directory:
 
 .. code-block:: bash
 
