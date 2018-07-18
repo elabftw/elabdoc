@@ -16,7 +16,7 @@ For non-Docker users: you need to perform manual steps in order to get your inst
 
 Why this update?
 ````````````````
-Sometimes, you have to break things to make them better. With the version 2 I can remove support for php 5.6, allowing me to use the latest versions of some dependencies, and also type hinting, a new feature of the PHP language. I can move the web served directory to a separate directory that is not the root directory of the repo. This means the `uploads` folder is not in the webdir anymore which is better for security. I can update different components to a major version (bootstrap, twig), use Webpack to deal better with the Javascripts, remove all the minified files from the git tracking. This means more work to install it without Docker, but the Docker method being the recommended one it's ok. It also means the repository is smaller and faster to clone. So basically with 2.0 I felt free to break everything and then rebuild it better after, without having to worry about anything (as long as I can write a proper upgrade documentation for non docker users!).
+Sometimes, you have to break things to make them better. With the version 2 I can remove support for php 5.6, allowing me to use the latest versions of some dependencies, and also type hinting, a new feature of the PHP language. I can move the web served directory to a separate directory that is not the root directory of the repo. This means the `uploads` folder is not in the webdir anymore which is better for several reasons. I can update different components to a major version (bootstrap, twig), use Webpack to deal better with the Javascripts, remove all the minified files from the git tracking. This means more work to install it without Docker, but the Docker method being the recommended one it's ok. It also means the repository is smaller and faster to clone. So basically with 2.0 I felt free to break everything and then rebuild it better after, without having to worry about anything (as long as I can write a proper upgrade documentation for non docker users!).
 
 What changed?
 `````````````
@@ -28,6 +28,8 @@ New features:
 * Add option in user control panel to allow experiment edition from members of the team (#498)
 * Allow creation of Links through API (#599)
 * Add a Tag Manager in the admin panel so the admin can correct typos or remove tags (#715)
+* Add Mathjax support for pretty mathematical expressions (#208)
+* Add visibility to database items (#541)
 
 Enhancements:
 
@@ -42,6 +44,9 @@ Enhancements:
 * Add more actions to the top right menu
 * Page load is cleaner
 * Add a version query string to assets to prevent caching of old versions
+* Add more infos on Sysconfig page and reorganize the tabs
+* Show 25 items instead of 10 for mention plugin (#641)
+* Remove the 60 characters limit on autocomplete
 
 Bugfixes:
 
@@ -49,6 +54,7 @@ Bugfixes:
 * Fix permission issue when deleting experiment from show mode
 * Fix order by category not working for experiments (#698)
 * Fix revisions for admin (#662)
+* Fix issues in SAML login if team is empty
 
 Dev corner:
 
@@ -67,6 +73,9 @@ Dev corner:
 * Split code in `web` and `src` folders
 * Function signatures are more coherent
 * Use random_bytes() to get random numbers
+* Use chromedriver for acceptance tests
+* Deduplicate the mysql structure file
+* Remove custom css class. Use bootstrap classes instead
 
 
 Version 1.8.4
