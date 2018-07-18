@@ -59,6 +59,14 @@ If you installed it from a .zip or .tar.gz archive
 Complete upgrade guide from 1.8.x to 2.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+TL;DR:
+
+* PHP 7.1
+* change root directory of webserver to elabftw/web
+* mkdir cache && chown www-data:www-data cache && chmod 700 cache
+* yarn install && yarn buildall
+* composer install --no-dev -a
+
 A lot of things changed between version 1.8.x and 2.0.0. Here is what you need to know:
 
 Docker vs. non docker
