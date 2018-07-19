@@ -30,6 +30,7 @@ New features:
 * Add a Tag Manager in the admin panel so the admin can correct typos or remove tags (#715)
 * Add Mathjax support for pretty mathematical expressions (#208)
 * Add visibility to database items (#541)
+* Add support for Nanobox.io deployment
 
 Enhancements:
 
@@ -55,6 +56,7 @@ Bugfixes:
 * Fix order by category not working for experiments (#698)
 * Fix revisions for admin (#662)
 * Fix issues in SAML login if team is empty
+* Fix tags not being imported when template is duplicated
 
 Dev corner:
 
@@ -76,6 +78,7 @@ Dev corner:
 * Use chromedriver for acceptance tests
 * Deduplicate the mysql structure file
 * Remove custom css class. Use bootstrap classes instead
+* Use monolog for logging to the webserver error file
 
 
 Version 1.8.4
