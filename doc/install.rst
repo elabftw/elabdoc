@@ -13,30 +13,32 @@ Tested distributions: Debian, Ubuntu, Fedora, CentOS, Arch Linux, OpenSUSE.
     :align: right
     :alt: docker
 
+.. _normal-install:
+
 Prerequisites
 -------------
 
-eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. So you need to:
+eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies, as everything is packed in a container. But we still need a few programs installed before we can ge started.
 
-* install `Docker <https://docs.docker.com/engine/installation/linux/>`_, the container engine
-* and that's it!
+Dependencies:
+`````````````
+* `docker <https://docs.docker.com/engine/installation/linux/>`_, the container engine
+* `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers
+* `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, to display nice user interface during installation
+* `git <https://git-scm.com/>`_, the version control system
+* `zip <http://infozip.sourceforge.net/Zip.html>`_, the compression tool (for the backups)
 
 Install eLabFTW
 ---------------
 
-* Become root:
+* Install `elabctl`, a tool to help you manage the elabftw installation:
 
 .. code-block:: bash
 
-    sudo su
-
-.. _normal-install:
-
-* Install `elabctl`:
-
-.. code-block:: bash
-
-    wget -qO- https://get.elabftw.net > /usr/bin/elabctl && chmod +x /usr/bin/elabctl
+    # get the program (a bash script)
+    curl -sL https://get.elabftw.net -o elabctl && chmod +x elabctl
+    # add it to a directory in your $PATH
+    sudo mv elabctl /usr/local/bin/elabctl
 
 * Configure eLabFTW:
 
