@@ -18,7 +18,7 @@ Tested distributions: Debian, Ubuntu, Fedora, CentOS, Arch Linux, OpenSUSE.
 Prerequisites
 -------------
 
-eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies, as everything is packed in a container. But we still need a few programs installed before we can ge started.
+eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies, as everything is packed in a container. But we still need a few programs installed before we can get started.
 
 Dependencies:
 `````````````
@@ -38,7 +38,7 @@ Install eLabFTW
     # get the program (a bash script)
     curl -sL https://get.elabftw.net -o elabctl && chmod +x elabctl
     # add it to a directory in your $PATH
-    sudo mv elabctl /usr/local/bin/elabctl
+    sudo mv elabctl /usr/local/bin/
 
 * Configure eLabFTW:
 
