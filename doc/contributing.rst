@@ -153,6 +153,7 @@ Miscellaneous
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 * if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
+* in php camelCase; in html, dash separation for css stuff, camelCase for JS
 
 Glossary
 ````````
