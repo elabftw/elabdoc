@@ -31,6 +31,7 @@ New features:
 * Add Mathjax support for pretty mathematical expressions (#208)
 * Add visibility to database items (#541)
 * Add support for Nanobox.io deployment
+* Add possibility to add a caption to inserted images (#241)
 
 Enhancements:
 
