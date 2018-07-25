@@ -143,7 +143,8 @@ The Docker image of eLabFTW contains a lot of little configuration tweaks to imp
 
 Nginx or Apache config
 ^^^^^^^^^^^^^^^^^^^^^^
-See the `nginx config files <https://github.com/elabftw/elabimg/blob/master/src/nginx/https.conf>`_ from Docker image.
+
+Example config files are provided in the `config_examples <https://github.com/elabftw/elabdoc/tree/master/config_examples>`_ directory.
 
 * Add security headers (IMPORTANT). See the end of `this file <https://github.com/elabftw/elabimg/blob/master/src/nginx/common.conf>`_.
 * Use a proper TLS certificate, not a self-signed one
@@ -151,6 +152,7 @@ See the `nginx config files <https://github.com/elabftw/elabimg/blob/master/src/
 * Disable session tickets
 * Only use TLS version > 1.2
 * Use a modern cipher list
+* Configure API redirect
 
 PHP config
 ^^^^^^^^^^
