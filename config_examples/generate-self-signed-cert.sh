@@ -1,6 +1,6 @@
 # this script will generate a self-signed certificate and the dhparam file
 
- # here we generate a random CN because of this bug:
+# here we generate a random CN because of this bug:
 # https://bugzilla.redhat.com/show_bug.cgi?id=1204670
 # https://bugzilla.mozilla.org/show_bug.cgi?id=1056341
 # this way there is no more hangs
@@ -15,4 +15,5 @@ openssl req \
     -keyout server.key \
     -out server.crt
 
-openssl dhparam -out dhparam.pem 2048
+# now generate the dhparam file
+openssl dhparam -out dhparam.pem 4096
