@@ -58,6 +58,8 @@ Bugfixes:
 * Fix revisions for admin (#662)
 * Fix issues in SAML login if team is empty
 * Fix tags not being imported when template is duplicated
+* Fix steps/link not working with a '%' character (#791)
+* Fix possibility to update category/visibility of locked item (#792)
 
 Dev corner:
 
@@ -80,6 +82,8 @@ Dev corner:
 * Deduplicate the mysql structure file
 * Remove custom css class. Use bootstrap classes instead
 * Use monolog for logging to the webserver error file
+* Use utf8mb4 in fresh MySQL database creation
+* Replace uniqid() with random_bytes()
 
 
 Version 1.8.4
