@@ -24,6 +24,7 @@ What changed?
 New features:
 
 * Add Slovak lang − thanks to Martin Petriska from Bratislava
+* Add 100% translated Russian lang − thanks to Mark T
 * Database items now have comments (#508)
 * Add option in user control panel to allow experiment edition from members of the team (#498)
 * Allow creation of Links through API (#599)
@@ -32,6 +33,7 @@ New features:
 * Add visibility to database items (#541)
 * Add support for Nanobox.io deployment
 * Add possibility to add a caption to inserted images (#241)
+* Add Open Science mode allowing unregistered users to read experiments in a team (#718)
 
 Enhancements:
 
@@ -49,6 +51,7 @@ Enhancements:
 * Add more infos on Sysconfig page and reorganize the tabs
 * Show 25 items instead of 10 for mention plugin (#641)
 * Remove the 60 characters limit on autocomplete
+* Updated translations
 
 Bugfixes:
 
