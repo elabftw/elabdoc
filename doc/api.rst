@@ -47,6 +47,9 @@ Using Bash/cURL
     curl -X POST -F "link=195" -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
     # add a tag to an experiment
     curl -X POST -F "tag=my-super-tag" -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/experiments/3"
+    # download an attached file (only for files you own)
+    # first get the id and real_name of the upload, then get the file itself
+    curl -s -H "Authorization: $API_KEY" "https://elabftw.example.org/api/v1/uploads/805" -o file.png
 
 
 Using Python
