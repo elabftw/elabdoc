@@ -21,6 +21,21 @@ Here is the configuration for Nginx:
          rewrite /api/v1/(.*)$ /app/controllers/ApiController.php?req=$1? last;
     }
 
+
+For Apache 2.4:
+
+.. code-block:: bash
+
+    a2enmod proxy proxy_http rewrite
+
+.. code-block:: apache
+
+    SSLEngine on
+    RewriteEngine On
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+    RewriteRule ^/api/v1/(.*)$ /app/controllers/ApiController.php?req=$1 [P,L]
+
 Getting started
 ---------------
 

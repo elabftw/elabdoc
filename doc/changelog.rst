@@ -92,6 +92,12 @@ Dev corner:
 * Use utf8mb4 in fresh MySQL database creation
 * Replace uniqid() with random_bytes()
 
+Version 1.8.5
+-------------
+
+* Bugfix:
+
+  * Fix issue with SAML2 login for non existing local user
 
 Version 1.8.4
 -------------
