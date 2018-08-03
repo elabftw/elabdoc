@@ -34,6 +34,9 @@ New features:
 * Add support for Nanobox.io deployment
 * Add possibility to add a caption to inserted images (#241)
 * Add Open Science mode allowing unregistered users to read experiments in a team (#718)
+* Add EXPERIMENTAL feature for streaming zip archives (allows big zip) Enable it from UCP.
+* Add option for french style signatures block in pdf (#726)
+* Add possibility to download file through API (#798 #797)
 
 Enhancements:
 
@@ -63,6 +66,7 @@ Bugfixes:
 * Fix tags not being imported when template is duplicated
 * Fix steps/link not working with a '%' character (#791)
 * Fix possibility to update category/visibility of locked item (#792)
+* Fix issue with order by and sort (#790)
 
 Dev corner:
 
