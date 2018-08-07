@@ -55,6 +55,7 @@ Enhancements:
 * Show 25 items instead of 10 for mention plugin (#641)
 * Remove the 60 characters limit on autocomplete
 * Updated translations
+* Zip generation is less likely to fail
 
 Bugfixes:
 
@@ -67,6 +68,7 @@ Bugfixes:
 * Fix steps/link not working with a '%' character (#791)
 * Fix possibility to update category/visibility of locked item (#792)
 * Fix issue with order by and sort (#790)
+* Fix issue with comments (#802)
 
 Dev corner:
 

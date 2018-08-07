@@ -61,6 +61,7 @@ Complete upgrade guide from 1.8.x to 2.0.0
 
 TL;DR:
 
+* update first to latest 1.8 version
 * PHP 7.1
 * change root directory of webserver to elabftw/web
 * mkdir cache && chown www-data:www-data cache && chmod 700 cache
@@ -75,6 +76,21 @@ Docker vs. non docker
 If you are using Docker, you don't need to do anything. Just update normally, that's the big advantage with Docker, I can change a lot of things internally but because I'm in complete control of the build process, it is transparent for you! :)
 
 If you are not using Docker you'll want to read the following paragraphs carefully.
+
+Breaking update
+---------------
+
+Update first to latest version 1.8 if it's not already the case. If you are running let's say version 1.7.x and want to update to version 2.0, first edit your elabftw.yml file and on the image line of the web container, add ":1.8" so the line looks like that:
+
+.. code-block:: yaml
+
+    web:
+        image: elabftw/elabimg:1.8
+
+Then do "elabctl update", visit the website to make sure that the database is updated (it is triggered on page visit). Now remove the 1.8 part from the config file and update again.
+
+
+If you are using git, use "git checkout -b 1.8.5", visit the website, and checkout latest commit.
 
 PHP version
 -----------
