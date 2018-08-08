@@ -73,7 +73,7 @@ A lot of things changed between version 1.8.x and 2.0.0. Here is what you need t
 Docker vs. non docker
 ---------------------
 
-If you are using Docker, you don't need to do anything. Just update normally, that's the big advantage with Docker, I can change a lot of things internally but because I'm in complete control of the build process, it is transparent for you! :)
+If you are using Docker, you don't need to do anything. Just make sure you were running 1.8.5 before updating. See below to update first to the 1.8 version.
 
 If you are not using Docker you'll want to read the following paragraphs carefully.
 
