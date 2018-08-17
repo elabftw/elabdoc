@@ -127,6 +127,9 @@ The following example forwards the URL https://demo.elabftw.net to the docker UR
             proxy_set_header Host      $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	    
+	    # add this if nginx is terminating TLS
+	    proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
 
