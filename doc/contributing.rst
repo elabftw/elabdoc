@@ -41,7 +41,7 @@ How to translate?
 * Select elabftw
 * Add a language (or select an existing one)
 * Start translating
-* Ignore things like `<strong>, <br>, %s, %d` and keep the ponctuation like it was!
+* Ignore things like `<strong>, <br>, %s, %d` and keep the punctuation like it was!
 
 Translations are updated before a release.
 
