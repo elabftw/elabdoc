@@ -3,6 +3,24 @@
 Changelog
 =========
 
+Version 2.0.1
+-------------
+
+Please read changelog for version 2.0.0 if you're upgrading from 1.8.5.
+
+Bugfixes:
+
+* Fix # and $ autocomplete (#814)
+* Don't display SwiftMailer error to user (#841)
+* Make sure admin or sysadmin cannot change an email for an existing one (#809)
+* Fix bad translation in french in UCP
+
+Enhancements:
+
+* Remove image upload button from TinyMCE toolbar to improve UX (#808)
+
+And various small updates in dependencies.
+
 Version 2.0.0
 -------------
 
