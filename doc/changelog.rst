@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 2.0.2
+-------------
+
+Please read changelog for version 2.0.0 if you're upgrading from 1.8.5.
+
+Bugfixes:
+
+* Fix template import issue (#863)
+* Fix template destroy issue
+
 Version 2.0.1
 -------------
 
