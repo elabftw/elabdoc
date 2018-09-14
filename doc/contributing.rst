@@ -58,6 +58,8 @@ Here is a step-by-step for installing an eLabFTW dev setup:
   * `Docker Compose <https://docs.docker.com/compose/>`_
   * `Yarn <https://yarnpkg.com/>`_
 
+Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
+
 * Next let's define a directory for dev (adapt to your needs):
 
 .. code-block:: bash
