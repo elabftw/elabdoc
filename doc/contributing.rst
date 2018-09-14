@@ -48,14 +48,21 @@ Translations are updated before a release.
 Environment installation
 ````````````````````````
 
-So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker, but you'll need to install locally some dev tools (like yarn, or phpDocumentor).
+So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker, but you'll need to install locally some dev tools (like yarn, or phpDocumentor). In this setup, we will put everything in the same folder.
 
 Here is a step-by-step for installing an eLabFTW dev setup:
 
-* First let's define a directory for dev (adapt to your needs):
+* First we install the dependencies:
+
+  * `Docker <https://www.docker.com>`_
+  * `Docker Compose <https://docs.docker.com/compose/>`_
+  * `Yarn <https://yarnpkg.com/>`_
+
+* Next let's define a directory for dev (adapt to your needs):
 
 .. code-block:: bash
 
+    # this folder can be anywhere you like
     export dev='/home/<YOUR USERNAME>/elabdev'
     mkdir -p $dev
     cd $dev
@@ -66,41 +73,44 @@ Here is a step-by-step for installing an eLabFTW dev setup:
 
 .. code-block:: bash
 
-    git clone git@github.com:<YOUR USERNAME>/elabftw.git
+    # Note: we clone the hypernext branch because this is where dev happens
+    git clone -b hypernext git@github.com:<YOUR USERNAME>/elabftw.git
     cd elabftw
-    # switch to the hypernext branch
-    git checkout hypernext
     # create your feature branch from the hypernext branch
     git checkout -b my-feature
 
-* Install *elabctl* and the configuration file
+* Get *elabctl* and the configuration files
 
 .. code-block:: bash
 
-    # you need root permissions for these commands
-    sudo su
-    wget -qO- https://get.elabftw.net > /usr/bin/elabctl && chmod +x /usr/bin/elabctl
-    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > /etc/elabftw.yml
+    cd $dev
+    # get elabctl
+    wget -qO- https://get.elabftw.net > elabctl && chmod +x elabctl
+    # get elabctl configuration file
+    wget -q https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
+    # get the docker-compose configuration file
+    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > elabftw-dev.yml
 
-* Edit the docker-compose configuration file `/etc/elabftw.yml`
+* Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
+* Change CONF_FILE to `$dev/elabftw-dev.yml`. Again, write the full path, not the alias!
+* Change DATA_DIR to `$dev/data`. Again, write the full path, not the alias!
+* Edit the docker-compose configuration file `elabftw-dev.yml`
 * Add a SECRET_KEY
-* Change the `volumes:` line so it points to your `$dev/elabftw` folder.
-* The container orchestration is done with `Docker Compose <https://docs.docker.com/compose/>`_. Install it.
+* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
 * Start the containers:
 
 .. code-block:: bash
 
-   sudo elabctl start
+   ./elabctl start
 
 
 * PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. But you don't need to install it because we'll use the one in the container (so all php extensions are correctly loaded).
-* JavaScript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. Install it.
 * Now install the PHP and JavaScript dependencies (they are not tracked by git):
 
 .. code-block:: bash
 
+    cd $dev/elabftw
     # php dependencies (vendor/ directory)
-    # this command is run from inside the container because you need the correct php runtime
     docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
     yarn install && yarn run buildall
