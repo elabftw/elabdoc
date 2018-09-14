@@ -100,7 +100,8 @@ Here is a step-by-step for installing an eLabFTW dev setup:
 .. code-block:: bash
 
     # php dependencies (vendor/ directory)
-    docker run -it elabftw composer install
+    # this command is run from inside the container because you need the correct php runtime
+    docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
     yarn install
 
