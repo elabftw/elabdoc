@@ -103,7 +103,7 @@ Here is a step-by-step for installing an eLabFTW dev setup:
     # this command is run from inside the container because you need the correct php runtime
     docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
-    yarn install
+    yarn install && yarn run buildall
 
 * Enable debug mode to disable the caching of Twig templates
 
@@ -159,15 +159,9 @@ Glossary
 
 Build
 `````
-Since version 2.0.0, you need to build the minified files before using the app.
+The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them. An alternative is to edit the template and load the "src" version instead of the ".min" one. This way you can edit and reload directly without having to compile each time.
 
-* Install grunt with:
-
-.. code-block:: bash
-
-    npm install -g grunt-cli
-
-* Now start minifying files:
+* To minify files:
 
 .. code-block:: bash
 
@@ -188,13 +182,6 @@ The tests run on the Codeception framework. The acceptance tests will need to do
     $ yarn run test # will run the unit and acceptance tests
 
 For code coverage you need to enable the xdebug PHP extension and run `yarn run coverage`.
-
-To run a SonarQube analysis, first start a SonarQube server and then start the scanner from the code root:
-
-.. code-block:: bash
-
-    $ cd $dev/sonarqube-6.3/bin/linux-x86-64 && ./sonar.sh start
-    $ cd $dev/elabftw && $dev/sonar-scanner-2.9.0.670/bin/sonar-scanner
 
 API Documentation
 `````````````````
