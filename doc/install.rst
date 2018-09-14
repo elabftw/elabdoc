@@ -28,6 +28,8 @@ Dependencies:
 * `git <https://git-scm.com/>`_, the version control system
 * `zip <http://infozip.sourceforge.net/Zip.html>`_, the compression tool (for the backups)
 
+Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
+
 Install eLabFTW
 ---------------
 
