@@ -45,6 +45,9 @@ How to translate?
 
 Translations are updated before a release.
 
+Contributing to the code
+------------------------
+
 Environment installation
 ````````````````````````
 
@@ -148,10 +151,7 @@ Code organization
 * src/classes will contain services or utility classes
 * A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
-
-i18n
-````
-* Use the script `src/langs/genpo.sh` to generate the .po file in French.
+* Check out the scripts in `src/tools` too
 
 Miscellaneous
 `````````````
