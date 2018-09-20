@@ -16,6 +16,7 @@ Bugfixes:
 Enhancements:
 
 * Allow Sysadmin/Admin to change the team of a user if user has no experiments. Useful if user registered in wrong team. (#483)
+* Add lang attribute to the page so the browser knows which language is displayed (#873)
 
 Version 2.0.2
 -------------
