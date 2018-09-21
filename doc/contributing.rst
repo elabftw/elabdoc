@@ -51,7 +51,7 @@ Contributing to the code
 Environment installation
 ````````````````````````
 
-So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker, but you'll need to install locally some dev tools (like yarn, or phpDocumentor). In this setup, we will put everything in the same folder.
+So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. In this setup, we will put everything in the same folder for simplicity.
 
 Here is a step-by-step for installing an eLabFTW dev setup:
 
