@@ -105,8 +105,10 @@ Make sure your user is in the `docker` group so you can execute docker commands 
    ./elabctl start
 
 
-* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages. The `composer.lock` file is generated via the `composer.json` file.
-* Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages. The `yarn.lock` file is generated via the `package.json` file.
+.. note::
+
+    PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>_` to create bundles (see `builder.js` file) and then `Grunt <https://gruntjs.com/>`_ to minify some CSS and JS files (see `Gruntfile.js`).
+
 * Now install the PHP and JavaScript dependencies using `composer` and `yarn` shipped with the container:
 
 .. code-block:: bash
@@ -224,7 +226,7 @@ To generate the documentation for the API, you'll need `apidoc <http://apidocjs.
 
 .. code-block:: bash
 
-    $ npm install -g apidoc
+    $ yarn install -g apidoc
 
 Make sure the npm `bin` folder is in your $PATH.
 
