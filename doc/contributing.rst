@@ -85,7 +85,6 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 .. code-block:: bash
 
-    cd $dev
     # get elabctl
     wget -qO- https://get.elabftw.net > elabctl && chmod +x elabctl
     # get elabctl configuration file
