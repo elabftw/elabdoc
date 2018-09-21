@@ -72,6 +72,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     cd $dev
 
 * Go on `the repository on GitHub <https://github.com/elabftw/elabftw>`_
+* Click the Star button (it helps with visibility of the project)
 * Click the Fork button in the top right of the screen
 * From your fork page, clone it with SSH on your machine:
 
