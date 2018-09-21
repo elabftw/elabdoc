@@ -59,7 +59,6 @@ Here is a step-by-step for installing an eLabFTW dev setup:
 
   * `Docker <https://www.docker.com>`_
   * `Docker Compose <https://docs.docker.com/compose/>`_
-  * `Yarn <https://yarnpkg.com/>`_
 
 Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
 
@@ -80,9 +79,6 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
     # Note: we clone the hypernext branch because this is where dev happens
     git clone -b hypernext git@github.com:<YOUR USERNAME>/elabftw.git
-    cd elabftw
-    # create your feature branch from the hypernext branch
-    git checkout -b my-feature
 
 * Get *elabctl* and the configuration files
 
@@ -109,8 +105,9 @@ Make sure your user is in the `docker` group so you can execute docker commands 
    ./elabctl start
 
 
-* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. But you don't need to install it because we'll use the one in the container (so all php extensions are correctly loaded).
-* Now install the PHP and JavaScript dependencies (they are not tracked by git):
+* PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages. The `composer.lock` file is generated via the `composer.json` file.
+* Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages. The `yarn.lock` file is generated via the `package.json` file.
+* Now install the PHP and JavaScript dependencies using `composer` and `yarn` shipped with the container:
 
 .. code-block:: bash
 
@@ -118,7 +115,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     # php dependencies (vendor/ directory)
     docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
-    yarn install && yarn run buildall
+    docker exec -it yarn install && yarn run buildall
 
 * Enable debug mode to disable the caching of Twig templates
 
@@ -140,7 +137,15 @@ Making a pull request
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
 #. Create a branch from **hypernext**
 #. Work on a feature
-#. Make a pull request on GitHub to include it in hypernext
+#. Make a pull request on GitHub to include it in **hypernext**
+
+.. code-block:: bash
+
+    cd $dev/elabftw
+    # create your feature branch from the hypernext branch
+    git checkout -b my-feature
+    # modify the code, commit and push to your fork
+    # go to github.com and create a pull request
 
 Code organization
 `````````````````
