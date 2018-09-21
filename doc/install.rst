@@ -9,6 +9,8 @@ Install on a GNU/Linux server
 
 Tested distributions: Debian, Ubuntu, Fedora, CentOS, Arch Linux, OpenSUSE.
 
+.. warning:: Only 64 bits distributions are supported. Do not try to install on a 32 bits operating system!
+
 .. image:: img/docker.png
     :align: right
     :alt: docker
