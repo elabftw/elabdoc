@@ -3,6 +3,10 @@
 Install on Nanobox.io
 =====================
 
+.. image:: img/nanobox.png
+    :align: center
+    :alt: nanobox
+
 `Nanobox.io <https://nanobox.io/>`_ lets you install apps in the cloud without having to deal with system administration. It also facilitates scaling up. Using nanobox is pretty easy if you are familiar with the vocabulary. Otherwise you'll have to read carefully the documentation.
 
 
