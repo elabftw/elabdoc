@@ -43,6 +43,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
 
     install
     install-drop
+    install-nanobox
     install-nas
     install-mac
     install-windows

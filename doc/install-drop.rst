@@ -15,7 +15,7 @@ Everything will be configured properly and automagically.
 
 If you don't have a (sub)domain already, you can get one from `OVH <https://www.ovh.com>`_, `Gandi <https://www.gandi.net>`_, `1&1 <https://www.1and1.com>`_ or any other domain name registrar. You can get one for half a dollar per year. It is highly recommended to have a domain name, it's much more friendly than an IP addresses!
 
-.. note:: If you don't want to deal with server administration, you can `use Softaculous to install eLabFTW <https://www.softaculous.com/apps/educational/eLabFTW>`_
+.. note:: If you don't want to deal with server administration or domain names and all these things, you can :doc:`use Nanobox.io to deploy eLabFTW <install-nanobox>`.
 
 Create your droplet
 -------------------
