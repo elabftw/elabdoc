@@ -79,7 +79,14 @@ You can install elabapy using **pip**
 
 .. code-block:: bash
 
-    pip install -U elabapy
+    pip install --user -U elabapy
+
+or via **conda**:
+
+.. code-block:: bash
+
+    conda skeleton pypi elabapy
+    conda-build elabapy
 
 or via sources:
 
@@ -88,6 +95,7 @@ or via sources:
     git clone https://github.com/elabftw/elabapy
     cd elabapy
     python setup.py install
+
 
 Features
 ````````
