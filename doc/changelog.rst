@@ -3,6 +3,27 @@
 Changelog
 =========
 
+Version 2.0.4
+-------------
+
+Please read changelog for version 2.0.0 if you're upgrading from 1.8.5.
+
+Bugfixes:
+
+* Fix update visibility from show mode (#957)
+* Fix bad ordering when using filters (#929)
+
+Enhancements:
+
+* Add Mathjax to show mode (#208)
+* Prevent checkboxes from staying active in show mode (#890)
+* Use trash icon for delete actions (#934)
+* Better handling of failed SAML response
+
+Maintenance:
+
+* Update javascript and php dependencies
+
 Version 2.0.3
 -------------
 
