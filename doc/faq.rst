@@ -213,3 +213,8 @@ Then do::
     sudo locale-gen
 
 And reload the webserver.
+
+Time is wrong
+-------------
+
+Make sure you configured properly the TZ environment variable for both docker images. See `example config <https://github.com/elabftw/elabimg/blob/master/src/docker-compose.yml-EXAMPLE>`_.
