@@ -218,3 +218,11 @@ Time is wrong
 -------------
 
 Make sure you configured properly the TZ environment variable for both docker images. See `example config <https://github.com/elabftw/elabimg/blob/master/src/docker-compose.yml-EXAMPLE>`_.
+
+How to change the team of a user?
+---------------------------------
+
+There is two ways to do that:
+
+* if the user registered in the wrong team, the Sysadmin can simply change the team from the Sysadmin panel
+* if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team
