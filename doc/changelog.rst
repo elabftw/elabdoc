@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 2.0.5
+-------------
+
+Please read changelog for version 2.0.0 if you're upgrading from 1.8.5.
+
+Bugfix:
+
+* Fix issue preventing deletion of team groups (#977)
+
 Version 2.0.4
 -------------
 
