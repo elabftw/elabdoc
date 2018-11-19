@@ -107,6 +107,8 @@ eLabFTW API, such as:
 -  Update an Experiment/Item
 -  Upload a file to an Experiment/Item
 
+The complete documentation is available here: `elabftw's API documentation <https://doc.elabftw.net/api/>`_
+
 Examples
 ````````
 
