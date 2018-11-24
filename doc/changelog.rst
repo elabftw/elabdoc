@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 2.0.6
+-------------
+
+Please read changelog for version 2.0.0 if you're upgrading from 1.8.5.
+
+Bugfixes:
+
+* Fix slowness in show mode if numerous tags, items
+* Fix attached images in pdf files
+* Fix issue with visibility update of database items
+
 Version 2.0.5
 -------------
 
