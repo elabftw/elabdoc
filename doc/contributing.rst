@@ -236,6 +236,21 @@ Make sure the npm `bin` folder is in your $PATH.
 
 Then, point your browser to the `_apidoc/index.html`.
 
+Exceptions handling
+-------------------
+
+Here are some ground rules for exceptions thrown in the code:
+
+* Code should not throw a generic Exception, but one of Elabftw\Exceptions
+* ImproperActionException when something forbidden happens but it's not suspicious. Error is not logged, and message is shown to user
+* DatabaseErrorException when a SQL query failed, the error is logged and message is shown to user
+* IllegalActionException when something should not happen in normal conditions unless someone is poking around by editing the requests. Error is logged and generic permission error is shown
+* FilesystemErrorException, same as DatabaseErrorException but for file operations
+* For the rest, the error is logged and a generic error message is shown to user
+* Code should throw an Exception as soon as something goes wrong
+* Exceptions should not be catched in the code (models), only in the controllers
+* Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)
+
 Making a gif
 ------------
 
