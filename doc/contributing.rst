@@ -154,7 +154,6 @@ Code organization
 * Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)
 * The rest is in app/ or src/ for PHP classes
 * src/models will contain classes with CRUD (Create, Read, Update, Destroy)
-* src/views will contain classes to generate and display HTML
 * src/classes will contain services or utility classes
 * A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
