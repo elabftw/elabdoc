@@ -19,13 +19,18 @@ Follow the steps below to install eLabFTW on your system:
 #. Edit it with `Notepad++ <https://notepad-plus-plus.org/>`_ or any editor you like but not plain old Notepad.
 #. Read carefully the comments and edit what is needed
 #. Save it as docker-compose.yml (make sure there is no .txt extension)
-#. Open Powershell
+#. Open Powershell (or Terminal on Mac)
 #. Enter these commands:
 
 .. code-block:: bash
 
-    cd D:\Data\elabftw #(or wherever you saved docker-compose.yml)
+    cd D:\Data\elabftw # adapt the path to your situation
     docker-compose.exe up -d
+
+    # for Mac OS users:
+    cd /Users/YOU/Documents/elabftw # adapt the path to your situation
+    docker-compose up -d
+
 
 **Final step** wait for the above command to finish. Then click here: https://localhost
 
