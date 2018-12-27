@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 2.0.7
+-------------
+
+* Fix files not getting deleted from disk
+* Fix tags appearing multiple times
+
 Version 2.0.6
 -------------
 
