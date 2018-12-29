@@ -3,6 +3,38 @@
 Changelog
 =========
 
+Version 2.1.0
+-------------
+
+Bugfixes:
+
+* Fix issue with IDP of id different of 1, add active attribute to IDP (#1025)
+
+Enhancements:
+
+* Bring back the pretty pie chart on profile page. Note: if you are not using Docker you'll need to edit your CSP header and change google.com in gstatic.com!
+* Add CSRF protection on basically every POST request
+* Add recipients in BCC for mass email (#1021)
+* The full users list is not displayed anymore on Sysconfig and Admin pages. A query must be entered (empty query will show all users)
+
+Dev corner:
+
+* Add more namespacing (for traits, models, controllers, services, exceptions and interfaces) and corresponding folders in `src/`
+* Add new UploadTrait for common file operations
+* Add new custom Exceptions, see Contributing page
+* Update onelogin/php-saml to 3.0.0: drop the `mcrypt` PHP extension
+* Get rid of the `src/views` classes
+* Add new controllers in `src/controllers`
+* Code style: don't check bool return value but expect exceptions if something goes wrong
+* FormKey renamed in Csrf and added to App
+* Remove `userid` property of Users
+* Code style: don't catch exceptions, let them bubble up
+* Code style: always use custom exceptions
+* Add Extensions class to get the correct icon depending on extension
+* Add MakeThumbnail to create thumbnails for uploaded files
+* Split controllers in RedirectResponse and JsonResponse (Ajax)
+* Numerous other small improvements to the code
+
 Version 2.0.7
 -------------
 
