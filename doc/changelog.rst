@@ -6,6 +6,10 @@ Changelog
 Version 2.1.0
 -------------
 
+New features:
+
+* Add a report generating tool for sysadmin (#1000)
+
 Bugfixes:
 
 * Fix issue with IDP of id different of 1, add active attribute to IDP (#1025)
@@ -16,6 +20,7 @@ Enhancements:
 * Add CSRF protection on basically every POST request
 * Add recipients in BCC for mass email (#1021)
 * The full users list is not displayed anymore on Sysconfig and Admin pages. A query must be entered (empty query will show all users)
+* Add footer on search page when there is no search (#848)
 
 Dev corner:
 
@@ -33,6 +38,9 @@ Dev corner:
 * Add Extensions class to get the correct icon depending on extension
 * Add MakeThumbnail to create thumbnails for uploaded files
 * Split controllers in RedirectResponse and JsonResponse (Ajax)
+* Add foreign keys constraints to the MySQL tables
+* Change the update strategy: use sql files now
+* Rename status (experiments) and type (items) columns in category
 * Numerous other small improvements to the code
 
 Version 2.0.7
