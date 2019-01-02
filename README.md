@@ -9,8 +9,8 @@ Source files for the [elabftw documentation](https://doc.elabftw.net).
 $ git clone https://github.com/elabftw/elabdoc
 $ cd elabdoc
 $ npm install grunt grunt-shell
-$ sudo npm install -g grunt-cli
-$ sudo pip install sphinx sphinx_rtd_theme
+$ npm install -g grunt-cli
+$ pip install --user sphinx sphinx_rtd_theme
 ~~~
 
 ## Usage
