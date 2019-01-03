@@ -20,7 +20,7 @@ If you don't have a (sub)domain already, you can get one from `OVH <https://www.
 Create your droplet
 -------------------
 
-* Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_. Use this referral link to have 10$ offered.
+* Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_. Use this referral link to have 100$ offered!
 
 * Alternatively, you can use `Vultr <http://www.vultr.com/?ref=7164540>`_. Use this referral link to register an account! The rest of this tutorial is for DigitalOcean.
 
