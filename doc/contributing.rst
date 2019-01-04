@@ -48,6 +48,15 @@ Translations are updated before a release.
 Contributing to the code
 ------------------------
 
+Note about branches
+```````````````````
+
+The repository contains (at least) 3 branches:
+
+* The `master` branch points to the latest stable version and should always be in working state
+* The `next` branch points to the latest unstable version (alpha, beta or rc) (or latest stable if no unstable released yet)
+* The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against.
+
 Environment installation
 ````````````````````````
 
