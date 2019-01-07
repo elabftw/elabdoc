@@ -292,7 +292,7 @@ Updating tinymce
 
 * edit package.json and increment version
 * yarn install && grunt
-* rm -r app/js/{plugins,skins,themes}
-* cp -r node_modules/tinymce/{plugins,skins,themes} app/js
-* cp -r node_modules/tinymce-mention/mention app/js/plugins/
+* rm -r web/app/js/{plugins,skins}
+* cp -r node_modules/tinymce/{plugins,skins} web/app/js
+* cp -r node_modules/tinymce-mention/mention web/app/js/plugins/
 
