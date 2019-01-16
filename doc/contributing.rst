@@ -296,3 +296,17 @@ Updating tinymce
 * cp -r node_modules/tinymce/{plugins,skins} web/app/js
 * cp -r node_modules/tinymce-mention/mention web/app/js/plugins/
 
+Adding a lang
+-------------
+
+* Add lang on poeditor.com
+* Get .po
+* Open with poeditor and fix issues
+* Save the .mo
+* Upload .po fixed to poeditor
+* Add the files in src/langs
+* Edit Tools to add lang to menu
+* Get the tinymce translation
+* Rename file to 4 letters code
+* Edit first line of file to match code
+
