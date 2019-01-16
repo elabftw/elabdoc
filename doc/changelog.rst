@@ -6,9 +6,16 @@ Changelog
 Version 2.1.0
 -------------
 
+Breaking changes:
+
+* Old API keys will be erased upon update. Users of the HTTP REST API will need to generate new keys from their profile.
+
 New features:
 
 * Add a report generating tool for sysadmin (#1000)
+* Add support for Indonesian language (thanks to Khari Secario)
+* Add possibility to send email to the team (#840)
+* API keys are now stored properly and they have permissions (read/write or read-only)
 
 Bugfixes:
 
@@ -16,11 +23,17 @@ Bugfixes:
 
 Enhancements:
 
+* API endpoint will send proper error codes instead of always 200
 * Bring back the pretty pie chart on profile page. Note: if you are not using Docker you'll need to edit your CSP header and change google.com in gstatic.com!
 * Add CSRF protection on basically every POST request
 * Add recipients in BCC for mass email (#1021)
 * The full users list is not displayed anymore on Sysconfig and Admin pages. A query must be entered (empty query will show all users)
 * Add footer on search page when there is no search (#848)
+* Set default font size in TinyMCE to 10pt (#880)
+* Display the name of the author of revision (#924)
+* Better warning message before deletion (#934)
+* Add last login info for users (#1000)
+* Add book link to view mode of bookable item (#847)
 
 Dev corner:
 
@@ -41,7 +54,12 @@ Dev corner:
 * Add foreign keys constraints to the MySQL tables
 * Change the update strategy: use sql files now
 * Rename status (experiments) and type (items) columns in category
+* Load prism.js from node_modules with webpack
+* Better use of wepback for tinymce
+* Add `tests/api.sh` for testing the HTTP API
+* Load js from src folder if debug is on
 * Numerous other small improvements to the code
+* Add Contributor License Agreement for contributions
 
 Version 2.0.7
 -------------
