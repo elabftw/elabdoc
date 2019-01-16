@@ -226,3 +226,8 @@ There is two ways to do that:
 
 * if the user registered in the wrong team, the Sysadmin can simply change the team from the Sysadmin panel
 * if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team
+
+Can I change the date format?
+-----------------------------
+
+No. The date in eLabFTW (YYYYMMDD) follows ISO 8601 standard and allowing a user to change the format would only bring confusion.
