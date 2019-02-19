@@ -24,6 +24,7 @@ eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This sav
 
 Dependencies:
 `````````````
+* `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
 * `docker <https://docs.docker.com/engine/installation/linux/>`_, the container engine
 * `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, to display nice user interface during installation
