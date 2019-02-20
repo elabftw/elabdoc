@@ -1,0 +1,14 @@
+{
+  "name": "elabdoc",
+  "version": "2.1.0",
+  "description": "Documentation for elabftw",
+  "main": "Gruntfile.js",
+  "repository": "git@github.com:elabftw/elabdoc.git",
+  "author": "Nicolas CARPi <nicolas.carpi@curie.fr>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-shell": "^3.0.1"
+  }
+}

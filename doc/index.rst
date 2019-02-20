@@ -69,6 +69,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     upgrade-to-docker
     api
     saml
+    debug
 
 .. toctree::
     :caption: Miscellaneous
