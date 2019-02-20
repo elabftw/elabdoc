@@ -126,7 +126,9 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     # php dependencies (vendor/ directory)
     docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
-    docker exec -it yarn install && yarn run buildall
+    docker exec -it elabftw yarn install && yarn run buildall
+
+* Now head to https://localhost:3148 once to let elabftw create the mysql tables
 
 * Enable debug mode to disable the caching of Twig templates
 
