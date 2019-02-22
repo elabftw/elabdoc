@@ -145,6 +145,8 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * Now head to https://localhost:3148
 * You now should have a running local eLabFTW, and changes made to the code will be immediatly visible
 
+Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.zshrc`, `.bashrc`, …). This will allow you to run software installed in the `node_modules` folder.
+
 Making a pull request
 `````````````````````
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
@@ -180,7 +182,8 @@ Miscellaneous
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
 * if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
-* in php camelCase; in html, dash separation for css stuff, camelCase for JS
+* in php camelCase; in html, dash separation for CSS stuff, camelCase for JS
+* use `stylelint /path/to/file.css` to check for CSS formatting errors
 
 Glossary
 ````````
