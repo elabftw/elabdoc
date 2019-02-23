@@ -20,30 +20,6 @@ If you don't know what to do, I highly recommend using `SMTP2GO <https://www.smt
 
 Register an account using this link: `SMTP2GO <https://www.smtp2go.com/?s=eLabFTW>`_. Once logged in, it will provide you with a login and password to connect to the SMTP server "mail.smtp2go.com". Input these credentials on the Sysadmin panel and test sending an email.
 
-Make sure that the `uploads` folder cannot be accessed
-------------------------------------------------------
-
-This is only if you installed it **without** docker:
-
-Just visit `https://your-elabftw-server.org/uploads/` and see if you see the files there (or at least the `tmp` folder). If you see a white page, all is good. If not, either configure your webserver to deny access to this folder.
-
-For Apache:
-
-.. code-block:: apache
-
-    <Directory /var/www/elabftw/uploads>
-        Options -Indexes
-    </Directory>
-
-For Nginx:
-
-.. code-block:: nginx
-
-    location /uploads {
-        deny all;
-        return 403;
-    }
-
 Set up backup
 -------------
 
