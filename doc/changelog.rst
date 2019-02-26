@@ -20,6 +20,7 @@ New features:
 Bugfixes:
 
 * Fix issue with IDP of id different of 1, add active attribute to IDP (#1025)
+* Fix insert in text at cursor position for markdown (#1094)
 
 Enhancements:
 
@@ -34,6 +35,10 @@ Enhancements:
 * Better warning message before deletion (#934)
 * Add last login info for users (#1000)
 * Add book link to view mode of bookable item (#847)
+* Use marked instead of markdown-js to preview markdown (#1092)
+* Allow admin to delete scheduler events of users in team (#1111)
+* Add SECURITY.md file for security related information
+* Add "hr" plugin in tinymce for horizontal rules
 
 Dev corner:
 
@@ -60,6 +65,8 @@ Dev corner:
 * Load js from src folder if debug is on
 * Numerous other small improvements to the code
 * Add Contributor License Agreement for contributions
+* Add a service to populate user data (very alpha for now) to work on a bigger database in dev
+* Lint CSS with stylelint (see contributing doc)
 
 Version 2.0.7
 -------------
