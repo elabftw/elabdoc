@@ -55,7 +55,7 @@ Create a script containing:
     # stop webserver
     docker exec elabftw supervisorctl stop nginx
     # renew certificate
-    /var/elabftw/letsencrypt/letsencrypt-auto renew --quiet --no-self-upgrade
+    certbot renew
     # and start the webserver again
     docker exec elabftw supervisorctl start nginx
 
@@ -74,7 +74,7 @@ If the code above doesn't work, try this:
     # stop everything
     elabctl stop
     # renew certificate
-    /var/elabftw/letsencrypt/letsencrypt-auto renew --quiet --no-self-upgrade
+    certbot renew
     # start elabftw
     elabctl start
 
