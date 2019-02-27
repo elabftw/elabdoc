@@ -315,3 +315,13 @@ Adding a lang
 * Rename file to 4 letters code
 * Edit first line of file to match code
 
+Accessing Docker MySQL database with phpmyadmin
+-----------------------------------------------
+
+You might be used to access your local MySQL dev database with PHPMyadmin. Here is how to do it with elabftw:
+
+.. code-block:: bash
+
+    $ docker run -d -e PMA_PORT=3307 --link mysql:db -p 8080:80 phpmyadmin/phpmyadmin
+
+This will launch a docker container with phpmyadmin that you can reach on port 8080. Go to `localhost:8080 <http://localhost:8080>`_. Login with your mysql user (elabftw by default) and your mysql password found in the .yml configuration file. You should see the `elabftw` database now.
