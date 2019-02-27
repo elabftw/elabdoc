@@ -325,3 +325,46 @@ You might be used to access your local MySQL dev database with PHPMyadmin. Here 
     $ docker run -d -e PMA_PORT=3307 --link mysql:db -p 8080:80 phpmyadmin/phpmyadmin
 
 This will launch a docker container with phpmyadmin that you can reach on port 8080. Go to `localhost:8080 <http://localhost:8080>`_. Login with your mysql user (elabftw by default) and your mysql password found in the .yml configuration file. You should see the `elabftw` database now.
+
+Using a trusted certificate for local dev
+-----------------------------------------
+
+When working locally, the docker image will generate a self-signed TLS certificate. This will show a warning in the browser address bar and multiple warnings in the console (when you press F12). To fix this, it is possible to generate certificates that are trusted by your local browser.
+
+We'll use `FiloSottile/mkcert <https://github.com/FiloSottile/mkcert>`_ project to achieve this.
+
+Step 1: use a real domain name
+``````````````````````````````
+
+I like to use elab.local on port 3148. Edit `/etc/hosts` and add a line with elab.local pointing to localhost like this:
+
+127.0.0.1 elab.local
+
+Step 2: get certs
+`````````````````
+
+Install `mkcert <https://github.com/FiloSottile/mkcert>`_ and generate certificates for `elab.local`. Create a new folder somewhere to hold them:
+
+.. code-block:: bash
+
+   $ mkdir -p $dev/certs/live/elab.local
+   $ mv elab.local+3.pem $dev/certs/live/elab.local/fullchain.pem
+   $ mv elab.local+3-key.pem $dev/certs/live/elab.local/privkey.pem
+
+Step 3: edit config to use certificates
+```````````````````````````````````````
+
+Edit the .yml file for elabftw, change `ENABLE_LETSENCRYPT` to `true`. Uncomment the volume line with `/ssl` and make it point to where you have the certs.
+
+Example:
+
+.. code-block:: yaml
+
+   volumes:
+     - /home/user/.dev/elabftw:/elabftw
+     - /home/user/.dev/certs:/ssl
+
+Step 4: restart containers
+``````````````````````````
+
+`elabctl restart`, and you should now have a valid certificate on your local dev install of elabftw :)
