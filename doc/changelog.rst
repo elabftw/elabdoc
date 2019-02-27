@@ -39,6 +39,7 @@ Enhancements:
 * Allow admin to delete scheduler events of users in team (#1111)
 * Add SECURITY.md file for security related information
 * Add "hr" plugin in tinymce for horizontal rules
+* Add link to instance in email sent to admin after user registration (#953)
 
 Dev corner:
 
