@@ -27,8 +27,18 @@ The service provider is the elabftw install. Head to the Sysadmin panel, click t
 * Single Logout Service: The same as entityId
 * Single Logout Service protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
 * NameIDFormat: this value is to select which attribute will be used to lookup the user in the elabftw database. At the moment, only email is supported
-* x509 certificate: Generate a self-signed certificate and export it in PEM. Enter your public key here
-* Private key: the private key corresponding to the public key
+* x509 certificate: Generate a self-signed certificate and export it in PEM
+* Private key: the private key corresponding to the certificate
+
+To generate a certificate, you can use this command:
+
+.. code-block:: bash
+
+   openssl req -newkey rsa:2048 -nodes -keyout private.key -x509 -days 9999 -out cert.crt
+
+Use the content of `private.key` and `cert.crt`.
+
+Alternatively you can use `this site <https://developers.onelogin.com/saml/online-tools/x509-certs/obtain-self-signed-certs>`_ to generate a self-signed certificate.
 
 Setup the IDentity Provider
 ---------------------------
