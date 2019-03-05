@@ -35,13 +35,13 @@ Connect to your server with SSH:
 
 .. code-block:: bash
 
-    $ ssh user@12.34.56.78
+    ssh user@12.34.56.78
 
 `cd` to the public directory where you want `eLabFTW` to be installed (can be /var/www/html, ~/public\_html, or any folder you'd like, as long as the webserver is configured properly, in doubt use /var/www/html)
 
 .. code-block:: bash
 
-    $ cd /var/www/html
+    cd /var/www/html
 
 Get latest stable version via git:
 
@@ -49,7 +49,7 @@ Get latest stable version via git:
 
 .. parsed-literal::
 
-    $ git clone -b |release| --depth 1 https://github.com/elabftw/elabftw.git
+    git clone -b |release| --depth 1 https://github.com/elabftw/elabftw.git
 
 The `--depth 1` option is to avoid downloading the whole history.
 
@@ -57,17 +57,17 @@ The `--depth 1` option is to avoid downloading the whole history.
 
     .. code-block:: bash
 
-        $ export https_proxy="proxy.example.com:3128"
-        $ git config --global http.proxy http://proxy.example.com:8080
+        export https_proxy="proxy.example.com:3128"
+        git config --global http.proxy http://proxy.example.com:8080
 
 Install php dependencies with `composer <https://getcomposer.org/download/>`_:
 
 .. code-block:: bash
 
-    $ cd elabftw
+    cd elabftw
     # step not described: install composer
     # see https://getcomposer.org/download/
-    $ ./composer.phar install --no-dev
+    ./composer.phar install --no-dev
 
 This will populate the `vendor` directory and also complain about missing php extensions that you should install.
 
@@ -75,16 +75,16 @@ Install and build JavaScript with `yarn <https://yarnpkg.com/en/docs/install>`_:
 
 .. code-block:: bash
 
-    $ yarn install
-    $ yarn buildall
+    yarn install
+    yarn buildall
 
 Now create the cache and uploads directory with restrictive permissions:
 
 .. code-block:: bash
 
-    $ mkdir cache uploads
-    $ chown www-data:www-data cache uploads
-    $ chmod 700 cache uploads
+    mkdir cache uploads
+    chown www-data:www-data cache uploads
+    chmod 700 cache uploads
 
 SQL part
 --------
@@ -97,7 +97,7 @@ Option 1: Command line way
 .. code-block:: bash
 
     # first we connect to mysql
-    $ mysql -uroot -p
+    mysql -uroot -p
     # we create the database (note the ; at the end!)
     mysql> create database elabftw;
     # we create the user that will connect to the database.
@@ -118,7 +118,7 @@ You need to install the package `phpmyadmin` if it's not already done.
 
 .. code-block:: bash
 
-    $ sudo apt-get install phpmyadmin
+    sudo apt-get install phpmyadmin
 
 Now you will connect to the phpmyadmin panel from your browser on your computer. Type the IP address of the server followed by /phpmyadmin.
 
