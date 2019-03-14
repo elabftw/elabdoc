@@ -16,11 +16,14 @@ New features:
 * Add support for Indonesian language (thanks to Khari Secario)
 * Add possibility to send email to the team (#840)
 * API keys are now stored properly and they have permissions (read/write or read-only)
+* Add privacy policy setting in Sysadmin panel (#870)
 
 Bugfixes:
 
 * Fix issue with IDP of id different of 1, add active attribute to IDP (#1025)
 * Fix insert in text at cursor position for markdown (#1094)
+* Fix issue with multiple tag search and clicking a tag hiding the other tags (#974 #632)
+* Correctly display markdown on revision page
 
 Enhancements:
 
@@ -40,6 +43,9 @@ Enhancements:
 * Add SECURITY.md file for security related information
 * Add "hr" plugin in tinymce for horizontal rules
 * Add link to instance in email sent to admin after user registration (#953)
+* Add gitter chat in footer
+* Add visibility setting to import CSV/ZIP (#988)
+* Add documentation link on SAML config page (#1115)
 
 Dev corner:
 
@@ -68,6 +74,10 @@ Dev corner:
 * Add Contributor License Agreement for contributions
 * Add a service to populate user data (very alpha for now) to work on a bigger database in dev
 * Lint CSS with stylelint (see contributing doc)
+* Lint JS with eslint
+* Add .editorconfig and fix indentation discrepencies
+* Add more tests in circleci (lint css, js and php)
+* Remove jquery complexify from code and revamp the registration page
 
 Version 2.0.7
 -------------
