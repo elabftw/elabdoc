@@ -8,7 +8,9 @@ Version 2.1.0
 
 Breaking changes:
 
-* Old API keys will be erased upon update. Users of the HTTP REST API will need to generate new keys from their profile.
+* For users: Old API keys will be erased upon update. Users of the HTTP REST API will need to generate new keys from their profile.
+* For sysadmins: If you are not using Docker you'll need to edit your CSP header and change google.com to gstatic.com!
+
 
 New features:
 
@@ -17,6 +19,8 @@ New features:
 * Add possibility to send email to the team (#840)
 * API keys are now stored properly and they have permissions (read/write or read-only)
 * Add privacy policy setting in Sysadmin panel (#870)
+* Add visibility setting to import CSV/ZIP (#988)
+* Add "hr" plugin in tinymce for horizontal rules
 
 Bugfixes:
 
@@ -28,7 +32,7 @@ Bugfixes:
 Enhancements:
 
 * API endpoint will send proper error codes instead of always 200
-* Bring back the pretty pie chart on profile page. Note: if you are not using Docker you'll need to edit your CSP header and change google.com in gstatic.com!
+* Bring back the pretty pie chart on profile page. Note: if you are not using Docker you'll need to edit your CSP header and change google.com to gstatic.com!
 * Add CSRF protection on basically every POST request
 * Add recipients in BCC for mass email (#1021)
 * The full users list is not displayed anymore on Sysconfig and Admin pages. A query must be entered (empty query will show all users)
@@ -41,10 +45,8 @@ Enhancements:
 * Use marked instead of markdown-js to preview markdown (#1092)
 * Allow admin to delete scheduler events of users in team (#1111)
 * Add SECURITY.md file for security related information
-* Add "hr" plugin in tinymce for horizontal rules
 * Add link to instance in email sent to admin after user registration (#953)
 * Add gitter chat in footer
-* Add visibility setting to import CSV/ZIP (#988)
 * Add documentation link on SAML config page (#1115)
 
 Dev corner:
