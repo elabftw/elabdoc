@@ -146,6 +146,17 @@ The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, mak
 **Requirements for the client**
 - Any operating system with any browser (recent version).
 
+How to have folders or projects grouping experiments?
+-----------------------------------------------------
+
+First, forget about folders, use tags. They are much more powerful! Because an experiment can have many tags, whereas it can only be in one folder. Tags can be used to group experiments by project, by microscope, by collaborator, by whatever you want, all at the same time, allowing you to do cross-searchs.
+
+Next, go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
+
+Another solution is to create an experiment that would be sort of a meta experiment, listing all the sub-experiments pertaining to the project, with links (you can create links in the body easily by typing '#' and some words from the title).
+
+Select the approach that you prefer :)
+
 --------------------
 
 .. This was the common errors page, but it is deprecated now thanks to Docker :) I moved it in FAQ to avoid cluttering the left pane.
