@@ -13,6 +13,10 @@ If you installed it with elabctl
 .. code-block:: bash
 
     elabctl update
+    # change the name of the container if it is different in your configuration
+    docker exec -it elabftw php bin/console db:update
+    # Note: for version 2.x to 3.x use this instead
+    docker exec -it elabftw php bin/console db:updateto3
 
 If you installed it with git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,6 +31,7 @@ To update, cd in the `elabftw` folder and do:
     # see https://yarnpkg.com/en/docs/install to install yarn
     yarn install
     yarn buildall
+    php bin/console db:update
 
 If you are using Docker without elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -37,6 +42,7 @@ In the directory where you have the `docker-compose.yml` file:
 
     docker-compose pull
     docker-compose up -d
+    docker exec -it elabftw php bin/console db:update
 
 If you installed it from a .zip or .tar.gz archive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,6 +61,39 @@ If you installed it from a .zip or .tar.gz archive
     # see https://yarnpkg.com/en/docs/install to install yarn
     yarn install
     yarn buildall
+    php bin/console db:update
+
+Complete upgrade guide from 2.0.7 to 3.0.0
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Updating the database structure
+-------------------------------
+
+After updating the container/code, run this command to update the database schema:
+
+.. code-block:: bash
+
+    # for Docker users
+    docker exec -it elabftw php bin/console db:updateto3
+
+    # for non-Docker users, from the elabftw directory
+    yarn install
+    yarn buildall
+    composer install --no-dev -a
+    php bin/console db:updateto3
+
+This will prepare the database, then cleanup any orphaned rows found, and update the structure.
+
+For other updates, calling "db:update" should be enough. Always read the release notes!
+
+Breaking update
+---------------
+
+Two thing are breaking in this update, the way to update, as described above, and the API keys.
+
+API keys now have a different format and are no longer stored in clear in the database (after all, they allow access to your data, so they should be treated as passwords).
+
+Users using the API will have to go to their profile and create new API keys. The old ones are erased upon update.
 
 Complete upgrade guide from 1.8.x to 2.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

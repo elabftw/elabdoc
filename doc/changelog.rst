@@ -3,14 +3,14 @@
 Changelog
 =========
 
-Version 2.1.0
+Version 3.0.0
 -------------
 
 Breaking changes:
 
 * For users: Old API keys will be erased upon update. Users of the HTTP REST API will need to generate new keys from their profile.
 * For sysadmins: If you are not using Docker you'll need to edit your CSP header and change google.com to gstatic.com!
-
+* For sysadmins: To update the database schema, check the documentation guide: https://doc.elabftw.net/how-to-update.html#complete-upgrade-guide-from-2-7-0-to-3-0-0
 
 New features:
 
