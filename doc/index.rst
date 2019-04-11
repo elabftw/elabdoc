@@ -38,6 +38,13 @@ See :doc:`this page <install>` to install it on your server.
 
 See :doc:`this page <install-drop>` if you don't own a server already.
 
+ .. image:: img/by-sa.png
+    :align: center
+    :alt: cc-by-sa
+
+
+
+
 .. toctree::
     :caption: Installation
 
@@ -76,4 +83,3 @@ See :doc:`this page <install-drop>` if you don't own a server already.
 
     thanks
     changelog
-    license
