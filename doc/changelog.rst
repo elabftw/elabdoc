@@ -21,6 +21,7 @@ New features:
 * Add privacy policy setting in Sysadmin panel (#870)
 * Add visibility setting to import CSV/ZIP (#988)
 * Add "hr" plugin in tinymce for horizontal rules
+* Add `bin/console` to manage updates and other things
 
 Bugfixes:
 
