@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 3.0.1
+-------------
+
+Note: read the release notes of 3.0.0!
+
+Bugfix:
+
+* Skip the mysql constraint on `tags2entity` table as it is not cleaned and can cause errors during upgrade
+
 Version 3.0.0
 -------------
 
