@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 3.0.2
+-------------
+
+Note: read the release notes of 3.0.0!
+
+Bugfix:
+
+* Fix password reset not working from Admin/Sysadmin panel (#1223)
+
 Version 3.0.1
 -------------
 
