@@ -3,6 +3,26 @@
 Changelog
 =========
 
+Version 3.1.0
+-------------
+
+Note: read the release notes of 3.0.0!
+
+Bugfix:
+
+* Fix tag link in view mode (#1239)
+
+Enhancements:
+
+* Improve user experience when nothing is selected on show mode (#1232)
+* Hide select menu if user clicks Unselect all (#1232)
+* Use TinyMCE v5.0 (#1229)
+
+Dev corner:
+
+* Use codeception v3.0 (#1236)
+
+
 Version 3.0.3
 -------------
 
