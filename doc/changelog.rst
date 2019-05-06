@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 3.1.1
+-------------
+
+Note: read the release notes of 3.0.0!
+
+Bugfix:
+
+* Fix actions (add/remove) in teamgroups (#1254)
+
+
 Version 3.1.0
 -------------
 
