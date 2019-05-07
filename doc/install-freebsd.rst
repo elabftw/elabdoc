@@ -16,11 +16,11 @@ If you want to use OpenBSD, I have made a full tutorial `here <https://nicolasca
 Installing a FEMP stack
 -----------------------
 
-Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
+Install nginx, php 7.2 + extensions, php-fpm and MySQL server.
 
 .. code-block:: bash
 
-    pkg install nginx mysql57-server php71 php71-session php71-mcrypt php71-json php71-openssl php71-ctype php71-curl php71-mbstring php71-dom php71-gettext php71-gd php71-filter php71-fileinfo php71-iconv php71-zlib php71-pdo php71-pdo_mysql php71-phar php71-zip php71-extensions
+    pkg install nginx mysql57-server php72 php72-session php72-mcrypt php72-json php72-openssl php72-ctype php72-curl php72-mbstring php72-dom php72-gettext php72-gd php72-filter php72-fileinfo php72-iconv php72-zlib php72-pdo php72-pdo_mysql php72-phar php72-zip php72-extensions
     echo 'php_fpm_enable="YES"' >> /etc/rc.conf
     echo 'nginx_enable="YES"' >> /etc/rc.conf
     echo 'mysql_enable="YES"' >> /etc/rc.conf
@@ -37,8 +37,8 @@ Install nginx, php 7.1 + extensions, php-fpm and MySQL server.
 Installing the gmagick extension
 --------------------------------
 
-Note that this step is optional. eLabFTW will use GD if gmagick is not installed (pkg install php71-gd). Gmagick can deal with PDF and Tif files, unlike GD.
-The package pecl-gmagick is bound to php version 5.6. But we want 7.1. So we'll compile it ourselves.
+Note that this step is optional. eLabFTW will use GD if gmagick is not installed (pkg install php72-gd). Gmagick can deal with PDF and Tif files, unlike GD.
+The package pecl-gmagick is bound to php version 5.6. But we want 7.2. So we'll compile it ourselves.
 
 .. code-block:: bash
 
