@@ -3,6 +3,25 @@
 Changelog
 =========
 
+Version 3.1.2
+-------------
+
+Note: read the release notes of 3.0.0!
+
+Minor breaking change for users:
+
+* Autocompletion for links in text is now only triggered by '#', not '$' anymore (conflict with Mathjax)
+
+Bugfix:
+
+* Fix items types update (#1265)
+* Fix boxfile for Nanobox.io deployments
+
+Enhancements:
+
+* Make the autocompletion load faster for big databases
+
+
 Version 3.1.1
 -------------
 
