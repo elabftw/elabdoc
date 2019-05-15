@@ -32,6 +32,7 @@ New features:
 * Ask user for filename when saving molecule or doodle (#1166)
 * Add new options for IDP config: toggle team creation and set default team (#985)
 * Allow users to load uploaded mol files from the load menu of the molecule editor (#1166)
+* Add a command to ligthen the revisions tables that are too big (see #623) => bin/console thanos:snap
 
 Dev corner:
 
