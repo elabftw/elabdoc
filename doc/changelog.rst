@@ -3,6 +3,42 @@
 Changelog
 =========
 
+Version 3.2.0
+-------------
+
+Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
+
+Upgrading:
+
+This release needs a database schema update: run "docker exec -it elabftw php bin/console db:update".
+
+For non docker user: "php bin/console db:update".
+
+Bugfixes:
+
+* Fix default Welcome message showing up when it shouldn't in show mode (#1272)
+* Fix team statistics on team page showing full stats instead of team stats
+* Fix tagcloud tags links (#1267)
+* Fix owner name appearing twice on search page (#1212)
+
+Enhancements:
+
+* Zip export is now streamed to the browser
+* Display molecule in edit mode (#1166)
+
+New features:
+
+* Allow ordering by id in show mode (#1277)
+* Ask user for filename when saving molecule or doodle (#1166)
+* Add new options for IDP config: toggle team creation and set default team (#985)
+* Allow users to load uploaded mol files from the load menu of the molecule editor (#1166)
+
+Dev corner:
+
+* Refactor the Make family and get rid of the make.html template
+* Add CsvTrait
+* Fix some issues found by phpstan and psalm
+
 Version 3.1.2
 -------------
 
