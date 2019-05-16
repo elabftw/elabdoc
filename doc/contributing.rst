@@ -15,7 +15,7 @@ What can you do to help this project?
 * Talk about it to your colleagues, spread the word!
 * Have a look at `the current issues <https://github.com/elabftw/elabftw/issues>`_
 * Help with the translation
-* Open GitHub issues to discuss bugs or suggest features
+* Open GitHub issues to report bugs or suggest features
 * `Star it on GitHub really <https://github.com/elabftw/elabftw>`_
 
 Reporting a security issue
@@ -174,16 +174,17 @@ Code organization
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to add an update function in `src/classes/Update.php` and also modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` accordingly
+* if you make a change to the SQL stucture, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` if needed.
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
 * add a plugin to your editor to show PSR-1 errors
+* see `editorconfig.org <https://editorconfig.org/>`_ and configure your editor to follow the settings from `.editorconfig`
 * remove BOM
 * if you want to work on the documentation, clone the `elabdoc repo <https://github.com/elabftw/elabdoc>`_
-* if you want to make backups of your dev install, you'll need to edit `/etc/elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
+* if you want to make backups of your dev install, you'll need to edit `elabctl.conf` to point to the correct folders/config files. See `example <https://github.com/elabftw/elabctl/blob/master/elabctl.conf>`_
 * in php camelCase; in html, dash separation for CSS stuff, camelCase for JS
-* use `stylelint /path/to/file.css` to check for CSS formatting errors
+* check the commands in the "scripts" part of the `package.json` file, a lot of nice things in there ;)
 
 Glossary
 ````````
@@ -199,9 +200,9 @@ The javascript and css files are stored unminified in the source code. But the a
 
     # install the packages first
     yarn install
-    yarn run buildall
+    yarn buildall
 
-Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn) and `Gruntfile.js` (grunt).
+Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn) and `Gruntfile.js` (grunt). If you just want to rebuild the CSS, use `grunt css`.
 
 Tests
 `````
@@ -210,26 +211,20 @@ The tests run on the Codeception framework. The acceptance tests will need to do
 
 .. code-block:: bash
 
-    $ yarn run unit # will run the unit tests
-    $ yarn run test # will run the unit and acceptance tests
+    $ yarn unit # will run the unit tests
+    $ yarn test # will run the unit and acceptance tests
 
 For code coverage you need to enable the xdebug PHP extension and run `yarn run coverage`.
 
 API Documentation
 `````````````````
-To get a good view of the relations between the classes, get `phpDocumentor <https://phpdoc.org>`_ and make sure you can execute it:
-
-.. code-block:: bash
-
-    $ wget https://phpdoc.org/phpDocumentor.phar
-    $ chmod +x phpDocumentor.phar
-    $ sudo mv phpDocumentor.phar /usr/local/bin/phpDocumentor
+To get a good view of the relations between the classes, get `phpDocumentor <https://github.com/phpDocumentor/phpDocumentor2/releases>`_ (download the .phar and the associated pubkey).
 
 To generate a PHP Docblock documentation:
 
 .. code-block:: bash
 
-    $ yarn run srcdoc
+    $ yarn srcdoc
 
 Then, point your browser to the `_srcdoc/index.html`.
 
@@ -245,7 +240,7 @@ Make sure the npm `bin` folder is in your $PATH.
 
 .. code-block:: bash
 
-    $ yarn run apidoc
+    $ yarn apidoc
 
 Then, point your browser to the `_apidoc/index.html`.
 
@@ -291,15 +286,6 @@ Making a gif
     $ ffmpeg -i out.gif -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" out-final.gif
 
 * upload to original one to gfycat and the smaller one to imgur
-
-Updating tinymce
-----------------
-
-* edit package.json and increment version
-* yarn install && grunt
-* rm -r web/app/js/{plugins,skins}
-* cp -r node_modules/tinymce/{plugins,skins} web/app/js
-* cp -r node_modules/tinymce-mention/mention web/app/js/plugins/
 
 Adding a lang
 -------------
