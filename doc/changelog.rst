@@ -8,9 +8,9 @@ Version 3.2.0
 
 Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
 
-Upgrading:
+**Upgrading**:
 
-This release needs a database schema update: run "docker exec -it elabftw php bin/console db:update".
+This release needs a database schema update: run "docker exec -it elabftw bin/console db:update".
 
 For non docker user: "php bin/console db:update".
 
@@ -20,11 +20,14 @@ Bugfixes:
 * Fix team statistics on team page showing full stats instead of team stats
 * Fix tagcloud tags links (#1267)
 * Fix owner name appearing twice on search page (#1212)
+* Fix lists not being properly styled (#1282)
+* Fix sysadmin promotion (#1280)
 
 Enhancements:
 
 * Zip export is now streamed to the browser
 * Display molecule in edit mode (#1166)
+* Improve user interface
 
 New features:
 
@@ -33,11 +36,14 @@ New features:
 * Add new options for IDP config: toggle team creation and set default team (#985)
 * Allow users to load uploaded mol files from the load menu of the molecule editor (#1166)
 * Add a command to ligthen the revisions tables that are too big (see #623) => bin/console thanos:snap
+* Add main toggle for SAML login
 
 Dev corner:
 
 * Refactor the Make family and get rid of the make.html template
+* Remove Colorpicker and use input type = color
 * Add CsvTrait
+* Add more acceptance tests
 * Fix some issues found by phpstan and psalm
 
 Version 3.1.2
