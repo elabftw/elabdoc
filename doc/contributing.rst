@@ -126,7 +126,8 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     # php dependencies (vendor/ directory)
     docker exec -it elabftw composer install
     # javascript dependencies (node_modules/ directory)
-    docker exec -it elabftw yarn install && yarn run buildall
+    docker exec -it elabftw yarn install
+    docker exec -it elabftw yarn buildall
 
 * Now head to https://localhost:3148 once to let elabftw create the mysql tables
 
