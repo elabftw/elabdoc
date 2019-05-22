@@ -3,6 +3,27 @@
 Changelog
 =========
 
+Version 3.2.1
+-------------
+
+Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
+
+This is a small patch to the 3.2.0 version.
+
+Bugfixes:
+
+* Fix molecules not displayed in edit mode after deletion of a file and partial page reload
+* Fix tag destroy from Tag Manager in admin panel (#1291)
+* Fix double referrer header
+
+Enhancements:
+
+* Display thumbnail of TIF files in PDF (thanks Temple)
+
+Updates:
+
+* Update TinyMCE to 5.0.6
+
 Version 3.2.0
 -------------
 
