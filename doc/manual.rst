@@ -142,7 +142,7 @@ Once locked, an experiment cannot be modified anymore. Unless you unlock it. If 
 
 Timestamp
 `````````
-An experiment can be timestamped. Once timestamped it cannot be edited anymore.
+An experiment can be timestamped if its status is timestampable (the default 'Running' status is not). Once timestamped it cannot be edited anymore.
 
 What happens when you timestamp an experiment :
 
