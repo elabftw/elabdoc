@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.2.2
+-------------
+
+Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
+
+This is a small patch to the 3.2.1 version.
+
+Bugfix:
+
+* Fix incorrect check on deletion of linked item (#1298)
+
 Version 3.2.1
 -------------
 
