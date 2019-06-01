@@ -3,6 +3,33 @@
 Changelog
 =========
 
+Version 3.3.0
+-------------
+
+Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
+
+New features:
+
+* Add Steps and Links to Database items and Experiments templates (#492)
+* Add user setting to allow only member of same group to edit experiment (#851)
+* Add announcements for sysadmins to display a message to all users (#1248)
+* Allow complete blockage of experiment deletion (#1281)
+* Allow saving mol files as png (#996)
+* Allow admin to select the CSV separator for import
+
+Enhancements:
+
+* Add proper locking mechanism to items (#1049) Note: all previously locked items (in Database) will be unlocked!
+* Move the API keys manager from profile to user control panel
+* Allow reset of privacy policy
+* Add left border color to items too
+
+Dev corner:
+
+* Symfony 4.3
+* Use symfony/process for timestamping
+* Add PHP-CS-Fixer rules
+
 Version 3.2.2
 -------------
 
