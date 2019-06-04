@@ -8,6 +8,12 @@ Version 3.3.0
 
 Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
 
+Bug fixes:
+
+* Fix error in the nginx log about content.css file missing (#1321)
+* Fix table header html tag (th) that was stripped (#1324)
+* Fix markdown tables not working (#1323)
+
 New features:
 
 * Add Steps and Links to Database items and Experiments templates (#492)
@@ -23,6 +29,10 @@ Enhancements:
 * Move the API keys manager from profile to user control panel
 * Allow reset of privacy policy
 * Add left border color to items too
+
+Docker:
+
+* Remove the form-action CSP directive (#1322)
 
 Dev corner:
 
