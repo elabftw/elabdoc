@@ -11,8 +11,8 @@ Note: read the release notes of 3.0.0 if you're upgrading from v2.x!
 Upgrading:
 
 * After updating the docker image, run `bin/console db:update`
-For Docker users that would be: `docker exec -it elabftw bin/console db:update`
-For non-Docker users: `php bin/console db:update`
+* For Docker users that would be: `docker exec -it elabftw bin/console db:update`
+* For non-Docker users: `php bin/console db:update`
 
 Bug fixes:
 
