@@ -13,15 +13,18 @@ Bug fixes:
 * Fix error in the nginx log about content.css file missing (#1321)
 * Fix table header html tag (th) that was stripped (#1324)
 * Fix markdown tables not working (#1323)
+* Fix pasting from Excel/Libreoffice calc (#1331)
 
 New features:
 
+* Add Korean translation: thanks to Jihun Kim!
 * Add Steps and Links to Database items and Experiments templates (#492)
 * Add user setting to allow only member of same group to edit experiment (#851)
 * Add announcements for sysadmins to display a message to all users (#1248)
 * Allow complete blockage of experiment deletion (#1281)
 * Allow saving mol files as png (#996)
 * Allow admin to select the CSV separator for import
+* Add bug report icon in footer
 
 Enhancements:
 
