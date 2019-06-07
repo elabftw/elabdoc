@@ -7,13 +7,11 @@ Install on a Qnap NAS
     :align: center
     :alt: qnap
 
-Tested with firmware version 4.3.3 on a TVS-EC1080.
+Tested with firmware version 4.3.6 on a TVS-EC1080.
 
 .. note:: This has been reported to work on a Synology NAS
 
-This page describes the installation of eLabFTW on a Qnap NAS. The procedure is different than on a normal GNU/Linux server.
-
-.. warning:: Consider this documentation as beta!
+This page describes the installation of eLabFTW on a Qnap NAS. The procedure slightly different than on a normal GNU/Linux server.
 
 Prerequisites
 -------------
@@ -32,89 +30,48 @@ Once it is installed, open it. It will create a /Container folder. Connect with 
     mkdir -p Container/elabftw/mysql
     mkdir Container/elabftw/web
 
-eLabFTW uses two containers, the official MySQL image and elabftw/elabimg. We will create the MySQL container first because we will need to reference it as a link for the second container.
+Get the config file
+-------------------
 
-Install the MySQL container
----------------------------
+.. code-block:: bash
 
-Come back to the web interface and click "Create container" from the left menu. Search for MySQL in the Docker Hub. Don't use the Recommended one, use the official one from Docker Hub as shown below:
+    cd /share/CACHEDEV1_DATA/Container/elabftw
+    curl -so docker-compose.yml "https://get.elabftw.net/?config"
 
-.. image:: img/qnap/mysql-1.png
+Edit the config file
+--------------------
+
+To edit the file we just downloaded, you can use "vim" or just download it on your computer instead, edit it with your favorite text editor and upload it back.
+
+You need to edit the port binding of the elabftw container. So change '443:443' to '3148:443' of the "ports" section of the "web" service.
+
+You also need to edit the "volumes" bindings so that persistent files (MySQL database and uploaded files) are stored there. In the example below, the paths are relative because the "docker-compose.yml" file is in the folder where we expect to store the files, but you can also put an absolute path:
+
+.. image:: img/nas-1.png
     :align: center
-    :alt: mysql1
+    :alt: nas config
 
-Select the 5.7 version.
-
-Name the container "mysql" and go to the advanced settings. Add 4 environment variables:
-
-MYSQL_USER and MYSQL_DATABASE should be set to "elabftw". MYSQL_PASSWORD and MYSQL_ROOT_PASSWORD should be set to strong passwords.
-
-.. image:: img/qnap/mysql-env.png
+.. image:: img/nas-2.png
     :align: center
-    :alt: mysql-env
+    :alt: nas config
 
-In the "Shared folders" tab add a Volume from host with "/Container/elabftw/mysql" mounted on "/var/lib/mysql" (read/write) in the container:
+Starting the containers
+-----------------------
 
-.. image:: img/qnap/mysql-volumes.png
-    :align: center
-    :alt: mysql-volumes
+.. code-block:: bash
 
-Click Create, it takes a few moments for the container to appear in the Overview.
+    docker-compose up -d
 
-Install the elabftw container
------------------------------
+Accessing elabftw
+-----------------
 
-Click "Create container" and search for "elabimg" in the Docker Hub:
-
-.. image:: img/qnap/elabftw-1.png
-    :align: center
-    :alt: elabimg
-
-Choose the "latest" version. Name it "elabftw" and go to advanced settings. Add a Link to the mysql container with "mysql" as alias:
-
-.. image:: img/qnap/elabftw-link.png
-    :align: center
-    :alt: elabftw-link
-
-Fill the Environment variables like this:
-
-DB_HOST mysql
-
-DB_NAME elabftw
-
-DB_USER elabftw
-
-DB_PASSWORD Here you put the value of MYSQL_PASSWORD from the MySQL container
-
-SECRET_KEY Get yours from https://demo.elabftw.net/install/generateSecretKey.php
-
-SERVER_NAME Use the IP address of your NAS
-
-DISABLE_HTTPS false
-
-ENABLE_LETSENCRYPT false
-
-.. image:: img/qnap/elabftw-env.png
-    :align: center
-    :alt: elabftw-env
-
-We will serve eLabFTW on port 3148, add a port forwarding entry with 3148 for Host and 443 for container (protocol TCP):
-
-.. image:: img/qnap/elabftw-ports.png
-    :align: center
-    :alt: elabftw-ports
-
-In the "Shared folders" tab add a Volume from host with "/Container/elabftw/web" mounted on "/elabftw/uploads" (read/write) in the container:
-
-.. image:: img/qnap/elabftw-volumes.png
-    :align: center
-    :alt: elabftw-volumes
-
-Click Create. Now wait a bit for the container to start (and generate strong DH parameters) and head to https://<YOUR NAS IP>:3148. You should see the register page and you can now register a Sysadmin account.
+Wait 10 seconds and go to https://YOUR.NAS.IP:3148. You should see the register page.
 
 Post install
 ------------
 
 Don't forget to read :ref:`the post install page <postinstall>`, setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
+
+To update, you can do "docker-compose pull" and "docker-compose up -d".
 
 ENJOY! :D
