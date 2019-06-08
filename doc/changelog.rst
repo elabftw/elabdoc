@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 3.3.1
+-------------
+
+Bug fixes:
+
+* Fix issues with permissions where only a few experiments would be displayed to non admin users in certain conditions (#1337)
+* Fix steps/links not working on templates other than first one (#1338)
+
 Version 3.3.0
 -------------
 
