@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 3.3.2
+-------------
+
+Bug fix:
+
+* Fix issues with permissions where only a few experiments would be displayed to non admin users in certain conditions (#1337)
+
+Enhancements:
+
+* Make the space in quicksearch bar behave as AND (#1277)
+* Display full content of calendar event on mouse hover (#1320)
+* Add some security options for SAML (#1339)
+
 Version 3.3.1
 -------------
 
