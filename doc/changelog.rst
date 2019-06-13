@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.3.3
+-------------
+
+Bug fix:
+
+* Improve the pagination logic and user interface in show mode (#1345)
+
+Enhancements:
+
+* Update Korean translations
+
 Version 3.3.2
 -------------
 
