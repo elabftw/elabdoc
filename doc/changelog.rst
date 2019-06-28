@@ -3,6 +3,25 @@
 Changelog
 =========
 
+Version 3.3.4
+-------------
+
+This release doesn't need a MySQL schema update. Simply updating the container is enough.
+
+Bug fix:
+
+* Update JS dependencies because 0.7.2 of faye/websocket-driver was pulled off and it is the version in yarn.lock
+* Fix login as anonymous user
+
+New feature:
+
+* Add Dutch (nl_BE) lang: thanks to Philip Plaeke
+
+Enhancement:
+
+* Load CSS assets with version string (force browser cache bust)
+
+
 Version 3.3.3
 -------------
 
