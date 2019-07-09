@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 3.3.5
+-------------
+
+This is mostly a maintenance release with bugfixes from dependencies. TinyMCE (the text editor) has fixed numerous little bugs, there is also an update of the library parsing Markdown (marked) that had a ReDOS vulnerability (Regular Expression Denial Of Service) and an update of the SAML2 library with some bugfixes and new features.
+
+On eLabFTW side, the library to convert markdown (the PHP one) has been changed to league/commonmarkconverter.
+
+To update: just update the container and that's it. No need for database update.
+
 Version 3.3.4
 -------------
 
