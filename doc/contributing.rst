@@ -87,8 +87,11 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 .. code-block:: bash
 
-    # Note: we clone the hypernext branch because this is where dev happens
-    git clone -b hypernext git@github.com:<YOUR USERNAME>/elabftw.git
+    git clone git@github.com:<YOUR USERNAME>/elabftw.git
+    # checkout the hypernext branch because this is where dev happens
+    cd elabftw
+    git checkout hypernext
+    cd ..
 
 * Get *elabctl* and the configuration files
 
@@ -98,7 +101,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     wget -qO- https://get.elabftw.net > elabctl && chmod +x elabctl
     # get elabctl configuration file
     wget -q https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
-    # get the docker-compose configuration file
+    # get the docker-compose configuration file (from the dev branch)
     wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > elabftw-dev.yml
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
@@ -116,7 +119,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 .. note::
 
-    PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>_` to create bundles (see `builder.js` file) and then `Grunt <https://gruntjs.com/>`_ to minify some CSS and JS files (see `Gruntfile.js`).
+    PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>`_ to create bundles (see `builder.js` file) and then `Grunt <https://gruntjs.com/>`_ to minify some CSS and JS files (see `Gruntfile.js`).
 
 * Now install the PHP and JavaScript dependencies using `composer` and `yarn` shipped with the container:
 
