@@ -53,7 +53,7 @@ Install eLabFTW
 
 * (optional) Edit the configuration:
 
-    You might want to edit the configuration here to suit your server setup. For instance, you might want to edit `/etc/elabftw.yml` to change the port binding (default is 443 but it might be already used by a traditional webserver).
+    You might want to edit the configuration here to suit your server setup. For instance, you might want to edit `/etc/elabftw.yml` to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
 * Start eLabFTW:
 
@@ -75,8 +75,8 @@ ENJOY! :D
 ----
 
 
-Documentation for unusual setups
---------------------------------
+Documentation for advanced setups
+---------------------------------
 
 Using mod_proxy to run eLabFTW Docker container behind Apache2 (https enabled)
 ``````````````````````````````````````````````````````````````````````````````
@@ -99,27 +99,27 @@ It is also possible to disable https in the elabftw docker container's web serve
 
 .. code-block:: yaml
 
-	DISABLE_HTTPS=true
+    DISABLE_HTTPS=true
 
 One can then forward to elabftw without the option SSLProxyEngine on, if the HTTP_X_FORWARDED_PROTO header is set:
 
 .. code-block:: apache
 
-	RequestHeader set X-Forwarded-Proto "https"
+    RequestHeader set X-Forwarded-Proto "https"
     ProxyPreserveHost On
-	ProxyPass /elabftw/ http://localhost:444/
-	ProxyPassReverse /elabftw/ http://localhost:444/
+    ProxyPass /elabftw/ http://localhost:444/
+    ProxyPassReverse /elabftw/ http://localhost:444/
 
 Using nginx to run eLabFTW Docker container
 ```````````````````````````````````````````
 
 If you already have nginx running, you'll want to use the proxy capapbilities of nginx to forward packets to the Docker container.
 
-The following example forwards the URL https://demo.elabftw.net to the docker URL http://localhost:3148. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "3148:443". In this example, nginx is listening to port 8888, because HAProxy is doing SSL termination. Adapt to your needs.
+The following example forwards the URL https://demo.elabftw.net to the docker URL http://localhost:3148. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "3148:443". In this example, nginx is listening to port 8888, and HAProxy is doing SSL termination. Adapt to your needs.
 
 .. code-block:: nginx
 
-	server {
+    server {
         server_name demo.elabftw.net;
 
         listen 8888;
@@ -132,9 +132,8 @@ The following example forwards the URL https://demo.elabftw.net to the docker UR
             proxy_set_header Host      $host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	    
-	    # add this if nginx is terminating TLS
-	    proxy_set_header X-Forwarded-Proto $scheme;
+            # add this if nginx is terminating TLS
+            proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
 
