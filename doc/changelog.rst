@@ -3,6 +3,32 @@
 Changelog
 =========
 
+Version 3.3.6
+-------------
+
+A few bugfixes and a new feature: you can now share an experiment/item with a share link that will unconditonally give read access to whoever has it.
+
+Bugfixes:
+
+* Fix autocompletion (with '#' character) (#1359)
+* Fix Javascript errors in Microsoft Edge (#1336)
+* Fix 'moment' library internationalization
+* Fix incorrect handling of thumbnail if the file is too big
+* Fix HTML tags closing
+* Fix limit selector on search page
+
+New features:
+
+* Add share button (#1396)
+
+Enhancements:
+
+* Add color to clickable title
+* Add blockquote CSS
+* Add links and steps in API GET results (elabftw/elabapy#7)
+* Update DFN certificates (#1414)
+* Update dependencies
+
 Version 3.3.5
 -------------
 
