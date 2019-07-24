@@ -27,6 +27,7 @@ Enhancements:
 * Add blockquote CSS
 * Add links and steps in API GET results (elabftw/elabapy#7)
 * Update DFN certificates (#1414)
+* Improve results per page select element (#1354)
 * Update dependencies
 
 Version 3.3.5
