@@ -52,6 +52,7 @@ The Admin
 * Can import elabftw.zip archives (experiments or database items)
 * Can manage groups of users amongst the team (see below)
 * Can promote another user to Admin or give locking powers
+* Can archive users. Archiving users means disable login for that account, and lock all experiments.
 
 User groups
 ```````````
