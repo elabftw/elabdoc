@@ -16,6 +16,8 @@ Bugfixes:
 * Fix incorrect handling of thumbnail if the file is too big
 * Fix HTML tags closing
 * Fix limit selector on search page
+* Fix tag search being too inclusive (#1204)
+* Fix permissions issue with 'organization' visibility (#1389)
 
 New features:
 
@@ -27,6 +29,7 @@ Enhancements:
 * Add blockquote CSS
 * Add links and steps in API GET results (elabftw/elabapy#7)
 * Update DFN certificates (#1414)
+* Add possibility to unarchive users (#1424)
 * Improve results per page select element (#1354)
 * Update dependencies
 
