@@ -19,6 +19,7 @@ Bugfixes:
 Enhancements:
 
 * Add SameSite attribute to cookie (#394)
+* Increase the size of the tags box on search page (#1437)
 
 Dev corner:
 
