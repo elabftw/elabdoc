@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 3.3.7
+-------------
+
+Another patch for 3.3 version with one major bugfix and two minors.
+
+All users should update. No database schema update required.
+
+Bugfixes:
+
+* Fix the top right menu in show mode showing no results (#1447)
+* Fix the tag filter lost on filter/order/sort search (#1436)
+* Fix 0 rating on items (#1182)
+
+Enhancements:
+
+* Add SameSite attribute to cookie (#394)
+
+Dev corner:
+
+* Improvements in the code to bring psalm errors/warnings to 0.
+* Add configuration for phpstan, phan and psalm, with corresponding yarn commands
+
+
 Version 3.3.6
 -------------
 
