@@ -3,6 +3,18 @@
 Changelog
 =========
 
+Version 3.3.8
+-------------
+
+Bugfixes:
+
+* Fix install process
+* Fix "order by" menu in database tab (#1447)
+
+Enhancement:
+
+* Add limit in top right menu so the other parameters stay there
+
 Version 3.3.7
 -------------
 
