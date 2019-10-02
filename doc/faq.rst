@@ -242,3 +242,39 @@ Can I change the date format?
 -----------------------------
 
 No. The date in eLabFTW (YYYYMMDD) follows ISO 8601 standard and allowing a user to change the format would only bring confusion.
+
+What is the meaning of 'FTW'?
+-----------------------------
+
+One of those:
+
+'For The World'
+'For Those Wondering'
+'For The Worms'
+'Forever Two Wheels'
+'Free The Wookies'
+'Forward The Word'
+'Forever Together Whenever'
+'Face The World'
+'Forget The World'
+'Free To Watch'
+'Feed The World'
+'Feel The Wind'
+'Feel The Wrath'
+'Fight To Win'
+'Find The Waldo'
+'Finding The Way'
+'Flying Training Wing'
+'Follow The Way'
+'For The Wii'
+'For The Win'
+'For The Wolf'
+'Free The Weed'
+'Free The Whales'
+'From The Wilderness'
+'Freedom To Work'
+'For The Warriors'
+'Full Time Workers'
+'Fabricated To Win'
+'Furiously Taunted Wookies'
+'Flash The Watch'
