@@ -3,6 +3,28 @@
 Changelog
 =========
 
+Version 3.3.9
+-------------
+
+This patch doesn't need to update the MySQL structure (with the db:update console command).
+
+Bugfixes:
+
+* Copy links and steps when duplicating an template (#1465)
+* Fix editor issue with mobile browsers (#1316)
+* Fix wrong page redirection upon archive toggle of user
+* Fix bug report URL (#1507)
+
+Enhancement:
+
+* Add steps and links to template view in team tab
+
+New features:
+
+* Add a link on the Team template page to create experiment directly from that template
+* Allow import of body of linked item (#1533)
+* Add Insert Template menu item in TinyMCE editor to load from template (#1428)
+
 Version 3.3.8
 -------------
 

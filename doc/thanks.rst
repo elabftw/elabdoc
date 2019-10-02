@@ -6,6 +6,8 @@ Thanks
 A big thanks to early alpha testers and everyone who contributed through their ideas or
 suggestions to this project.
 
+Über thanks to the patrons from `Liberapay <https://liberapay.com/NicolasCARPi/>`_!
+
 Special thanks for the contributors on internationalization. There are more than 40 translators for the project :)
 
 eLabFTW uses open source code from others. A big thanks to them for making their code available!
