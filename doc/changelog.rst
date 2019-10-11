@@ -3,6 +3,25 @@
 Changelog
 =========
 
+Version 3.3.10
+--------------
+
+This patch does NOT need to update the MySQL structure (with the db:update console command).
+
+Bugfixes:
+
+* Fix SMTP password getting blanked if email settings were changed
+* Fix files not getting imported from zip archive (#1537)
+* Fix the double 'tag' css class on tags
+* Fix missing files for mobile editor
+
+Enhancements:
+
+* Add alert if the body contains too many characters
+* Improve the filtering of characters for filesystem output
+* Use TinyMCE's autosave plugin
+* Add next step and comments icon in show mode for items (#1447)
+
 Version 3.3.9
 -------------
 
