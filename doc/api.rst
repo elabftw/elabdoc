@@ -118,9 +118,10 @@ Initialization
 .. code-block:: python
 
     import elabapy
+    # to pretty print the results
     import json
     # get your token from your profile page
-    manager = elabapy.Manager(endpoint="https://elab.example.org/api/v1/", token="380915ea6baa5f08061ea49ef7ace19b9d37b40607f34bf8019d5a772c9d855459151c5e1bba35164d42")
+    manager = elabapy.Manager(endpoint="https://elab.example.org/api/v1/", token="3855459151c...5e1bba35164d42")
 
 Listing the experiments
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,4 +180,28 @@ Here is how you can attach a file to an experiment (or item):
     files = {'file': open('report.xls', 'rb')}
     print(manager.upload_to_experiment(94, files))
     print(manager.upload_to_item(17, files))
+
+Create a database item
+^^^^^^^^^^^^^^^^^^^^^^
+
+Before creating a database item, we want to get a list of the available item types (as they differ from one team to another). We're looking for the "id" of the correct type.
+
+.. code-block:: python
+
+    print(json.dumps(manager.get_items_types(), indent=4, sort_keys=True))
+
+Look at the output and note the id of your favorite item type. Let's assume it's '3'.
+
+Now you can create a database item like so:
+
+.. code-block:: python
+
+    print(json.dumps(manager.create_item(3), indent=4, sort_keys=True))
+
+This command will reply with the id of the newly created database item. Let's assume it's "1337". To edit it:
+
+.. code-block:: python
+
+    params = {"title", "Your title", "body": "The content to input", "date": "20191014"}
+    manager.post_item(1337, params)
 

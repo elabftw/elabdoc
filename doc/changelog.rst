@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 3.3.11
+--------------
+
+New feature:
+
+* Add several new API endpoints to create database items and list item types and status
+
 Version 3.3.10
 --------------
 
