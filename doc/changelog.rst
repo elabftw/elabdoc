@@ -9,6 +9,15 @@ Version 3.3.11
 New feature:
 
 * Add several new API endpoints to create database items and list item types and status
+  See the documentation for usage: https://doc.elabftw.net/api.html and https://doc.elabftw.net/api/
+  This feature was sponsored by Mark Greiner from the Max Planck Institute for chemistry energy conversion:
+  https://cec.mpg.de/en/research/heterogeneous-reactions/dr-mark-greiner/
+
+Bugfixes:
+* Remove the share button on database item (fix #787)
+* Fix file upload through API
+
+* Update dependencies
 
 Version 3.3.10
 --------------
