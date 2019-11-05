@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.3.12
+--------------
+
+New feature:
+
+* Add japanese language: thanks to Yoshihiko Kunisato!
+
+Bugfix:
+
+* Fix database items not deletable if sysadmin disabled deletion of experiments for everyone
+
 Version 3.3.11
 --------------
 
