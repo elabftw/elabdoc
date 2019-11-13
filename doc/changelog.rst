@@ -6,9 +6,17 @@ Changelog
 Version 3.3.12
 --------------
 
+Security:
+
+* Upgrade SAML library. Fix https://github.com/advisories/GHSA-pqm6-cgwr-x6pf
+
 New feature:
 
 * Add japanese language: thanks to Yoshihiko Kunisato!
+
+Enhancement:
+
+* Upgrade Mathjax to version 3
 
 Bugfix:
 
