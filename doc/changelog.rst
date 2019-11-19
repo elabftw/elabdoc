@@ -16,11 +16,18 @@ New feature:
 
 Enhancement:
 
-* Upgrade Mathjax to version 3
+* Display all bookable items by default on scheduler (#1453)
+* Add possibility to connect on non standard Mysql port
+* Prevent password reset on unvalidated accounts (#1572)
 
 Bugfix:
 
 * Fix database items not deletable if sysadmin disabled deletion of experiments for everyone
+
+Updates:
+
+* Upgrade Mathjax to version 3
+* Upgrade Tinymce to 5.1
 
 Version 3.3.11
 --------------
