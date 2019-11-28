@@ -151,6 +151,8 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.zshrc`, `.bashrc`, …). This will allow you to run software installed in the `node_modules` folder.
 
+It is possible to populate your dev database with fake generated data. See the `dev:populate` command of `bin/console`.
+
 Making a pull request
 `````````````````````
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation

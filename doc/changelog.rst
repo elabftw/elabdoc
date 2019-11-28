@@ -3,6 +3,48 @@
 Changelog
 =========
 
+Version 3.4.0
+-------------
+
+This version requires a change in the MySQL structure. After the update, run `bin/console db:update`.
+
+How to update the SQL structure:
+
+~~~bash
+# for docker users (assuming the container is called 'elabftw'
+docker exec -it elabftw bin/console db:update
+# for non docker users (from the elabftw folder)
+php bin/console db:update
+~~~
+
+Bugfixes:
+
+* Fix files not getting imported from zip archive (#1645)
+* Fix wrong behavior on InvalidSchemaException
+* Fix the division by zero warning for new user visiting profile
+
+New features:
+
+* Add write permissions to exp/items
+* Remove team restriction on team groups: you can add a member of another team in a team group
+* Add possibility to create users from the sysadmin/admin panels
+* Add expand all button (#1634)
+
+Enhancements:
+
+* Import steps and links from zip archive (#1645)
+* Add the user menu in the navbar
+* Place the Create button on the right side and improve it
+* Resize the main container
+* Add modal dialogs for timestamping, create item and help
+* Allow visibility change in show mode for items (#1640)
+* Make todolist scrollable (#1626)
+* Read exif orientation of image and rotate it if necessary (#1635)
+
+Developer:
+
+* Add dev:populate command to replace the current database with fake data
+
 Version 3.3.12
 --------------
 
