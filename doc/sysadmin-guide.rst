@@ -1,7 +1,30 @@
-.. _postinstall:
+.. _sysadmin-guide:
 
-Post install
-============
+Sysadmin guide
+==============
+
+General overview
+----------------
+
+The Sysadmin
+~~~~~~~~~~~~
+* Is the first registered user
+* Has access to the Sysconfig Panel with general settings impacting every team hosted on the server
+* Can create/edit/delete teams
+* Can send a mass email to all users
+* Can set the default language
+* Can configure timestamping (if another TSA is wanted)
+* Can change security settings (number of login attempts, manual validation of new users)
+* Can see error logs
+* It is possible to have multiple 'Sysadmin' accounts
+
+Account creation
+~~~~~~~~~~~~~~~~
+New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.
+
+By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
+This guide assumes you already have a working installation of eLabFTW on a server.
+The Sysadmin has access to core settings of the eLabFTW instance like email configuration or security preferences.
 
 Setting up email
 ----------------

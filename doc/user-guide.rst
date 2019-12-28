@@ -1,7 +1,7 @@
-.. _manual:
+.. _user-guide:
 
-Manual
-======
+User guide
+==========
 
 This guide assumes you already have a working installation of eLabFTW on a server.
 
@@ -10,53 +10,17 @@ General overview
 
 The principles
 ~~~~~~~~~~~~~~
-One eLabFTW installation can host several teams. So ideally it is installed at an Institution/Company level. It can also be used by only one team, or only one user.
-
 By default, experiments and database items are restricted to a team. But users can choose to extend this to all registered users.
 
 Experiments showed on the Experiments tab (the main tab) are yours only. To see experiments from other people in the team use the Search page or enable it from your User Control Panel.
 
 Database items are common to the team and can be edited by anyone from the team.
 
-A lot of flexibility in the use of the software allows for different usage by a wide variety of researchers.
-
 Creating an account
 ~~~~~~~~~~~~~~~~~~~
 New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.
 
 By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
-
-The Sysadmin
-~~~~~~~~~~~~
-* Is the first registered user
-* Has access to the Sysconfig Panel with general settings impacting every team hosted on the server
-* Can create/edit/delete teams
-* Can send a mass email to all users
-* Can set the default language
-* Can configure timestamping (if another TSA is wanted)
-* Can change security settings (number of login attempts, manual validation of new users)
-* Can see error logs
-* It is possible to have multiple 'Sysadmin' accounts
-
-The Admin
-~~~~~~~~~
-* Is the first registered user in a team
-* Has access to the Admin Panel with settings impacting only his team
-* Can change the rightmost link in the main menu (default is Documentation)
-* Can override general Timestamping settings
-* Can edit users of his team
-* Can edit available Status for experiments of his team
-* Can edit available Items Types for the database of his team
-* Can edit the default text of a new experiment
-* Can import data from a CSV file in the database
-* Can import elabftw.zip archives (experiments or database items)
-* Can manage groups of users amongst the team (see below)
-* Can promote another user to Admin or give locking powers
-* Can archive users. Archiving users means disable login for that account, and lock all experiments.
-
-User groups
-```````````
-The Admin can create User Groups from the Admin Panel. Users can then choose to set the visibility of an experiment to this group. Only members of this group will be able to see this experiment.
 
 Experiments
 -----------

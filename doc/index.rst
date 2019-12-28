@@ -10,11 +10,11 @@ Welcome to elabftw's documentation!
 
 :Website:  https://www.elabftw.net
 :Live demo: https://demo.elabftw.net
-:Chat:
+
     .. image:: https://badges.gitter.im/elabftw/elabftw.svg
         :alt: Gitter
         :target: https://gitter.im/elabftw/elabftw
-:License:
+
     .. image:: https://img.shields.io/badge/license-AGPL-blue.svg
         :alt: AGPL
         :target: https://www.gnu.org/licenses/agpl-3.0.en.html
@@ -60,9 +60,10 @@ See :doc:`this page <install-drop>` if you don't own a server already.
 .. toctree::
     :caption: Usage
 
-    postinstall
     quickstart
-    manual
+    user-guide
+    admin-guide
+    sysadmin-guide
     backup
     how-to-update
 
