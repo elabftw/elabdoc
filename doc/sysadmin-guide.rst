@@ -111,6 +111,6 @@ Update often
 
 It is important to keep your install up to date with the latest bug fixes and new features.
 
-`Subscribe to the newsletter <http://eepurl.com/bTjcMj>`_ to be warned when a new release is out.
+`Subscribe to the newsletter <http://eepurl.com/bTjcMj>`_ to be warned when a new release is out or select "Releases only" from GitHub's Watch button on the `repo page <https://github.com/elabftw/elabftw>`_.
 
 See instructions on updating eLabFTW on :ref:`how-to-update`.

@@ -62,6 +62,15 @@ Starting the containers
 
     docker-compose up -d
 
+Importing the database structure
+--------------------------------
+
+.. code-block:: bash
+
+   docker exec -it elabftw bin/install start
+
+Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`.
+
 Accessing elabftw
 -----------------
 
@@ -70,8 +79,10 @@ Wait 10 seconds and go to https://YOUR.NAS.IP:3148. You should see the register 
 Post install
 ------------
 
-Don't forget to read :ref:`the post install page <postinstall>`, setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
+Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
 
-To update, you can do "docker-compose pull" and "docker-compose up -d".
+The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
+
+To update, you can do "docker-compose pull" and "docker-compose restart".
 
 ENJOY! :D
