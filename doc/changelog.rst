@@ -6,6 +6,8 @@ Changelog
 Version 3.4.0
 -------------
 
+Wow. This is a BIG update! A lot of commits, new features, enhancements and general code improvements. eLabFTW keeps improving thanks to the community of users and people sponsoring the project through donations (on liberapay.com) or custom development requests (on deltablot.com).
+
 This version requires a change in the MySQL structure. After the update, run `bin/console db:update`.
 
 How to update the SQL structure:
@@ -29,6 +31,11 @@ New features:
 * Remove team restriction on team groups: you can add a member of another team in a team group
 * Add possibility to create users from the sysadmin/admin panels
 * Add expand all button (#1634)
+* Upgrade of the Scheduler with new version, better UI and possibility to bind an experiment to an event (#1619)
+* Add JSON editor (by @shabihsherjeel via PR #1554) (fix #1467)
+* Allow sysadmin to restrict email domain on registration (#1649)
+* Add API access to events and bookable endpoints (#1618)
+* Improve the permission system with separate read/write permissions (#1646)
 
 Enhancements:
 
@@ -40,10 +47,23 @@ Enhancements:
 * Allow visibility change in show mode for items (#1640)
 * Make todolist scrollable (#1626)
 * Read exif orientation of image and rotate it if necessary (#1635)
+* Improve the UI of login and register pages
+* Background color of events is now color of item type (#1672)
+* The database structure import is now done through a command instead of the /install folder
+* Add pretty modals for some actions
+* Make the main container less wide
+* Move the menu into the top bar
 
 Developer:
 
 * Add dev:populate command to replace the current database with fake data
+* Improve the test suite to use a temporary docker setup to run the tests (see `tests/run.sh`)
+* Use Codeception to run API tests instead of a custom curl script
+* All Javascript has been moved to TypeScript (in `src/ts`)
+* All CSS has been moved to SCSS (in `scr/scss`)
+* The webpack packing has been greatly improved with proper chunking (see `builder.js`)
+* Update Codeception to 4.0
+* Bootstrap is now used properly with SCSS variables overriding and proper usage of bootstrap classes for buttons
 
 Version 3.3.12
 --------------
