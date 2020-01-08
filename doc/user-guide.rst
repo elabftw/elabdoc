@@ -18,13 +18,13 @@ Database items are common to the team and can be edited by anyone from the team.
 
 Creating an account
 ~~~~~~~~~~~~~~~~~~~
-New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.
+New users need to register an account on the register page (`/register.php`), accessible from the login page. They need to select a team from the list.
 
 By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
 
 Experiments
 -----------
-Once logged in, you can create an experiment by pressing 'c' or clicking the «Create new» button. You will be presented with an «edition» page (you can see 'mode=edit' in the URL; the two other modes being 'view' and 'show').
+Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL; the two other modes being 'view' and 'show').
 
 Templates
 ~~~~~~~~~
@@ -35,15 +35,14 @@ Edit mode
 
 Tags
 ````
-The first field is the tags, that you can use to group experiments (think folders or projects). All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter. It is saved immediatly. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
+All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediatly. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+
+.. image:: img/quick_tags.gif
 
 Date
 ````
 The date is today's date by default, in the format YYYYMMDD. You can edit it as you wish. The real creation date/time is stored in the database in another column.
-
-Visibility
-``````````
-By default, all experiments can be viewed by other team members. If you wish to restrict viewing of a particular experiment, set this to 'Only me'. An admin can also create groups of users, and users can set the visibility of experiments to this group only.
 
 Status
 ``````
@@ -81,13 +80,20 @@ When you are done, click the «Save and go back» button.
 
 You are now in view mode.
 
+Ellipsis menu (the three dots on the top right)
+```````````````````````````````````````````````
+This menu contains an entry to Manage Permissions, allowing you to restrict or extend the read and write permissions for that experiment.
+By default, all experiments can be viewed by other team members. If you wish to restrict viewing of a particular experiment, set this to 'Only me'. An admin can also create groups of users, and users can set the visibility of experiments to this group only.
+
+The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.
+
 View mode of experiment
 ~~~~~~~~~~~~~~~~~~~~~~~
 In the view mode, several actions are accessible under the date.
 
 Edit
 ````
-Go back to edit mode. You can also click the main text.
+Go into edit mode.
 
 Duplicate
 `````````

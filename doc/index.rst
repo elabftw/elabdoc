@@ -60,7 +60,6 @@ See :doc:`this page <install-drop>` if you don't own a server already.
 .. toctree::
     :caption: Usage
 
-    quickstart
     user-guide
     admin-guide
     sysadmin-guide
