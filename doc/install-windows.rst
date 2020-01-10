@@ -25,14 +25,25 @@ Follow the steps below to install eLabFTW on your system:
 .. code-block:: bash
 
     cd D:\Data\elabftw # adapt the path to your situation
-    docker-compose.exe up -d
+    docker-compose up -d
 
     # for Mac OS users:
     cd /Users/YOU/Documents/elabftw # adapt the path to your situation
     docker-compose up -d
 
+Import the database structure
+-----------------------------
 
-**Final step** wait for the above command to finish. Then click here: https://localhost
+Before using eLabFTW, we need to import the database structure:
+
+.. code-block:: bash
+
+    docker exec -it elabftw bin/install start
+
+Create your Sysadmin account
+----------------------------
+
+**Final step**: click here: https://localhost/register.php
 
 .. note:: Remember to keep your installation :doc:`backuped <backup>` and :doc:`updated <how-to-update>` ;)
 
