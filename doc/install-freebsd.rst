@@ -80,13 +80,17 @@ At this point you should have:
 I had to change the file `/usr/local/etc/nginx/fastcgi_params`, and modify the SCRIPT_NAME line to this:
 `fastcgi_params SCRIPT_NAME $document_root$fastcgi_script_name;`
 
-For a working nginx config, see the files here: https://github.com/elabftw/elabimg/tree/master/src/nginx
+For a working nginx config, see the files here: https://github.com/elabftw/elabimg/tree/master/src/nginx or here: https://github.com/elabftw/elabdoc/tree/master/config_examples/nginx
 
 * a mysql server with an `elabftw` database
 * the `elabftw` php files
 
-Go to https://<YOUR_SERVER>/elabftw or the address you configured in nginx to point to the `web/` folder of elabftw.
+Import the database structure with:
 
-It'll probably let you download the `config.php` file. Upload this file to the root directory of `elabftw` and reload the page.
+.. code-block:: bash
+
+    bin/install start
+
+Go to https://<YOUR_SERVER>/elabftw or the address you configured in nginx to point to the `web/` folder of elabftw.
 
 That's all folks!
