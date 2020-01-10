@@ -24,8 +24,6 @@ Please refer to your distribution's documentation to install :
 
 .. tip:: If you don't know how to do that, or can't update php, have a look at :ref:`installing eLabFTW on a drop <install-drop>` or :ref:`in a docker container <install>`.
 
-.. note:: I wouldn't recommend HHVM because Gettext support is not here yet (see `this issue <https://github.com/facebook/hhvm/issues/1228>`_). Also, PHP 7 is here and is fast.
-
 Getting the files
 -----------------
 
@@ -71,7 +69,7 @@ Install php dependencies with `composer <https://getcomposer.org/download/>`_:
 
 This will populate the `vendor` directory and also complain about missing php extensions that you should install.
 
-Install and build JavaScript with `yarn <https://yarnpkg.com/en/docs/install>`_:
+Install `yarn <https://yarnpkg.com/en/docs/install>`_ and build JavaScript and CSS bundles with:
 
 .. code-block:: bash
 
@@ -86,13 +84,15 @@ Now create the cache and uploads directory with restrictive permissions:
     chown www-data:www-data cache uploads
     chmod 700 cache uploads
 
+Depending on your webserver configuration, the user might not be "www-data".
+
 SQL part
 --------
 
-The second part is putting the database in place.
+Create a database for elabftw
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Option 1: Command line way
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Use the command line like below or PhpMyAdmin if it is installed on your server already.
 
 .. code-block:: bash
 
@@ -106,38 +106,19 @@ Option 1: Command line way
     mysql> grant all privileges on elabftw.* to elabftw@localhost;
     mysql> exit
 
-You will be asked for the password you put after `identified by` three lines above.
+You will be asked for the password you put after `identified by` three lines above during the install.
 
+Import the database structure
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Option 2: Graphical way with phpmyadmin
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You need to install the package `phpmyadmin` if it's not already done.
-
-.. note:: It is not recommended to have phpmyadmin installed on a production server (for security reasons).
+Now that we have a database with a user/password to connect to it, we need to import the structure for eLabFTW. Simply execute this command from the elabftw folder:
 
 .. code-block:: bash
 
-    sudo apt-get install phpmyadmin
+    php bin/install start
 
-Now you will connect to the phpmyadmin panel from your browser on your computer. Type the IP address of the server followed by /phpmyadmin.
-
-Example: https://12.34.56.78/phpmyadmin
-
-Login with the root user on PhpMyAdmin panel (use the password you setup for mysql root user).
-
-Create a user `elabftw` with all rights on the database `elabftw`.
-
-Now click the `Users` tab and click:
-
-.. image:: img/adduser.png
-
-Do like this:
-
-.. image:: img/phpmyadmin.png
-
-Configuring the webserver correctly
------------------------------------
+Configure the webserver correctly
+---------------------------------
 
 The Docker image of eLabFTW contains a lot of little configuration tweaks to improve the security of the web application. Here are some of them that you can apply to your web server configuration.
 
