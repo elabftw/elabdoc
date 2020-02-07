@@ -101,11 +101,6 @@ If the code above doesn't work, try this:
     # start elabftw
     elabctl start
 
-Set up a cronjob to clear the exported files:
----------------------------------------------
-
-When someone requests as .zip or .csv export, the file is stored on disk undefinitely. If you want to clear those files, feel free to delete the content of the `cache` folder (not the folder itself, but its content). If you are using Docker, the folder is in the container at `/elabftw/cache`. Note that this folder gets cleared at each container creation and for non docker install, it gets cleared when you are updating.
-
 Update often
 ------------
 
