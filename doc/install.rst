@@ -95,6 +95,8 @@ If eLabFTW's Docker container runs on a machine with several web applications yo
 
 The following example forwards the URL https://your.domain/elabftw/ to the docker URL https://localhost:444. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "444:443".
 
+Add these lines to your Apache configuration file (probably in `/etc/apache2/apache.conf` or in your VirtualHosts files).
+
 .. code-block:: apache
 
     SSLProxyEngine on
