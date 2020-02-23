@@ -24,18 +24,23 @@ Bugfixes:
 * Fix files not getting imported from zip archive (#1645)
 * Fix wrong behavior on InvalidSchemaException
 * Fix the division by zero warning for new user visiting profile
+* Fix registration emails not sent to admins with lock power
 
 New features:
 
+* Allow users to be in several teams
 * Add write permissions to exp/items
 * Remove team restriction on team groups: you can add a member of another team in a team group
 * Add possibility to create users from the sysadmin/admin panels
+* Allow TAB separated values for CSV import (#1743)
 * Add expand all button (#1634)
 * Upgrade of the Scheduler with new version, better UI and possibility to bind an experiment to an event (#1619)
 * Add JSON editor (by @shabihsherjeel via PR #1554) (fix #1467)
 * Allow sysadmin to restrict email domain on registration (#1649)
 * Add API access to events and bookable endpoints (#1618)
+* Add API endpoint for making a zip backup on a time period
 * Improve the permission system with separate read/write permissions (#1646)
+* Allow IDP to send several teams and synchronize the teams from that
 
 Enhancements:
 
@@ -44,6 +49,7 @@ Enhancements:
 * Place the Create button on the right side and improve it
 * Resize the main container
 * Add modal dialogs for timestamping, create item and help
+* Improve zip name for single export (#1690)
 * Allow visibility change in show mode for items (#1640)
 * Make todolist scrollable (#1626)
 * Read exif orientation of image and rotate it if necessary (#1635)
@@ -51,6 +57,8 @@ Enhancements:
 * Background color of events is now color of item type (#1672)
 * The database structure import is now done through a command instead of the /install folder
 * Add pretty modals for some actions
+* Update Italian
+* Increase timeout for uploading big files
 * Make the main container less wide
 * Move the menu into the top bar
 
