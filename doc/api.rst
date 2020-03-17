@@ -180,6 +180,16 @@ Here is how you can attach a file to an experiment (or item):
     files = {'file': open('report.xls', 'rb')}
     print(manager.upload_to_experiment(94, files))
     print(manager.upload_to_item(17, files))
+    
+Fetch an uploaded file
+^^^^^^^^^^^^^^^^^^^^^^
+
+You can find the upload ID from the info of an experiment/item using the methods described above.
+
+.. code-block:: python
+    
+    # This example gets a file with upload ID 63
+    print(manager.get_upload(63))
 
 Create a database item
 ^^^^^^^^^^^^^^^^^^^^^^
