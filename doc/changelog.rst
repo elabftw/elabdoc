@@ -8,16 +8,18 @@ Version 3.4.0
 
 Wow. This is a BIG update! A lot of commits, new features, enhancements and general code improvements. eLabFTW keeps improving thanks to the community of users and people sponsoring the project through donations (on liberapay.com) or custom development requests (on deltablot.com).
 
-This version requires a change in the MySQL structure. After the update, run `bin/console db:update`.
+.. warning:: This version requires a change in the MySQL structure. After the update, run `bin/console db:updateTo34`.
 
 How to update the SQL structure:
 
-~~~bash
-# for docker users (assuming the container is called 'elabftw'
-docker exec -it elabftw bin/console db:update
-# for non docker users (from the elabftw folder)
-php bin/console db:update
-~~~
+.. code-block:: bash
+
+    # for docker users (assuming the container is called 'elabftw'
+    docker exec -it elabftw bin/console db:updateTo34
+    # for non docker users (from the elabftw folder)
+    php bin/console db:updateTo34
+
+`Read the blog post for this release! <https://www.deltablot.com/posts/release-340/>`_
 
 Bugfixes:
 
