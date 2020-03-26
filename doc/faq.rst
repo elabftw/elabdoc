@@ -139,7 +139,7 @@ The operating system of the server can be any. At least 2Gb of RAM, a decent pro
 The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, make sure to have:
 
 * a webserver (nginx, apache, cherokee, lighttpd, …) with HTTPS enabled
-* `PHP <https://secure.php.net/>`_ version > 7.1
+* `PHP <https://secure.php.net/>`_ version > 7.3
 * `Composer <https://getcomposer.org/>`_
 * `MySQL <https://www.mysql.com/>`_ version > 5.5
 
