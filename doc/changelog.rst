@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 3.4.1
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Bugfix:
+
+* Fix issue with update (see #1832)
+
+Enhancement:
+
+* Add possibility to display the password in password fields on login and register page (#1823)
+
+
 Version 3.4.0
 -------------
 
