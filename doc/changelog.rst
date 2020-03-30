@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 3.4.3
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Bugfixes:
+
+* Fix issue with permissions being too open (#1834)
+* Fix issue where toggle password was activated by pressing enter in login fields
+* Prevent removing team of user in only one team (#1835)
+
+Enhancements:
+
+* Prevent deletion of users with experiments (#1817)
+
+
+Version 3.4.2
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Hotfix for database upgrade.
+
 Version 3.4.1
 -------------
 
