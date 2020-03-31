@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 3.4.5
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Bugfix:
+
+* Fix quicksearch on Database (#1853)
+
 Version 3.4.4
 -------------
 
