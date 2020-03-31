@@ -24,7 +24,7 @@ Security:
 
 Bugfixes:
 
-* Fix some experiments to showing up (#1852)
+* Fix some experiments not showing up (#1852)
 * Fix date fields on search page and anon search
 
 i180:
