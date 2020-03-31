@@ -3,6 +3,26 @@
 Changelog
 =========
 
+Version 3.4.4
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Security:
+
+* Fix security vulnerability in Symfony http-foundation library
+  https://github.com/advisories/GHSA-mcx4-f5f5-4859
+
+Bugfixes:
+
+* Fix some experiments to showing up (#1852)
+* Fix date fields on search page and anon search
+
+i180:
+
+* Update translations
+
+
 Version 3.4.3
 -------------
 
