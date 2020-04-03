@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 3.4.6
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Bugfixes:
+
+* Fix database toggle lock permission issue (#1855)
+* Fix the register link in German (#1856)
+
+i18n:
+
+* Update translations
+
 Version 3.4.5
 -------------
 
@@ -27,7 +41,7 @@ Bugfixes:
 * Fix some experiments not showing up (#1852)
 * Fix date fields on search page and anon search
 
-i180:
+i18n:
 
 * Update translations
 
