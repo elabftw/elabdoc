@@ -7,6 +7,24 @@ How to update
 
 .. note:: If you are running out of disk space, you can do "docker system prune -a" to free up some space taken by old images.
 
+Before the update
+^^^^^^^^^^^^^^^^^
+
+Make sure to figure out what version you are running and **read the release notes** for the new version.
+
+The current running version can be seen in different ways. The easiest is to go to the Sysadmin panel where it is displayed on the top.
+
+If you don't have access to the Sysadmin panel, you can try the following:
+
+.. code-block:: bash
+
+    # look at the labels of the running container
+    docker inspect elabftw | grep version | tail -n1
+    # or look directly at the version string in the source code
+    docker exec -it elabftw grep -m2 INSTALLED_VERSION src/classes/ReleaseCheck.php | tail -n1| awk '{print $5}'
+
+You can also see the version string by bringing up the Dev tools (F12) and looking at the requests for JS and CSS files. They will have a "v" parameter that corresponds to the current version.
+
 If you installed it with elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
