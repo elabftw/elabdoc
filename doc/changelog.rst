@@ -6,13 +6,21 @@ Changelog
 Version 3.4.7
 -------------
 
-See changelog for version 3.4.0 for breaking change!
+See changelog for version 3.4.0 for breaking change if you're upgrading from 3.3.x version!
 
 Bugfixes:
 
 * Fix issue where team groups where not restricted to teams
 * Fix issue where not enough experiments were displayed for some users (#1854)
 * Fix filename on download for CJK characters (#1830)
+
+New feature:
+
+* Allow ordering by last modification time (#1734)
+
+Enhancement:
+
+* The "Back to listing" button will keep the previous filters
 
 Documentation:
 
