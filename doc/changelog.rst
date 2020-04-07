@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 3.4.7
+-------------
+
+See changelog for version 3.4.0 for breaking change!
+
+Bugfixes:
+
+* Fix issue where team groups where not restricted to teams
+* Fix issue where not enough experiments were displayed for some users (#1854)
+* Fix filename on download for CJK characters (#1830)
+
+Documentation:
+
+* Add documentation for "bookable" and "backupzip" API endpoints (#1866)
+
+i18n:
+
+* Fix missing translations and update italian (thanks @topoldo) (#1859 #1858)
+
+And upgrade some JS and PHP dependencies.
+
+This patch doesn't require an SQL update.
+
 Version 3.4.6
 -------------
 
