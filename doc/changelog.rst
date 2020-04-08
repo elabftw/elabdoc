@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.4.8
+-------------
+
+See changelog for version 3.4.0 for breaking change if you're upgrading from 3.3.x version!
+
+Bugfixes:
+
+* Fix issue where an admin could not validate a team member
+* Fix users appearing n times in sysadmin panel if member of n teams
+* Fix incorrect number of exp/items displayed in certain conditions
+
 Version 3.4.7
 -------------
 
