@@ -24,7 +24,7 @@ By default, newly created accounts are disabled. The admin of the team needs to 
 
 Experiments
 -----------
-Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL; the two other modes being 'view' and 'show').
+Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
 Templates
 ~~~~~~~~~
