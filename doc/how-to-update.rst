@@ -35,6 +35,10 @@ If you installed it with elabctl
     docker exec -it elabftw php bin/console db:update
     # Note: for version 2.x to 3.x use this instead
     docker exec -it elabftw php bin/console db:updateto3
+    # Note: for version 3.3 to 3.4 use this instead
+    docker exec -it elabftw php bin/console db:updateTo34
+
+As said earlier: READ THE CHANGELOG!!!
 
 If you installed it with git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
