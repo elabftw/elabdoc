@@ -25,6 +25,8 @@ If you don't have access to the Sysadmin panel, you can try the following:
 
 You can also see the version string by bringing up the Dev tools (F12) and looking at the requests for JS and CSS files. They will have a "v" parameter that corresponds to the current version.
 
+.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
+
 If you installed it with elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -33,15 +35,17 @@ If you installed it with elabctl
     elabctl update
     # change the name of the container if it is different in your configuration
     docker exec -it elabftw php bin/console db:update
-    # Note: for version 2.x to 3.x use this instead
-    docker exec -it elabftw php bin/console db:updateto3
     # Note: for version 3.3 to 3.4 use this instead
     docker exec -it elabftw php bin/console db:updateTo34
+    # Note: for version 2.x to 3.x use this instead
+    docker exec -it elabftw php bin/console db:updateto3
 
 As said earlier: READ THE CHANGELOG!!!
 
 If you installed it with git
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
 
 To update, cd in the `elabftw` folder and do:
 
@@ -57,6 +61,8 @@ To update, cd in the `elabftw` folder and do:
 
 If you are using Docker without elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
 
 In the directory where you have the `docker-compose.yml` file:
 
