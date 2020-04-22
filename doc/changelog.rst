@@ -3,6 +3,41 @@
 Changelog
 =========
 
+Version 3.4.9
+-------------
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+Bugfixes:
+
+* Fix the need to reload page to toggle lock (#1897)
+* Fix reset password button appearing greyed out (#1902)
+* Make sure the teams exist before creating user in SAML auth (#1896)
+* Fix tables in markdown (#1323)
+* Fix comment not saved if the email is not configured (#1884)
+
+Enhancements:
+
+* Add the teams in the report (#1882)
+* Fix alignment of top right menu (#1889)
+* Add user panel link in footer (#1888)
+* Display last modification time (#1883)
+* Increase uploader timeout
+
+i18n:
+
+* Localize prompt when booking an item (#1903)
+* Fix the localization of scheduler (#1903)
+* Add translation for "Show more" and "Switch editor" (#1899 #1900)
+* Add missing "Privacy policy" translation (#1872)
+
 Version 3.4.8
 -------------
 
