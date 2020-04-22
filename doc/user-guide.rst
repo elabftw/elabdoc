@@ -66,6 +66,12 @@ Paste the link location. Press OK. That's it, you have an image inside your main
 
 Make sure to right click on the thumbnail and not on the name!
 
+Steps
+`````
+Steps are a way to list the things one need to do during the experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long experiments spanning over several days, where the "Next step" will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular experiment.
+
+Note that you can also declare steps in a template.
+
 Linked items
 ````````````
 This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.
