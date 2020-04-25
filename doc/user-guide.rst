@@ -169,6 +169,26 @@ Scheduler
 ~~~~~~~~~
 Since version 1.3.0, a scheduler is available to book equipment. First you need to set some item types as bookable from the Admin Panel. After you select an item from the Scheduler page, and use the calendar to book it.
 
+User panel
+~~~~~~~~~~
+The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.
+
+Preferences tab
+```````````````
+From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
+
+Account tab
+```````````
+Modify your password, name and contact information.
+
+Templates tab
+`````````````
+Manage your templates. Once a template has been created, you can add tags, steps and links to it. It will then be available from the Create menu.
+
+Api keys tab
+````````````
+Create an API key for your account from this page. API keys are needed if you wish to access resources through the REST API.
+
 Miscellaneous
 -------------
 
