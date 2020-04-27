@@ -15,6 +15,8 @@ IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
 IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
 IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
 
+This patch doesn't contain database changes, so there is no need to run the `db:update` command after updating.
+
 Bugfixes:
 
 * Fix the need to reload page to toggle lock (#1897)
@@ -30,6 +32,9 @@ Enhancements:
 * Add user panel link in footer (#1888)
 * Display last modification time (#1883)
 * Increase uploader timeout
+* Add "Clear all" button on search page (#1910)
+* Remove HTML/XML syntax highlighter (#1909)
+* Reload page after lock (#1897)
 
 i18n:
 
@@ -37,6 +42,13 @@ i18n:
 * Fix the localization of scheduler (#1903)
 * Add translation for "Show more" and "Switch editor" (#1899 #1900)
 * Add missing "Privacy policy" translation (#1872)
+* 100% translated in Chinese, Japanese, Korean, Russian, Italian, Dutch, French, German
+* Fix localization of text editor
+
+Dev:
+
+* Use rector to find issues in code
+* Psalm now reports 0 errors and 0 warnings with the highest setting
 
 Version 3.4.8
 -------------
