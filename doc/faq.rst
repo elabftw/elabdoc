@@ -118,6 +118,23 @@ Can I try it before I install it?
 
 Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_
 
+Is it compliant to 21CFR Part 11?
+---------------------------------
+
+1. Closed system: eLabFTW requires unique credentials to access the system. A system of permissions and roles allow fine control of what can be seen by whom.
+
+2. Experiments and database items (protocols, reagents, cell lines...) are considered signable by the locking mechanism that timestamps and locks an entity in place.
+
+3. Trusted timestamping: RFC3161 Trusted Timestamping is available for experiments. A specific PDF is generated and timestamped cryptographically to prove anteriority if needed in a court of law.
+
+4. Audit trail: changes to entries are internally recorded and cannot be tampered with by users. A version history is available.
+
+5. Retention of records: a setting allows to disable the possibility to delete records entirely.
+
+6. Copies of records: you can export your data in PDF, ZIP archives or CSV files very easily.
+
+7. Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place.
+
 What about compliance to standards?
 -----------------------------------
 eLabFTW tries to comply to the following standards :
