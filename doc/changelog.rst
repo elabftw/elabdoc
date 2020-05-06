@@ -3,6 +3,34 @@
 Changelog
 =========
 
+Version 3.4.10
+--------------
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+This patch doesn't contain database changes, so there is no need to run the `db:update` command after updating.
+
+Bugfixes:
+
+* Remove the tag cloud from the Team page because it's slowing down the page too much with a big database
+* Fix CSS of mol importer button in molecule editor
+
+Enhancements:
+
+* API will properly return 404 error if a resource is not found (update to elabapy coming later)
+* API documentation has been vastly improved with many examples
+* Reduce table padding so it doesn't appear too wide in view mode compared to edit mode
+
+Dev:
+
+* Update javascript and PHP dependencies.
+
 Version 3.4.9
 -------------
 
