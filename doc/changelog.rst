@@ -3,6 +3,30 @@
 Changelog
 =========
 
+Version 3.4.11
+--------------
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+This release is all about SPEED. The loading time of big databases should be much faster now and take up less resources.
+
+This patch doesn't contain database changes, so there is no need to run the `db:update` command after updating.
+
+Bugfixes:
+
+* Fix incorrect link on tags displayed on search page
+* Fix the documentation link for postinstall in sysadmin page
+
+Enhancements:
+
+* Drastic page load speed improvements (#1941)
+* Add male and female signs to charmap plugin in tinymce
+* Allow user creation even if local register is disabled (#914)
+* Add a button to go back to view mode from edit mode
+
 Version 3.4.10
 --------------
 
