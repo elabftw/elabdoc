@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 3.4.12
+--------------
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+
+IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+
+This is just a small patch fixing one bug.
+
+Bugfix:
+
+* Fix experiment/item not showing up in show mode if read permission is set to 'user' (#1956)
+
 Version 3.4.11
 --------------
 
