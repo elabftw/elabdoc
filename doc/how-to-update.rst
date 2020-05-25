@@ -58,6 +58,8 @@ To update, cd in the `elabftw` folder and do:
     yarn install
     yarn buildall
     php bin/console db:update
+    # clear the cache
+    sudo rm -rf cache/twig/*
 
 If you are using Docker without elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,25 +73,6 @@ In the directory where you have the `docker-compose.yml` file:
     docker-compose pull
     docker-compose up -d
     docker exec -it elabftw php bin/console db:update
-
-If you installed it from a .zip or .tar.gz archive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: This is not a recommended method, use it only if you cannot use git.
-
-1. Get the `latest archive <https://github.com/elabftw/elabftw/releases/latest>`_
-2. Unpack it on your server, overwriting all the files.
-
-3. Install php and javascript dependencies:
-
-.. code-block:: bash
-
-    # see https://getcomposer.org to install composer
-    composer install --no-dev
-    # see https://yarnpkg.com/en/docs/install to install yarn
-    yarn install
-    yarn buildall
-    php bin/console db:update
 
 Complete upgrade guide from 2.0.7 to 3.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
