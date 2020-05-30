@@ -10,14 +10,14 @@ USER node
 RUN mkdir -p /home/node/build
 
 # DOC BUILD
-RUN git clone --depth 1 -b next https://github.com/elabftw/elabdoc /home/node/elabdoc
+RUN git clone --depth 1 https://github.com/elabftw/elabdoc /home/node/elabdoc
 
 WORKDIR /home/node/elabdoc
 
-RUN yarn install && ./node_modules/.bin/grunt && cp -r doc/_build/html /home/node/build/doc && rm -r node_modules
+RUN yarn install && ./node_modules/.bin/grunt && mv doc/_build/html /home/node/build/doc && rm -r node_modules
 
 # API BUILD
-RUN git clone --depth 1 -b apidoc https://github.com/elabftw/elabftw /home/node/elabftw
+RUN git clone --depth 1 https://github.com/elabftw/elabftw /home/node/elabftw
 
 WORKDIR /home/node/elabftw
 
