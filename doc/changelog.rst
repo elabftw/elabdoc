@@ -3,13 +3,30 @@
 Changelog
 =========
 
+Version 3.4.13
+--------------
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+Enhancement:
+
+* Only save a revision if there are at least 100 characters of difference (previously was 20)
+
+Bugfixes:
+
+* Fix impossibility to send mass emails
+* Fix user able to unlock entity if locked by someone else (#1967)
+
 Version 3.4.12
 --------------
 
-IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
 
 
-IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
 
 This is just a small patch fixing one bug.
 
@@ -20,10 +37,10 @@ Bugfix:
 Version 3.4.11
 --------------
 
-IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
 
 
-IMPORTANT: read the changelog for 3.4.0 if you're updating from 3.3.x!
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
 
 This release is all about SPEED. The loading time of big databases should be much faster now and take up less resources.
 
