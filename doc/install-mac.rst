@@ -16,4 +16,6 @@ Install with Docker
 
 Follow the instructions for :doc:`installing on Windows <install-windows>`. It's more or less the same: you install Docker, then you edit a docker-compose.yml file, and you start the containers with docker-compose.
 
+WARNING: by default eLabFTW will be installed in `/var` but that folder is not accessible on newer versions of Mac OS, so use something else like `/Users/<YOUR_USERNAME>/Documents/elabftw`. See `this issue <https://github.com/elabftw/elabftw/issues/1965>`_.
+
 Because I don't own a Mac, these instructions are untested, but should work nonetheless.
