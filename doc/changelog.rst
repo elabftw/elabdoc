@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 3.4.16
+--------------
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+Bugfixes:
+
+* Fix issue where database item edited by someone from another team would appear in that team instead of staying in the original team
+* Fix incorrect experiments count in sysadmin report (#2025)
+
 Version 3.4.15
 --------------
 
