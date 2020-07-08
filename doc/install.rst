@@ -126,6 +126,8 @@ One can then forward to elabftw without the option SSLProxyEngine on, if the HTT
     ProxyPass /elabftw/ http://localhost:444/
     ProxyPassReverse /elabftw/ http://localhost:444/
 
+Note: you need to have Apache's "headers" module enabled: `a2enmod headers` for it to work.
+
 Using nginx to run eLabFTW Docker container
 ```````````````````````````````````````````
 
