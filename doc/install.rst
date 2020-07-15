@@ -57,7 +57,7 @@ Install eLabFTW
 
     Edit the configuration to suit your server setup. For instance, you might want to edit `/etc/elabftw.yml` to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
-    If you have set `DISABLE_HTTPS=false` then you need to configure the TLS certificate. Look at the comments inside the configuration file, they describe the different use cases. In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system.
+    If you have set `DISABLE_HTTPS=false` then you need to configure the TLS certificate. Look at the comments inside the configuration file, they describe the different use cases. In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use).
 
 * Start eLabFTW:
 
