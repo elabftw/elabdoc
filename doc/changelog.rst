@@ -3,6 +3,21 @@
 Changelog
 =========
 
+Version 3.4.17
+--------------
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+
+IMPORTANT: read the `changelog for 3.4.0 <https://github.com/elabftw/elabftw/releases/3.4.0>`_ if you're updating from 3.3.x!
+
+This patch fixes a CRITICAL vulnerability in the way the login mechannism works. It is STRONGLY recommended to update to this version as soon as possible.
+
+Security fixes:
+
+* Fix CRITICAL issue with login (thanks Marcel Bolten)
+* Fix vulnerabilities in jsoneditor
+
 Version 3.4.16
 --------------
 
