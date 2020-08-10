@@ -14,18 +14,12 @@ This is a major update. After updating the container, you will need to run the u
    # without docker
    php bin/console db:update
 
-New features:
+**New features**:
 
 * Enforce read/write permissions of experiments by Admin (#1999)
 * The Todolist is now also showing the unfinished steps in experiments (#2024)
 * The Todolist will stay open on page change
-* External authentication (contributed by @manu0401) (PR #2023)
-
-  If the webserver is providing authentication, use this to login the user
-
-  Also provide an URL for logout
-
-  Add parameters in Sysconfig page to configure external auth
+* External authentication (contributed by @manu0401) (PR #2023). If the webserver is providing authentication, use this to login the user. Also provide an URL for logout. Add parameters in Sysconfig page to configure external auth
 * Add proper Single Log Out (#1691)
 * Steps on experiments are now sortable and editable (#904)
 * Add pinned entities. A pinned experiment or item will stay on top of the page in show mode
@@ -38,7 +32,7 @@ New features:
 * Order the links by name (#1940)
 * Add template permissions similar to exp/items permissions (PR #1885) (#1668) Contribution by Max Schröder and Farrukh Faizy
 
-Enhancements:
+**Enhancements**:
 
 * Make one less SQL request on page load if admin
 * Use correct background color for events on creation in scheduler
@@ -60,30 +54,27 @@ Enhancements:
 * Send notif to user that needs validation and send user info to admin(s)
 * Change min delte characters for revision create from 20 to 100 (helps reduce the db size growth). Might be configurable later on
 
-i18n:
+**i18n**:
 
 * Several new strings translated. Add i18next library to translate in javascript
 
-Bugfixes:
+**Bugfixes**:
 
 * Fix wrong IDP used when several active IDPs were configured
 * Fix potential issues spotted by static analysis
 * Fix count of experiments in report (#2025)
 
-Updates:
+**Updates**:
 
 * Update prismjs
 
-Developer corner:
+**Developer corner**:
 
 * Add Elabftw\Maps\Team. Maps are classes that map their properties to columns in a table. This is a work-in-progress.
 * Add Elabftw\Elabftw\DisplayParams to store order/query/limit/offset/sort of show mode
 * Make a single JS bundle instead of one per page and use "defer" to load it
   before: 6141134 bytes of JS
   after: 5560564 bytes of JS
-
-
-
 
 
 Version 3.4.17
