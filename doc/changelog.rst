@@ -3,6 +3,89 @@
 Changelog
 =========
 
+Version 3.5.0
+-------------
+
+This is a major update. After updating the container, you will need to run the update script:
+
+.. code-block:: bash
+   # with docker
+   docker exec -it elabftw bin/console db:update
+   # without docker
+   php bin/console db:update
+
+New features:
+
+* Enforce read/write permissions of experiments by Admin (#1999)
+* The Todolist is now also showing the unfinished steps in experiments (#2024)
+* The Todolist will stay open on page change
+* External authentication (contributed by @manu0401) (PR #2023)
+
+  If the webserver is providing authentication, use this to login the user
+
+  Also provide an URL for logout
+
+  Add parameters in Sysconfig page to configure external auth
+* Add proper Single Log Out (#1691)
+* Steps on experiments are now sortable and editable (#904)
+* Add pinned entities. A pinned experiment or item will stay on top of the page in show mode
+* Add Ctrl+= and Ctrl+Shift+= for subscript/superscript (#1556)
+* Add JSON export from show mode
+* Generate a single PDF file with all selected items (PR #2038) (#434) Contribution by Marcel Bolten
+* Show related items in view/edit mode (PR #1993) (#1432) Contribution by Marcel Bolten
+* Allow file upload with copy/past (PR #1886) Contribution by Sherjeel Shabih
+* Display a link to the scheduler on experiments bound to a scheduler event
+* Order the links by name (#1940)
+* Add template permissions similar to exp/items permissions (PR #1885) (#1668) Contribution by Max Schröder and Farrukh Faizy
+
+Enhancements:
+
+* Make one less SQL request on page load if admin
+* Use correct background color for events on creation in scheduler
+* Allow several whitelisted email domains (#1836)
+* Display Mathjax in preview mode of markdown editor (#892)
+* Add the filter/order/sort/limit menu on Search page
+* Add a Tag input in show mode to look for tags
+* Increase the size limit of hashed files on upload
+* Don't try to rotate tif files (#2071)
+* Logout user after use of an eLabID link
+* Add month view in scheduler
+* Show templates from other teams on Team page (#1457)
+* Hide the import button from Links in templates (#1745)
+* Make the Todolist push the content to the right (#1871)
+* Fix the Json editor +/- button when loading a file
+* Prevent Tinymce from showing raw html on editor load
+* Don't show the Tags line in pdf in there are none
+* Use bootstrap-select in some selects so the options can be filtered
+* Send notif to user that needs validation and send user info to admin(s)
+* Change min delte characters for revision create from 20 to 100 (helps reduce the db size growth). Might be configurable later on
+
+i18n:
+
+* Several new strings translated. Add i18next library to translate in javascript
+
+Bugfixes:
+
+* Fix wrong IDP used when several active IDPs were configured
+* Fix potential issues spotted by static analysis
+* Fix count of experiments in report (#2025)
+
+Updates:
+
+* Update prismjs
+
+Developer corner:
+
+* Add Elabftw\Maps\Team. Maps are classes that map their properties to columns in a table. This is a work-in-progress.
+* Add Elabftw\Elabftw\DisplayParams to store order/query/limit/offset/sort of show mode
+* Make a single JS bundle instead of one per page and use "defer" to load it
+  before: 6141134 bytes of JS
+  after: 5560564 bytes of JS
+
+
+
+
+
 Version 3.4.17
 --------------
 
