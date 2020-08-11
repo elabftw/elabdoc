@@ -9,6 +9,7 @@ Version 3.5.0
 This is a major update. After updating the container, you will need to run the update script:
 
 .. code-block:: bash
+
    # with docker
    docker exec -it elabftw bin/console db:update
    # without docker
