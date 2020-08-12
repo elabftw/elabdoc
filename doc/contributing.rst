@@ -307,6 +307,16 @@ Adding a lang
 * Rename file to 4 letters code
 * Edit first line of file to match code
 
+
+Adding a new term for js i18n
+-----------------------------
+
+These steps are overly complicated and should be made automatically ideally.
+
+* Add the new term to src/langs/js-strings.php and give it an identifier
+* Open all files in `src/ts/langs/*.ts` and add it there with translation for all
+* Import i18next in the corresponding ts file and use `i18next.t('string-id')`
+
 Accessing Docker MySQL database with phpmyadmin
 -----------------------------------------------
 
@@ -356,3 +366,20 @@ Step 4: restart containers
 ``````````````````````````
 
 `elabctl restart`, and you should now have a valid certificate on your local dev install of elabftw :)
+
+How to test external auth
+-------------------------
+
+To easily test external authentication, edit in the container `/etc/php7/php-fpm.d/www.conf` and at the end add:
+
+.. code-block:: conf
+
+   env[auth_user] = ntesla
+   env[auth_username] = Nicolas
+   env[auth_lastname] = Tesla
+   env[auth_email] = "nico@example.com"
+   env[auth_team] = "Alpha"
+
+Restart the php process with: `supervisorctl restart php7-fpm`.
+
+Next, configure the correct keys in the Sysconfig panel and external authentication should be working as expected.
