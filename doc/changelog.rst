@@ -15,6 +15,10 @@ This is a major update. After updating the container, you will need to run the u
    # without docker
    php bin/console db:update
 
+**Breaking changes**:
+
+If you are using Docker (and you should :p), the access and error logs are now sent to stdout and stderr of the container. So if you were using `/var/log/nginx/access.log` and `/var/log/error.log` to store the logs, you will now need to use `docker logs elabftw` to see them. Use `docker logs elabftw 1>/dev/null` to see only errors and `docker logs elabftw 2>/dev/null` to see only access log. This change was done to align with docker best practices and should facilitate central logging.
+
 **New features**:
 
 * Enforce read/write permissions of experiments by Admin (#1999)
@@ -32,6 +36,7 @@ This is a major update. After updating the container, you will need to run the u
 * Display a link to the scheduler on experiments bound to a scheduler event
 * Order the links by name (#1940)
 * Add template permissions similar to exp/items permissions (PR #1885) (#1668) Contribution by Max Schröder and Farrukh Faizy
+* Allow hiding a team from the register select
 
 **Enhancements**:
 
@@ -69,13 +74,18 @@ This is a major update. After updating the container, you will need to run the u
 
 * Update prismjs
 
+**Docker**:
+
+* Add possibility so configure a user and group for nginx. This is useful if you're using a server picky about users (using NFSv4 for instance). A contribution by François Prud'homme.
+
 **Developer corner**:
 
-* Add Elabftw\Maps\Team. Maps are classes that map their properties to columns in a table. This is a work-in-progress.
+* Add Elabftw\Maps\Team and UserPreferences. Maps are classes that map their properties to columns in a table. This is a work-in-progress.
 * Add Elabftw\Elabftw\DisplayParams to store order/query/limit/offset/sort of show mode
 * Make a single JS bundle instead of one per page and use "defer" to load it
   before: 6141134 bytes of JS
   after: 5560564 bytes of JS
+* Overall code quality improved. Previous rating on scrutinizer-ci was 8.7, it is now 9.09!
 
 
 Version 3.4.17
