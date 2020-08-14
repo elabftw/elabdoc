@@ -17,7 +17,7 @@ This is a major update. After updating the container, you will need to run the u
 
 **Breaking changes**:
 
-If you are using Docker (and you should :p), the access and error logs are now sent to stdout and stderr of the container. So if you were using `/var/log/nginx/access.log` and `/var/log/error.log` to store the logs, you will now need to use `docker logs elabftw` to see them. Use `docker logs elabftw 1>/dev/null` to see only errors and `docker logs elabftw 2>/dev/null` to see only access log. This change was done to align with docker best practices and should facilitate central logging.
+If you are using Docker (and you should :p), the access and error logs are now sent to stdout and stderr of the container. So if you were using `/var/log/nginx/access.log` and `/var/log/nginx/error.log` to store the logs, you will now need to use `docker logs elabftw` to see them. Use `docker logs elabftw 1>/dev/null` to see only errors and `docker logs elabftw 2>/dev/null` to see only access log. This change was done to align with docker best practices and should facilitate central logging.
 
 **New features**:
 
