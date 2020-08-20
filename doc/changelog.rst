@@ -59,6 +59,10 @@ If you are using Docker (and you should :p), the access and error logs are now s
 * Use bootstrap-select in some selects so the options can be filtered
 * Send notif to user that needs validation and send user info to admin(s)
 * Change min delte characters for revision create from 20 to 100 (helps reduce the db size growth). Might be configurable later on
+* Add json viewer on view mode (contribution by Sherjeel Shabih) (#2100)
+* Fix HTML syntax violations (contribution by Marcel Bolten) (#2099)
+* Fix disappearing 3D molecule after new upload or delete (#2094) by Marcel Bolten
+* Rework the templates (#2095)
 
 **i18n**:
 
