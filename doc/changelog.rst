@@ -63,6 +63,7 @@ If you are using Docker (and you should :p), the access and error logs are now s
 * Fix HTML syntax violations (contribution by Marcel Bolten) (#2099)
 * Fix disappearing 3D molecule after new upload or delete (#2094) by Marcel Bolten
 * Rework the templates (#2095)
+* Add "save as" option for JSON editor (contribution by Sherjeel Shabih) (#2108)
 
 **i18n**:
 
