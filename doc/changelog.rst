@@ -3,6 +3,31 @@
 Changelog
 =========
 
+Version 3.5.1
+-------------
+
+The first patch for the 3.5 branch!
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+Bugfixes:
+
+* Fix not all bookable items showing on Team page (#2128)
+* Fix incorrect permissions left hanging after deletion of a team group
+* Fix public, organization and team group where current user is not showing up in show mode as expected
+* Fix changing permissions broken notification bubble
+* Make sure acs url for SAML works with a / at the end of the url setting (#2117)
+
+Enhancements:
+
+* Display team group(s) appartenance on profile page
+* Add eLabFTW version in footer
+* Add the permissions link if we don't own the experiment (#2132)
+* Upgrade some dependencies to the latest version (like Mathjax 3.1.0)
+* Use one deduplicate button on the tag manager to deduplicate all tags at once (#2137 #2118)
+* Improve tag manager user experience
+
+
 Version 3.5.0
 -------------
 
