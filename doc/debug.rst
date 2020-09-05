@@ -29,6 +29,6 @@ If you get "An error occured!" message, check the PHP logs. All errors should be
 .. code-block:: bash
 
    # for php errors
-   elabctl php-logs
+   elabctl error-logs
    # or
-   docker exec -it elabftw tail /var/log/nginx/error.log
+   docker logs elabftw 1>/dev/null
