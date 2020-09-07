@@ -28,6 +28,15 @@ Unless this setting has been modified by the Sysadmin, new accounts will need va
 
 If you do not wish to validate this account because they don't belong in your team, you can either ask the Sysadmin to change the team of this account, or delete the account yourself from the Users tab in the Admin Panel.
 
+Video
+~~~~~
+
+If you prefer, you can watch a short video introducing the Admin Panel:
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/EyEX9nHNWsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 User groups
 ~~~~~~~~~~~
 The Admin can create User Groups from the Admin Panel. Users can then choose to set the permissions of an item to this group. Only members of this group will be able to see/edit this experiment.

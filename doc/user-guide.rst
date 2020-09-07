@@ -26,6 +26,12 @@ Experiments
 -----------
 Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
+See the getting started video:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/k30uyH2_LMM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Templates
 ~~~~~~~~~
 Each user can have his own Experiments templates. Go to your user panel to create/edit your templates. You can export them as .elabftw.tpl files, and import them, too! They will be accessible from the «Create new» dropdown menu.
@@ -169,6 +175,12 @@ Scheduler
 ~~~~~~~~~
 Since version 1.3.0, a scheduler is available to book equipment. First you need to set some item types as bookable from the Admin Panel. After you select an item from the Scheduler page, and use the calendar to book it.
 
+See the video about the scheduler below:
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/lGESXKV2-CM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 User panel
 ~~~~~~~~~~
 The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.
@@ -197,5 +209,9 @@ You can export experiments in .zip. If the experiment was timestamped you will f
 You can export and import items from the database (it can be several items).
 
 Press 't' to have a TODO list.
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/maylkcTAarg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the editor, press Ctrl+shift+d to get today's date inserted at cursor position.
