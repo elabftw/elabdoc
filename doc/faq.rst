@@ -260,6 +260,13 @@ Can I change the date format?
 
 No. The date in eLabFTW (YYYYMMDD) follows ISO 8601 standard and allowing a user to change the format would only bring confusion.
 
+.. _faq2fa:
+
+What App can I use for two-factor authentication (2FA) and what settings are used?
+----------------------------------------------------------------------------------
+
+It should be possible to use nearly any available 2FA app (`Play Store <https://play.google.com/store/search?q=2FA&c=apps>`_ and `App Store <https://theappstore.org/search.php?search=2fa&platform=software>`_) that supports the time-based one-time password algorithm (TOTP). Setting up 2FA is very easy, you only need to scan the QR-code. However, also a manual set up is possible with the provided secret. eLabFTW employs commonly used settings (HMAC-SHA-1 algorithm, 6 digits and a period of 30 seconds). Under the hood eLabFTW uses the `PHP library for Two Factor Authentication <https://github.com/RobThree/TwoFactorAuth>`_.
+
 What is the meaning of 'FTW'?
 -----------------------------
 
