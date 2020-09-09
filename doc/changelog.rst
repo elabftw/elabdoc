@@ -3,6 +3,22 @@
 Changelog
 =========
 
+Version 3.5.2
+-------------
+
+The second patch for 3.5. If you're running 3.5.1, upgrade now! If you're not, upgrade nonetheless ;)
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+Bugfix:
+
+* Fix issue with leftover pinned items if user deleting it is not the one who pinned it (#2158)
+
+Enhancements:
+
+* Greatly improve the performance on team and ucp pages with templates
+* Revamp how the templates are displayed and group them by owner (#2157)
+
 Version 3.5.1
 -------------
 
