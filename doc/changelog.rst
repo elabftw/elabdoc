@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.5.4
+-------------
+
+The fourth patch for 3.5. If you're running 3.5.(1|2), upgrade now! If you're not, upgrade nonetheless ;)
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+Bugfix:
+
+* Fix bad template on UCP
+
 Version 3.5.3
 -------------
 
