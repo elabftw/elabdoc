@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 3.5.3
+-------------
+
+The third patch for 3.5. If you're running 3.5.(1|2), upgrade now! If you're not, upgrade nonetheless ;)
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+Enhancements:
+
+* Fix bad performance on experiments show mode
+* Improve the Templates class code
+
+i18n:
+
+* Update Chinese translations
+
+
 Version 3.5.2
 -------------
 
