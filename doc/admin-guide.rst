@@ -43,7 +43,7 @@ The Admin can create User Groups from the Admin Panel. Users can then choose to 
 
 Users tab
 ~~~~~~~~~
-The Users tab allows you to modify user accounts in your team. Make an empty search to see all the accounts.
+The Users tab allows you to modify user accounts in your team. Make an empty search to see all the accounts. Admins can also disable 2FA for a user who locked out themselfe.
 
 Status
 ~~~~~~

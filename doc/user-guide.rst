@@ -182,23 +182,25 @@ See the video about the scheduler below:
    <iframe width="560" height="315" src="https://www.youtube.com/embed/lGESXKV2-CM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 User panel
-~~~~~~~~~~
+----------
+
 The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.
 
 Preferences tab
-```````````````
+~~~~~~~~~~~~~~~
 From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
 
 Account tab
-```````````
+~~~~~~~~~~~
 Modify your password, name and contact information.
+You can also enable/disbale :ref:`two-factor authentication <faq2fa>` (2FA).
 
 Templates tab
-`````````````
+~~~~~~~~~~~~~
 Manage your templates. Once a template has been created, you can add tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
-````````````
+~~~~~~~~~~~~
 Create an API key for your account from this page. API keys are needed if you wish to access resources through the REST API.
 
 Miscellaneous

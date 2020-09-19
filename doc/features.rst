@@ -61,6 +61,7 @@ Security
 * secure storage of password (salted sha512)
 * secure password reset mechanism
 * option for new account admin validation
+* two-factor authentication (2FA)
 
 Intellectual property
 ^^^^^^^^^^^^^^^^^^^^^
