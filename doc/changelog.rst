@@ -3,10 +3,32 @@
 Changelog
 =========
 
+Version 3.5.5
+-------------
+
+The fifth patch for 3.5. Go get your 8 bugfixes ASAP! If you're running 3.5.(1|2|3|4), upgrade now! If you're not, upgrade nonetheless ;)
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+New:
+
+* `Planted 1022 trees <https://ecologi.com/deltablot>`_
+
+Bugfixes:
+
+* Fix checkbox staying selected in show mode after deletion (#2185)
+* Fix image edit bug with TinyMCE (#2183) contribution by Sherjeel Shabih
+* Fix next step display not following ordering
+* Fix event from another team not showing up in scheduler
+* Fix permissions on database item in some cases (#2189)
+* Fix unfinished steps sorting in todolist (#2169) contribution by Marcel Bolten
+* Fix unselectable single column layout setting in UCP (#2167) contribution by Marcel Bolten
+* Fix invisible teams still visible in anon login on login page
+
 Version 3.5.4
 -------------
 
-The fourth patch for 3.5. If you're running 3.5.(1|2), upgrade now! If you're not, upgrade nonetheless ;)
+The fourth patch for 3.5. If you're running 3.5.(1|2|3), upgrade now! If you're not, upgrade nonetheless ;)
 
 See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
 
