@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 3.5.6
+-------------
+
+The sixth patch for 3.5. Go get your 8 bugfixes ASAP! If you're running 3.5.(1|2|3|4|5), upgrade now! If you're not, upgrade nonetheless ;)
+
+See the `changelog for 3.5.0 <https://github.com/elabftw/elabftw/releases/3.5.0)>`_ if you're not already on 3.5.0.
+
+Bugfixes:
+
+* Fix experiments from team showing up on category filter
+* Disable contextual menu in tinymce (#2207)
+* Fix next step display (#2206)
+
 Version 3.5.5
 -------------
 
