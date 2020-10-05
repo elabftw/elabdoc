@@ -60,6 +60,7 @@ In the directory where you have the `docker-compose.yml` file:
 .. code-block:: bash
 
     docker-compose pull
+    docker-compose down
     docker-compose up -d
     docker exec -it elabftw php bin/console db:update
 
