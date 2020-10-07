@@ -187,7 +187,7 @@ For the `web` service:
 
 For the `mysql` service:
 
-* Remove everything is you already have a MySQL service running
+* Remove everything if you already have a MySQL service running
 * Remove the `container_name`
 * Remove the `ports` section
 * Remove the `networks` section (or adapt it to your network)
