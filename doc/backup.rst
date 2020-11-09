@@ -64,6 +64,8 @@ If you installed eLabFTW with `elabctl <https://github.com/elabftw/elabctl>`_, u
 
     elabctl backup
 
+Should you run into errors while executing the backup command please make sure you are using the latest version of `elabctl` first. A search within the `GitHub issue tracker <https://github.com/elabftw/elabftw/issues?q=is%3Aissue+backup>`_ can also help.
+
 Without elabctl
 ```````````````
 * Copy the `/etc/elabftw.yml` somewhere safe.
@@ -72,7 +74,7 @@ Without elabctl
 
 .. code-block:: bash
 
-    docker exec -it mysql bash -c 'mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
+    docker exec -it mysql bash -c 'mysqldump --no-tablespaces -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
     docker cp mysql:dump.sql elabftw-$(date --iso-8601).sql
     gzip --best elabftw-$(date --iso-8601).sql
 
@@ -129,7 +131,7 @@ Next we'll save the database:
 
 .. code-block:: bash
 
-    docker exec mysql bash -c 'mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
+    docker exec mysql bash -c 'mysqldump --no-tablespaces -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
 
 The environment variables will be correctly replaced; convenient, isn't it? So just copy paste this and it'll work.
 
