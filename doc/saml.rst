@@ -20,7 +20,6 @@ The service provider is the elabftw install. Head to the Sysadmin panel, click t
 * Strict mode: Set to "Yes". Otherwise the mechanism is not secure
 * Base url: Where did you install elabftw? Example: https://elabftw.example.edu
 * entityId: The same as base URL
-* Assertion consumer service: Just add /index.php?acs to base URL. Example: https://elabftw.example.edu/index.php?acs
 * SAML protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
 * Single Logout Service: The same as entityId
 * Single Logout Service protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
