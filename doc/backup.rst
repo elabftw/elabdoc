@@ -22,6 +22,11 @@ If you installed eLabFTW with elabctl, making a backup becomes very easy. Issue 
 
     elabctl backup
 
+.. warning::
+
+   If you get this error: `mysqldump: Error: 'Access denied; you need (at least one of) the PROCESS privilege(s) for this operation' when trying to dump tablespaces`
+   Update your elabctl with "elabctl self-update" (might need to prepend sudo depending on where you installed it)
+
 Using a script
 --------------
 
@@ -72,7 +77,7 @@ Without elabctl
 
 .. code-block:: bash
 
-    docker exec -it mysql bash -c 'mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
+    docker exec -it mysql bash -c 'mysqldump --no-tablespaces -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
     docker cp mysql:dump.sql elabftw-$(date --iso-8601).sql
     gzip --best elabftw-$(date --iso-8601).sql
 
