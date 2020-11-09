@@ -134,7 +134,7 @@ Next we'll save the database:
 
 .. code-block:: bash
 
-    docker exec mysql bash -c 'mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
+    docker exec mysql bash -c 'mysqldump --no-tablespaces -u$MYSQL_USER -p$MYSQL_PASSWORD -r dump.sql $MYSQL_DATABASE'
 
 The environment variables will be correctly replaced; convenient, isn't it? So just copy paste this and it'll work.
 
