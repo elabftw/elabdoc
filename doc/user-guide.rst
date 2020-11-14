@@ -217,3 +217,15 @@ Press 't' to have a TODO list.
    <iframe width="560" height="315" src="https://www.youtube.com/embed/maylkcTAarg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the editor, press Ctrl+shift+d to get today's date inserted at cursor position.
+
+Signatures
+~~~~~~~~~~
+
+On paper notebooks, there was this idea of having another lab member signing every page of a notebook before the page would get plastified to prevent modifications. To my knowledge, this was seldom done properly.
+
+With eLabFTW, you can have this workflow, but it is much easier to achieve:
+
+- User A finishes an experiment
+- User B, that has locking power (Admin + Lock user group) can go on that experiment and click the lock icon
+
+This prevents user A from modifying the content (like plastifying), and it keeps a log of who locked it and when (like signing the page).
