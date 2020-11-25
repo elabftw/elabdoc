@@ -3,6 +3,47 @@
 Changelog
 =========
 
+Version 3.6.0
+-------------
+
+Here it is, the 3.6 branch featuring LDAP and 2FA authentication!
+
+New features:
+
+* Add LDAP authentication
+* Add 2FA authentication with OTP (contribution by Marcel Bolten)
+* Allow description list html elements (#2308 by Marcel Bolten)
+
+Bugfixes:
+
+* Fix template import (#2283)
+* Fix issue with booking to sunday midnight (#2211) and allow all hours
+* Fix display of markdown in show mode (#2231)
+* Fix timestamp on generated PDF (#2210 contribution by scapoor)
+
+Enhancements:
+
+* Align icons and text in main menu drowdown (#2269)
+* Fix editable triggered on non editable comments
+* Save title and date on title blur
+* Prevent clickable .tif thumbnail (#2212)
+
+i18n:
+
+* Translate "Click to edit"
+
+Dev corner:
+
+* Rewrite download.php into a proper controller and use http-foundation
+* Add new unit tests
+* Rewrite all authentication related code; add all the Auth services
+* Specify the ISO::8601 date format for scheduler
+* Rationalize the tinymce config (#2239)
+* Rewrite interfaces to be more modular (#2238)
+* Move around a bunch of code to delete some controllers
+* Make more TypeScript classes for CRUD actions
+* Add a "big" database generator (lots of fake content)
+
 Version 3.5.6
 -------------
 
