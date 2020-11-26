@@ -8,6 +8,12 @@ Version 3.6.0
 
 Here it is, the 3.6 branch featuring LDAP and 2FA authentication!
 
+Possibly breaking change:
+
+Due to a weird naming convention in Swiftmailer, the library used to send emails, it is possible that you will need to change the port for the SMTP server.
+
+See #2229 for more information. Test emails after upgrading.
+
 New features:
 
 * Add LDAP authentication
@@ -20,6 +26,9 @@ Bugfixes:
 * Fix issue with booking to sunday midnight (#2211) and allow all hours
 * Fix display of markdown in show mode (#2231)
 * Fix timestamp on generated PDF (#2210 contribution by scapoor)
+* Allow changing an upload if we have write rights on entity (#2292)
+* Fix incorrect permissions on template creation (#2237)
+* Fix image quality after upload for .jpg files (#2186)
 
 Enhancements:
 
