@@ -10,7 +10,7 @@ Here it is, the 3.6 branch featuring LDAP and 2FA authentication!
 
 Possibly breaking change:
 
-Due to a weird naming convention in Swiftmailer, the library used to send emails, it is possible that you will need to change the port for the SMTP server.
+Due to a weird naming convention in Swiftmailer, the library used to send emails, it is possible that you will need to change the port for the SMTP server. This probably won't impact you as what you are probably doing now is using STARTTLS on a TLS capable port.
 
 See #2229 for more information. Test emails after upgrading.
 
@@ -29,6 +29,8 @@ Bugfixes:
 * Allow changing an upload if we have write rights on entity (#2292)
 * Fix incorrect permissions on template creation (#2237)
 * Fix image quality after upload for .jpg files (#2186)
+* Fix lock icon sometimes not clickable in view mode
+* Fix incorrect proxy setting preventing loading of sysconfig panel
 
 Enhancements:
 
