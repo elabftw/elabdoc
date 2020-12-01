@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 3.6.1
+-------------
+
+Bugfixes:
+
+* Avoid 2FA setup failed attempts count (#2342 by Marcel Bolten)
+* Restore admins possibility to disable 2FA (#2341 by Marcel Bolten)
+
 Version 3.6.0
 -------------
 
