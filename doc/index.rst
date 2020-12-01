@@ -75,6 +75,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     docker-doc
     upgrade-to-docker
     api
+    ldap
     saml
     debug
 

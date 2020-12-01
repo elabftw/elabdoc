@@ -7,7 +7,7 @@ Configure SAML2 authentication
     :align: center
     :alt: authentication
 
-This documentation describes the steps necessary to setup SAML2 authentication on eLabFTW with an IDentity Provider (IDP). It assumes that you already know what we're talking about.
+This page describes the steps necessary to setup SAML2 authentication on eLabFTW with an IDentity Provider (IDP). It assumes that you already know what we're talking about.
 
 The IDP can lookup identity on an LDAP directory and deal with two factors authentication.
 
