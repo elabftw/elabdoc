@@ -3,6 +3,30 @@
 Changelog
 =========
 
+Version 3.6.2
+-------------
+
+Bugfixes:
+
+* Fix TODOlist minor issues (#2346 by Marcel Bolten)
+* Fix password reset save button sometimes not showing
+* Fix incorrect status list on search page (#2295)
+* Fix notice in logs if saml_team is not set
+
+Enhancements:
+
+* Order groups by name (#2264)
+
+i18n:
+
+* Add missing translations and refresh translations
+* Make permissions translated (#1901)
+
+Dependencies:
+
+* Upgrade to webpack 5
+* Upgrade some php libraries
+
 Version 3.6.1
 -------------
 
