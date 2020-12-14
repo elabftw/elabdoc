@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 3.6.3
+-------------
+
+Bugfixes:
+
+* Fix issue with SAML auth user creation (#2344)
+* Fix issue where complicated passwords would not work anymore
+* Fix search page dropdown list for "Search in" (#2347)
+
+New features:
+
+* Allow connecting to a MySQL server in SSL context
+
+Docker image:
+
+* Use s6-overlay instead of supervisord to start services
+
 Version 3.6.2
 -------------
 
