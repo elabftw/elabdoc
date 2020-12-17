@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 3.6.4
+-------------
+
+Bugfixes:
+
+* Fix issue with SAML when using several IDPs
+* Fix sorting/filtering issue on related experiments view
+
+And some dependencies updates.
+
 Version 3.6.3
 -------------
 
