@@ -76,11 +76,11 @@ Create a script containing:
 .. code-block:: bash
 
     # stop webserver
-    docker exec elabftw supervisorctl stop nginx
+    elabctl stop
     # renew certificate
     certbot renew
     # and start the webserver again
-    docker exec elabftw supervisorctl start nginx
+    elabctl start
 
 Add this script as a cronjob:
 
@@ -89,17 +89,6 @@ Add this script as a cronjob:
     0 4 1 * * /root/renew.sh
 
 This line will run the script at 4am every 1st day of the month.
-
-If the code above doesn't work, try this:
-
-.. code-block:: bash
-
-    # stop everything
-    elabctl stop
-    # renew certificate
-    certbot renew
-    # start elabftw
-    elabctl start
 
 Update often
 ------------

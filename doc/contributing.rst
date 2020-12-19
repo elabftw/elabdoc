@@ -380,6 +380,6 @@ To easily test external authentication, edit in the container `/etc/php7/php-fpm
    env[auth_email] = "nico@example.com"
    env[auth_team] = "Alpha"
 
-Restart the php process with: `supervisorctl restart php7-fpm`.
+Restart the php process with: `s6-svc -r /var/run/s6/services/php`.
 
 Next, configure the correct keys in the Sysconfig panel and external authentication should be working as expected.
