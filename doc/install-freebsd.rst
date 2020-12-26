@@ -65,7 +65,7 @@ Creating the database
     mysql -uroot -p # enter the password chosen during mysql_secure_installation
     # for some reason you need to do that again here
     set password = password('<YOUR_ROOT_PASSWORD>');
-    create database elabftw;
+    create database elabftw character set utf8mb4 collate utf8mb4_0900_ai_ci;
     grant usage on *.* to elabftw@localhost identified by '<ELABFTW_USER_PASSWORD>';
     grant all privileges on elabftw.* to elabftw@localhost;
     exit;

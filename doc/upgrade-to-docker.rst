@@ -102,7 +102,7 @@ This will create an empty database in `/var/elabftw/mysql`. But of course, what 
     mysql -uroot -p
     # here you type the password you put in MYSQL_ROOT_PASSWORD in the /etc/elabftw.yml file
     Mysql> drop database elabftw;
-    Mysql> create database elabftw;
+    Mysql> create database elabftw character set utf8mb4 collate utf8mb4_0900_ai_ci;
     Mysql> use elabftw;
     Mysql> source dump.sql;
     Mysql> exit;

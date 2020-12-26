@@ -99,7 +99,7 @@ Use the command line like below or PhpMyAdmin if it is installed on your server 
     # first we connect to mysql
     mysql -uroot -p
     # we create the database (note the ; at the end!)
-    mysql> create database elabftw;
+    mysql> create database elabftw character set utf8mb4 collate utf8mb4_0900_ai_ci;
     # we create the user that will connect to the database.
     mysql> grant usage on *.* to elabftw@localhost identified by 'YOUR_PASSWORD';
     # we give all rights to this user on this database
