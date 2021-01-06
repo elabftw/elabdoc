@@ -132,15 +132,18 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     docker exec -it elabftw yarn install
     docker exec -it elabftw yarn buildall
 
-* Now head to https://localhost:3148 once to let elabftw create the mysql tables
+* Initialization of the database structure:
+
+.. code-block:: bash
+
+   docker exec -it elabftw bin/install start
+
 
 * Enable debug mode to disable the caching of Twig templates
 
 .. code-block:: bash
 
-    docker exec -it mysql bash
-    # you are now inside the mysql container
-    mysql -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE
+    elabctl mysql
     # you are now on the mysql command line
     mysql> update config set conf_value = '1' where conf_name = 'debug';
     exit;
