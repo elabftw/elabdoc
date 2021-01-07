@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 3.6.5
+-------------
+
+Bugfixes:
+
+CRITICAL bugfix: in certain conditions, tags could be removed from experiments when deleting items, and vice-versa. Not anymore.
+
 Version 3.6.4
 -------------
 
