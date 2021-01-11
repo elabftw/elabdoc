@@ -93,6 +93,7 @@ Here are some places running eLabFTW (non-exhaustive list):
 * Uppsala University
 * Washington University
 * Weizmann Institute
+* Many many more...
 
 Is the data encrypted?
 ----------------------
@@ -117,6 +118,11 @@ Can I try it before I install it?
 ---------------------------------
 
 Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_
+
+What about data retention/traceability
+--------------------------------------
+
+When a user is making a change to an experiment, a copy of the previous version is kept in the database. This copy cannot be altered by anyone. The admin can also prevent users from deleting experiments, and the creation date is kept in memory, even if the date field is changed later on.
 
 Is it compliant to 21CFR Part 11?
 ---------------------------------
@@ -173,6 +179,7 @@ Next, go to the Admin Panel and create a type of item: "Project". Go to the Data
 Another solution is to create an experiment that would be sort of a meta experiment, listing all the sub-experiments pertaining to the project, with links (you can create links in the body easily by typing '#' and some words from the title).
 
 Select the approach that you prefer :)
+
 
 --------------------
 
