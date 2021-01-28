@@ -150,7 +150,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     exit
 
 * Now head to https://localhost:3148
-* You now should have a running local eLabFTW, and changes made to the code will be immediatly visible
+* You now should have a running local eLabFTW, and changes made to the code will be immediately visible
 
 Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.zshrc`, `.bashrc`, …). This will allow you to run software installed in the `node_modules` folder.
 
@@ -186,13 +186,13 @@ Working with JavaScript
 ```````````````````````
 All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc` launched by `grunt` (see `Gruntfile.js`). It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
-When working on some JS, what you want is to be able to save the file and immediatly see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Make sure to have `devmode` set to 1 in the `config` table in MySQL, so the correct bundle is loaded in the html head. Now changes will take a very small time to compile and be visible.
+When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Make sure to have `devmode` set to 1 in the `config` table in MySQL, so the correct bundle is loaded in the html head. Now changes will take a very small time to compile and be visible.
 
 You'll also want to configure your favorite text editor to display TypeScript errors when writing the code.
 
 Miscellaneous
 `````````````
-* if you make a change to the SQL stucture, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` if needed.
+* if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` if needed.
 * comment your code wisely
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
@@ -274,7 +274,7 @@ Here are some ground rules for exceptions thrown in the code:
 * FilesystemErrorException, same as DatabaseErrorException but for file operations
 * For the rest, the error is logged and a generic error message is shown to user
 * Code should throw an Exception as soon as something goes wrong
-* Exceptions should not be catched in the code (models), only in the controllers
+* Exceptions should not be caught in the code (models), only in the controllers
 * Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)
 
 Making a gif

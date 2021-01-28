@@ -42,7 +42,7 @@ Edit mode
 Tags
 ````
 The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
-All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediatly. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
 
 .. image:: img/quick_tags.gif
 
@@ -193,7 +193,7 @@ From here you can select a language, adjust the display settings, change the key
 Account tab
 ~~~~~~~~~~~
 Modify your password, name and contact information.
-You can also enable/disbale :ref:`two-factor authentication <faq2fa>` (2FA).
+You can also enable/disable :ref:`two-factor authentication <faq2fa>` (2FA).
 
 Templates tab
 ~~~~~~~~~~~~~

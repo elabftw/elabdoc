@@ -149,7 +149,7 @@ Now before you open a GitHub issue ranting about why I do not support PHP < 7.1,
 * Making PHP 7.1 allows me to remove the fixes that I had to make to be compatible with PHP 5.6.
 * PHP 5.6 and 7.0 are already in Security Fixes only mode (see `PHP supported versions <https://secure.php.net/supported-versions.php>`_).
 * PHP 5.6 and 7.0 support ends at the end of 2018, so you'll have to update anyway.
-* It is the responsability of the developer to push forward for new versions. Wordpress can still be run with PHP 5.2 and that's an issue. It makes the code ancient and bad, forbidding devs to use modern solutions implemented in the most recent iterations of the language. This also enables users to keep insecure versions of PHP installed on their webserver. I'm pretty concerned about security, so I have absolutely no intent to keep supporting old versions that do not receive security fixes anymore.
+* It is the responsibility of the developer to push forward for new versions. Wordpress can still be run with PHP 5.2 and that's an issue. It makes the code ancient and bad, forbidding devs to use modern solutions implemented in the most recent iterations of the language. This also enables users to keep insecure versions of PHP installed on their webserver. I'm pretty concerned about security, so I have absolutely no intent to keep supporting old versions that do not receive security fixes anymore.
 * It might push users to finally use Docker. The Docker version of eLabFTW is much more secure than a 'normal install' because I've taken numerous steps to configure all the components tightly. Something that can only be replicated outside Docker in certain conditions.
 
 Web root

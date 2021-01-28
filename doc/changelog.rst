@@ -280,7 +280,7 @@ If you are using Docker (and you should :p), the access and error logs are now s
 * Don't show the Tags line in pdf in there are none
 * Use bootstrap-select in some selects so the options can be filtered
 * Send notif to user that needs validation and send user info to admin(s)
-* Change min delte characters for revision create from 20 to 100 (helps reduce the db size growth). Might be configurable later on
+* Change min delta characters for revision create from 20 to 100 (helps reduce the db size growth). Might be configurable later on
 * Add json viewer on view mode (contribution by Sherjeel Shabih) (#2100)
 * Fix HTML syntax violations (contribution by Marcel Bolten) (#2099)
 * Fix disappearing 3D molecule after new upload or delete (#2094) by Marcel Bolten
@@ -1173,7 +1173,7 @@ Dev corner:
 * Add a service to populate user data (very alpha for now) to work on a bigger database in dev
 * Lint CSS with stylelint (see contributing doc)
 * Lint JS with eslint
-* Add .editorconfig and fix indentation discrepencies
+* Add .editorconfig and fix indentation discrepancies
 * Add more tests in circleci (lint css, js and php)
 * Remove jquery complexify from code and revamp the registration page
 
@@ -1272,7 +1272,7 @@ Version 2.0.0
 
 WARNING: BREAKING CHANGES IN THIS RELEASE!
 
-Please read carefully theses notes before upgrading your installation.
+Please read carefully these notes before upgrading your installation.
 
 For Docker users: because you chose to use Docker, you have absolutely nothing to do, you can upgrade, sit back and relax. That's the advantage of using Docker: even if I move everything around in the image, for you it's transparent!
 
@@ -1336,7 +1336,7 @@ Bugfixes:
 
 Dev corner:
 
-* Mininum PHP version is now 7.1
+* Minimum PHP version is now 7.1
 * Update SwiftMailer to version 6
 * Update Twig to version 2
 * Update Bootstrap to version 4
@@ -1674,7 +1674,7 @@ Version 1.6.0
   * Json in zip archive now contains more info (fix #381)
   * Admin can now write to experiments (fix #381)
   * Add image tools to edit an image in the body (fix #228)
-  * Better JSON informations in zip export (fix #381)
+  * Better JSON information in zip export (fix #381)
   * Use a temporary path for pdf generation of zip archives (fix #382)
   * Externalisation and minimization of Javascript code
   * Add more supported extensions for 3Dmol.js (fix #398)
@@ -1815,7 +1815,7 @@ Version 1.5.0
   * Move locale folder inside app/
   * Remove functions.inc.php
   * Remove js/, add compiled files in app/js, rest is in bower_components
-  * A lot of class instanciation/usage have been redefined to be more efficient and easy to use
+  * A lot of class instantiation/usage have been redefined to be more efficient and easy to use
   * Improve code coverage
 
 Version 1.4.3
@@ -2092,7 +2092,7 @@ Version 1.2.0
   * Add a way to test email configuration directly from config page
   * Add possibility to clear the logs
   * Show usage statistics on sysconfig page
-  * Show informations about the server on sysconfig page
+  * Show information about the server on sysconfig page
   * Allow searching for elabid
   * Add buttons to show more or show all items
 
@@ -2215,7 +2215,7 @@ Version 1.1.6
     * Better manual
 
 * Developer corner
-    * use colorpicker instead of colorwheel, remove raphael.js dependance
+    * use colorpicker instead of colorwheel, remove raphael.js dependence
 
 Version 1.1.5-p2
 ----------------
@@ -2422,7 +2422,7 @@ Version 0.10.2
 Version 0.10.1
 --------------
 
-* Fix a bug in authentification
+* Fix a bug in authentication
 * Error logs make their apparition in the database
 * l33t theme is no more
 * Removed the github ssl cert (was not used anyway)
@@ -2561,7 +2561,7 @@ Version 0.7
 
 * Multiple bugfixes
 * Real search page
-* Possiblity to export in zip or spreadsheet
+* Possibility to export in zip or spreadsheet
 * Thumbnails are clickable
 * Better pdf generation
 * Better html generation
@@ -2570,7 +2570,7 @@ Version 0.7
 Version 0.6
 -----------
 
-* Swith repo from gitorious to github (because it has wiki, bug tracker, and bigger community)
+* Switch repo from gitorious to github (because it has wiki, bug tracker, and bigger community)
 * Items in DB can now be everything, and you can edit them
 * Improvement on reset password strategy
 * eLabID is a unique ID bound to each experiment (useful for tracking raw data)

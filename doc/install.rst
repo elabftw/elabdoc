@@ -131,7 +131,7 @@ Note: you need to have Apache's "headers" module enabled: `a2enmod headers` for 
 Using nginx to run eLabFTW Docker container
 ```````````````````````````````````````````
 
-If you already have nginx running, you'll want to use the proxy capapbilities of nginx to forward packets to the Docker container.
+If you already have nginx running, you'll want to use the proxy capabilities of nginx to forward packets to the Docker container.
 
 The following example forwards the URL https://demo.elabftw.net to the docker URL http://localhost:3148. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "3148:443". In this example, nginx is listening to port 8888, and HAProxy is doing TLS termination. Adapt to your needs. If you don't have HAProxy doing TLS termination, use https in the proxy_pass instruction and make sure DISABLE_HTTPS is false in the elabftw.yml config.
 

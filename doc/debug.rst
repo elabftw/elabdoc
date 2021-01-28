@@ -24,7 +24,7 @@ If the server is not responding at all, check the web container logs. If the app
 PHP logs
 --------
 
-If you get "An error occured!" message, check the PHP logs. All errors should be logged there.
+If you get "An error occurred!" message, check the PHP logs. All errors should be logged there.
 
 .. code-block:: bash
 
