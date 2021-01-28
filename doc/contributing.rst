@@ -161,6 +161,7 @@ Making a pull request
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
 #. Create a branch from **hypernext**
 #. Work on a feature
+#. Make sure `yarn full` exits with no errors
 #. Make a pull request on GitHub to include it in **hypernext**
 
 .. code-block:: bash
@@ -180,6 +181,14 @@ Code organization
 * A new class will be loaded automagically thanks to the use of PSR-4 with composer (namespace Elabftw\\Elabftw)
 * app/controllers will contain pages that send actions to models (like destroy something), and generally output json for an ajax request, or redirect the user.
 * Check out the scripts in `src/tools` too
+
+Working with JavaScript
+```````````````````````
+All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc` launched by `grunt` (see `Gruntfile.js`). It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
+
+When working on some JS, what you want is to be able to save the file and immediatly see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Make sure to have `devmode` set to 1 in the `config` table in MySQL, so the correct bundle is loaded in the html head. Now changes will take a very small time to compile and be visible.
+
+You'll also want to configure your favorite text editor to display TypeScript errors when writing the code.
 
 Miscellaneous
 `````````````
