@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 3.6.6
+-------------
+
+Vulnerability fix:
+
+* Prevent Regular expression Denial of Service by upgrading "marked" library.
+
+Enhancement:
+
+* Make URLs imported through CSV clickable
+
 Version 3.6.5
 -------------
 
