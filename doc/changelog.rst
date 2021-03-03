@@ -3,6 +3,25 @@
 Changelog
 =========
 
+Version 3.6.7
+-------------
+
+Security:
+
+* Update PrismJS dependency to prevent ReDoS
+
+Bugfixes:
+
+* Fix issue with incorrectly encoded characters preventing display of content
+* Fix performance issue with API when fetching entities
+* Fix bug where API would send back only 16 items (#2345)
+
+New features:
+
+* Add /tags API endpoint (fix #2495)
+
+Please note that the current patches are light, but that's because the goal here is to have a stable 3.6 branch before 4.0 comes along and breaks everything (minimum php version 8.0 and MySQL 5.7). There are a lot of changes cooking in the hypernext branch ;)
+
 Version 3.6.6
 -------------
 
