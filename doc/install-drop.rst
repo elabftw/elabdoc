@@ -20,6 +20,8 @@ If you don't have a (sub)domain already, you can get one from `OVH <https://www.
 Create your droplet
 -------------------
 
+.. warning:: A proper subdomain is required. Subfolder install is not supported!
+
 * Create an account on `DigitalOcean <https://m.do.co/c/c2ce8f861e0e>`_. Use this referral link to have 100$ offered!
 
 * Alternatively, you can use `Vultr <http://www.vultr.com/?ref=7164540>`_. Use this referral link to register an account! The rest of this tutorial is for DigitalOcean.
@@ -42,7 +44,7 @@ Create your droplet
 
 * Copy the IP address
 
-* Optional: go to the control panel of your domain name provider. Point your domain (or subdomain) to the IP address of your drop. It might take a bit of time for the DNS to propagate (a few hours).
+* Go to the control panel of your domain name provider. Point your domain (or subdomain) to the IP address of your drop. It might take a bit of time for the DNS to propagate (a few hours).
 
 .. note:: Without a domain pointing to the drop, you will have a self signed certificate (so users will have a warning), whereas if you have a domain name, you will get a proper SSL certificate from Let's Encrypt.
 

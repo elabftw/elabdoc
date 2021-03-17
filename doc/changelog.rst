@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 4.0.0
+-------------
+
+BREAKING CHANGES:
+
+For non-Docker users
+
+* A domain/subdomain is required, subfolder installation are not supported anymore due to several hard to catch bugs and issues
+* PHP Version 8.0 is required
+
 Version 3.6.7
 -------------
 

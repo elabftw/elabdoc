@@ -38,6 +38,8 @@ Also if you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall 
 Install eLabFTW
 ---------------
 
+.. warning:: A proper subdomain is required. Subfolder install is not supported!
+
 * Install `elabctl`, a tool to help you manage the elabftw installation:
 
 .. code-block:: bash
