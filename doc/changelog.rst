@@ -12,6 +12,79 @@ For non-Docker users
 
 * A domain/subdomain is required, subfolder installation are not supported anymore due to several hard to catch bugs and issues
 * PHP Version 8.0 is required
+* Install imagick PECL extension and remove gmagick extension. gmagick will be used if imagick is not found (with a fallback to gd).
+
+Bugfixes:
+
+* Fix bug with LDAP authentication and team assignment
+* Fix print page in show mode (fix #2556 via #2557 by @MarcelBolten)
+* Fix file upload on FreeBSD platform
+* Make sure email domain restrictions apply everywhere (fix #2544)
+* Fix missing SQL constraints on experiments_revisions (#2540 co-authored by @m6121)
+* Fix issue with steps ordering after rearrange (fix #2457)
+* Fix html duplication (via #2423 by @MarcelBolten)
+* Fix action icons sometimes not working (fix #2420 via #2424 by @MarcelBolten)
+* Fix bug where limit in show mode was not honoured after filter/sort/order
+* Fix notification overlay in tinymce fullscreen (fix #2419 via #2440 by @MarcelBolten)
+* Fix issue with malformed UTF-8 characters (fix #2404)
+* Fix issue with SAML login and sending admin email
+
+New features:
+
+* Allow sysadmin to clear the banned users from too many failed login attempts (tab Security in the panel)
+* Allow users to set the visibility to "User only", previously this setting included admins of the team and the labelling wasn't clear about it. (fix #2208 via #2572)
+* Allow users to timestamp with the Bloxberg blockchain (#2560)
+* Increase maximum allowed items displayed on a page to 9999 (was 500)
+* Allow Admins to delete templates
+* Add Ctrl-Shift-t shortcut to add time on cursor in editor. (fix #2484)
+* Add API endpoint for templates (via #2409 by @m6121)
+* Add configurable minimum delta for revisions (via #2514 by @m6121)
+* Add json metadata field (via #2520)
+* Add autologout setting in sysconfig to force logout (fix #1558)
+* Add tabular view (fix #2266 via #2370 by @manulera)
+
+Enhancements:
+
+* Increase the minimum height of the editor in Chrome
+* Use the temporary folder for makepdf (via #2546 by @MarcelBolten)
+* Make database structure initialization work on a DigitalOcean MySQL cluster
+* Do the release version check asynchronously on sysconfig page
+* Add elabid to database items
+* Add share link to database items (fix #2405 via #2463)
+* Make the tags multi selection act with AND logic (fix #2026)
+* Don't use google charts api anymore, draw pie chart in profile in pure css
+* Make urls clickable from CSV imports
+* Only display elabftw version to logged in users
+* Add more actions on show mode for selected entries (fix #1644)
+* Add lua code highlight
+* Allow ldap anonymous binding
+* Add strict mode for search page (fix #2400)
+* Increase z-index of autocomplete to show it in full screen mode (fix #2401)
+* Password are now stored with state of the art hashing (nothing wrong with the previous method, it just wasn't the best available) (via #2383)
+
+Dev stuff:
+
+* Minimum PHP version is now 8.0
+* Use typed properties
+* Upgrade php and js dependencies, as always
+* Add documentation for testing LDAP on Contributing page
+* Add documentation for add a pre-commit hook on Contributing page
+* Add "yarn pre-commit" command with all linters (PHP-CS, csslint and eslint)
+* Add "yarn phpcs-dry" (and use it in circleci config)
+* Use html template for pdf generation (via #2545)
+* Add a lot of tests
+* Name the webpack generated javascript bundle
+* Drop usage of moment.js and use luxon library for relative times display
+* Populate script now sets devmode to 1
+* Use MySQL 8.0 by default
+* Add --progress flag to js build step
+* Use vanilla js for every code that is added or touched
+* Use imagick instead of gmagick
+* Now "yarn watchjs" will reload fast. Except it won't reload classes files and I don't know why yet. Requires devmode to 1.
+* Add "yarn codespell"
+* Fix typos found with codespell (via #2442 by @sebweb3r)
+* Add csslint to ci
+* Add heavy db populate script
 
 Version 3.6.7
 -------------
