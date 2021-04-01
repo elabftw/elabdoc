@@ -395,3 +395,29 @@ To easily test external authentication, edit in the container `/etc/php7/php-fpm
 Restart the php process with: `s6-svc -r /var/run/s6/services/php`.
 
 Next, configure the correct keys in the Sysconfig panel and external authentication should be working as expected.
+
+How to test ldap
+----------------
+
+Uncomment the ldap and ldap-admin containers definitions in the config file. Then use the ldap-admin (running on port 6443 by default) to login with "cn=admin,dc=example,dc=org" and password "admin". Then click the "dc=example,dc=org" in the left menu and "Create a child entry". Create a "Generic: Posix Group". We don't care about the name but it is necessary to have one before creating our test user.
+
+Click again the "dc=example,dc=org" in the left to be at the root, "Create a child entry" and select "Generic: User Account". In GID Number you can assign the previously created group. Once the user is created, go select it in the left menu and "Add new attribute": Email. And add the email for that user. Now you should be able to login with that user after activating ldap from the sysconfig menu. Default values from the populate script should be good to go without changes.
+
+Install a pre-commit hook
+-------------------------
+
+It is a good idea to use a pre-commit hook to run linters before the commit is actually done. It prevents doing another commit afterwards for "fix phpcs" or "fix linting". Go into `.git/hooks`. And `cp pre-commit.sample pre-commit`. Edit it and before the last line with the "exec", add this:
+
+.. code-block:: bash
+
+    # eLabFTW linting pre-commit hook
+    reset="\e[0m"
+    red="\e[0;31m"
+    set -e
+    if ! yarn pre-commit
+    then
+        printf "${red}error${reset} Pre-commit script found a problem!.\n"
+        exit 1
+    fi
+
+Now when you commit it should run this script and prevent the commit if there are errors.
