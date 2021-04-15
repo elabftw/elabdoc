@@ -42,6 +42,17 @@ New features:
 * Add json metadata field (via #2520)
 * Add autologout setting in sysconfig to force logout (fix #1558)
 * Add tabular view (fix #2266 via #2370 by @manulera)
+* Add rating to experiments
+* Add limit and offset parameters to API calls
+* Allow changing name of uploaded files (fix #2306)
+* Add admin setting to prevent database deletion (fix #2027)
+* Add admin setting to disallow tag creation from users (fix #2193)
+* Add instance URL in email footer (fix #2455)
+* Add privacy policy link in footer (fix #2570)
+* Show number of timestamped experiments in sysadmin report (fix #2498)
+* Add user option to not display thumbnails of uploaded files
+* Allow defining the behavior after saml/ldap/ext authentication if user doesn't exist
+* Allow user to show/hide organization or public entities
 
 Enhancements:
 
@@ -61,6 +72,8 @@ Enhancements:
 * Add strict mode for search page (fix #2400)
 * Increase z-index of autocomplete to show it in full screen mode (fix #2401)
 * Password are now stored with state of the art hashing (nothing wrong with the previous method, it just wasn't the best available) (via #2383)
+* Correctly check for permissions for api GET upload (fix #2507)
+* Allow admin to edit permissions even when enforced
 
 Dev stuff:
 
@@ -85,6 +98,11 @@ Dev stuff:
 * Fix typos found with codespell (via #2442 by @sebweb3r)
 * Add csslint to ci
 * Add heavy db populate script
+* Rework completely the CRUD actions with JSON payload (#2600)
+* Use cypress for end to end tests
+* Add pre-commit hook to test before commit
+* Add phpstan analysis to unit tests
+
 
 Version 3.6.7
 -------------
