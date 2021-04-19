@@ -14,6 +14,17 @@ For non-Docker users
 * PHP Version 8.0 is required
 * Install imagick PECL extension and remove gmagick extension. gmagick will be used if imagick is not found (with a fallback to gd).
 
+For Docker users
+
+* It appears that the UID/GID for uploaded files needs to be changed. For most users this means:
+
+.. code-block:: bash
+
+   sudo chmod -R 101:101 /path/to/elabftw/web
+
+Where the path points to the folder where uploaded files are stored. If you used in your configuration file a different UID/GID, use this instead of course.
+
+
 Bugfixes:
 
 * Fix bug with LDAP authentication and team assignment
@@ -53,6 +64,10 @@ New features:
 * Add user option to not display thumbnails of uploaded files
 * Allow defining the behavior after saml/ldap/ext authentication if user doesn't exist
 * Allow user to show/hide organization or public entities
+* Add login announcement
+* Render mathjax in pdf (#2509 by Marcel Bolten)
+* Add ratings to experiments
+* Add limit and offset to api calls
 
 Enhancements:
 
