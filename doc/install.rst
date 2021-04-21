@@ -94,6 +94,12 @@ ENJOY! :D
 Documentation for advanced setups
 ---------------------------------
 
+Using a TLS certificate from a different provider than Let'sEncrypt
+```````````````````````````````````````````````````````````````````
+
+The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
+
+
 Using mod_proxy to run eLabFTW Docker container behind Apache2 (https enabled)
 ``````````````````````````````````````````````````````````````````````````````
 
