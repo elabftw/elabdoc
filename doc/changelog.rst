@@ -7,14 +7,27 @@ Version 4.0.0
 -------------
 
 BREAKING CHANGES:
+`````````````````
 
 For non-Docker users
+````````````````````
 
 * A domain/subdomain is required, subfolder installation are not supported anymore due to several hard to catch bugs and issues
 * PHP Version 8.0 is required
 * Install imagick PECL extension and remove gmagick extension. gmagick will be used if imagick is not found (with a fallback to gd).
+* The config line for the API has changed slightly. The new nginx config block is:
+
+.. code-block:: nginx
+
+   location ~ ^/api/v1/(.*)/?$ {
+       rewrite /api/v1/(.*)$ /app/controllers/ApiController.php?req=$uri&args=$args last;
+   }
+
+I don't know the config line for Apache and honestly don't care enough to look into it.
+
 
 For Docker users
+````````````````
 
 * It appears that the UID/GID for uploaded files needs to be changed. For most users this means:
 
@@ -26,6 +39,7 @@ Where the path points to the folder where uploaded files are stored. If you used
 
 
 Bugfixes:
+`````````
 
 * Fix bug with LDAP authentication and team assignment
 * Fix print page in show mode (fix #2556 via #2557 by @MarcelBolten)
@@ -41,6 +55,7 @@ Bugfixes:
 * Fix issue with SAML login and sending admin email
 
 New features:
+`````````````
 
 * Allow sysadmin to clear the banned users from too many failed login attempts (tab Security in the panel)
 * Allow users to set the visibility to "User only", previously this setting included admins of the team and the labelling wasn't clear about it. (fix #2208 via #2572)
@@ -54,6 +69,7 @@ New features:
 * Add autologout setting in sysconfig to force logout (fix #1558)
 * Add tabular view (fix #2266 via #2370 by @manulera)
 * Add rating to experiments
+* Allow sorting by rating
 * Add limit and offset parameters to API calls
 * Allow changing name of uploaded files (fix #2306)
 * Add admin setting to prevent database deletion (fix #2027)
@@ -66,10 +82,11 @@ New features:
 * Allow user to show/hide organization or public entities
 * Add login announcement
 * Render mathjax in pdf (#2509 by Marcel Bolten)
-* Add ratings to experiments
 * Add limit and offset to api calls
+* Add user option to switch datetime format inserted in text (#2611)
 
 Enhancements:
+`````````````
 
 * Increase the minimum height of the editor in Chrome
 * Use the temporary folder for makepdf (via #2546 by @MarcelBolten)
@@ -91,6 +108,7 @@ Enhancements:
 * Allow admin to edit permissions even when enforced
 
 Dev stuff:
+``````````
 
 * Minimum PHP version is now 8.0
 * Use typed properties
