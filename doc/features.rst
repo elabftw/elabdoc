@@ -52,13 +52,12 @@ Database
 Security
 ^^^^^^^^
 * HTTPS
-* formkeys
+* CSRF protection
 * secure headers
 * secure base image
 * secure php config
 * anti bruteforce system
-* log system
-* secure storage of password (salted sha512)
+* secure storage of password (bcrypt)
 * secure password reset mechanism
 * option for new account admin validation
 * two-factor authentication (2FA)
