@@ -9,6 +9,11 @@ Version 4.0.0
 BREAKING CHANGES:
 `````````````````
 
+For both Docker and non-Docker users
+````````````````````````````````````
+
+Minimum MySQL version is 5.7.8.
+
 For non-Docker users
 ````````````````````
 
