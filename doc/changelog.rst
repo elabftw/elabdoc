@@ -33,7 +33,7 @@ For Docker users
 
 .. code-block:: bash
 
-   sudo chmod -R 101:101 /path/to/elabftw/web
+   sudo chown -R 101:101 /path/to/elabftw/web
 
 Where the path points to the folder where uploaded files are stored. If you used in your configuration file a different UID/GID, use this instead of course.
 
