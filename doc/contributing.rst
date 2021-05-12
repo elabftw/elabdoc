@@ -14,8 +14,8 @@ What can you do to help this project?
 * `Star it on GitHub <https://github.com/elabftw/elabftw>`_
 * Talk about it to your colleagues, spread the word!
 * Have a look at `the current issues <https://github.com/elabftw/elabftw/issues>`_
-* Help with the translation
-* Open GitHub issues to report bugs or suggest features
+* Help with the translations (see Translating below)
+* Open GitHub issues to report bugs or suggest new features
 * `Star it on GitHub really <https://github.com/elabftw/elabftw>`_
 
 Reporting a security issue
@@ -30,6 +30,9 @@ If you've found a security issue, please report it by email to the address assoc
 .. image:: img/i18n.png
     :align: right
 
+
+While there is not (yet) an official bug bounty program, responsible disclosure of a security vulnerability might be compensated.
+
 Translating
 -----------
 
@@ -39,11 +42,11 @@ How to translate?
 
 * `Join the project on poeditor.com <https://poeditor.com/join/project?hash=aeeef61cdad663825bfe49bb7cbccb30>`_
 * Select elabftw
-* Add a language (or select an existing one)
+* Select one or several languages (open a GitHub issue if your language is not present)
 * Start translating
 * Ignore things like `<strong>, <br>, %s, %d` and keep the punctuation like it was!
 
-Translations are updated before a release.
+Translations are merged in the code before a release. You must not try and edit the .po/.mo files directly in the source code.
 
 Contributing to the code
 ------------------------
@@ -156,22 +159,6 @@ Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.z
 
 It is possible to populate your dev database with fake generated data. See the `dev:populate` command of `bin/console`.
 
-Making a pull request
-`````````````````````
-#. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
-#. Create a branch from **hypernext**
-#. Work on a feature
-#. Make sure `yarn full` exits with no errors
-#. Make a pull request on GitHub to include it in **hypernext**
-
-.. code-block:: bash
-
-    cd $dev/elabftw
-    # create your feature branch from the hypernext branch
-    git checkout -b my-feature
-    # modify the code, commit and push to your fork
-    # go to github.com and create a pull request
-
 Code organization
 `````````````````
 * Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)
@@ -186,14 +173,16 @@ Working with JavaScript
 ```````````````````````
 All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc` launched by `grunt` (see `Gruntfile.js`). It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
-When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Make sure to have `devmode` set to 1 in the `config` table in MySQL, so the correct bundle is loaded in the html head. Now changes will take a very small time to compile and be visible.
+When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible. Note that there is a bug where some files (.class.ts for instance) won't be updated on save (even if it appears to do a rebuild). Just Ctrl+c and relaunch the command to make sure changes are present.
 
 You'll also want to configure your favorite text editor to display TypeScript errors when writing the code.
 
+Use vanilla JS and avoid the use of jQuery selectors or functions.
+
 Miscellaneous
 `````````````
-* if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` and `tests/_data/phpunit.sql` if needed.
-* comment your code wisely
+* if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` so new installs will get the correct structure. If possible, just add the needed line in the current schema.sql file if this schema is still only present in unstable versions (dev or alpha).
+* comment your code wisely, what is important is the why, not the what
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
 * add a plugin to your editor to show PSR-1 errors
@@ -206,11 +195,11 @@ Miscellaneous
 
 Glossary
 ````````
-* Experiments + Database items = Entities. So when you see Entity it means it can be an experiment or a database item
+* Experiments + Database items + Experiments Templates = Entities. So when you see Entity it means it can be an experiment/template or a database item.
 
 Build
 `````
-The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them. An alternative is to edit the template and load the "src" version instead of the ".min" one. This way you can edit and reload directly without having to compile each time.
+The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them.
 
 * To minify files:
 
@@ -222,39 +211,24 @@ The javascript and css files are stored unminified in the source code. But the a
 
 Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn) and `Gruntfile.js` (grunt). If you just want to rebuild the CSS, use `grunt css`.
 
+When working on the code, it is best to have `yarn watchjs` and `yarn watchcss` running so changes are immediately picked up.
+
 Tests
 `````
 
-The tests run on the Codeception framework. The acceptance tests will need to download the Selenium + Chrome headless docker image.
+The tests run on the Codeception framework for unit and api tests. End to end testing is done with Cypress.
 
 .. code-block:: bash
 
     $ yarn unit # will run the unit tests
-    $ yarn test # will run the unit and acceptance tests
+    $ yarn test # will run the full test suite
 
-For code coverage you need to enable the xdebug PHP extension and run `yarn run coverage`.
+A good contribution you can make would be adding Cypress tests.
 
 API Documentation
 `````````````````
-To get a good view of the relations between the classes, get `phpDocumentor <https://github.com/phpDocumentor/phpDocumentor2/releases>`_ (download the .phar and the associated pubkey).
 
-To generate a PHP Docblock documentation:
-
-.. code-block:: bash
-
-    $ yarn srcdoc
-
-Then, point your browser to the `_srcdoc/index.html`.
-
-You can have a look at the errors report to check that you commented all new functions properly.
-
-To generate the documentation for the API, you'll need `apidoc <http://apidocjs.com/>`_, install it first:
-
-.. code-block:: bash
-
-    $ yarn install -g apidoc
-
-Make sure the npm `bin` folder is in your $PATH.
+To generate the documentation for the API:
 
 .. code-block:: bash
 
@@ -276,6 +250,23 @@ Here are some ground rules for exceptions thrown in the code:
 * Code should throw an Exception as soon as something goes wrong
 * Exceptions should not be caught in the code (models), only in the controllers
 * Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)
+
+Making a pull request
+`````````````````````
+#. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
+#. Create a branch from **hypernext**
+#. Work on a feature
+#. Make sure `yarn full` exits with no errors
+#. Make a pull request on GitHub to include it in **hypernext**
+
+.. code-block:: bash
+
+    cd $dev/elabftw
+    # create your feature branch from the hypernext branch
+    git checkout -b my-feature
+    # modify the code, commit and push to your fork
+    # go to github.com and create a pull request
+
 
 Making a gif
 ------------
