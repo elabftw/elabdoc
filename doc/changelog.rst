@@ -67,7 +67,7 @@ New features:
 * Allow users to timestamp with the Bloxberg blockchain (#2560)
 * Increase maximum allowed items displayed on a page to 9999 (was 500)
 * Allow Admins to delete templates
-* Add Ctrl-Shift-t shortcut to add time on cursor in editor. (fix #2484)
+* Add customizable Ctrl-Shift-d shortcut to add date and time on cursor in editor. (fix #2484)
 * Add API endpoint for templates (via #2409 by @m6121)
 * Add configurable minimum delta for revisions (via #2514 by @m6121)
 * Add json metadata field (via #2520)
@@ -87,7 +87,6 @@ New features:
 * Allow user to show/hide organization or public entities
 * Add login announcement
 * Render mathjax in pdf (#2509 by Marcel Bolten)
-* Add limit and offset to api calls
 * Add user option to switch datetime format inserted in text (#2611)
 
 Enhancements:
