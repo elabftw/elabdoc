@@ -20,3 +20,7 @@ $ cd doc; make html
 ~~~
 
 Then point your browser to the `doc/_build/html` folder.
+
+## Config examples
+
+You might want to look into the [./config_examples](config_examples) folder for Apache, HAProxy, nginx and php configuration files.
