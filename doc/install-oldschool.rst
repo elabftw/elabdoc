@@ -73,7 +73,7 @@ Install `yarn <https://yarnpkg.com/en/docs/install>`_ and build JavaScript and C
 
 .. code-block:: bash
 
-    yarn install
+    yarn install --ignore-scripts
     yarn buildall
 
 Now create the cache and uploads directory with restrictive permissions:
