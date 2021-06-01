@@ -88,6 +88,7 @@ New features:
 * Add login announcement
 * Render mathjax in pdf (#2509 by Marcel Bolten)
 * Add user option to switch datetime format inserted in text (#2611)
+* Append attached PDFs to exported PDF (#2603 by Marcel Bolten)
 
 Enhancements:
 `````````````
@@ -139,6 +140,9 @@ Dev stuff:
 * Use cypress for end to end tests
 * Add pre-commit hook to test before commit
 * Add phpstan analysis to unit tests
+* Remove grunt and friends dependencies
+* Serve brotli compressed assets
+* Move chemdoodle to an npm package
 
 
 Version 3.6.7
