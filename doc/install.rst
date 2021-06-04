@@ -111,6 +111,7 @@ Add these lines to your Apache configuration file (probably in `/etc/apache2/apa
 
 .. code-block:: apache
 
+    SSLEngine on
     SSLProxyEngine on
     ProxyPreserveHost On
     ProxyPass /elabftw/ https://localhost:444/

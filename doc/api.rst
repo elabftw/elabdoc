@@ -39,6 +39,7 @@ For Apache 2.4:
 .. code-block:: apache
 
     SSLEngine on
+    SSLProxyEngine on
     RewriteEngine On
     RewriteCond %{HTTP:Authorization} ^(.*)
     RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
