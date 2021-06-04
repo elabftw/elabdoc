@@ -56,5 +56,10 @@ Go to the Server tab of the Sysadmin panel. From there you can disable local log
 How does it work?
 -----------------
 
-When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either, it is created on the fly.
+When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either, it is created on the fly. You can configure this behavior from the Sysconfig panel.
+
+Debugging
+---------
+
+SAML configuration can be tricky. I recommend that you use the SAML-tracer addon (available for Chrome or Firefox) to see the requests and be able to verify what is sent and received.
 
