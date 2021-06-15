@@ -54,9 +54,9 @@ Add this line at the bottom::
 
     00 04 * * * bash /path/to/backup.sh
     or
-    00 04 * * * elabctl backup
+    00 04 * * * /path/to/elabctl backup
 
-This will run the script everyday at 4am.
+This will run the script everyday at 4am. Make sure to write the full path to `elabctl` as it might not be in the `$PATH` for cron.
 
 How to backup a Docker installation
 -----------------------------------
