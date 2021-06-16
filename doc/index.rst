@@ -63,12 +63,13 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     user-guide
     admin-guide
     sysadmin-guide
-    backup
-    how-to-update
+    metadata
 
 .. toctree::
     :caption: Documentation
 
+    backup
+    how-to-update
     contributing
     faq
     features
