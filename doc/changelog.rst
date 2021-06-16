@@ -12,7 +12,18 @@ BREAKING CHANGES:
 For both Docker and non-Docker users
 ````````````````````````````````````
 
-Minimum MySQL version is 5.7.8.
+Minimum MySQL version is 5.7.8 (due to the use of the JSON datatype).
+
+For Docker users
+````````````````
+
+* It appears that the UID/GID for uploaded files needs to be changed. For most users this means:
+
+.. code-block:: bash
+
+   sudo chown -R 101:101 /path/to/elabftw/web
+
+Where the path points to the folder where uploaded files are stored. If you used in your configuration file a different UID/GID, use this instead of course.
 
 For non-Docker users
 ````````````````````
@@ -31,18 +42,6 @@ For non-Docker users
 I don't know the config line for Apache and honestly don't care enough to look into it.
 
 
-For Docker users
-````````````````
-
-* It appears that the UID/GID for uploaded files needs to be changed. For most users this means:
-
-.. code-block:: bash
-
-   sudo chown -R 101:101 /path/to/elabftw/web
-
-Where the path points to the folder where uploaded files are stored. If you used in your configuration file a different UID/GID, use this instead of course.
-
-
 Bugfixes:
 `````````
 
@@ -58,6 +57,8 @@ Bugfixes:
 * Fix notification overlay in tinymce fullscreen (fix #2419 via #2440 by @MarcelBolten)
 * Fix issue with malformed UTF-8 characters (fix #2404)
 * Fix issue with SAML login and sending admin email
+* Fix long upload filenames wrapping (fix #2719)
+* Fix scheduler entry binding user experience (see #2366)
 
 New features:
 `````````````
@@ -89,6 +90,8 @@ New features:
 * Render mathjax in pdf (#2509 by Marcel Bolten)
 * Add user option to switch datetime format inserted in text (#2611)
 * Append attached PDFs to exported PDF (#2603 by Marcel Bolten)
+* Allow binding an item to calendar entry (fix #2366)
+* Add a sysadmin option to prevent admins from creating users (fix #2702)
 
 Enhancements:
 `````````````
@@ -111,6 +114,13 @@ Enhancements:
 * Password are now stored with state of the art hashing (nothing wrong with the previous method, it just wasn't the best available) (via #2383)
 * Correctly check for permissions for api GET upload (fix #2507)
 * Allow admin to edit permissions even when enforced
+* Allow setting a cookie with saml login (fix #2701)
+* Improve Lighthouse score (performance and accessibility)
+
+Security:
+`````````
+
+* Prevent blind SSRF in pdf generation (LOW impact, needs a user account)
 
 Dev stuff:
 ``````````
