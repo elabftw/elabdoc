@@ -136,12 +136,10 @@ Dev stuff:
 * Add a lot of tests
 * Name the webpack generated javascript bundle
 * Drop usage of moment.js and use luxon library for relative times display
-* Populate script now sets devmode to 1
 * Use MySQL 8.0 by default
 * Add --progress flag to js build step
 * Use vanilla js for every code that is added or touched
 * Use imagick instead of gmagick
-* Now "yarn watchjs" will reload fast. Except it won't reload classes files and I don't know why yet. Requires devmode to 1.
 * Add "yarn codespell"
 * Fix typos found with codespell (via #2442 by @sebweb3r)
 * Add csslint to ci
