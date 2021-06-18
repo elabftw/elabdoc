@@ -3,6 +3,22 @@
 Changelog
 =========
 
+Version 4.0.1
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix huge font size of Mathjax in pdf (fix #2721)
+* Fix CSV import (fix #2724)
+
+Enhancements:
+
+* Use the lang of the owner when sending comment notification (fix #2700)
+* Display (Admin) next to admin names on Team -> Information page (fix #2707)
+
+
 Version 4.0.0
 -------------
 
