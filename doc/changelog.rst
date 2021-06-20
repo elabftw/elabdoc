@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 4.0.2
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix the logo being a bit blurry (went too hard on png optimization)
+
+Enhancements:
+
+* It's pretty minor but now when loading a page the top menu doesn't move around anymore
+
 Version 4.0.1
 -------------
 
