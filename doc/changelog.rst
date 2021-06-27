@@ -3,6 +3,34 @@
 Changelog
 =========
 
+Version 4.0.3
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix saml team/user creation when saml sends team back
+* Fix image name being asked again after copy/past image upload in editor (PR #2739 by @shabihsherjeel, fix #2726)
+* Fix template download
+
+Enhancements:
+
+* Add font size selection to editor
+* Only show privacy policy link in footer if it was set
+
+Internationalization:
+
+* Update russian, italian, german, dutch, chinese and french languages
+
+Dev stuff:
+
+* Fix a 404 error with tinymce
+* Use zopfli to create gzip compressed assets
+* Update Mathjax to 3.2.0
+* Add api_key in headers for bloxberg requests
+* Update dependencies for latest bugfixes
+
 Version 4.0.2
 -------------
 
