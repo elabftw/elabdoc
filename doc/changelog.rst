@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 4.0.4
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Hotfix for saml user creation email notification generating error
+
+Dev stuff:
+
+* Update js dependencies
+
 Version 4.0.3
 -------------
 
