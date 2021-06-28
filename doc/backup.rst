@@ -97,7 +97,7 @@ Let's start by moving uploaded files and config file at the correct place:
     mv var/elabftw/web/* /var/elabftw/web
     mv etc/elabftw.yml /etc/elabftw.yml
     # now fix the permissions
-    chown -R 100:101 /var/elabftw/web
+    chown -R 101:101 /var/elabftw/web
     chmod 600 /etc/elabftw.yml
 
 Now we import the SQL database (the mysql container must be running):
