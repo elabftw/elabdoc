@@ -79,7 +79,79 @@ This is the default text when someone creates an experiment. Feel free to edit i
 
 Import
 ~~~~~~
-If you already have some "items" catalogued in an Excel file or File Maker database, you can import them from this tab. Export it first it ".csv" and follow the instructions.
+If you already have some "items" catalogued in an Excel file or File Maker database, you can import them from this tab. To achieve a successful import, make sur to follow these instructions:
+
+
+1. Preparing the file
+`````````````````````
+
+It is important to make sure that the file you are going to import is "clean". Open your file (.xls/.xlsx/.ods/.csv) in an editor like LibreOffice Calc or Microsoft Excel.
+
+Make sure that there are now empty rows or extra information outside the main data. And that you don't have columns with the same name, or columns with no useful information.
+
+You should have a number of columns and rows, looking something like that:
+
+.. list-table:: Example antibodies dataset
+   :header-rows: 1
+
+   * - Name
+     - Host
+     - Target
+     - Reference
+     - Seller
+     - Storage
+   * - Anti α-actin
+     - Mouse
+     - Human
+     - AB3148
+     - Abcam
+     - -20°C
+   * - Anti γ-tubulin
+     - Rabbit
+     - Human
+     - AB1337
+     - Abcam
+     - +4°C
+
+
+Now you need to have a column named **title**. This is the column that will be picked up as the title of the eLabFTW entry once imported. This column doesn't necessarily needs to be the first one, but it needs to be there. Here we're going to change the "Name" column. So now it looks like this:
+
+
+.. list-table:: Example antibodies dataset modified
+   :header-rows: 1
+
+   * - title
+     - Host
+     - Target
+     - Reference
+     - Seller
+     - Storage
+   * - Anti α-actin
+     - Mouse
+     - Human
+     - AB3148
+     - Abcam
+     - -20°C
+   * - Anti γ-tubulin
+     - Rabbit
+     - Human
+     - AB1337
+     - Abcam
+     - +4°C
+
+Once you are satisfied with the file, export it as a **.csv** (in File > Save as...). Make a copy of only the first 3 rows and export that too as csv, this will be our test file.
+
+2. Importing the file
+`````````````````````
+
+Go to the Admin Panel. If you haven't done it already, create first an Item Type that fits your data. Here we will create an "Antibody" category as that's what we are importing, from the "Items Types" tab.
+
+Now go to the Import tab. Select the correct category (Antibody in this example). Then select the visibility. The delimiter to select will depend on which software you used and your regional preferences. LibreOffice gives you the choice of this separator. Look at your CSV file to determine which one you have if you don't know. Now select your **test** CSV file (with a few rows only) and click the "Import CSV" button.
+
+Every row will correspond to an entry in the correct category of database items. All the columns (except title) will be imported in the body of each entry.
+
+If the import looks good, you can now delete these newly imported items and import your complete file.
+
 
 Tag manager
 ~~~~~~~~~~~

@@ -375,7 +375,7 @@ How to test external auth
 
 To easily test external authentication, edit in the container `/etc/php7/php-fpm.d/www.conf` and at the end add:
 
-.. code-block:: conf
+.. code-block:: proto
 
    env[auth_user] = ntesla
    env[auth_username] = Nicolas
