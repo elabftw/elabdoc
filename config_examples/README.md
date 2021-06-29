@@ -2,19 +2,19 @@
 
 Here are some configuration files you can use for your webserver.
 
+## Important note
+
+Configuration files for running eLabFTW without Docker are no longer provided.
+They require maintenance and extra work for no good reasons. The configuration
+inside the Docker container is the only source of truth.
+
+There will be **no support** for using Apache, Nginx or any other webserver without
+Docker.
+
 ## Apache
 
-* elabftw.conf contains examples of config for Apache 2.4. Adapt it to your existing configuration.
+The [Apache](./apache) folder contains documentation for running Apache as a reverse proxy for eLabFTW.
 
 ## HAProxy
 
-Configuration example when running HAProxy in front of elabimg container in http mode.
-
-## Nginx
-
-* nginx.conf is the main config file
-* add elabftw.conf in the /etc/nginx/conf.d folder
-
-## PHP
-
-PHP configuration instructions for eLabFTW.
+The [haproxy](./haproxy) folder contains configuration for running HAProxy in front of one (or several) elabimg container in http mode.

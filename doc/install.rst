@@ -100,42 +100,10 @@ Using a TLS certificate from a different provider than Let'sEncrypt
 The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
 
 
-Using mod_proxy to run eLabFTW Docker container behind Apache2 (https enabled)
-``````````````````````````````````````````````````````````````````````````````
+Using Apache as a reverse proxy
+```````````````````````````````
 
-If eLabFTW's Docker container runs on a machine with several web applications you can use mod_proxy to access the application without opening another port on your server.
-
-The following example forwards the URL https://your.domain/elabftw/ to the docker URL https://localhost:444. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "444:443".
-
-Add these lines to your Apache configuration file (probably in `/etc/apache2/apache.conf` or in your VirtualHosts files).
-
-.. code-block:: apache
-
-    SSLEngine on
-    SSLProxyEngine on
-    ProxyPreserveHost On
-    ProxyPass /elabftw/ https://localhost:444/
-    ProxyPassReverse /elabftw/ https://localhost:444/
-
-Using mod_proxy to run eLabFTW Docker container behind Apache2 (https disabled)
-```````````````````````````````````````````````````````````````````````````````
-
-It is also possible to disable https in the elabftw docker container's web server, if Apache2 handles SSL:
-
-.. code-block:: yaml
-
-    DISABLE_HTTPS=true
-
-One can then forward to elabftw without the option SSLProxyEngine on, if the HTTP_X_FORWARDED_PROTO header is set:
-
-.. code-block:: apache
-
-    RequestHeader set X-Forwarded-Proto "https"
-    ProxyPreserveHost On
-    ProxyPass /elabftw/ http://localhost:444/
-    ProxyPassReverse /elabftw/ http://localhost:444/
-
-Note: you need to have Apache's "headers" module enabled: `a2enmod headers` for it to work.
+See the Apache related documentation `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/apache>`_.
 
 Using nginx to run eLabFTW Docker container
 ```````````````````````````````````````````
