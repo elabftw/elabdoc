@@ -1,6 +1,7 @@
 # elabdoc
 
 ## Description
+
 Source files for the [elabftw documentation](https://doc.elabftw.net).
 
 ## Installation
@@ -23,4 +24,4 @@ Then point your browser to the `doc/_build/html` folder.
 
 ## Config examples
 
-You might want to look into the [./config_examples](config_examples) folder for Apache, HAProxy, nginx and php configuration files.
+You might want to look into the [config_examples](./config_examples) folder for Apache, HAProxy, Nginx or Traefik configuration as reverse proxy.
