@@ -24,9 +24,9 @@ ports:
   - '127.0.0.1:3148:443'
 ~~~
 
-Note: we're using the 127.0.0.1 localhost ip to avoid Docker exposing the port by bypassing the firewall configuration (see [this issue](https://github.com/moby/moby/issues/22054)).
+**Note**: we're using the 127.0.0.1 localhost ip to avoid Docker exposing the port by bypassing the firewall configuration (see [this issue](https://github.com/moby/moby/issues/22054)).
 
-## Using mod_proxy to run eLabFTW Docker container in http mode (recommended)
+## Reverse proxy for a container in http mode (recommended)
 
 ### Running the container in HTTP mode
 
@@ -47,7 +47,7 @@ ProxyPass "/" "http://localhost:3148/"
 ProxyPassReverse "/" "http://localhost:3148/"
 ~~~
 
-## Using mod_proxy to run eLabFTW Docker container in https mode
+## Reverse proxy for a container in https mode
 
 You will need `mod_ssl` activated.
 
@@ -57,6 +57,6 @@ Add these lines to your Apache configuration file (probably in `/etc/apache2/apa
 SSLEngine on
 SSLProxyEngine on
 ProxyPreserveHost On
-ProxyPass "/" "https://localhost:444/"
-ProxyPassReverse "/" "https://localhost:444/"
+ProxyPass "/" "https://localhost:3148/"
+ProxyPassReverse "/" "https://localhost:3148/"
 ~~~

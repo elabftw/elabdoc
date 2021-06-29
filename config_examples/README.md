@@ -13,8 +13,16 @@ Docker.
 
 ## Apache
 
-The [Apache](./apache) folder contains documentation for running Apache as a reverse proxy for eLabFTW.
+The [Apache folder](./apache) contains documentation for running Apache as a reverse proxy for eLabFTW.
+
+## Nginx
+
+The [Nginx folder](./nginx) contains documentation for running Nginx as a reverse proxy for eLabFTW.
 
 ## HAProxy
 
-The [haproxy](./haproxy) folder contains configuration for running HAProxy in front of one (or several) elabimg container in http mode.
+The [HAProxy folder](./haproxy) contains configuration for running HAProxy in front of one (or several) elabimg container in http mode.
+
+## Traefik
+
+The [Traefik folder](./traefik) contains documentation related to traefik.

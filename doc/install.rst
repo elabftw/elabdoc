@@ -100,79 +100,8 @@ Using a TLS certificate from a different provider than Let'sEncrypt
 The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
 
 
-Using Apache as a reverse proxy
-```````````````````````````````
+Using Apache, nginx, HAProxy or traefik as a reverse proxy
+``````````````````````````````````````````````````````````
 
-See the Apache related documentation `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/apache>`_.
+All the documentation related to such configurations can be found `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/>`_.
 
-Using nginx to run eLabFTW Docker container
-```````````````````````````````````````````
-
-If you already have nginx running, you'll want to use the proxy capabilities of nginx to forward packets to the Docker container.
-
-The following example forwards the URL https://demo.elabftw.net to the docker URL http://localhost:3148. The default Docker port can be changed by setting the ports parameter in /etc/elabftw.yml to "3148:443". In this example, nginx is listening to port 8888, and HAProxy is doing TLS termination. Adapt to your needs. If you don't have HAProxy doing TLS termination, use https in the proxy_pass instruction and make sure DISABLE_HTTPS is false in the elabftw.yml config.
-
-.. code-block:: nginx
-
-    server {
-        server_name demo.elabftw.net;
-
-        listen 8888;
-        listen [::]:8888;
-
-        access_log /var/log/nginx/demo.elabftw.net.log proxy;
-
-        location / {
-            proxy_pass       http://localhost:3148; # use httpS here if needed
-            proxy_set_header Host      $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            # add this if nginx is terminating TLS
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-    }
-
-
-Add this to /etc/nginx/nginx.conf to get the real IP address in the logs:
-
-.. code-block:: nginx
-
-     log_format proxy '$proxy_add_x_forwarded_for - $remote_user [$time_local] '
-                      '"$request" $status $body_bytes_sent '
-                      '"$http_referer" "$http_user_agent" "$gzip_ratio"';
-
-Using traefik
-`````````````
-
-If you are already using `traefik <https://containo.us/traefik/>`_ to manage your containers, here is how to run eLabFTW:
-
-* Get a docker-compose configuration file:
-
-.. code-block:: bash
-
-    curl -sL -o docker-compose.yml "https://get.elabftw.net/?config"
-
-Edit this file with your favorite editor and:
-
-For the `web` service:
-
-* Remove the `container_name`
-* Set `DISABLE_HTTPS=true`
-* Set `ENABLE_LETSENCRYPT=false`
-* Remove the `ports` section
-* Remove the `networks` section (or adapt it to your network)
-
-For the `mysql` service:
-
-* Remove everything if you already have a MySQL service running
-* Remove the `container_name`
-* Remove the `ports` section
-* Remove the `networks` section (or adapt it to your network)
-
-And remove the final `networks` section.
-
-Add a label to the `web` service so traffic is routed to it. See traefik documentation.
-
-Configure TLS accordingly. See traefik documentation.
-
-Use docker-compose to bring the containers up and traefik should detect it and route requests accordingly.
