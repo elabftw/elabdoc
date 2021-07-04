@@ -3,6 +3,27 @@
 Changelog
 =========
 
+Version 4.0.5
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix possible issue in saml metadata xml output
+* Fix bloxberg certification
+
+Enhancements:
+
+* Add autosave to experiments templates
+* Fix the title width in table mode
+* Homogeneize table columns for exp/items
+* Fix issue for uploaded files on another partition not working in some cases (fix #2745)
+
+Dev stuff:
+
+* Use new markdown code instead of deprecated one
+
 Version 4.0.4
 -------------
 
