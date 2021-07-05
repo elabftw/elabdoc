@@ -43,5 +43,5 @@ For Apache 2.4:
     RewriteEngine On
     RewriteCond %{HTTP:Authorization} ^(.*)
     RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
-    RewriteRule ^/api/v1/(.*)$ /app/controllers/ApiController.php?req=$1 [P,L]
+    RewriteRule ^/api/v1/(.*)$ /app/controllers/ApiController.php?req=%{REQUEST_URI}&args=$args [P,L]
 
