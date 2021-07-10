@@ -3,6 +3,30 @@
 Changelog
 =========
 
+Version 4.0.6
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix "Use default" option for ordering in UCP by removing it
+* Prevent an Admin from demoting a Sysadmin
+* Fix scheduler issue when booking on monday at midnight (fix #2765)
+* Fix zip import for items without elabid
+* Fix encoding issue in pdf title/tags (fix #2760)
+
+Enhancements:
+
+* Add config option to force revision creation after some time (fix #2761)
+* Bring back the Save and go back button (fix #2762)
+* Allow clicking a name to show entities from that user
+* Add email column on team page (fix #2763)
+
+Dev stuff:
+
+* Composer and yarn upgrade
+
 Version 4.0.5
 -------------
 
