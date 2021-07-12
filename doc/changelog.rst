@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 4.0.7
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix issue with admins not being able to access certain locked experiments
+* Fix issue with templates not showing up in ucp if visibility was set to Owner (see #2777)
+
+
 Version 4.0.6
 -------------
 
