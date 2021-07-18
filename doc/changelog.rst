@@ -3,6 +3,32 @@
 Changelog
 =========
 
+Version 4.0.8
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix search page completely broken since 4.0.6 (was not finding anything)
+* Fix the 'Save as image' action for mol files (#2788 by Marcel Bolten)
+* Fix cropping images from text editor (fix #2778)
+
+Security:
+
+* Avoid email enumeration on password reset action. Reported by @krastanoel
+
+New feature:
+
+* Plasmid viewer via OpenVectorEditor with preview in attached files list (#2255 by Marcel Bolten)
+
+Enhancements:
+
+* Use distinguishedname for LDAP instead of building the string (deprecates the uid_or_cn sysadmin option)
+* If LDAP authentication is enabled, the radio button for LDAP on login page is selected by default
+* Set a white background for uploaded transparent PNG (#2789 by Marcel Bolten)
+* Show a prettier and clearer message when DB schema is invalid
+
 Version 4.0.7
 -------------
 
