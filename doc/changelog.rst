@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 4.0.9
+-------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfixes:
+
+* Fix save shortcut (#2807 by Marcel Bolten)
+* Fix items_types API endpoint
+* Fix deletion of entities with embedded files in body (fix #2791)
+
+Enhancements:
+
+* Better permission check for event in scheduler
+* Import metadata from the zip archives (fix #2793)
+* Add metadata to pdf exports
+* CSS improvements for plasmid viewer (#2792 by Marcel Bolten)
+* Add a "Show all" button on users tab in admin/sysadmin panels
+
+New features:
+
+* Allow PNG export of plasmid map (#2790 by Marcel Bolten)
+
 Version 4.0.8
 -------------
 
