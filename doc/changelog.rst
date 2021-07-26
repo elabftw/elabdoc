@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 4.0.10
+--------------
+
+WARNING: read the breaking changes from version 3.6.7 on the 4.0.0 release notes if you are upgrading from 3.x version.
+
+Bugfix:
+
+* Fix authentication issue with some LDAP servers
+
 Version 4.0.9
 -------------
 
