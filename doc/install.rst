@@ -7,7 +7,7 @@ Install on a GNU/Linux server
     :align: center
     :alt: gnulinux
 
-Tested distributions: Debian, Ubuntu, Fedora, CentOS, Arch Linux, OpenSUSE.
+These instructions will work for any of the GNU/Linux distributions where Docker is supported and can be installed.
 
 .. warning:: Only 64 bits distributions are supported. Do not try to install on a 32 bits operating system!
 
@@ -20,7 +20,9 @@ Tested distributions: Debian, Ubuntu, Fedora, CentOS, Arch Linux, OpenSUSE.
 Prerequisites
 -------------
 
-eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies, as everything is packed in a container. But we still need a few programs installed before we can get started.
+eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies and several configuration files, as everything is packed in a container. But we still need a few programs installed before we can get started.
+
+If you don't have a server, look at the documentation to rent one: :ref:`Install in the cloud <install-cloud>`.
 
 Dependencies:
 `````````````
@@ -31,20 +33,20 @@ Dependencies:
 * `git <https://git-scm.com/>`_, the version control system
 * `zip <http://infozip.sourceforge.net/Zip.html>`_, the compression tool (for the backups)
 
-Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
+You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
 
 Also if you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
 Install eLabFTW
 ---------------
 
-.. warning:: A proper subdomain is required. Subfolder install is not supported!
+.. warning:: A proper subdomain is required!
 
 * Install `elabctl`, a tool to help you manage the elabftw installation:
 
 .. code-block:: bash
 
-    # get the program (a bash script)
+    # get the program (a bash script) and make it executable
     curl -sL https://get.elabftw.net -o elabctl && chmod +x elabctl
     # add it to a directory in your $PATH
     sudo mv elabctl /usr/local/bin/
@@ -57,7 +59,7 @@ Install eLabFTW
 
 * Edit the configuration file:
 
-    Edit the configuration to suit your server setup. For instance, you might want to edit `/etc/elabftw.yml` to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
+    Edit the configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
     If you have set `DISABLE_HTTPS=false` then you need to configure the TLS certificate. Look at the comments inside the configuration file, they describe the different use cases. In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
 

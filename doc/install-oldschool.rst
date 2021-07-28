@@ -10,19 +10,35 @@ Install without Docker
     :align: right
     :alt: beastie
 
+
+Introduction
+------------
+
+.. warning:: This method is **highly inadvisable**. Only use it if you absolutely cannot install Docker and have good server administration skills!
+
+Before going forward, consider the huge amount of care that has been given to the official Docker image for eLabFTW. It runs a deeply customized webserver with php-fpm. Everything is optimized for speed, correctness and more importantly **security**. It makes upgrades much easier and less prone to breakage. It also keeps your server nice and tidy because you won't need to install all the dependencies needed to run eLabFTW on your server.
+
+If you don't use Docker you basically **increase the maintenance work tenfold** at least. Because breaking changes in the code are transparent to Docker users, as the image will follow, but not to you, as you will need to keep your configuration files updated manually.
+
+If you already have let's say an Apache server running and are considering installing eLabFTW along your other PHP projects, know that you can keep your existing Apache installation and use it as a reverse proxy to a Docker container. See the `documentation for reverse proxies <https://github.com/elabftw/elabdoc/tree/master/config_examples>`_.
+
+**You have been warned**, the only officially supported deployment strategy is through Docker, as it makes the life easier for everyone.
+
+.. tip:: This is your last chance to go back to the :ref:`recommended installation instructions <install>`.
+
+The only valid reason to not use Docker is if you have a BSD system and are already a capable administrator.
+
 Prerequisites
 -------------
 
-.. warning:: This method is deprecated. Only use it if you cannot install Docker!
+Please refer to your distribution's documentation to install:
 
-Please refer to your distribution's documentation to install :
-
-* A webserver (like nginx, Apache, lighttpd, cherokee or caddy)
-* PHP version > 7.3.7
-* MySQL version > 5.5 < 8.0 (5.7 recommended, 8.0 not working fully yet)
+* A webserver like nginx (recommended), Apache, lighttpd, cherokee or caddy
+* PHP version > 8.0
+* MySQL version > 5.7
 * Git
 
-.. tip:: If you don't know how to do that, or can't update php, have a look at :ref:`installing eLabFTW on a drop <install-drop>` or :ref:`in a docker container <install>`.
+Nginx is recommended because configuration files for eLabFTW are provided for Nginx only, as it is the webserver running inside the official Docker image.
 
 Getting the files
 -----------------
@@ -50,6 +66,8 @@ Get latest stable version via git:
     git clone -b |release| --depth 1 https://github.com/elabftw/elabftw.git
 
 The `--depth 1` option is to avoid downloading the whole history.
+
+The `-b` option is to specify the latest release tag.
 
 .. tip:: If you cannot connect, it's probably the proxy setting missing; try one of these two commands:
 
@@ -120,12 +138,14 @@ Now that we have a database with a user/password to connect to it, we need to im
 Configure the webserver correctly
 ---------------------------------
 
-The Docker image of eLabFTW contains a lot of little configuration tweaks to improve the security of the web application. Here are some of them that you can apply to your web server configuration.
+The Docker image of eLabFTW contains a lot of little configuration tweaks to improve the security of the web application. Your configuration should ideally be the same as the one in the Docker image.
 
-Nginx or Apache config
-^^^^^^^^^^^^^^^^^^^^^^
+Nginx config
+^^^^^^^^^^^^
 
-Example config files are provided in the `config_examples <https://github.com/elabftw/elabdoc/tree/master/config_examples>`_ directory.
+You need to look into the `nginx folder of the Docker image <https://github.com/elabftw/elabimg/tree/master/src/nginx>`_ and adapt the configuration to your instance.
+
+Some important things to look into:
 
 * Add security headers (IMPORTANT). See the end of `this file <https://github.com/elabftw/elabimg/blob/master/src/nginx/common.conf>`_.
 * Use a proper TLS certificate, not a self-signed one
@@ -138,7 +158,9 @@ Example config files are provided in the `config_examples <https://github.com/el
 PHP config
 ^^^^^^^^^^
 
-See the phpfpmConf() and phpConf() functions from `run.sh <https://github.com/elabftw/elabimg/blob/master/src/run.sh>`_.
+You need to look into the `php folder of the Docker image <https://github.com/elabftw/elabimg/tree/master/src/php>`_ and adapt the configuration to your instance.
+
+See the phpfpmConf() and phpConf() functions from `run.sh <https://github.com/elabftw/elabimg/blob/master/src/run.sh>`_ too.
 
 * Hide PHP version (`expose_php` in php.ini)
 * Set cookies httponly and secure
@@ -147,10 +169,10 @@ See the phpfpmConf() and phpConf() functions from `run.sh <https://github.com/el
 * disable `url_fopen`
 * enable opcache
 * configure `open_basedir`
-* use longer session id length (`session.sid_lenght`)
-* disable unused functions (see the list in the run.sh script)
+* use longer session id length (`session.sid_length`)
+* disable unused functions (see the list in the php.ini file)
 
-Note: these configuration changes will affect all the PHP apps on the server, so you can really only do that if the server is only serving eLabFTW (do you see now why Docker is great? :p).
+Note: it is recommended to have different php-fpm pools for different php apps so eLabFTW configuration will not impact other software.
 
 Miscellaneous config
 ^^^^^^^^^^^^^^^^^^^^
@@ -162,9 +184,9 @@ Final step
 
 Finally, point your browser to your server and read onscreen instructions.
 
-For example: https://12.34.56.78/elabftw
+For example: https://elab.example.org
 
-Please report bugs on `github <https://github.com/elabftw/elabftw/issues>`_.
+Please report bugs on `github <https://github.com/elabftw/elabftw/issues/new/choose>`_.
 
 It's a good idea to subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_, to know when new releases are out (you can also see that from the Sysadmin panel).
 

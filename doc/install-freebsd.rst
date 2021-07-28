@@ -62,7 +62,7 @@ At this point you should have:
 I had to change the file `/usr/local/etc/nginx/fastcgi_params`, and this line:
 `fastcgi_params SCRIPT_FILENAME $document_root$fastcgi_script_name;`
 
-For a working nginx config, see the files here: https://github.com/elabftw/elabimg/tree/master/src/nginx or here: https://github.com/elabftw/elabdoc/tree/master/config_examples/nginx
+For a working nginx config, see the files here: https://github.com/elabftw/elabimg/tree/master/src/nginx.
 
 * a mysql server with an `elabftw` database
 * the `elabftw` php files where the `root` config of nginx points
@@ -75,4 +75,8 @@ Import the database structure with:
 
 Go to https://<YOUR_ELABFTW_DOMAIN> and register an account. Next step is to go to the sysconfig panel and configure email. See :ref:`Sysadmin guide <sysadmin-guide>`.
 
+It's a good idea to subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_, to know when new releases are out (you can also see that from the Sysadmin panel).
+
 That's all folks!
+
+~Thank you for using `eLabFTW <https://www.elabftw.net>`_ :)

@@ -36,7 +36,7 @@ Check out the :doc:`list of features <features>`.
 
 See :doc:`this page <install>` to install it on your server.
 
-See :doc:`this page <install-drop>` if you don't own a server already.
+See :doc:`this page <install-cloud>` if you don't own a server already.
 
  .. image:: img/by-sa.png
     :align: center
@@ -49,7 +49,7 @@ See :doc:`this page <install-drop>` if you don't own a server already.
     :caption: Installation
 
     install
-    install-drop
+    install-cloud
     install-nas
     install-mac
     install-windows
