@@ -1,17 +1,17 @@
 .. _install-nas:
 
-Install on a Qnap NAS
-=====================
+Install on a NAS
+================
 
 .. image:: img/qnap.png
     :align: center
     :alt: qnap
 
-Tested with firmware version 4.3.6 on a TVS-EC1080.
+This page describes the installation of eLabFTW on a Qnap or Synology NAS. The procedure is slightly different than on a normal GNU/Linux server.
 
-.. note:: This has been reported to work on a Synology NAS
+The following instructions are for a Qnap NAS but if you have a Synology, it's not much different.
 
-This page describes the installation of eLabFTW on a Qnap NAS. The procedure slightly different than on a normal GNU/Linux server.
+.. note:: Here I'm using the command line but it is also completely possible to do it via the graphical interface
 
 Prerequisites
 -------------
@@ -85,4 +85,6 @@ The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
 To update, you can do "docker-compose pull" and "docker-compose restart".
 
-ENJOY! :D
+It's a good idea to subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_, to know when new releases are out (you can also see that from the Sysadmin panel).
+
+~Thank you for using `eLabFTW <https://www.elabftw.net>`_ :)
