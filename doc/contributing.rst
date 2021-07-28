@@ -21,15 +21,10 @@ What can you do to help this project?
 Reporting a security issue
 --------------------------
 
-If you've found a security issue, please report it by email to the address associated to my GPG key:
-
-.. code-block:: bash
-
-    gpg --search-keys "Nicolas CARPi"
+If you've found a security issue, please contact me securely through `Keybase <https://keybase.io/nicolascarpi>`_.
 
 .. image:: img/i18n.png
     :align: right
-
 
 While there is not (yet) an official bug bounty program, responsible disclosure of a security vulnerability might be compensated.
 
@@ -51,14 +46,20 @@ Translations are merged in the code before a release. You must not try and edit 
 Contributing to the code
 ------------------------
 
+Introduction
+````````````
+Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, ...
+
+But fear not, because there is a whole documentation about getting started, and you're already reading it ;)
+
 Note about branches
 ```````````````````
 
 The repository contains (at least) 3 branches:
 
 * The `master` branch points to the latest released version and should always be in working state. It can contain beta or rc versions but not alpha versions.
-* The `next` branch points to the latest unstable version (alpha) (or latest stable if no unstable released yet). If you wish to make a bugfix PR, this is the branch that you should target.
-* The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes.
+* The `next` branch points to the latest unstable version (alpha) (or latest stable if no unstable released yet). If you wish to make a bugfix PR, this is the branch that you should target (if hypernext is far from it).
+* The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes. It is a very active branch, so make sure to pull from upstream often so your fork doesn't stray too far.
 
 Environment installation
 ````````````````````````
@@ -105,7 +106,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     # get elabctl configuration file
     wget -q https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
     # get the docker-compose configuration file (from the dev branch)
-    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/dev/src/docker-compose.yml-EXAMPLE > elabftw-dev.yml
+    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/master/src/docker-compose.yml-EXAMPLE > elabftw-dev.yml
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
 * Change CONF_FILE to `$dev/elabftw-dev.yml`. Again, write the full path, not the alias!
@@ -113,6 +114,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * Edit the docker-compose configuration file `elabftw-dev.yml`
 * Add a SECRET_KEY
 * Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
+* Set DEV_MODE to true
 * Start the containers:
 
 .. code-block:: bash
@@ -122,7 +124,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 .. note::
 
-    PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>`_ to create bundles (see `builder.js` file) and then `Grunt <https://gruntjs.com/>`_ to minify some CSS and JS files (see `Gruntfile.js`).
+    PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>`_ to create bundles (see `builder.js` file).
 
 * Now install the PHP and JavaScript dependencies using `composer` and `yarn` shipped with the container:
 
@@ -171,9 +173,9 @@ Code organization
 
 Working with JavaScript
 ```````````````````````
-All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc` launched by `grunt` (see `Gruntfile.js`). It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
+All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc`. It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
-When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible. Note that there is a bug where some files (.class.ts for instance) won't be updated on save (even if it appears to do a rebuild). Just Ctrl+c and relaunch the command to make sure changes are present.
+When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible.
 
 You'll also want to configure your favorite text editor to display TypeScript errors when writing the code.
 
@@ -209,7 +211,7 @@ The javascript and css files are stored unminified in the source code. But the a
     yarn install
     yarn buildall
 
-Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn) and `Gruntfile.js` (grunt). If you just want to rebuild the CSS, use `grunt css`.
+Other commands exist, see `builder.js` (webpack), the `scripts` part of `package.json` (yarn). If you just want to rebuild the CSS, use `yarn buildcss`.
 
 When working on the code, it is best to have `yarn watchjs` and `yarn watchcss` running so changes are immediately picked up.
 
@@ -323,7 +325,7 @@ These steps are overly complicated and should be made automatically ideally.
 Accessing Docker MySQL database with phpmyadmin
 -----------------------------------------------
 
-You might be used to access your local MySQL dev database with PHPMyadmin. Just uncomment the part related to phpmyadmin in the config file and `elabctl refresh`.
+You might be used to access your local MySQL dev database with PHPMyadmin. Just uncomment the part related to phpmyadmin in the config file and `elabctl restart`.
 
 This will launch a docker container with phpmyadmin that you can reach on port 8080. Go to `localhost:8080 <http://localhost:8080>`_. Login with your mysql user (elabftw by default) and your mysql password found in the .yml configuration file. You should see the `elabftw` database now.
 
@@ -373,7 +375,7 @@ Step 4: restart containers
 How to test external auth
 -------------------------
 
-To easily test external authentication, edit in the container `/etc/php7/php-fpm.d/www.conf` and at the end add:
+To easily test external authentication, edit in the container `/etc/php8/php-fpm.d/elabpool.conf` and at the end add:
 
 .. code-block:: proto
 
