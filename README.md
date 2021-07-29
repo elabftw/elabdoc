@@ -4,6 +4,8 @@
 
 Source files for the [elabftw documentation](https://doc.elabftw.net).
 
+Main project repository: [elabftw/elabftw](https://github.com/elabftw/elabftw).
+
 ## Installation
 
 ~~~bash
@@ -17,10 +19,11 @@ pip install --user sphinx sphinx_rtd_theme
 To generate the HTML documentation:
 
 ~~~bash
-$ cd doc; make html
+cd doc
+make html
 ~~~
 
-Then point your browser to the `doc/_build/html` folder.
+Then point your browser to the `_build/html/index.html` file inside the `doc/` folder.
 
 ## Config examples
 
