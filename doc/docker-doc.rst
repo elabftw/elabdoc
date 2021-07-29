@@ -18,8 +18,8 @@ Running eLabFTW with Docker means everything needed will be provided. You'll hav
 About the docker image
 ``````````````````````
 - The elabftw docker image is using `Alpine Linux <https://alpinelinux.org/>`_ as a base OS, so we get a lightweight and secure base.
-- `PHP 7 <https://secure.php.net/>`_ is used so we get an up to date and fast PHP.
-- `Nginx <http://nginx.org>`_ is used so we get the best webserver out there running our app with `HTTP/2 <https://en.wikipedia.org/wiki/HTTP/2>`_ capabilities.
+- `PHP 8 <https://www.php.net/>`_ is used so we get an up to date and fast PHP.
+- `Nginx <https://nginx.org>`_ is used so we get the best webserver out there running our app with `HTTP/2 <https://en.wikipedia.org/wiki/HTTP/2>`_ capabilities. A custom nginx is compiled for eLabFTW.
 
 Using the provided Docker image adds security features automatically:
 
@@ -32,14 +32,18 @@ Using the provided Docker image adds security features automatically:
 - use modern cipher suite and protocols for SSL. This will result in an A rating on `SSLLabs <https://www.ssllabs.com/ssltest/>`_, as you can see below.
 - custom secure php configuration
 - custom secure nginx configuration
+- have a score of 115/100 on `Mozilla's Observatory <https://observatory.mozilla.org/>`_:
+
+.. image:: img/observatory.png
+    :align: center
+    :alt: mozilla's observatory scan
+
 
 Test scan of an eLabFTW install at `SecurityHeaders.io <https://securityheaders.io>`_:
 
 .. image:: img/securityheaders.io.png
     :align: center
     :alt: security headers result
-
-(there is no public key pin because this needs to be done by the server admin)
 
 Test scan of an eLabFTW install at `Qualys SSL labs <https://www.ssllabs.com/ssltest/>`_:
 
@@ -49,4 +53,6 @@ Test scan of an eLabFTW install at `Qualys SSL labs <https://www.ssllabs.com/ssl
 
 Just for fun, try to use these two websites to scan the sites of other services you might use or consider using. You'll see a lot of F marks… I'll let you draw your own conclusions from that ;)
 
-You don't have to be a specialist in web security to see that some services are completely insecure and should be avoided. Full security can never be completely achieved when it comes to web and computers, but with eLabFTW at least you have the best possible setup to mitigate or stop the most commons attacks.
+You don't have to be a specialist in web security to see that some services are completely insecure and should be avoided. There is a reason why cybercrime makes millions of dollars, a lot of companies have outdated installations and never follow good practices.
+
+While full security can never be completely achieved when it comes to web and computers, with eLabFTW at least you have the best possible setup to mitigate or stop the most commons attacks. Especially if you use a Docker container.
