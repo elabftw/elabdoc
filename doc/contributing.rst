@@ -52,6 +52,20 @@ Depending on your background, the eLabFTW project might seem daunting at first, 
 
 But fear not, because there is a whole documentation about getting started, and you're already reading it ;)
 
+Note about repositories
+```````````````````````
+
+The eLabFTW project is split in different repositories. The main one with the actual PHP code is `elabftw/elabftw <https://github.com/elabftw/elabftw>`_. The present document is generated from reStructuredText files in `elabftw/elabdoc <https://github.com/elabftw/elabdoc>`_. So if you need to change the documentation, it will be in there.
+
+The Docker image is built by the code at `elabftw/elabimg <https://github.com/elabftw/elabimg>`_.
+
+Other interesting repositories are:
+
+- `elabftw/elabctl <https://github.com/elabftw/elabctl>`_ for the elabctl tool
+- `elabftw/elabapy <https://github.com/elabftw/elabapy>`_ for the python API library
+
+The rest of this documentation is about elabftw/elabftw.
+
 Note about branches
 ```````````````````
 
