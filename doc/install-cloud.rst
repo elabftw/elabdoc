@@ -26,7 +26,7 @@ A VPS is a shared server which looks like a dedicated server to you. Meaning you
 * you'll have to manage your own backups (and test them!)
 * you'll be exposed to malicious actors trying to break into your server constantly
 * managing correctly a GNU/Linux server requires administration skills and knowledge
-* when you get hit by a cryptolocker malware, you'll realize your backups are encrypted too :/
+* when you get hit by a ransomware malware, you'll realize your backups are encrypted too :/
 
 Your eLabFTW installation will run in a `Docker <https://www.docker.com>`_ container. Learn more about eLabFTW in Docker :ref:`here <docker-doc>`.
 
@@ -37,7 +37,7 @@ If you don't have a domain name already, you can get one from `OVH <https://www.
 A note about backups
 --------------------
 
-**Making reliable backups is hard**. Even IT companies can get it wrong. See the *postmortem* of an `incident at Gitlab <https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/>`_. It is a very interesting article, illustrating how even if you have several restoration options, they might all fail. And that was before cryptolocker malware was prevalent! Now if you don't have immutable snapshots on your filesystem where the backups live, you might have your backups encrypted too!
+**Making reliable backups is hard**. Even IT companies can get it wrong. See the *postmortem* of an `incident at Gitlab <https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/>`_. It is a very interesting article, illustrating how even if you have several restoration options, they might all fail. And that was before ransomware malware was prevalent! Now if you don't have immutable snapshots on your filesystem where the backups live, you might have your backups encrypted too!
 
 The point I'm trying to make is that a lot of things can go wrong, and if you care about your data, it might be a good option to look into the `PRO Hosting offering <https://www.deltablot.com/elabftw>`_ or let a professional systems administrator take care of it.
 
