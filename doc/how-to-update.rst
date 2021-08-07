@@ -64,6 +64,13 @@ In the directory where you have the `docker-compose.yml` file:
     docker-compose up -d
     docker exec -it elabftw php bin/console db:update
 
+If you are using it on a NAS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
+
+You can follow this tutorial: `Update eLabFTW on a Synology NAS <https://github.com/elabftw/elabhow/tree/master/howto-update-nas#how-to-update-elabftw-on-a-synology-nas>`_
+
 Complete upgrade guide from 2.0.7 to 3.0.0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
