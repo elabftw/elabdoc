@@ -74,7 +74,7 @@ Replace "elabftw" in the command above by the name of the elabftw container if y
 Accessing elabftw
 -----------------
 
-Wait 10 seconds and go to https://YOUR.NAS.IP:3148. You should see the register page.
+Go to https://YOUR.NAS.IP:3148. You can should see the login page and you can go to the register page to create a sysadmin account.
 
 Post install
 ------------
