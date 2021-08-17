@@ -116,19 +116,20 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 .. code-block:: bash
 
     # get elabctl
-    wget -qO- https://get.elabftw.net > elabctl && chmod +x elabctl
+    curl -sLo elabctl https://get.elabftw.net && chmod +x elabctl
     # get elabctl configuration file
-    wget -q https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
+    curl -so elabctl.conf https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
     # get the docker-compose configuration file (from the dev branch)
-    wget -qO- https://raw.githubusercontent.com/elabftw/elabimg/master/src/docker-compose.yml-EXAMPLE > elabftw-dev.yml
+    curl -so elabftw-dev.yml https://raw.githubusercontent.com/elabftw/elabimg/master/src/docker-compose.yml-EXAMPLE
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
 * Change CONF_FILE to `$dev/elabftw-dev.yml`. Again, write the full path, not the alias!
 * Change DATA_DIR to `$dev/data`. Again, write the full path, not the alias!
 * Edit the docker-compose configuration file `elabftw-dev.yml`
+* For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
 * Add a SECRET_KEY
-* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
 * Set DEV_MODE to true
+* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
 * Start the containers:
 
 .. code-block:: bash
