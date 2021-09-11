@@ -3,6 +3,74 @@
 Changelog
 =========
 
+Version 4.1.0-BETA
+------------------
+
+Breaking changes:
+
+No breaking changes from 4.0.11, update like usual.
+
+Important changes for SAML users:
+
+* Some settings that were in the "SP" part are now attached to the IDP. This means you can now configure different IDP with different values for expected "email", "team", "firstname" and "lastname" attributes. Previous values are copied during upgrade to each IDP, so there is no breaking change and nothing for you to do after upgrade. (#2879)
+
+Bugfixes:
+
+* Fix markdown editor preview button
+* Fix a toggle button not working on Sysconfig page
+* Fix json editor behavior (#2882 by @mbolten)
+* Fix incorrect position of cursor in doodle on wide image (fix 2781 via #2875 by @mbolten)
+* Fix linked item import button (#2860)
+* Fix plasmid viewer for timestamped experiments (#2855 by @mbolten)
+* Fix metadata not saving changes on admin panel (fix #2832 via #2845)
+* Fix create shortcut (#2838 by @mbolten)
+* Fix item category name with special characters (#2812)
+* Fix switch editor (#2810)
+
+New features:
+
+* Allow admins to force using templates for experiments
+
+Enhancements:
+
+* Remove the bold styling of column names during CSV import. See #2897
+* Stop asking for "confirmation password" and instead provide a way to toggle the visibility of the input field
+* Password reset email now sent in text and email formats
+* Make sure we cannot unarchive a user if another active account with same email exists
+* Hide archived users from team page
+* Add items to linked items when '#' type shortcut link is used in editor (#2861 by @mbolten)
+* Add keepalive function to inform users of session timeout
+* Increase maximum height of images in pdf
+
+API:
+
+* Add a function to append to body (see elabftw/elabapy#23)
+
+Security:
+
+* Multiple improvements in the way passwords are reset and accounts are protected from brute-force guessing.
+* Password reset links valid for 15 minutes now
+
+Dev corner:
+
+* Code improvements all over the place, as always
+* New Tab class to deal with tabs
+* Removed stale assets/files
+* Add global namespace imports in phpcs (#2890 by @mbolten)
+* Add CITATION.cff
+* Upgrade dependencies
+* Update i18n terms
+* Replace callbacks with MutationObserver (#2876)
+* Move assets in their correct place /cleanup files (#2874 #2873 #2872 by @mbolten)
+* Replace deprecated methods for csv (#2851 by @mbolten)
+* Remove old code (#2842, #2841 by @mbolten)
+* Add many unit tests
+
+Contributions:
+
+Shoutout to Marcel Bolten for proposing many good quality code changes!
+
+
 Version 4.0.11
 --------------
 
