@@ -64,7 +64,7 @@ Copy the uploaded files
     mkdir -p /var/elabftw/web
     cp -r /path/to/uploads/* /var/elabftw/web
     # fix permissions
-    chown -R 100:101 /var/elabftw/web
+    chown -R 101:101 /var/elabftw/web
 
 About HTTPS (SSL/TLS)
 `````````````````````
