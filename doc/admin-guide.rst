@@ -43,7 +43,11 @@ The Admin can create User Groups from the Admin Panel. Users can then choose to 
 
 Users tab
 ~~~~~~~~~
-The Users tab allows you to modify user accounts in your team. Make an empty search to see all the accounts. Admins can also disable 2FA for a particular user, if needed.
+The Users tab allows you to modify user accounts in your team. From this page, you can reset a password directly or "Archive" an user. An "archived" user won't be able to login anymore and all of their experiments will be locked. If the user needs to be in another team, the correct procedure is to archive the user in the first team, and create a new account (same email) in the new team. This way the first team keeps the data, and the user can have a fresh account in the new team with the same email.
+
+You can also disable multifactor authentication for a particular user, if needed.
+
+At the bottom, you can add directly a new user in your team. The new user will need to activate the "Reset password" functionality to access their account.
 
 Status
 ~~~~~~
