@@ -3,8 +3,12 @@
 Changelog
 =========
 
-Version 4.1.0-BETA
-------------------
+Version 4.1.0
+-------------
+
+Release notes:
+
+This version is full of bugfixes and enhancements, with a few new features too. As it contains some security improvements, it is recommended to all users to update to this version as soon as possible.
 
 Breaking changes:
 
@@ -26,10 +30,16 @@ Bugfixes:
 * Fix create shortcut (#2838 by @mbolten)
 * Fix item category name with special characters (#2812)
 * Fix switch editor (#2810)
+* Fix user not able to add existing tags if admin setting for creating tags is set to no (not default)
+* Fix issue with incorrect date in database (#2910)
+* Fix mathjax in markdown preview (#2921)
 
 New features:
 
 * Allow admins to force using templates for experiments
+* Add QR code only pdf generation (PR #2955 fix #2940)
+* Add metadata search on search page (#2941)
+* Add a button to go back to the top of the page (fix #2925)
 
 Enhancements:
 
@@ -41,6 +51,11 @@ Enhancements:
 * Add items to linked items when '#' type shortcut link is used in editor (#2861 by @mbolten)
 * Add keepalive function to inform users of session timeout
 * Increase maximum height of images in pdf
+* Add tag autocompletion in show mode
+* Display message to user if tag creation is not available
+* Add autocomplete hints for browsers on some fields (email, password, name)
+* Sort available languages in user control panel
+* Hide the share button if anonymous login is not possible
 
 API:
 
@@ -65,6 +80,8 @@ Dev corner:
 * Replace deprecated methods for csv (#2851 by @mbolten)
 * Remove old code (#2842, #2841 by @mbolten)
 * Add many unit tests
+* Fix minification of JS assets
+* Mathjax configuration rework (#2936 by Marcel Bolten)
 
 Contributions:
 
