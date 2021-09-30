@@ -40,6 +40,7 @@ New features:
 * Add QR code only pdf generation (PR #2955 fix #2940)
 * Add metadata search on search page (#2941)
 * Add a button to go back to the top of the page (fix #2925)
+* Add a warning if an entry was modified less than 600 seconds ago by someone else (fix #2243)
 
 Enhancements:
 
@@ -56,6 +57,7 @@ Enhancements:
 * Add autocomplete hints for browsers on some fields (email, password, name)
 * Sort available languages in user control panel
 * Hide the share button if anonymous login is not possible
+* Make the title column in table mode wider
 
 API:
 
