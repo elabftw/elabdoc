@@ -3,6 +3,60 @@
 Changelog
 =========
 
+Version 4.2.0
+-------------
+
+Release notes:
+
+This new version brings a few bugfixes and a lot of new features and enhancements. The "Favorite tags" feature will hopefully be quite useful to a number of users that wanted a folder-like interface.
+
+Breaking changes:
+
+The timestamping options have been completely redesigned. If you were using a custom TimeStamping Authority you will need to readjust your settings.
+
+Bugfixes:
+
+* Re-enable the body content recovery mechansim on session timeout
+* Fix Zip import (fix #2893)
+* Prevent sort buffer size bug in MySQL by removing metadata column in show mode
+* Fix thumbnail image rotation (fix #2972) (only thumbnail is rotated now, not original image anymore)
+* Fix PDFA/A not being generated if attached files contains a png image with transparency channel (fix #2992)
+* Fix CSV report (fix #2994)
+
+New features:
+
+For Users:
+
+* Allow "type: url" in JSON metadata and make it clickable in view mode (fix #2963)
+* Create thumbnails from uploaded HEIC images (see #2973)
+* Show unfinished items steps in todolist (fix #2846 by Marcel Bolten)
+* Add "Favorite Tags" side panel to easily browse tags marked as "Favorite" (pull #2974)
+* Allow filtering items types on "Add Link" input
+
+For Admins:
+
+* Add an "Export" panel in Admin Panel to export a full category of database items in different formats (fix #3029)
+* Vastly improve the items types Admin Panel interface: add steps and links (fix #1495)
+
+For Sysadmins:
+
+* Display which query is being run during db:update (will help troubleshoot in case of failure)
+* Reinstate the NameIdFormat SAML option (fix #3012)
+* Improve the timestamping configuration with pre-set choices and don't require certs for custom TSA (fix #2805)
+* Show an error in Sysconfig Panel if "Instance URL" setting is not set
+
+Enhancements:
+
+* Hide "Forget Password" and local login button if "Show Local Login" is disabled
+* Don't allow users to toggle lock even if they have write access (fix #3009)
+
+Dev corner:
+
+* Remove deprecated tinymce options
+* Move the @types to devDependencies
+* Update dependencies, as always
+
+
 Version 4.1.0
 -------------
 
