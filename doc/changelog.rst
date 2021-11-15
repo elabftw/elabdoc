@@ -3,6 +3,11 @@
 Changelog
 =========
 
+Version 4.2.1
+-------------
+
+Just a small patch to make the update less prone to errors.
+
 Version 4.2.0
 -------------
 
