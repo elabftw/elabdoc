@@ -27,10 +27,10 @@ New features:
 
 For Users:
 
+* Add "Favorite Tags" side panel to easily browse tags marked as "Favorite" (pull #2974): see `doc <https://doc.elabftw.net/user-guide.html#favorite-tags>`_.
 * Allow "type: url" in JSON metadata and make it clickable in view mode (fix #2963)
 * Create thumbnails from uploaded HEIC images (see #2973)
 * Show unfinished items steps in todolist (fix #2846 by Marcel Bolten)
-* Add "Favorite Tags" side panel to easily browse tags marked as "Favorite" (pull #2974)
 * Allow filtering items types on "Add Link" input
 
 For Admins:
