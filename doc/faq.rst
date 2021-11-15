@@ -50,6 +50,7 @@ Why use eLabFTW?
 * Experiments can have color coded statuses (that you can edit at will)
 * You can link an experiment with an item from the database to retrieve in a click the plasmid/sirna/antibody/chemical you used
 * And it works the other way around, you can find all experiments done with a particular item from the database!
+* blockchain blockchain blockchain
 * There is a locking mechanism preventing further edition
 * You can comment on an experiment (if it's not your experiment)
 * You can import your old database stored in an excel file
@@ -180,58 +181,6 @@ eLabFTW tries to comply to the following standards :
 * `FERPA <http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html>`_
 * `HIPAA <http://www.hhs.gov/ocr/privacy/>`_
 * `FISMA <https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002#Compliance_framework_defined_by_FISMA_and_supporting_standards>`_
-
-How to have folders or projects grouping experiments?
------------------------------------------------------
-
-First, try to go beyond the nested, tree-like structure of hierarchical folders.
-
-Imagine you have an experiment which is:
-
-- about "Protein MR73"
-- using "Western blot"
-- an external collaboration
-- with "HEK cells"
-
-Now if that experiment was a file, you might want to store it in "Collaborations > Western Blot > MR73" maybe. Or "Project MR73 > Collaborations > HEK"?
-
-But what if you have another one that is also using HEK cells but has nothing in common with the previous one. How would you go about looking for all the experiments with HEK? And all the experiments related to MR73 that involve a Western Blot?
-
-In a traditional folder structure, you would need to search for it in almost each sub-folders.
-
-Enter **tags**.
-
-Tags
-````
-
-Tags are a way to label your experiments (and database objects) with defined keywords and you can have as many as you want!
-
-.. image:: img/tags-view.png
-    :align: center
-    :alt: tags
-
-Now with the experiments correctly tagged, finding them through different search angles become easy!
-
-Favorite tags
-`````````````
-
-Over time, you will have some tags that become your favorites, as they are always the ones you look for for a set of experiments.
-
-Since version 4.2.0 it is possible to define "Favorite tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.
-
-.. image:: img/favtags.gif
-    :align: center
-    :alt: favorite tags
-
-
-Using Projects
-``````````````
-
-There is also another way to group experiments together, that you can use along with tags. It's using a database item of type : Project.
-
-Go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
-
-Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
 
 How to change the team of a user?
 ---------------------------------
