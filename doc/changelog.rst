@@ -16,7 +16,7 @@ The timestamping options have been completely redesigned. If you were using a cu
 
 Bugfixes:
 
-* Re-enable the body content recovery mechansim on session timeout
+* Re-enable the body content recovery mechanism on session timeout
 * Fix Zip import (fix #2893)
 * Prevent sort buffer size bug in MySQL by removing metadata column in show mode
 * Fix thumbnail image rotation (fix #2972) (only thumbnail is rotated now, not original image anymore)
@@ -260,7 +260,7 @@ Enhancements:
 
 * Add autosave to experiments templates
 * Fix the title width in table mode
-* Homogeneize table columns for exp/items
+* Homogenize table columns for exp/items
 * Fix issue for uploaded files on another partition not working in some cases (fix #2745)
 
 Dev stuff:

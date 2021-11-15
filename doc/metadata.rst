@@ -66,7 +66,7 @@ This will allow you to copy/paste easily the following code block into the edito
       }
     }
 
-Now click Save and reload the page. Above the Steps you should now see two new inputs under the "Extra fields" header. When they are modified, the change is saved immediatly.
+Now click Save and reload the page. Above the Steps you should now see two new inputs under the "Extra fields" header. When they are modified, the change is saved immediately.
 
 
 .. image:: img/extra-fields.png
@@ -97,7 +97,7 @@ A dropdown element with options to choose from.
 
 radio
 """""
-A radio input similar to select but all options are immediatly visible.
+A radio input similar to select but all options are immediately visible.
 
 date
 """"

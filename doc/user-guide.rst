@@ -232,7 +232,7 @@ Tags are a way to label your experiments (and database objects) with defined key
     :align: center
     :alt: tags
 
-Now with the experiments correctly tagged, finding them through different search angles become easy!
+Now with the experiments correctly tagged, finding them through different search angles becomes easy! You can search for one tag or many tags directly from the main page.
 
 Favorite tags
 ~~~~~~~~~~~~~
@@ -245,6 +245,7 @@ Since version 4.2.0 it is possible to define "Favorite tags" that will appear in
     :align: center
     :alt: favorite tags
 
+Note that if you use a "Favorite tag" filter and then create an experiment, it will be tagged automatically with that tag.
 
 Using Projects
 ~~~~~~~~~~~~~~
