@@ -8,7 +8,7 @@ Version 4.2.0
 
 Release notes:
 
-This new version brings a few bugfixes and a lot of new features and enhancements. The "Favorite tags" feature will hopefully be quite useful to a number of users that wanted a folder-like interface.
+This new version brings a few bugfixes and a lot of new features and enhancements. The "Favorite tags" feature will hopefully be quite useful to a number of users that wanted a folder-like interface. There are also two security fixes in there, and while they probably won't impact the majority of users, are worth updating for.
 
 Breaking changes:
 

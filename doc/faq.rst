@@ -24,6 +24,8 @@ Fortunately, eLabFTW allows rock solid `timestamping of your experiments <https:
 
 If needed, you can also choose another TimeStamping Authority allowing :rfc:`3161` timestamping.
 
+You also have the possibility to use the `Bloxberg.org <https://bloxberg.org/>`_ blockchain to timestamp your data. All it takes is a single click!
+
 Why use eLabFTW?
 ----------------
 
@@ -100,7 +102,7 @@ Is the data encrypted?
 
 The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2 with modern ciphers).
 
-The passwords are not recoverable in case of a breach.
+The passwords are not recoverable in case of a breach and are hashed using state of the art algorithms.
 
 Only manually validated accounts can interact with the software. It is secure by default.
 
@@ -108,6 +110,10 @@ Is eLabFTW still maintained?
 ----------------------------
 
 As of |today| I'm still actively working on it. Improvements are coming in a steady flow. There are good chances that I will continue to do so for a few years. In the unlikely event I'm not able to work on it anymore, anyone can continue the work, as the source code is available and well commented.
+
+Since 2019, the company `Deltablot <https://www.deltablot.com>`_ exists to provide support and hosting to eLabFTW users around the world. This company will allow funding further development of the software thanks to an original business model: the software itself is entirely free, but the individual support, custom features development and hosting are paid options.
+
+If you are interested in such options, please visit this page: `Deltablot's elabftw page <https://www.deltablot.com/elabftw/>`_.
 
 Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?
 -------------------------------------------------------------------------------------------
@@ -118,6 +124,31 @@ Can I try it before I install it?
 ---------------------------------
 
 Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_
+
+What are the technical specifications?
+--------------------------------------
+
+eLabFTW is a server software that should be installed on a server.
+
+Requirements for the server
+```````````````````````````
+
+**Hardware**
+
+At least 2Gb of RAM, a decent processor (> 2GHz), preferably multi-core and an SSD disk with at least a few Gb free.
+
+**Software:**
+
+The operating system of the server can be any but GNU/Linux is highly recommended.
+
+The service runs in `Docker <https://www.docker.com>`_ containers.
+
+A MySQL database service is required. You can create one with Docker following the standard installation procedure, or use an existing one.
+
+Requirements for the clients (users)
+````````````````````````````````````
+
+- Any operating system with any browser (recent version), except Safari (might have issues) or Internet Explorer (will have issues).
 
 What about data retention/traceability
 --------------------------------------
@@ -150,109 +181,57 @@ eLabFTW tries to comply to the following standards :
 * `HIPAA <http://www.hhs.gov/ocr/privacy/>`_
 * `FISMA <https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002#Compliance_framework_defined_by_FISMA_and_supporting_standards>`_
 
-What are the technical specifications?
---------------------------------------
-
-eLabFTW is a server software that should be installed on a server.
-
-**Requirements for the server**
-
-The operating system of the server can be any. At least 2Gb of RAM, a decent processor (> 2GHz) and an SSD disk with at least 1 Gb free.
-
-The best is to have `Docker <https://www.docker.com>`_ installed. Otherwise, make sure to have:
-
-* a webserver (nginx, apache, cherokee, lighttpd, …) with HTTPS enabled
-* `PHP <https://secure.php.net/>`_ version > 7.3
-* `Composer <https://getcomposer.org/>`_
-* `MySQL <https://www.mysql.com/>`_ version > 5.5
-
-**Requirements for the client**
-- Any operating system with any browser (recent version).
-
 How to have folders or projects grouping experiments?
 -----------------------------------------------------
 
-First, forget about folders, use tags. They are much more powerful! Because an experiment can have many tags, whereas it can only be in one folder. Tags can be used to group experiments by project, by microscope, by collaborator, by whatever you want, all at the same time, allowing you to do cross-searchs.
+First, try to go beyond the nested, tree-like structure of hierarchical folders.
 
-Next, go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
+Imagine you have an experiment which is:
 
-Another solution is to create an experiment that would be sort of a meta experiment, listing all the sub-experiments pertaining to the project, with links (you can create links in the body easily by typing '#' and some words from the title).
+- about "Protein MR73"
+- using "Western blot"
+- an external collaboration
+- with "HEK cells"
 
-Select the approach that you prefer :)
+Now if that experiment was a file, you might want to store it in "Collaborations > Western Blot > MR73" maybe. Or "Project MR73 > Collaborations > HEK"?
+
+But what if you have another one that is also using HEK cells but has nothing in common with the previous one. How would you go about looking for all the experiments with HEK? And all the experiments related to MR73 that involve a Western Blot?
+
+In a traditional folder structure, you would need to search for it in almost each sub-folders.
+
+Enter **tags**.
+
+Tags
+````
+
+Tags are a way to label your experiments (and database objects) with defined keywords and you can have as many as you want!
+
+.. image:: img/tags-view.png
+    :align: center
+    :alt: tags
+
+Now with the experiments correctly tagged, finding them through different search angles become easy!
+
+Favorite tags
+`````````````
+
+Over time, you will have some tags that become your favorites, as they are always the ones you look for for a set of experiments.
+
+Since version 4.2.0 it is possible to define "Favorite tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.
+
+.. image:: img/favtags.gif
+    :align: center
+    :alt: favorite tags
 
 
---------------------
+Using Projects
+``````````````
 
-.. This was the common errors page, but it is deprecated now thanks to Docker :) I moved it in FAQ to avoid cluttering the left pane.
+There is also another way to group experiments together, that you can use along with tags. It's using a database item of type : Project.
 
-Failed creating *uploads/* directory
-------------------------------------
+Go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
 
-If eLabFTW couldn't create an *uploads/* or *cache/* folder, that's because the httpd user (www-data on Debian/Ubuntu) didn't have the necessary rights. To fix it you need to:
-
-1. Find what is the user/group of the web server. There is a good chance that it is www-data. But it might also be something else.
-
-2. Now that you know the user/group of the webserver, you can do that (example is shown with www-data, but adapt to your need):
-
-.. code-block:: bash
-
-    cd /path/to/elabftw
-    mkdir uploads cache
-    chown www-data:www-data uploads cache
-    chmod 400 config.php
-
-The last line is to keep your config file secure. It might fail because the file is not there yet. Finish the install and do it after then.
-
-I can't upload a file bigger than 2 Mb
---------------------------------------
-
-Edit the file php.ini and change the value of upload_max_filesize to something bigger, example:
-
-.. code-block:: bash
-
-    upload_max_filesize = 128M
-
-.. warning:: Don't forget to remove the `;` at the beginning of the line!
-
-I can't export my (numerous) experiments in zip, I get an error 500
--------------------------------------------------------------------
-
-Edit the file `/etc/php/php.ini` or any file called php.ini somewhere on your filesystem. Try `sudo updatedb;locate php.ini`. For XAMPP install, it is in the config folder of XAMPP.
-Now that you have located the file and opened it in a text editor, search for `memory_limit` and increase it to what you wish. `Official documentation on memory_limit <http://php.net/manual/en/ini.core.php#ini.memory-limit>`_.
-
-You can also increase the value of max_execution_time and max_input_time.
-Then restart your webserver:
-
-.. code-block:: bash
-
-    sudo service apache2 restart
-
-For nginx, you can also add `fastcgi_read_timeout 300;` in the `http` section.
-
-Languages don't work
---------------------
-
-eLabFTW uses `gettext <https://en.wikipedia.org/wiki/Gettext>`_ to translate text. This means that you need to have the associated locales on the server.
-To see what locale you have::
-
-    locale -a
-
-To add a locale, edit the file `/etc/locale.gen` and uncomment (remove the #) the locales you want. If you don't find this file you can try directly the command::
-
-    locale-gen fr_FR.UTF-8
-
-Replace with the locale you want, of course.
-See :doc:`here <contributing>` to see a list of languages (and locales) supported by eLabFTW.
-Then do::
-
-    sudo locale-gen
-
-And reload the webserver.
-
-Time is wrong
--------------
-
-Make sure you configured properly the TZ environment variable for both docker images. See `example config <https://github.com/elabftw/elabimg/blob/master/src/docker-compose.yml-EXAMPLE>`_.
+Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
 
 How to change the team of a user?
 ---------------------------------
