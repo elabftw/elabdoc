@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 4.2.2
+-------------
+
+* Fix i18n on FreeBSD
+* Fix sysadmin panel announcements settings (fix #3053)
+
 Version 4.2.1
 -------------
 
