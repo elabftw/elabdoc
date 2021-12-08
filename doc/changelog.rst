@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 4.2.3
+-------------
+
+* Fix a bug on Chrome/Chromium for users with a saved password in the browser where the "Saved" message would appear continuously in Sysconfig and Admin panels.
+* Fix an issue in the mobile editor (#3108)
+
 Version 4.2.2
 -------------
 
