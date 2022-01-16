@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 4.2.4
+-------------
+
+* Fix full day calendar booking from month view (fix #3192 2077)
+* Fix issue with saml auth when user is in several teams (fix #2438)
+* Improve error message on failed auth
+* Update marked to latest version
+
 Version 4.2.3
 -------------
 
