@@ -53,18 +53,14 @@ Find out the userid of the user you want to reset the password:
 
    SELECT userid FROM users WHERE firstname = 'XXX';
 
-Replace XXX with the firstname. You can of course also search with "email" or "lastname". Now that you have the userid, we need to change the "password" and "salt" columns. The password column will be :
+Replace XXX with the firstname. You can of course also search with "email" or "lastname". Now that you have the userid, we need to change the `password_hash` column. The `password_hash` column will be:
 
-f5664da4107ca5f521d8057caa8a97639c6ba8a8276fc722d8df98219fd3a11dd4bdd4573172556ce30a0993c4414773a3f2885aff38077867b915fdbce53263
-
-and the salt column will be :
-
-f93c630ce2d74ef0636488a7ba85d24e67a579e9e0aca7e0a4769c8eed8d90156de5479ccded33585c82c4a631133e2f051e8df971d479cba8045df102c92c79
+$2y$10$KXkB/w1NhLnl1mHbK0yTsuAbgJ8st4qQ2i36KyTk7kwo.G6Oq6LXa
 
 .. code-block:: sql
 
-   UPDATE users SET password = f566..., salt = f93c... WHERE userid = X;
+   UPDATE users SET password_hash = "$2y$10$KXk..." WHERE userid = X;
 
 Replace X with the correct userid.
 
-Once this is done, you can login with the password: "totototo".
+Once this is done, you can login with the password: "totototo". Make sure to change it again from the User Control Panel once logged in!
