@@ -1,5 +1,3 @@
 # Security Policy
 
-## Reporting a Vulnerability
-
-Contact me _via_ [Keybase.io](https://keybase.io/nicolascarpi/).
+See [our policy](https://www.deltablot.com/security/).
