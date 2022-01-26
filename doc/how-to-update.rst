@@ -41,11 +41,12 @@ To update, cd in the `elabftw` folder and do:
 .. code-block:: bash
 
     git pull
-    # see https://getcomposer.org to install composer
-    composer install --no-dev
     # see https://yarnpkg.com/en/docs/install to install yarn
     yarn install
     yarn buildall
+    # IMPORTANT: this composer step must be done after yarn build step
+    # see https://getcomposer.org to install composer
+    composer install --no-dev
     php bin/console db:update
     # clear the cache
     sudo rm -rf cache/twig/*
