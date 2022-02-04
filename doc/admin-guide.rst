@@ -156,6 +156,32 @@ Every row will correspond to an entry in the correct category of database items.
 
 If the import looks good, you can now delete these newly imported items and import your complete file.
 
+Using the API to control how things are imported
+````````````````````````````````````````````````
+
+If you want to have complete control over the import process, you can use a helper program to do the import.
+
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+    import elabapy
+    import csv
+
+    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org")
+
+    with open('a.csv', newline='') as csvfile:
+        csvreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
+        for row in csvreader:
+            res = manager.create_experiment()
+            # start by clearing out the content (default template)
+            manager.post_experiment(res['id'], {'body': ''})
+            # add a title
+            manager.post_experiment(res['id'], {'title': row['title']})
+            # now create a body with columns in bold
+            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Content:</h2></strong>' + row['content'] + '<br>'})
+            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Category:</h2></strong>' + row['category'] + '<br>'})
+            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Elabid:</h2></strong>' + row['elabid'] + '<br>'})
 
 Tag manager
 ~~~~~~~~~~~
