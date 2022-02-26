@@ -28,9 +28,6 @@ If you get "An error occurred!" message, check the PHP logs. All errors should b
 
 .. code-block:: bash
 
-   # for php errors
-   elabctl error-logs
-   # or
    docker logs elabftw 1>/dev/null
 
 Resetting a password directly from MySQL
@@ -44,8 +41,6 @@ First connect to a MySQL prompt:
 
    # docker users
    elabctl mysql
-   # non-docker
-   mysql -uelabftw -p elabftw
 
 Find out the userid of the user you want to reset the password:
 
