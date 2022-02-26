@@ -53,7 +53,6 @@ See :doc:`this page <install-cloud>` if you don't own a server already.
     install-nas
     install-mac
     install-windows
-    install-oldschool
 
 .. toctree::
     :caption: Usage

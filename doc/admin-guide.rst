@@ -83,7 +83,7 @@ This is the default text when someone creates an experiment. Feel free to edit i
 
 Import
 ~~~~~~
-If you already have some "items" catalogued in an Excel file or File Maker database, you can import them from this tab. To achieve a successful import, make sur to follow these instructions:
+If you already have some "items" catalogued in an Excel file or File Maker database, you can import them from this tab. To achieve a successful import, make sure to follow these instructions:
 
 
 1. Preparing the file

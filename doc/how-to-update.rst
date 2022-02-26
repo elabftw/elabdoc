@@ -31,26 +31,6 @@ If you installed it with elabctl
 
 As said earlier: READ THE CHANGELOG!!!
 
-If you installed it with git
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
-
-To update, cd in the `elabftw` folder and do:
-
-.. code-block:: bash
-
-    git pull
-    # see https://yarnpkg.com/en/docs/install to install yarn
-    yarn install
-    yarn buildall
-    # IMPORTANT: this composer step must be done after yarn build step
-    # see https://getcomposer.org to install composer
-    composer install --no-dev
-    php bin/console db:update
-    # clear the cache
-    sudo rm -rf cache/twig/*
-
 If you are using Docker without elabctl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
