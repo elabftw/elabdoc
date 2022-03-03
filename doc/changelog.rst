@@ -3,6 +3,82 @@
 Changelog
 =========
 
+Version 4.3.0
+-------------
+
+Breaking changes:
+`````````````````
+
+* Completely drop support for non-Docker installation method, `see why <https://doc.elabftw.net/docker-doc.html#why-can-t-i-run-it-outside-docker>`_.
+* Require MySQL version 8.0. If you are using a dockerized mysql, simply change the version of the mysql image in the configuration file to `8.0` and restart the container, it will update the data itself automatically.
+* A new mandatory configuration option (environment variable) `SITE_URL` is needed. Edit your configuration file (`/etc/elabftw.yml` by default) and add a new environment variable `SITE_URL` with a value that corresponds to the address for the instance (including the port if not custom). If this value is not set, the container will not start. This was previously an optional setting in the instance main config, but it was causing issues, see #3319. (PR #3323). Example:
+
+.. code-block:: yaml
+
+   SITE_URL=https://elab.example.org
+
+
+
+Important changes:
+``````````````````
+
+* When deletion is requested, the entry isn't really deleted but its `state` is set to deleted. It is not possible anymore to actually delete something . (PR #3302)
+* When an uploaded file is replaced by a new version, the previous version has its `state` changed to `archived` and is kept around.
+
+New features:
+`````````````
+
+For sysadmins:
+
+* You can now configure S3 storage for uploaded files (PR #3281)
+* Add `uploads:prune` command to remove deleted files from database and filesystem
+* The `db:update` command now displays important messages at the end
+* Add `cache:clear` command to clear cached files
+* Allow user to request access to a team after SAML authentication (issue #3244, PR #3246)
+
+For users:
+
+* Allow searching for entities in API (issue #3264, PR #3308)
+* Revamp completely the search interface, and allow complicated search queries, mainly by Marcel Bolten (PR #3247, PR #2975, fix #2677)
+
+Bugfixes:
+`````````
+
+* Fix non working actions when navigating with the Favorite tags (issue #3329, PR #3331)
+* Fix bug where creating event resulted in changing the title of the item (issue #3326)
+* Actually use the Lato font for PDFs (issue #3211)
+* Fix team event binding behavior (PR #3301 by Marcel Bolten)
+* Fix page reloading on item type deletion preventing user from reading error message
+* Don't choke on password protected PDFs (PR #3288 by Marcel Bolten)
+* Avoid elabid overflow on small screens (PR #3260 by Marcel Bolten)
+* Fix url encoding issue in pdf qr code (issue #2940)
+* Fix html tags whitelisting (fix #3239)
+
+Enhancements:
+`````````````
+
+* Minor API documentation fixes by Henning Timm (PR #3327)
+* Prevent issues when pasting from Word (issue #3193)
+* Append PDFs in multi mode (PR #3303 by Marcel Bolten)
+* Add user notification when things fail during PDF generation (PR #3283 by Marcel Bolten)
+* Improve some UI elements (PR #3304, PR #3259, PR #3257 by Marcel Bolten)
+* Better handling of MathJax errors (PR #3155, see #3076, fix #3076, by Marcel Bolten)
+* Order linked items by category, then date, then title (fix #3280)
+* During CSV import, interpret the "tags" column to add tags (fix #3101)
+
+Dev corner:
+```````````
+
+* Add many unit tests
+* Charset utf8mb4 and collate utf8mb4_0900_ai_ci for all tables
+* Rework of storage code to allow uploading to s3, use of flysystem v3
+* Update twig to v3
+* Filesize column added to uploads so we don't need to read filesystem every time
+* Scrutinizer-ci is now using a custom docker image (by Marcel)
+* jquery-jeditable library now replaced by `malle`, a modern library created by Nicolas CARPi
+
+Big thanks to Marcel Bolten for his many contributions to this release!
+
 Version 4.2.4
 -------------
 
