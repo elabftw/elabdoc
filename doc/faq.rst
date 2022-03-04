@@ -110,7 +110,7 @@ Only manually validated accounts can interact with the software. It is secure by
 Is eLabFTW still maintained?
 ----------------------------
 
-As of |today| I'm still actively working on it. Improvements are coming in a steady flow. There are good chances that I will continue to do so for a few years. In the unlikely event I'm not able to work on it anymore, anyone can continue the work, as the source code is available and well commented.
+Not only it is maintained, but it is actively being worked on, with major new features and improvements being added regularly.
 
 Since 2019, the company `Deltablot <https://www.deltablot.com>`_ exists to provide support and hosting to eLabFTW users around the world. This company will allow funding further development of the software thanks to an original business model: the software itself is entirely free, but the individual support, custom features development and hosting are paid options.
 
@@ -124,7 +124,7 @@ Yes, in the admin panel, click on the Import CSV link and follow the instruction
 Can I try it before I install it?
 ---------------------------------
 
-Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_
+Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_.
 
 What are the technical specifications?
 --------------------------------------
@@ -155,6 +155,8 @@ What about data retention/traceability
 --------------------------------------
 
 When a user is making a change to an experiment, a copy of the previous version is kept in the database. This copy cannot be altered by anyone. The admin can also prevent users from deleting experiments, and the creation date is kept in memory, even if the date field is changed later on.
+
+When an entry is deleted, it is not completely removed from the database, but instead marked as deleted. Same with attached files: overwriting a file will mark the previous version as "Archived".
 
 Is it compliant to 21CFR Part 11?
 ---------------------------------
