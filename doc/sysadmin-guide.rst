@@ -41,12 +41,7 @@ If you don't know what to do, I highly recommend using `SMTP2GO <https://www.smt
     :align: center
     :alt: smtp2go logo
 
-Register an account using this link: `SMTP2GO <https://www.smtp2go.com/?s=eLabFTW>`_. Once logged in, it will provide you with a login and password to connect to the SMTP server "mail.smtp2go.com". Input these credentials on the Sysadmin panel and test sending an email.
-
-Set up the instance URL
------------------------
-
-In the first tab, make sure to fill the "Installation URL" setting.
+Register an account using this link: `SMTP2GO <https://www.smtp2go.com/?s=eLabFTW>`_. Once logged in, add an SMTP User: it will provide you with a login and password to connect to the SMTP server "mail.smtp2go.com". Input these credentials on the Sysadmin panel and test sending an email.
 
 Set up backup
 -------------
@@ -70,6 +65,11 @@ So if you need a stronger certification, you should go with a commercial solutio
 You can select from the list of pre-configured TSA or use a custom one by providing the URL and login/password.
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
+
+Configure storage :sup:`(optional)`
+-----------------------------------
+
+By default, uploaded files are stored in the `uploads/` folder that is mounted outside the container for persistance. You can choose instead to use an S3 compatible service (buckets) to store these files. The "Uploads" tab allows you to configure this storage.
 
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
 -------------------------------------------------------------
