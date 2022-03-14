@@ -19,13 +19,14 @@ The service provider is the elabftw install. Head to the Sysadmin panel, click t
 * Debug mode: Set to "No". We don't want to print errors
 * Strict mode: Set to "Yes". Otherwise the mechanism is not secure
 * Base url: Where did you install elabftw? Example: https://elabftw.example.edu
-* entityId: The same as base URL
-* SAML protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
-* Single Logout Service: The same as entityId
-* Single Logout Service protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
+* EntityId: The same as base URL
+* Assertion Consumer Service binding: Only HTTP-POST is supported.
+* Single Logout Service binding: Only HTTP-Redirect is supported.
 * NameIDFormat: this value is to select which attribute will be used to lookup the user in the elabftw database. At the moment, only email is supported
-* x509 certificate: Generate a self-signed certificate and export it in PEM
-* Private key: the private key corresponding to the certificate
+* x509 Certificate: Generate a self-signed certificate and export it in PEM
+* x509 Certificate private key: the private key corresponding to the certificate
+* Rollover x509 certificate: Used when the x509 certificate is expiring. Can be set to a new certificate to publish in
+  metadata
 
 To generate a certificate, you can use this command:
 
@@ -40,13 +41,14 @@ Alternatively you can use `this site <https://developers.onelogin.com/saml/onlin
 Setup the IDentity Provider
 ---------------------------
 
-* Name: Visible to the user logging in. Example: "Institut Curie"
-* entityId: Example: https://idp1.agroparistech.fr/shibboleth
-* SSO url: Single Sign On URL
-* SSO binding: Example: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-* SLO url: Single Log Out URL
-* SLO binding: Example: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-* x509 cert: the public key of the IDP
+* Friendly Name: Visible to the user logging in. Example: "Institut Curie"
+* EntityId: Provided to you by IdP. Example: https://idp1.agroparistech.fr/shibboleth
+* Single Sign-On url: Single Sign On URL
+* Single Sign-On binding: Only "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" is supported
+* Single Log Out url: Single Log Out URL
+* Single Log Out binding: Only "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" is supported
+* x509 cert: the public key of the IDP to verify messages
+* x509 cert (additional for rollover): an additional public key which can be used to verify messages
 
 Disable local login/register
 ----------------------------
@@ -62,4 +64,3 @@ Debugging
 ---------
 
 SAML configuration can be tricky. I recommend that you use the SAML-tracer addon (available for Chrome or Firefox) to see the requests and be able to verify what is sent and received.
-
