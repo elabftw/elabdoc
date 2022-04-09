@@ -10,7 +10,7 @@ Breaking changes:
 `````````````````
 
 * Completely drop support for non-Docker installation method, `see why <https://doc.elabftw.net/docker-doc.html#why-can-t-i-run-it-outside-docker>`_.
-* Require MySQL version 8.0. If you are using a dockerized mysql, simply change the version of the mysql image in the configuration file to `8.0` and restart the container, it will update the data itself automatically.
+* Require MySQL version 8.0. If you are running MySQL version 5.7 or earlier, you might run into encoding issues. One workaround would be to export your data, do the mysql upgrade and re-import your data in UTF-8.
 * A new mandatory configuration option (environment variable) `SITE_URL` is needed. Edit your configuration file (`/etc/elabftw.yml` by default) and add a new environment variable `SITE_URL` with a value that corresponds to the address for the instance (including the port if not custom). If this value is not set, the container will not start. This was previously an optional setting in the instance main config, but it was causing issues, see #3319. (PR #3323). Example:
 
 .. code-block:: yaml
@@ -30,15 +30,21 @@ New features:
 
 For sysadmins:
 
-* You can now configure S3 storage for uploaded files (PR #3281)
+* You can now configure S3 storage for uploaded files (PR #3281) (and use bin/console uploads:migrate)
 * Add `uploads:prune` command to remove deleted files from database and filesystem
 * The `db:update` command now displays important messages at the end
 * Add `cache:clear` command to clear cached files
 * Allow user to request access to a team after SAML authentication (issue #3244, PR #3246)
 
+For admins:
+
+* Allow export of data from the Admin panel: experiments, items or scheduler data (PR #3445) (fix #3386)
+* When an event is deleted from the scheduler, Admins get a notification
+
 For users:
 
 * Allow searching for entities in API (issue #3264, PR #3308)
+* New notifications system (#3363)
 * Revamp completely the search interface, and allow complicated search queries, mainly by Marcel Bolten (PR #3247, PR #2975, fix #2677)
 
 Bugfixes:
@@ -53,6 +59,13 @@ Bugfixes:
 * Avoid elabid overflow on small screens (PR #3260 by Marcel Bolten)
 * Fix url encoding issue in pdf qr code (issue #2940)
 * Fix html tags whitelisting (fix #3239)
+* Make sure every entity gets its own directory in zip file (#3446 by Marcel Bolten)
+* Fix half broken toggle body in show mode
+* Add possibly missing `authfail` table
+* Fix incorrect proxy setting for timestamping request (fix #3157)
+* Fix metadata not being duplicated for items (fix #3413)
+* Move show related action button (fix #3391)
+* Fix #3392, show mode issues
 
 Enhancements:
 `````````````
@@ -65,6 +78,16 @@ Enhancements:
 * Better handling of MathJax errors (PR #3155, see #3076, fix #3076, by Marcel Bolten)
 * Order linked items by category, then date, then title (fix #3280)
 * During CSV import, interpret the "tags" column to add tags (fix #3101)
+* Prevent modification of events in the past in scheduler (unless user is admin)
+* Add team selection filter on sysadmin panel/Users tab (fix #2764, PR #3444 by Marcel)
+* And other cosmetic enhancements by Marcel
+* Steps can now have a deadline set (#3415), with possibility to receive a notification, and the times are editable
+* Add confirmation dialog when unfinishing a step
+* Improve SAML implementation (#3389 by Maximilian H). Add certificate rollover (#2951)
+* Add a sysadmin option to disable blockchain timestamping
+* Add a sysadmin option to anonymize user for blockchain stamp
+* Add metadata to CSV export
+* Allow target=_blank on links (fix #3367)
 
 Dev corner:
 ```````````
@@ -76,6 +99,7 @@ Dev corner:
 * Filesize column added to uploads so we don't need to read filesystem every time
 * Scrutinizer-ci is now using a custom docker image (by Marcel)
 * jquery-jeditable library now replaced by `malle`, a modern library created by Nicolas CARPi
+* MySQL fixes and enhancements by Marcel (#3431, see #3411)
 
 Big thanks to Marcel Bolten for his many contributions to this release!
 
