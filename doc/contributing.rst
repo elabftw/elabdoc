@@ -129,6 +129,8 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
 * Add a SECRET_KEY
 * Set DEV_MODE to true
+* Set ELABFTW_USER and ELABFTW_GROUP to your username/group
+* SET ELABFTW_USERID and ELABFTW_GROUPID to your uid/gid (probably 1000, check with `id` command). This allows to run the container with the same user as your main user and will avoid running into permissions issues.
 * Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
 * Start the containers:
 
