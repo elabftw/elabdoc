@@ -114,3 +114,39 @@ A text input that only accepts a number as value.
 options (for type = select)
 ```````````````````````````
 An array (`[]`) with different options for the dropdown element.
+
+Usage example
+-------------
+
+Have a "Status" and "Quantity" for some items in your database:
+
+.. code:: json
+
+    {
+      "extra_fields": {
+        "Status": {
+          "type": "select",
+          "value": "In use",
+          "options": [
+            "Not opened",
+            "In use",
+            "Need reorder",
+            "Out of stock"
+          ]
+        },
+        "Quantity": {
+          "type": "number",
+          "value": "12"
+        }
+      }
+    }
+
+
+This will produce the following inputs:
+
+.. image:: img/metadata-example.png
+    :align: center
+    :alt: metadata-example
+
+And if you're looking for all entries that have the status "Need reorder" you can do so from the search page!
+
