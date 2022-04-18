@@ -35,6 +35,7 @@ For sysadmins:
 * The `db:update` command now displays important messages at the end
 * Add `cache:clear` command to clear cached files
 * Allow user to request access to a team after SAML authentication (issue #3244, PR #3246)
+* Show MySQL version in sysadmin page (#3509 by Marcel)
 
 For admins:
 
@@ -46,6 +47,9 @@ For users:
 * Allow searching for entities in API (issue #3264, PR #3308)
 * New notifications system (#3363)
 * Revamp completely the search interface, and allow complicated search queries, mainly by Marcel Bolten (PR #3247, PR #2975, fix #2677)
+* Add import link from link function (#3488)
+* Allow searching for several metadata fields on search page (#3473)
+* Many other cosmetic changes and improvements all over the application.
 
 Bugfixes:
 `````````
@@ -66,6 +70,7 @@ Bugfixes:
 * Fix metadata not being duplicated for items (fix #3413)
 * Move show related action button (fix #3391)
 * Fix #3392, show mode issues
+* Fix issue with step edition/reload of element (#3506 by Marcel)
 
 Enhancements:
 `````````````
@@ -88,6 +93,9 @@ Enhancements:
 * Add a sysadmin option to anonymize user for blockchain stamp
 * Add metadata to CSV export
 * Allow target=_blank on links (fix #3367)
+* Prevent link input fiend being squashed if category has a long name (#3508 by Marcel)
+* Add a "now" line on scheduler
+* There is only one type of Admin now (no more the Admin/Admin + lock power distinction) (#3484)
 
 Dev corner:
 ```````````
@@ -99,7 +107,7 @@ Dev corner:
 * Filesize column added to uploads so we don't need to read filesystem every time
 * Scrutinizer-ci is now using a custom docker image (by Marcel)
 * jquery-jeditable library now replaced by `malle`, a modern library created by Nicolas CARPi
-* MySQL fixes and enhancements by Marcel (#3431, see #3411)
+* MySQL fixes and enhancements by Marcel (#3431, see #3411, #3490, #3491, #3480, #3475)
 
 Big thanks to Marcel Bolten for his many contributions to this release!
 
