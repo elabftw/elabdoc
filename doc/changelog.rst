@@ -36,6 +36,7 @@ For sysadmins:
 * Add `cache:clear` command to clear cached files
 * Allow user to request access to a team after SAML authentication (issue #3244, PR #3246)
 * Show MySQL version in sysadmin page (#3509 by Marcel)
+* Add a timestamp monthly limit (#3512)
 
 For admins:
 
@@ -71,6 +72,8 @@ Bugfixes:
 * Move show related action button (fix #3391)
 * Fix #3392, show mode issues
 * Fix issue with step edition/reload of element (#3506 by Marcel)
+* Fix incorrect parsing of query params for api (fix #3513)
+* Allow images to be centered (fix #3368)
 
 Enhancements:
 `````````````
@@ -96,6 +99,10 @@ Enhancements:
 * Prevent link input fiend being squashed if category has a long name (#3508 by Marcel)
 * Add a "now" line on scheduler
 * There is only one type of Admin now (no more the Admin/Admin + lock power distinction) (#3484)
+* Disallow api entity update action if entity is locked (fix #3433)
+* Simplify timestamp configuration by removing admin level config (#3512)
+* Only send ajax requests if data is changed (#3511 by Marcel)
+* Force selection of a file when replacing an upload
 
 Dev corner:
 ```````````
