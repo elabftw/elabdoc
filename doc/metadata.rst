@@ -111,6 +111,10 @@ number
 """"""
 A text input that only accepts a number as value.
 
+url
+"""
+A text input that only accepts a valid URL. In view mode, the link will be clickable.
+
 options (for type = select)
 ```````````````````````````
 An array (`[]`) with different options for the dropdown element.
