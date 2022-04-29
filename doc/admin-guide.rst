@@ -10,7 +10,6 @@ General overview
 * Is the first registered user in a team
 * Has access to the Admin Panel with settings impacting only their team
 * Can change the rightmost link in the main menu (default is Documentation)
-* Can override general Timestamping settings
 * Can edit users of their team
 * Can edit available Status for experiments of their team
 * Can edit available Items Types for the database of their team
@@ -76,6 +75,8 @@ When you create a new category, use the default template of that type of item to
 **Resistance bacteria:**
 
 **Resistance mammalian:**
+
+You can also have a look at using :ref:`extra fields <metadata>` defined through the metadata json editor so all items created in that category will have these supplementary inputs.
 
 Experiments template
 ~~~~~~~~~~~~~~~~~~~~
