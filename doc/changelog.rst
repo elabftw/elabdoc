@@ -47,14 +47,17 @@ For users:
 
 * Allow searching for entities in API (issue #3264, PR #3308)
 * New notifications system (#3363)
-* Revamp completely the search interface, and allow complicated search queries, mainly by Marcel Bolten (PR #3247, PR #2975, fix #2677)
+* Revamp completely the search interface, and allow complicated search queries, mainly by Marcel Bolten (PR #3247, PR #2975, fix #2677, PR #3555, #3554)
 * Add import link from link function (#3488)
 * Allow searching for several metadata fields on search page (#3473)
+* Allow searching in attachments filename and comment (PR #3515 by Marcel)
 * Many other cosmetic changes and improvements all over the application.
 
 Bugfixes:
 `````````
 
+* Fix steps block not getting updated in view mode after clicking the checkbox
+* Fix issue with template update on api (fix #3517)
 * Fix non working actions when navigating with the Favorite tags (issue #3329, PR #3331)
 * Fix bug where creating event resulted in changing the title of the item (issue #3326)
 * Actually use the Lato font for PDFs (issue #3211)
@@ -78,6 +81,12 @@ Bugfixes:
 Enhancements:
 `````````````
 
+* Improve the edit users interface (PR #3551)
+* More robust exif reading for files with incorrect extension
+* Add link to register page after install script is done
+* Add user email on team group autocomplete (fix #3528)
+* Improve json editor/doodle/chemddoodle interface (PR #3526)
+* Always add the thumbnail image in pdf, not the full resolution one (fix #3103)
 * Minor API documentation fixes by Henning Timm (PR #3327)
 * Prevent issues when pasting from Word (issue #3193)
 * Append PDFs in multi mode (PR #3303 by Marcel Bolten)
@@ -114,7 +123,8 @@ Dev corner:
 * Filesize column added to uploads so we don't need to read filesystem every time
 * Scrutinizer-ci is now using a custom docker image (by Marcel)
 * jquery-jeditable library now replaced by `malle`, a modern library created by Nicolas CARPi
-* MySQL fixes and enhancements by Marcel (#3431, see #3411, #3490, #3491, #3480, #3475)
+* MySQL fixes and enhancements by Marcel (#3431, see #3411, #3490, #3491, #3480, #3475, #3521)
+* CircleCI changes (#3520 by Marcel)
 
 Big thanks to Marcel Bolten for his many contributions to this release!
 
