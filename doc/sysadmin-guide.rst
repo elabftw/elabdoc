@@ -53,6 +53,13 @@ Set up the teams :sup:`(optional)`
 
 The Sysadmin panel (`sysconfig.php`) allows you to add another team to your install. You should also edit your team name.
 
+Configure authentication :sup:`(optional)`
+------------------------------------------
+
+By default Users are authenticated locally, with their email and a password stored locally in eLabFTW.
+
+You can chose to have other authentication mechanisms such as LDAP or SAMLv2 (IDP). They can be configured in their respective tabs. It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
+
 Set up timestamping :sup:`(optional)`
 --------------------------------------
 
