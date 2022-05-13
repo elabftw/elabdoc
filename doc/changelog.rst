@@ -51,6 +51,7 @@ For users:
 * Add import link from link function (#3488)
 * Allow searching for several metadata fields on search page (#3473)
 * Allow searching in attachments filename and comment (PR #3515 by Marcel)
+* Add write permissions settings when importing CSV or ZIP (fix #3559)
 * Many other cosmetic changes and improvements all over the application.
 
 Bugfixes:
