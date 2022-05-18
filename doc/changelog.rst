@@ -78,6 +78,8 @@ Bugfixes:
 * Fix issue with step edition/reload of element (#3506 by Marcel)
 * Fix incorrect parsing of query params for api (fix #3513)
 * Allow images to be centered (fix #3368)
+* Filter out archived users from user list autocomplete in admin panel (fix #3571)
+* Fix select elements in show mode menu
 
 Enhancements:
 `````````````
@@ -113,6 +115,9 @@ Enhancements:
 * Simplify timestamp configuration by removing admin level config (#3512)
 * Only send ajax requests if data is changed (#3511 by Marcel)
 * Force selection of a file when replacing an upload
+* Drop plasmid viewer user setting (#3572)
+* Ignore mathjax in tags (fix #3570)
+* Make all status timestampable (#3567)
 
 Dev corner:
 ```````````
