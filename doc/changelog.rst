@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 4.3.1
+-------------
+
+Bugfixes:
+`````````
+* Fix mathjax (fix #3593)
+* Fix notifications not being sent if container was running with default user (fix #3594)
+
 Version 4.3.0
 -------------
 
