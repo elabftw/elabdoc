@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 4.3.2
+-------------
+
+Bugfixes:
+`````````
+
+* Fix issue with downloading files with non ascii characters in the name
+* Prevent deletion of users that own items
+* Don't show the delete button for the team you are currently logged in (fix #3597)
+
+
 Version 4.3.1
 -------------
 
