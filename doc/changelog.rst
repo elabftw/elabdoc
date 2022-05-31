@@ -3,6 +3,28 @@
 Changelog
 =========
 
+Version 4.3.3
+-------------
+
+Bugfixes:
+`````````
+* Fix improper handling of the query when looking for a tag that doesn't exist in current category
+* Fix metadata not getting saved from editor (fix #3600)
+* Fix template destroy on team page
+* Fix template actions on team page when no items are bookable
+* Fix issue with pdf stopping after '<<' (fix #3032)
+
+Enhancements:
+`````````````
+* Improve metadata editing experimence by loading it by default
+* Make the related links blocks togglable in view mode
+* Make the app more responsive (wider) and decrease padding for small screens
+* Allow displaying longer template titles in UCP
+
+i18n:
+`````
+* Update German
+
 Version 4.3.2
 -------------
 
