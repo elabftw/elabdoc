@@ -37,12 +37,16 @@ You can have your normal user in the `docker` group to execute docker commands w
 
 Also if you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
-Install eLabFTW
----------------
+Configure eLabFTW
+-----------------
 
 .. warning:: A proper subdomain is required!
 
-* Install `elabctl`, a tool to help you manage the elabftw installation:
+We will install `elabctl`, a tool to help you manage the elabftw installation. It is not required to install it but it is quite handy so it is recommended (also it's just a bash script, nothing fancy). If you you do not wish to use `elabctl` and just want a YAML config to edit, see instructions below for advanced users.
+
+
+With elabctl (recommended)
+``````````````````````````
 
 .. code-block:: bash
 
@@ -69,17 +73,33 @@ Install eLabFTW
 
     elabctl start
 
-* Import the database structure:
+
+Without elabctl (advanced users)
+````````````````````````````````
+
+Get the config with:
+
+.. code-block:: bash
+
+   curl -so docker-compose.yml "https://get.elabftw.net/?config"
+
+Edit this file and `docker-compose up -d` to launch the containers.
+
+Initialize your database
+------------------------
+
+* Import the database structure with:
 
 .. code-block:: bash
 
    docker exec -it elabftw bin/install start
 
-Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`.
+Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`/`docker ps`
 
-* Register a Sysadmin account:
+Register a Sysadmin account
+---------------------------
 
-    Point your browser to **\https://<your-elabftw-site.org>/register.php** (or **\https://<IP address>/register.php**)
+Point your browser to **\https://<your-elabftw-site.org>/register.php** (or **\https://<IP address>/register.php**)
 
 Post install
 ------------
