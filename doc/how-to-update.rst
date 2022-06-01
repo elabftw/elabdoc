@@ -7,8 +7,8 @@ How to update
 
 .. note:: If you are running out of disk space, you can do "docker system prune -a" to free up some space taken by old images.
 
-Before the update
-^^^^^^^^^^^^^^^^^
+STEP 0: Before the update
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure to figure out what version you are running and **read the release notes** for the new version.
 
@@ -16,25 +16,26 @@ The current running version can be seen in the bottom right of every page.
 
 .. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
 
-If you installed it with elabctl
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+STEP 1: Specify which version you want
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start by editing your configuration file (`/etc/elabftw.yml` by default) and change the version of the image (line `image: elabftw/elabimg:X.Y.Z`)
+
+The latest version can be found on `this page <https://github.com/elabftw/elabftw/releases/latest>`_.
+
+
+STEP 2: Launch a new container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+With elabctl
+------------
 
 .. code-block:: bash
 
     elabctl update
-    # change the name of the container if it is different in your configuration
-    docker exec -it elabftw php bin/console db:update
-    # Note: for version 3.3 to 3.4 use this instead
-    docker exec -it elabftw php bin/console db:updateTo34
-    # Note: for version 2.x to 3.x use this instead
-    docker exec -it elabftw php bin/console db:updateto3
 
-As said earlier: READ THE CHANGELOG!!!
-
-If you are using Docker without elabctl
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
+Without elabctl
+---------------
 
 In the directory where you have the `docker-compose.yml` file:
 
@@ -43,7 +44,20 @@ In the directory where you have the `docker-compose.yml` file:
     docker-compose pull
     docker-compose down
     docker-compose up -d
-    docker exec -it elabftw php bin/console db:update
+
+STEP 3: Run the database migration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    # change the name of the container if it is different in your configuration
+    docker exec -it elabftw bin/console db:update
+    # Note: for version 3.3 to 3.4 use this instead
+    docker exec -it elabftw bin/console db:updateTo34
+    # Note: for version 2.x to 3.x use this instead
+    docker exec -it elabftw bin/console db:updateto3
+
+Congratulations, you are now running the latest version! Make sure to keep your installation regularly updated!
 
 If you are using it on a NAS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
