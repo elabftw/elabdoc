@@ -34,13 +34,13 @@ A containerization technology such as `docker <https://docs.docker.com/engine/in
 Strongly recommended dependencies:
 """"""""""""""""""""""""""""""""""
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
-* `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers
-* `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, to display nice user interface during installation
-* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool
+* `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`
+* `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
+* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`
 
 Optional dependencies:
 """"""""""""""""""""""
-* `jq <https://stedolan.github.io/jq/>`_, used by elabctl
+* `jq <https://stedolan.github.io/jq/>`_, optionally used by `elabctl update`
 
 Notes:
 ``````
