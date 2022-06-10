@@ -20,22 +20,33 @@ These instructions will work for any of the GNU/Linux distributions where Docker
 Prerequisites
 -------------
 
-eLabFTW uses `Docker containers <https://www.docker.com/what-docker>`_. This saves you from dealing with a ton of dependencies and several configuration files, as everything is packed in a container. But we still need a few programs installed before we can get started.
+You'll need a GNU/Linux server. Because of the use of linux containerization technology, other operating systems (FreeBSD, OpenBSD, and others) are not supported.
 
 If you don't have a server, look at the documentation to rent one: :ref:`Install in the cloud <install-cloud>`.
 
 Dependencies:
 `````````````
+
+Absolutely required dependencies:
+"""""""""""""""""""""""""""""""""
+A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
+
+Strongly recommended dependencies:
+""""""""""""""""""""""""""""""""""
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
-* `docker <https://docs.docker.com/engine/installation/linux/>`_, the container engine
 * `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, to display nice user interface during installation
-* `git <https://git-scm.com/>`_, the version control system
-* `zip <http://infozip.sourceforge.net/Zip.html>`_, the compression tool (for the backups)
+* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool
 
+Optional dependencies:
+""""""""""""""""""""""
+* `jq <https://stedolan.github.io/jq/>`_, used by elabctl
+
+Notes:
+``````
 You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
 
-Also if you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
+If you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
 Configure eLabFTW
 -----------------
