@@ -3,6 +3,22 @@
 Changelog
 =========
 
+Version 4.3.4
+-------------
+
+Bugfixes:
+`````````
+* Fix merged cells in tables (fix #3644)
+* Fix pdf failing with many images (fix #3627 via PR #3635 by Marcel)
+* Fix deletion related logic
+* Fix search containing "-" character (PR #3603 by Marcel)
+
+Enhancements:
+`````````````
+* Allow more image types in pdf (fix #3647 via PR #3649 by Marcel)
+* SAML: allow to input text on entityId
+
+
 Version 4.3.3
 -------------
 
