@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.3.5
+-------------
+
+Bugfixes:
+`````````
+* Fix issue with logging out with some SAML identity providers
+
 Version 4.3.4
 -------------
 
