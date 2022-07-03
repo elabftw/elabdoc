@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 4.3.6
+-------------
+
+Bugfixes:
+`````````
+* Fix update issue with databases enforcing primary keys (e.g. DO cluster)
+* Allow admin to unlock entry, and allow unlock timestamped (fix #3677)
+* Allow styl and class attributes on div and h{1,6} (fix #3667)
+
+Enhancements:
+`````````````
+* Vertically align "Show related" text with icon (#3675 by Marcel)
+* Fix gap in lists (#3674 by Marcel)
+* Fix attached files not getting imported with zip import (fix #3671)
+* Allow pasting tables with background color
+
+
 Version 4.3.5
 -------------
 
