@@ -23,7 +23,13 @@ The service provider is the elabftw install. Head to the Sysadmin panel, click t
 * SAML protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
 * Single Logout Service: The same as entityId
 * Single Logout Service protocol binding: basically it can be POST or HTTP-redirect. Depending on your IDP, set the correct value here
-* NameIDFormat: this value is to select which attribute will be used to lookup the user in the elabftw database. At the moment, only email is supported
+* NameIDFormat: match the supported NameIDFormat of the IDP, eLabFTW doesn't use this but it needs to be specified most of the time. Example values:
+
+  - urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress [default]
+  - urn:oasis:names:tc:SAML:2.0:nameid-format:persistent
+  - urn:oasis:names:tc:SAML:2.0:nameid-format:transient
+  - urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+
 * x509 certificate: Generate a self-signed certificate and export it in PEM
 * Private key: the private key corresponding to the certificate
 
