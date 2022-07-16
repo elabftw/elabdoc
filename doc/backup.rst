@@ -73,23 +73,60 @@ You're on your own. Use your favorite tools to backup the MySQL database and upl
 Making it automatic using cron
 ------------------------------
 
-A good backup is automatic. Use a cronjob or a systemd timer job to trigger the backup regularly (ideally daily).
+A good backup is automatic. Use a cronjob or a systemd timer job to trigger the backup job regularly (ideally daily).
 
-If you're under a GNU/Linux system, try::
+With a cronjob
+``````````````
 
-    export EDITOR=nano ; crontab -e
+If you have the traditional cron service running, try::
 
-This will open a file:
+    crontab -e
 
-.. image:: img/crontab.png
+This will open the cronjob file in edit mode.
 
 Add this line at the bottom::
 
-    00 04 * * * bash /path/to/backup.sh
-    or
     00 04 * * * /path/to/elabctl backup
 
 This will run the script everyday at 4am. Make sure to write the full path to `elabctl` as it might not be in the `$PATH` for cron.
+
+With a systemd timer
+````````````````````
+
+Some systems don't use the traditional cron service, so instead of installing it, you should use a systemd timer (provided systemd is your init system, which is quite likely).
+
+You will need to create two files, one `.service` and one `.timer`.
+
+Content of `/etc/systemd/system/elabftw-backup.service`::
+
+    [Unit]
+    Description=Backup eLabFTW data
+    Wants=elabftw-backup.timer
+
+    [Service]
+    Type=oneshot
+    # make sure to edit the path below
+    ExecStart=/path/to/elabctl backup
+
+    [Install]
+    WantedBy=multi-user.target
+
+Content of `/etc/systemd/system/elabftw-backup.timer`::
+
+    [Unit]
+    Description=Backup eLabFTW data
+
+    [Timer]
+    OnCalendar=*-*-* 4:00:00
+    Persistent=true
+
+    [Install]
+    WantedBy=timers.target
+
+Now activate it::
+
+    systemctl enable elabftw-backup
+    systemctl start elabftw-backup
 
 
 How to restore a backup
