@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 4.3.7
+-------------
+
+Bugfixes:
+`````````
+* Fix steps deadline approaching notification only working with email not web
+* Fix tinymce mention autocompletion (when pressing '#') in tables (PR #3709 by Marcel, fix #2695)
+* Fix issues with tinymce image tools saving procedure (PR #3659 by Marcel, fix #3658)
+
+Enhancements:
+`````````````
+* Add a `position` key for metadata extra_fields so ordering can be done (PR #3699 by Marcel, fix #3056)
+
+
 Version 4.3.6
 -------------
 
