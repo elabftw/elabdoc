@@ -3,6 +3,21 @@
 Changelog
 =========
 
+Version 4.3.8
+-------------
+
+Bugfixes:
+`````````
+* Fix case sensitive recognition of image extension (fix #3720 via #3725 by Marcel)
+* Fix tags from another team not being searchable (fix #3721)
+* Fix MySQL error on invalid tag search
+
+Enhancements:
+`````````````
+* Set PDF/A setting OFF by default in new installs as it prevents transparency on PNG files in PDF. (see #3713)
+* Add name of timestamper on timestamp archive file comment
+
+
 Version 4.3.7
 -------------
 
