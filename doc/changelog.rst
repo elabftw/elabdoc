@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.3.9
+-------------
+
+Bugfix:
+```````
+* Fix issue with date updating through REST API
+
 Version 4.3.8
 -------------
 
