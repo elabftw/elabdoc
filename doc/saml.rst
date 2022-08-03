@@ -32,6 +32,7 @@ The service provider is the elabftw install. Head to the Sysadmin panel, click t
 
 * x509 certificate: Generate a self-signed certificate and export it in PEM
 * Private key: the private key corresponding to the certificate
+* Rollover x509 certificate: Used when the x509 certificate is expiring. Can be set to a new certificate to publish in metadata.
 
 To generate a certificate, you can use this command:
 
