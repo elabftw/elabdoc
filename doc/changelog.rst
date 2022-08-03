@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.3.10
+--------------
+
+Bugfix:
+```````
+* Fix recently introduced issue during update to schema71
+
 Version 4.3.9
 -------------
 
