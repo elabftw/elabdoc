@@ -103,7 +103,8 @@ Initialize your database
 
 .. code-block:: bash
 
-   docker exec -it elabftw bin/install start
+   elabctl initialize
+   # same as: docker exec -it elabftw bin/install start
 
 Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`/`docker ps`
 
