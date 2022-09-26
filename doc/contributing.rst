@@ -18,6 +18,11 @@ What can you do to help this project?
 * Open GitHub issues to report bugs or suggest new features
 * `Star it on GitHub really <https://github.com/elabftw/elabftw>`_
 
+Non-code contributions
+----------------------
+
+Contributions are not necessarily code. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
+
 Reporting a security issue
 --------------------------
 
