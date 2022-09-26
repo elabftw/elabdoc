@@ -135,10 +135,20 @@ How to restore a backup
 You should have three files/folders to start with:
 
 * A MySQL dump (file ending in .sql or .sql.gz)
-* Your uploaded files
+* Your uploaded files as a borg archive
 * Possibly your configuration file
 
-Let's start by moving uploaded files and config file at the correct place (adjust the paths to your case):
+To extract your uploaded files from a borg backup:
+
+.. code-block:: bash
+
+   export BORG_PATH=/path/to/borg/repo
+   borg list
+   borg extract "::example-2022-07-14_13-37"
+
+See documentation on how to manage your borg repository: `Borg extract documentation <https://borgbackup.readthedocs.io/en/stable/usage/extract.html>`_.
+
+Then we move the uploaded files and config file at the correct place (adjust the paths to your case):
 
 .. code-block:: bash
 
