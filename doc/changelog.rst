@@ -3,6 +3,49 @@
 Changelog
 =========
 
+Version 4.3.10
+--------------
+
+Bugfix:
+```````
+* Fix recently introduced issue during update to schema71
+
+Version 4.3.9
+-------------
+
+Bugfix:
+```````
+* Fix issue with date updating through REST API
+
+Version 4.3.8
+-------------
+
+Bugfixes:
+`````````
+* Fix case sensitive recognition of image extension (fix #3720 via #3725 by Marcel)
+* Fix tags from another team not being searchable (fix #3721)
+* Fix MySQL error on invalid tag search
+
+Enhancements:
+`````````````
+* Set PDF/A setting OFF by default in new installs as it prevents transparency on PNG files in PDF. (see #3713)
+* Add name of timestamper on timestamp archive file comment
+
+
+Version 4.3.7
+-------------
+
+Bugfixes:
+`````````
+* Fix steps deadline approaching notification only working with email not web
+* Fix tinymce mention autocompletion (when pressing '#') in tables (PR #3709 by Marcel, fix #2695)
+* Fix issues with tinymce image tools saving procedure (PR #3659 by Marcel, fix #3658)
+
+Enhancements:
+`````````````
+* Add a `position` key for metadata extra_fields so ordering can be done (PR #3699 by Marcel, fix #3056)
+
+
 Version 4.3.6
 -------------
 

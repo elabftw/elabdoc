@@ -119,6 +119,10 @@ options (for type = select)
 ```````````````````````````
 An array (`[]`) with different options for the dropdown element.
 
+position
+````````
+Add a number as a value to correctly order the extra fields how you want them.
+
 Usage example
 -------------
 
@@ -136,11 +140,13 @@ Have a "Status" and "Quantity" for some items in your database:
             "In use",
             "Need reorder",
             "Out of stock"
-          ]
+          ],
+          "position": 2
         },
         "Quantity": {
           "type": "number",
-          "value": "12"
+          "value": "12",
+          "position": 1
         }
       }
     }
