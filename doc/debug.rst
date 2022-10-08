@@ -30,6 +30,11 @@ If you get "An error occurred!" message, check the PHP logs. All errors should b
 
    docker logs elabftw 1>/dev/null
 
+Accessing MySQL database
+------------------------
+
+Sometimes it might be necessary to look directly into the database. You can use `elabctl mysql` to get a MySQL prompt directly.
+
 Resetting a password directly from MySQL
 ----------------------------------------
 

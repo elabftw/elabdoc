@@ -48,6 +48,8 @@ You can have your normal user in the `docker` group to execute docker commands w
 
 If you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
+Install `docker-compose` preferentially with the `curl`/standalone method to get the latest version, as the repository versions might be outdated and will cause issues. See `install docker-compose <https://docs.docker.com/compose/install/other/>`_.
+
 Configure eLabFTW
 -----------------
 
