@@ -3,6 +3,83 @@
 Changelog
 =========
 
+Version 4.4.0
+-------------
+
+Bugfixes:
+`````````
+* Fix hidden teams not showing up in Add team menu
+* Fix mass email from team page using user's email/name instead of the instance's
+* Don't restrict image size in body (fix #3800)
+* Fix incorrect semver comparison in Sysconfig Panel
+* Fix event deletion notification settings not honored
+* Fix filename download with non-ascii paramaters
+* Fix filename upon save after displaying it (fix #3797)
+* Remove deadline when finishing a step
+* Fix date parsing in APIv1
+* Fix displaying revisions requiring write access instead of read access (see #2304)
+* Fix codesample plugin of tinymce clashing with prismjs (fix #3712)
+
+Enhancements:
+`````````````
+* Add currently logged in team in user menu
+* Display number of timestamps over the past 30 days on Sysconfig Panel
+* Add a new "Sort" menu in show mode with human readable labels
+* Prevent browser autompletion on Team page of Sysconfig Panel
+* Allow toggling pin mode in edit and show modes
+* Visually separate tags in pdf export
+* Add more columns to CSV scheduler export
+* Make "Full syntax" link on search page appear like a link
+* Improve user interface in UCP > Account
+* Set the default behavior to "Select team" for SAML/LDAP login
+* Use urlencode on password of smtp to avoid issues with special chars (fix #3748)
+* Import metadata column of CSV as metadata (fix #3055)
+* Force including attached files in timestamp pdf (fix #3729 via #3732)
+* Add toggle body button to links
+* Display 2FA status and userid of users as badges when listing them in Admin or Sysconfig panels
+* Default value for PDF/A option changed to 0 to prevent issues with black background PNG files
+* Templates now can be "Favorite" to be displayed in the Create dropdown
+
+New features:
+`````````````
+* New version for REST API: APIv2, see documentation: https://doc.elabftw.net/api/v2/
+* Allow switching team from user menu (fix #3842)
+* Generate a log event on user login/logout
+* Add user account validity date
+* Add new compact display option for attachments with a button to toggle it easily
+* Add possibility to link to an experiment (previously only links to items were possible) (via #3728 by Marcel Bolten)
+* Add option for LDAP auth to let user select team upon creation (previously only for SAML)
+* Add visibility and groups filters in show mode (fix #2294)
+* Add owner filter in show mode (fix #3799)
+* Allow multiple molecules in Chemdoodle area (#3746)
+* Allow saving molecule/reaction in .chemjson or export to PNG
+* Make timestamp archives immutables (fix #3656 via PR #3736)
+* Allow changing directly start and end date of scheduler event
+* Allow users to export their experiments from their profile (see #3726)
+* Add "Show more information" entry in uploaded file menu
+* Add new dropdown menu on top right (PR #3718)
+* Add possibility to customize the Support link in help menu
+* Allow import/export of ELN files
+* Allow users to import files
+* Allow display of uploaded txt files (via #3626 by Marcel)
+
+Dev corner:
+```````````
+* Use APIv2 for internal calls, this resulted in a lot of code being deleted, which is a good thing.
+* Coverage data in html now retained by CircleCI in artifacts section
+* Use the Docker image for CircleCI
+* Use cache for php-cs-fixer
+* Fix issue with php-cs-fixer where excluded folders were not excluded
+* Do full test suite (including api) in CI
+* Use codeception/c3 to get line coverage of REST API calls
+* Fix psaml never finding any issue because of incorrect configuration
+* Add sonar-project.properties file for SonarQube use
+* Use enums (new PHP 8.1 feature)
+* Add REST API test to automated test suite
+* Lots of code rewrite, as always ;)
+
++ several contributions from Marcel Bolten that might not be mentioned above!
+
 Version 4.3.10
 --------------
 
