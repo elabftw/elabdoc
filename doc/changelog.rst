@@ -6,6 +6,10 @@ Changelog
 Version 4.4.0
 -------------
 
+Breaking changes:
+`````````````````
+* Experiments previously written in markdown will appear mashed up in view mode. This is because now there is a way to declare what kind of content we have (html or markdown), and by default it is html. To fix it, in edit mode of the experiment, click the top right menu (three vertical dots) and select "Switch editor" two times. Then save the experiment.
+
 Bugfixes:
 `````````
 * Fix hidden teams not showing up in Add team menu
