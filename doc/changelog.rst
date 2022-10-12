@@ -43,6 +43,8 @@ Enhancements:
 * Display 2FA status and userid of users as badges when listing them in Admin or Sysconfig panels
 * Default value for PDF/A option changed to 0 to prevent issues with black background PNG files
 * Templates now can be "Favorite" to be displayed in the Create dropdown
+* Allow following a link from an external document without having to re-login (fix #3749)
+* Allow setting a file comment through Apiv2 file creation (fix #3848)
 
 New features:
 `````````````
@@ -66,6 +68,7 @@ New features:
 * Allow import/export of ELN files
 * Allow users to import files
 * Allow display of uploaded txt files (via #3626 by Marcel)
+* Add button to copy step body into main text (fix #2407)
 
 Dev corner:
 ```````````
