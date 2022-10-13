@@ -8,7 +8,7 @@ Version 4.4.0
 
 Breaking changes:
 `````````````````
-* Experiments previously written in markdown will appear mashed up in view mode. This is because now there is a way to declare what kind of content we have (html or markdown), and by default it is html. To fix it, in edit mode of the experiment, click the top right menu (three vertical dots) and select "Switch editor" two times. Then save the experiment.
+* Users that use Markdown syntax will have all their experiments labelled as markdown for "content_type" (the rest is labelled "html"). So they might have an issue with experiments that they own that are not in markdown. In that case, they can fix it by going in edit mode of the experiment, clicking the top right menu (three vertical dots) and selecting "Switch editor" two times. Then save the experiment.
 
 Bugfixes:
 `````````
