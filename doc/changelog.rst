@@ -23,6 +23,7 @@ Bugfixes:
 * Fix date parsing in APIv1
 * Fix displaying revisions requiring write access instead of read access (see #2304)
 * Fix codesample plugin of tinymce clashing with prismjs (fix #3712)
+* Fix bug where user would end up without a team after login through saml/ldap and auth service sends team information and team is created at that moment
 
 Enhancements:
 `````````````
@@ -45,6 +46,7 @@ Enhancements:
 * Templates now can be "Favorite" to be displayed in the Create dropdown
 * Allow following a link from an external document without having to re-login (fix #3749)
 * Allow setting a file comment through Apiv2 file creation (fix #3848)
+* Add a way to filter bookable items by category (fix #1673)
 
 New features:
 `````````````
