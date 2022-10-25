@@ -71,6 +71,8 @@ New features:
 * Allow users to import files
 * Allow display of uploaded txt files (via #3626 by Marcel)
 * Add button to copy step body into main text (fix #2407)
+* Allow users to use templates in markdown (fix #3070)
+* Add a markdown template for teams as default template
 
 Dev corner:
 ```````````
