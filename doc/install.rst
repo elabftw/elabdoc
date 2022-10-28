@@ -38,10 +38,6 @@ Strongly recommended dependencies:
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
 * `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`
 
-Optional dependencies:
-""""""""""""""""""""""
-* `jq <https://stedolan.github.io/jq/>`_, optionally used by `elabctl update`
-
 Notes:
 ``````
 You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
