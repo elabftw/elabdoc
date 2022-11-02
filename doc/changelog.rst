@@ -24,6 +24,7 @@ Bugfixes:
 * Fix displaying revisions requiring write access instead of read access (see #2304)
 * Fix codesample plugin of tinymce clashing with prismjs (fix #3712)
 * Fix bug where user would end up without a team after login through saml/ldap and auth service sends team information and team is created at that moment
+* Fix bug where the extra fields defined in metadata would appear duplicated after save of the json code
 
 Enhancements:
 `````````````
@@ -47,6 +48,11 @@ Enhancements:
 * Allow following a link from an external document without having to re-login (fix #3749)
 * Allow setting a file comment through Apiv2 file creation (fix #3848)
 * Add a way to filter bookable items by category (fix #1673)
+* Add live search on scheduler dropdowns
+* Add a new export menu in view mode
+* Let user select PDF/A format directly in the export menu, remove the user option
+* Add possibility to create a zip with PDF/A pdfs
+* Display team in template listing (fix #3855)
 
 New features:
 `````````````
@@ -73,6 +79,8 @@ New features:
 * Add button to copy step body into main text (fix #2407)
 * Allow users to use templates in markdown (fix #3070)
 * Add a markdown template for teams as default template
+* Add menu entry "Open in NMRium" for .jdx files
+* SAML: add setting to allow duplicate name attributes (fix #3867)
 
 Dev corner:
 ```````````

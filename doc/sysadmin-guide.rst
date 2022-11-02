@@ -15,7 +15,6 @@ The Sysadmin
 * Can set the default language
 * Can configure timestamping (if another TSA is wanted)
 * Can change security settings (number of login attempts, manual validation of new users)
-* Can see error logs
 * It is possible to have multiple 'Sysadmin' accounts
 
 Account creation
