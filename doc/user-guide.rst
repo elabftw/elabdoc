@@ -336,6 +336,8 @@ Now you need to have a column named **title**. This is the column that will be p
      - Abcam
      - +4°C
 
+If you wish to include tags during the import, specify a column "tags" that will contain the tags separated by a "|" character. You can also have a "metadata" column containing JSON.
+
 Once you are satisfied with the file, export it as a **.csv** (in File > Save as...). Make a copy of only the first 3 rows and export that too as csv, this will be our test file.
 
 2. Importing the file
