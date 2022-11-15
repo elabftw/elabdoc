@@ -39,7 +39,8 @@ This will allow you to copy/paste easily the following code block into the edito
       "extra_fields": {
         "End date": {
           "type": "date",
-          "value": "2021-06-09"
+          "value": "2021-06-09",
+          "position": 1
         },
         "Magnification": {
           "type": "select",
@@ -48,14 +49,17 @@ This will allow you to copy/paste easily the following code block into the edito
             "10X",
             "20X",
             "40X"
-          ]
+          ],
+          "position": 2
         },
         "Pressure (Pa)": {
           "type": "number",
-          "value": "12"
+          "value": "12",
+          "position": 3
         },
         "Wavelength (nm)": {
           "type": "radio",
+          "position": 4
           "value": "405",
           "options": [
             "488",
@@ -159,4 +163,3 @@ This will produce the following inputs:
     :alt: metadata-example
 
 And if you're looking for all entries that have the status "Need reorder" you can do so from the search page!
-
