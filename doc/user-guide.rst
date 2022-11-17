@@ -275,7 +275,7 @@ Importing from a .csv file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you already have some "items" catalogued in an Excel file or File Maker database, you can import them in eLabFTW with a .csv file.
-A .csv file is a very simple file format. You can save a .xlsx or .ods file into this format. It needs to be "flat", meaning the first row is the column names, and all subsequent rows correspond to one entry.
+A .csv file is a very simple file format. You can save a .xlsx or .ods file into this format. If using Microsoft Office, make sure to select "CSV UTF-8" in the dropdown menu. It needs to be "flat", meaning the first row is the column names, and all subsequent rows correspond to one entry.
 
 To achieve a successful import, make sure to follow these instructions:
 
