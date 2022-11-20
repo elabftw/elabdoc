@@ -59,7 +59,7 @@ This will allow you to copy/paste easily the following code block into the edito
         },
         "Wavelength (nm)": {
           "type": "radio",
-          "position": 4
+          "position": 4,
           "value": "405",
           "options": [
             "488",
