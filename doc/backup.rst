@@ -165,8 +165,7 @@ Now we import the SQL database (the mysql container must be running):
     gunzip mysql_dump-YYYY-MM-DD.sql.gz # uncompress the file
     docker cp mysql_dump-YYYY-MM-DD.sql mysql:/ # copy it inside the mysql container
     docker exec -it mysql bash # spawn a shell in the mysql container
-    mysql -uroot -p # login to mysql prompt
-    # here you type the password you put in MYSQL_ROOT_PASSWORD in the /etc/elabftw.yml file
+    mysql -uroot -p$MYSQL_ROOT_PASSWORD # login to mysql prompt
     Mysql> drop database elabftw; # delete the brand new database
     Mysql> create database elabftw character set utf8mb4 collate utf8mb4_0900_ai_ci; # create a new one
     Mysql> use elabftw; # select it
