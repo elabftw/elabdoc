@@ -55,7 +55,8 @@ This will allow you to copy/paste easily the following code block into the edito
         "Pressure (Pa)": {
           "type": "number",
           "value": "12",
-          "position": 3
+          "position": 3,
+          "blank_value_on_duplicate": true
         },
         "Wavelength (nm)": {
           "type": "radio",
@@ -126,6 +127,10 @@ An array (`[]`) with different options for the dropdown element.
 position
 ````````
 Add a number as a value to correctly order the extra fields how you want them.
+
+blank_value_on_duplicate
+````````````````````````
+Set to `true` for the value to be blanked when the entity is duplicated.
 
 Usage example
 -------------
