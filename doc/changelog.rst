@@ -6,6 +6,8 @@ Changelog
 Version 4.4.0
 -------------
 
+General note: updating to 4.4.0 from 4.3.0 should not cause any issue during the db:update step. It is highly recommended to update to this version so users can benefit from the bugfixes and new features.
+
 Breaking changes:
 `````````````````
 * Users that use Markdown syntax will have all their experiments labelled as markdown for "content_type" (the rest is labelled "html"). So they might have an issue with experiments that they own that are not in markdown. In that case, they can fix it by going in edit mode of the experiment, clicking the top right menu (three vertical dots) and selecting "Switch editor" two times. Then save the experiment.
@@ -53,6 +55,11 @@ Enhancements:
 * Let user select PDF/A format directly in the export menu, remove the user option
 * Add possibility to create a zip with PDF/A pdfs
 * Display team in template listing (fix #3855)
+* Always save a revision if none exist (1st save)
+* Remove the font-size in default template (fix #3927)
+* Make error notifications stay visible longer
+* Make text editor toolbar sticky (will stay visible when user scrolls down)
+* Rework how pdf are displayed, more compact layout
 
 New features:
 `````````````
@@ -76,11 +83,18 @@ New features:
 * Allow import/export of ELN files
 * Allow users to import files
 * Allow display of uploaded txt files (via #3626 by Marcel)
-* Add button to copy step body into main text (fix #2407)
+* Add button to copy step body into main text with a link that will highlight the step (fix #2407)
 * Allow users to use templates in markdown (fix #3070)
 * Add a markdown template for teams as default template
 * Add menu entry "Open in NMRium" for .jdx files
 * SAML: add setting to allow duplicate name attributes (fix #3867)
+* Add a changelog for all entries to record more changes than just the body with the revisions system
+* Add `blank_on_duplicate` attribute to extra_fields in metadata
+* Add created_at, timestamped_at and locked_at to extended search (#3960 by Marcel)
+* Allow using the API from an external host with javascript (see https://github.com/elabftw/elabapi-javascript-example#readme)
+* Add dynamic sort for tables (#3890, #3852 by Marcel)
+* Add white square as user defined symbol
+
 
 Dev corner:
 ```````````
@@ -98,6 +112,8 @@ Dev corner:
 * Lots of code rewrite, as always ;)
 
 + several contributions from Marcel Bolten that might not be mentioned above!
+
++ several other things that are not mentioned above, because the changelog is pretty big with 314 commits!
 
 Version 4.3.10
 --------------
