@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 4.4.1
+-------------
+
+Bugfix:
+```````
+* fix issue with "Back to listing" button when coming from search page. fix #3968
+
+
 Version 4.4.0
 -------------
 
