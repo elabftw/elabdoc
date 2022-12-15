@@ -109,7 +109,7 @@ Replace "elabftw" in the command above by the name of the elabftw container if y
 Register a Sysadmin account
 ---------------------------
 
-Point your browser to **\https://<your-elabftw-site.org>/register.php** (or **\https://<IP address>/register.php**)
+Point your browser to **\https://<your-elabftw-site.org>/register.php**
 
 Post install
 ------------
