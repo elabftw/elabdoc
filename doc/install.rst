@@ -34,9 +34,9 @@ A containerization technology such as `docker <https://docs.docker.com/engine/in
 Strongly recommended dependencies:
 """"""""""""""""""""""""""""""""""
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
-* `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`
+* `docker compose plugin <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`. It can be installed with the `docker-compose-plugin` package.
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
-* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`
+* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`. Not required during installation.
 
 Notes:
 ``````
