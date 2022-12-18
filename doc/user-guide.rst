@@ -34,7 +34,15 @@ See the getting started video:
 
 Templates
 ~~~~~~~~~
-Each user can have his own Experiments templates. Go to your user panel to create/edit your templates. You can export them as .elabftw.tpl files, and import them, too! They will be accessible from the «Create new» dropdown menu.
+In order to save time during experiments creation, it is highly recommended to use the Templates for experiments you often do. They are a skeleton of a real experiment. To create a template, select "My templates" from the User menu.
+
+.. image:: img/template-menu-click.png
+
+Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. By default, the template is "pinned", which means it will appear in the menu next to the "Create" button on the main "Experiments" page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned status from the extended menu on the right (three vertical dots) by selecting: "Toggle pin (add to create button menu)":
+
+.. image:: img/template-toggle-pin.png
+
+From this menu you can also choose to download the template as an ELN archive, which can be useful if you want to share it with someone on another eLabFTW instance.
 
 Edit mode
 ~~~~~~~~~

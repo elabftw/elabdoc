@@ -7,7 +7,7 @@ Version 4.4.2
 -------------
 
 Bugfixes:
-```````
+`````````
 * Prevent a zip filename with too much characters from title. fix #3966
 * fix relative links in pdf output. fix #3976
 * fix some apiv2 Location headers after POST. fix #3974
