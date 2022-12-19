@@ -169,7 +169,7 @@ Now we import the SQL database (the mysql container must be running):
     Mysql> drop database elabftw; # delete the brand new database
     Mysql> create database elabftw character set utf8mb4 collate utf8mb4_0900_ai_ci; # create a new one
     Mysql> use elabftw; # select it
-    Mysql> set names utf8; # make sure you import in utf8 (don't do this if you are in latin1)
+    Mysql> set names utf8mb4; # make sure you import in utf8 (don't do this if you are in latin1)
     Mysql> source mysql_dump-YYYY-MM-DD.sql; # import the backup
     Mysql> exit;
 
