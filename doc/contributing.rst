@@ -106,6 +106,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * Go on `the repository on GitHub <https://github.com/elabftw/elabftw>`_
 * Click the Star button (it helps with visibility of the project)
 * Click the Fork button in the top right of the screen
+* Uncheck the box "Copy only the master branch" (we will work on another branch)
 * From your fork page, clone it with SSH on your machine:
 
 .. code-block:: bash
