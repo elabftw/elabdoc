@@ -3,6 +3,24 @@
 Changelog
 =========
 
+Version 4.4.3
+-------------
+
+Bugfixes:
+`````````
+* Fix sync:links function (#3988 by Marcel, fix #3982)
+* Fix error during deletion if body is empty (#3987 by Marcel)
+* Hide overflow in OVE preview (#3986 by Marcel)
+
+Enhancements:
+`````````````
+* Make newly created templates pinned by default
+
+Documentation:
+``````````````
+* Add documentation on using Swagger UI to interact with local dev server (in apidoc/v2/README.md)
+* Improve description on read_upload for python lib (see #3983)
+
 Version 4.4.2
 -------------
 
