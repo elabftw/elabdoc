@@ -69,6 +69,10 @@ This useful feature lets you set the 'status' of an experiment. By default you c
 
 These status can be modified completely by the admin in the admin panel.
 
+Permissions
+```````````
+The "Visibility" and "Can write" part allow you to control who can access this entry. Click the `Edit` button to display a menu and add or remove permissions.
+
 Title
 `````
 The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.
@@ -102,50 +106,57 @@ You are now in view mode.
 
 Ellipsis menu (the three dots on the top right)
 ```````````````````````````````````````````````
-This menu contains an entry to Manage Permissions, allowing you to restrict or extend the read and write permissions for that experiment.
-By default, all experiments can be viewed by other team members. If you wish to restrict viewing of a particular experiment, set this to 'Only me'. An admin can also create groups of users, and users can set the visibility of experiments to this group only.
 
 The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.
 
 View mode of experiment
 ~~~~~~~~~~~~~~~~~~~~~~~
-In the view mode, several actions are accessible under the date.
+In the view mode, you will find an actions button bar in the upper left part:
 
-Edit
-````
+.. image:: img/view-mode-numbered.png
+    :align: center
+    :alt: view mode numbered
+
+1. Edit
+```````
 Go into edit mode.
 
-Duplicate
+2. Duplicate
+````````````
+Duplicating an experiment allows you to quickly create a new entry with the same Title, tags, body and links, but with today's date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.
+
+3. Toggle lock
+``````````````
+The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won't be able to unlock it.
+
+4. Share
+````````
+For this button to appear, the Sysadmin must have allowed anonymous users (without an account) to connect, and the box "Allow read access for anonymous users" from the Visibility panel must be checked. An `access_key` is generated and bound to the entry. If this access key is present in the URL, then read access is granted to the visitor.
+
+5. Timestamp
+````````````
+When you click this button, a timestamp archive is created. Timestamping an experiment means that a pdf is generated, and a cryptographic sum of that pdf is then sent over to a trusted third party: the TimeStamping Authority (TSA). This external service will acknowledge the existence of that pdf (through its cryptographic sum) and send back a token, so that we can later prove that this data was present at that time. The pdf and its token are then attached to the experiment in the attached files section. This timestamp archive is immutable and cannot be modified or deleted. This protocol is defined by RFC3161, a standard for Trusted Timestamping.
+
+6. Bloxberg timestamp
+`````````````````````
+This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
+
+7. Export button
+````````````````
+
+.. image:: img/view-mode-export-dropdown.png
+    :align: center
+    :alt: view mode export dropdown
+
+The Export menu allows you to save the entry in different formats. The term "Long term storage" refers to the PDF or the PDF contained in the zip archive being of a particular kind: PDF/A, an ISO-standardized version of the PDF format. It is a PDF format designed for long term storage, but transparent PNG will appear with a black background, so they are no longer the default PDF format, but an option. The PDF/A will also include the changelog, unlike the normal PDF export. It is the PDF format used for timestamping.
+
+The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
+
+
+8. Status
 `````````
-Duplicating an experiment allows you to create a new item with the same Title, tags, body and links, but with today's date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.
+The status is directly editable from the view mode.
 
-Make a pdf
-``````````
-Clicking this will create a pdf from your experiment. The generated pdf will contain all the information related to the experiment.
-
-Make a zip archive
-``````````````````
-A zip archive will contain the generated pdf of the experiment + any attached files present.
-
-Lock
-````
-Once locked, an experiment cannot be modified anymore. Unless you unlock it. If it is locked by someone with locking powers (the PI), you will not be able to unlock it.
-
-Timestamp
-`````````
-An experiment can be timestamped by users. It can be timestamped several times. Timestamping allows strong legal proof of the existence of the data at the timestamping date/time.
-
-What happens when you timestamp an experiment:
-
-- a pdf is generated
-- a sha256 sum of this pdf is generated
-- this data is sent to the Time Stamping Authority (TSA)
-- they timestamp it
-- we get a token back
-
-More info here: https://en.wikipedia.org/wiki/Trusted_timestamping
-
-Blockchain timestamping is also available, leveraging the Bloxberg.org blockchain to certify research data. It is the icon next to the (classic) timestamp button.
 
 elabid
 ``````
