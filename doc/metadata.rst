@@ -50,6 +50,21 @@ If you wish to remove an input, click the icon on the left of it and select "Rem
     :align: center
     :alt: Delete extra field
 
+Masking the main text
+`````````````````````
+It is possible to hide the main text input by setting a special attribute: `display_main_text` to `false` in the `elabftw` key. Something like this:
+
+.. code:: json
+
+    {
+      "extra_fields": {
+        ...
+        },
+      "elabftw": {
+        "display_main_text": false
+      }
+    }
+
 
 Example code
 ------------
