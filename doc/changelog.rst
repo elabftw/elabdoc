@@ -3,6 +3,30 @@
 Changelog
 =========
 
+Version 4.5.0
+-------------
+
+Blog post: https://www.deltablot.com/posts/release-450/
+
+New features:
+`````````````
+* Major overhaul of permissions system allowing more granular settings (#3993)
+* Add `description` field to custom fields defined in metadata (fix #3856)
+* Allow users to select several options with custom fields dropdown menus (select)
+* Add an option to hide main text so only extra fields are left (#3989 by Marcel)
+* Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359)
+* Add tags:teamssync command to synchronize tags between teams
+* Add metadata extra fields builder user interface (#3994)
+
+Enhancements:
+`````````````
+* Anonymous sharing is now revokable and using a specific access key rather than the elabid
+* Allow admins to create tags in their team from the Tag manager panel
+
+Bugfixes:
+`````````
+* Fix documentation bug in api v2 GET uploads/{ID} in binary format (fix #3983)
+
 Version 4.4.3
 -------------
 
