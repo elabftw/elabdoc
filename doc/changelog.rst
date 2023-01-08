@@ -14,7 +14,7 @@ New features:
 * Add `description` field to custom fields defined in metadata (fix #3856)
 * Allow users to select several options with custom fields dropdown menus (select)
 * Add an option to hide main text so only extra fields are left (#3989 by Marcel)
-* Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359)
+* Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359). Several attributes can be set, separated by spaces.
 * Add tags:teamssync command to synchronize tags between teams
 * Add metadata extra fields builder user interface (#3994)
 
@@ -26,6 +26,7 @@ Enhancements:
 Bugfixes:
 `````````
 * Fix documentation bug in api v2 GET uploads/{ID} in binary format (fix #3983)
+* Fix word-break in show mode
 
 Version 4.4.3
 -------------
