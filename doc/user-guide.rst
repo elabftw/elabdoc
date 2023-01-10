@@ -394,8 +394,10 @@ If you want to have complete control over the import process, you can use a help
     import elabapy
     import csv
 
-    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org")
+    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org/api/v1/")
 
+    # Note: use encoding='utf-8-sig' in the open() call if your file has BOM (Byte Order Mark)
+    # Also make sure that the CSV file was saved as UTF-8 to avoid issues with special characters
     with open('some.csv', newline='') as csvfile:
         csvreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
         for row in csvreader:
@@ -430,8 +432,10 @@ Here is another example but this time we import the column as metadata key, and 
             metadata['extra_fields'].update({keyval[0]: {'value': keyval[1]}})
         return json.dumps(metadata)
 
-    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org")
+    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org/api/v1/")
 
+    # Note: use encoding='utf-8-sig' in the open() call if your file has BOM (Byte Order Mark)
+    # Also make sure that the CSV file was saved as UTF-8 to avoid issues with special characters
     with open('some.csv', newline='') as csvfile:
         csvreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
         for row in csvreader:
