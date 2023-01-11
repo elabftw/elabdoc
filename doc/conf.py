@@ -15,6 +15,10 @@
 
 import sys
 import os
+from sphinx.builders.html import StandaloneHTMLBuilder
+
+# use gif first, then png
+StandaloneHTMLBuilder.supported_image_types = ['image/gif', 'image/svg+xml', 'image/png', 'image/jpeg']
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
