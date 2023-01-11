@@ -55,6 +55,29 @@ Setup the IDentity Provider
 * SLO binding: Example: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
 * x509 cert: the public key of the IDP
 
+Attributes for the IDP
+``````````````````````
+We need to specify where to look in the attributes sent in the response for email, team and name of the user. You can use the FriendlyName or the Name from the table below. Note that this will depend on your IDP and using the SAML Tracer plugin (see below) to see the response will be helpful in determining what fields you want to use.
+
+.. list-table:: SAML attributes
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Attribute
+     - FriendlyName
+     - Name
+   * - Email
+     - mail
+     - urn:oid:0.9.2342.19200300.100.1.3
+   * - Firstname
+     - givenName
+     - urn:oid:2.5.4.42
+   * - Lastname
+     - sn
+     - urn:oid:2.5.4.4
+
+If you cannot have information about the team, or do not wish to use it, make sure to have the setting "Let user select a team" when the user is created during first login.
+
 Disable local login/register
 ----------------------------
 
@@ -68,5 +91,9 @@ When a user successfully logins to the IDP, the email address is looked up. If i
 Debugging
 ---------
 
-SAML configuration can be tricky. I recommend that you use the SAML-tracer addon (available for Chrome or Firefox) to see the requests and be able to verify what is sent and received.
+SAML configuration can be tricky. I recommend that you use the SAML-tracer addon to see the requests and be able to verify what is sent and received.
 
+* `link to addon for Firefox <https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/>`_
+* `link to addon for Chrome <https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en>`_
+
+Looking at the PHP logs will also be helpful to get the complete error message.
