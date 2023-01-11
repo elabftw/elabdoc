@@ -14,6 +14,10 @@ cd elabdoc
 pip install --user sphinx sphinx_rtd_theme
 ~~~
 
+## Config examples
+
+You might want to look into the [config_examples](./config_examples) folder for Apache, HAProxy, Nginx or Traefik configuration as reverse proxy.
+
 ## Usage
 
 To generate the HTML documentation:
@@ -25,6 +29,8 @@ make html
 
 Then point your browser to the `_build/html/index.html` file inside the `doc/` folder.
 
-## Config examples
+## CI
 
-You might want to look into the [config_examples](./config_examples) folder for Apache, HAProxy, Nginx or Traefik configuration as reverse proxy.
+The generated documentation can also be accessed in the Artifacts section of the [CircleCI builds](https://app.circleci.com/pipelines/github/elabftw/elabdoc).
+
+Click on "pdf" to get the doc as a pdf.
