@@ -13,8 +13,8 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Install texlive
-          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra latexmk'
+          name: Install texlive and rsvgconverter
+          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra latexmk librsvg2-bin'
       - run:
           name: Build html
           command: cd doc && make html
@@ -29,7 +29,7 @@ jobs:
           destination: singlehtml
       - run:
           name: Build pdf
-          command: cd doc && make latexpdf -e LATEXMKOPTS="-f"
+          command: cd doc && make latexpdf
       - store_artifacts:
           path: doc/_build/latex
           destination: latex
