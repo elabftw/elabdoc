@@ -29,7 +29,7 @@ jobs:
           destination: singlehtml
       - run:
           name: Build pdf
-          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode"
+          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode -f"
       - store_artifacts:
           path: doc/_build/latex/elabftw.pdf
 workflows:
