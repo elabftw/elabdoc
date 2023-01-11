@@ -18,12 +18,18 @@ jobs:
       - run:
           name: Build html
           command: cd doc && make html
-      - run:
-          name: Build pdf
-          command: cd doc && make latexpdf
       - store_artifacts:
           path: doc/_build/html
           destination: html
+      - run:
+          name: Build single html
+          command: cd doc && make singlehtml
+      - store_artifacts:
+          path: doc/_build/singlehtml
+          destination: singlehtml
+      - run:
+          name: Build pdf
+          command: cd doc && make latexpdf -e LATEXMKOPTS="-f"
       - store_artifacts:
           path: doc/_build/latex
           destination: latex
