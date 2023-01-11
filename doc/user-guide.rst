@@ -52,7 +52,8 @@ Tags
 The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
 All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
 
-.. image:: img/quick_tags.gif
+..
+    .. image:: img/quick_tags.gif
 
 Date
 ````
@@ -268,9 +269,10 @@ Over time, you will have some tags that become your favorites, as they are alway
 
 Since version 4.2.0 it is possible to define "Favorite tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.
 
-.. image:: img/favtags.gif
-    :align: center
-    :alt: favorite tags
+..
+    .. image:: img/favtags.gif
+        :align: center
+        :alt: favorite tags
 
 Note that if you use a "Favorite tag" filter and then create an experiment, it will be tagged automatically with that tag.
 

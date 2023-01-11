@@ -56,10 +56,6 @@ Create your droplet
 
 * Create a droplet with Docker (from the One-click Apps tab), select a size and a region.
 
-.. image:: img/docker-select.gif
-    :align: center
-    :alt: select docker app
-
 * Optional: enable backups (might be a good idea)
 
 * Optional but highly recommended: add your SSH key (`documentation <https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/>`_)

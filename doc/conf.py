@@ -183,6 +183,9 @@ htmlhelp_basename = 'elabftwdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
+# Use an UTF-8 capable engine (default is pdflatex)
+latex_engine = 'xelatex'
+
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',

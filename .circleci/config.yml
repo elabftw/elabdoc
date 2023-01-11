@@ -14,7 +14,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Install texlive and rsvgconverter
-          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra latexmk librsvg2-bin'
+          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra xindy latexmk librsvg2-bin'
       - run:
           name: Build html
           command: cd doc && make html
@@ -22,14 +22,8 @@ jobs:
           path: doc/_build/html
           destination: html
       - run:
-          name: Build single html
-          command: cd doc && make singlehtml
-      - store_artifacts:
-          path: doc/_build/singlehtml
-          destination: singlehtml
-      - run:
           name: Build pdf
-          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode -f"
+          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode"
       - store_artifacts:
           path: doc/_build/latex/elabftw.pdf
 workflows:
