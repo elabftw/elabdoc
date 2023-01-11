@@ -269,7 +269,7 @@ Over time, you will have some tags that become your favorites, as they are alway
 
 Since version 4.2.0 it is possible to define "Favorite tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.
 
-    .. image:: img/favtags.gif
+    .. image:: img/favtags.*
         :align: center
         :alt: favorite tags
 
