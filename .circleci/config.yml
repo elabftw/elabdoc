@@ -14,7 +14,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Install texlive
-          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra texlive-plain-extra'
+          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra'
       - run:
           name: Build html
           command: cd doc && make html
