@@ -30,7 +30,6 @@ See :doc:`this page <install-cloud>` if you don't own a server already.
     :align: center
     :alt: cc-by-sa
 
-Table of contents:
 
 .. toctree::
     :caption: Installation

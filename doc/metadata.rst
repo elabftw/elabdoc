@@ -54,7 +54,7 @@ Masking the main text
 `````````````````````
 It is possible to hide the main text input by setting a special attribute: `display_main_text` to `false` in the `elabftw` key. Something like this:
 
-.. code:: json
+.. code:: javascript
 
     {
       "extra_fields": {
@@ -71,7 +71,7 @@ Example code
 
 This will allow you to copy/paste easily the following code block into the editor (once the editor's mode is set to "Code"):
 
-.. code:: json
+.. code:: javascript
 
     {
       "extra_fields": {
@@ -175,7 +175,7 @@ Usage example
 
 Have a "Status" and "Quantity" for some items in your database:
 
-.. code:: json
+.. code:: javascript
 
     {
       "extra_fields": {
