@@ -17,16 +17,33 @@ New features:
 * Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359). Several attributes can be set, separated by spaces.
 * Add tags:teamssync command to synchronize tags between teams
 * Add metadata extra fields builder user interface (#3994)
+* Add a way to track the number of timestamps left by setting an intial value manually, a notification will also be sent daily to sysadmins
+* Add strikethrough button in toolbar
+* Add prune:experiments|items|uploads to remove completely deleted entries
 
 Enhancements:
 `````````````
 * Anonymous sharing is now revokable and using a specific access key rather than the elabid
 * Allow admins to create tags in their team from the Tag manager panel
+* When a step is edited, also replace it in the body of the entity
+* The timestamp warning about cost is now only shown for non-free TSA, a description is added, too.
+* Record the toggle lock action in changelog
 
 Bugfixes:
 `````````
 * Fix documentation bug in api v2 GET uploads/{ID} in binary format (fix #3983)
 * Fix word-break in show mode
+* Fix issue with locked items in certain conditions they might not appear in the advanced search results (fix #4032 via #4035 by Marcel)
+* Fix issue with tags not shown in search page select after a search
+* Fix regex for ORCID (fix #4041)
+* Fix experiments export from profile by non admin user (fix #4037)
+* Fix sysadmin report (fix #4031)
+
+Dev:
+````
+* Use enums instead of factories
+* Use more enums where relevant
+* Update libraries
 
 Version 4.4.3
 -------------
