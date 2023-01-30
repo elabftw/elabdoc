@@ -81,10 +81,34 @@ The title of your experiment. A duplicated experiment will have a «I» characte
 
 Experiment (body)
 `````````````````
-This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc… To insert an image in this field, first upload it by dragging it in the 'Attach files' block. Then you will see a new block appear just below, with a thumbnail of the file, its name and size. Right click on the image and select «Copy link location». Next, click on the «Insert/edit image» button in the toolbar of the rich text editor (third button before the last).
-Paste the link location. Press OK. That's it, you have an image inside your main text.
 
-Make sure to right click on the thumbnail and not on the name!
+    .. image:: img/tinymce-editor.png
+       :alt: Tinymce editor
+
+This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc…
+
+Inserting an image
+""""""""""""""""""
+
+To insert an image in the main text, simple drag and drop it in the text zone. You can also insert an already uploaded image by selecting "Insert in the text at cursor position" from the uploaded file menu (top right, three vertical dots).
+
+Importing templates
+"""""""""""""""""""
+
+You can use the Import > Templates menu to select from existing experiments templates and import them directly in your text, which allows you to compose an experiment by merging several templates.
+
+Using markdown
+""""""""""""""
+
+    .. image:: img/markdown-editor.*
+       :alt: Markdown editor
+
+You can also use markdown by switching editor (from the menu in the top right, three vertical dots), or selecting markdown as default for your experiments from your user control panel.
+
+Miscellaneous
+"""""""""""""
+
+You can insert a timestamp by clicking the clock icon or "Ctrl-Shift-d". You can also insert code snippets with highlighting, special characters, horizontal lines, etc...
 
 Steps
 `````
@@ -97,6 +121,10 @@ Linked items
 This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.
 
 This feature can also be used to link an experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all experiments linked to this project by clicking the Link icon.
+
+Linked experiments
+``````````````````
+Same as above, but for experiments.
 
 Attach a file
 `````````````
