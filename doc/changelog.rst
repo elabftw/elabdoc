@@ -20,6 +20,12 @@ New features:
 * Add a way to track the number of timestamps left by setting an intial value manually, a notification will also be sent daily to sysadmins
 * Add strikethrough button in toolbar
 * Add prune:experiments|items|uploads to remove completely deleted entries
+* Fix a bug where users could not edit their own email
+* Fix pin experiment without write access (fix #4072)
+* Fix bloxberg not working with items (fix #4070)
+* Select tags with distinct sql keyword (fix #4069)
+* Fix issue when a user's team is changed and user is still logged in (fix #4051)
+* Add a way to track number of timestamps left (#4057)
 
 Enhancements:
 `````````````
@@ -28,6 +34,8 @@ Enhancements:
 * When a step is edited, also replace it in the body of the entity
 * The timestamp warning about cost is now only shown for non-free TSA, a description is added, too.
 * Record the toggle lock action in changelog
+* Now only Sysadmin can edit firstname/lastname/email of users
+* When a step is edited, also replace it in the body of the experiment
 
 Bugfixes:
 `````````
@@ -38,12 +46,16 @@ Bugfixes:
 * Fix regex for ORCID (fix #4041)
 * Fix experiments export from profile by non admin user (fix #4037)
 * Fix sysadmin report (fix #4031)
+* Add Content-Type header to DELETE operations in apiv2 doc (fix #4085)
+* Fix issue with locked/unlocked items in search (PR #4035 by Marcel, fix #4032)
+* Fix linked entries not shown (fix #4050)
 
 Dev:
 ````
 * Use enums instead of factories
 * Use more enums where relevant
 * Update libraries
+* Remove need for config.php file, use php env directly
 
 Version 4.4.3
 -------------
