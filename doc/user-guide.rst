@@ -63,7 +63,7 @@ The date is today's date by default, in the format YYYYMMDD. You can edit it as 
 
 Status
 ^^^^^^
-This useful feature lets you set the 'status' of an experiment. By default you can have :
+This useful feature lets you set the 'status' of an experiment. By default you can have:
 
 - Running (selected upon creation)
 - Need to be redone
@@ -82,11 +82,10 @@ The title of your experiment. A duplicated experiment will have a «I» characte
 
 Experiment (body)
 ^^^^^^^^^^^^^^^^^
+This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc… 
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
-
-This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc…
 
 Inserting an image
 """"""""""""""""""
@@ -106,10 +105,21 @@ Using markdown
 
 You can also use markdown by switching editor (from the menu in the top right, three vertical dots), or selecting markdown as default for your experiments from your user control panel.
 
+Tables
+""""""
+If you add tables you might want to sort the data in the table dynamically. eLabFTW got you covered. Sort icons will be displayed in view mode when so called header cells (``<th>``) are defined. The table should have column names in the top row. You can select the top row with the mouse by clicking the left mouse button on the leftmost cell and while keeping the mouse button pressed move the mouse to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the rich text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change «Cell type» from «Cell» (``<td>``) to «Header cell» (``<th>``). After you saved the changes you can go to view mode and dynamically sort the table. The changed order is not stored in eLabFTW.
+
+.. only::html
+
+   .. image:: img/sort-table.gif
+       :align: center
+       :alt: Sort table demo
+
 Miscellaneous
 """""""""""""
 
 You can insert a timestamp by clicking the clock icon or "Ctrl-Shift-d". You can also insert code snippets with highlighting, special characters, horizontal lines, etc...
+
 
 Steps
 ^^^^^
