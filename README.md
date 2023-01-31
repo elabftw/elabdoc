@@ -11,8 +11,12 @@ Main project repository: [elabftw/elabftw](https://github.com/elabftw/elabftw).
 ~~~bash
 git clone https://github.com/elabftw/elabdoc
 cd elabdoc
-pip install --user sphinx sphinx_rtd_theme
+pip install --user sphinx sphinx_rtd_theme sphinxcontrib-jquery
 ~~~
+
+## Config examples
+
+You might want to look into the [config_examples](./config_examples) folder for Apache, HAProxy, Nginx or Traefik configuration as reverse proxy.
 
 ## Usage
 
@@ -25,6 +29,29 @@ make html
 
 Then point your browser to the `_build/html/index.html` file inside the `doc/` folder.
 
-## Config examples
+## CI
 
-You might want to look into the [config_examples](./config_examples) folder for Apache, HAProxy, Nginx or Traefik configuration as reverse proxy.
+The generated documentation can also be accessed in the Artifacts section of the [CircleCI builds](https://app.circleci.com/pipelines/github/elabftw/elabdoc).
+
+Click on "pdf" to get the doc as a pdf.
+
+## Headings used
+
+~~~rst
+***********
+MAIN HEADER
+***********
+
+TITLE
+=====
+
+SUBTITLE
+--------
+
+SUBSUBTITLE
+^^^^^^^^^^^
+
+SUBSUBSUBTITLE
+""""""""""""""
+~~~
+

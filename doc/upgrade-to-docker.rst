@@ -1,23 +1,24 @@
 .. _upgrade-to-docker:
 
+********************************************
 Upgrade a normal install to a Docker install
-============================================
+********************************************
 
 .. image:: img/docker.png
     :align: center
     :alt: docker
 
 Description
------------
+===========
 
 This guide is aimed at (GNU/Linux) users who have installed eLabFTW the old school way (git clone or zip archive) and want to benefit from Docker.
 If you are not familiar with Docker, take the time to read the documentation on the Docker website. And read also the :ref:`in-depth documentation for eLabFTW with Docker <docker-doc>`.
 
 Preparation
------------
+===========
 
 Install Docker
-``````````````
+--------------
 We will obviously need to `install Docker <https://docs.docker.com/engine/installation/linux/>`_.
 
 Once this is done try a:
@@ -29,22 +30,22 @@ Once this is done try a:
 If everything works, you should see a little message explaining what Docker did to print this message.
 
 Install elabftw normally
-````````````````````````
+------------------------
 Follow the steps described :ref:`here <install>`, except the last one. Do not start the containers.
 
 Export current install
-``````````````````````
+----------------------
 Before going further, make sure you have backups of the existing installation. Read how to backup :ref:`here <backup>`.
 
 You should have a `dump.sql` file of the elabftw database. And your `uploads` folder is copied somewhere safe.
 
 Installation
-------------
+============
 
 You now have a configuration file `/etc/elabftw.yml`. Edit it with your favorite editor.
 
 Editing the config file
-```````````````````````
+-----------------------
 * Open the `config.php` file located in your `elabftw` folder of the current install
 * Copy the SECRET_KEY value from the `config.php` file to `/etc/elabftw.yml` file
 * If your webserver (Apache, nginx) is only serving eLabFTW, turn it off now and also make sure it won't start after reboot.
@@ -56,7 +57,7 @@ Now, either you open a port on your server's firewall to accept traffic on the n
 * If you are running MySQL 5.5 or 5.6, edit the 5.7 in the `image: mysql:5.7` line to the appropriate version. You can upgrade later.
 
 Copy the uploaded files
-```````````````````````
+-----------------------
 * Rename your `uploads` folder to `/var/elabftw/web`:
 
 .. code-block:: bash
@@ -67,7 +68,7 @@ Copy the uploaded files
     chown -R 101:101 /var/elabftw/web
 
 About HTTPS (SSL/TLS)
-`````````````````````
+---------------------
 As you know, eLabFTW can only run with HTTPS. So if you were running it before, there are good chances that you already have a certificate. If it's a self-signed one, nothing needs to be done. The Docker image will generate a new certificate when the container is created. But your users will get a warning when they access the website, which is not ideal.
 
 One solution to this is to request a certificate from `Let's Encrypt <https://letsencrypt.org>`_. It's free and you get a real proper certificate. See the documentation on Let's Encrypt website on how to request a certificate for your website. You will need to have a domain name pointing to the server. It doesn't work if you only have an IP address or if the server is not accessible from outside a company's network.
@@ -88,7 +89,7 @@ Another solution is to use the certificate you already have.
 Another way to do this is to `git clone` the `docker-elabftw` repo and edit the `src/run.sh` script to point to the correct directory, but this will not be covered in this guide.
 
 Starting the containers
-```````````````````````
+-----------------------
 .. code-block:: bash
 
     elabctl start

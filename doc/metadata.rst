@@ -1,45 +1,85 @@
 .. _metadata:
 
+********
 Metadata
-========
+********
 
 This page describes the usage of the metadata JSON field attached to experiments or items (and their templates).
 
-.. note:: This is still experimental and there is not yet a published schema to validate the JSON. Syntax is subject to change!
-
 Description
------------
+===========
 
-Since eLabFTW 4.0.0, you can add extra fields to your entries. This is done using a JSON metadata attribute.
+Since eLabFTW 4.0.0, you can add custom JSON data to your entries, using the `metadata` attribute. You can add arbitrary JSON, or use specific keys to extend the customization of the entry, for instance by adding extra fields.
 
 Getting started
----------------
+===============
 
-The first thing you need to do to exploit this feature is to go to your User Control Panel and check the box "Display the JSON editor in edit mode" in the Miscellaneous section, as it is disabled by default.
+Let's try it on an Experiment. Create a new experiment, and scroll down (in edit mode) to the "JSON Editor" part. The "Load metadata" button is disabled because the `metadata` attribute is already loaded in the editor. But for now it is empty.
 
-Once this is enabled, create an experiment and you will see a block "JSON Editor" below the file upload area. Click "Load metadata" on the right.
+Click "Add a field", a menu will appear. From there, you must first select which type of input you want for your extra field. Let's select "Dropdown menu" for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.
 
-.. image:: img/load-metadata.png
+.. image:: img/extra-field-builder.png
     :align: center
-    :alt: load-metadata
+    :alt: Extra field builder
 
-The editor is now visible and on the top left you can read "Editing metadata", indicating that we are editing the metadata of the current experiment, and not an attached JSON file for instance.
+Then click save and the new input (extra field) will appear right under the "Save" and "Save and go back" buttons:
 
-Switch the editor mode from "Tree" to "Code":
+.. image:: img/extra-fields-view.png
+    :align: center
+    :alt: Extra field view
+
+You are free to add as many as you want, of different types. It is most useful in the Templates, so when creating an entry, all the required inputs are already present.
+
+Advanced use
+============
+
+Keep in mind that what the builder menu will do for you is simply create some JSON code and store it in the `metadata` attribute of the entry. You are free to edit this JSON code from the editor.
 
 .. image:: img/json-editor-mode.png
     :align: center
     :alt: json-editor-mode
 
-This will allow you to copy/paste easily the following code block into the editor:
+Positions
+---------
+In order to assign a particular position to the inputs, use the `position` key, with a number as value. The inputs will then be ordered based on this value. Lowest value being on top.
 
-.. code:: json
+Removing an input
+-----------------
+If you wish to remove an input, click the icon on the left of it and select "Remove" from the menu. Alternatively, switch the JSON editor in "Code" view and remove the corresponding part of the JSON.
+
+.. image:: img/delete-extra-field.png
+    :align: center
+    :alt: Delete extra field
+
+Masking the main text
+---------------------
+It is possible to hide the main text input by setting a special attribute: `display_main_text` to `false` in the `elabftw` key. Something like this:
+
+.. code:: javascript
+
+    {
+      "extra_fields": {
+        ...
+        },
+      "elabftw": {
+        "display_main_text": false
+      }
+    }
+
+
+Example code
+============
+
+This will allow you to copy/paste easily the following code block into the editor (once the editor's mode is set to "Code"):
+
+.. code:: javascript
 
     {
       "extra_fields": {
         "End date": {
           "type": "date",
-          "value": "2021-06-09"
+          "value": "2021-06-09",
+          "position": 1
         },
         "Magnification": {
           "type": "select",
@@ -48,14 +88,18 @@ This will allow you to copy/paste easily the following code block into the edito
             "10X",
             "20X",
             "40X"
-          ]
+          ],
+          "position": 2
         },
         "Pressure (Pa)": {
           "type": "number",
-          "value": "12"
+          "value": "12",
+          "position": 3,
+          "blank_value_on_duplicate": true
         },
         "Wavelength (nm)": {
           "type": "radio",
+          "position": 4,
           "value": "405",
           "options": [
             "488",
@@ -66,7 +110,7 @@ This will allow you to copy/paste easily the following code block into the edito
       }
     }
 
-Now click Save and reload the page. Above the Steps you should now see two new inputs under the "Extra fields" header. When they are modified, the change is saved immediately.
+Now click Save and scroll up a bit. Above the Steps you should now see four new inputs under the "Extra fields" header. When they are modified, the change is saved immediately.
 
 
 .. image:: img/extra-fields.png
@@ -75,60 +119,64 @@ Now click Save and reload the page. Above the Steps you should now see two new i
 
 
 How it works
-------------
+============
 
 Only what is inside an `extra_fields` key is processed, the rest is ignored, so you can have other things in there if you wish.
 
 Inside `extra_fields`, add as many extra field as you want, the key is the name of the field, and the value is composed of:
 
 value (required)
-````````````````
+----------------
 The field that will hold the selected/input value. You can set a default value here or leave it empty.
 
 type (optional)
-```````````````
+---------------
 text
-""""
+^^^^
 The default value if omitted. Use it for a short text.
 
 select
-""""""
+^^^^^^
 A dropdown element with options to choose from.
 
 radio
-"""""
+^^^^^
 A radio input similar to select but all options are immediately visible.
 
 date
-""""
+^^^^
 A date input.
 
 checkbox
-""""""""
+^^^^^^^^
 A box to check. A Step might be a better option here.
 
 number
-""""""
+^^^^^^
 A text input that only accepts a number as value.
 
 url
-"""
+^^^
 A text input that only accepts a valid URL. In view mode, the link will be clickable.
 
 options (for type = select)
-```````````````````````````
+---------------------------
 An array (`[]`) with different options for the dropdown element.
 
 position
-````````
+--------
 Add a number as a value to correctly order the extra fields how you want them.
 
+blank_value_on_duplicate
+------------------------
+Set to `true` for the value to be blanked when the entity is duplicated.
+
 Usage example
--------------
+=============
 
 Have a "Status" and "Quantity" for some items in your database:
 
-.. code:: json
+.. code:: javascript
 
     {
       "extra_fields": {
@@ -159,4 +207,3 @@ This will produce the following inputs:
     :alt: metadata-example
 
 And if you're looking for all entries that have the status "Need reorder" you can do so from the search page!
-

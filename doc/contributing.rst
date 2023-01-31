@@ -1,7 +1,8 @@
 .. _contributing:
 
+************
 Contributing
-============
+************
 
 .. image:: img/contributing.png
     :align: center
@@ -9,7 +10,7 @@ Contributing
     :target: http://mimiandeunice.com/
 
 What can you do to help this project?
--------------------------------------
+=====================================
 
 * `Star it on GitHub <https://github.com/elabftw/elabftw>`_
 * Talk about it to your colleagues, spread the word!
@@ -52,13 +53,13 @@ Contributing to the code
 ------------------------
 
 Introduction
-````````````
+^^^^^^^^^^^^
 Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, ...
 
 But fear not, because there is a whole documentation about getting started, and you're already reading it ;)
 
 Note about repositories
-```````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The eLabFTW project is split in different repositories. The main one with the actual PHP code is `elabftw/elabftw <https://github.com/elabftw/elabftw>`_. The present document is generated from reStructuredText files in `elabftw/elabdoc <https://github.com/elabftw/elabdoc>`_. So if you need to change the documentation, it will be in there.
 
@@ -72,7 +73,7 @@ Other interesting repositories are:
 The rest of this documentation is about elabftw/elabftw.
 
 Note about branches
-```````````````````
+^^^^^^^^^^^^^^^^^^^
 
 The repository contains (at least) 3 branches:
 
@@ -81,7 +82,7 @@ The repository contains (at least) 3 branches:
 * The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes. It is a very active branch, so make sure to pull from upstream often so your fork doesn't stray too far.
 
 Environment installation
-````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. In this setup, we will put everything in the same folder for simplicity.
 
@@ -106,6 +107,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * Go on `the repository on GitHub <https://github.com/elabftw/elabftw>`_
 * Click the Star button (it helps with visibility of the project)
 * Click the Fork button in the top right of the screen
+* Uncheck the box "Copy only the master branch" (we will work on another branch)
 * From your fork page, clone it with SSH on your machine:
 
 .. code-block:: bash
@@ -184,7 +186,7 @@ Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.z
 It is possible to populate your dev database with fake generated data. See the `dev:populate` command of `bin/console`.
 
 Code organization
-`````````````````
+^^^^^^^^^^^^^^^^^
 * Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)
 * The rest is in app/ or src/ for PHP classes
 * src/models will contain classes with CRUD (Create, Read, Update, Destroy)
@@ -194,7 +196,7 @@ Code organization
 * Check out the scripts in `src/tools` too
 
 Working with JavaScript
-```````````````````````
+-----------------------
 All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc`. It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
 When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible.
@@ -204,7 +206,7 @@ You'll also want to configure your favorite text editor to display TypeScript er
 Use vanilla JS and avoid the use of jQuery selectors or functions.
 
 Miscellaneous
-`````````````
+-------------
 * if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` so new installs will get the correct structure. If possible, just add the needed line in the current schema.sql file if this schema is still only present in unstable versions (dev or alpha).
 * comment your code wisely, what is important is the why, not the what
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
@@ -218,11 +220,11 @@ Miscellaneous
 * check the commands in the "scripts" part of the `package.json` file, a lot of nice things in there ;)
 
 Glossary
-````````
+--------
 * Experiments + Database items + Experiments Templates = Entities. So when you see Entity it means it can be an experiment/template or a database item.
 
 Build
-`````
+-----
 The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them.
 
 * To minify files:
@@ -238,7 +240,7 @@ Other commands exist, see `builder.js` (webpack), the `scripts` part of `package
 When working on the code, it is best to have `yarn watchjs` and `yarn watchcss` running so changes are immediately picked up.
 
 Tests
-`````
+-----
 
 The tests run on the Codeception framework for unit and api tests. End to end testing is done with Cypress.
 
@@ -248,17 +250,6 @@ The tests run on the Codeception framework for unit and api tests. End to end te
     $ yarn test # will run the full test suite
 
 A good contribution you can make would be adding Cypress tests.
-
-API Documentation
-`````````````````
-
-To generate the documentation for the API:
-
-.. code-block:: bash
-
-    $ yarn apidoc
-
-Then, point your browser to the `_apidoc/index.html`.
 
 Exceptions handling
 -------------------
@@ -276,7 +267,7 @@ Here are some ground rules for exceptions thrown in the code:
 * Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)
 
 Making a pull request
-`````````````````````
+---------------------
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
 #. Create a branch from **hypernext**
 #. Work on a feature
@@ -359,14 +350,14 @@ When working locally, the docker image will generate a self-signed TLS certifica
 We'll use `FiloSottile/mkcert <https://github.com/FiloSottile/mkcert>`_ project to achieve this.
 
 Step 1: use a real domain name
-``````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I like to use elab.local on port 3148. Edit `/etc/hosts` and add a line with elab.local pointing to localhost like this:
 
 127.0.0.1 elab.local
 
 Step 2: get certs
-`````````````````
+^^^^^^^^^^^^^^^^^
 
 Install `mkcert <https://github.com/FiloSottile/mkcert>`_ and generate certificates for `elab.local`. Create a new folder somewhere to hold them:
 
@@ -377,7 +368,7 @@ Install `mkcert <https://github.com/FiloSottile/mkcert>`_ and generate certifica
    $ mv elab.local+3-key.pem $dev/certs/live/elab.local/privkey.pem
 
 Step 3: edit config to use certificates
-```````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Edit the .yml file for elabftw, change `ENABLE_LETSENCRYPT` to `true`. Uncomment the volume line with `/ssl` and make it point to where you have the certs.
 
@@ -390,7 +381,7 @@ Example:
      - /home/user/.dev/certs:/ssl
 
 Step 4: restart containers
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `elabctl restart`, and you should now have a valid certificate on your local dev install of elabftw :)
 

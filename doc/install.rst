@@ -1,7 +1,8 @@
 .. _install:
 
+*****************************
 Install on a GNU/Linux server
-=============================
+*****************************
 
 .. image:: img/gnulinux.png
     :align: center
@@ -18,32 +19,28 @@ These instructions will work for any of the GNU/Linux distributions where Docker
 .. _normal-install:
 
 Prerequisites
--------------
+=============
 
 You'll need a GNU/Linux server. Because of the use of linux containerization technology, other operating systems (FreeBSD, OpenBSD, and others) are not supported.
 
 If you don't have a server, look at the documentation to rent one: :ref:`Install in the cloud <install-cloud>`.
 
 Dependencies:
-`````````````
+-------------
 
 Absolutely required dependencies:
-"""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
 
 Strongly recommended dependencies:
-""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
-* `docker-compose <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`
+* `docker compose plugin <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`. It can be installed with the `docker-compose-plugin` package.
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
-* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`
-
-Optional dependencies:
-""""""""""""""""""""""
-* `jq <https://stedolan.github.io/jq/>`_, optionally used by `elabctl update`
+* `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`. Not required during installation.
 
 Notes:
-``````
+------
 You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
 
 If you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
@@ -51,7 +48,7 @@ If you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that 
 Install `docker-compose` preferentially with the `curl`/standalone method to get the latest version, as the repository versions might be outdated and will cause issues. See `install docker-compose <https://docs.docker.com/compose/install/other/>`_.
 
 Configure eLabFTW
------------------
+=================
 
 .. warning:: A proper subdomain is required!
 
@@ -59,7 +56,7 @@ We will install `elabctl`, a tool to help you manage the elabftw installation. I
 
 
 With elabctl (recommended)
-``````````````````````````
+--------------------------
 
 .. code-block:: bash
 
@@ -88,7 +85,7 @@ With elabctl (recommended)
 
 
 Without elabctl (advanced users)
-````````````````````````````````
+--------------------------------
 
 Get the config with:
 
@@ -99,7 +96,7 @@ Get the config with:
 Edit this file and `docker-compose up -d` to launch the containers.
 
 Initialize your database
-------------------------
+========================
 
 * Import the database structure with:
 
@@ -111,12 +108,12 @@ Initialize your database
 Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`/`docker ps`
 
 Register a Sysadmin account
----------------------------
+===========================
 
-Point your browser to **\https://<your-elabftw-site.org>/register.php** (or **\https://<IP address>/register.php**)
+Point your browser to **\https://<your-elabftw-site.org>/register.php**
 
 Post install
-------------
+============
 
 Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
 
@@ -128,16 +125,16 @@ ENJOY! :D
 
 
 Documentation for advanced setups
----------------------------------
+=================================
 
 Using a TLS certificate from a different provider than Let'sEncrypt
-```````````````````````````````````````````````````````````````````
+-------------------------------------------------------------------
 
 The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
 
 
 Using Apache, nginx, HAProxy or traefik as a reverse proxy
-``````````````````````````````````````````````````````````
+----------------------------------------------------------
 
 All the documentation related to such configurations can be found `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/>`_.
 

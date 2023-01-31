@@ -1,7 +1,9 @@
 .. _thanks:
+   :title: Acknowledgements
 
-Thanks
-======
+****************
+Acknowledgements
+****************
 
 A big thanks to early alpha testers and everyone who contributed through their ideas or
 suggestions to this project.
@@ -16,6 +18,6 @@ Look in `composer.json` and `package.json` to get a list of the dependencies.
 
 Other resources
 
-* `StackOverflow <https://stackoverflow.com/>`_ probably the best site ever for any programer
+* `StackOverflow <https://stackoverflow.com/>`_ probably the best site ever for any programmer
 * `SomaFM <https://somafm.com/>`_ especially DEF CON Radio
 * `Vim <http://www.vim.org>`_

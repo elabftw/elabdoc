@@ -1,7 +1,8 @@
 .. _install-mac:
 
+*******************
 Install on Mac OS X
-===================
+*******************
 
 .. image:: img/apple.png
     :align: center

@@ -1,0 +1,33 @@
+version: 2.1
+orbs:
+  # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
+  python: circleci/python@1.5.0
+
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Install texlive and rsvgconverter
+          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra xindy latexmk'
+      - run:
+          name: Build html
+          command: cd doc && make html
+      - store_artifacts:
+          path: doc/_build/html
+          destination: html
+      - run:
+          name: Build pdf
+          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode"
+      - store_artifacts:
+          path: doc/_build/latex/elabftw.pdf
+          destination: pdf
+workflows:
+  mkdoc:
+    jobs:
+      - build

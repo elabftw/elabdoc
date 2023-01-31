@@ -1,12 +1,13 @@
 .. _debug:
 
+*****
 Debug
-=====
+*****
 
 You have an issue with your eLabFTW installation? Here are the things you should check before opening an issue on GitHub ;)
 
 Docker logs
------------
+===========
 
 If the server is not responding at all, check the web container logs. If the application cannot connect to MySQL, check the mysql container logs.
 
@@ -22,7 +23,7 @@ If the server is not responding at all, check the web container logs. If the app
    docker logs mysql
 
 PHP logs
---------
+========
 
 If you get "An error occurred!" message, check the PHP logs. All errors should be logged there.
 
@@ -31,12 +32,12 @@ If you get "An error occurred!" message, check the PHP logs. All errors should b
    docker logs elabftw 1>/dev/null
 
 Accessing MySQL database
-------------------------
+========================
 
 Sometimes it might be necessary to look directly into the database. You can use `elabctl mysql` to get a MySQL prompt directly.
 
 Resetting a password directly from MySQL
-----------------------------------------
+========================================
 
 If you can't reset a password because the mail system doesn't work and have access to the MySQL database, you can reset it manually.
 

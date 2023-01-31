@@ -1,8 +1,9 @@
 .. elabftw documentation master file, created by
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
+***********************************
 Welcome to elabftw's documentation!
-===================================
+***********************************
 
 .. image:: img/elabftw-logo.png
     :align: left
@@ -11,22 +12,10 @@ Welcome to elabftw's documentation!
 :Website:  https://www.elabftw.net
 :Live demo: https://demo.elabftw.net
 
-    .. image:: https://badges.gitter.im/elabftw/elabftw.svg
-        :alt: Gitter
-        :target: https://gitter.im/elabftw/elabftw
-
-    .. image:: https://img.shields.io/badge/license-AGPL-blue.svg
-        :alt: AGPL
-        :target: https://www.gnu.org/licenses/agpl-3.0.en.html
-
 Introduction
-------------
+============
 
 eLabFTW is a PHP application using MySQL to store data persistently. Once installed on a server, users can register an account and start using their electronic lab notebook.
-
-.. image:: img/server-client.gif
-    :align: center
-    :alt: server client
 
 Several teams can be hosted on the same install. Ideally, it is installed at the institution/company level. But individual teams can install it for themselves, too. Or you can run it locally on your computer.
 
@@ -41,8 +30,6 @@ See :doc:`this page <install-cloud>` if you don't own a server already.
  .. image:: img/by-sa.png
     :align: center
     :alt: cc-by-sa
-
-
 
 
 .. toctree::

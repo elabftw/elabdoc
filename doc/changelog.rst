@@ -3,8 +3,87 @@
 Changelog
 =========
 
+Version 4.5.0
+-------------
+
+Blog post: https://www.deltablot.com/posts/release-450/
+
+New features:
+`````````````
+* Major overhaul of permissions system allowing more granular settings (#3993)
+* Add `description` field to custom fields defined in metadata (fix #3856)
+* Allow users to select several options with custom fields dropdown menus (select)
+* Add an option to hide main text so only extra fields are left (#3989 by Marcel)
+* Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359). Several attributes can be set, separated by spaces.
+* Add tags:teamssync command to synchronize tags between teams
+* Add metadata extra fields builder user interface (#3994)
+* Add a way to track the number of timestamps left by setting an intial value manually, a notification will also be sent daily to sysadmins
+* Add strikethrough button in toolbar
+* Add prune:experiments|items|uploads to remove completely deleted entries
+
+Enhancements:
+`````````````
+* Anonymous sharing is now revokable and using a specific access key rather than the elabid
+* Allow admins to create tags in their team from the Tag manager panel
+* When a step is edited, also replace it in the body of the entity
+* The timestamp warning about cost is now only shown for non-free TSA, a description is added, too.
+* Record the toggle lock action in changelog
+
+Bugfixes:
+`````````
+* Fix documentation bug in api v2 GET uploads/{ID} in binary format (fix #3983)
+* Fix word-break in show mode
+* Fix issue with locked items in certain conditions they might not appear in the advanced search results (fix #4032 via #4035 by Marcel)
+* Fix issue with tags not shown in search page select after a search
+* Fix regex for ORCID (fix #4041)
+* Fix experiments export from profile by non admin user (fix #4037)
+* Fix sysadmin report (fix #4031)
+
+Dev:
+````
+* Use enums instead of factories
+* Use more enums where relevant
+* Update libraries
+
+Version 4.4.3
+-------------
+
+Bugfixes:
+`````````
+* Fix sync:links function (#3988 by Marcel, fix #3982)
+* Fix error during deletion if body is empty (#3987 by Marcel)
+* Hide overflow in OVE preview (#3986 by Marcel)
+
+Enhancements:
+`````````````
+* Make newly created templates pinned by default
+
+Documentation:
+``````````````
+* Add documentation on using Swagger UI to interact with local dev server (in apidoc/v2/README.md)
+* Improve description on read_upload for python lib (see #3983)
+
+Version 4.4.2
+-------------
+
+Bugfixes:
+`````````
+* Prevent a zip filename with too much characters from title. fix #3966
+* fix relative links in pdf output. fix #3976
+* fix some apiv2 Location headers after POST. fix #3974
+
+Version 4.4.1
+-------------
+
+Bugfix:
+```````
+* fix issue with "Back to listing" button when coming from search page. fix #3968
+
+
 Version 4.4.0
 -------------
+
+General note: updating to 4.4.0 from 4.3.0 should not cause any issue during the db:update step. It is highly recommended to update to this version so users can benefit from the bugfixes and new features.
 
 Breaking changes:
 `````````````````
@@ -24,6 +103,7 @@ Bugfixes:
 * Fix displaying revisions requiring write access instead of read access (see #2304)
 * Fix codesample plugin of tinymce clashing with prismjs (fix #3712)
 * Fix bug where user would end up without a team after login through saml/ldap and auth service sends team information and team is created at that moment
+* Fix bug where the extra fields defined in metadata would appear duplicated after save of the json code
 
 Enhancements:
 `````````````
@@ -47,6 +127,16 @@ Enhancements:
 * Allow following a link from an external document without having to re-login (fix #3749)
 * Allow setting a file comment through Apiv2 file creation (fix #3848)
 * Add a way to filter bookable items by category (fix #1673)
+* Add live search on scheduler dropdowns
+* Add a new export menu in view mode
+* Let user select PDF/A format directly in the export menu, remove the user option
+* Add possibility to create a zip with PDF/A pdfs
+* Display team in template listing (fix #3855)
+* Always save a revision if none exist (1st save)
+* Remove the font-size in default template (fix #3927)
+* Make error notifications stay visible longer
+* Make text editor toolbar sticky (will stay visible when user scrolls down)
+* Rework how pdf are displayed, more compact layout
 
 New features:
 `````````````
@@ -70,7 +160,18 @@ New features:
 * Allow import/export of ELN files
 * Allow users to import files
 * Allow display of uploaded txt files (via #3626 by Marcel)
-* Add button to copy step body into main text (fix #2407)
+* Add button to copy step body into main text with a link that will highlight the step (fix #2407)
+* Allow users to use templates in markdown (fix #3070)
+* Add a markdown template for teams as default template
+* Add menu entry "Open in NMRium" for .jdx files
+* SAML: add setting to allow duplicate name attributes (fix #3867)
+* Add a changelog for all entries to record more changes than just the body with the revisions system
+* Add `blank_on_duplicate` attribute to extra_fields in metadata
+* Add created_at, timestamped_at and locked_at to extended search (#3960 by Marcel)
+* Allow using the API from an external host with javascript (see https://github.com/elabftw/elabapi-javascript-example#readme)
+* Add dynamic sort for tables (#3890, #3852 by Marcel)
+* Add white square as user defined symbol
+
 
 Dev corner:
 ```````````
@@ -88,6 +189,8 @@ Dev corner:
 * Lots of code rewrite, as always ;)
 
 + several contributions from Marcel Bolten that might not be mentioned above!
+
++ several other things that are not mentioned above, because the changelog is pretty big with 314 commits!
 
 Version 4.3.10
 --------------

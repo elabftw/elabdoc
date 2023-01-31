@@ -1,7 +1,8 @@
 .. _install-windows:
 
+******************
 Install on Windows
-==================
+******************
 
 .. image:: img/windows.png
     :align: center

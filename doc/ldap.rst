@@ -1,7 +1,8 @@
 .. _ldap:
 
+*****************************
 Configure LDAP authentication
-=============================
+*****************************
 
 .. image:: img/auth.png
     :align: center

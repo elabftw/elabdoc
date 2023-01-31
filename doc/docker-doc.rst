@@ -1,14 +1,16 @@
 .. _docker-doc:
 
+************
 About Docker
-------------
+************
 
 .. image:: img/docker.png
     :align: center
     :alt: docker
 
 Introduction
-````````````
+============
+
 This page explains the containerization technology in broad strokes.
 
 eLabFTW works with containers (`wikipedia <https://en.wikipedia.org/wiki/Container_(virtualization)>`_). The `official image <https://hub.docker.com/r/elabftw/elabimg>`_, from which containers will be created, bundles everything eLabFTW needs to run. This workflow can be managed by `Docker <https://www.docker.com/>`_ with `docker-compose <https://docs.docker.com/compose/install/>`_ or `Podman <https://podman.io/>`_ with systemd services.
@@ -20,7 +22,8 @@ On the development side, it facilitate many things as it gives more control to t
 Finally, the containerization technology is massively used nowadays by cloud/IT companies and you can imagine that there are many good reasons for that.
 
 How does it work?
-`````````````````
+=================
+
 
 .. note:: This document is about Docker + docker-compose but the same principles apply to a Podman installation.
 
@@ -33,7 +36,7 @@ Once downloaded, a container is created from the image, and the webserver starts
 If you already have let's say an Apache server running and are considering installing eLabFTW along your other PHP projects, know that you can keep your existing Apache installation and use it as a reverse proxy to a Docker container. See the `documentation for reverse proxies <https://github.com/elabftw/elabdoc/tree/master/config_examples>`_.
 
 About the Docker image
-``````````````````````
+======================
 - The eLabFTW Docker image is using `Alpine Linux <https://alpinelinux.org/>`_ as a base OS, so we get a lightweight and secure base.
 - `PHP 8 <https://www.php.net/>`_ is used so we get an up to date and fast PHP.
 - `Nginx <https://nginx.org>`_ is used so we get the best webserver out there running our app with `HTTP/2 <https://en.wikipedia.org/wiki/HTTP/2>`_ capabilities. A custom nginx is compiled for eLabFTW.
@@ -75,7 +78,7 @@ You don't have to be a specialist in web security to see that some services are 
 While full security can never be completely achieved when it comes to web and computers, with eLabFTW at least you have the best possible setup to mitigate or stop the most commons attacks. Especially if you use a Docker container.
 
 Why can't I run it outside Docker
-`````````````````````````````````
+=================================
 
 While there might be valid use case for running eLabFTW without containers (example: running a BSD operating system), a choice have been made to completely drop support for non-Docker installations.
 
