@@ -34,3 +34,24 @@ Then point your browser to the `_build/html/index.html` file inside the `doc/` f
 The generated documentation can also be accessed in the Artifacts section of the [CircleCI builds](https://app.circleci.com/pipelines/github/elabftw/elabdoc).
 
 Click on "pdf" to get the doc as a pdf.
+
+## Headings used
+
+~~~rst
+***********
+MAIN HEADER
+***********
+
+TITLE
+=====
+
+SUBTITLE
+--------
+
+SUBSUBTITLE
+^^^^^^^^^^^
+
+SUBSUBSUBTITLE
+""""""""""""""
+~~~
+

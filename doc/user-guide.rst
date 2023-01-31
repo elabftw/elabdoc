@@ -7,10 +7,10 @@ User guide
 This guide assumes you already have a working installation of eLabFTW on a server.
 
 General overview
-----------------
+================
 
 The principles
-~~~~~~~~~~~~~~
+--------------
 By default, experiments and database items are restricted to a team. But users can choose to extend this to all registered users.
 
 Experiments showed on the Experiments tab (the main tab) are yours only. To see experiments from other people in the team use the Search page or enable it from your User Control Panel.
@@ -18,13 +18,13 @@ Experiments showed on the Experiments tab (the main tab) are yours only. To see 
 Database items are common to the team and can be edited by anyone from the team.
 
 Creating an account
-~~~~~~~~~~~~~~~~~~~
+-------------------
 New users need to register an account on the register page (`/register.php`), accessible from the login page. They need to select a team from the list.
 
 By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
 
 Experiments
------------
+===========
 Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
 See the getting started video:
@@ -34,7 +34,7 @@ See the getting started video:
     <iframe width="560" height="315" src="https://www.youtube.com/embed/k30uyH2_LMM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Templates
-~~~~~~~~~
+---------
 In order to save time during experiments creation, it is highly recommended to use the Templates for experiments you often do. They are a skeleton of a real experiment. To create a template, select "My templates" from the User menu.
 
 .. image:: img/template-menu-click.png
@@ -46,10 +46,10 @@ Then, click the "Create" button, enter a title, and start editing your template.
 From this menu you can also choose to download the template as an ELN archive, which can be useful if you want to share it with someone on another eLabFTW instance.
 
 Edit mode
-~~~~~~~~~
+---------
 
 Tags
-````
+^^^^
 The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
 All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
 
@@ -58,11 +58,11 @@ All experiments with the same tag will be accessible by clicking this tag or sea
     .. image:: img/quick_tags.*
 
 Date
-````
+^^^^
 The date is today's date by default, in the format YYYYMMDD. You can edit it as you wish. The real creation date/time is stored in the database in another column.
 
 Status
-``````
+^^^^^^
 This useful feature lets you set the 'status' of an experiment. By default you can have :
 
 - Running (selected upon creation)
@@ -73,15 +73,15 @@ This useful feature lets you set the 'status' of an experiment. By default you c
 These status can be modified completely by the admin in the admin panel.
 
 Permissions
-```````````
+^^^^^^^^^^^
 The "Visibility" and "Can write" part allow you to control who can access this entry. Click the `Edit` button to display a menu and add or remove permissions.
 
 Title
-`````
+^^^^^
 The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.
 
 Experiment (body)
-`````````````````
+^^^^^^^^^^^^^^^^^
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
@@ -112,23 +112,23 @@ Miscellaneous
 You can insert a timestamp by clicking the clock icon or "Ctrl-Shift-d". You can also insert code snippets with highlighting, special characters, horizontal lines, etc...
 
 Steps
-`````
+^^^^^
 Steps are a way to list the things one need to do during the experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long experiments spanning over several days, where the "Next step" will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular experiment.
 
 Note that you can also declare steps in a template.
 
 Linked items
-````````````
+^^^^^^^^^^^^
 This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.
 
 This feature can also be used to link an experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all experiments linked to this project by clicking the Link icon.
 
 Linked experiments
-``````````````````
+^^^^^^^^^^^^^^^^^^
 Same as above, but for experiments.
 
 Attach a file
-`````````````
+^^^^^^^^^^^^^
 You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, and there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an experiment.
 
 When you are done, click the «Save and go back» button.
@@ -136,12 +136,12 @@ When you are done, click the «Save and go back» button.
 You are now in view mode.
 
 Ellipsis menu (the three dots on the top right)
-```````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.
 
 View mode of experiment
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 In the view mode, you will find an actions button bar in the upper left part:
 
 .. image:: img/view-mode-numbered.png
@@ -149,31 +149,31 @@ In the view mode, you will find an actions button bar in the upper left part:
     :alt: view mode numbered
 
 1. Edit
-```````
+^^^^^^^
 Go into edit mode.
 
 2. Duplicate
-````````````
+^^^^^^^^^^^^
 Duplicating an experiment allows you to quickly create a new entry with the same Title, tags, body and links, but with today's date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.
 
 3. Toggle lock
-``````````````
+^^^^^^^^^^^^^^
 The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won't be able to unlock it.
 
 4. Share
-````````
+^^^^^^^^
 For this button to appear, the Sysadmin must have allowed anonymous users (without an account) to connect, and the box "Allow read access for anonymous users" from the Visibility panel must be checked. An `access_key` is generated and bound to the entry. If this access key is present in the URL, then read access is granted to the visitor.
 
 5. Timestamp
-````````````
+^^^^^^^^^^^^
 When you click this button, a timestamp archive is created. Timestamping an experiment means that a pdf is generated, and a cryptographic sum of that pdf is then sent over to a trusted third party: the TimeStamping Authority (TSA). This external service will acknowledge the existence of that pdf (through its cryptographic sum) and send back a token, so that we can later prove that this data was present at that time. The pdf and its token are then attached to the experiment in the attached files section. This timestamp archive is immutable and cannot be modified or deleted. This protocol is defined by RFC3161, a standard for Trusted Timestamping.
 
 6. Bloxberg timestamp
-`````````````````````
+^^^^^^^^^^^^^^^^^^^^^
 This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
 
 7. Export button
-````````````````
+^^^^^^^^^^^^^^^^
 
 .. image:: img/view-mode-export-dropdown.png
     :align: center
@@ -185,20 +185,20 @@ The ELN format is a new file format based on RO-Crate specification, containing 
 
 
 8. Status
-`````````
+^^^^^^^^^
 The status is directly editable from the view mode.
 
 
 elabid
-``````
+------
 In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment. You can use it to reference an experiment with an external database.
 
 Comments
-````````
+--------
 People can leave comments on experiments. They cannot edit your experiment, but they can leave a comment. The owner of the experiment will receive an email if someone comment their experiment.
 
 Database
---------
+========
 Same as experiments for a lot of things, except there is no status, but a rating system (little stars). You can store any type of items inside, the admin can edit the available types of items.
 
 In view mode, click the link icon to show all experiments linked with this item.
@@ -214,11 +214,11 @@ Examples of database items types:
 * projects
 
 Team
-----
+====
 This page presents the members and some statistics about the team. You'll also find here a molecule drawer. Note: this molecule drawer can be displayed when you create an experiment. Go to your user control panel to adjust this setting.
 
 Scheduler
-~~~~~~~~~
+---------
 Since version 1.3.0, a scheduler is available to book equipment. First you need to set some item types as bookable from the Admin Panel. After you select an item from the Scheduler page, and use the calendar to book it.
 
 See the video about the scheduler below:
@@ -228,20 +228,20 @@ See the video about the scheduler below:
    <iframe width="560" height="315" src="https://www.youtube.com/embed/lGESXKV2-CM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 User panel
-----------
+==========
 
 The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.
 
 Preferences tab
-~~~~~~~~~~~~~~~
+---------------
 From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
 
 Account tab
-~~~~~~~~~~~
+-----------
 This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
 
 What is two factor authentication?
-``````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Multi-factor authentication, MFA (or Two-factor authentication, 2FA) is a mechanism to further protect your account. After logging in with your password, you will need to enter a 6 digits code that changes every 30 seconds. This code will be displayed by a special application on your cellphone. If you have never used such a mechanism, you need to first install a 2FA application on your phone.
 
 * For Android phones, the recommended application is `Aegis <https://getaegis.app/>`_ (Open Source).
@@ -254,15 +254,15 @@ Once this application is installed, on the eLabFTW page, select YES to "Use two-
 **Note**: it is highly recommended to enable 2FA wherever you can.
 
 Templates tab
-~~~~~~~~~~~~~
+-------------
 Manage your templates. Once a template has been created, you can add tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
-~~~~~~~~~~~~
+------------
 Create an API key for your account from this page. API keys are needed if you wish to access resources through the REST API.
 
 How to have folders or projects grouping experiments?
------------------------------------------------------
+=====================================================
 
 First, try to go beyond the nested, tree-like structure of hierarchical folders.
 
@@ -282,7 +282,7 @@ In a traditional folder structure, you would need to search for it in almost eac
 Enter **tags**.
 
 Tags
-~~~~
+====
 
 Tags are a way to label your experiments (and database objects) with defined keywords and you can have as many as you want!
 
@@ -293,7 +293,7 @@ Tags are a way to label your experiments (and database objects) with defined key
 Now with the experiments correctly tagged, finding them through different search angles becomes easy! You can search for one tag or many tags directly from the main page.
 
 Favorite tags
-~~~~~~~~~~~~~
+-------------
 
 Over time, you will have some tags that become your favorites, as they are always the ones you look for for a set of experiments.
 
@@ -306,7 +306,7 @@ Since version 4.2.0 it is possible to define "Favorite tags" that will appear in
 Note that if you use a "Favorite tag" filter and then create an experiment, it will be tagged automatically with that tag.
 
 Using Projects
-~~~~~~~~~~~~~~
+--------------
 
 There is also another way to group experiments together, that you can use along with tags. It's using a database item of type : Project.
 
@@ -315,7 +315,7 @@ Go to the Admin Panel and create a type of item: "Project". Go to the Database t
 Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
 
 Importing data
---------------
+==============
 
 It is possible to import data from files into eLabFTW. Click the arrow on the left of the **Create** button to show the `Import from file` menu entry. A modal window appears to allow you to choose:
 
@@ -324,17 +324,17 @@ It is possible to import data from files into eLabFTW. Click the arrow on the le
 * The actual file to import
 
 Importing from a .eln archive
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 You can import data from a .eln archive generated by any ELN software conforming to the `specification <https://github.com/TheELNConsortium/TheELNFileFormat/blob/master/SPECIFICATION.md>`_.
 
 Importing from a .zip archive
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Only zip files generated by eLabFTW can be imported here.
 
 Importing from a .csv file
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 If you already have some "items" catalogued in an Excel file or File Maker database, you can import them in eLabFTW with a .csv file.
 A .csv file is a very simple file format. You can save a .xlsx or .ods file into this format. If using Microsoft Office, make sure to select "CSV UTF-8" in the dropdown menu. It needs to be "flat", meaning the first row is the column names, and all subsequent rows correspond to one entry.
@@ -342,7 +342,7 @@ A .csv file is a very simple file format. You can save a .xlsx or .ods file into
 To achieve a successful import, make sure to follow these instructions:
 
 1. Preparing the file
-`````````````````````
+^^^^^^^^^^^^^^^^^^^^^
 
 It is important to make sure that the file you are going to import is "clean". Open your file (.xls/.xlsx/.ods/.csv) in an editor like LibreOffice Calc or Microsoft Excel.
 
@@ -403,7 +403,7 @@ If you wish to include tags during the import, specify a column "tags" that will
 Once you are satisfied with the file, export it as a **.csv** (in File > Save as...). Make a copy of only the first 3 rows and export that too as csv, this will be our test file.
 
 2. Importing the file
-`````````````````````
+^^^^^^^^^^^^^^^^^^^^^
 
 Click "Import from file" from the "Create" submenu. If you haven't done it already, create first an Item Type that fits your data (or ask your Admin to do it). Here we will create an "Antibody" category as that's what we are importing, from the "Items Types" tab.
 
@@ -414,7 +414,7 @@ Every row will correspond to an entry in the correct category of database items.
 If the import looks good, you can now delete these newly imported items and import your complete file.
 
 Using the API to control how things are imported
-````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to have complete control over the import process, you can use a helper program to do the import.
 
@@ -481,7 +481,7 @@ Here is another example but this time we import the column as metadata key, and 
 
 
 Miscellaneous
--------------
+=============
 
 You can export experiments in .zip. If the experiment was timestamped you will find in the archive the timestamped pdf and the corresponding .asn1 token.
 
@@ -496,7 +496,7 @@ Press 't' to have a TODO list.
 In the editor, press Ctrl+shift+d to get today's date inserted at cursor position.
 
 Signatures
-~~~~~~~~~~
+==========
 
 On paper notebooks, there was this idea of having another lab member signing every page of a notebook before the page would get plastified to prevent modifications. To my knowledge, this was seldom done properly.
 
