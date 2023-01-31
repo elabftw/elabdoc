@@ -109,6 +109,8 @@ Tables
 """"""
 If you add tables you might want to sort the data in the table dynamically. eLabFTW got you covered. Sort icons will be displayed in view mode when so called header cells (``<th>``) are defined. The table should have column names in the top row. You can select the top row with the mouse by clicking the left mouse button on the leftmost cell and while keeping the mouse button pressed move the mouse to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the rich text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change «Cell type» from «Cell» (``<td>``) to «Header cell» (``<th>``). After you saved the changes you can go to view mode and dynamically sort the table. The changed order is not stored in eLabFTW.
 
+.. only::html
+
    .. image:: img/sort-table.gif
        :align: center
        :alt: Sort table demo
