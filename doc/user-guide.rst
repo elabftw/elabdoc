@@ -1,7 +1,8 @@
 .. _user-guide:
 
+**********
 User guide
-==========
+**********
 
 This guide assumes you already have a working installation of eLabFTW on a server.
 

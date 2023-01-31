@@ -1,8 +1,9 @@
 .. elabftw documentation master file, created by
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
+***********************************
 Welcome to elabftw's documentation!
-===================================
+***********************************
 
 .. image:: img/elabftw-logo.png
     :align: left
@@ -12,7 +13,7 @@ Welcome to elabftw's documentation!
 :Live demo: https://demo.elabftw.net
 
 Introduction
-------------
+============
 
 eLabFTW is a PHP application using MySQL to store data persistently. Once installed on a server, users can register an account and start using their electronic lab notebook.
 

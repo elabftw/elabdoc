@@ -1,13 +1,14 @@
 .. _sysadmin-guide:
 
+**************
 Sysadmin guide
-==============
+**************
 
 General overview
-----------------
+================
 
 The Sysadmin
-~~~~~~~~~~~~
+------------
 * Is the first registered user
 * Has access to the Sysconfig Panel with general settings impacting every team hosted on the server
 * Can create/edit/delete teams
@@ -18,7 +19,7 @@ The Sysadmin
 * It is possible to have multiple 'Sysadmin' accounts
 
 Account creation
-~~~~~~~~~~~~~~~~
+----------------
 New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.
 
 By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
@@ -26,7 +27,7 @@ This guide assumes you already have a working installation of eLabFTW on a serve
 The Sysadmin has access to core settings of the eLabFTW instance like email configuration or security preferences.
 
 Setting up email
-----------------
+================
 
 If there is only one thing to do after an install, it's setting up email. Otherwise users will not be able to reset their password!
 
@@ -43,24 +44,24 @@ If you don't know what to do, I highly recommend using `SMTP2GO <https://smtp2go
 Register an account using this link: `SMTP2GO <https://smtp2go.grsm.io/xj1zy4rvle6v>`_. Once logged in, add an SMTP User: it will provide you with a login and password to connect to the SMTP server "mail.smtp2go.com". Input these credentials on the Sysadmin panel and test sending an email.
 
 Set up backup
--------------
+=============
 
 See the :ref:`backup <backup>` page.
 
 Set up the teams :sup:`(optional)`
------------------------------------
+===================================
 
 The Sysadmin panel (`sysconfig.php`) allows you to add another team to your install. You should also edit your team name.
 
 Configure authentication :sup:`(optional)`
-------------------------------------------
+==========================================
 
 By default Users are authenticated locally, with their email and a password stored locally in eLabFTW.
 
 You can chose to have other authentication mechanisms such as LDAP or SAMLv2 (IDP). They can be configured in their respective tabs. It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
 
 Set up timestamping :sup:`(optional)`
---------------------------------------
+======================================
 
 eLabFTW provides an easy way to do `Trusted Timestamping <https://en.wikipedia.org/wiki/Trusted_timestamping>`_ for your experiments, so you can have strong legal value for your lab notebook.
 
@@ -73,14 +74,14 @@ You can select from the list of pre-configured TSA or use a custom one by provid
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
 Configure storage :sup:`(optional)`
------------------------------------
+===================================
 
 By default, uploaded files are stored in the `uploads/` folder that is mounted outside the container for persistance. You can choose instead to use an S3 compatible service (buckets) to store these files. The "Uploads" tab allows you to configure this storage.
 
 To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file.
 
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
--------------------------------------------------------------
+=============================================================
 
 If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
 
@@ -104,7 +105,7 @@ Add this script as a cronjob:
 This line will run the script at 4am every 1st day of the month.
 
 Update often
-------------
+============
 
 It is important to keep your install up to date with the latest bug fixes and new features.
 

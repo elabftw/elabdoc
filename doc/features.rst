@@ -1,10 +1,11 @@
 .. _features:
 
+********
 Features
---------
+********
 
 General
-^^^^^^^
+=======
 * free (as in speech)
 * free (as in beer)
 * multi-platform (server or client)
@@ -15,7 +16,7 @@ General
 * docker image available
 
 Experiments
-^^^^^^^^^^^
+===========
 * custom status
 * visibility setting
 * rich wysiwyg editor (or write in Markdown)
@@ -39,7 +40,7 @@ Experiments
 * doodle canvas
 
 Database
-^^^^^^^^
+========
 * import from spreadsheet files
 * export/import zip archives
 * import items from Excel file
@@ -50,7 +51,7 @@ Database
 * molecule drawer (optional)
 
 Security
-^^^^^^^^
+========
 * HTTPS
 * CSRF protection
 * secure headers
@@ -63,7 +64,7 @@ Security
 * two-factor authentication (2FA)
 
 Intellectual property
-^^^^^^^^^^^^^^^^^^^^^
+=====================
 * timestamping of experiments (pdf export)
 * :rfc:`3161` compliant Trusted Timestamping
 * allow or not users to delete experiments
@@ -71,7 +72,7 @@ Intellectual property
 * attached files are sha256summed and thus timestamped with the experiment
 
 User experience
-^^^^^^^^^^^^^^^
+===============
 * lovely design (by @manonstripes)
 * internationalization (several languages available)
 * optimized code/assets for speed and correctness
@@ -84,5 +85,5 @@ User experience
 * TODOlist
 
 Planned features
-^^^^^^^^^^^^^^^^
+================
 * a lot

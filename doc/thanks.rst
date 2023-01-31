@@ -1,8 +1,9 @@
 .. _thanks:
    :title: Acknowledgements
 
+****************
 Acknowledgements
-================
+****************
 
 A big thanks to early alpha testers and everyone who contributed through their ideas or
 suggestions to this project.

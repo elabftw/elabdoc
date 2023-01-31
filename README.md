@@ -11,7 +11,7 @@ Main project repository: [elabftw/elabftw](https://github.com/elabftw/elabftw).
 ~~~bash
 git clone https://github.com/elabftw/elabdoc
 cd elabdoc
-pip install --user sphinx sphinx_rtd_theme
+pip install --user sphinx sphinx_rtd_theme sphinxcontrib-jquery
 ~~~
 
 ## Config examples

@@ -1,22 +1,23 @@
 .. _faq:
 
+**************************
 Frequently asked questions
-==========================
+**************************
 
 Is it totally free?
--------------------
+===================
 
 YES. eLabFTW is free/libre software, so it is totally free of charge and always will be. `Read more about the free software philosophy <https://www.gnu.org/philosophy/free-sw.html>`_.
 
 But how is it better than something I can buy?
-----------------------------------------------
+==============================================
 
 The difference is huge. Because eLabFTW is not only free (as in beer), but it is free (as in speech). This means that you can have a look at the code (and improve it) and you can also redistribute the code with your improvements.
 
 But more importantly, you cannot trust your data with something that acts like a **black box**. What if the data you upload on the server of a company can be read by someone else? With eLabFTW, you install it on your own server, and you are the master of your data at all time.
 
 What about patents and intellectual property?
----------------------------------------------
+=============================================
 
 Since March 2013, the USA modified their law (see `America Invents Act <https://www.uspto.gov/patent/laws-and-regulations/leahy-smith-america-invents-act-implementation>`_) to switch from first-to-invent to first-inventor-to-file. This means that proving that you did this experiment before someone else has become less critical. It is only needed if you invented something, before someone put a patent on it (and you can prove it), and you want to keep using it as **prior user**.
 
@@ -27,7 +28,7 @@ If needed, you can also choose another TimeStamping Authority allowing :rfc:`316
 You also have the possibility to use the `Bloxberg.org <https://bloxberg.org/>`_ blockchain to timestamp your data. All it takes is a single click!
 
 Why use eLabFTW?
-----------------
+================
 
 * **It's free and open source software**
 * It improves the value of your experiments by allowing you to keep a good track of it
@@ -61,7 +62,7 @@ You also have to consider the fact that installing eLabFTW on your own server me
 
 
 Is this system stable? Can I trust my data with it?
----------------------------------------------------
+===================================================
 
 Yes. It is used in numerous research centers all over the world since a few years now and if an issue is found it is quickly reported and fixed.
 
@@ -70,7 +71,7 @@ However, having an automated :ref:`backup <backup>` strategy is mandatory in ord
 Being able to do backups is yet another advantage over paper (you can't backup paper!).
 
 Who else is using it?
----------------------
+=====================
 
 Here are some places running eLabFTW (non-exhaustive list):
 
@@ -99,7 +100,7 @@ Here are some places running eLabFTW (non-exhaustive list):
 * Many many more...
 
 Is the data encrypted?
-----------------------
+======================
 
 The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2 with modern ciphers).
 
@@ -108,7 +109,7 @@ The passwords are not recoverable in case of a breach and are hashed using state
 Only manually validated accounts can interact with the software. It is secure by default.
 
 Is eLabFTW still maintained?
-----------------------------
+============================
 
 Not only it is maintained, but it is actively being worked on, with major new features and improvements being added regularly.
 
@@ -117,22 +118,22 @@ Since 2019, the company `Deltablot <https://www.deltablot.com>`_ exists to provi
 If you are interested in such options, please visit this page: `Deltablot's elabftw page <https://www.deltablot.com/elabftw/>`_.
 
 Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?
--------------------------------------------------------------------------------------------
+===========================================================================================
 
 Yes, in the admin panel, click on the Import CSV link and follow the instructions.
 
 Can I try it before I install it?
----------------------------------
+=================================
 
 Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_.
 
 What are the technical specifications?
---------------------------------------
+======================================
 
 eLabFTW is a server software that should be installed on a server.
 
 Requirements for the server
-```````````````````````````
+---------------------------
 
 **Hardware**
 
@@ -147,19 +148,19 @@ The service runs in `Docker <https://www.docker.com>`_ containers.
 A MySQL database service is required. You can create one with Docker following the standard installation procedure, or use an existing one.
 
 Requirements for the clients (users)
-````````````````````````````````````
+------------------------------------
 
 - Any operating system with any browser (recent version), except Safari (might have issues) or Internet Explorer (will have issues).
 
 What about data retention/traceability
---------------------------------------
+======================================
 
 When a user is making a change to an experiment, a copy of the previous version is kept in the database. This copy cannot be altered by anyone. The admin can also prevent users from deleting experiments, and the creation date is kept in memory, even if the date field is changed later on.
 
 When an entry is deleted, it is not completely removed from the database, but instead marked as deleted. Same with attached files: overwriting a file will mark the previous version as "Archived".
 
 Is it compliant to 21CFR Part 11?
----------------------------------
+=================================
 
 1. Closed system: eLabFTW requires unique credentials to access the system. A system of permissions and roles allow fine control of what can be seen by whom.
 
@@ -176,7 +177,7 @@ Is it compliant to 21CFR Part 11?
 7. Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place.
 
 What about compliance to standards?
------------------------------------
+===================================
 eLabFTW tries to comply to the following standards :
 
 * `Code of Federal Regulations Title 21, paragraph 11 <http://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfcfr/CFRSearch.cfm?CFRPart=11>`_
@@ -185,7 +186,7 @@ eLabFTW tries to comply to the following standards :
 * `FISMA <https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002#Compliance_framework_defined_by_FISMA_and_supporting_standards>`_
 
 How to change the team of a user?
----------------------------------
+=================================
 
 There is two ways to do that:
 
@@ -193,12 +194,12 @@ There is two ways to do that:
 * if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team
 
 Can I change the date format?
------------------------------
+=============================
 
 No. The date in eLabFTW (YYYYMMDD) follows ISO 8601 standard and allowing a user to change the format would only bring confusion.
 
 What is the meaning of 'FTW'?
------------------------------
+=============================
 
 One of those:
 

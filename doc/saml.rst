@@ -1,7 +1,8 @@
 .. _saml:
 
+******************************
 Configure SAML2 authentication
-==============================
+******************************
 
 .. image:: img/auth.png
     :align: center
@@ -12,7 +13,7 @@ This page describes the steps necessary to setup SAML2 authentication on eLabFTW
 The IDP can lookup identity on an LDAP directory and deal with two factors authentication.
 
 Setup the Service Provider
---------------------------
+==========================
 
 The service provider is the elabftw install. Head to the Sysadmin panel, click the SAML tab.
 
@@ -45,7 +46,7 @@ Use the content of `private.key` and `cert.crt`.
 Alternatively you can use `this site <https://developers.onelogin.com/saml/online-tools/x509-certs/obtain-self-signed-certs>`_ to generate a self-signed certificate.
 
 Setup the IDentity Provider
----------------------------
+===========================
 
 * Name: Visible to the user logging in. Example: "Institut Curie"
 * entityId: Example: https://idp1.agroparistech.fr/shibboleth
@@ -56,7 +57,7 @@ Setup the IDentity Provider
 * x509 cert: the public key of the IDP
 
 Attributes for the IDP
-``````````````````````
+----------------------
 We need to specify where to look in the attributes sent in the response for email, team and name of the user. You can use the FriendlyName or the Name from the table below. Note that this will depend on your IDP and using the SAML Tracer plugin (see below) to see the response will be helpful in determining what fields you want to use.
 
 .. list-table:: SAML attributes
@@ -79,17 +80,17 @@ We need to specify where to look in the attributes sent in the response for emai
 If you cannot have information about the team, or do not wish to use it, make sure to have the setting "Let user select a team" when the user is created during first login.
 
 Disable local login/register
-----------------------------
+============================
 
 Go to the Server tab of the Sysadmin panel. From there you can disable local login (to force SAML auth) and also disable local registration.
 
 How does it work?
------------------
+=================
 
 When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either, it is created on the fly. You can configure this behavior from the Sysconfig panel.
 
 Debugging
----------
+=========
 
 SAML configuration can be tricky. I recommend that you use the SAML-tracer addon to see the requests and be able to verify what is sent and received.
 

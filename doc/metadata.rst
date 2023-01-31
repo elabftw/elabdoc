@@ -1,17 +1,18 @@
 .. _metadata:
 
+********
 Metadata
-========
+********
 
 This page describes the usage of the metadata JSON field attached to experiments or items (and their templates).
 
 Description
------------
+===========
 
 Since eLabFTW 4.0.0, you can add custom JSON data to your entries, using the `metadata` attribute. You can add arbitrary JSON, or use specific keys to extend the customization of the entry, for instance by adding extra fields.
 
 Getting started
----------------
+===============
 
 Let's try it on an Experiment. Create a new experiment, and scroll down (in edit mode) to the "JSON Editor" part. The "Load metadata" button is disabled because the `metadata` attribute is already loaded in the editor. But for now it is empty.
 
@@ -30,7 +31,7 @@ Then click save and the new input (extra field) will appear right under the "Sav
 You are free to add as many as you want, of different types. It is most useful in the Templates, so when creating an entry, all the required inputs are already present.
 
 Advanced use
-------------
+============
 
 Keep in mind that what the builder menu will do for you is simply create some JSON code and store it in the `metadata` attribute of the entry. You are free to edit this JSON code from the editor.
 
@@ -39,11 +40,11 @@ Keep in mind that what the builder menu will do for you is simply create some JS
     :alt: json-editor-mode
 
 Positions
-`````````
+---------
 In order to assign a particular position to the inputs, use the `position` key, with a number as value. The inputs will then be ordered based on this value. Lowest value being on top.
 
 Removing an input
-`````````````````
+-----------------
 If you wish to remove an input, click the icon on the left of it and select "Remove" from the menu. Alternatively, switch the JSON editor in "Code" view and remove the corresponding part of the JSON.
 
 .. image:: img/delete-extra-field.png
@@ -51,7 +52,7 @@ If you wish to remove an input, click the icon on the left of it and select "Rem
     :alt: Delete extra field
 
 Masking the main text
-`````````````````````
+---------------------
 It is possible to hide the main text input by setting a special attribute: `display_main_text` to `false` in the `elabftw` key. Something like this:
 
 .. code:: javascript
@@ -67,7 +68,7 @@ It is possible to hide the main text input by setting a special attribute: `disp
 
 
 Example code
-------------
+============
 
 This will allow you to copy/paste easily the following code block into the editor (once the editor's mode is set to "Code"):
 
@@ -118,60 +119,60 @@ Now click Save and scroll up a bit. Above the Steps you should now see four new 
 
 
 How it works
-------------
+============
 
 Only what is inside an `extra_fields` key is processed, the rest is ignored, so you can have other things in there if you wish.
 
 Inside `extra_fields`, add as many extra field as you want, the key is the name of the field, and the value is composed of:
 
 value (required)
-````````````````
+----------------
 The field that will hold the selected/input value. You can set a default value here or leave it empty.
 
 type (optional)
-```````````````
+---------------
 text
-""""
+^^^^
 The default value if omitted. Use it for a short text.
 
 select
-""""""
+^^^^^^
 A dropdown element with options to choose from.
 
 radio
-"""""
+^^^^^
 A radio input similar to select but all options are immediately visible.
 
 date
-""""
+^^^^
 A date input.
 
 checkbox
-""""""""
+^^^^^^^^
 A box to check. A Step might be a better option here.
 
 number
-""""""
+^^^^^^
 A text input that only accepts a number as value.
 
 url
-"""
+^^^
 A text input that only accepts a valid URL. In view mode, the link will be clickable.
 
 options (for type = select)
-```````````````````````````
+---------------------------
 An array (`[]`) with different options for the dropdown element.
 
 position
-````````
+--------
 Add a number as a value to correctly order the extra fields how you want them.
 
 blank_value_on_duplicate
-````````````````````````
+------------------------
 Set to `true` for the value to be blanked when the entity is duplicated.
 
 Usage example
--------------
+=============
 
 Have a "Status" and "Quantity" for some items in your database:
 

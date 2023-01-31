@@ -1,10 +1,11 @@
 :orphan:
 
+***************
 Page not found!
-===============
+***************
 
 Oops!
------
+=====
 
 No page with that name could be found. Maybe you followed an old link?
 

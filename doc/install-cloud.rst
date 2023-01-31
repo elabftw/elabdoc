@@ -1,10 +1,11 @@
 .. _install-cloud:
 
+********************
 Install in the cloud
-====================
+********************
 
 Introduction
-------------
+============
 
 If you do not wish to opt for the hosted solution (`PRO Hosting from Deltablot <https://www.deltablot.com/elabftw>`_), you can install and manage your own eLabFTW instance on a Virtual Private Server (VPS).
 
@@ -35,14 +36,14 @@ If you don't have a domain name already, you can get one from `OVH <https://www.
 .. note:: If you don't want to deal with server maintenance, TLS certificates renewal, backups and updates, have a look at `PRO Hosting from Deltablot <https://www.deltablot.com/elabftw>`_
 
 A note about backups
---------------------
+====================
 
 **Making reliable backups is hard**. Even IT companies can get it wrong. See the *postmortem* of an `incident at Gitlab <https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31/>`_. It is a very interesting article, illustrating how even if you have several restoration options, they might all fail. And that was before ransomware malware was prevalent! Now if you don't have immutable snapshots on your filesystem where the backups live, you might have your backups encrypted too!
 
 The point I'm trying to make is that a lot of things can go wrong, and if you care about your data, it might be a good option to look into the `PRO Hosting offering <https://www.deltablot.com/elabftw>`_ or let a professional systems administrator take care of it.
 
 Create your droplet
--------------------
+===================
 
 .. warning:: A proper subdomain is required. Subfolder install is not supported!
 
@@ -67,7 +68,7 @@ Create your droplet
 * Go to the control panel of your domain name provider. Point your domain (or subdomain) to the IP address of your drop. It might take a bit of time for the DNS to propagate (a few hours).
 
 Install eLabFTW
----------------
+===============
 
 * Open a terminal and connect to your new server:
 

@@ -1,7 +1,8 @@
 .. _install-nas:
 
+****************
 Install on a NAS
-================
+****************
 
 .. image:: img/qnap.png
     :align: center
@@ -14,7 +15,7 @@ The following instructions are for a Qnap NAS but if you have a Synology, it's n
 .. note:: Here I'm using the command line but it is also completely possible to do it via the graphical interface
 
 Prerequisites
--------------
+=============
 
 We will use the Docker container technology, so you need to install the Container Station app from the AppCenter.
 
@@ -31,7 +32,7 @@ Once it is installed, open it. It will create a /Container folder. Connect with 
     mkdir Container/elabftw/web
 
 Get the config file
--------------------
+===================
 
 .. code-block:: bash
 
@@ -39,7 +40,7 @@ Get the config file
     curl -so docker-compose.yml "https://get.elabftw.net/?config"
 
 Edit the config file
---------------------
+====================
 
 To edit the file we just downloaded, you can use "vim" or just download it on your computer instead, edit it with your favorite text editor and upload it back.
 
@@ -56,14 +57,14 @@ You also need to edit the "volumes" bindings so that persistent files (MySQL dat
     :alt: nas config
 
 Starting the containers
------------------------
+=======================
 
 .. code-block:: bash
 
     docker-compose up -d
 
 Importing the database structure
---------------------------------
+================================
 
 .. code-block:: bash
 
@@ -72,12 +73,12 @@ Importing the database structure
 Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`.
 
 Accessing elabftw
------------------
+=================
 
 Go to https://YOUR.NAS.IP:3148. You can should see the login page and you can go to the register page to create a sysadmin account.
 
 Post install
-------------
+============
 
 Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_!
 
