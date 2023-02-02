@@ -165,7 +165,7 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
 .. code-block:: bash
 
-   docker exec -it elabftw bin/install start
+   docker exec -it elabftw bin/console db:install
 
 
 * Enable debug mode to disable the caching of Twig templates
