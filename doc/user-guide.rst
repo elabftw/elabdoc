@@ -119,6 +119,21 @@ If you add tables you might want to sort the data in the table dynamically. eLab
        :align: center
        :alt: Sort table demo
 
+Using LaTeX
+"""""""""""
+
+It is possible to express mathematical/chemical notations in eLabFTW, and they will be rendered properly in view mode but also in the pdf export.
+
+For this eLabFTW uses Mathjax with ams extension.
+
+Try this (make sure it is not pasted between `<pre>` tags!):
+
+.. code:: latex
+
+    $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+Use one `$` for inline mode and `$$` for block mode.
+
 Miscellaneous
 """""""""""""
 
