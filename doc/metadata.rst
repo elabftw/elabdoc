@@ -157,7 +157,7 @@ A text input that only accepts a number as value.
 
 url
 ^^^
-A text input that only accepts a valid URL. In view mode, the link will be clickable.
+A text input that only accepts a valid URL. In view mode, the link will be clickable. By default, the link will open in a new tab. Add `"open_in_current_tab" : true` to make it open in the current tab.
 
 options (for type = select)
 ---------------------------
