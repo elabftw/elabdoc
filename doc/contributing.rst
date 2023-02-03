@@ -20,12 +20,12 @@ What can you do to help this project?
 * `Star it on GitHub really <https://github.com/elabftw/elabftw>`_
 
 Non-code contributions
-----------------------
+======================
 
 Contributions are not necessarily code. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
 
 Reporting a security issue
---------------------------
+==========================
 
 If you've found a security issue, please contact me securely through `Keybase <https://keybase.io/nicolascarpi>`_.
 
@@ -35,7 +35,7 @@ If you've found a security issue, please contact me securely through `Keybase <h
 While there is not (yet) an official bug bounty program, responsible disclosure of a security vulnerability might be compensated.
 
 Translating
------------
+===========
 
 Do you know several languages? Are you willing to help localize eLabFTW? You're in the right place.
 
@@ -50,16 +50,16 @@ How to translate?
 Translations are merged in the code before a release. You must not try and edit the .po/.mo files directly in the source code.
 
 Contributing to the code
-------------------------
+========================
 
 Introduction
-^^^^^^^^^^^^
+------------
 Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, ...
 
 But fear not, because there is a whole documentation about getting started, and you're already reading it ;)
 
 Note about repositories
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 The eLabFTW project is split in different repositories. The main one with the actual PHP code is `elabftw/elabftw <https://github.com/elabftw/elabftw>`_. The present document is generated from reStructuredText files in `elabftw/elabdoc <https://github.com/elabftw/elabdoc>`_. So if you need to change the documentation, it will be in there.
 
@@ -73,7 +73,7 @@ Other interesting repositories are:
 The rest of this documentation is about elabftw/elabftw.
 
 Note about branches
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 The repository contains (at least) 3 branches:
 
@@ -82,7 +82,7 @@ The repository contains (at least) 3 branches:
 * The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes. It is a very active branch, so make sure to pull from upstream often so your fork doesn't stray too far.
 
 Environment installation
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. In this setup, we will put everything in the same folder for simplicity.
 
@@ -186,7 +186,7 @@ Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.z
 It is possible to populate your dev database with fake generated data. See the `dev:populate` command of `bin/console`.
 
 Code organization
-^^^^^^^^^^^^^^^^^
+-----------------
 * Real accessible pages are in the web/ directory (experiments.php, database.php, login.php, etc…)
 * The rest is in app/ or src/ for PHP classes
 * src/models will contain classes with CRUD (Create, Read, Update, Destroy)
@@ -196,7 +196,7 @@ Code organization
 * Check out the scripts in `src/tools` too
 
 Working with JavaScript
------------------------
+=======================
 All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc`. It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
 When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible.
@@ -206,7 +206,7 @@ You'll also want to configure your favorite text editor to display TypeScript er
 Use vanilla JS and avoid the use of jQuery selectors or functions.
 
 Miscellaneous
--------------
+=============
 * if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` so new installs will get the correct structure. If possible, just add the needed line in the current schema.sql file if this schema is still only present in unstable versions (dev or alpha).
 * comment your code wisely, what is important is the why, not the what
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
@@ -220,11 +220,11 @@ Miscellaneous
 * check the commands in the "scripts" part of the `package.json` file, a lot of nice things in there ;)
 
 Glossary
---------
+========
 * Experiments + Database items + Experiments Templates = Entities. So when you see Entity it means it can be an experiment/template or a database item.
 
 Build
------
+=====
 The javascript and css files are stored unminified in the source code. But the app uses the minified versions, so if you make a change to the javascript or css files, you need to rebuild them.
 
 * To minify files:
@@ -240,7 +240,7 @@ Other commands exist, see `builder.js` (webpack), the `scripts` part of `package
 When working on the code, it is best to have `yarn watchjs` and `yarn watchcss` running so changes are immediately picked up.
 
 Tests
------
+=====
 
 The tests run on the Codeception framework for unit and api tests. End to end testing is done with Cypress.
 
@@ -252,7 +252,7 @@ The tests run on the Codeception framework for unit and api tests. End to end te
 A good contribution you can make would be adding Cypress tests.
 
 Exceptions handling
--------------------
+===================
 
 Here are some ground rules for exceptions thrown in the code:
 
@@ -267,7 +267,7 @@ Here are some ground rules for exceptions thrown in the code:
 * Instead of returning bool, functions should throw exception if something goes wrong. This removes the need to check for return value in consuming code (something often forgotten!)
 
 Making a pull request
----------------------
+=====================
 #. Before working on a feature, it's a good idea to open an issue first to discuss its implementation
 #. Create a branch from **hypernext**
 #. Work on a feature
@@ -283,36 +283,8 @@ Making a pull request
     # go to github.com and create a pull request
 
 
-Making a gif
-------------
-
-* make a capture with xvidcap, it outputs .xwd
-
-* convert .xwd to gif:
-
-.. code-block:: bash
-
-    $ convert -define registry:temporary-path=/path/tmp -limit memory 2G \*.xwd out.gif
-    # or another way to do it, this will force to write all to disk
-    $ export MAGICK_TMPDIR=/path/to/disk/with/space
-    $ convert -limit memory 0 -limit map 0 \*.xwd out.gif
-
-* generate a palette with ffmpeg:
-
-.. code-block:: bash
-
-    $ ffmpeg -i out.gif -vf fps=10,scale=600:-1:flags=lanczos,palettegen palette.png
-
-* make a lighter gif:
-
-.. code-block:: bash
-
-    $ ffmpeg -i out.gif -i palette.png -filter_complex "fps=10,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" out-final.gif
-
-* upload to original one to gfycat and the smaller one to imgur
-
 Adding a lang
--------------
+=============
 
 * Add lang on poeditor.com
 * Get .po
@@ -327,7 +299,7 @@ Adding a lang
 
 
 Adding a new term for js i18n
------------------------------
+=============================
 
 These steps are overly complicated and should be made automatically ideally.
 
@@ -336,28 +308,28 @@ These steps are overly complicated and should be made automatically ideally.
 * Import i18next in the corresponding ts file and use `i18next.t('string-id')`
 
 Accessing Docker MySQL database with phpmyadmin
------------------------------------------------
+===============================================
 
 You might be used to access your local MySQL dev database with PHPMyadmin. Just uncomment the part related to phpmyadmin in the config file and `elabctl restart`.
 
 This will launch a docker container with phpmyadmin that you can reach on port 8080. Go to `localhost:8080 <http://localhost:8080>`_. Login with your mysql user (elabftw by default) and your mysql password found in the .yml configuration file. You should see the `elabftw` database now.
 
 Using a trusted certificate for local dev
------------------------------------------
+=========================================
 
 When working locally, the docker image will generate a self-signed TLS certificate. This will show a warning in the browser address bar and multiple warnings in the console (when you press F12). To fix this, it is possible to generate certificates that are trusted by your local browser.
 
 We'll use `FiloSottile/mkcert <https://github.com/FiloSottile/mkcert>`_ project to achieve this.
 
 Step 1: use a real domain name
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 I like to use elab.local on port 3148. Edit `/etc/hosts` and add a line with elab.local pointing to localhost like this:
 
 127.0.0.1 elab.local
 
 Step 2: get certs
-^^^^^^^^^^^^^^^^^
+-----------------
 
 Install `mkcert <https://github.com/FiloSottile/mkcert>`_ and generate certificates for `elab.local`. Create a new folder somewhere to hold them:
 
@@ -368,7 +340,7 @@ Install `mkcert <https://github.com/FiloSottile/mkcert>`_ and generate certifica
    $ mv elab.local+3-key.pem $dev/certs/live/elab.local/privkey.pem
 
 Step 3: edit config to use certificates
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 Edit the .yml file for elabftw, change `ENABLE_LETSENCRYPT` to `true`. Uncomment the volume line with `/ssl` and make it point to where you have the certs.
 
@@ -381,12 +353,12 @@ Example:
      - /home/user/.dev/certs:/ssl
 
 Step 4: restart containers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 `elabctl restart`, and you should now have a valid certificate on your local dev install of elabftw :)
 
 How to test external auth
--------------------------
+=========================
 
 To easily test external authentication, edit in the container `/etc/php8/php-fpm.d/elabpool.conf` and at the end add:
 
@@ -403,14 +375,14 @@ Restart the php process with: `s6-svc -r /var/run/s6/services/php`.
 Next, configure the correct keys in the Sysconfig panel and external authentication should be working as expected.
 
 How to test ldap
-----------------
+================
 
 Uncomment the ldap and ldap-admin containers definitions in the config file. Then use the ldap-admin (running on port 6443 by default) to login with "cn=admin,dc=example,dc=org" and password "admin". Then click the "dc=example,dc=org" in the left menu and "Create a child entry". Create a "Generic: Posix Group". We don't care about the name but it is necessary to have one before creating our test user.
 
 Click again the "dc=example,dc=org" in the left to be at the root, "Create a child entry" and select "Generic: User Account". In GID Number you can assign the previously created group. Once the user is created, go select it in the left menu and "Add new attribute": Email. And add the email for that user. Now you should be able to login with that user after activating ldap from the sysconfig menu. Default values from the populate script should be good to go without changes.
 
 Install a pre-commit hook
--------------------------
+=========================
 
 It is a good idea to use a pre-commit hook to run linters before the commit is actually done. It prevents doing another commit afterwards for "fix phpcs" or "fix linting". Go into `.git/hooks`. And `cp pre-commit.sample pre-commit`. Edit it and before the last line with the "exec", add this:
 
