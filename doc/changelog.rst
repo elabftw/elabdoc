@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 4.5.1
+-------------
+
+New features:
+`````````````
+* Add team level announcement (fix #4065 via #4115)
+* Add option to disable SMTP certificate verification (fix #4074 via #4112)
+
+Enhancements:
+`````````````
+* Add checksum verification for orcid (fix #4041 via #4117)
+* In scheduler, allow clicking an event without selecting item first
+* Add the team name in user created notifications messages
+* Improve items types deletion message
+
+Bugfixes:
+`````````
+* Let admins have write access to locked entries
+* Fix and harmonize tooltips (#4113 by Marcel)
+* Fix issue with quotes in qr pdf (fix #4082 via #4108 by Marcel)
+* Prevent accidental deletion of experiments through status deletion through team deletion
+
+
 Version 4.5.0
 -------------
 
