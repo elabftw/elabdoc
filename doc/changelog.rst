@@ -13,12 +13,17 @@ New features:
 Enhancements:
 `````````````
 * Show an error message if user tries to import a file that is too big
+* Allow edition of title in event modal (on scheduler) (fix #4052)
 
 Bugfixes:
 `````````
 * Fix bug where anonymous user could not see anything after login
 * Fix display bug where teamgroups users would appear overlapping when on several lines
 * Fix the github issues forms
+* Fix issue with uploaded images in the body pointing to wrong place after a zip import (fix #3853)
+* Fix issue after import with files with the same name being overwritten (fix #3853)
+* Allow border attribute on table element (fix #4066)
+* Fix issue where deleted entries would keep showing up as links
 
 Version 4.5.1
 -------------
