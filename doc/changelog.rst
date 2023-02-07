@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 4.5.2
+-------------
+
+New features:
+`````````````
+* Add a button to directly import a json file into the json editor
+
+Enhancements:
+`````````````
+* Show an error message if user tries to import a file that is too big
+
+Bugfixes:
+`````````
+* Fix bug where anonymous user could not see anything after login
+* Fix display bug where teamgroups users would appear overlapping when on several lines
+* Fix the github issues forms
+
 Version 4.5.1
 -------------
 
