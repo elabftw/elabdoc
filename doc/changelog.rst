@@ -3,6 +3,28 @@
 Changelog
 =========
 
+Version 4.5.3
+-------------
+
+Enhancements:
+`````````````
+* Improve message on changelog for body
+* Show message about who locked an entry and when
+* Use flexbox for tags
+
+Bugfixes:
+`````````
+* Add missing extra fields from templates in UCP and Items Types in Admin panel
+* Fix incorrect size calculation for importing items
+* Fix issues with templates write permissions
+* Disallow linking to itself
+* Skip creation of changelog entry if body is the same (fix #4131)
+
+Note:
+`````
+* Zip export no longer includes CSV file
+* User deletion is disallowed until some things can be improved
+
 Version 4.5.2
 -------------
 
