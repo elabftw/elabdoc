@@ -3,6 +3,18 @@
 Changelog
 =========
 
+Version 4.5.4
+-------------
+
+Bugfixes:
+`````````
+* Fix display of multi select extra fields (fix #4144)
+* Remove teamgroup filter from main page (was not working anyway). This feature will come back in another form.
+* Use the date during ELN import
+* Fix links to images in body during ELN import
+* Make sure sha256sum is present in zip/eln exports
+* Fix write permissions for teams on entities
+
 Version 4.5.3
 -------------
 

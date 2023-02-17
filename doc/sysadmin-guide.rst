@@ -112,3 +112,26 @@ It is important to keep your install up to date with the latest bug fixes and ne
 `Subscribe to the newsletter <http://eepurl.com/bTjcMj>`_ to be warned when a new release is out or select "Releases only" from GitHub's Watch button on the `repo page <https://github.com/elabftw/elabftw>`_.
 
 See instructions on updating eLabFTW on :ref:`how-to-update`.
+
+Sysadmin Panel
+==============
+
+Server tab
+----------
+
+Settings
+^^^^^^^^
+Note about "Allow the base permission setting «Only me»": if you wish to prevent users from using this Base Permission, select Yes here.
+
+In order to go over existing entries and change all entries with the Base Permission "Only me" and set it to "Only me + Admins", you can execute these SQL requests:
+
+.. code-block:: sql
+
+    -- experiments read permissions
+    update experiments set canread = json_set(canread, '$.base', 20) where
+    json_extract(canread, '$.base') = 10;
+
+    -- experiments write permissions
+    update experiments set canwrite = json_set(canwrite, '$.base', 20) where
+    json_extract(canwrite, '$.base') = 10;
+
