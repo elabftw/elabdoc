@@ -3,6 +3,18 @@
 Changelog
 =========
 
+Version 4.5.5
+-------------
+
+Bugfix:
+```````
+* Fix notifications not being sent (fix #4154)
+
+Enhancements:
+`````````````
+* Force verification of sha256sum during eln import
+
+
 Version 4.5.4
 -------------
 
