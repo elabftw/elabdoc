@@ -68,7 +68,7 @@ The Docker image is built by the code at `elabftw/elabimg <https://github.com/el
 Other interesting repositories are:
 
 - `elabftw/elabctl <https://github.com/elabftw/elabctl>`_ for the elabctl tool
-- `elabftw/elabapy <https://github.com/elabftw/elabapy>`_ for the python API library
+- `elabftw/elabapi-python <https://github.com/elabftw/elabapi-python>`_ for the python API library
 
 The rest of this documentation is about elabftw/elabftw.
 
@@ -77,8 +77,8 @@ Note about branches
 
 The repository contains (at least) 3 branches:
 
-* The `master` branch points to the latest released version and should always be in working state. It can contain beta or rc versions but not alpha versions.
-* The `next` branch points to the latest unstable version (alpha) (or latest stable if no unstable released yet). If you wish to make a bugfix PR, this is the branch that you should target (if hypernext is far from it).
+* The `master` branch points to the latest released version and should always be in working state. It can contain alpha, beta or rc versions.
+* The `next` is used to work on bugfixes for the stable release. If you wish to make a bugfix PR, this is the branch that you should target (if hypernext is far from it).
 * The `hypernext` branch is the dev branch, it might contain bugs and unfinished work, never use it in production! It is the latest version of the code and the one you should work against for new features or non critical bugfixes. It is a very active branch, so make sure to pull from upstream often so your fork doesn't stray too far.
 
 Environment installation
@@ -138,7 +138,21 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 * Set DEV_MODE to true
 * Set ELABFTW_USER and ELABFTW_GROUP to your username/group
 * SET ELABFTW_USERID and ELABFTW_GROUPID to your uid/gid (probably 1000, check with `id` command). This allows to run the container with the same user as your main user and will avoid running into permissions issues.
-* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers)
+* Change the `ports:` line so the container runs on port 3148 (you can choose whatever port you want, or leave it on 443). It should look like this:
+
+.. code-block:: yaml
+
+    ports:
+        - "3148:443"
+
+
+* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers). The part before the `:` is the path on your host, that you should adjust, and the part after corresponds to where the code lives in the container: `/elabftw`, and this you do not change. It should look like this:
+
+.. code-block:: yaml
+
+    volumes:
+        - /home/<YOUR USERNAME>/elabftw:/elabftw
+
 * Start the containers:
 
 .. code-block:: bash
