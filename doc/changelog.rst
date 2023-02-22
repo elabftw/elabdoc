@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.5.7
+-------------
+
+Bugfix:
+```````
+* Fix possible issue with some special characters in DB_PASSWORD
+
 Version 4.5.6
 -------------
 
