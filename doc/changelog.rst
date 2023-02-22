@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 4.5.6
+-------------
+
+Bugfixes:
+`````````
+* Force borders on tables without borders (see #4145)
+* Fix template not loading in UCP if locked
+* Remove the temporary disabled DELETE user action button
+* Fix todolist item PATCH action
+* Fix apiv2 specification for experiments_templates PATCH (#4156 by Killian)
+
 Version 4.5.5
 -------------
 
