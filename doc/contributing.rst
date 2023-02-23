@@ -142,7 +142,7 @@ Install elabctl
     curl -so elabctl.conf https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
-* Change CONF_FILE to `$dev/elabftw-dev.yml`. Again, write the full path, not the alias!
+* Change CONF_FILE to `$dev/docker-compose.yml`. Again, write the full path, not the alias!
 * Change DATA_DIR to `$dev/data`. Again, write the full path, not the alias!
 
 Install compose file
