@@ -84,16 +84,22 @@ The repository contains (at least) 3 branches:
 Environment installation
 ------------------------
 
-So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. In this setup, we will put everything in the same folder for simplicity.
+So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. This allows you to run the app as it would run in production, but still see your changes in the code immediatly because the source is on your computer. In this setup, we will put everything in the same folder for simplicity.
 
-Here is a step-by-step for installing an eLabFTW dev setup:
+Ready?
 
-* First we install the dependencies:
+Docker install
+^^^^^^^^^^^^^^
+
+* Make sure that you can run "docker" and "docker compose" commands. Install them:
 
   * `Docker <https://www.docker.com>`_
   * `Docker Compose <https://docs.docker.com/compose/>`_
 
 Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
+
+Dev directory setup
+^^^^^^^^^^^^^^^^^^^
 
 * Next let's define a directory for dev (adapt to your needs):
 
@@ -103,6 +109,9 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     export dev='/home/<YOUR USERNAME>/elabdev'
     mkdir -p $dev
     cd $dev
+
+Forking the repo
+^^^^^^^^^^^^^^^^
 
 * Go on `the repository on GitHub <https://github.com/elabftw/elabftw>`_
 * Click the Star button (it helps with visibility of the project)
@@ -118,7 +127,12 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     git checkout hypernext
     cd ..
 
-* Get *elabctl* and the configuration files
+Install elabctl
+^^^^^^^^^^^^^^^
+
+`elabctl` is a tool to manage your installation. It is not strictly required but it's a "nice to have".
+
+* Get `elabctl` and the configuration files:
 
 .. code-block:: bash
 
@@ -126,15 +140,24 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     curl -sLo elabctl https://get.elabftw.net && chmod +x elabctl
     # get elabctl configuration file
     curl -so elabctl.conf https://raw.githubusercontent.com/elabftw/elabctl/master/elabctl.conf
-    # get the docker-compose configuration file (from the dev branch)
-    curl -so elabftw-dev.yml https://raw.githubusercontent.com/elabftw/elabimg/master/src/docker-compose.yml-EXAMPLE
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
 * Change CONF_FILE to `$dev/elabftw-dev.yml`. Again, write the full path, not the alias!
 * Change DATA_DIR to `$dev/data`. Again, write the full path, not the alias!
-* Edit the docker-compose configuration file `elabftw-dev.yml`
+
+Install compose file
+^^^^^^^^^^^^^^^^^^^^
+
+The `docker-compose.yml` file is the main configuration file for eLabFTW. It defines what containers to start, and how you want them configured.
+
+Get the `docker-compose.yml` configuration file, it will automatically be filled with random passwords and a new SECRET_KEY:
+
+.. code-block:: bash
+
+    curl -so docker-compose.yml "https://get.elabftw.net/?config"
+
+* Edit the `docker-compose.yml` configuration file
 * For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
-* Add a SECRET_KEY
 * Set DEV_MODE to true
 * Set ELABFTW_USER and ELABFTW_GROUP to your username/group
 * SET ELABFTW_USERID and ELABFTW_GROUPID to your uid/gid (probably 1000, check with `id` command). This allows to run the container with the same user as your main user and will avoid running into permissions issues.
@@ -159,6 +182,8 @@ Make sure your user is in the `docker` group so you can execute docker commands 
 
    ./elabctl start
 
+Install dependencies
+^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -175,7 +200,14 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     docker exec -it elabftw yarn install
     docker exec -it elabftw yarn buildall
 
-* Initialization of the database structure:
+.. note::
+
+   It can be a good idea to define an alias such as "alias elabc=docker exec -it elabftw". So you can use "elabc" to run commands in the container directly.
+
+Install the database
+^^^^^^^^^^^^^^^^^^^^
+
+* Initialize the database structure with:
 
 .. code-block:: bash
 
@@ -191,6 +223,9 @@ Make sure your user is in the `docker` group so you can execute docker commands 
     mysql> update config set conf_value = '1' where conf_name = 'debug';
     exit;
     exit
+
+Finishing up
+^^^^^^^^^^^^
 
 * Now head to https://localhost:3148
 * You now should have a running local eLabFTW, and changes made to the code will be immediately visible
