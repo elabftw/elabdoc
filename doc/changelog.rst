@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.5.8
+-------------
+
+Bugfix:
+```````
+* Fix permission issue on DELETE action
+
 Version 4.5.7
 -------------
 
