@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 4.5.9
+-------------
+
+Bugfixes:
+`````````
+* Fix titles not being broken down if devoid of spaces in show mode
+* Fix revisions page url in changelog of pdf/a not working properly
+
 Version 4.5.8
 -------------
 
