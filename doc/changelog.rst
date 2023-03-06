@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 4.5.10
+--------------
+
+Bugfix:
+```````
+* Fix bug where granting read permission to a team would also grant write permission. Fix #4187
+
 Version 4.5.9
 -------------
 
