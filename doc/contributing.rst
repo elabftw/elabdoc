@@ -159,8 +159,6 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 * Edit the `docker-compose.yml` configuration file
 * For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
 * Set DEV_MODE to true
-* Set ELABFTW_USER and ELABFTW_GROUP to your username/group
-* SET ELABFTW_USERID and ELABFTW_GROUPID to your uid/gid (probably 1000, check with `id` command). This allows to run the container with the same user as your main user and will avoid running into permissions issues.
 * Change the `ports:` line so the container runs on port 3148 (you can choose whatever port you want, or leave it on 443). It should look like this:
 
 .. code-block:: yaml
