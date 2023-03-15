@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 4.5.11
+--------------
+
+Bugfixes:
+`````````
+* Fix ZIP import of experiments with a title longer than 100 characters and attached files
+* Fix ELN import of experiments as templates
+* Fix MySQL schema update 57 (PR #4202 by Marcel)
+* Upgrade webpack to latest version for CVE-2023-28154 (not impacting production code)
+
 Version 4.5.10
 --------------
 
