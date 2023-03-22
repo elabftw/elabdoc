@@ -3,6 +3,11 @@
 Changelog
 =========
 
+Version 4.5.13
+--------------
+
+* Re-release of 4.5.12 correctly tagged. Previous version was including code from the dev branch! If you already upgraded to 4.5.12, stay on it until 4.6 goes out.
+
 Version 4.5.12
 --------------
 
