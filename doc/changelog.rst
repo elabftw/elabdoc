@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 4.5.12
+--------------
+
+Bugfix:
+```````
+* Change pdf font to increase coverage of special characters rendering
+
+Enhancement:
+````````````
+* Prevent accidental scroll while number input is selected to change the content
+
 Version 4.5.11
 --------------
 
