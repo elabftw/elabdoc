@@ -73,6 +73,13 @@ You can select from the list of pre-configured TSA or use a custom one by provid
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
+Configure Keeex
+---------------
+
+Please note that this is still experimental.
+
+eLabFTW provides a way to use a `Keeex <https://keeex.me/>`_ service during the timestamp action. When enabled, the generated pdf for timestamping will be sent over to a Keeex Fusion running on your network in http mode for keeex/timestamping of the pdf, before being timestamped via your provider.
+
 Configure storage :sup:`(optional)`
 ===================================
 
