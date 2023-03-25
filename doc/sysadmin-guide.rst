@@ -73,6 +73,28 @@ You can select from the list of pre-configured TSA or use a custom one by provid
 
 Remember: no data is sent to the `TSA (TimeStampingAuthority)`, only the hash of the data is sent, so no information can leak!
 
+Configure automatic timestamping
+--------------------------------
+
+You might want to automate the timestamping of experiments, and not rely on users triggering the action manually. For that, you need to setup a recurrent task (cronjob or systemd timer) that will call a console command.
+
+The command is: `bin/console experiments:timestamp --help`. It requires an argument wich is the id of the user doing the timestamp. In most cases, using `1` will work fine. Alternatively you can create a specific user for this purpose.
+
+By default, all experiments modified in the past week will be timestamped. So you'll want to adjust your recurrent task periodicity to align with the `--modified-since / -m` setting. Use english terms like "1 month" or "2 weeks" for this option.
+
+Example:
+
+.. code-block:: bash
+
+   # timestamp all the modified experiments from past week
+   # run on every Saturday at 3AM
+   0 3 * * 6 docker exec elabftw bin/console experiments:timestamp 1
+
+   # timestamp all the modified experiments of past month
+   # run the first day of the month at 3AM, in verbose mode
+   0 3 1 * *  docker exec elabftw bin/console experiments:timestamp 1 -m "1 month" -v
+
+
 Configure Keeex
 ---------------
 
