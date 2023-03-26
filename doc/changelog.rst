@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 4.5.14
+--------------
+
+Bugfix:
+```````
+
+* Fix the write permissions modal not displaying the correct selected values when opened.
+
 Version 4.5.13
 --------------
 
