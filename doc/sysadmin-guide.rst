@@ -164,3 +164,9 @@ In order to go over existing entries and change all entries with the Base Permis
     update experiments set canwrite = json_set(canwrite, '$.base', 20) where
     json_extract(canwrite, '$.base') = 10;
 
+Remote directory configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Ignore this if you are not a CNRS lab.
+
+This allows to query an external endpoint to get a list of users that can be added to the eLabFTW local users database.
