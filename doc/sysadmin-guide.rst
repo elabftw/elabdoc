@@ -176,7 +176,7 @@ Monitoring
 
 To monitor the nginx service, use /healthcheck endpoint, which replies with status code 204.
 
-To monitor the php-fpm service, use /php-ping, which replies with status code 200
+To monitor the php-fpm service, use /php-ping, which replies with status code 200.
 
 To gather metrics from the php-fpm service, use /php-status, which replies with information about php-fpm processes. See the `PHP FPM Status page documentation <https://www.php.net/manual/en/fpm.status.php>`_ for more details.
 
