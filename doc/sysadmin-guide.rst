@@ -170,3 +170,14 @@ Remote directory configuration
 Ignore this if you are not a CNRS lab.
 
 This allows to query an external endpoint to get a list of users that can be added to the eLabFTW local users database.
+
+Monitoring
+==========
+
+To monitor the nginx service, use /healthcheck endpoint, which replies with status code 204.
+
+To monitor the php-fpm service, use /php-ping, which replies with status code 200
+
+To gather metrics from the php-fpm service, use /php-status, which replies with information about php-fpm processes. See the `PHP FPM Status page documentation <https://www.php.net/manual/en/fpm.status.php>`_ for more details.
+
+All of the above endpoints will not produce a log entry.
