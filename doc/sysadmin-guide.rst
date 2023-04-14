@@ -180,4 +180,11 @@ To monitor the php-fpm service, use /php-ping, which replies with status code 20
 
 To gather metrics from the php-fpm service, use /php-status, which replies with information about php-fpm processes. See the `PHP FPM Status page documentation <https://www.php.net/manual/en/fpm.status.php>`_ for more details.
 
+The /php-status page is protected with Basic authentication:
+
+* user: elabftw
+* password: the value of `PHP_STATUS_PASSWORD` environment variable
+
+If this variable is not set (default), then a random unknown password will be generated but never displayed, effectively disabling access.
+
 All of the above endpoints will not produce a log entry.
