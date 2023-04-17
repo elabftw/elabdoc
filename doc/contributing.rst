@@ -158,7 +158,7 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 
 * Edit the `docker-compose.yml` configuration file
 * For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
-* Set DEV_MODE to true
+* Set `DEV_MODE` to `true`
 * Change the `ports:` line so the container runs on port 3148 (you can choose whatever port you want, or leave it on 443). It should look like this:
 
 .. code-block:: yaml
@@ -167,7 +167,7 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
         - "3148:443"
 
 
-* set SITE_URL to `https://localhost:3148` or whatever port you chose in the previous step.
+* set `SITE_URL` to `https://localhost:3148` or whatever port you chose in the previous step.
 * Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers). The part before the `:` is the path on your host, that you should adjust, and the part after corresponds to where the code lives in the container: `/elabftw`, and this you do not change. It should look like this:
 
 .. code-block:: yaml
@@ -217,7 +217,8 @@ Install the database
 
 .. code-block:: bash
 
-    cd ..
+    # go back to where elabctl is present
+    cd $dev
     ./elabctl mysql
     # you are now on the mysql command line
     mysql> update config set conf_value = '1' where conf_name = 'debug';
