@@ -180,10 +180,12 @@ To monitor the php-fpm service, use /php-ping, which replies with status code 20
 
 To gather metrics from the php-fpm service, use /php-status, which replies with information about php-fpm processes. See the `PHP FPM Status page documentation <https://www.php.net/manual/en/fpm.status.php>`_ for more details.
 
-The /php-status page is protected with Basic authentication:
+To gather metrics from the nginx service, use /nginx-status, which replies with information about nginx processes. See the `Nginx status module documentation <https://nginx.org/en/docs/http/ngx_http_stub_status_module.html>`_ for more details.
+
+The /php-status and /nginx-status pages are protected with Basic authentication:
 
 * user: elabftw
-* password: the value of `PHP_STATUS_PASSWORD` environment variable
+* password: the value of `STATUS_PASSWORD` environment variable
 
 If this variable is not set (default), then a random unknown password will be generated but never displayed, effectively disabling access.
 
