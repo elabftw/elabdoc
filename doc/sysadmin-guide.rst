@@ -150,7 +150,7 @@ Server tab
 
 Settings
 ^^^^^^^^
-Note about "Allow the base permission setting «Only me»": if you wish to prevent users from using this Base Permission, select Yes here.
+Note about "Allow the base permission setting «Only me»": if you wish to prevent users from using this Base Permission, select No here.
 
 In order to go over existing entries and change all entries with the Base Permission "Only me" and set it to "Only me + Admins", you can execute these SQL requests:
 
