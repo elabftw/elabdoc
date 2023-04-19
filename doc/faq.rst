@@ -23,7 +23,7 @@ Since March 2013, the USA modified their law (see `America Invents Act <https://
 
 Fortunately, eLabFTW allows rock solid `timestamping of your experiments <https://en.wikipedia.org/wiki/Trusted_timestamping#Trusted_.28digital.29_timestamping>`_. With just one click of a mouse, and for free, you can timestamp your work.
 
-If needed, you can also choose another TimeStamping Authority allowing :rfc:`3161` timestamping.
+If needed, you can also choose another TimeStamping Authority allowing :rfc:`3161` timestamping. For instance you could select a qualified timestamping authority (in the context of eIDAS regulation).
 
 You also have the possibility to use the `Bloxberg.org <https://bloxberg.org/>`_ blockchain to timestamp your data. All it takes is a single click!
 
@@ -73,40 +73,26 @@ Being able to do backups is yet another advantage over paper (you can't backup p
 Who else is using it?
 =====================
 
-Here are some places running eLabFTW (non-exhaustive list):
+We do not maintain a list of institutions using it anymore. There are just too many. Consider that there are thousands of eLabFTW instances worldwide.
 
-* Cardiff University
-* Hannover Medical School
-* Helmholtz Zentrum Berlin für Materialien und Energie GmbH
-* Indian Institute of Science, Bangalore
-* Indian Institute of Technology, Delhi
-* INRIA
-* Institut Curie
-* Karolinska Institutet
-* Kuwait University
-* Max-Planck-Institute of Quantum Optics
-* Texas Tech University
-* UMC Utrecht
-* University of Alberta
-* University of California
-* University of Chicago
-* University of Helsinki
-* University of North Dakota
-* University of Tennessee
-* University of Warwick
-* Uppsala University
-* Washington University
-* Weizmann Institute
-* Many many more...
+In France, it's the ELN of choice for the CNRS, the 3rd largest research organization in the world (and also INRAE, INSERM, INRIA and a ton of other acronyms starting with I). It is also being used by many private companies.
+
+In Germany, it is ubiquitous. Installed in many universities and private companies.
+
+In Europe, it is often seen being used in universities and research centers.
+
+In the rest of the world, it is also used, because its interface is translated in 17 languages, including many asian languages.
 
 Is the data encrypted?
 ======================
 
-The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2 with modern ciphers).
+The data is encrypted when travelling from your browser to the server with the highest quality encryption currently available (TLSv1.2/1.3 with modern ciphers).
 
 The passwords are not recoverable in case of a breach and are hashed using state of the art algorithms.
 
 Only manually validated accounts can interact with the software. It is secure by default.
+
+If you wish to have data at rest encryption, it needs to be done during the web server installation, and is not the concern of the software itself.
 
 Is eLabFTW still maintained?
 ============================
@@ -184,6 +170,8 @@ eLabFTW tries to comply to the following standards :
 * `FERPA <http://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html>`_
 * `HIPAA <http://www.hhs.gov/ocr/privacy/>`_
 * `FISMA <https://en.wikipedia.org/wiki/Federal_Information_Security_Management_Act_of_2002#Compliance_framework_defined_by_FISMA_and_supporting_standards>`_
+
+The timestamping is based on RFC3161 standardized protocol and fits with the eIDAS european regulation (910/2014).
 
 How to change the team of a user?
 =================================
