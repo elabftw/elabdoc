@@ -112,26 +112,11 @@ To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your c
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
 =============================================================
 
-If you installed it with a proper domain name and you used letsencrypt to get your TLS certificate, then you need to renew them every 3 months.
+It is important to consider already how the TLS certificates will be renewed. Let's Encrypt certificates are valid only 3 months, which is a good thing, because it will allow you to find out much quicker if your setup works.
 
-Create a script containing:
+You will find the documentation for renewal with `certbot` here: `certbot renew certificates <https://eff-certbot.readthedocs.io/en/stable/using.html#renewing-certificates>`_.
 
-.. code-block:: bash
-
-    # stop webserver
-    elabctl stop
-    # renew certificate
-    certbot renew
-    # and start the webserver again
-    elabctl start
-
-Add this script as a cronjob:
-
-.. code-block:: bash
-
-    0 4 1 * * /root/renew.sh
-
-This line will run the script at 4am every 1st day of the month.
+If you're encountering issues, do not hesitate to join the eLabFTW chat room to find help: `gitter chat (matrix room) <https://gitter.im/elabftw/elabftw>`_.
 
 Update often
 ============
