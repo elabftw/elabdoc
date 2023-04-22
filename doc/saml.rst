@@ -61,23 +61,33 @@ Attributes for the IDP
 We need to specify where to look in the attributes sent in the response for email, team and name of the user. You can use the FriendlyName or the Name from the table below. Note that this will depend on your IDP and using the SAML Tracer plugin (see below) to see the response will be helpful in determining what fields you want to use.
 
 .. list-table:: SAML attributes
-   :widths: 25 25 50
+   :widths: 25 25 25 25
    :header-rows: 1
 
    * - Attribute
      - FriendlyName
      - Name
+     - Required
    * - Email
      - mail
      - urn:oid:0.9.2342.19200300.100.1.3
+     - Yes
    * - Firstname
      - givenName
      - urn:oid:2.5.4.42
+     - No
    * - Lastname
      - sn
      - urn:oid:2.5.4.4
+     - No
+   * - Userid
+     - uid
+     - urn:oid:0.9.2342.19200300.100.1.1
+     - No
 
 If you cannot have information about the team, or do not wish to use it, make sure to have the setting "Let user select a team" when the user is created during first login.
+
+Note that the metadata.xml file (accessible at `/metadata.php`) will contain a section informing the IDP of the requested attributes.
 
 Disable local login/register
 ============================
