@@ -3,6 +3,68 @@
 Changelog
 =========
 
+Version 4.6.0
+-------------
+
+Check out the `blog post <https://www.deltablot.com/posts/release-460/>`_ to read about the new features.
+
+The changelog below is mostly accurate but might be missing a few things here and there.
+
+Breaking changes:
+`````````````````
+* Remove the `submit` keyboard shortcut
+
+New features:
+`````````````
+* New and improved user interface (#4221 and many other commits)
+* Add possibility to revert a `db:update` schema upgrade using `db:revert`
+* Add keyboard shortcuts to focus on the search bar (s) or toggle the favorite tags (f) (fix #4282)
+* Add option to disable S3 TLS certificate verification (PR #4278 by Niels Cautaerts, fix #4259)
+* Make the `dev:populate` command a production one and allow setting custom experiments/items
+* Allow saving from ChemDoodle to RXN file format
+* Add `orgid` to users so they can be matched with internal organization id during SAML auth
+* Allow querying a remote directory web service to fetch users that Admins can then add (#4238)
+* Add `bin/console experiments:timestamp` for automated bulk timestaming
+* Add support for playnig attached videos in webm and mp4 formats
+* Add support for Keeex.me action during timestamping
+
+Enhancements:
+`````````````
+* If the search result contains only one entry, redirect to it directly (PR #4283 by Marcel, fix #4224)
+* Make the default experiments permissions settings on user control panel work with full options
+* Add requested attributes to SAML metadata (fix #2740)
+* Allow using all list styles (fix #4281)
+* Only show visible teams in permissions modal
+* Use Sun-ExtA font in QR PNG so CJK characters are shown
+* Honor CJK user setting for QR PDF (fix #4270)
+* Improve the "Add deadline" UI in steps
+* Display the maximum number of revisions stored by server on revisions page
+* Make the IDPs accessible from API
+* Make Admin role tied to a team, not a user (#4264)
+* Prevent top menu entries from wrapping and taking multi lines
+* Use SVG for logo in header
+* Align navbar menu items with the eLabFTW logo (#4205 by Filipe Maia)
+
+Bugfixes:
+`````````
+* Fix incorrect "Copy AA sequence" in DNA Editor (PR #4265 by Marcel, fix #4261)
+* Remove arrow on multiple select
+* Don't interpret the Basic Authorization header as an api key (fix #4234)
+* Remove duplicated tag input from advanced search page (fix #4217)
+
+
+Dev corner:
+```````````
+* Improve on PSR-4 (#4255)
+* Remove 3Dmol notrack code as it has been removed from upstream
+* Get rid of jquery.rating.js and use pure SCSS solution for star rating
+* Some major updates in libs like 3dmol, ZipStream and Fullcalendar
+* Udpate dependencies for extended search (#4215 by Marcel)
+* Improve LdapAuth class (#4197)
+* Add `tests/clean.sh` script
+* `phpstan` now officially managed by composer
+
+
 Version 4.5.14
 --------------
 
