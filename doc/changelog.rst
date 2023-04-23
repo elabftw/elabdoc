@@ -52,6 +52,12 @@ Bugfixes:
 * Don't interpret the Basic Authorization header as an api key (fix #4234)
 * Remove duplicated tag input from advanced search page (fix #4217)
 
+Container changes:
+``````````````````
+* Add `/nginx-status` and `/php-status` monitoring endpoints protected by `STATUS_PASSWORD` env var
+* Add `/php-ping` endpoint to query the status of the php service
+* Allow modifying the `keepalive_timeout` nginx config
+* Add keeex container example
 
 Dev corner:
 ```````````
