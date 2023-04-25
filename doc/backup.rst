@@ -143,7 +143,8 @@ To extract your uploaded files from a borg backup:
 
 .. code-block:: bash
 
-   export BORG_PATH=/path/to/borg/repo
+   export BORG_REPO=/path/to/borg/repo
+   export BORG_PASSPHRASE="your passphrase"
    borg list
    borg extract "::example-2022-07-14_13-37"
 
