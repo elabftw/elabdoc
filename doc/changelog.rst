@@ -44,6 +44,8 @@ Enhancements:
 * Prevent top menu entries from wrapping and taking multi lines
 * Use SVG for logo in header
 * Align navbar menu items with the eLabFTW logo (#4205 by Filipe Maia)
+* Add link to api documentation in helper/community menu
+* Change userid column type to int in uploads table and add indices (PR #4024 by Marcel)
 
 Bugfixes:
 `````````
@@ -51,6 +53,9 @@ Bugfixes:
 * Remove arrow on multiple select
 * Don't interpret the Basic Authorization header as an api key (fix #4234)
 * Remove duplicated tag input from advanced search page (fix #4217)
+* Prevent archived users from using the api (fix #4287)
+* Fix issue when adding link to entity with same id (fix #4291, fix #4275)
+* Fix incorrect handling of `deletable_xp` general config (fix #4272)
 
 Container changes:
 ``````````````````
