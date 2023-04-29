@@ -46,6 +46,7 @@ Enhancements:
 * Align navbar menu items with the eLabFTW logo (#4205 by Filipe Maia)
 * Add link to api documentation in helper/community menu
 * Change userid column type to int in uploads table and add indices (PR #4024 by Marcel)
+* Display the maximum file size allowed on upload form
 
 Bugfixes:
 `````````
