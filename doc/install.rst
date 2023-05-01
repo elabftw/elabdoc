@@ -32,6 +32,18 @@ Absolutely required dependencies:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
 
+A MySQL database. Not MariaDB, MySQL. The following MySQL modes are known to work fine with eLabFTW codebase:
+
+* `ERROR_FOR_DIVISION_BY_ZERO`
+* `IGNORE_SPACE`
+* `NO_ENGINE_SUBSTITUTION`
+* `NO_ZERO_DATE`
+* `NO_ZERO_IN_DATE`
+* `ONLY_FULL_GROUP_BY`
+* `PIPES_AS_CONCAT`
+* `REAL_AS_FLOAT`
+* `STRICT_ALL_TABLES`
+
 Strongly recommended dependencies:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
