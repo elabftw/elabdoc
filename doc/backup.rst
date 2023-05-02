@@ -108,6 +108,8 @@ Content of `/etc/systemd/system/elabftw-backup.service`::
     Type=oneshot
     # make sure to edit the path below
     ExecStart=/path/to/elabctl backup
+    # Make sure to use a user with enough rights
+    User=root
 
     [Install]
     WantedBy=multi-user.target
