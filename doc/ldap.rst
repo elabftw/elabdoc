@@ -80,3 +80,59 @@ What attribute to look for ...
 
 
 If you encounter difficulties, make sure to get a useful log message before opening an issue, :doc:`see debug documentation <debug>`.
+
+
+Using a custom cert file
+========================
+
+When authenticating with a LDAPS server, a custom certfile might be needed.
+It can easily be added by modifying the web/volumes part of ``elabftw.yml`` like so:
+
+.. code::
+
+  services:
+    web:
+      ...
+      volumes:
+        ...
+        - /path/to/eLabFTW/certpath:/custom_certs
+        - /path/to/eLabFTW/openldap:/etc/openldap
+    ...
+  ...
+
+Then, add your custom cert file to ``/path/to/eLabFTW/certpath`` and at ``/path/to/eLabFTW/openldap/`` add a new file ``ldap.conf`` with the content
+
+.. code::
+
+   TLS_CACERT /custom_certs/<certname>.pem
+   TLS_REQCERT hard
+
+where you substitute ``<certname>`` for the name of the cert file for authenticating against the LDAP server.
+This informs ``openldap`` of the cert file and instructs it to always require a valid certificate from servers.
+
+After (re)starting using ``elabctl restart``, the LDAP server should now be reachable from inside the container.
+You can check this via searching for a known user (like yourself?) via
+
+.. code::
+
+   docker exec elabftw bash -c "apk add openldap openldap-back-mdb openldap-clients && \
+      ldapsearch -v -LLL \
+        -H 'ldaps://<LDAP Host>' \
+        -b '<LDAP Base DN>' \
+        -D '<LDAP Username>' \
+        -w '<LDAP Password>' \
+        '<filter>'"
+
+where you might need to use ``sudo docker`` if you are not ``root``.
+Be sure to substitute the ``<...>`` fields with your values.
+The command above installs the needed ``openldap`` packages in the ``elabftw`` container using alpine linux's package manager ``apk`` and then launches a ldap search query.
+``<filter>`` can for example be ``cn=MyOwnName``, or ``uid=5``.
+If trying to connect to a LDAP server that listenes on a port other than 636, specify it like ``-H 'ldaps://<host>:<port>'``.
+
+For more information on the ``ldapsearch`` command, consider
+
+.. code::
+
+   docker exec elabftw ldapsearch --help
+
+after installing the ``openldap`` packages.
