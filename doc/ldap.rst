@@ -4,17 +4,18 @@
 Configure LDAP authentication
 *****************************
 
+This page describes the configuration of LDAP authentication for an eLabFTW instance.
+
 .. image:: img/auth.png
     :align: center
     :alt: authentication
 
-This page describes the configuration of LDAP authentication for an eLabFTW instance.
+|
+
 
 How does eLabFTW query LDAP servers?
-========================================
+====================================
 
-LDAP stands for "Lightweight directory access protocol" and is a common protocol to query databases with user information.
-In general, queries to LDAP servers are performed via functions supplied by ``php``.
 The overall schematic for each query with the options set in the sysadmin menu looks like this
 
 1. Connect to the LDAP server (-> TLS?, host, port)
@@ -22,17 +23,16 @@ The overall schematic for each query with the options set in the sysadmin menu l
 3. Search for users within a certain region of the LDAP world directory (-> base DN) and extract certain properties/fields (-> filter attribute, team name, email, firstname, lastname)
 4. Unbind (log out)
 
-Obviously, for this to work, eLabFTW needs information from you.
-That is what the LDAP configuration options and the next section is for.
+For this to work, eLabFTW needs information from you, which is what the LDAP configuration options and the next section are for.
 
 Sysadmin LDAP settings
 ======================
 
-To find the settings, first go to the Sysconfig panel by clicking the link at the bottom left of any page or from the user menu.
+To find the settings, first go to the "Sysadmin panel" by clicking the link at the bottom left of any page or from the user menu at the top right.
 Then go on the LDAP tab.
 
 Toggle LDAP login
-        Set to enabled so the option to authenticate through LDAP will be available from the login page.
+        This is your general ON/OFF switch to toggle LDAP authentication from the login page.
 
 LDAP Host
         Enter the domain name or IP address of the LDAP server.
@@ -40,7 +40,7 @@ LDAP Host
         For selecting the protocol and port, use the dedicated "LDAP Port" and "Use TLS" options.
 
 LDAP Port
-        The port the LDAP server listenes on, 389 by default.
+        The port the LDAP server listens on, 389 by default.
         Use port 636 for LDAPS or any custom port you might have configured.
 
 LDAP Base DN
@@ -125,9 +125,9 @@ You can check this via searching for a known user (like yourself?) via
 
 where you might need to use ``sudo docker`` if you are not ``root``.
 Be sure to substitute the ``<...>`` fields with your values.
-The command above installs the needed ``openldap`` packages in the ``elabftw`` container using alpine linux's package manager ``apk`` and then launches a ldap search query.
+The command above installs the needed ``openldap`` packages in the ``elabftw`` container using Alpine Linux's package manager ``apk`` and then launches a ldap search query.
 ``<filter>`` can for example be ``cn=MyOwnName``, or ``uid=5``.
-If trying to connect to a LDAP server that listenes on a port other than 636, specify it like ``-H 'ldaps://<host>:<port>'``.
+If trying to connect to a LDAP server that listens on a port other than 636, specify it like ``-H 'ldaps://<host>:<port>'``.
 
 For more information on the ``ldapsearch`` command, consider
 
