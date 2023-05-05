@@ -27,6 +27,7 @@ New features:
 * Add `bin/console experiments:timestamp` for automated bulk timestaming
 * Add support for playnig attached videos in webm and mp4 formats
 * Add support for Keeex.me action during timestamping
+* Allow sending emails to teamgroups from the team/email page (PR #4320)
 
 Enhancements:
 `````````````
@@ -57,6 +58,7 @@ Bugfixes:
 * Prevent archived users from using the api (fix #4287)
 * Fix issue when adding link to entity with same id (fix #4291, fix #4275)
 * Fix incorrect handling of `deletable_xp` general config (fix #4272)
+* Fix issue with unfinished steps from deleted entries showing up in todolist with team scope (PR #4322 by Marcel, fix #4317)
 
 Container changes:
 ``````````````````
