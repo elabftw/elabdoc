@@ -28,8 +28,7 @@ For this to work, eLabFTW needs information from you, which is what the LDAP con
 Sysadmin LDAP settings
 ======================
 
-To find the settings, first go to the "Sysadmin panel" by clicking the link at the bottom left of any page or from the user menu at the top right.
-Then go on the LDAP tab.
+The LDAP settings are found on the LDAP tab of the Sysconfig Panel.
 
 Toggle LDAP login
         This is your general ON/OFF switch to toggle LDAP authentication from the login page.
