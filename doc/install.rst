@@ -87,9 +87,46 @@ With elabctl (recommended)
 
     Edit the configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
-    If you have set `DISABLE_HTTPS=false` then you need to configure the TLS certificate. Look at the comments inside the configuration file, they describe the different use cases. In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
+Note about TLS certificates
+---------------------------
 
-* Start eLabFTW:
+The eLabFTW container can run an HTTP or HTTPS server. Both will run internally on port 443.
+
+Option A: HTTP mode
+^^^^^^^^^^^^^^^^^^^
+
+You can run the container in HTTP mode (internal port 443) only if you have a reverse proxy in front doing TLS termination and sending X-Forwarded-Proto header.
+
+* Set ``DISABLE_HTTPS=true``.
+
+Option B: HTTPS mode with Let's Encrypt certificates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
+
+* Set ``DISABLE_HTTPS=false``.
+* Set ``ENABLE_LETSENCRYPT=true``.
+* Uncomment the line `- /etc/letsencrypt:/ssl` in the `volumes:` part of the yml config file.
+
+Option C: HTTPS mode with custom certificates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Have the private key and certificate in PEM format in the folder ``/etc/letsencrypt/live/SERVER_NAME/`` where ``SERVER_NAME`` matches the ``SERVER_NAME`` configuration variable. The files need to be named `fullchain.pem` and `privkey.pem`.
+
+* Set ``DISABLE_HTTPS=false``.
+* Set ``ENABLE_LETSENCRYPT=true``.
+* Uncomment the line `- /etc/letsencrypt:/ssl` in the `volumes:` part of the yml config file.
+
+Option D: HTTPS mode with self-signed certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The container can generate its own certificate. Only use this if you have no other choice, as users will see a warning that the certificate is invalid because it is self-signed.
+
+* Set ``DISABLE_HTTPS=false``.
+* Set ``ENABLE_LETSENCRYPT=false``.
+
+Start eLabFTW
+-------------
 
 .. code-block:: bash
 
