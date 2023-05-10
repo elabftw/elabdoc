@@ -28,6 +28,7 @@ New features:
 * Add support for playnig attached videos in webm and mp4 formats
 * Add support for Keeex.me action during timestamping
 * Allow sending emails to teamgroups from the team/email page (PR #4320)
+* Allow filtering by tags from APIv2
 
 Enhancements:
 `````````````
