@@ -99,6 +99,8 @@ You can run the container in HTTP mode (internal port 443) only if you have a re
 
 * Set ``DISABLE_HTTPS=true``.
 
+Reverse proxy configurations examples can be found `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/>`_.
+
 Option B: HTTPS mode with Let's Encrypt certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -111,11 +113,12 @@ In order to request Let's Encrypt certificates, you need to install `certbot`. S
 Option C: HTTPS mode with custom certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Have the private key and certificate in PEM format in the folder ``/etc/letsencrypt/live/SERVER_NAME/`` where ``SERVER_NAME`` matches the ``SERVER_NAME`` configuration variable. The files need to be named `fullchain.pem` and `privkey.pem`.
+Have the private key and certificate in PEM format in the folder ``/etc/letsencrypt/live/SERVER_NAME/`` where ``SERVER_NAME`` matches the ``SERVER_NAME`` configuration variable. The files need to be named `fullchain.pem` and `privkey.pem`. The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
 
 * Set ``DISABLE_HTTPS=false``.
 * Set ``ENABLE_LETSENCRYPT=true``.
 * Uncomment the line `- /etc/letsencrypt:/ssl` in the `volumes:` part of the yml config file.
+
 
 Option D: HTTPS mode with self-signed certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -124,6 +127,11 @@ The container can generate its own certificate. Only use this if you have no oth
 
 * Set ``DISABLE_HTTPS=false``.
 * Set ``ENABLE_LETSENCRYPT=false``.
+
+Using Apache, nginx, HAProxy or traefik as a reverse proxy
+----------------------------------------------------------
+
+Mandatory if you use Option A above (HTTP mode). All the documentation related to such configurations can be found `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/>`_.
 
 Start eLabFTW
 -------------
@@ -170,20 +178,4 @@ The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
 ENJOY! :D
 
-----
-
-
-Documentation for advanced setups
-=================================
-
-Using a TLS certificate from a different provider than Let'sEncrypt
--------------------------------------------------------------------
-
-The webserver in the container expects TLS certificates to be in a particular order and format. Make sure that your `fullchain.pem` file contains certificates in this order: <certificate> <intermediate ca> <root ca>, with PEM encoding.
-
-
-Using Apache, nginx, HAProxy or traefik as a reverse proxy
-----------------------------------------------------------
-
-All the documentation related to such configurations can be found `here <https://github.com/elabftw/elabdoc/tree/master/config_examples/>`_.
 
