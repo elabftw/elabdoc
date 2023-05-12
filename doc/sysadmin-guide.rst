@@ -98,9 +98,11 @@ Example:
 Configure Keeex
 ---------------
 
-Please note that this is still experimental.
+eLabFTW provides a way to use a `Keeex <https://keeex.me/>`_ service during the timestamp action. It is a technology that allows to guarantee integrity and authenticity of files, autonomously and without third party.
 
-eLabFTW provides a way to use a `Keeex <https://keeex.me/>`_ service during the timestamp action. When enabled, the generated pdf for timestamping will be sent over to a Keeex Fusion running on your network in http mode for keeex/timestamping of the pdf, before being timestamped via your provider.
+When enabled, the generated pdf for timestamping will be sent over to a Keeex Fusion service running on your network in http mode for keeex/timestamping of the pdf, before being timestamped via your RFC3161 provider.
+
+If you would like to use this service, please `contact us <https://www.deltablot.com/contact>`_.
 
 Configure storage :sup:`(optional)`
 ===================================
