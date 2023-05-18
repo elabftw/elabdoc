@@ -29,6 +29,7 @@ New features:
 * Add support for Keeex.me action during timestamping
 * Allow sending emails to teamgroups from the team/email page (PR #4320)
 * Allow filtering by tags from APIv2
+* Allow grouping extra fields in togglable sections (PR #4330 fix #4230)
 
 Enhancements:
 `````````````
@@ -49,6 +50,8 @@ Enhancements:
 * Add link to api documentation in helper/community menu
 * Change userid column type to int in uploads table and add indices (PR #4024 by Marcel)
 * Display the maximum file size allowed on upload form
+* Display custom json stored in metadata in view mode (fix #4256)
+* Allow changing uploaded files name and delete it from view mode
 
 Bugfixes:
 `````````
@@ -60,6 +63,7 @@ Bugfixes:
 * Fix issue when adding link to entity with same id (fix #4291, fix #4275)
 * Fix incorrect handling of `deletable_xp` general config (fix #4272)
 * Fix issue with unfinished steps from deleted entries showing up in todolist with team scope (PR #4322 by Marcel, fix #4317)
+* Fix GET apikeys openapi spec
 
 Container changes:
 ``````````````````
@@ -78,6 +82,8 @@ Dev corner:
 * Improve LdapAuth class (#4197)
 * Add `tests/clean.sh` script
 * `phpstan` now officially managed by composer
+* Add codespell action in CI (PR #4338 by Yaroslav Halchenko)
+* Add `.mailmap` file for mapping author's emails better (PR #4336 by Yaroslav Halchenko)
 
 
 Version 4.5.14

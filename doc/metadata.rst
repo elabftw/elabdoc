@@ -9,18 +9,22 @@ This page describes the usage of the metadata JSON field attached to experiments
 Description
 ===========
 
-Since eLabFTW 4.0.0, you can add custom JSON data to your entries, using the `metadata` attribute. You can add arbitrary JSON, or use specific keys to extend the customization of the entry, for instance by adding extra fields.
+Since eLabFTW 4.0.0, you can add custom JSON data to your entries, using the `metadata` attribute. You can add arbitrary JSON, or use specific keys to extend the customization of the entry, for instance by adding extra fields. Experiments, Items and their templates all have this attribute.
 
 Getting started
 ===============
 
-Let's try it on an Experiment. Create a new experiment, and scroll down (in edit mode) to the "JSON Editor" part. The "Load metadata" button is disabled because the `metadata` attribute is already loaded in the editor. But for now it is empty.
+Let's try it on an Experiment. Create a new experiment, and scroll down (in edit mode) to the "Extra fields" part.
 
-Click "Add a field", a menu will appear. From there, you must first select which type of input you want for your extra field. Let's select "Dropdown menu" for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.
+Click "Add field", a modal window will appear.
 
 .. image:: img/extra-field-builder.png
     :align: center
     :alt: Extra field builder
+
+If you want your new inputs to appear in groups, you can click the + button next to "Group" to add a new group. Or select an existing group from the dropdown menu.
+
+Then you can select which type of input you want for your extra field. Let's select "Dropdown menu" for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.
 
 Then click save and the new input (extra field) will appear right under the "Save" and "Save and go back" buttons:
 
@@ -28,7 +32,7 @@ Then click save and the new input (extra field) will appear right under the "Sav
     :align: center
     :alt: Extra field view
 
-You are free to add as many as you want, of different types. It is most useful in the Templates, so when creating an entry, all the required inputs are already present.
+You are free to add as many as you want, of different types. It is most useful to define them in the Templates, so when creating an entry, all the required inputs are already present.
 
 Advanced use
 ============
@@ -41,7 +45,7 @@ Keep in mind that what the builder menu will do for you is simply create some JS
 
 Positions
 ---------
-In order to assign a particular position to the inputs, use the `position` key, with a number as value. The inputs will then be ordered based on this value. Lowest value being on top.
+In order to assign a particular position to the inputs, use the `position` key, with a number as value. The inputs will then be ordered based on this value. Lowest value being on top. Groups are shown in the position they are defined.
 
 Removing an input
 -----------------
@@ -53,7 +57,10 @@ If you wish to remove an input, click the icon on the left of it and select "Rem
 
 Masking the main text
 ---------------------
-It is possible to hide the main text input by setting a special attribute: `display_main_text` to `false` in the `elabftw` key. Something like this:
+It is possible to hide the main text input by toggling the "Display main text" in the JSON Editor section. 
+
+This will result in the presence of a special attribute: `display_main_text` with a value of `false` in the `elabftw` key:
+
 
 .. code:: javascript
 
@@ -170,6 +177,10 @@ Add a number as a value to correctly order the extra fields how you want them.
 blank_value_on_duplicate
 ------------------------
 Set to `true` for the value to be blanked when the entity is duplicated.
+
+group_id
+--------
+A number corresponding to the `id` of a group defined in the `elabftw.extra_fields_groups` object. Groups are defined as an array of objects with `id` and `name` properties.
 
 Usage example
 =============
