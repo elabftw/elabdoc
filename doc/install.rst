@@ -55,7 +55,7 @@ Notes:
 ------
 You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
 
-If you are running Ubuntu 20.04 with Docker installed as a snap. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
+**Ubuntu users**: Docker as a snap is known to cause issues. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
 Install `docker-compose` preferentially with the `curl`/standalone method to get the latest version, as the repository versions might be outdated and will cause issues. See `install docker-compose <https://docs.docker.com/compose/install/other/>`_.
 

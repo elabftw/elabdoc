@@ -4,27 +4,15 @@
 User guide
 **********
 
-This guide assumes you already have a working installation of eLabFTW on a server.
-
-General overview
-================
-
-The principles
---------------
-By default, experiments and database items are restricted to a team. But users can choose to extend this to all registered users.
-
-Experiments showed on the Experiments tab (the main tab) are yours only. To see experiments from other people in the team use the Search page or enable it from your User Control Panel.
-
-Database items are common to the team and can be edited by anyone from the team.
-
-Creating an account
--------------------
-New users need to register an account on the register page (`/register.php`), accessible from the login page. They need to select a team from the list.
-
-By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
+This guide is aimed to users, there is also one for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
 
 Experiments
 ===========
+Experiments showed on the Experiments tab (the main tab) are mixed with experiments from other users in your team. To see only your experiments on this page, you need to disable a setting in your User Control Panel (link available in the top right menu):
+
+.. image:: img/user-disable-show-exp-team.png
+
+
 Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
 See the getting started video:
@@ -173,35 +161,32 @@ View mode of experiment
 -----------------------
 In the view mode, you will find an actions button bar in the upper left part:
 
-.. image:: img/view-mode-numbered.png
+
+.. image:: img/user-view-toolbar.png
     :align: center
     :alt: view mode numbered
 
-1. Edit
-^^^^^^^
-Go into edit mode.
+1. Go back
+^^^^^^^^^^
+Go back to the listing.
 
-2. Duplicate
+2. Edit
+^^^^^^^
+Switch to edit mode.
+
+3. Duplicate
 ^^^^^^^^^^^^
 Duplicating an experiment allows you to quickly create a new entry with the same Title, tags, body and links, but with today's date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.
 
-3. Toggle lock
-^^^^^^^^^^^^^^
-The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won't be able to unlock it.
-
-4. Share
-^^^^^^^^
-For this button to appear, the Sysadmin must have allowed anonymous users (without an account) to connect, and the box "Allow read access for anonymous users" from the Visibility panel must be checked. An `access_key` is generated and bound to the entry. If this access key is present in the URL, then read access is granted to the visitor.
-
-5. Timestamp
+4. Timestamp
 ^^^^^^^^^^^^
 When you click this button, a timestamp archive is created. Timestamping an experiment means that a pdf is generated, and a cryptographic sum of that pdf is then sent over to a trusted third party: the TimeStamping Authority (TSA). This external service will acknowledge the existence of that pdf (through its cryptographic sum) and send back a token, so that we can later prove that this data was present at that time. The pdf and its token are then attached to the experiment in the attached files section. This timestamp archive is immutable and cannot be modified or deleted. This protocol is defined by RFC3161, a standard for Trusted Timestamping.
 
-6. Bloxberg timestamp
-^^^^^^^^^^^^^^^^^^^^^
+5. Bloxchain timestamp
+^^^^^^^^^^^^^^^^^^^^^^
 This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
 
-7. Export button
+6. Export button
 ^^^^^^^^^^^^^^^^
 
 .. image:: img/view-mode-export-dropdown.png
@@ -213,14 +198,27 @@ The Export menu allows you to save the entry in different formats. The term "Lon
 The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
 
-8. Status
-^^^^^^^^^
-The status is directly editable from the view mode.
+7. Toggle pin
+^^^^^^^^^^^^^
+Clicking this icon will make this entry appear on top of the listing (pin entry).
+
+8. Toggle lock
+^^^^^^^^^^^^^^
+The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won't be able to unlock it.
+
+9. Ellipsis menu
+^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+    <em>Three dots speak volumes,<br>
+    Unveiling hidden options,<br>
+    Ellipsis unfolds.</em><br><br><br>
 
 
 elabid
 ------
-In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment. You can use it to reference an experiment with an external database.
+In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment, and immutable (won't ever change). You can use it to reference an experiment with an external database.
 
 Comments
 --------

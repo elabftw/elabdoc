@@ -48,10 +48,19 @@ Set up backup
 
 See the :ref:`backup <backup>` page.
 
-Set up the teams :sup:`(optional)`
-===================================
+.. _configure-teams:
 
-The Sysadmin panel (`sysconfig.php`) allows you to add another team to your install. You should also edit your team name.
+Configure teams :sup:`(optional)`
+=================================
+If your instance hosts different research groups/teams, you can create them from the Sysadmin panel (`sysconfig.php`).
+
+You might also want to edit the Default team name. In the screenshot below, there are four teams. The "Organization ID" is an attribute that you can set in case you wish to use the information sent by an external authentication service (such as SAML or LDAP) to assing a team to a new user. It basically allows you to match a team on eLabFTW with a team in your directory.
+
+The "Visible" attribute allows you to hide a team from the "Register" page. Use it for the administrative team for instance. Only a completely empty team can be deleted.
+
+.. image:: img/sysconfig-teams.png
+    :align: center
+    :alt: teams
 
 Configure authentication :sup:`(optional)`
 ==========================================

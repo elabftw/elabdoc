@@ -2,7 +2,7 @@
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
 ***********************************
-Welcome to elabftw's documentation!
+Welcome to eLabFTW's documentation!
 ***********************************
 
 .. image:: img/elabftw-logo.png
@@ -15,17 +15,22 @@ Welcome to elabftw's documentation!
 Introduction
 ============
 
-eLabFTW is a PHP application using MySQL to store data persistently. Once installed on a server, users can register an account and start using their electronic lab notebook.
+eLabFTW is a web application, running in a linux container and using a MySQL database to store data persistently. Once installed on a server, users can register an account and start using their electronic lab notebook.
 
-Several teams can be hosted on the same install. Ideally, it is installed at the institution/company level. But individual teams can install it for themselves, too. Or you can run it locally on your computer.
+Several teams can be hosted on the same install. Ideally, it is installed at the institution/company level. But individual teams can install it for themselves, too. Or you can run it locally on your computer, though this is not advised.
 
-It is distributed through Docker images, ensuring portability and added security. See the :doc:`Docker documentation <docker-doc>` for more infos.
+It is distributed through Docker images, ensuring portability and added security through containerization. See the :doc:`Docker documentation <docker-doc>` for more information about the containerization technology.
 
-Check out the :doc:`list of features <features>`.
+If you're looking into what eLabFTW can do before installing it, you might be interested in the :doc:`list of features <features>`.
+
+Start the installation
+----------------------
 
 See :doc:`this page <install>` to install it on your server.
 
-See :doc:`this page <install-cloud>` if you don't own a server already.
+See :doc:`this page <install-cloud>` if you don't have access to a server already.
+
+Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a question or require help.
 
  .. image:: img/by-sa.png
     :align: center
@@ -44,6 +49,7 @@ See :doc:`this page <install-cloud>` if you don't own a server already.
 .. toctree::
     :caption: Usage
 
+    generalities
     user-guide
     admin-guide
     sysadmin-guide
