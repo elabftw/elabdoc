@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 4.6.1
+-------------
+
+Bugfixes:
+`````````
+* Fix LDAP password not being saved on change (fix #4359)
+* Fix incorrect count of entries on the Teams page of Sysadmin panel
+* Fix bug where giving Admin rights to a user was not possible when not Admin but only Sysadmin
+* Fix de-associate team/user action button not shown for other users of the logged in team
+
+Internationalization
+````````````````````
+* Update German, Indonesian and Chinese translations
+
 Version 4.6.0
 -------------
 
