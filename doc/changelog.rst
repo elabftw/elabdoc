@@ -3,6 +3,36 @@
 Changelog
 =========
 
+Version 4.7.0
+-------------
+
+Bugfixes:
+`````````
+* Fix APIv2 documentation/specification for uploads
+* Fix issue with viewing template without mode=view in URL
+* Fix annotate image function (fix #4361)
+
+New features:
+`````````````
+* Add cookie related settings: cookie validity time, default behavior of Remember me checkbox and allow completely removing the possibility to set a cookie
+* Allow duplication of templates from view/edit mode
+
+Enhancements:
+`````````````
+* Display error message to user in case of invalid JSON payload on API call
+* Right align the sort icons on item table
+* Add border on the table columns
+* Move the Save and Delete buttons in Items Types page
+* Allow Sysadmin to add user from remote directory
+* Fix display of file input for tpl import
+
+Dev corner:
+```````````
+* Upgrade Symfony to 6.3
+* Upgrade dependencies
+* Remove hardcoded IDP from dev:populate function
+* Fix misspellings in comments (#4362 by Dimitri Papadopoulos Orfanos)
+
 Version 4.6.1
 -------------
 
