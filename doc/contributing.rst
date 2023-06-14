@@ -247,17 +247,17 @@ Code organization
 
 Working with JavaScript
 =======================
-All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc`. It is then transpiled by `Babel <https://babeljs.io/>`_ and bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
+All JavaScript code is written in `TypeScript <https://www.typescriptlang.org/>`_ in `src/ts`. During build, it is converted in JS by `tsc`. It is then bundled by `Webpack <https://webpack.js.org/>`_. A full build can be quite time consuming, especially on hardware with limited CPU power.
 
 When working on some JS, what you want is to be able to save the file and immediately see the changes. For that, use `yarn watchjs` to build the JS and watch for changes. Now changes will take a very small time to compile and be visible.
 
 You'll also want to configure your favorite text editor to display TypeScript errors when writing the code.
 
-Use vanilla JS and avoid the use of jQuery selectors or functions.
+Use vanilla JS and ban the use of jQuery selectors or functions.
 
 Miscellaneous
 =============
-* if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` so new installs will get the correct structure. If possible, just add the needed line in the current schema.sql file if this schema is still only present in unstable versions (dev or alpha).
+* if you make a change to the SQL structure, you need to add a schema file in `src/sql`. See the existing files for an example. Then increment the required version in `src/classes/Update`. Modify `src/sql/structure.sql` so new installs will get the correct structure. See also `dev:genschema` command.
 * comment your code wisely, what is important is the why, not the what
 * your code must follow `the PSR standards <https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md>`_
 * add a plugin to your editor to show trailing whitespaces in red
@@ -300,6 +300,17 @@ The tests run on the Codeception framework for unit and api tests. End to end te
     $ yarn test # will run the full test suite
 
 A good contribution you can make would be adding Cypress tests.
+
+In order for the tests to run successfully, you'll want to have a file in `tests/elabftw-user.env` with the following content:
+
+.. code-block:: bash
+
+    ELABFTW_USER=sam
+    ELABFTW_GROUP=wheel
+    ELABFTW_USERID=1000
+    ELABFTW_GROUPID=1000
+
+In the example above, the user is `sam` and the main group is `wheel`. Find out this info with `id` command. This file will make the test container run as your user and prevent permissions issues.
 
 Exceptions handling
 ===================
