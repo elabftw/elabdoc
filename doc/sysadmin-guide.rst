@@ -167,6 +167,17 @@ Ignore this if you are not a CNRS lab.
 
 This allows to query an external endpoint to get a list of users that can be added to the eLabFTW local users database.
 
+Users tab
+---------
+
+The Sysadmin can manage Users the same way Admins can manage Users from their Team, but with more options, such as changing the password or attributes, and manage the teams for users.
+
+To make a user part of multiple teams, search for a user, and click the three vertical dot button on the right to open a menu, and select "Manage teams for user". A modal window will allow you to add teams to this user. A user can be admin in a team and not admin in another.
+
+.. image:: img/sysadmin-manage-teams.png
+    :align: center
+    :alt: sysadmin user team management
+
 Monitoring
 ==========
 
