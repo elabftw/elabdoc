@@ -136,7 +136,8 @@ A MySQL database service is required. You can create one with Docker following t
 Requirements for the clients (users)
 ------------------------------------
 
-- Any operating system with any browser (recent version), except Safari (might have issues) or Internet Explorer (will have issues).
+- Any operating system with either Firefox, or Chrome based browser (Chrome, Chromium, Edge, Brave, Opera). Safari is known to cause issues and is not officially supported. Internet Explorer is not supported.
+- An internet connection.
 
 What about data retention/traceability
 ======================================
