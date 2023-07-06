@@ -154,6 +154,10 @@ date
 ^^^^
 A date input.
 
+time
+^^^^
+A time input.
+
 checkbox
 ^^^^^^^^
 A box to check. A Step might be a better option here.
