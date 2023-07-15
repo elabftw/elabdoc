@@ -240,19 +240,61 @@ Examples of database items types:
 * equipment
 * projects
 
-Team
-====
-This page presents the members and some statistics about the team. You'll also find here a molecule drawer. Note: this molecule drawer can be displayed when you create an experiment. Go to your user control panel to adjust this setting.
+Booking resources
+=================
 
-Scheduler
----------
-Since version 1.3.0, a scheduler is available to book equipment. First you need to set some item types as bookable from the Admin Panel. After you select an item from the Scheduler page, and use the calendar to book it.
+It is possible to use the scheduler (calendar) present on the Team page's first tab to book resources.
 
-See the video about the scheduler below:
+Making a resource bookable
+--------------------------
 
-.. raw:: html
+In order to book a resource, it needs to be bookable (they are not by default). To do that, go to the resource, and click "Modify booking parameters" from the top right menu with three vertical dots:
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/lGESXKV2-CM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+.. image:: img/modify-booking-menu.png
+    :align: center
+    :alt: modify booking menu
+
+This will show a modal window with various settings:
+
+.. image:: img/modify-booking-modal.png
+    :align: center
+    :alt: modify booking modal
+
+.. list-table:: Settings description
+   :header-rows: 1
+
+   * - Setting
+     - Description
+   * - Allow booking this resource
+     - This is a general toggle to allow booking of the resource
+   * - Allow overlapping slots
+     - Control wether it is allowed to have more than one booking slot at the same time
+   * - Maximum slot time (in minutes)
+     - Maximum number of minutes allowed for a single booking slot
+   * - Maximum per-user future slot allowed
+     - Number of future slots allowed for a particular user/resource couple
+   * - Allow cancelling a booking slot
+     - Control wether users are allowed to cancel a booking
+   * - Minimum time before a slot can be cancelled (in minutes)
+     - If "now" is closer than this number of minutes to the start of the event, it will not be possible to cancel it
+
+Adjusting permissions
+---------------------
+
+When a resource is bookable, a new permission appears: "Can book":
+
+.. image:: img/can-book-setting.png
+    :align: center
+    :alt: modify booking permissions
+
+By default, it will match who can read the entry, but it can be adjusted to fine tune how exactly has access to this resource for booking it.
+
+Using the scheduler
+-------------------
+
+Once all is set, users can click the "Book item" button in the toolabar, or select it from the Scheduler page, and click the calendar to drag a booking slot. Clicking a slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
+
+Note: "Past and future users who booked this resource" means all users who booked the resource in the past two months and the ones who booked it in the upcoming month.
 
 User panel
 ==========
