@@ -292,7 +292,7 @@ By default, it will match who can read the entry, but it can be adjusted to fine
 Using the scheduler
 -------------------
 
-Once all is set, users can click the "Book item" button in the toolabar, or select it from the Scheduler page, and click the calendar to drag a booking slot. Clicking a slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
+Once all is set, users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot. Clicking a slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
 
 Note: "Past and future users who booked this resource" means all users who booked the resource in the past two months and the ones who booked it in the upcoming month.
 
