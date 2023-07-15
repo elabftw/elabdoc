@@ -287,12 +287,22 @@ When a resource is bookable, a new permission appears: "Can book":
     :align: center
     :alt: modify booking permissions
 
-By default, it will match who can read the entry, but it can be adjusted to fine tune how exactly has access to this resource for booking it.
+By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this resource for booking it.
 
 Using the scheduler
 -------------------
 
-Once all is set, users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot. Clicking a slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
+Once all is set, users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.
+
+.. image:: img/book-item-button.png
+    :align: center
+    :alt: book item toolbar button
+
+Clicking an existing slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
+
+.. image:: img/book-edit-modal.png
+    :align: center
+    :alt: book item edit modal
 
 Note: "Past and future users who booked this resource" means all users who booked the resource in the past two months and the ones who booked it in the upcoming month.
 
