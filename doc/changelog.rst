@@ -3,6 +3,106 @@
 Changelog
 =========
 
+Version 4.8.0
+-------------
+
+Breaking changes:
+`````````````````
+The `backupzip` endpoint of APIv1 has been removed. It will come back as a console script.
+
+
+Bugfixes:
+`````````
+* Fix incorrect selectable state detection on Scheduler (would allow selecting a slot when no items are selected, which was confusing)
+* Bring back borders on all tables (fix #4436)
+* Fix deadline notifications on steps not working
+* Fix lists and links display in pdf (fix #4463)
+* Fix issue with invalid date format on chromium based browsers (fix #4412)
+* Fix issue with error message shown to user deleting a unique tag (fix #4420)
+* Fix glitch when deleting entries in show mode
+* Fix incorrect check for is_sysadmin during team edition (fix #4405)
+* Fix lock icon on templates not getting updated correctly (fix #4388)
+* Fix issue issue where extra fields were not displayed if there was groups with no elements inside. fix #4387
+* Fix changelog view for templates (fix #4393)
+
+
+
+New features:
+`````````````
+* Allow archiving entries and uploads: archive action will force lock and hide from listing
+* Allow displaying archived entries by toggling a box
+* Allow toggling the Main text section like the other sections of an entry
+* Add JSON export in Export menu
+* Add `api/v2/info` endpoint with information about the instance. See https://doc.elabftw.net/api/v2/#/Info/get-info
+* Improve booking system and options. See #4474 and https://doc.elabftw.net/user-guide.html#booking-resources. Fix #4023
+* Improve required extra fields handling. Fix #4060. Add red star, red border if invalid (empty), and a switch on the builder
+* Add new extra fields types: time, datetime and email (fix #4411)
+* Add "Now" button for date, time and datetime extra fields (see #4411)
+* Work in progress: Add a Dashboard (PR #4419)
+* Allow transfering ownership of a template to another user
+* Add suggested tags in edit mode
+* Add SQL to list of highlighted langs
+* Improve revisions system (#4460). Make them accessible from APIv2. Add possibility to display a diff between revisions (fix #1667)
+* Add legal notice configuration (Impressum). fix #4053). Also allow changing the titles.
+* Add differentiation for English UK(GB) and US
+* Add import/export in console (see PR #4439)
+* Accessibility: add user option to disable shortcuts (#4427)
+* Accessibility: add status role for notifications (see wcag 2.1 4.1.3)
+* Add scissors and centrifuge symbols (fix #4413)
+* Sysadmin features (PR #4404): allow filtering only admins, allow targeting population of users for sending mass email, allow setting custom error message when local account creation is required
+* Archive experiments during user archival (fix #3632)
+* Add archival possibilities (PR #4403 fix #521)
+* Add "Load fields" button to load extra fields from a template or items types
+* Allow user deletion by sysadmin. Allow unvalidated user deletion by admin (fix #4380)
+
+
+Enhancements:
+`````````````
+* Trim firstname/lastname from spaces during user creation (fix #4480)
+* Make the editable text bigger by removing a leftover custom CSS rule forcing it to 10pt
+* Add a margin at the bottom of the editor and resize it automatically
+* Correctly reload timestamp info/files after timestamp action
+* Add a note to instruct user to select an item on scheduler if none are selected
+* Modifying an uploaded file, adding a step or link will change the last modification date of the entry they belong to
+* Remove page generation time from footer, add link to deltablot and version blog post
+* Add Reply-To header to emails sent with email feature so recipients can directly reply to the correct person. Also add a note about it in the email.
+* Make the change password action through api require the current password like the web ui does
+* Add focus to multi factor input on page load
+* Allow an Admin to promote someone else Admin (fix #4434)
+* Improve UX when clicking "unset" on orgid column in user list
+* Rework how future bookings are shown on the item view page
+* Make extra fields search case insensitive
+* Make favorite tags stand out with gold background
+* Fix incorrect wording for "Show related experiments/items"
+* Allow style HTML attribute in video tag (PR #4426 by Sammy Jenkins)
+* Rename "Database" to "Resources"
+* Improve and correctly use font resources (fix #4410)
+* Rename "Only me" to "Only owner"
+* Add a name attribute to image inserted in text so its name can be found when downloaded (fix #3797)
+* Hide switch editor menu entry in view mode of template
+* Make the pinned templates icon clickable in listing mode (fix #4392)
+
+Dev stuff:
+``````````
+* Translation files for javascript (with i18next) are now generated automatically from `bin/console dev:i18n4js`. So the files do not need anymore to be edited manually.
+* Get rid of the old generateSecretKey file and the install/ folder, also remove the index.php at root
+* Add tests for the Commands namespace
+
+Docker image changes:
+`````````````````````
+* Update to alpine 3.18
+* Fix issue with AWS key containing a slash (fix #4471)
+* Fix `set_real_ip` not working with CIDR notation
+* Configure nginx to serve only from a defined list of files for PHP
+* Add more security related compilation flags to nginx
+* Pin the two custom nginx module to known versions
+* Add CI/mon to enforce outgoing connections during build
+* Only install prod js dependencies during build
+* Changes in the example docker-compose file for `cap_drop` and `cap_add`: drop all and add only required capabilities
+
+SYSADMINS: The last change means you might want to adapt your elabftw.yml file (docker-compose.yml) to reflect that change:
+https://github.com/elabftw/elabimg/blob/eca0023a457880fff9ffcbe01ee2582fda6a4c77/src/docker-compose.yml-EXAMPLE#L39-L49
+
 Version 4.7.0
 -------------
 
