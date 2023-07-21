@@ -6,11 +6,24 @@ Welcome to eLabFTW's documentation!
 ***********************************
 
 .. image:: img/elabftw-logo.png
-    :align: left
+    :align: center
     :alt: elabftw logo
 
 :Website:  https://www.elabftw.net
 :Live demo: https://demo.elabftw.net
+
+========================
+
+How to use this site
+====================
+
+This website contains both the technical documentation for installation, configuration and maintenance of the application, and the user documentation. Look at the menu on the left and select where you want to go:
+
+.. image:: img/doc-info.png
+    :align: center
+    :alt: doc info
+
+========================
 
 Introduction
 ============
@@ -54,6 +67,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     admin-guide
     sysadmin-guide
     metadata
+    api
 
 .. toctree::
     :caption: Documentation
@@ -65,7 +79,6 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     features
     docker-doc
     upgrade-to-docker
-    api
     ldap
     saml
     debug
