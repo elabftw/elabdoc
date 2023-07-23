@@ -24,7 +24,17 @@ Click "Add field", a modal window will appear.
 
 If you want your new inputs to appear in groups, you can click the + button next to "Group" to add a new group. Or select an existing group from the dropdown menu.
 
-Then you can select which type of input you want for your extra field. Let's select "Dropdown menu" for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.
+Then you can select which type of input you want for your extra field. You are free to add as many as you want, of different types. It is most useful to define them in the Templates, so when creating an entry, all the required inputs are already present.
+
+
+Example with dropdown menu
+--------------------------
+
+Let's select "Dropdown menu" for our example. Enter a name for this input, optionally a description and at least 2 entries to select from.
+
+.. image:: img/extra-fields-dropdown.png
+    :align: center
+    :alt: Extra field dropdown
 
 Then click save and the new input (extra field) will appear right under the "Save" and "Save and go back" buttons:
 
@@ -32,7 +42,21 @@ Then click save and the new input (extra field) will appear right under the "Sav
     :align: center
     :alt: Extra field view
 
-You are free to add as many as you want, of different types. It is most useful to define them in the Templates, so when creating an entry, all the required inputs are already present.
+Example with number and units
+-----------------------------
+
+In our second example, we will add an input of type `number` with several choices for the units. This is how it looks like:
+
+
+.. image:: img/extra-fields-number.png
+    :align: center
+    :alt: Extra field number
+
+Then click save and the generated input will accept only numbers, and a dropdown menu with a list of available units will be appended to the input:
+
+.. image:: img/extra-fields-number-view.png
+    :align: center
+    :alt: Extra field number view
 
 Advanced use
 ============
@@ -49,11 +73,7 @@ In order to assign a particular position to the inputs, use the `position` key, 
 
 Removing an input
 -----------------
-If you wish to remove an input, click the icon on the left of it and select "Remove" from the menu. Alternatively, switch the JSON editor in "Code" view and remove the corresponding part of the JSON.
-
-.. image:: img/delete-extra-field.png
-    :align: center
-    :alt: Delete extra field
+If you wish to remove an input, click the trash icon present in edit mode on the right side of the input block.
 
 Masking the main text
 ---------------------
