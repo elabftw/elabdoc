@@ -184,89 +184,129 @@ And if you're looking for all entries that have the status "Need reorder" you ca
 Schema description
 ==================
 
-Only what is inside an `extra_fields` key is processed, the rest is ignored, so you can have other things in there if you wish.
+In order to be processed by eLabFTW, the JSON contained in `metadata` must be in a particular format. It looks like this:
 
-Inside `extra_fields`, add as many extra field as you want, the key is the name of the field, and the value is composed of different attributes, the only required attribute is `value`, all other are optional:
+.. code:: javascript
+
+   {
+     "extra_fields": {
+       "Some extra field name": {
+         "type": "date",
+         "value": "2023-06-23",
+         ...
+       }
+     },
+     "elabftw" {
+       "display_main_text": false,
+       "extra_fields_groups": [
+         { "id": 1, "name": "Some group" },
+         { "id": 2, "name": "Another group" },
+       ]
+     }
+   }
+
+In the `extra_fields` key object, you'll find all the extra fields. The name is the object key, and then it contains properties (described below).
+
+The `elabftw` key is a special key to hold the groups or if we want to display the main text.
+
+The rest will be ignored by eLabFTW, so you can have other things in there, too.
+
+Extra_fields objects
+--------------------
+
+Here is a list and description of the properties that `extra_fields` objects can have:
 
 value (required)
-----------------
-The field that will hold the selected/input value. You can set a default value here or leave it empty.
+^^^^^^^^^^^^^^^^
+The field that will hold the selected/input value. You can set a default value here or leave it empty. It is the only required attribute for an `extra_field`.
 
 type (optional)
----------------
+^^^^^^^^^^^^^^^
 checkbox
-^^^^^^^^
+""""""""
 A box to check. A Step might be a better option here.
 
 date
-^^^^
+""""
 A date input.
 
 datetime-local
-^^^^^^^^^^^^^^
+""""""""""""""
 A date and time input.
 
 email
-^^^^^
+"""""
 An email input: only a valid email address will be accepted.
 
 number
-^^^^^^
+""""""
 A text input that only accepts a number as value.
 
 radio
-^^^^^
+"""""
 A radio input similar to select but all options are immediately visible.
 
 select
-^^^^^^
+""""""
 A dropdown element with options to choose from.
 
 text
-^^^^
+""""
 The default value if omitted. Use it for a short text.
 
 time
-^^^^
+""""
 A time input.
 
 url
-^^^
+"""
 A text input that only accepts a valid URL. In view mode, the link will be clickable. By default, the link will open in a new tab. Add `"open_in_current_tab" : true` to make it open in the current tab.
 
 options (for type = select)
----------------------------
-An array (`[]`) with different options for the dropdown element.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+An array of string (`[]`) with different options for the dropdown element.
 
 allow_multi_values (for type = select)
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A `boolean` attribute for allowing the selection of multiple values from the dropdown menu (which then becomes a multi select input).
 
 required
---------
+^^^^^^^^
 A `boolean` attribute to indicate that filling this field is required.
 
 description
------------
+^^^^^^^^^^^
 A `string` attribute that will be displayed under the name of the field.
 
 units (for type = number)
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 An array (`[]`) with different units for the units dropdown element. Requires a `unit` attribute to store the selected unit.
 
 unit
-----
+^^^^
 An attribute used to store the selected unit, will be updated with a change from the `units` generated dropdown menu.
 
 position
---------
+^^^^^^^^
 Add a number as a value to correctly order the extra fields how you want them.
 
 blank_value_on_duplicate
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 Set to `true` for the value to be blanked when the entity is duplicated.
 
 group_id
---------
+^^^^^^^^
 A number corresponding to the `id` of a group defined in the `elabftw.extra_fields_groups` object. Groups are defined as an array of objects with `id` and `name` properties.
 
+elabftw object
+--------------
+
+Another object, with key `elabftw` is used to define some parameters.
+
+display_main_text
+^^^^^^^^^^^^^^^^^
+A boolean value indicating if we want to display the main text.
+
+extra_fields_groups
+^^^^^^^^^^^^^^^^^^^
+An array of objects that have an `id` and `name` and corresponds to groups.
