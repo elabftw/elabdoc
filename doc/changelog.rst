@@ -24,6 +24,7 @@ Bugfixes:
 * Fix lock icon on templates not getting updated correctly (fix #4388)
 * Fix issue issue where extra fields were not displayed if there was groups with no elements inside. fix #4387
 * Fix changelog view for templates (fix #4393)
+* Fix issue with extra fields not shown if ungrouped field was deleted (fix #4386)
 
 
 
@@ -54,6 +55,8 @@ New features:
 * Add archival possibilities (PR #4403 fix #521)
 * Add "Load fields" button to load extra fields from a template or items types
 * Allow user deletion by sysadmin. Allow unvalidated user deletion by admin (fix #4380)
+* Allow adding units to extra fields for numbers inputs (fix #3518)
+* Add a button to easily delete an extra field
 
 
 Enhancements:
@@ -81,12 +84,15 @@ Enhancements:
 * Add a name attribute to image inserted in text so its name can be found when downloaded (fix #3797)
 * Hide switch editor menu entry in view mode of template
 * Make the pinned templates icon clickable in listing mode (fix #4392)
+* Flatten the author references in .eln files
+* The extra_fields and json editor are now better synchronized (fix #4343)
 
 Dev stuff:
 ``````````
 * Translation files for javascript (with i18next) are now generated automatically from `bin/console dev:i18n4js`. So the files do not need anymore to be edited manually.
 * Get rid of the old generateSecretKey file and the install/ folder, also remove the index.php at root
 * Add tests for the Commands namespace
+* Cypress now runs on circleci (PR #4484 by Marcel Bolten)
 
 Docker image changes:
 `````````````````````
