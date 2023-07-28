@@ -21,18 +21,20 @@ These instructions will work for any of the GNU/Linux distributions where Docker
 Prerequisites
 =============
 
-You'll need a GNU/Linux server. Because of the use of linux containerization technology, other operating systems (FreeBSD, OpenBSD, and others) are not supported.
+You will need a GNU/Linux server. Because of the use of linux containerization technology, other operating systems (FreeBSD, OpenBSD, and others) are not supported.
 
-If you don't have a server, look at the documentation to rent one: :ref:`Install in the cloud <install-cloud>`.
+If you do not have a server, look at the documentation to rent one: :ref:`Install in the cloud <install-cloud>` or opt for a managed (SaaS) solution via `Deltablot PRO Hosting <https://www.deltablot.com/elabftw/>`_.
 
-Dependencies:
--------------
+Be aware that installing **eLabFTW** means it will need to be maintained, by regularly applying updates, configuring the backups properly, and hardening the host operating system. If you do not have GNU/Linux System Administration knowledge, it is recommended to consider the `SaaS offering <https://www.deltablot.com/elabftw/>`_.
 
-Absolutely required dependencies:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Dependencies
+------------
+
+Absolutely required dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
 
-A MySQL database. Not MariaDB, MySQL. The following MySQL modes are known to work fine with eLabFTW codebase:
+A **MySQL** database. Not MariaDB, MySQL. The following MySQL modes are known to work fine with eLabFTW codebase:
 
 * `ERROR_FOR_DIVISION_BY_ZERO`
 * `IGNORE_SPACE`
@@ -44,16 +46,16 @@ A MySQL database. Not MariaDB, MySQL. The following MySQL modes are known to wor
 * `REAL_AS_FLOAT`
 * `STRICT_ALL_TABLES`
 
-Strongly recommended dependencies:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Strongly recommended dependencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
 * `docker compose plugin <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`. It can be installed with the `docker-compose-plugin` package.
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
 * `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`. Not required during installation.
 
-Notes:
-------
-You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_).
+Notes
+-----
+You can have your normal user in the `docker` group to execute docker commands without sudo (see `documentation <https://docs.docker.com/engine/install/linux-postinstall/>`_). This is generally convenient for development environments and not recommended in production.
 
 **Ubuntu users**: Docker as a snap is known to cause issues. Uninstall that and install it without snap. See `this issue <https://github.com/elabftw/elabftw/issues/1917>`_.
 
@@ -83,7 +85,7 @@ With elabctl (recommended)
 
     elabctl install
 
-* Edit the configuration file:
+* Edit the configuration file (`/etc/elabftw.yml` by default):
 
     Edit the configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
@@ -104,7 +106,7 @@ Reverse proxy configurations examples can be found `here <https://github.com/ela
 Option B: HTTPS mode with Let's Encrypt certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to request Let's Encrypt certificates, you need to install `certbot`. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
+In order to request Let's Encrypt certificates, you need to install `certbot` and have your server publicly accessible. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
 
 * Set ``DISABLE_HTTPS=false``.
 * Set ``ENABLE_LETSENCRYPT=true``.
@@ -160,7 +162,7 @@ Initialize your database
 .. code-block:: bash
 
    elabctl initialize
-   # same as: docker exec -it elabftw bin/console db:install
+   # same as: docker exec -it elabftw bin/init db:install
 
 Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`/`docker ps`
 
@@ -177,5 +179,3 @@ Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <
 The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
 ENJOY! :D
-
-

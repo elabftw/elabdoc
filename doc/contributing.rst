@@ -22,20 +22,21 @@ What can you do to help this project?
 Non-code contributions
 ======================
 
-Contributions are not necessarily code. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
+Contributions are not necessarily programmation related. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
 
 Reporting a security issue
 ==========================
 
 If you've found a security issue, please contact me securely through `Keybase <https://keybase.io/nicolascarpi>`_.
 
-.. image:: img/i18n.png
-    :align: right
-
 While there is not (yet) an official bug bounty program, responsible disclosure of a security vulnerability might be compensated.
 
 Translating
 ===========
+
+.. image:: img/i18n.png
+    :align: right
+
 
 Do you know several languages? Are you willing to help localize eLabFTW? You're in the right place.
 
@@ -63,7 +64,7 @@ Note about repositories
 
 The eLabFTW project is split in different repositories. The main one with the actual PHP code is `elabftw/elabftw <https://github.com/elabftw/elabftw>`_. The present document is generated from reStructuredText files in `elabftw/elabdoc <https://github.com/elabftw/elabdoc>`_. So if you need to change the documentation, it will be in there.
 
-The Docker image is built by the code at `elabftw/elabimg <https://github.com/elabftw/elabimg>`_.
+The Docker image is built from the code at `elabftw/elabimg <https://github.com/elabftw/elabimg>`_.
 
 Other interesting repositories are:
 
@@ -188,20 +189,21 @@ Install dependencies
 
     PHP dependencies are managed through `Composer <https://getcomposer.org/>`_. It'll read the `composer.lock` file and install packages (see `composer.json`). Javascript dependencies are managed through `Yarn <https://yarnpkg.com/>`_. It'll read the `yarn.lock` file and install packages (see `package.json`). The `yarn install` command will populate the `node_modules` directory, and the `buildall` command will use `Webpack <https://webpack.js.org/>`_ to create bundles (see `builder.js` file).
 
-* Now install the PHP and JavaScript dependencies using `composer` and `yarn` shipped with the container:
+* Now install the JavaScript and PHP dependencies using `yarn` and `composer` shipped with the container:
 
 .. code-block:: bash
 
     cd $dev/elabftw
+    # javascript dependencies (node_modules/ directory)
+    docker exec -it elabftw yarn buildall
     # php dependencies (vendor/ directory)
     docker exec -it elabftw composer install
-    # javascript dependencies (node_modules/ directory)
-    docker exec -it elabftw yarn install
-    docker exec -it elabftw yarn buildall
 
 .. note::
 
    It can be a good idea to define an alias such as "alias elabc=docker exec -it elabftw". So you can use "elabc" to run commands in the container directly.
+
+It is important to run `yarn` before `composer` because `yarn` will generate a PHP class that needs to be picked up by composer.
 
 Install the database
 ^^^^^^^^^^^^^^^^^^^^
@@ -210,7 +212,7 @@ Install the database
 
 .. code-block:: bash
 
-   docker exec -it elabftw bin/console db:install
+   docker exec -it elabftw bin/init db:install
 
 
 * Enable debug mode to disable the caching of Twig templates
