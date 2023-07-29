@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 4.8.1
+-------------
+
+Bugfixes:
+`````````
+* Display any "extra" data in metadata that are not handled by eLabFTW (fix #4256)
+* Fix bug with sending email to all active users of instance from Sysconfig panel
+
+New features:
+`````````````
+* Add `readonly` attribute to extra fields (see #4256)
+
+
 Version 4.8.0
 -------------
 
