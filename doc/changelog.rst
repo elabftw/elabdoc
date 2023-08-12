@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 4.8.3
+-------------
+
+A few bugfixes related to scheduler in here.
+
+Bugfixes
+````````
+* Display "Cancel event" menu if user is Admin even if event is not cancellable
+* Fix bug where a "Only owner" permission was not properly honored
+* Only show book button if entry has is_bookable truthy
+
+Enhancements
+````````````
+* Add `event_duration_minutes` to the scheduler export CSV
+* Add the selected item on the scheduler page with a button to deselect it
+
+
 Version 4.8.2
 -------------
 
