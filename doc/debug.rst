@@ -36,6 +36,24 @@ Accessing MySQL database
 
 Sometimes it might be necessary to look directly into the database. You can use `elabctl mysql` to get a MySQL prompt directly.
 
+Clean everything
+================
+
+If you're not sure what to do to fix issues, or you have an error that seems unresolvable. You can try this:
+
+.. code-block:: bash
+
+   # stop everything
+   elabctl stop
+   # check nothing is running
+   docker ps -a
+   # cleanup everything
+   docker system prune -a
+   # start again
+   elabctl start
+
+Note that this procedure is safe and won't impact your data. Upon starting, it will redownload the docker images and start fresh containers.
+
 Resetting a password directly from MySQL
 ========================================
 
