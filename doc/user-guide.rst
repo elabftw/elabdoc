@@ -495,77 +495,13 @@ If the import looks good, you can now delete these newly imported items and impo
 Using the API to control how things are imported
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you want to have complete control over the import process, you can use a helper program to do the import.
+If you want to have complete control over the import process, you can use a few lines of python to do the import.
 
-.. warning:: **Important**: the scripts below will import automatically all the rows present in your CSV file. Try first with a few rows before importing everything, so you have a chance to correct errors easily!
+.. warning:: **Important**: the scripts linked below will import automatically all the rows present in your CSV file. Try first with a few rows before importing everything, so you have a chance to correct errors easily!
 
-To install the `elabapy` python library, see: `elabapy on github <https://github.com/elabftw/elabapy>`_.
+We will use the `elabapi-python` library to make things easy. See `installation instructions <https://github.com/elabftw/elabapi-python#installation>`_.
 
-.. code-block:: python
-
-    #!/usr/bin/env python
-    import elabapy
-    import csv
-
-    # Replace "YOUR_TOKEN" with your API key created from your user panel
-    # Replace the endpoint value with the address of your eLabFTW instance
-    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org/api/v1/")
-
-    # Note: use encoding='utf-8-sig' in the open() call if your file has BOM (Byte Order Mark)
-    # Also make sure that the CSV file was saved as UTF-8 to avoid issues with special characters
-    # Replace 'some.csv' with your CSV filename
-    with open('some.csv', newline='') as csvfile:
-        csvreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
-        for row in csvreader:
-            res = manager.create_experiment()
-            # start by clearing out the content (default template)
-            manager.post_experiment(res['id'], {'body': ''})
-            # add a title
-            manager.post_experiment(res['id'], {'title': row['title']})
-            # now create a body with columns in bold
-            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Content:</h2></strong>' + row['content'] + '<br>'})
-            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Category:</h2></strong>' + row['category'] + '<br>'})
-            manager.post_experiment(res['id'], {'bodyappend': '<strong><h2>Elabid:</h2></strong>' + row['elabid'] + '<br>'})
-
-
-Here is another example but this time we import the column as metadata key, and row content as metadata value for all columns except the "title":
-
-.. code-block:: python
-
-    #!/usr/bin/env python
-    import elabapy
-    import csv
-    import json
-
-    # function to build the metadata json for a row
-    def getMetadataFromRow(row):
-        # our metadata object for one row, currently a dictionary with a key "extra_fields" holding an empty dictionary
-        metadata = { 'extra_fields': {} }
-        # now go over the columns (except the title) and add it to our extra_fields object
-        for keyval in row.items():
-            if keyval[0] == 'title':
-                continue
-            metadata['extra_fields'].update({keyval[0]: {'value': keyval[1]}})
-        return json.dumps(metadata)
-
-    # Replace "YOUR_TOKEN" with your API key created from your user panel
-    # Replace the endpoint value with the address of your eLabFTW instance
-    manager = elabapy.Manager(token="YOUR_TOKEN", endpoint="https://elabftw.example.org/api/v1/")
-
-    # Note: use encoding='utf-8-sig' in the open() call if your file has BOM (Byte Order Mark)
-    # Also make sure that the CSV file was saved as UTF-8 to avoid issues with special characters
-    # Replace 'some.csv' with your CSV filename
-    with open('some.csv', newline='') as csvfile:
-        csvreader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
-        for row in csvreader:
-            # let's assume 6 corresponds to our Antibody category database id. Visit /api/v2/items_types to GET a list.
-            res = manager.create_item(6)
-            # start by clearing out the content (default template)
-            manager.post_item(res['id'], {'body': ''})
-            # add a title
-            manager.post_item(res['id'], {'title': row['title']})
-            # add the metadata column
-            manager.post_item(res['id'], {'metadata': getMetadataFromRow(row)})
+You can then have a look at `this example to import CSV using the API and metadata/extra fields <https://github.com/elabftw/elabapi-python/blob/master/examples/09-import-csv.py>`_.
 
 
 Miscellaneous
