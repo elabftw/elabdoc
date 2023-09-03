@@ -61,7 +61,7 @@ Starting the containers
 
 .. code-block:: bash
 
-    docker-compose up -d
+    docker compose up -d
 
 Importing the database structure
 ================================
@@ -84,7 +84,7 @@ Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <
 
 The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
-To update, you can do "docker-compose pull" and "docker-compose up -d".
+To update, you can do "docker compose pull" and "docker compose up -d".
 
 It's a good idea to subscribe to `the newsletter <http://elabftw.us12.list-manage1.com/subscribe?u=61950c0fcc7a849dbb4ef1b89&id=04086ba197>`_, to know when new releases are out (you can also see that from the Sysadmin panel).
 
