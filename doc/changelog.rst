@@ -3,6 +3,34 @@
 Changelog
 =========
 
+Version 4.8.4
+-------------
+
+This patch release focuses on bugfixes with a few small enhancements. It comes nearly a month after 4.8.3 and doesn't contain database update step. All users should update to this version.
+
+Bugfixes
+````````
+* Fix issue where it was not possible to remove "is_owner" from a user/team couple. Also add this to the api doc.
+* Fix uploaded files cannot be unarchived (fix #4593)
+* Fix incorrect display of entrypoint in UCP (fix #4594)
+* Fix error message shown when canceling event (fix #4569)
+* Trim email input (fix #4590)
+* Add missing Save/Cancel translations
+* Fix issue where orgid attribute from SAML was not properly checked (fix #4548)
+* Fix bug where archived filter didn't work correctly
+* Remove `format: date-time` (PR #4543 by Mahadi Xion)
+
+Enhancements
+````````````
+* Allow display of SVG files in browser (fix #4563)
+* Display archived links with an icon (fix #4591)
+* Improve UX on scheduler event edition/creation (fix #4569)
+* Prevent a Sysadmin user from being archived
+
+Dev
+```
+* Interpret `is_sysadmin` in populate config YAML file for a user
+
 Version 4.8.3
 -------------
 
