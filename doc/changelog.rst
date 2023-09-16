@@ -3,6 +3,26 @@
 Changelog
 =========
 
+Version 4.8.6
+-------------
+
+Breaking change
+```````````````
+This concerns only devs, but `bin/console dev:populate` is now `bin/init db:populate`. This change was made to avoid issues related to the loading of Config table by `bin/console`.
+
+Bugfixes
+````````
+* Fix issue with Export from Profile failing when deleted entries are targeted
+* Fix issue where archived entries appeared as links
+* Fix bug where a user could not cancel an event on the scheduler
+
+Version 4.8.5
+-------------
+
+Bugfix
+``````
+* Fix issue with nginx server and new brotli code
+
 Version 4.8.4
 -------------
 
