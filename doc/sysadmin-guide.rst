@@ -118,7 +118,7 @@ Configure storage :sup:`(optional)`
 
 By default, uploaded files are stored in the `uploads/` folder that is mounted outside the container for persistance. You can choose instead to use an S3 compatible service (buckets) to store these files. The "Uploads" tab allows you to configure this storage.
 
-To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file.
+To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file. You can use `bin/console uploads:migrate` to migrate existing locally uploaded files to S3 storage.
 
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
 =============================================================
