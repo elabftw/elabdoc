@@ -3,6 +3,50 @@
 Changelog
 =========
 
+Version 4.9.0
+-------------
+
+Breaking change
+```````````````
+This release contains a breaking change for users of APIv1: the response will be an error unless `apiv1_is_dead` query string is added. APIv1 support will be completely dropped in 5.0 (likely the next major version). See https://github.com/elabftw/elabftw/discussions/4653 for more information.
+
+Deprecation
+```````````
+The format of API keys has slightly changed to work around a design issue (fix #4617). Currently the change is backward compatible, meaning that existing keys will continue to work. It is recommended to generate a new key for faster response times especially if you're not Sysadmin. Old keys with previous format are now deprecated and need to be regenerated before 5.0.
+
+New features
+````````````
+* Rework of Category and Status for Experiments and Resources (see blog post: https://www.deltablot.com/posts/release-490/) (PR #4614) (see discussion: https://github.com/elabftw/elabftw/discussions/4613)
+* Api keys now show a "Last used" timestamp, so their use is recorded and it becomes easy to see if the keys are in use or can be deleted
+* Add possibility for a Sysadmin to disable 2FA for a user (fix #4486 via #4646)
+* Allow the preview of Markdown and Json attachments (PR #4042 by Marcel and Nico)
+* Add JSON in highlighted languages selection list
+* Allow linking to experiment/resource/user from Extra fields (fix #3857 via PR #4616)
+
+Enhancements
+````````````
+* Flatten the `mentions` and `comments` fields in .eln export
+* Title can be easily edited from view mode now
+* Add `/healthcheck.php` page to check if all is alright. Other monitoring endpoints (`/nginx-status`, `/php-status`, `/healthcheck`) were not checking the MySQL access, this one does.
+
+Bugfixes
+````````
+* Fix bug where booking slots could appear bound to entries (fix #4654)
+* Fix bugs on Team page when no Resources is bookable
+* Fix deadline notifications for Steps
+* Fix incorrect redirect with Saml auth to selected page (fix #4649)
+* Fix Cancel button in 2FA setup page
+
+Dev corner
+``````````
+* Remove APIv1 test code
+* Fix test coverage results with correct merge between suites (PR #4655 by Marcel Bolten)
+* Improve code for toggle pin buttons (#4623 by Marcel and Nico)
+* Substitute some multiple whitespaces with single whitespace (#4622 by Marcel Bolten)
+* Improve spacing on Dashboard (#4621 by Marcel Bolten)
+* Populate action now uses tags that make sense instead of the generated ones (#4619)
+* Add TwigCS to CI pipelines (#4595 by Marcel Bolten)
+
 Version 4.8.6
 -------------
 
