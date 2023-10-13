@@ -28,6 +28,10 @@ Enhancements
 * Flatten the `mentions` and `comments` fields in .eln export
 * Title can be easily edited from view mode now
 * Add `/healthcheck.php` page to check if all is alright. Other monitoring endpoints (`/nginx-status`, `/php-status`, `/healthcheck`) were not checking the MySQL access, this one does.
+* Add categories to dashboard
+* Force inclusion of attachment files for PDF/A
+* Make team selection dynamic on team select page after saml login
+* Make search page help translatable and fix untranslated strings (fix #4659)
 
 Bugfixes
 ````````
