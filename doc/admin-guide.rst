@@ -7,16 +7,15 @@ This guide is intended for Admins of Teams. An Admin is a User in a Team with Ad
 
 How to become Admin?
 ====================
-A user is automatically an Admin if they are the first user in a Team. An Admin can promote another user to Admin from the Admin Panel > Users tab. A Sysadmin can promote a User to Admin the same way (frome the Sysadmin Panel).
+A user is automatically an Admin if they are the first user in a Team. An Admin can promote another user to Admin from the Admin Panel > Users tab. A Sysadmin can promote a User to Admin the same way (from the Sysadmin Panel).
 
 General overview
 ================
 An Admin:
 
 * Has access to the Admin Panel with settings impacting only their team
-* Can validate/edit users of their team
-* Can edit available Status for experiments of their team
-* Can edit available Items Types for the database of their team
+* Can validate/archive users of their team
+* Can edit available Categories and Status for Experiments and Resources of their team
 * Can edit the default experiments template
 * Can manage groups of users amongst the team (see below)
 * Can change the rightmost link in the main menu (default is Documentation)
@@ -24,9 +23,13 @@ An Admin:
 
 Validating accounts
 ===================
-Unless this setting has been modified by the Sysadmin, new accounts will need validation from a team Admin before they can connect. It is your role as an Admin to validate new users accounts. To do that, head to the Admin panel (link at the bottom left of any page) and you will see the users waiting for validation.
+Unless this setting has been modified by the Sysadmin, or provisioning is done automatically, new accounts will need validation from a team Admin before they can connect. It is your role as an Admin to validate new users accounts. To do that, head to the Admin panel and you will see the users waiting for validation.
 
-If you do not wish to validate this account because they don't belong in your team, you can either ask the Sysadmin to change the team of this account, or delete the account yourself from the Users tab in the Admin Panel.
+.. image:: img/admin-validate-user.png
+    :align: center
+    :alt: admin user validation
+
+If you do not wish to validate an account because they do not belong, you can either ask the Sysadmin to change the team of this account, or delete the account yourself.
 
 Video
 =====
@@ -38,7 +41,7 @@ If you prefer, you can watch a short video introducing the Admin Panel:
 
 TEAM tab
 ========
-The first tab of the Admin Panel contains various settings for the Team.
+The first tab of the Admin Panel contains various settings for the Team. This is where you can configure what users can or cannot do in the team, and define a default template for experiments or change the last link in the main menu.
 
 GROUPS tab
 ==========
@@ -54,13 +57,14 @@ You can also disable multifactor authentication for a particular user, if needed
 
 At the bottom, you can add directly a new user in your team. The new user will need to activate the "Reset password" functionality to access their account.
 
-STATUS tab
-==========
-Like items types, status are entirely editable and you can customize them to your liking.
+CATEGORIES tab
+==============
 
-TYPES OF ITEMS tab
-==================
-This is where you can configure the categories available in the main Database tab. You can have as many as you want. For instance:
+This menu allows you to define categories for Experiments, which are very similar to Status: they have a name and a color.
+
+And define categories for Resources, which are similar to experiments templates because on top of the name and color you can define default text/tags/links/fields.
+
+You can have as many as you want. For instance:
 
 * Antibody
 * Cell line
@@ -76,7 +80,7 @@ Select a category and click "Go" to load it. Or click "Create" to add a new cate
 
 .. image:: img/admin-panel-itemstypes.png
     :align: right
-    :alt: items types tab
+    :alt: resources categories tab
 
 
 When you create a new category, use the default template of that type of item to add fields. For instance, for a Plasmid category you might want to have:
@@ -90,6 +94,10 @@ When you create a new category, use the default template of that type of item to
 **Resistance mammalian:**
 
 You can also have a look at using :ref:`extra fields <metadata>` defined through the metadata json editor so all items created in that category will have these supplementary inputs.
+
+STATUS tab
+==========
+Status are entirely editable and you can customize them to your liking. There is one set of Status for Experiments and another one for Resources.
 
 EXPORT tab
 ==========
