@@ -32,6 +32,8 @@ Enhancements
 * Force inclusion of attachment files for PDF/A
 * Make team selection dynamic on team select page after saml login
 * Make search page help translatable and fix untranslated strings (fix #4659)
+* Add missing `metadata` column on `items_types` and rename to Resources categories
+* Allow browser to pass cookies when requesting webapp manifest (PR #4691 by @anargam)
 
 Bugfixes
 ````````
@@ -40,6 +42,10 @@ Bugfixes
 * Fix deadline notifications for Steps
 * Fix incorrect redirect with Saml auth to selected page (fix #4649)
 * Fix Cancel button in 2FA setup page
+* Fallback to configured instance storage param if no storage param is present (fix #4615)
+* Fix bug where it was not possible to edit a booking slot if max number of slot was reached (fix #4679)
+* Fix bug where extra field would stay readonly when readonly property is present and false (fix #4693)
+* Fix fatal error when metadata is incorrect (see #4694)
 
 Dev corner
 ``````````
