@@ -181,9 +181,17 @@ To make a user part of multiple teams, search for a user, and click the three ve
 Monitoring
 ==========
 
-To monitor the nginx service, use /healthcheck endpoint, which replies with status code 204.
+Healthchecks
+------------
 
-To monitor the php-fpm service, use /php-ping, which replies with status code 200.
+To monitor the nginx service, use /healthcheck endpoint, which replies with status code 204 if nginx is working.
+
+To monitor the php-fpm service, use /php-ping, which replies with status code 200 if php-fpm is working.
+
+To monitor the nginx, the php-fpm and the MySQL connection, use /healthcheck.php, which replies with status code 200 and "ok" in the body of the response if everything is working.
+
+Metrics
+-------
 
 To gather metrics from the php-fpm service, use /php-status, which replies with information about php-fpm processes. See the `PHP FPM Status page documentation <https://www.php.net/manual/en/fpm.status.php>`_ for more details.
 
@@ -196,4 +204,4 @@ The /php-status and /nginx-status pages are protected with Basic authentication:
 
 If this variable is not set (default), then a random unknown password will be generated but never displayed, effectively disabling access.
 
-All of the above endpoints will not produce a log entry.
+All of the above endpoints will not produce an access log entry.
