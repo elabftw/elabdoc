@@ -3,6 +3,59 @@
 Changelog
 =========
 
+Version 5.0.0
+-------------
+
+Note
+````
+Yes, this is a major version bump, but apart from the removal of REST API Version 1, there are no other major changes, so the upgrade has nothing in particular.
+
+Breaking change
+```````````````
+The reason for major version bump: APIv1 is removed and will display an error message, that cannot be bypassed anymore.
+
+New features
+````````````
+* Add "Custom ID" attribute to entities (see #3724)
+* Allow deleting links pointing to an entry, from the entry (fix #4738)
+* The "Create" button now displays Experiments Templates in a modal window before creating an experiment
+* Allow an Admin to add an existing user to their team (PR #4745). This behavior is disabled by default. A new Sysconfig setting has been added to control it.
+* Display Status list on Dashboard (fix #4715)
+
+Enhancements
+````````````
+* Add "Admin" text on teams where user is Admin in Sys/Admin Panel when listing users (fix #4740)
+* Archiving a user now gives the choice to also Archive/Lock their experiments (default to No)
+* Archive action no longer automatically locks and archive experiments
+* When adding tags, keep focus on the input element after addition
+* Modify "Search term" to "Search user" in remote directory search interface
+* Display categories everywhere, make Status appear different than categories and more aesthetic changes (PR #4720)
+* Allow deletion of a timestamped experiment
+* Allow "caption" html tag in body (used by tinymce for table title)
+* Remove the "Anonymous visitors can see database items" Team setting (fix #4663)
+* Make the "Return to top" button appear after one vertical height scroll (fix #4076)
+* Improve thumbnail generation: consume less memory and avoid issues with some PDFs (PR #4711 by Nico and Marcel)
+
+i18n
+````
+* Fix missing translated strings in interface
+* Add Czech language (#4749, thanks to Ondrej Kuda @ondrej-kuda for help with the translation)
+
+Bugfixes
+````````
+* Fix items_types api spec (fix #4696)
+
+Dev corner
+``````````
+* Use yarn berry with PnP (see PR #4698)
+* Use upstream OVE instead of our UMD building repo
+* Update TinyMCE to v6, imagetools plugin is no more, but new plugins are added, such as auto URL or accordion
+* Update Chemdoodle and change how it is imported/used
+* Use peggy cli to generate script (PR #4746 by Marcel)
+* Fix round edges on button (PR #4744, #4742 by Marcel)
+* Improve code of yarn plugin to copy the tinymce files (PR #4713 by Marcel)
+* Fix issue with Storage/Memory (PR #4674 by Marcel)
+
 Version 4.9.0
 -------------
 
