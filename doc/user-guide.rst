@@ -6,20 +6,34 @@ User guide
 
 This guide is aimed to users, there is also one for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
 
+Introduction
+============
+There are two main entities (objects) types: Experiments and Resources. Experiments are owned by a particular user, whereas Resources belong to a team.
+
+While similar, they have a few differences:
+
+* Experiments can be timestamped
+* Resources can be booked
+* Experiments templates can be created by users
+* Resources templates can only be created by Admins
+
+They still share a lot of attributes, such as tags, category, status, links, etc...
+
 Experiments
 ===========
-Experiments showed on the Experiments tab (the main tab) are mixed with experiments from other users in your team. To see only your experiments on this page, you need to disable a setting in your User Control Panel (link available in the top right menu):
+Experiments showed on the Experiments tab are mixed with experiments from other users in your team. To see only your experiments on this page, you need to disable a setting in your User Control Panel (link available in the top right menu):
 
 .. image:: img/user-disable-show-exp-team.png
 
 
-Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen. You will be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
+Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen and selecting a template (or not!). You will then be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
-See the getting started video:
+An experiment is composed of:
 
-.. raw:: html
+* A title
+* The main text content
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/k30uyH2_LMM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+These are the two required elements. In fact, only the title is required as the main content can be empty.
 
 Templates
 ---------
@@ -36,18 +50,49 @@ From this menu you can also choose to download the template as an ELN archive, w
 Edit mode
 ---------
 
-Tags
-^^^^
-The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
-All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+Toolbar
+^^^^^^^
+In edit mode, the top part of the page displays a toolbar with several actions available:
 
-.. only:: html
+.. image:: img/user-guide-toolbar-edit.png
 
-    .. image:: img/quick_tags.*
 
-Date
-^^^^
-The date is today's date by default, in the format YYYYMMDD. You can edit it as you wish. The real creation date/time is stored in the database in another column.
+1. Go back to the listing
+2. Go into "View" mode
+3. Duplicate the experiment: will copy all content except attachments, change the Status to the default one, and set the Date to today's date
+4. Timestamp experiment: create a signed, legally binding snapshot of the experiment and store it alongside the attached files in an immutable archive
+5. Export menu: export the experiment in various formats (PDF, ELN, CSV, etc...)
+6. Pin the experiment: make it appear on top of the listing at all times
+7. Lock/Unlock experiment: prevent further edition. If you're the one locking it, you'll be able to unlock it, but if it's locked by someone else, you won't
+8. Ellipsis menu:
+   - Switch editor: you can use the default text editor (WYSIWYG) or the Markdown editor if you prefer markdown
+   - See revisions: the revisions system keeps track of changes in the main text of the experiment
+   - See changelog: the changelog system keeps track of all the other changes of the experiment
+   - Archive/Unarchive: allow hiding the entry from the default listing
+   - Delete: perform a soft-deletion of the experiment: mark the experiment as deleted but keep it in the backend database
+
+
+
+Date (Started on)
+^^^^^^^^^^^^^^^^^
+The date is today's date by default. You can edit it as you wish. The effective creation timestamp is stored in the backend database in another (read-only) attribute.
+
+
+ID
+^^
+This attribute is not editable and corresponds to the unique (scoped to the instance), immutable ID of the entry.
+
+Custom ID
+^^^^^^^^^
+This attribute (``null`` by default) can be set as a number, after selecting a Category. This number will then be automatically incremented when a new experiment of that category is created. One can also click the "Get next" button to fetch the next ID available for entries of this Category. The Custom ID is then displayed before the title.
+
+Title
+^^^^^
+The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.
+
+Category
+^^^^^^^^
+You can assign a "Category" to your experiments. Only an Admin can define the available categories in your team. They can correspond to projects or types of experiments for instance. It also makes it easier to browse a group of experiments by looking for entries within that category.
 
 Status
 ^^^^^^
@@ -60,17 +105,22 @@ This useful feature lets you set the 'status' of an experiment. By default you c
 
 These status can be modified completely by the admin in the admin panel.
 
+Tags
+^^^^
+The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
+All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+
+.. only:: html
+
+    .. image:: img/quick_tags.*
+
 Permissions
 ^^^^^^^^^^^
 The "Visibility" and "Can write" part allow you to control who can access this entry. Click the `Edit` button to display a menu and add or remove permissions.
 
-Title
-^^^^^
-The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.
-
 Experiment (body)
 ^^^^^^^^^^^^^^^^^
-This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc… 
+This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc…
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
@@ -343,6 +393,14 @@ Create an API key for your account from this page. An API key is like a username
 How to have folders or projects grouping experiments?
 =====================================================
 
+There are several options:
+
+1. Use Categories for experiments: they are defined by an Admin and are common to the Team.
+2. Use tags/favorite tags: user or Admin defined, depending on the Team settings (by default users can create new tags).
+3. Use a Resource of Category "Project" and the link system to link Experiments to that Project.
+4. Directly link experiments together using the link system.
+
+
 First, try to go beyond the nested, tree-like structure of hierarchical folders.
 
 Imagine you have an experiment which is:
@@ -392,6 +450,10 @@ There is also another way to group experiments together, that you can use along 
 Go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
 
 Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
+
+Using Categories
+----------------
+An Admin can define several Experiments Categories, which are then available to users in the Team. It is a quick and easy way to group experiments together.
 
 Importing data
 ==============
