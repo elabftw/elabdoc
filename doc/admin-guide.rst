@@ -31,14 +31,6 @@ Unless this setting has been modified by the Sysadmin, or provisioning is done a
 
 If you do not wish to validate an account because they do not belong, you can either ask the Sysadmin to change the team of this account, or delete the account yourself.
 
-Video
-=====
-If you prefer, you can watch a short video introducing the Admin Panel:
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/EyEX9nHNWsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 TEAM tab
 ========
 The first tab of the Admin Panel contains various settings for the Team. This is where you can configure what users can or cannot do in the team, and define a default template for experiments or change the last link in the main menu.

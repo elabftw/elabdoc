@@ -35,15 +35,22 @@ Enhancements
 * Remove the "Anonymous visitors can see database items" Team setting (fix #4663)
 * Make the "Return to top" button appear after one vertical height scroll (fix #4076)
 * Improve thumbnail generation: consume less memory and avoid issues with some PDFs (PR #4711 by Nico and Marcel)
+* Set the default ordering by last modified instead of date
+* Add steps related events to changelog
 
 i18n
 ````
 * Fix missing translated strings in interface
 * Add Czech language (#4749, thanks to Ondrej Kuda @ondrej-kuda for help with the translation)
+* Fix french translation for linked/related entries
 
 Bugfixes
 ````````
 * Fix items_types api spec (fix #4696)
+* Fix incorrect page redirection when duplicating a template from team page
+* Fix team events appearing twice in view mode
+* Fix links being removed by prune: commands (fix 4761)
+* Fix field builder not changing inputs correctly on field type change
 
 Dev corner
 ``````````
