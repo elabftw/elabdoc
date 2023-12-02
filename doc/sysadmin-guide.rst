@@ -178,6 +178,8 @@ To make a user part of multiple teams, search for a user, and click the three ve
     :align: center
     :alt: sysadmin user team management
 
+The attribute "is owner" allows you to determine which of the Admins in a Team are the "owner" of the team. It has no impact anywhere and is purely an informational attribute.
+
 Monitoring
 ==========
 
