@@ -34,7 +34,11 @@ Absolutely required dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
 
-A **MySQL** database. Not MariaDB, MySQL. The following MySQL modes are known to work fine with eLabFTW codebase:
+A **MySQL** service with an eLabFTW database. **Not MariaDB**, MySQL.
+
+The default configuration file allows you to use a dockerized MySQL service alongside the eLabFTW container. Use this if you don't already have a MySQL server available.
+
+The following MySQL modes are known to work fine with eLabFTW codebase:
 
 * `ERROR_FOR_DIVISION_BY_ZERO`
 * `IGNORE_SPACE`
@@ -64,7 +68,7 @@ Configure eLabFTW
 
 .. warning:: A proper subdomain is required!
 
-We will install `elabctl`, a tool to help you manage the elabftw installation. It is not required to install it but it is quite handy so it is recommended (also it's just a bash script, nothing fancy). If you you do not wish to use `elabctl` and just want a YAML config to edit, see instructions below for advanced users.
+We will install ``elabctl``, a tool to help you manage the elabftw installation. It is not required to install it but it is quite handy so it is recommended (also it's just a bash script, nothing fancy). If you you do not wish to use ``elabctl`` and just want a YAML config to edit, see instructions below for advanced users.
 
 
 With elabctl (recommended)
@@ -83,7 +87,7 @@ With elabctl (recommended)
 
     elabctl install
 
-* Edit the configuration file (`/etc/elabftw.yml` by default):
+* Edit the configuration file (``/etc/elabftw.yml`` by default):
 
     Edit the configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
@@ -104,7 +108,7 @@ Reverse proxy configurations examples can be found `here <https://github.com/ela
 Option B: HTTPS mode with Let's Encrypt certificates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to request Let's Encrypt certificates, you need to install `certbot` and have your server publicly accessible. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
+In order to request Let's Encrypt certificates, you need to install ``certbot`` and have your server publicly accessible. See `official Let's Encrypt documentation <https://letsencrypt.org/getting-started/>`_ for your system. When requesting a new certificate, make sure that port 80 is open (and also port 443 for eLabFTW if it is the one you want to use). Once certbot is installed, the command to use might look like this: `certbot certonly \--standalone -d elab.example.org`.
 
 * Set ``DISABLE_HTTPS=false``.
 * Set ``ENABLE_LETSENCRYPT=true``.
@@ -150,7 +154,7 @@ Get the config with:
 
    curl -so docker-compose.yml "https://get.elabftw.net/?config"
 
-Edit this file and `docker compose up -d` to launch the containers.
+Edit this file and ``docker compose up -d`` to launch the containers.
 
 Initialize your database
 ========================
@@ -162,7 +166,7 @@ Initialize your database
    elabctl initialize
    # same as: docker exec -it elabftw bin/init db:install
 
-Replace "elabftw" in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with `elabctl status`/`docker ps`
+Replace `elabftw` in the command above by the name of the elabftw container if yours is different (for instance if you have several containers running with redis as session handler). You can check this with ``elabctl status`` or ``docker ps``.
 
 Register a Sysadmin account
 ===========================

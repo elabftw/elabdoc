@@ -21,6 +21,7 @@ New features
 * The "Create" button now displays Experiments Templates in a modal window before creating an experiment
 * Allow an Admin to add an existing user to their team (PR #4745). This behavior is disabled by default. A new Sysconfig setting has been added to control it.
 * Display Status list on Dashboard (fix #4715)
+* Allow transfer ownership of experiments
 
 Enhancements
 ````````````
@@ -37,6 +38,12 @@ Enhancements
 * Improve thumbnail generation: consume less memory and avoid issues with some PDFs (PR #4711 by Nico and Marcel)
 * Set the default ordering by last modified instead of date
 * Add steps related events to changelog
+* Add a button to display allowed email domains on register page (prevents issue with very long list)
+* Add an "Audit logs" section in Sysconfig panel to display actions such as users login in/out, users to teams modifications, password changes, etc...
+* Display multiple values in extra fields on several lines
+* Bring back the even/odd background color in tables
+* Order tags alphabetically
+* Add YAML to list of code languages
 
 i18n
 ````
@@ -49,8 +56,15 @@ Bugfixes
 * Fix items_types api spec (fix #4696)
 * Fix incorrect page redirection when duplicating a template from team page
 * Fix team events appearing twice in view mode
-* Fix links being removed by prune: commands (fix 4761)
+* Fix links being removed by prune: commands (fix #4761)
 * Fix field builder not changing inputs correctly on field type change
+* Fix Single Logout token decoding (fix #4796)
+* Fix issue when importing a template .eln as an experiment
+* Make the uploads migrator tool to s3 fix links in body too (fix #4777)
+* Fix missing items category in import menu in dashboard
+* Fix incorrect display of `use_isodate` in UCP (fix #4772)
+* Fix incorrect `orgid` type in api spec
+* When sending mass email, set the To: to the sender
 
 Dev corner
 ``````````
