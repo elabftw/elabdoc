@@ -14,6 +14,10 @@ Breaking change
 ```````````````
 The reason for major version bump: APIv1 is removed and will display an error message, that cannot be bypassed anymore.
 
+Noteworthy changes
+``````````````````
+* The ability to disable the "Delete" button and deletion of entries by users have been removed. These settings were added before the addition of a "soft-delete" mechanism. Currently, when something is Deleted, the data is marked as being deleted, but is still present in the sql database (and can be restored easily). The disabled button resulted in bad user experience so it is now always available.
+
 New features
 ````````````
 * Add "Custom ID" attribute to entities (see #3724)
@@ -22,6 +26,10 @@ New features
 * Allow an Admin to add an existing user to their team (PR #4745). This behavior is disabled by default. A new Sysconfig setting has been added to control it.
 * Display Status list on Dashboard (fix #4715)
 * Allow transfer ownership of experiments
+* Add a new set of read/write permissions to experiments templates and resources categories. Now there is one for the template itself and one for the resulting entry created from it. (#4820)
+* Add a new "Scope" button to easily switch the range of things you want listed: yours only, including your team, or everything you have access to (PR #4812)
+* Add ``tcl`` and ``vhdl`` to syntax highlighting
+* Add ``bin/console uploads:check`` command to add hash and or filesize to all files
 
 Enhancements
 ````````````
@@ -44,6 +52,10 @@ Enhancements
 * Bring back the even/odd background color in tables
 * Order tags alphabetically
 * Add YAML to list of code languages
+* Keep the cursor at the same spot when selecting an entry in show mode (PR #4824 by Marcel)
+* Add a modal window before the blockchain timestamp action. Rework the text, too.
+* Add a close button to favorite tags and todolist panels.
+* Display more suggested tags and set them in a collapsible box
 
 i18n
 ````
@@ -65,6 +77,9 @@ Bugfixes
 * Fix incorrect display of `use_isodate` in UCP (fix #4772)
 * Fix incorrect `orgid` type in api spec
 * When sending mass email, set the To: to the sender
+* Fix issue with user validation after SAML login
+* Fix collapse/expand behavior in show mode by Marcel
+* Fix incorrect reload of Mathjax upon layout switch (fix #4809)
 
 Dev corner
 ``````````
@@ -76,6 +91,7 @@ Dev corner
 * Fix round edges on button (PR #4744, #4742 by Marcel)
 * Improve code of yarn plugin to copy the tinymce files (PR #4713 by Marcel)
 * Fix issue with Storage/Memory (PR #4674 by Marcel)
+* Add html validation to cypress tests (#4688 by Marcel)
 
 Version 4.9.0
 -------------
