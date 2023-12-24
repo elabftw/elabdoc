@@ -17,6 +17,7 @@ The reason for major version bump: APIv1 is removed and will display an error me
 Noteworthy changes
 ``````````````````
 * The ability to disable the "Delete" button and deletion of entries by users have been removed. These settings were added before the addition of a "soft-delete" mechanism. Currently, when something is Deleted, the data is marked as being deleted, but is still present in the sql database (and can be restored easily). The disabled button resulted in bad user experience so it is now always available.
+* The default memory limit for PHP has been raised from 256 Mo to 2 Gb. This has no impact if you already defined it with the env var ``MAX_PHP_MEMORY``. This will have an impact if you don't have 2 Gb of memory to allocate. In that case, set that parameter to a more fitting value.
 
 New features
 ````````````
@@ -30,6 +31,7 @@ New features
 * Add a new "Scope" button to easily switch the range of things you want listed: yours only, including your team, or everything you have access to (PR #4812)
 * Add ``tcl`` and ``vhdl`` to syntax highlighting
 * Add ``bin/console uploads:check`` command to add hash and or filesize to all files
+* Display the id of timestamped experiments in verbose mode with ``bin/console experiments:timestamp``
 
 Enhancements
 ````````````
@@ -56,6 +58,12 @@ Enhancements
 * Add a modal window before the blockchain timestamp action. Rework the text, too.
 * Add a close button to favorite tags and todolist panels.
 * Display more suggested tags and set them in a collapsible box
+* Add Category and Status to pdf export
+* Use JSON data to timestamp instead of PDF/A (fix #4757 via PR #4830)
+* Add Custom ID to link autocomplete
+* Increase timestamp timeout to 30 seconds
+* Add ``includeArchived`` to query string for users api endpoint (fix #4815)
+* Stop entries from jumping around upon selection in show mode (#4824 by Marcel)
 
 i18n
 ````
@@ -80,6 +88,13 @@ Bugfixes
 * Fix issue with user validation after SAML login
 * Fix collapse/expand behavior in show mode by Marcel
 * Fix incorrect reload of Mathjax upon layout switch (fix #4809)
+* Fix Keeex config not present on new installs
+* Fix archived related entries not showing up (fix #4816)
+* Fix offset not being reset on filter addition in show mode (fix #4826)
+* Fix newline being added on top of pagebreak element (fix #4538)
+* Fix incorrect behavior of extra fields builder (fix #4184)
+* Fix incorrect behavior with SAML users
+* Fix collapes/expand behavior in show mode
 
 Dev corner
 ``````````
