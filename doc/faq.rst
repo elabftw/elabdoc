@@ -4,11 +4,6 @@
 Frequently asked questions
 **************************
 
-Is it totally free?
-===================
-
-YES. eLabFTW is free/libre software, so it is totally free of charge and always will be. `Read more about the free software philosophy <https://www.gnu.org/philosophy/free-sw.html>`_.
-
 But how is it better than something I can buy?
 ==============================================
 
@@ -21,11 +16,35 @@ What about patents and intellectual property?
 
 Since March 2013, the USA modified their law (see `America Invents Act <https://www.uspto.gov/patent/laws-and-regulations/leahy-smith-america-invents-act-implementation>`_) to switch from first-to-invent to first-inventor-to-file. This means that proving that you did this experiment before someone else has become less critical. It is only needed if you invented something, before someone put a patent on it (and you can prove it), and you want to keep using it as **prior user**.
 
-Fortunately, eLabFTW allows rock solid `timestamping of your experiments <https://en.wikipedia.org/wiki/Trusted_timestamping#Trusted_.28digital.29_timestamping>`_. With just one click of a mouse, and for free, you can timestamp your work.
+Fortunately, eLabFTW allows rock solid timestamping of your experiments. With just one click of a mouse, you can timestamp your work. There are currently two strategies available for timestamping: Trusted Timestamping and Blockchain Timestamping.
 
-If needed, you can also choose another TimeStamping Authority allowing :rfc:`3161` timestamping. For instance you could select a qualified timestamping authority (in the context of eIDAS regulation).
+Trusted timestamping
+--------------------
+This is the protocol defined by :rfc:`3161`, here is how it works:
 
-You also have the possibility to use the `Bloxberg.org <https://bloxberg.org/>`_ blockchain to timestamp your data. All it takes is a single click!
+1. we first generate a JSON export of the entity, containing all the data relevant to that entry
+2. we pass it through a cryptographic hash function to get its fingerprint
+3. we request a timestamp token from the Time Stamping Authority (TSA)
+4. we store the JSON file along with the token in an immutable ZIP archive (visible if you display archived attachments of a timestamped entry)
+
+A TSA is a trusted timestamping service that will be used to request a token. Several TSA are already configured in eLabFTW:
+
+- DFN.de (free academic service, default TSA)
+- Universign (eIDAS qualified, paid service)
+- Digicert (free)
+- Sectigo (free)
+- GlobalSign (free)
+- Custom: you can define your own service if necessary
+
+Blockchain timestamping
+-----------------------
+This timestamping method uses the `Bloxberg consortium <https://bloxberg.org>`_ blockchain to timestamp your data. Here is how it works:
+
+1. we first generate a JSON export of the entity, containing all the data relevant to that entry
+2. we pass it through a cryptographic hash function to get its fingerprint
+3. we add it to the Ethereum based blockchain
+4. we store the JSON file along with a PDF certifying our data in an immutable ZIP archive (visible if you display archived attachments of a timestamped entry)
+
 
 Why use eLabFTW?
 ================
@@ -75,7 +94,7 @@ Who else is using it?
 
 We do not maintain a list of institutions using it anymore. There are just too many. Consider that there are thousands of eLabFTW instances worldwide.
 
-In France, it's the ELN of choice for the CNRS, the 3rd largest research organization in the world (and also INRAE, INSERM, INRIA and a ton of other acronyms starting with I). It is also being used by many private companies.
+In France, it's the ELN of choice for the CNRS, the 3rd largest research organization in the world, along with many other universities and research institutes. It is also useful to startups and companies.
 
 In Germany, it is ubiquitous. Installed in many universities and private companies.
 
@@ -182,10 +201,11 @@ There is two ways to do that:
 * if the user registered in the wrong team, the Sysadmin can simply change the team from the Sysadmin panel
 * if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team
 
-Can I change the date format?
-=============================
+Is it totally free?
+===================
 
-No. The date in eLabFTW (YYYYMMDD) follows ISO 8601 standard and allowing a user to change the format would only bring confusion.
+YES. eLabFTW is free/libre software, so it is totally free of charge and always will be. `Read more about the free software philosophy <https://www.gnu.org/philosophy/free-sw.html>`_.
+
 
 What is the meaning of 'FTW'?
 =============================

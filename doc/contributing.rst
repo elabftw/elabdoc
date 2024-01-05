@@ -195,6 +195,7 @@ Install dependencies
 
     cd $dev/elabftw
     # javascript dependencies (node_modules/ directory)
+    docker exec -it elabftw yarn install
     docker exec -it elabftw yarn buildall
     # php dependencies (vendor/ directory)
     docker exec -it elabftw composer install
