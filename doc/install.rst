@@ -34,9 +34,9 @@ Absolutely required dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A containerization technology such as `docker <https://docs.docker.com/engine/installation/linux/>`_ or `podman <https://podman.io/>`_.
 
-A **MySQL** service with an eLabFTW database. **Not MariaDB**, MySQL.
+A **MySQL** service is already declared in the default configuration file, so you don't have to worry about installing **MySQL**. A container with **MySQL** will get created from the official **MySQL** docker image. Do **NOT** install ``mysql-server`` package.
 
-The default configuration file allows you to use a dockerized MySQL service alongside the eLabFTW container. Use this if you don't already have a MySQL server available.
+Alternatively, you can use another pre-existing **MySQL** service on your network. Important, it must be **MySQL**, **not MariaDB**. If you do that, make sure to comment out/remove the ``mysql`` container from the `docker compose` configuration file.
 
 The following MySQL modes are known to work fine with eLabFTW codebase:
 
