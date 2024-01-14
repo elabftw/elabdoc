@@ -18,6 +18,7 @@ Noteworthy changes
 ``````````````````
 * The ability to disable the "Delete" button and deletion of entries by users have been removed. These settings were added before the addition of a "soft-delete" mechanism. Currently, when something is Deleted, the data is marked as being deleted, but is still present in the sql database (and can be restored easily). The disabled button resulted in bad user experience so it is now always available.
 * The default memory limit for PHP has been raised from 256 Mo to 2 Gb. This has no impact if you already defined it with the env var ``MAX_PHP_MEMORY``. This will have an impact if you don't have 2 Gb of memory to allocate. In that case, set that parameter to a more fitting value.
+* The way pagination works has changed, you now have a button to "Load more". This means that now the "limit" parameter is correctly respected, returning 10 entries if the limit is 10, not 11 as before. This might impact you if you have scripts expecting the old behavior.
 
 New features
 ````````````
@@ -32,6 +33,7 @@ New features
 * Add ``tcl`` and ``vhdl`` to syntax highlighting
 * Add ``bin/console uploads:check`` command to add hash and or filesize to all files
 * Display the id of timestamped experiments in verbose mode with ``bin/console experiments:timestamp``
+* Allow changing the language without being logged in (PR #4850)
 
 Enhancements
 ````````````
@@ -64,6 +66,11 @@ Enhancements
 * Increase timestamp timeout to 30 seconds
 * Add ``includeArchived`` to query string for users api endpoint (fix #4815)
 * Stop entries from jumping around upon selection in show mode (#4824 by Marcel)
+* Allow repositioning extra fields by dragging them (PR #4851)
+* Better CSV export with more columns (category, status, tags, colors)
+* `limit` query parameter now correctly honored (was returning `limit + 1` before)
+* UI/UX fixes (PR #4833 by Marcel)
+
 
 i18n
 ````
