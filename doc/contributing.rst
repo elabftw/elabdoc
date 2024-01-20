@@ -53,6 +53,12 @@ Translations are merged in the code before a release. You must not try and edit 
 Contributing to the code
 ========================
 
+Word of caution
+---------------
+It is possible that the gap between the current development version and the current stable version will render this documentation obsolete in parts. It is highly recommended to use the `next` branch of `elabftw/elabdoc`, which is published here: https://doc.elabftw.net/next.
+
+=> Read this page on the `next` branch: https://doc.elabftw.net/next/contributing.html#contributing-to-the-code
+
 Introduction
 ------------
 Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, ...
