@@ -30,10 +30,15 @@ New features
 * Allow transfer ownership of experiments
 * Add a new set of read/write permissions to experiments templates and resources categories. Now there is one for the template itself and one for the resulting entry created from it. (#4820)
 * Add a new "Scope" button to easily switch the range of things you want listed: yours only, including your team, or everything you have access to (PR #4812)
-* Add ``tcl`` and ``vhdl`` to syntax highlighting
+* Add ``tcl``, ``diff`` and ``vhdl`` to syntax highlighting
 * Add ``bin/console uploads:check`` command to add hash and or filesize to all files
 * Display the id of timestamped experiments in verbose mode with ``bin/console experiments:timestamp``
 * Allow changing the language without being logged in (PR #4850)
+* Add an "Audit logs" section in Sysconfig panel to display actions such as users login in/out, users to teams modifications, password changes, etc...
+* Add instance parameter to export audit logs to web server error log
+* Add instance parameter to prevent Admins from archiving users (fix #4866)
+* When a user logs in, a notification is added if the eLabFTW instance has been upgraded since the last time they logged in. This notification is web only, no email, and points to the blog post with new features.
+* Add instance parameter to configure the link to the Chat room in the help menu. Useful if you have your own internal chat system.
 
 Enhancements
 ````````````
@@ -51,7 +56,6 @@ Enhancements
 * Set the default ordering by last modified instead of date
 * Add steps related events to changelog
 * Add a button to display allowed email domains on register page (prevents issue with very long list)
-* Add an "Audit logs" section in Sysconfig panel to display actions such as users login in/out, users to teams modifications, password changes, etc...
 * Display multiple values in extra fields on several lines
 * Bring back the even/odd background color in tables
 * Order tags alphabetically
@@ -67,9 +71,11 @@ Enhancements
 * Add ``includeArchived`` to query string for users api endpoint (fix #4815)
 * Stop entries from jumping around upon selection in show mode (#4824 by Marcel)
 * Allow repositioning extra fields by dragging them (PR #4851)
-* Better CSV export with more columns (category, status, tags, colors)
+* Better CSV export with more columns (category, status, tags, colors, custom_id)
 * `limit` query parameter now correctly honored (was returning `limit + 1` before)
 * UI/UX fixes (PR #4833 by Marcel)
+* Always display main text + extra fields in toggle body in show mode
+* Add `metadata_decoded` to JSON output with interpreted `metadata` field (fix #4855)
 
 
 i18n
@@ -102,6 +108,8 @@ Bugfixes
 * Fix incorrect behavior of extra fields builder (fix #4184)
 * Fix incorrect behavior with SAML users
 * Fix collapes/expand behavior in show mode
+* Fix required label not appearing on all elements (fix #4865)
+
 
 Dev corner
 ``````````
@@ -114,6 +122,7 @@ Dev corner
 * Improve code of yarn plugin to copy the tinymce files (PR #4713 by Marcel)
 * Fix issue with Storage/Memory (PR #4674 by Marcel)
 * Add html validation to cypress tests (#4688 by Marcel)
+* other changes by Marcel #4867, #4872
 
 Version 4.9.0
 -------------
