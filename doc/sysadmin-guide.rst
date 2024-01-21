@@ -29,11 +29,11 @@ The Sysadmin has access to core settings of the eLabFTW instance like email conf
 Setting up email
 ================
 
-If there is only one thing to do after an install, it's setting up email. Otherwise users will not be able to reset their password!
+If there is only one thing to do after an install, it's setting up email. Otherwise users will not be able to reset their password nor receive notifications!
 
-If a mail server is present, it will work out of the box. However, it is recommended to use an authenticated SMTP account to avoid the emails going to the spam folders of recipients. That is, unless your mail server is perfectly configured (with DKIM and SPF).
+In order to configure eLabFTW to send emails, you will need credentials to a SMTP service. If you are using a SMTP service without authentication, it works, too.
 
-Go to the Sysadmin panel (a link is at the bottom left of a page) and add the requested infos.
+Go to the Sysadmin panel, click the tab "Email" and add the requested information to connect.
 
 If you don't know what to do, I highly recommend using `SMTP2GO <https://get.smtp2go.com/xj1zy4rvle6v>`_ (use this referral link), they provide a free plan that will probably be enough for your use case.
 
@@ -46,7 +46,7 @@ Register an account using this link: `SMTP2GO <https://get.smtp2go.com/xj1zy4rvl
 Set up backup
 =============
 
-See the :ref:`backup <backup>` page.
+See the dedicated :ref:`backup <backup>` page.
 
 .. _configure-teams:
 
