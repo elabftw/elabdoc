@@ -71,34 +71,11 @@ If you are using it on a NAS
 
 You can follow this tutorial: `Update eLabFTW on a Synology NAS <https://github.com/elabftw/elabhow/tree/master/howto-update-nas#how-to-update-elabftw-on-a-synology-nas>`_
 
-Complete upgrade guide from 2.0.7 to 3.0.0
-==========================================
+Updating from incredibly old versions
+=====================================
 
-Updating the database structure
--------------------------------
+If you are running eLabFTW version <3.4.0 (from March 2020), you'll want to run ``db:updateto34`` after upgrading to 3.4.0 (again, always read the release notes from the version you're targeting).
 
-After updating the container/code, run this command to update the database schema:
+If you are running eLabFTW version <3.0.0 (from April 2019), you'll want to run ``db:updateto3`` after upgrading to 3.0.0.
 
-.. code-block:: bash
-
-    # for Docker users
-    docker exec -it elabftw php bin/console db:updateto3
-
-    # for non-Docker users, from the elabftw directory
-    yarn install
-    yarn buildall
-    composer install --no-dev -a
-    php bin/console db:updateto3
-
-This will prepare the database, then cleanup any orphaned rows found, and update the structure.
-
-For other updates, calling "db:update" should be enough. Always read the release notes!
-
-Breaking update
----------------
-
-Two thing are breaking in this update, the way to update, as described above, and the API keys.
-
-API keys now have a different format and are no longer stored in clear in the database (after all, they allow access to your data, so they should be treated as passwords).
-
-Users using the API will have to go to their profile and create new API keys. The old ones are erased upon update.
+If you are running eLabFTW version <2.0.7 (from December 2018), you'll want to update more often so you're not stuck with an incredibly outdated software application.

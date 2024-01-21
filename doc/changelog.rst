@@ -327,7 +327,7 @@ New features:
 * Add new extra fields types: time, datetime and email (fix #4411)
 * Add "Now" button for date, time and datetime extra fields (see #4411)
 * Work in progress: Add a Dashboard (PR #4419)
-* Allow transfering ownership of a template to another user
+* Allow transferring ownership of a template to another user
 * Add suggested tags in edit mode
 * Add SQL to list of highlighted langs
 * Improve revisions system (#4460). Make them accessible from APIv2. Add possibility to display a diff between revisions (fix #1667)
@@ -515,7 +515,7 @@ Dev corner:
 * Remove 3Dmol notrack code as it has been removed from upstream
 * Get rid of jquery.rating.js and use pure SCSS solution for star rating
 * Some major updates in libs like 3dmol, ZipStream and Fullcalendar
-* Udpate dependencies for extended search (#4215 by Marcel)
+* Update dependencies for extended search (#4215 by Marcel)
 * Improve LdapAuth class (#4197)
 * Add `tests/clean.sh` script
 * `phpstan` now officially managed by composer
@@ -702,7 +702,7 @@ New features:
 * Allow setting the ldap attribute used to lookup the user: users can now login with their ldap username for instance (fix #3359). Several attributes can be set, separated by spaces.
 * Add tags:teamssync command to synchronize tags between teams
 * Add metadata extra fields builder user interface (#3994)
-* Add a way to track the number of timestamps left by setting an intial value manually, a notification will also be sent daily to sysadmins
+* Add a way to track the number of timestamps left by setting an initial value manually, a notification will also be sent daily to sysadmins
 * Add strikethrough button in toolbar
 * Add prune:experiments|items|uploads to remove completely deleted entries
 * Fix a bug where users could not edit their own email
@@ -793,7 +793,7 @@ Bugfixes:
 * Don't restrict image size in body (fix #3800)
 * Fix incorrect semver comparison in Sysconfig Panel
 * Fix event deletion notification settings not honored
-* Fix filename download with non-ascii paramaters
+* Fix filename download with non-ascii parameters
 * Fix filename upon save after displaying it (fix #3797)
 * Remove deadline when finishing a step
 * Fix date parsing in APIv1
@@ -2493,7 +2493,7 @@ Dev corner:
 Version 3.3.6
 -------------
 
-A few bugfixes and a new feature: you can now share an experiment/item with a share link that will unconditonally give read access to whoever has it.
+A few bugfixes and a new feature: you can now share an experiment/item with a share link that will unconditionally give read access to whoever has it.
 
 Bugfixes:
 

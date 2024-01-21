@@ -54,7 +54,7 @@ Configure teams :sup:`(optional)`
 =================================
 If your instance hosts different research groups/teams, you can create them from the Sysadmin panel (`sysconfig.php`).
 
-You might also want to edit the Default team name. In the screenshot below, there are four teams. The "Organization ID" is an attribute that you can set in case you wish to use the information sent by an external authentication service (such as SAML or LDAP) to assing a team to a new user. It basically allows you to match a team on eLabFTW with a team in your directory.
+You might also want to edit the Default team name. In the screenshot below, there are four teams. The "Organization ID" is an attribute that you can set in case you wish to use the information sent by an external authentication service (such as SAML or LDAP) to assign a team to a new user. It basically allows you to match a team on eLabFTW with a team in your directory.
 
 The "Visible" attribute allows you to hide a team from the "Register" page. Use it for the administrative team for instance. Only a completely empty team can be deleted.
 
@@ -87,7 +87,7 @@ Configure automatic timestamping
 
 You might want to automate the timestamping of experiments, and not rely on users triggering the action manually. For that, you need to setup a recurrent task (cronjob or systemd timer) that will call a console command.
 
-The command is: `bin/console experiments:timestamp --help`. It requires an argument wich is the id of the user doing the timestamp. In most cases, using `1` will work fine. Alternatively you can create a specific user for this purpose.
+The command is: `bin/console experiments:timestamp --help`. It requires an argument which is the id of the user doing the timestamp. In most cases, using `1` will work fine. Alternatively you can create a specific user for this purpose.
 
 By default, all experiments modified in the past week will be timestamped. So you'll want to adjust your recurrent task periodicity to align with the `--modified-since / -m` setting. Use english terms like "1 month" or "2 weeks" for this option.
 
@@ -116,7 +116,7 @@ If you would like to use this service, please `contact us <https://www.deltablot
 Configure storage :sup:`(optional)`
 ===================================
 
-By default, uploaded files are stored in the `uploads/` folder that is mounted outside the container for persistance. You can choose instead to use an S3 compatible service (buckets) to store these files. The "Uploads" tab allows you to configure this storage.
+By default, uploaded files are stored in the `uploads/` folder that is mounted outside the container for persistence. You can choose instead to use an S3 compatible service (buckets) to store these files. The "Uploads" tab allows you to configure this storage.
 
 To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file. You can use `bin/console uploads:migrate` to migrate existing locally uploaded files to S3 storage.
 

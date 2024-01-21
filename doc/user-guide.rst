@@ -4,7 +4,7 @@
 User guide
 **********
 
-This guide is aimed to users, there is also one for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
+This guide is aimed to Users, there is also one for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
 
 Introduction
 ============
@@ -12,19 +12,48 @@ There are two main entities (objects) types: Experiments and Resources. Experime
 
 While similar, they have a few differences:
 
-* Experiments can be timestamped
 * Resources can be booked
 * Experiments templates can be created by users
-* Resources templates can only be created by Admins
+* Resources templates (Resources Categories) can only be created by Admins
 
 They still share a lot of attributes, such as tags, category, status, links, etc...
 
 Experiments
 ===========
-Experiments showed on the Experiments tab are mixed with experiments from other users in your team. To see only your experiments on this page, you need to disable a setting in your User Control Panel (link available in the top right menu):
 
-.. image:: img/user-disable-show-exp-team.png
+Let's start with the Experiments, because they are the core of a lab notebook. Select Experiments from the main menu. It will display a list of Experiments, this is "Show mode".
 
+.. image:: img/user-experiments-menu.png
+
+Show mode
+---------
+
+.. figure:: img/user-show-mode.png
+   :alt: elabftw experiments show mode
+
+   List of Experiments in Show mode
+
+If you prefer to list them with a different, more compact display, click the **Switch layout** button on the top right of the first listed Experiment:
+
+.. figure:: img/user-switch-layout.png
+   :alt: elabftw switch layout button
+
+   Switch layout button
+
+They will appear like this:
+
+.. figure:: img/user-alt-layout.png
+   :alt: elabftw alternate layout
+
+   Alternate listing layout
+
+
+
+Experiments are listed by default mixed with experiments from other users in your team. To see **only** your experiments on this page, you need to change the **Scope** from the button on the right:
+
+.. image:: img/user-scope-button.png
+
+Set it to "*Self*" to only display your own Experiments. Note that this button is independent from the similar ones on the Resources or Templates pages, and your selection is remembered.
 
 Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen and selecting a template (or not!). You will then be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
 
@@ -35,17 +64,7 @@ An experiment is composed of:
 
 These are the two required elements. In fact, only the title is required as the main content can be empty.
 
-Templates
----------
-In order to save time during experiments creation, it is highly recommended to use the Templates for experiments you often do. They are a skeleton of a real experiment. To create a template, select "My templates" from the User menu.
 
-.. image:: img/template-menu-click.png
-
-Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. By default, the template is "pinned", which means it will appear in the menu next to the "Create" button on the main "Experiments" page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned status from the extended menu on the right (three vertical dots) by selecting: "Toggle pin (add to create button menu)":
-
-.. image:: img/template-toggle-pin.png
-
-From this menu you can also choose to download the template as an ELN archive, which can be useful if you want to share it with someone on another eLabFTW instance.
 
 Edit mode
 ---------
@@ -196,16 +215,31 @@ Same as above, but for experiments.
 
 Attach a file
 ^^^^^^^^^^^^^
-You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, and there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an experiment.
+.. image:: img/user-file-uploader.png
+    :align: center
+    :alt: file uploader
 
-When you are done, click the «Save and go back» button.
+You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an experiment.
 
-You are now in view mode.
+Some files are recognized by eLabFTW:
+
+* molecules files such as cif, pdb, sdf, mol files, they will display the molecule in 2D or 3D
+* DNA files such as fasta, gb, ape, dna, gff, they will display a fully featured viewer
+* images such as png, jpg, gif or tiff will get a thumbnail
+* pdf files also get a thumbnail and can optionally be included in pdf exports
+
 
 Ellipsis menu (the three dots on the top right)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.
+
+---------------
+
+When you are done, click the «Save and go back» button.
+
+You are now in view mode.
+
 
 View mode of experiment
 -----------------------
@@ -274,21 +308,46 @@ Comments
 --------
 People can leave comments on experiments. They cannot edit your experiment, but they can leave a comment. The owner of the experiment will receive an email if someone comment their experiment.
 
-Database
-========
-Same as experiments for a lot of things, except there is no status, but a rating system (little stars). You can store any type of items inside, the admin can edit the available types of items.
+Templates
+=========
 
-In view mode, click the link icon to show all experiments linked with this item.
+In order to save time when creating Experiments, eLabFTW features a Templates system for Experiments.
 
-Examples of database items types:
+It is recommended to create Templates for experiments you often do. You can think of a Template as a skeleton of a real experiment. To create a template, select "Templates" from the User menu.
 
-* antibodies
-* microscopes
-* plasmids
-* drugs
-* chemicals
-* equipment
-* projects
+.. image:: img/user-templates-menu.png
+
+Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.
+
+By default, the template is "pinned", which means it will appear in the pop up window when you click "Create" and also in the menu next to the "Create" button on the "Experiments" page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned status by clicking the thumbtack icon:
+
+
+.. image:: img/user-toggle-pin-templates.*
+
+As with Experiments or Resources, use the Scope button to select what you wish to be listed: only your own Templates (*Self*) or more.
+
+
+Resources
+=========
+Resources are similar to Experiments, but serve a different purpose: listing and organizing *things* that are used in Experiments.
+
+Only a team Admin can define the Resources Categories from the Admin Panel. Resources Categories could be:
+
+* Antibodies
+* Microscopes
+* Plasmids
+* Drugs
+* Chemicals
+* Equipment
+* Projects
+
+Resources' default permissions allow anyone from the Team to edit them, but you are free to configure them differently.
+
+Look at the :ref:`importing-data` section to learn how to import your Resources from a spreadsheet file or through the API.
+
+Once you have your Resources present, you can mention them in your Experiments by typing ``#`` and their title, and selecting the proposed autocompletion, or use directly the Link system to link them to an Experiment.
+
+Furthermore, Resources can be made bookable, see section below.
 
 Booking resources
 =================
@@ -318,13 +377,13 @@ This will show a modal window with various settings:
    * - Allow booking this resource
      - This is a general toggle to allow booking of the resource
    * - Allow overlapping slots
-     - Control wether it is allowed to have more than one booking slot at the same time
+     - Control whether it is allowed to have more than one booking slot at the same time
    * - Maximum slot time (in minutes)
      - Maximum number of minutes allowed for a single booking slot
    * - Maximum per-user future slot allowed
      - Number of future slots allowed for a particular user/resource couple
    * - Allow cancelling a booking slot
-     - Control wether users are allowed to cancel a booking
+     - Control whether users are allowed to cancel a booking
    * - Minimum time before a slot can be cancelled (in minutes)
      - If "now" is closer than this number of minutes to the start of the event, it will not be possible to cancel it
 
@@ -454,6 +513,8 @@ Make sure to create experiments templates that already link to that Project so t
 Using Categories
 ----------------
 An Admin can define several Experiments Categories, which are then available to users in the Team. It is a quick and easy way to group experiments together.
+
+.. _importing-data:
 
 Importing data
 ==============

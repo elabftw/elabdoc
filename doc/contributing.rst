@@ -22,7 +22,7 @@ What can you do to help this project?
 Non-code contributions
 ======================
 
-Contributions are not necessarily programmation related. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
+Contributions are not necessarily programming related. There are multiple things outside of code contributions. Have a look at this article listing them: `Non code contributions to open-source <https://navendu.me/posts/non-code-contributions-to-open-source/>`_.
 
 Reporting a security issue
 ==========================
@@ -91,7 +91,7 @@ The repository contains (at least) 3 branches:
 Environment installation
 ------------------------
 
-So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. This allows you to run the app as it would run in production, but still see your changes in the code immediatly because the source is on your computer. In this setup, we will put everything in the same folder for simplicity.
+So the dev environment for eLab is an hybrid between Docker and a local install. The files will be served by the webserver in Docker but the source code (`elabftw` folder) will be on your computer. This allows you to run the app as it would run in production, but still see your changes in the code immediately because the source is on your computer. In this setup, we will put everything in the same folder for simplicity.
 
 Ready?
 
