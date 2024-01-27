@@ -462,7 +462,7 @@ It is a good idea to use a pre-commit hook to run linters before the commit is a
     reset="\e[0m"
     red="\e[0;31m"
     set -e
-    if ! yarn pre-commit
+    if ! docker exec elabftw yarn pre-commit
     then
         printf "${red}error${reset} Pre-commit script found a problem!.\n"
         exit 1
