@@ -8,7 +8,7 @@ Version 5.0.0
 
 Note
 ````
-Yes, this is a major version bump, but apart from the removal of REST API Version 1, there are no other major changes, so the upgrade has nothing in particular.
+Yes, this is a major version bump, but apart from the removal of REST API Version 1, there are no other breaking changes, so the upgrade has nothing in particular.
 
 Breaking change
 ```````````````
@@ -19,6 +19,8 @@ Noteworthy changes
 * The ability to disable the "Delete" button and deletion of entries by users have been removed. These settings were added before the addition of a "soft-delete" mechanism. Currently, when something is Deleted, the data is marked as being deleted, but is still present in the sql database (and can be restored easily). The disabled button resulted in bad user experience so it is now always available.
 * The default memory limit for PHP has been raised from 256 Mo to 2 Gb. This has no impact if you already defined it with the env var ``MAX_PHP_MEMORY``. This will have an impact if you don't have 2 Gb of memory to allocate. In that case, set that parameter to a more fitting value.
 * The way pagination works has changed, you now have a button to "Load more". This means that now the "limit" parameter is correctly respected, returning 10 entries if the limit is 10, not 11 as before. This might impact you if you have scripts expecting the old behavior.
+* The escaping strategy has been changed from sanitizing input to escaping output thanks to the amazing work done by Marcel Bolten in PR #4835. This should fix issue with quotes appearing wrongly from time to time.
+* ``metadata`` field in JSON output is now interpreted (no longer a string)
 
 New features
 ````````````
@@ -39,6 +41,8 @@ New features
 * Add instance parameter to prevent Admins from archiving users (fix #4866)
 * When a user logs in, a notification is added if the eLabFTW instance has been upgraded since the last time they logged in. This notification is web only, no email, and points to the blog post with new features.
 * Add instance parameter to configure the link to the Chat room in the help menu. Useful if you have your own internal chat system.
+* Add a filtering input on top of templates listing to filter out results
+* Add account expiration notifications (#4886). New notifications:send-expiration command that executes every week and send an email to users with account expiring in the next 30 days and their Admins with a list of users expiring.
 
 Enhancements
 ````````````
@@ -75,8 +79,11 @@ Enhancements
 * `limit` query parameter now correctly honored (was returning `limit + 1` before)
 * UI/UX fixes (PR #4833 by Marcel)
 * Always display main text + extra fields in toggle body in show mode
-* Add `metadata_decoded` to JSON output with interpreted `metadata` field (fix #4855)
-
+* Improved .eln import/export with more fields taken into account such as Status and Category
+* Prevent the text editor (Tiny) from transforming a #word in title
+* Add informative message to explain the purpose of ``is_owner`` parameter
+* Add full export menu to templates
+* Improve API specification
 
 i18n
 ````
@@ -109,6 +116,7 @@ Bugfixes
 * Fix incorrect behavior with SAML users
 * Fix collapes/expand behavior in show mode
 * Fix required label not appearing on all elements (fix #4865)
+* Move tools:genkey to bin/init, was not working with bin/console on fresh container
 
 
 Dev corner
@@ -122,7 +130,9 @@ Dev corner
 * Improve code of yarn plugin to copy the tinymce files (PR #4713 by Marcel)
 * Fix issue with Storage/Memory (PR #4674 by Marcel)
 * Add html validation to cypress tests (#4688 by Marcel)
-* other changes by Marcel #4867, #4872
+* other changes by Marcel #4867, #4872, #4887
+* Remove phan and rector
+* Add phpstan and psalm to devDependencies and execute them with composer
 
 Version 4.9.0
 -------------
