@@ -21,6 +21,7 @@ Noteworthy changes
 * The way pagination works has changed, you now have a button to "Load more". This means that now the "limit" parameter is correctly respected, returning 10 entries if the limit is 10, not 11 as before. This might impact you if you have scripts expecting the old behavior.
 * The escaping strategy has been changed from sanitizing input to escaping output thanks to the amazing work done by Marcel Bolten in PR #4835. This should fix issue with quotes appearing wrongly from time to time.
 * ``metadata`` field in JSON output is now interpreted (no longer a string)
+* The experiments are no longer shared across teams if the owner belongs to multiple teams. See complete description of the behavior: https://github.com/elabftw/elabftw/discussions/4908 (PR #4920 fix #4894)
 
 New features
 ````````````
@@ -43,6 +44,10 @@ New features
 * Add instance parameter to configure the link to the Chat room in the help menu. Useful if you have your own internal chat system.
 * Add a filtering input on top of templates listing to filter out results
 * Add account expiration notifications (#4886). New notifications:send-expiration command that executes every week and send an email to users with account expiring in the next 30 days and their Admins with a list of users expiring.
+* Add password policy tools (minimum length + complexity)
+* Set default password minimum length to 12 characters
+* Greatly improve extra fields search on search page (PR #4731 by Marcel)
+* Add `custom_id` to search query syntax (#4898 by Marcel)
 
 Enhancements
 ````````````
@@ -84,6 +89,9 @@ Enhancements
 * Add informative message to explain the purpose of ``is_owner`` parameter
 * Add full export menu to templates
 * Improve API specification
+* The extra fields of type Experiments, Resources, or Users are now only storing the ID, so their value is a number, not a string anymore (fix #3857)
+* Create link automatically upon addition of extra field link (see #3857)
+* Make images fit screen at all times (fix #4418)
 
 i18n
 ````
@@ -117,6 +125,9 @@ Bugfixes
 * Fix collapes/expand behavior in show mode
 * Fix required label not appearing on all elements (fix #4865)
 * Move tools:genkey to bin/init, was not working with bin/console on fresh container
+* Fix api access of entity with Organization permission (fix #4928)
+* Fix issue with special characters in link input (#4917)
+* Fix expanded and selected state of entities (#4913 fix #4889)
 
 
 Dev corner
@@ -130,7 +141,7 @@ Dev corner
 * Improve code of yarn plugin to copy the tinymce files (PR #4713 by Marcel)
 * Fix issue with Storage/Memory (PR #4674 by Marcel)
 * Add html validation to cypress tests (#4688 by Marcel)
-* other changes by Marcel #4867, #4872, #4887
+* other changes by Marcel #4867, #4872, #4887 and plenty others
 * Remove phan and rector
 * Add phpstan and psalm to devDependencies and execute them with composer
 
