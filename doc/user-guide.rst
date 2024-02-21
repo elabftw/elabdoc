@@ -653,3 +653,16 @@ With eLabFTW, you can have this workflow, but it is much easier to achieve:
 - User B, that has locking power (Admin + Lock user group) can go on that experiment and click the lock icon
 
 This prevents user A from modifying the content (like plastifying), and it keeps a log of who locked it and when (like signing the page).
+
+Tracking changes
+================
+
+In eLabFTW, changes are tracked with a different granularity depending on the instance configuration and the type of change.
+
+For an Experiment or Resource, there are two concepts: the Changelog, and the Revisions. The Revisions only tracks changes of the Main text (body) of the entry. The Changelog tracks all changes, except the content of the main text, as this is handled separately by the Revisions system.
+
+You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the view or edit page of an entry. The Revisions also allows you to compare two versions or restore a particular version.
+
+All administratives changes such as creating a new user, promoting a user to Admin, assigning a user in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.
+
+When deleting something, the entry/file is not actually deleted but simply marked as being deleted. This prevents destructive actions and allows for easy restoration of accidentally deleted things. This mechanism is called "soft-delete".
