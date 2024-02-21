@@ -181,3 +181,28 @@ Don't forget to setup :ref:`backup <backup>`, and subscribe to `the newsletter <
 The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
 ENJOY! :D
+
+Inserting locally trusted root Certificate Authority
+====================================================
+
+If you need the eLabFTW container to trust your own CA, you will need to create a custom image and run that instead of the official image.
+
+For this, create a folder, and in that folder, create a ``Dockerfile`` with this content:
+
+.. code-block:: bash
+
+    # Example Dockerfile to include custom trusted Certificate Authority
+    # we use the "stable" tag so this always work and needs no editing between versions
+    FROM elabftw/elabimg:stable
+    # in this example, the file is named "my-cert.pem" and must be present in the same folder is this Dockerfile
+    # we copy it into this folder so it can be picked up by the following command
+    COPY my-cert.pem /usr/local/share/ca-certificates/my-cert.crt
+    RUN update-ca-certificates
+
+Make sure to have your CA cert in the same folder, named ``my-cert.pem``, and build the image:
+
+.. code-block:: bash
+
+    docker buildx build -t elabftw/elabimg-custom .
+
+And replace the image name (`elabftw/elabimg`) in the main elabftw configuration YAML file (`/etc/elabftw.yml` by default) with your custom image name (`elabftw/elabimg-custom`).
