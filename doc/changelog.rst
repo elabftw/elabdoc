@@ -3,6 +3,24 @@
 Changelog
 =========
 
+Version 5.0.2
+-------------
+
+Small bugfix patch.
+
+* fix bug with custom id value that could not be removed
+* fix csv report missing has_mfa_enabled column header
+* fix: prevent deleted user linked in metadata from causing error
+
+Version 5.0.1
+-------------
+
+Small bugfix patch.
+
+* fix issue with empty Users extra field. fix #4946
+* fix issue with sysadmin could not promote user to admin if not admin in
+* add autocomplete for metadata key input again (#4932)
+
 Version 5.0.0
 -------------
 
