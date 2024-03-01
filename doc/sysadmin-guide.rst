@@ -65,9 +65,14 @@ The "Visible" attribute allows you to hide a team from the "Register" page. Use 
 Configure authentication :sup:`(optional)`
 ==========================================
 
-By default Users are authenticated locally, with their email and a password stored locally in eLabFTW.
+eLabFTW currently supports four authentication mechanisms:
 
-You can chose to have other authentication mechanisms such as LDAP or SAMLv2 (IDP). They can be configured in their respective tabs. It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
+* Local authentication: email + password stored locally, this is the default
+* SAML authentication: use one or several Identity Provider (IDP) to authenticate users. See dedicated :ref:`SAML documentation page <saml>`.
+* LDAP authentication: verify the login with an LDAP service. See dedicated :ref:`LDAP documentation page <ldap>`.
+* External authentication: use request headers added by your own middleware to authenticate the user (e.g. Apache's auth_mellon)
+
+It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
 
 Set up timestamping :sup:`(optional)`
 ======================================

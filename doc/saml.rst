@@ -80,7 +80,7 @@ We need to specify where to look in the attributes sent in the response for emai
      - sn
      - urn:oid:2.5.4.4
      - No
-   * - Userid
+   * - Userid (internal ID)
      - uid
      - urn:oid:0.9.2342.19200300.100.1.1
      - No
@@ -88,6 +88,16 @@ We need to specify where to look in the attributes sent in the response for emai
 If you cannot have information about the team, or do not wish to use it, make sure to have the setting "Let user select a team" when the user is created during first login.
 
 Note that the metadata.xml file (accessible at `/metadata.php`) will contain a section informing the IDP of the requested attributes.
+
+About the Userid / Internal ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you configure the ``uid`` (Userid/Internal ID) parameter for an IDP, the value will be read from the SAML assertion and:
+
+- for user creation on the fly, the ``orgid`` (Organization ID) field of the user will contain the value of the ``uid`` attribute
+- for an existing user logging in, the ``orgid`` will not be modified
+
+If you enable "Fallback to internal id if existing user cannot be matched with email", then the ``uid`` will be used to try and match an existing user if, during login, the match could not be done on the ``email`` field (user changed email for instance). You can then chose to enable "If user is matched with internal id, update the email sent by IDP?" so that the email sent by the IDP is updated in the local database.
 
 Disable local login/register
 ============================
