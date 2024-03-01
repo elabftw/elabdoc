@@ -64,13 +64,6 @@ If you encounter an issue during the database migration, open a GitHub issue!
 
 Note that you can use `db:revert XYZ` to revert the changes made by schema `XYZ`, or use `--force` to ignore errors (only do that if you know what you are doing!).
 
-If you are using it on a NAS
-============================
-
-.. warning:: Be sure to `read the release notes <https://github.com/elabftw/elabftw/releases/latest>`_, they might contain important information. And have a :ref:`backup <backup>`.
-
-You can follow this tutorial: `Update eLabFTW on a Synology NAS <https://github.com/elabftw/elabhow/tree/master/howto-update-nas#how-to-update-elabftw-on-a-synology-nas>`_
-
 Updating from incredibly old versions
 =====================================
 
