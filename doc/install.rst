@@ -68,7 +68,7 @@ Configure eLabFTW
 
 .. warning:: A proper subdomain is required!
 
-.. warning:: Docker creates iptables rules by default at startup. As a result, it will expose your elabftw installation to the public if your server is not running behind a firewall. This will also override restrictions set with packages such as ufw. Consider manually creating some rules on the DOCKER-USER chain if you want to restrict access, see `here <https://docs.docker.com/network/packet-filtering-firewalls/#restrict-connections-to-the-docker-host>`.
+.. warning:: Docker creates iptables rules by default at startup. As a result, it will expose your elabftw installation to the public if your server is not running behind a firewall. This will also override restrictions set with packages such as ufw. Consider manually creating some rules on the DOCKER-USER chain if you want to restrict access, see `here <https://docs.docker.com/network/packet-filtering-firewalls/#restrict-connections-to-the-docker-host>`_.
 
 We will install ``elabctl``, a tool to help you manage the elabftw installation. It is not required to install it but it is quite handy so it is recommended (also it's just a bash script, nothing fancy). If you you do not wish to use ``elabctl`` and just want a YAML config to edit, see instructions below for advanced users.
 
