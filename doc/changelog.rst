@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 5.0.3
+-------------
+
+Small bugfix patch (#4968).
+
+* fix issue where an entry could not be accessed in edit mode if these two conditions were true:
+
+  - entry (Experiment or Resource) has a file attachment created before version 4.3.0
+  - user has the uploads section display mode set to "table" (non-default)
+
+This is a good opportunity to remind you of the existence of ``docker exec -it elabftw bin/console uploads:check`` which will ensure (for non-S3 setups) that all stored files have a ``filesize`` value in MySQL. While not strictly necessary to operate, running this command will stop eLab from falling back to reading the value from disk (because it is now available in MySQL), and that means less disk access, which is always good (looking up the filesize on an ext4 filesystem is not expensive, but it doesn't hurt to avoid it).
+
+
 Version 5.0.2
 -------------
 
