@@ -125,7 +125,7 @@ If you are interested in such options, please visit this page: `Deltablot's elab
 Will I be able to import my plasmids/antibodies/whatever in the database from a Excel file?
 ===========================================================================================
 
-Yes, in the admin panel, click on the Import CSV link and follow the instructions.
+Yes, see :ref:`Import CSV Documentation <csvimport>`.
 
 Can I try it before I install it?
 =================================
