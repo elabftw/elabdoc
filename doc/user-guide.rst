@@ -744,3 +744,27 @@ You can access the Changelog or the Revisions through the ellipsis menu (three d
 All administratives changes such as creating a new user, promoting a user to Admin, assigning a user in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.
 
 When deleting something, the entry/file is not actually deleted but simply marked as being deleted. This prevents destructive actions and allows for easy restoration of accidentally deleted things. This mechanism is called "soft-delete".
+
+Sharing with external collaborators
+===================================
+If you want to share your results with an external collaborator, you have two options:
+
+Option 1: Export and send
+-------------------------
+This option is pretty straightforward, you export your entry into a PDF or ZIP archive and send this by email or other means to your collaborator.
+
+If course, this option has its limitations, and is not always the best suited approach, but works 100% of the time.
+
+Option 2: Allow anonymous access
+--------------------------------
+It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:
+
+.. image:: img/sysconfig-anonymous.png
+
+Then, users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:
+
+.. image:: img/user-anonymous-link.png
+
+Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
+
+For this feature to work, the instance must  be accessible from an external network.
