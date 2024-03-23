@@ -3,6 +3,16 @@
 Changelog
 =========
 
+Version 5.0.4
+-------------
+
+Bugfix patch:
+
+* use max-height:100% in body_view. fix issue #5003
+* fix profile statistics and team groups (#4963)
+* fix query example in api doc (#5002)
+* fix issue with month long bookings in scheduler (#4991)
+
 Version 5.0.3
 -------------
 
