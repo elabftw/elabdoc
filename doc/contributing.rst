@@ -175,17 +175,20 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 
 
 * set `SITE_URL` to `https://localhost:3148` or whatever port you chose in the previous step.
-* Change the `volumes:` lines to bind mount the container to the source code. The part before the `:` is the source path on your host that you should adjust. The part after corresponds to the destination path where the code lives in the container. For the elabftw container, adjust the source to point to the `$dev/elabftw` path and adjust the destination path to `/elabftw`. For the mysql container, adjust the source to point to `$dev/elabftw/mysql` and keep the destination path as `/var/lib/mysql`. The lines should look like this:
+* Change the `volumes:` lines to bind mount the container to the source code. Paths are formatted as `SOURCE:DESTINATION`, in which the source path is the path located on the local file directory and the destination path is the path located on the Docker container.
+    * For the elabftw container: Adjust the source path to point to `$dev/elabftw`. Adjust the destination path to `/elabftw`.
+    * For the mysql container: Adjust the source to point to `$dev/mysql`. Keep the destination path as `/var/lib/mysql`.
+The lines should look like this:
 
 .. code-block:: yaml
 
     services:
         web:
             volumes:
-                - $dev/elabftw:/elabftw
+                - ~/elabdev/elabftw:/elabftw
         mysql:
             volumes:
-                - $dev/elabftw/mysql:/var/lib/mysql
+                - ~/elabdev/mysql:/var/lib/mysql
 
 
 * Start the containers:
