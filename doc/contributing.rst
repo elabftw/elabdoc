@@ -150,7 +150,7 @@ Install elabctl
 
 * Edit `elabctl.conf`, change BACKUP_DIR to `$dev/backup` or any other directory (write full paths of course, not aliases)
 * Change CONF_FILE to `$dev/docker-compose.yml`. Again, write the full path, not the alias!
-* Change DATA_DIR to `$dev/data`. Again, write the full path, not the alias!
+* Change DATA_DIR to `$dev/elabftw`. Again, write the full path, not the alias!
 
 Install compose file
 ^^^^^^^^^^^^^^^^^^^^
@@ -175,12 +175,18 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 
 
 * set `SITE_URL` to `https://localhost:3148` or whatever port you chose in the previous step.
-* Change the `volumes:` line so it points to your `$dev/elabftw` folder (for elabftw and mysql containers). The part before the `:` is the path on your host, that you should adjust, and the part after corresponds to where the code lives in the container: `/elabftw`, and this you do not change. It should look like this:
+* Change the `volumes:` lines to bind mount the container to the source code. The part before the `:` is the source path on your host that you should adjust. The part after corresponds to the destination path where the code lives in the container. For the elabftw container, adjust the source to point to the `$dev/elabftw` path and adjust the destination path to `/elabftw`. For the mysql container, adjust the source to point to `$dev/elabftw/mysql` and keep the destination path as `/var/lib/mysql`. The lines should look like this:
 
 .. code-block:: yaml
 
-    volumes:
-        - /home/<YOUR USERNAME>/elabftw:/elabftw
+    services:
+        web:
+            volumes:
+                - $dev/elabftw:/elabftw
+        mysql:
+            volumes:
+                - $dev/elabftw/mysql:/var/lib/mysql
+
 
 * Start the containers:
 
