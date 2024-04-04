@@ -201,6 +201,17 @@ There is two ways to do that:
 * if the user registered in the wrong team, the Sysadmin can simply change the team from the Sysadmin panel
 * if the user switched team, old team needs to Archive the user (from the Admin panel), and user needs to register a new account (same email can be used) in the new team
 
+Is there a plugin system?
+=========================
+
+No, eLabFTW has no plugins and no plan to add support for it. This decision is motivated by several factors:
+
+- security of the application: a badly written plugin might compromise an instance (this happens daily with Wordpress plugins)
+- a stable plugin API has to be maintained, which is a heavy burden on development, as plugins will hook into internals, and it opens the door to a never ending stream of requests about adding hooks here and there
+- our vision is about a single coherent codebase, not a morcellated software
+
+If you wish to add functionality to eLabFTW, the best is to discuss it in an issue, and eventually create a pull request with the code you want to merge, rather than planning on plugins.
+
 Is it totally free?
 ===================
 
