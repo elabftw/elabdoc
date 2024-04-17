@@ -1,15 +1,6 @@
 # Configuration example files for eLabFTW
 
-Here are some configuration files you can use for your webserver.
-
-## Important note
-
-Configuration files for running eLabFTW without Docker are no longer provided.
-They require maintenance and extra work for no good reasons. The configuration
-inside the Docker container is the only source of truth.
-
-There will be **no support** for using Apache, Nginx or any other webserver without
-Docker.
+This folder holds example configuration files for popular web servers, when used as reverse proxy in front of eLabFTW container.
 
 ## Apache
 
