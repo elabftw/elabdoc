@@ -59,6 +59,8 @@ It is possible that the gap between the current development version and the curr
 
 => Read this page on the `next` branch: https://doc.elabftw.net/next/contributing.html#contributing-to-the-code
 
+Another thing is that this documentation is targeted towards GNU/Linux users. If you are on Windows or MacOS, you will need to adapt some things. We currently do not provide detailed documentation for Windows or MacOS users, as we are avid open source software afficionados, and consider these operating systems as malware.
+
 Introduction
 ------------
 Depending on your background, the eLabFTW project might seem daunting at first, because it uses a lot of different technologies: Docker, Yarn, Webpack, Composer, TypeScript, Scss, ...
@@ -178,6 +180,7 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 * Change the `volumes:` lines to bind mount the container to the source code. Paths are formatted as `SOURCE:DESTINATION`, in which the source path is the path located on the local file directory and the destination path is the path located on the Docker container.
     * For the elabftw container: Adjust the source path to point to `$dev/elabftw`. Adjust the destination path to `/elabftw`.
     * For the mysql container: Adjust the source to point to `$dev/mysql`. Keep the destination path as `/var/lib/mysql`.
+
 The lines should look like this:
 
 .. code-block:: yaml
