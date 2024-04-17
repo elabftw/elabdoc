@@ -647,6 +647,17 @@ In the editor, press Ctrl+shift+d to get today's date inserted at cursor positio
 Signatures
 ==========
 
+Signatures are important in many contexts, such as scientific research.
+
+A signature can prove that this particular *data* has been approved by this particular *human*. It is a different concept than timestamping, which proves that this particular *data* existed at this particular *time*.
+
+eLabFTW allows you to have three different types of signatures.
+
+Handwritten signatures
+----------------------
+
+In your User Control Panel, check the setting: "Enable french style signature block in PDF Export", from the "PDF Configuration" section of the "General" tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.
+
 Simple signatures
 -----------------
 
