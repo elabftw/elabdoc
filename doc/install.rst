@@ -89,7 +89,7 @@ With elabctl (recommended)
 
 * Edit the configuration file (``/etc/elabftw.yml`` by default):
 
-    Edit the configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
+    Edit the YAML configuration to suit your server setup. For instance, you might want to change the port binding (default is 443 but it might be already used by a traditional webserver). See below for using the container with a reverse proxy.
 
 Note about TLS certificates
 ---------------------------
