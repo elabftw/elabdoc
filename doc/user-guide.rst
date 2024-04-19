@@ -550,7 +550,7 @@ To achieve a successful import, make sure to follow these instructions:
 
 It is important to make sure that the file you are going to import is "clean". Open your file (.xls/.xlsx/.ods/.csv) in an editor like LibreOffice Calc or Microsoft Excel.
 
-Make sure that there are now empty rows or extra information outside the main data. And that you don't have columns with the same name, or columns with no useful information.
+Make sure that there are no empty rows or extra information outside the main data. And that you don't have columns with the same name, or columns with no useful information.
 
 You should have a number of columns and rows, looking something like that:
 
