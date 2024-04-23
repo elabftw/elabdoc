@@ -191,11 +191,11 @@ Monitoring
 Healthchecks
 ------------
 
-To monitor the nginx service, use ``/healthcheck`` endpoint, which replies with status code 204 if nginx is working.
+To monitor the nginx service, use ``/healthcheck`` endpoint, which replies with status code ``204`` if nginx is working.
 
-To monitor the php-fpm service, use ``/php-ping``, which replies with status code 200 if php-fpm is working.
+To monitor the php-fpm service, use ``/php-ping``, which replies with status code ``200`` if php-fpm is working.
 
-To monitor the nginx, the php-fpm and the MySQL connection, use ``/healthcheck.php``, which replies with status code 200 and ``ok`` in the body of the response if everything is working.
+To monitor the nginx, the php-fpm and the MySQL connection, use ``/healthcheck.php``, which replies with status code ``200`` and ``ok`` in the body of the response if everything is working.
 
 Metrics
 -------
@@ -212,3 +212,10 @@ The ``/php-status`` and ``/nginx-status`` pages are protected with **Basic authe
 If this variable is not set (default), then a random unknown password will be generated but never displayed, effectively disabling access to these pages.
 
 All of the above endpoints will not produce an access log entry.
+
+Logging
+=======
+
+Logs produced by eLabFTW, nginx or PHP-FPM are redirected to ``/dev/stdout`` and ``/dev/stderr`` of the container. They appear with the command ``docker logs elabftw``. By default, the logging driver is ``local``, which means it will create files on the host.
+
+It is recommended to emit logs to a centralized service, by using a different logging driver, such as ``syslog`` or ``graylog`` or ``loki`` (by grafana). For this, change the compose file configuration to include the correct settings for your infrastructure.
