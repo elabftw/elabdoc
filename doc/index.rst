@@ -56,8 +56,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     install
     install-cloud
     install-nas
-    install-mac
-    install-windows
+    install-nolinux
 
 .. toctree::
     :caption: Usage
