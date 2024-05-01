@@ -168,6 +168,10 @@ Get the `docker-compose.yml` configuration file, it will automatically be filled
 * Edit the `docker-compose.yml` configuration file
 * For the web container, use "image: elabftw/elabimg:hypernext" so you are using the latest container image for dev
 * Set `DEV_MODE` to `true`
+.. note::
+
+    This setting affects some security settings. Remember to turn dev mode off in production systems, and avoid exposing a dev system to untrusted networks.
+
 * Change the `ports:` line so the container runs on port 3148 (you can choose whatever port you want, or leave it on 443). It should look like this:
 
 .. code-block:: yaml
