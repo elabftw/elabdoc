@@ -20,7 +20,7 @@ Getting started
 Generating a key
 ----------------
 
-In order to use the API, you need to generate an API key. Head to your User Control Panel and create a new key by giving it a name and access level:
+In order to use the API, you need to generate an API key. Head to the Settings page and create a new key by giving it a name and access level:
 
 .. image:: img/api-keygen.png
     :align: center

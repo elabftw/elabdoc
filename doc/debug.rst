@@ -82,4 +82,4 @@ $2y$10$KXkB/w1NhLnl1mHbK0yTsuAbgJ8st4qQ2i36KyTk7kwo.G6Oq6LXa
 
 Replace X with the correct userid.
 
-Once this is done, you can login with the password: "totototo". Make sure to change it again from the User Control Panel once logged in!
+Once this is done, you can login with the password: "totototo". Make sure to change it again from the Settings page once logged in!

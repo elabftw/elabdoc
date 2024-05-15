@@ -656,7 +656,7 @@ eLabFTW allows you to have three different types of signatures.
 Handwritten signatures
 ----------------------
 
-In your User Control Panel, check the setting: "Enable french style signature block in PDF Export", from the "PDF Configuration" section of the "General" tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.
+In your Settings page, check the setting: "Enable french style signature block in PDF Export", from the "PDF Configuration" section of the "General" tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.
 
 Simple signatures
 -----------------
