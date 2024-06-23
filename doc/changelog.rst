@@ -3,6 +3,75 @@
 Changelog
 =========
 
+Version 5.1.0
+-------------
+
+Noteworthy changes
+``````````````````
+* Authentication cookies will now be set for users logged with SAML if the instance configuration allows for setting them. Previously, SAML authenticated user would be logged out after closing the browser, now they will have cookies to stay logged in, but only if the instance configuration allows them. (PR #5136 fix #5135). See settings in Security tab of Sysconfig panel.
+* Improvements with .eln files: .eln archives can now contain a mix of experiments, resources or templates. Exporting an entry in .eln will also include any link they have, and the link of the links too. Importing a .eln will correctly create all entries, too, and honor the links. See new API endpoints `api/v2/exports` and `api/v2/import`.
+* Audit event emitted in PHP logs is now a JSON string
+
+Breaking API v2 changes
+```````````````````````
+* `/team_tags` has moved to `teams/{id}/tags`. If you have scripts using `/team_tags`, replace it with `teams/current/tags` to get the same behaviour.
+* Replace `status` by `categories` in `experiments_categories` section (PR #5012, fix #5011)
+
+
+New features
+````````````
+* Rework of the Import and Export functions (PR #5123): new pages Import and Export in the Profile, asynchronous Export function
+* See documentation for :ref:`Import <importing-data>`
+* See documentation for :ref:`Export <exporting-data>`
+* Addition of exclusive edit mode (PR #5127 by Marcel Bolten): allow users to open entries in exclusive edit mode, preventing changes from other users
+* Add signatures: see dedicated section on blog: TODO
+* Add action requests: see dedicated section on blog: TODO
+* Add procurement requests: see dedicated section on blog: TODO
+* Add onboarding emails (PR #5029 by Marcel Bolten): Allow sending onboarding emails to new users, with a generic template but also a team specific template. And another for sys/admins.
+* Allow control of client side upload timeout with `MAX_UPLOAD_TIME` env var (PR #5138, fix #5134)
+* New CLI command: `bin/console teams:export X` to export a full team in a .eln
+* New CLI command: `bin/console teams:import` to import a full team from a .eln
+* List attachments: the profile now contains a tab that will list all the attached files from user. See also new endpoint `api/v2/users/me/uploads/`.
+* Allow uploading files on experiment templates (PR #5068)
+* Allow duplicating files when duplicating an entry
+* Add `uploads_filesize_sum` and `uploads_filesize_sum_formatted` to `/api/v2/info` endpoint
+* Add Archive button for batch action
+* Add emoticons to text editor (PR #5025 by Marcel Bolten)
+
+Enhancements
+````````````
+* Allow uploading very big files (> 3 Gb) on S3: increase part size for multipart uploads (PR #5137 fix #5133)
+* Update the `orgid` value for users after SAML login, with the value from IDP (PR #5139)
+* ELN export: add name and description to the `./` node
+* On user creation after SAML login, create the user with the `orgid` (PR #5048 by Lauritz Bussfeld)
+* Use nameid in SAML SLO request (#PR 5077 fix #4964)
+* Open attachments in new tab
+* Improvements for links (PR #5073): allow links to experiments on experiments templates
+* Allow control of changelog regardless of PDF/A setting (PR #5072 by anargam, fix #4969)
+* Add related links in edit mode too (even if they cannot be edited)
+* Allow user without a team to select a team upon login (PR #5060)
+* Add Status to autocomplete in links (PR #5064)
+* Add archived users to report (PR #5044 by Marcel Bolten)
+* Fix images in PDFs (PR #5036 by Marcel Bolten, fix #4961)
+* Bring back the reset 2FA button from Sys/Admin panels
+
+Bugfixes
+````````
+* Fix bug where forced use of MFA would prevent changing email in user panel
+* Fix bug where filtering on top of Related filter would break
+* Fix action button to set the time/date to now not working outside edit page
+* Fix improper initialization of experimentsLinks for itemsTypes
+* Fix Mathjax in PDF/A (#5028)
+
+Dev stuff
+`````````
+* Add a fixed firstname to users created with the populate script
+* Improvements by anargam regarding Content-Type of user uploaded content, and user validation logic
+* Fix composer shadow dependencies (PR #5061)
+* Use PER Coding Style 2.0
+* As always, many refactors and improvements in the codebase, that are not particularly useful to list exhaustively here.
+
+
 Version 5.0.4
 -------------
 

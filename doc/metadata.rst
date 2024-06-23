@@ -272,7 +272,7 @@ A `boolean` attribute for allowing the selection of multiple values from the dro
 
 required
 ^^^^^^^^
-A `boolean` attribute to indicate that filling this field is required.
+A `boolean` attribute to indicate that filling this field is required. Please note that this won't prevent a user from leaving the page even if the value is empty. It will indicate visually that a value is required but won't block the workflow.
 
 description
 ^^^^^^^^^^^

@@ -1,3 +1,4 @@
 node_modules/*
 doc/_build
 build/
+venv/
