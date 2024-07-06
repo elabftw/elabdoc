@@ -182,8 +182,11 @@ The next step is to read the :ref:`Sysadmin guide <sysadmin-guide>`.
 
 ENJOY! :D
 
+Advanced configurations
+=======================
+
 Inserting locally trusted root Certificate Authority
-====================================================
+----------------------------------------------------
 
 If you need the eLabFTW container to trust your own CA, you will need to create a custom image and run that instead of the official image.
 
@@ -206,3 +209,10 @@ Make sure to have your CA cert in the same folder, named ``my-cert.pem``, and bu
     docker buildx build -t elabftw/elabimg-custom .
 
 And replace the image name (`elabftw/elabimg`) in the main elabftw configuration YAML file (`/etc/elabftw.yml` by default) with your custom image name (`elabftw/elabimg-custom`).
+
+Changing the userid/groupid of uploaded files
+---------------------------------------------
+
+By default, the container will run `nginx` user with uid:gid 101:101. As a result, user-uploaded files will be saved on the host with this ownership.
+
+If you prefer to have a dedicated or specific user own the uploaded files (for instance, an ``elabftw`` user), you can configure the user and group to be created in the container when it starts. Refer to the section near ``ELABFTW_USER`` in the configuration file for more details.
