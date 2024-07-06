@@ -15,7 +15,6 @@ Noteworthy changes
 Breaking API v2 changes
 ```````````````````````
 * `/team_tags` has moved to `teams/{id}/tags`. If you have scripts using `/team_tags`, replace it with `teams/current/tags` to get the same behaviour.
-* Replace `status` by `categories` in `experiments_categories` section (PR #5012, fix #5011)
 
 
 New features
@@ -37,6 +36,7 @@ New features
 * Add `uploads_filesize_sum` and `uploads_filesize_sum_formatted` to `/api/v2/info` endpoint
 * Add Archive button for batch action
 * Add emoticons to text editor (PR #5025 by Marcel Bolten)
+* New Batch tab in Admin panel to execute actions on entire sets of entries (PR #5148)
 
 Enhancements
 ````````````
@@ -62,6 +62,8 @@ Bugfixes
 * Fix action button to set the time/date to now not working outside edit page
 * Fix improper initialization of experimentsLinks for itemsTypes
 * Fix Mathjax in PDF/A (#5028)
+* Replace incorrect term `status` by `categories` in `experiments_categories` section of api description (PR #5012 by @mhxion, fix #5011)
+* Honor idp settings for attributes in metadata.xml (fix #5145)
 
 Dev stuff
 `````````

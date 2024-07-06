@@ -264,7 +264,22 @@ Duplicating an experiment allows you to quickly create a new entry with the same
 
 4. Timestamp
 ^^^^^^^^^^^^
-When you click this button, a timestamp archive is created. Timestamping an experiment means that a pdf is generated, and a cryptographic sum of that pdf is then sent over to a trusted third party: the TimeStamping Authority (TSA). This external service will acknowledge the existence of that pdf (through its cryptographic sum) and send back a token, so that we can later prove that this data was present at that time. The pdf and its token are then attached to the experiment in the attached files section. This timestamp archive is immutable and cannot be modified or deleted. This protocol is defined by RFC3161, a standard for Trusted Timestamping.
+When you click this button, a timestamp archive is created. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
+
+The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the :rfc:`3161` standard for Trusted Timestamping.
+
+The timestamped data and its token are then saved in the "Attached Files" section of the experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
+
+.. image:: img/show-archived-uploads.png
+    :align: center
+    :alt: timestamp archive
+
+This timestamp archive is immutable and cannot be modified or deleted.
+
+.. image:: img/timestamp-archive.png
+    :align: center
+    :alt: timestamp archive
+
 
 5. Bloxchain timestamp
 ^^^^^^^^^^^^^^^^^^^^^^
