@@ -216,6 +216,38 @@ All of the above endpoints will not produce an access log entry.
 Logging
 =======
 
+Access and error logs
+---------------------
+
 Logs produced by eLabFTW, nginx or PHP-FPM are redirected to ``/dev/stdout`` and ``/dev/stderr`` of the container. They appear with the command ``docker logs elabftw``. By default, the logging driver is ``local``, which means it will create files on the host.
 
 It is recommended to emit logs to a centralized service, by using a different logging driver, such as ``syslog`` or ``graylog`` or ``loki`` (by grafana). For this, change the compose file configuration to include the correct settings for your infrastructure.
+
+Audit logs
+----------
+
+It is possible to configure Audit Logs to be emitted in the general logs, in addition to being stored in the database. It might be important to you to keep a trace of these actions in a centralized, deported service. To enable this behavior, go to the Audit Logs tab of the Sysconfig Panel and enable "Emit audit logs with PHP error log". The message of the event is is JSON, and has this structure:
+
+.. code:: javascript
+
+   {
+    category_value: number,
+    category_name: string,
+    message: string,
+    requester_userid: number,
+    target_userid: number
+   }
+
+Example:
+
+.. code:: javascript
+
+    {
+        "category_value": 10,
+        "category_name": "Login",
+        "message": "User logged in",
+        "requester_userid": 1,
+        "target_userid": 1
+    }
+
+You can then configure your centralized login system to interpret these messages to build advanced queries.
