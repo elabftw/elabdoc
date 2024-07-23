@@ -6,84 +6,71 @@ Features
 
 General
 =======
-* free (as in speech)
-* free (as in beer)
-* multi-platform (server or client)
-* web based (no install necessary on client)
-* multiple teams
-* quick search + advanced search
-* git deployment
-* docker image available
+* Free as in speech
+* Free as in beer
+* Web application: accessible to users like any other website through their web browser
+* Multiple teams: one eLabFTW instance can host several teams, each composed of users, that can belong to multiple teams
+* Supported software: development and maintenance is ensured by the `Deltablot <https://www.deltablot.com/>`_ company
 
-Experiments
-===========
-* custom status
-* visibility setting
-* rich wysiwyg editor (or write in Markdown)
-* insert images into text
-* upload multiple files
-* steps list
-* duplicate experiments
-* export as pdf
-* export/import as zip archive
-* general default experiment template
-* user templates
-* export/import user templates to files
-* lock the experiment
-* tags
-* join any type of file
-* attached mol files will display the molecule in the thumbnail
-* link with database items
-* molecule drawer (optional)
-* molecular structure files are previewed
-* user groups to restrict read access among a team
-* doodle canvas
+For Sysadmins
+=============
+* Dockerized service: containerization technology facilitates deployments and updates, by ensuring a specific application environment
+* Centralized authentication with SAML2 or LDAP
+* S3 compatible object storage for uploaded files
+* Several options to configure the user provisioning workflow
+* Possibility to restrict email domains
 
-Database
-========
-* import from spreadsheet files
-* export/import zip archives
-* import items from Excel file
-* custom type of items with templates
-* same features as experiments
-* rating system
-* see all experiments linked with this item
-* molecule drawer (optional)
+Experiments and Resources
+=========================
+* Status, Categories, Tags
+* Rich text editor (WYSIWYG) or Markdown editor
+* Advanced permission system
+* Upload multiple files of any kind
+* Insert images into text
+* Steps list
+* Templates
+* Duplicate entries
+* Supported export formats: PDF, PDF/A, JSON, ZIP, ELN, CSV
+* Advanced export and import functions for entries, users or teams
+* Supported import formats: CSV, ELN
+* Lock the experiment
+* Request reviews or actions from other users
+* Support for various file types that will render in 2D or 3D (.mol, .sdf, .pdb, etc...)
+* Links between entities
+* Molecule editor
+* User groups to restrict read access among a team
+* Doodle canvas
+* Rating system
 
 Security
 ========
 * HTTPS
 * CSRF protection
-* secure headers
-* secure base image
-* secure php config
-* anti bruteforce system
-* secure storage of password (bcrypt)
-* secure password reset mechanism
-* option for new account admin validation
-* two-factor authentication (2FA)
+* Secure headers
+* Automated vulnerability scans on Docker images
+* Secure PHP settings
+* Anti bruteforce system
+* Secure storage of password (bcrypt)
+* Secure password reset mechanism
+* Option for new account admin validation
+* Two-factor authentication (TOTP)
+* Password policies with complexity and expiration
 
-Intellectual property
-=====================
-* timestamping of experiments (pdf export)
+Intellectual property, integrity and imputability
+=================================================
 * :rfc:`3161` compliant Trusted Timestamping
-* allow or not users to delete experiments
-* revisions system to see history
-* attached files are sha256summed and thus timestamped with the experiment
+* Blockchain timestamping
+* Audit logs
+* Revisions and Changelog systems to track changes
+* Cryptographic signatures (ed25519)
+* Support for Keeex (see https://keeex.me/)
 
 User experience
 ===============
-* lovely design (by @manonstripes)
-* internationalization (several languages available)
-* optimized code/assets for speed and correctness
-* customizable keyboard shortcuts
-* option for displaying a warning on editor tab close
-* display preferences
-* custom link in menu
-* statistics
-* tagcloud
+* Lovely design (by @manonstripes)
+* Internationalization (several languages available)
+* Optimized code/assets for speed and correctness
+* WCAG 2.1 accessibility compliance
+* Various configuration options for Sysadmins, Admins or Users
+* Customizable keyboard shortcuts
 * TODOlist
-
-Planned features
-================
-* a lot
