@@ -35,7 +35,7 @@ In order to configure eLabFTW to send emails, you will need credentials to a SMT
 
 Go to the Sysadmin panel. You will see this warning:
 
-.. image:: img/sysconfig-email-warning.webp
+.. image:: img/sysconfig-email-warning.png
    :align: center
    :alt: email warning
 
