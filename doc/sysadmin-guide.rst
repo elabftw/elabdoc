@@ -33,7 +33,13 @@ If there is only one thing to do after an install, it's setting up email. Otherw
 
 In order to configure eLabFTW to send emails, you will need credentials to a SMTP service. If you are using a SMTP service without authentication, it works, too.
 
-Go to the Sysadmin panel, click the tab "Email" and add the requested information to connect.
+Go to the Sysadmin panel. You will see this warning:
+
+.. image:: img/sysconfig-email-warning.webp
+   :align: center
+   :alt: email warning
+
+Click the tab "Email" and add the requested information to connect to your SMTP server.
 
 If you don't know what to do, I highly recommend using `SMTP2GO <https://get.smtp2go.com/xj1zy4rvle6v>`_ (use this referral link), they provide a free plan that will probably be enough for your use case.
 
