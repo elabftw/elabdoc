@@ -26,8 +26,8 @@ By default, newly created accounts are disabled. The admin of the team needs to 
 This guide assumes you already have a working installation of eLabFTW on a server.
 The Sysadmin has access to core settings of the eLabFTW instance like email configuration or security preferences.
 
-Setting up email
-================
+Setting up email (required)
+===========================
 
 If there is only one thing to do after an install, it's setting up email. Otherwise users will not be able to reset their password nor receive notifications!
 
