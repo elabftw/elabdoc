@@ -12,6 +12,10 @@ This page describes the configuration of LDAP authentication for an eLabFTW inst
 
 |
 
+Introduction
+============
+
+It is possible to configure your LDAP instance to authenticate users through an LDAP service. Various settings are possible, to adapt to the different cases of LDAP servers.
 
 How does eLabFTW query LDAP servers?
 ====================================
@@ -34,6 +38,11 @@ Toggle LDAP login
 -----------------
 
 This is your general ON/OFF switch to toggle LDAP authentication from the login page. Note that if local login is left available, a radio button will allow users to select local/ldap login, and ldap will be selected by default. Generally, you'll want to disable local login once LDAP login is working (see setting for local login in first tab of sysconfig panel).
+
+LDAP Scheme
+-----------
+
+This setting allows you to override the scheme (``ldap`` or ``ldaps``) used when connecting. This is because different LDAP implementations will require a different protocol depending on the use of TLS/StartTLS and the port. This setting is present to make sure we can cover all cases.
 
 LDAP Host
 ---------
