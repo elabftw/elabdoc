@@ -37,6 +37,18 @@ New features
 * Add Archive button for batch action
 * Add emoticons to text editor (PR #5025 by Marcel Bolten)
 * New Batch tab in Admin panel to execute actions on entire sets of entries (PR #5148)
+* Add Sysconfig setting to select mass email behavior (grouped or not) (PR #5206 fix #4781)
+* Add Sysconfig setting to prevent users from changing their identity (firstname, lastname and email) (PR #5202)
+* Display statistics about uploaded files on Sysconfig page (on tab Uploads)
+* Allow Admins to filter users by team
+* Support adding media files via upload dropdown menu (PR #5189 by Alexander Minges)
+* Add media menu to editor (PR #5188 by Alexander Minges)
+* Add support for listening to uploaded audio files directly in the browser
+* Use a modal window with export settings on export action
+* Allow removing text from QR Code PNG export
+* Add config option for ldap scheme (see  https://github.com/DirectoryTree/LdapRecord/issues/732)
+* Add ID in view mode too
+* Add support for defining an xml URL with IDP list to populate IDPs from that list, with an auto-update mechanism (PR #5184)
 
 Enhancements
 ````````````
@@ -54,6 +66,10 @@ Enhancements
 * Add archived users to report (PR #5044 by Marcel Bolten)
 * Fix images in PDFs (PR #5036 by Marcel Bolten, fix #4961)
 * Bring back the reset 2FA button from Sys/Admin panels
+* Add the upload id and a link to its json in "More information" uploaded file section
+* Add note on how to deselect a selected entry in multi select on perm modal. fix #5175
+* Merge extra fields being loaded with "Load fields" button instead of overwrite everything (see #3214)
+
 
 Bugfixes
 ````````
@@ -64,6 +80,11 @@ Bugfixes
 * Fix Mathjax in PDF/A (#5028)
 * Replace incorrect term `status` by `categories` in `experiments_categories` section of api description (PR #5012 by @mhxion, fix #5011)
 * Honor idp settings for attributes in metadata.xml (fix #5145)
+* Fix missing update of `lastchangeby` when a submodel (_i.e._ steps) has been modified
+* Fix editor not matching `content_type` (markdown or html) if user setting is different
+* Fix templates being created with incorrect `content_type` (fix #5190)
+* Fix bug where duplicating a template would not duplicate links
+* Fix URL in pdf footer (fix #5173)
 
 Dev stuff
 `````````
@@ -71,6 +92,7 @@ Dev stuff
 * Improvements by anargam regarding Content-Type of user uploaded content, and user validation logic
 * Fix composer shadow dependencies (PR #5061)
 * Use PER Coding Style 2.0
+* Upgrade Jquery-UI to v14, now without IE support <3
 * As always, many refactors and improvements in the codebase, that are not particularly useful to list exhaustively here.
 
 
