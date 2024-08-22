@@ -519,9 +519,9 @@ Note that if you use a "Favorite tag" filter and then create an experiment, it w
 Using Projects
 --------------
 
-There is also another way to group experiments together, that you can use along with tags. It's using a database item of type : Project.
+There is also another way to group experiments together, that you can use along with tags. It's using a Resource of category: Project.
 
-Go to the Admin Panel and create a type of item: "Project". Go to the Database tab and create a new "Project" describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Link to database", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
+Go to the Admin Panel and create a Resource Category: "Project". Go to the Resources tab and create a new "Project" entry describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Linked resources", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
 
 Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
 
