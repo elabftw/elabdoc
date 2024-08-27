@@ -59,7 +59,7 @@ It is possible that the gap between the current development version and the curr
 
 => Read this page on the `next` branch: https://doc.elabftw.net/next/contributing.html#contributing-to-the-code
 
-Another thing is that this documentation is targeted towards GNU/Linux users. If you are on Windows or MacOS, you will need to adapt some things. We currently do not provide detailed documentation for Windows or MacOS users, as we are avid open source software afficionados, and consider these operating systems as malware.
+Another thing is that this documentation is targeted towards GNU/Linux users. If you are on Windows or MacOS, you will need to adapt some things. We currently do not provide detailed documentation for Windows or MacOS users, as we are avid open source software aficionados, and consider these operating systems as malware.
 
 Introduction
 ------------

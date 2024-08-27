@@ -15,5 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Run codespell
         uses: codespell-project/actions-codespell@v2
+        # this file contains typos by design
+        skip: acl-evil.lst

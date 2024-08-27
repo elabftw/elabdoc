@@ -581,7 +581,7 @@ Before the signature, a meaning is selected (Review, Approval, etc...). The sign
 
 - the cryptographic signature file is created: it signs the data
 - this file is stored in an archived zip file (as an attachment to the entry)
-- an immutable comment is created, to indicate that a signature occured
+- an immutable comment is created, to indicate that a signature occurred
 
 If one bit of the document is modified, the signature won't be valid anymore. This verification can be done at any point in time and doesn't require access to any external service.
 
