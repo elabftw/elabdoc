@@ -15,6 +15,7 @@ Noteworthy changes
 Breaking API v2 changes
 ```````````````````````
 * `/team_tags` has moved to `teams/{id}/tags`. If you have scripts using `/team_tags`, replace it with `teams/current/tags` to get the same behaviour.
+* The POST action for Revisions endpoint has been removed. Revisions are created by changing the entry content, so it doesn't make sense to expose this action publicly.
 
 
 New features
@@ -49,6 +50,8 @@ New features
 * Add config option for ldap scheme (see  https://github.com/DirectoryTree/LdapRecord/issues/732)
 * Add ID in view mode too
 * Add support for defining an xml URL with IDP list to populate IDPs from that list, with an auto-update mechanism (PR #5184)
+* Regroup Local authentication settings into a new "Local auth" tab on Sysconfig panel. Allow disabling completely local auth (fix #5212 - PR #5216)
+* Add a CSV report button in Admin panel, similar to what the sysadmin has already
 
 Enhancements
 ````````````
@@ -69,6 +72,8 @@ Enhancements
 * Add the upload id and a link to its json in "More information" uploaded file section
 * Add note on how to deselect a selected entry in multi select on perm modal. fix #5175
 * Merge extra fields being loaded with "Load fields" button instead of overwrite everything (see #3214)
+* Use the SAML provided firstname/lastname to update user attributes upon SAML login (see #4513)
+* Make the Save icon of the TinyMCE toolbar more visible by moving it as first icon, and using a floppy disk icon
 
 
 Bugfixes
@@ -85,6 +90,8 @@ Bugfixes
 * Fix templates being created with incorrect `content_type` (fix #5190)
 * Fix bug where duplicating a template would not duplicate links
 * Fix URL in pdf footer (fix #5173)
+* Fix bug where deduplicating a tag would impact tags in other teams with the same tag value (fix #5215)
+* Fix confusing behavior with permissions set to Teams and users belonging in the same Team
 
 Dev stuff
 `````````

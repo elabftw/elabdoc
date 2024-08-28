@@ -38,7 +38,43 @@ A `.eln` can contain any type of data:
 * Resources
 * Resources categories
 
-eLabFTW will pick up the type of each entry through its `genre <https://schema.org/genre>`_ attribute. Alternatively, you can force the type of entry by selecting one from the dropdown menu. The same logic applies to selecting the appropriate category.
+eLabFTW will pick up the type of each entry through its `genre <https://schema.org/genre>`_ attribute. Alternatively, you can force the type of entry by selecting one from the dropdown menu (web UI) or using the `--type` option (CLI). The same logic applies to selecting the appropriate category.
+
+Importing through web interface
+===============================
+
+Head to the "Import" tab of your Profile page by selecting "Import" from the top right menu.
+
+Select a `.eln` file to display import options. Then click Import.
+
+Importing through CLI
+=====================
+
+.. note:: This approach is only available to Sysadmins wish shell access.
+
+If you wish to import a rather large `.eln` archive (such as a full team export), the CLI is the better approach. Display the help with:
+
+.. code-block:: bash
+
+   docker exec -it elabftw bin/console import:eln -h
+
+As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/cache/elab` folder. Copy it with a command similar to this:
+
+.. code-block:: bash
+
+   docker cp your.eln elabftw:/elabftw/cache/elab/
+
+Figure out the Team ID by looking at the Team from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
+
+.. code-block:: bash
+
+   # import in team 12 and be verbose
+   docker exec -it elabftw bin/console import:eln -vv your.eln 12
+   # import in team 25, force everything to be owned by user 5 and be extra verbose
+   docker exec -it elabftw bin/console import:eln -vvv your.eln 12 --userid 5
+   # import in team 42, force everything to be of type "Resources" with category "6"
+   docker exec -it elabftw bin/console import:eln --type items --category 6 your.eln 42
+
 
 .. _csvimport:
 

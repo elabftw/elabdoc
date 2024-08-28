@@ -80,6 +80,13 @@ eLabFTW currently supports four authentication mechanisms:
 
 It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
 
+If you disabled Local authentication and cannot login back because your other method fails, you'll want to run this SQL query (`elabctl mysql` will give you a MySQL prompt if you're using Dockerized MySQL service):
+
+.. code-block:: mysql
+
+   update config set conf_value = '1' where conf_name = 'local_auth_enabled';
+
+
 Set up timestamping :sup:`(optional)`
 ======================================
 
