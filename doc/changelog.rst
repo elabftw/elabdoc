@@ -52,6 +52,7 @@ New features
 * Add support for defining an xml URL with IDP list to populate IDPs from that list, with an auto-update mechanism (PR #5184)
 * Regroup Local authentication settings into a new "Local auth" tab on Sysconfig panel. Allow disabling completely local auth (fix #5212 - PR #5216)
 * Add a CSV report button in Admin panel, similar to what the sysadmin has already
+* Resources categories (aka `items_types`) now properly honor the permissions, which makes them shareable across teams. Previously they were limited to the team that created them. (fix #5162 via PR #5220)
 
 Enhancements
 ````````````
@@ -92,6 +93,7 @@ Bugfixes
 * Fix URL in pdf footer (fix #5173)
 * Fix bug where deduplicating a tag would impact tags in other teams with the same tag value (fix #5215)
 * Fix confusing behavior with permissions set to Teams and users belonging in the same Team
+* Fix extra fields links to experiments/resources/users not showing name/title in toggle body (fix #5180)
 
 Dev stuff
 `````````
@@ -101,6 +103,8 @@ Dev stuff
 * Use PER Coding Style 2.0
 * Upgrade Jquery-UI to v14, now without IE support <3
 * As always, many refactors and improvements in the codebase, that are not particularly useful to list exhaustively here.
+* Removed the default resource category when a new team is created
+* Many, many code refactoring and changes, as with all major releases!
 
 
 Version 5.0.4
