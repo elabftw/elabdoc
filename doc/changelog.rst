@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 5.1.1
+-------------
+
+* Fix issue with Czech translation causing a fatal error on Settings page
+
+
 Version 5.1.0
 -------------
 
