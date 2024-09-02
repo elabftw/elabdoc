@@ -3,6 +3,11 @@
 Changelog
 =========
 
+Version 5.1.2
+-------------
+
+* Fix issue where Sysconfig panel could not be loaded if instance had 0 uploaded files
+
 Version 5.1.1
 -------------
 
