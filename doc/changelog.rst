@@ -3,6 +3,13 @@
 Changelog
 =========
 
+Version 5.1.3
+-------------
+
+* Fix missing comment creation date in PDF (fix #5223)
+* Handle correctly a string value for category/status when creating an entry (through API for instance)
+* Fix bug where incorrect category was displayed for experiments templates
+
 Version 5.1.2
 -------------
 
