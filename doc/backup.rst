@@ -131,6 +131,7 @@ Now activate it::
     systemctl enable elabftw-backup
     systemctl start elabftw-backup
 
+.. _restore-backup:
 
 How to restore a backup
 =======================

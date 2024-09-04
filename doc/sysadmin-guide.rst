@@ -264,3 +264,28 @@ Example:
     }
 
 You can then configure your centralized login system to interpret these messages to build advanced queries.
+
+Staging instance
+================
+
+A staging instance, sometimes called "pre-production", is another eLabFTW instance running alongside the production instance, and used to test upgrades or configuration changes without impacting the production instance.
+
+It is highly recommended to setup a staging instance.
+
+How to create a staging instance
+--------------------------------
+
+1. Copy the configuration file of the production instance (`/etc/elabftw.yml`) into another folder (`/path/to/elabftw-staging/docker-compose.yml`)
+2. Change the `SITE_URL` value: for example from elab.uni.de to elab-test.uni.de
+3. Similarly, change the `SERVER_NAME` value
+4. Modify the `volumes` so it points to another folder than the production one, for both containers
+
+Of course, adjust these instructions relative to your setup. Try and have the most similar setup between both. If one is using NFS storage with external MySQL server, do the same for staging instance.
+
+Start your staging instance with: `docker compose up -d`. Make sure to adjust DNS, certificates, load balancers, reverse proxies accordingly.
+
+Use the :ref:`Restore backup <restore-backup>` instructions to copy your production data into the staging instance. It is recommended to do that regularly, especially before updates, so the staging data is the same as production data and you will not have suprises. It's also a good opportunity to test your backups, if this has not been automated.
+
+Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.
+
+.. note:: It is recommended to post a general announcement from the Communications tab in the Sysconfig Panel to inform users that this is a test instance, preventing them from mistakenly entering data.
