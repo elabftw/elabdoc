@@ -284,7 +284,7 @@ Of course, adjust these instructions relative to your setup. Try and have the mo
 
 Start your staging instance with: `docker compose up -d`. Make sure to adjust DNS, certificates, load balancers, reverse proxies accordingly.
 
-Use the :ref:`Restore backup <restore-backup>` instructions to copy your production data into the staging instance. It is recommended to do that regularly, especially before updates, so the staging data is the same as production data and you will not have suprises. It's also a good opportunity to test your backups, if this has not been automated.
+Use the :ref:`Restore backup <restore-backup>` instructions to copy your production data into the staging instance. It is recommended to do that regularly, especially before updates, so the staging data is the same as production data and you will not have surprises. It's also a good opportunity to test your backups, if this has not been automated.
 
 Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.
 
