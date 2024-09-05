@@ -20,6 +20,18 @@ There is basically three things to backup :
 How to backup a Docker installation
 ===================================
 
+Important note
+--------------
+
+The instructions below are merely a suggestion on how to proceed. If you are familiar with different tools or procedures to backup data, use them. At the end of the day, eLabFTW's data is a very classical MySQL database and even more classical files. The important points are:
+
+- test your backups
+- ensure if they fail you get a notification by email somehow
+- test your backups regularly
+- bonus: test your backups automatically
+
+Another point is: you **never** have too many backups. So use a full VM backup + mysqldump + copy files here and there + do a filesystem snapshot. Use all the tools at your disposal. Read this *postmortem* about a `Gitlab.com outage and how they discovered how broken their backup procedures were <https://about.gitlab.com/blog/2017/02/10/postmortem-of-database-outage-of-january-31>`_.
+
 With elabctl
 ------------
 
