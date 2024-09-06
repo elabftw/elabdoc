@@ -3,6 +3,14 @@
 Changelog
 =========
 
+Version 5.1.4
+-------------
+
+* bug/medium: fix anonymous access
+  The missing value for "scope_teamgroups" user setting of anonymous user was causing a major error and preventing the page from loading. fix #5231
+* bug/minor: fix warning with access_key being null
+* bug/minor: duplicate: fix tags not duplicated for experiments
+
 Version 5.1.3
 -------------
 
