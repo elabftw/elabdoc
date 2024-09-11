@@ -1,9 +1,9 @@
 .. elabftw documentation master file, created by
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
-***********************************
-Welcome to eLabFTW's documentation!
-***********************************
+*****************************************
+Welcome to the documentation for eLabFTW! 
+*****************************************
 
 .. image:: img/elabftw-logo.png
     :align: center
