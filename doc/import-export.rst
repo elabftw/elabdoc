@@ -75,6 +75,13 @@ Figure out the Team ID by looking at the Team from the Sysconfig panel, where th
    # import in team 42, force everything to be of type "Resources" with category "6"
    docker exec -it elabftw bin/console import:eln --type items --category 6 your.eln 42
 
+By default (if no ``--userid`` setting is provided), the ownership of the items will be
+determined by comparing the email addresses of users between the export and import
+servers. This allows for simple migration of data from one ELabFTW server to another,
+even if users have differing ``userid`` values on the two servers. If the user that owns 
+an item in the exported data is not present on the destination (import) server, the
+importer will create users as necessary.
+
 
 .. _csvimport:
 
