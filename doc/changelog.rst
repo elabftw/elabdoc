@@ -3,6 +3,39 @@
 Changelog
 =========
 
+Version 5.1.5
+-------------
+* bug/major: saml: prevent empty Name attribute for requested attributes
+
+  In the SP Metadata XML (/metadata.php), a change has recently been made
+  to use the user defined attributes, instead of hardcoding them. But in
+  some case, the value was empty, not null, but an empty string, so the
+  Name attribute would be empty, and Shibboleth software that regularly
+  parses SP metadata would choke on it and everything would explode.
+
+  This change prevents having an empty Name attribute for the requested
+  attributes in SP metadata.
+
+* bug/medium: saml: user identity attributes update during saml
+
+  When using SAML auth, if the parameter "Allow users to change their
+  first name, last name, or email address" was inactive (not default),
+  then the user would encounter an error because the app would try and
+  update the user but have no right to do so.
+
+  This is fixed by making the update() method of Users public and using it
+  for trusted calls, and moving this check into the patch() method.
+
+* bug/medium: fix a bug preventing custom ``MAX_UPLOAD_SIZE`` or ``MAX_UPLOAD_TIME`` to be set (fix #5232)
+* bug/minor: fix save button from toolbar not working for templates
+* bug/minor: improve handling of incorrect parameters when creating an upload: provide better error messages
+* bug/minor: tags: better handling of null tag in post request
+* bug/minor: items_types: add missing order by ordering in readAll()
+* bug/feat: allow switching editor from resources categories (PR #5234 fix #4810)
+* bug/minor: fix issue with incorrect blog post link
+* security: force use of path-to-regexp 1.9.0
+* i18n: update german translations (thanking Lauritz Bußfeld for his help!)
+
 Version 5.1.4
 -------------
 
