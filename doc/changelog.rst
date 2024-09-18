@@ -3,8 +3,20 @@
 Changelog
 =========
 
+Version 5.1.6
+-------------
+
+* bug/major: scheduler: start/end of events not properly updated (fix #5241)
+* bug/medium: auth: fix workflow of teamless user requesting access
+* bug/medium: templates: fix teamgroups not available in permissions
+* bug/medium: export: fix permission issue when exporting stuff
+* bug/medium: templates: fix bug where a Template with an attached file could not be used to create an experiment
+* bug/minor: 2fa: fix form cancel on enter when enabling 2fa
+* bug/minor: sign: allow signature with only read access
+
 Version 5.1.5
 -------------
+
 * bug/major: saml: prevent empty Name attribute for requested attributes
 
   In the SP Metadata XML (/metadata.php), a change has recently been made
