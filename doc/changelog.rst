@@ -3,6 +3,18 @@
 Changelog
 =========
 
+Version 5.1.7
+-------------
+
+* bug/medium: team permissions: fix issue with incorrect check
+* bug/medium: timestamp: take into account the timestamped_at value. fix #5242
+* bug/medium: duplicate: metadata was not duplicated. fix #5251
+* bug/minor: templates: incorrect listing. fix #5250
+* bug/minor: add missing content.css for tinymce skin (#5246 by @MarcelBolten)
+* bug/minor: export: use tomorrow as end date default
+* bug/minor: i18n: update en_US.js (#5244 by @ForeverFloating)
+* doc: import:eln: improve authorship doc
+
 Version 5.1.6
 -------------
 
