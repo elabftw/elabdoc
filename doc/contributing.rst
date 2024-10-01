@@ -107,6 +107,10 @@ Docker install
 
 Make sure your user is in the `docker` group so you can execute docker commands without sudo (see `documentation <https://docs.docker.com/install/linux/linux-postinstall/>`_).
 
+.. note::
+
+    Some issues may occur when using Docker Desktop to manage your containers. It is highly recommended to use the system's native Docker daemon instead.
+
 Dev directory setup
 ^^^^^^^^^^^^^^^^^^^
 
