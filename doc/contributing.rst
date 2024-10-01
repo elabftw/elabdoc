@@ -257,9 +257,7 @@ Finishing up
 * Now head to https://localhost:3148
 * You now should have a running local eLabFTW, and changes made to the code will be immediately visible
 
-Add `export PATH=$PATH:$(pwd)/node_modules/.bin` to your editor config file (`.zshrc`, `.bashrc`, …). This will allow you to run software installed in the `node_modules` folder.
-
-It is possible to populate your dev database with fake generated data. See the `dev:populate` command of `bin/console`.
+It is possible to populate your dev database with fake generated data. See the `db:populate` command of `bin/init`.
 
 Code organization
 -----------------
