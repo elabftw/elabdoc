@@ -10,7 +10,7 @@ Version 5.1.8
 * bug/minor: new version notif: fix link
 * bug/minor: import: different default target for csv or eln
 * bug/minor: filter snippet: fix match with case
-* bug/minor: css: fix caption alignement in view mode
+* bug/minor: css: fix caption alignment in view mode
 * bug/minor: notifications: fix incorrect url for new comment posted. fix #5267
 * bug/minor: steps deadline: improve step deadlines and their notifications (PR #5264 by Marcel Bolten fix #5142)
 * bug/minor: 2fa: fix footer and cancel button
