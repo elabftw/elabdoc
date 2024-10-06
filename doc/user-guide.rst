@@ -84,7 +84,6 @@ In edit mode, the top part of the page displays a toolbar with several actions a
 6. Pin the experiment: make it appear on top of the listing at all times
 7. Lock/Unlock experiment: prevent further edition. If you're the one locking it, you'll be able to unlock it, but if it's locked by someone else, you won't
 8. Ellipsis menu:
-   - Switch editor: you can use the default text editor (WYSIWYG) or the Markdown editor if you prefer markdown
    - See revisions: the revisions system keeps track of changes in the main text of the experiment
    - See changelog: the changelog system keeps track of all the other changes of the experiment
    - Archive/Unarchive: allow hiding the entry from the default listing
@@ -160,7 +159,7 @@ Using markdown
     .. image:: img/markdown-editor.*
        :alt: Markdown editor
 
-You can also use markdown by switching editor (from the menu in the top right, three vertical dots), or selecting markdown as default for your experiments from your user control panel.
+You can also use markdown for the main text. Switch editor by clicking the Switch editor button at the bottom right of the main text edition zone. If you'd like the editor to become default, go to your Settings and enable "Disable the rich text editor and write Markdown directly".
 
 Tables
 """"""
