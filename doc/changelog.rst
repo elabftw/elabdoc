@@ -3,6 +3,29 @@
 Changelog
 =========
 
+Version 5.1.8
+-------------
+
+* bug/medium: duplicate items: keep category. fix #5258
+* bug/minor: new version notif: fix link
+* bug/minor: import: different default target for csv or eln
+* bug/minor: filter snippet: fix match with case
+* bug/minor: css: fix caption alignement in view mode
+* bug/minor: notifications: fix incorrect url for new comment posted. fix #5267
+* bug/minor: steps deadline: improve step deadlines and their notifications (PR #5264 by Marcel Bolten fix #5142)
+* bug/minor: 2fa: fix footer and cancel button
+* bug/minor: metadata: scroll to extra fields after loading metadata
+* bug/minor: procurement: hide quote column. fix #5195
+* bug/minor: notifications: fix missing .php extension in body column (JSON) of notifications table. fix #5260 by Marcel
+* bug/minor: makepdf: fallback to local storage if no storage can be found
+* bug/minor: tagsteamssync: fix console script to sync tags between teams
+* bug/minor: custom_id: remove custom_id upon deletion
+* ux: scheduler: do not ask for comment when creating scheduler event
+* ui: teamgroups: rename teamgroups to user groups in interface
+* ui: ucp: rename Database to Resources
+* feat: audit: skip audit logs for ts_balance
+* feat: permissions: add filter for team select
+
 Version 5.1.7
 -------------
 
