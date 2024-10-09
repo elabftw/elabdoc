@@ -132,25 +132,27 @@ Can I try it before I install it?
 
 Sure, there is a demo online here: `eLabFTW live DEMO <https://demo.elabftw.net>`_.
 
-What are the technical specifications?
-======================================
+What are the technical requirements?
+====================================
 
 eLabFTW is a server software that should be installed on a server.
 
 Requirements for the server
 ---------------------------
 
+The following specification has been shown to perform well for an instance of several hundred daily users. The more users using the instance, the more CPU and RAM you'll need.
+
 **Hardware**
 
 At least 2Gb of RAM, a decent processor (> 2GHz), preferably multi-core and an SSD disk with at least a few Gb free.
 
-**Software:**
+**Software**
 
-The operating system of the server can be any but GNU/Linux is highly recommended.
+The operating system of the server must be a flavor of GNU/Linux. We recommend Rocky Linux or RHEL.
 
-The service runs in `Docker <https://www.docker.com>`_ containers.
+The service runs in containers (`Docker <https://www.docker.com>`_ or `Podman <https://podman.io>`_), which are a Linux specific technology.
 
-A MySQL database service is required. You can create one with Docker following the standard installation procedure, or use an existing one.
+A **MySQL** database service is required. You can deploy a MySQL service with Docker by following the standard installation procedure, or use an existing separate MySQL server. Only **MySQL** is supported. Not PostgreSQL, not MariaDB, not SQLite.
 
 Requirements for the clients (users)
 ------------------------------------
