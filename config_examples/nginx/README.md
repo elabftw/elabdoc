@@ -4,20 +4,20 @@ If you already have an Nginx webserver running, you can use it to forward reques
 
 ## Prerequisite: running the container on a custom port
 
-Because our Nginx is already running on port 443, we will want the Docker container to run on another port.
+Because our Nginx server is already running on port 443, we will want the Docker container to run on another port.
 
-In the `ports` part of this configuration file, expose the container on port 3148 for instance:
+In the `ports` section of this configuration file, expose the container on port 3148 as follows:
 
 ~~~yaml
 ports:
   - '127.0.0.1:3148:443'
 ~~~
 
-**Note**: we're using the 127.0.0.1 localhost ip to avoid Docker exposing the port by bypassing the firewall configuration (see [this issue](https://github.com/moby/moby/issues/22054)).
+**Note**: We're using the 127.0.0.1 localhost ip to prevent Docker from exposing the port by bypassing the firewall configuration (see [this issue](https://github.com/moby/moby/issues/22054)).
 
 ## Nginx configuration
 
-The following example forwards the URL https://elab.example.org to the local port 3148 where the Docker container is listening. In this example, Nginx is listening to port 8888, and HAProxy is doing TLS termination. Adapt to your needs. If you don't have HAProxy doing TLS termination, use https in the proxy_pass instruction and make sure DISABLE_HTTPS is false in the elabftw.yml config.
+In the following example, the URL https://elab.example.org is forwarded to local port 3148, where the Docker container is listening. In this example, Nginx is listening to port 8888, and HAProxy is handling TLS termination. Adapt this example to your needs. If HAProxy is not handling TLS termination in your case, use https in the proxy_pass instruction and make sure DISABLE_HTTPS is false in the elabftw.yml config.
 
 ~~~nginxconf
 server {

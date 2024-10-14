@@ -1,6 +1,6 @@
 # Configuration example files for eLabFTW
 
-This folder holds example configuration files for popular web servers, when used as reverse proxy in front of eLabFTW container.
+This folder holds example configuration files for popular web servers, when used as a reverse proxy in front of the eLabFTW container.
 
 ## Apache
 
@@ -12,7 +12,7 @@ The [Nginx folder](./nginx) contains documentation for running Nginx as a revers
 
 ## HAProxy
 
-The [HAProxy folder](./haproxy) contains configuration for running HAProxy in front of one (or several) elabimg container in http mode.
+The [HAProxy folder](./haproxy) contains configuration for running HAProxy in front of one (or several) elabimg containers in http mode.
 
 ## Traefik
 

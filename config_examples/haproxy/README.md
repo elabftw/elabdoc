@@ -1,6 +1,6 @@
 # HAProxy configuration for eLabFTW
 
-This is an example config for having HAProxy in front of one or several eLabFTW's container (image: elabftw/elabimg).
+This is an example config for a case in which HAProxy is in front of one or several eLabFTW containers (image: elabftw/elabimg).
 
 ## Example docker-compose config
 
