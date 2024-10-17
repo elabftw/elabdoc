@@ -280,8 +280,8 @@ This timestamp archive is immutable and cannot be modified or deleted.
     :alt: timestamp archive
 
 
-5. Bloxchain timestamp
-^^^^^^^^^^^^^^^^^^^^^^
+5. Blockchain timestamp
+^^^^^^^^^^^^^^^^^^^^^^^
 This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
 
 6. Export button
