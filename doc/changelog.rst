@@ -3,6 +3,34 @@
 Changelog
 =========
 
+Version 5.1.9
+-------------
+
+* bffd454cc bug/medium: templates: target permissions not taken into account
+* 4aad67bdd bug/minor: extra fields builder: fix number type not having default
+* 0ca36bde7 bug/minor: scheduler: booking slot limit invalid check
+* dcdd138ed bug/minor: idps: fix bug editing certs for idp
+* ed3ab1cac bug/minor: scheduler: prevent warning with empty title value
+* 5f21b7557 bug/minor: timestamp: catch exceptions during auto timestamp
+* 4e7c50311 bug/minor: procurement requests: add missing columns in readAll()
+* 14542a715 bug/minor: eln: make `@type` property of `./` a string
+* 6e7325e33 bug/minor: import eln: prevent import issue with tags
+* db8189077 bug/minor: apiv2: fix uncaught error during file upload
+* 8ea3ddc7f bug/minor: idps: fix bug when adding new IDP after editing an IDP
+* 31849307d bug/minor: duplicate: use correct permissions
+* ff19cace7 bug/minor: mfa: fix pressing enter on input would cancel the form
+* 1ae7778c5 bug/minor: procurement: only list orders that are incomplete
+* d921a16d8 bug/minor: scheduler: use correct id for link in view mode
+* 846797bad bug/minor: users: prevent change if not necessary on update
+* 1d7886df6 bug/minor: admin panel: change terms Common Template -> Default Template
+* fe00e1fda bug/minor: logs: output full error to logs
+* 20abb244c ui: team: remove placeholder for Templates
+* ba5525936 ui: admin panel: add deprecation warning on enforce permissions
+* c8ae435fd ui: admin panel: move user create tag option in tag manager
+* b467066aa ux: idp: catch error with invalid input in idp edit modal
+* 689c786f7 ux: procurement requests: make the DELETE action simply change the state
+
+
 Version 5.1.8
 -------------
 
