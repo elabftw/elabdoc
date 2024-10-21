@@ -6,7 +6,7 @@ Admin guide
 This guide is intended for Admins of Teams. An Admin is a User in a Team with Admin rights, and access to the Admin Panel (accessed via the top right menu or the bottom left link). A Team can have several Admins and must have at least one.
 
 How to become an Admin?
-====================
+=======================
 A User is automatically an Admin if they are the first User in a Team. An Admin can promote another User to the Admin level from the Admin Panel > Users tab. A Sysadmin can promote a User to the Admin level in the same way (from the Sysadmin Panel).
 
 General overview
@@ -25,7 +25,7 @@ Validating accounts
 ===================
 Unless this setting has been modified by the Sysadmin, or provisioning is done automatically, new accounts will need to be validated by a Team Admin before new Users can connect. The Admin is responsible for validating new User accounts. To validate new Users, head to the Admin panel where you will see a list of Users waiting for validation.
 
-.. image:: img/admin-validate-User.png
+.. image:: img/admin-validate-user.png
     :align: center
     :alt: Admin User validation
 
