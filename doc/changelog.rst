@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 5.1.10
+--------------
+
+* 2383e82a0 bug/minor: templates: fix duplicate action missing attributes. fix #5312
+* 90f26ce4b bug/minor: eln: use user defined date during import. fix #5304
+* 4fa676635 bug/minor: pdf: fix missing id in links of links. fix #5311
+* 7b46538bd feat: mass emails: make sure everything gets sent when ungrouped
+
+
 Version 5.1.9
 -------------
 
