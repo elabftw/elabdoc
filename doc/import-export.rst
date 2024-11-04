@@ -184,6 +184,18 @@ The Export tab from your Profile allows full export of all your data, in several
 Very long exports will still be processed if you close your browser or navigate away.
 
 Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in `exports` within the elabFTW root folder. The `exports` folder may be mapped to a path outside the container to prevent exceeding the disk usage quota of the container.
+This can be done by adding a corresponding entry to `/etc/elabftw.yml` beneath the existing mapping for the uplod path. In the example below, the exports folder is mapped to `/var/elabftw/exports`.
+
+.. code:: yaml
+
+    volumes:
+        # this is where you will keep the uploaded files persistently
+        # for Windows users it might look like this
+        # - D:\Users\Nico\elab-data\web:/elabftw/uploads
+        # host:container
+        - /var/elabftw/web:/elabftw/uploads
+        # mapping of exports folder
+        - /var/elabftw/exports:/elabftw/exports
 
 Exporting through CLI
 ---------------------
