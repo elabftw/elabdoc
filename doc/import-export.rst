@@ -58,11 +58,11 @@ If you wish to import a rather large `.eln` archive (such as a full team export)
 
    docker exec -it elabftw bin/console import:eln -h
 
-As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/cache/elab` folder. Copy it with a command similar to this:
+As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/exports` folder. Copy it with a command similar to this:
 
 .. code-block:: bash
 
-   docker cp your.eln elabftw:/elabftw/cache/elab/
+   docker cp your.eln elabftw:/elabftw/exports/
 
 Figure out the Team ID by looking at the Team from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
 
@@ -183,7 +183,7 @@ The Export tab from your Profile allows full export of all your data, in several
 
 Very long exports will still be processed if you close your browser or navigate away.
 
-Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in `cache` and will disappear if the container is destroyed.
+Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in `exports` within the elabFTW root folder. The `exports` folder may be mapped to a path outside the container to prevent exceeding the disk usage quota of the container.
 
 Exporting through CLI
 ---------------------
