@@ -172,17 +172,17 @@ Is it compliant to 21CFR Part 11?
 
 1. Closed system: eLabFTW requires unique credentials to access the system. A system of permissions and roles allow fine control of what can be seen by whom.
 
-2. Experiments and database items (protocols, reagents, cell lines...) are considered signable by the locking mechanism that timestamps and locks an entity in place.
+2. Experiments and resources (protocols, reagents, cell lines...) can be signed with cryptographic signatures, verifiable outside the system, and stored in an immutable archive.
 
-3. Trusted timestamping: RFC3161 Trusted Timestamping is available for experiments. A specific PDF is generated and timestamped cryptographically to prove anteriority if needed in a court of law.
+3. Trusted timestamping: RFC3161 Trusted Timestamping is available for experiments. When using a qualified TSA such as Universign, this makes the process compliant with ETSI EN 319 42 (eIDAS european regulation).
 
-4. Audit trail: changes to entries are internally recorded and cannot be tampered with by users. A version history is available.
+4. Audit trail: changes to entries are internally recorded and cannot be tampered with by users. A version history is available, with adjustable granularity.
 
-5. Retention of records: a setting allows to disable the possibility to delete records entirely.
+5. Retention of records: a soft-delete mechanism prevents destructive actions on data.
 
-6. Copies of records: you can export your data in PDF, ZIP archives or CSV files very easily.
+6. Copies of records: you can export your data in PDF, ZIP archives or CSV files very easily. This can also be automated via the API.
 
-7. Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place.
+7. Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place. Password policies can also be enforced, and centralized authentication mechanisms can be setup.
 
 What about compliance to standards?
 ===================================
