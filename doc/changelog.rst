@@ -3,6 +3,27 @@
 Changelog
 =========
 
+Version 5.1.11
+--------------
+
+* bug/medium: eln import: prevent duplication of resources categories. fix #5349. fix #5285
+* bug/medium: eln import: fix status and categories for templates
+   The bug was that experiments never timestamped would have the condition
+   always evaluate to false because you can't compare NULL with something like
+   that. The feature is adding -t option to target specific teams. fix #5319
+* bug/medium + feat: cli timestamp: fix and improve sql query
+* bug/minor: admin panel: fix newcomer banner message not correctly displayed
+* bug/minor: eln: make .eln valid ro-crate
+* bug/minor: listing: improve behavior with always show owned parameter
+* feat: tinymce image upload code revamp, add image plugin/upload-with-drop to templates (#5353)
+* feat: uploads api: allow filtering archived uploads with api. fix #5323
+* feat: import eln: display error instead of aborting if file shasum fails
+* feat: import eln: display checksums of failed imported files
+* feat: eln export: allow restricting users or resources categories when
+  exporting with export:eln, you can now add -u and -r to include only these
+  users and these resource categories id.
+
+
 Version 5.1.10
 --------------
 
