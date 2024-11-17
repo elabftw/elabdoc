@@ -50,7 +50,7 @@ Select a `.eln` file to display import options. Then click Import.
 Importing through CLI
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This approach is only available to Sysadmins wish shell access.
+.. note:: This approach is only available to Sysadmins with shell access.
 
 If you wish to import a rather large `.eln` archive (such as a full team export), the CLI is the better approach. Display the help with:
 
@@ -71,7 +71,7 @@ Figure out the Team ID by looking at the Team from the Sysconfig panel, where th
    # import in team 12 and be verbose
    docker exec -it elabftw bin/console import:eln -vv your.eln 12
    # import in team 25, force everything to be owned by user 5 and be extra verbose
-   docker exec -it elabftw bin/console import:eln -vvv your.eln 12 --userid 5
+   docker exec -it elabftw bin/console import:eln -vvv your.eln 25 --userid 5
    # import in team 42, force everything to be of type "Resources" with category "6"
    docker exec -it elabftw bin/console import:eln --type items --category 6 your.eln 42
 
