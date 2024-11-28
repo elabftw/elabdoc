@@ -4,13 +4,13 @@
 API
 ***
 
-What is an API?
-===============
+What's that?
+============
 
-An API can be used to read or write data from an external program (such as a Python script) to an eLabFTW instance.
+It's a way to read or write data to eLabFTW from an external program (like a Python script).
 
-For instance, instead of using a web browser to access your eLabFTW instance and create an experiment,
-you can make a call to the API saying "hey, create an experiment for me", and the api will reply with the ID of the newly created experiment.
+For instance, instead of using a web browser to access the web interface and create an experiment,
+you make a call to the API saying "hey, create an experiment for me", and the api will reply with the ID of the newly created experiment.
 
 It can be used to directly feed data to eLabFTW, coming from a piece of equipment for instance.
 
