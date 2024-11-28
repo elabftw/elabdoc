@@ -4,67 +4,71 @@
 User guide
 **********
 
-This guide is aimed to Users, there is also one for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
+This guide is for Users. See also the guides for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
 
 Introduction
 ============
-There are two main entities (objects) types: Experiments and Resources. Experiments are owned by a particular user, whereas Resources belong to a team.
+There are two main types of entries in eLabFTW: Experiments and Resources. Experiments are owned by a particular User, whereas Resources belong to a team.
 
-While similar, they have a few differences:
+While similar, they differ in the following ways:
 
-* Resources can be booked
-* Experiments templates can be created by users
-* Resources templates (Resources Categories) can only be created by Admins
+* Resources but not Experiments can be booked using the Scheduler
+* Users can create Experiment templates but not Resource templates
+* Only Admins can create Resource templates
 
-They still share a lot of attributes, such as tags, category, status, links, etc...
+Both Resources and Experiments can have Tags and links, along with a Category and a Status.
 
 Experiments
 ===========
 
-Let's start with the Experiments, because they are the core of a lab notebook. Select Experiments from the main menu. It will display a list of Experiments, this is "Show mode".
+Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments" from the menu bar at the top of the page to show a list of Experiment entries.
 
 .. image:: img/user-experiments-menu.png
 
-Show mode
----------
 
 .. figure:: img/user-show-mode.png
-   :alt: elabftw experiments show mode
+   :alt: eLabFTW Experiments 
 
-   List of Experiments in Show mode
+   
 
-If you prefer to list them with a different, more compact display, click the **Switch layout** button on the top right of the first listed Experiment:
+You can change the page layout by clicking the **Layout** button on the top right of the first listed Experiment:
 
 .. figure:: img/user-switch-layout.png
-   :alt: elabftw switch layout button
+   :alt: eLabFTW layout button
 
-   Switch layout button
+   Layout button
 
-They will appear like this:
+To make the entries appear like this:
 
 .. figure:: img/user-alt-layout.png
-   :alt: elabftw alternate layout
+   :alt: eLabFTW alternate layout
 
-   Alternate listing layout
+   Alternate layout
 
 
 
-Experiments are listed by default mixed with experiments from other users in your team. To see **only** your experiments on this page, you need to change the **Scope** from the button on the right:
+By default, the page shows both Experiments created by you and those created by other Users in your team. To see **only** your Experiments, you can change the **Scope** using the drop-down menu that appears after clicking the button on the right:
 
 .. image:: img/user-scope-button.png
 
-Set it to "*Self*" to only display your own Experiments. Note that this button is independent from the similar ones on the Resources or Templates pages, and your selection is remembered.
+Set the scope to "*Self*" to display only Experiments that you created. Note that the Resources or Templates pages also allow you to filter entries using the scope button, and your selection is remembered.
 
+You can create an Experiment by clicking the `Create` button on the top right of the screen. You will have the option of selecting an existing Experiment template or using a blank template. You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By default, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
 
-Once logged in, you can create an experiment by clicking the «Create» button on the top right of the screen and selecting a template (or not!). You will then be presented with an «edition» page (you can see 'mode=edit' in the URL); the two other modes being 'view': display a single experiment, and 'show': display a list of experiments.
-
-
-An experiment is composed of:
+An Experiment entry can include many different types of information, such as: 
 
 * A title
-* The main text content
+* ID and custom ID numbers
+* A Category
+* A Status
+* Tags
+* The main text, which can include images, tables, and links
+* Steps
+* Extra fields
+* Links to other Experiments or Resources
+* Attachments
 
-These are the two required elements. In fact, only the title is required as the main content can be empty.
+The only required information is the title.
 
 
 
@@ -73,62 +77,62 @@ Edit mode
 
 Toolbar
 ^^^^^^^
-In edit mode, the top part of the page displays a toolbar with several actions available:
+In edit mode, the top part of the page displays a toolbar with several available actions, as described below. 
 
 .. image:: img/user-guide-toolbar-edit.png
 
 
-1. Go back to the listing
-2. Go into "View" mode
-3. Duplicate the experiment: will copy all content except attachments, change the Status to the default one, and set the Date to today's date
-4. Timestamp experiment: create a signed, legally binding snapshot of the experiment and store it alongside the attached files in an immutable archive
-5. Export menu: export the experiment in various formats (PDF, ELN, CSV, etc...)
-6. Pin the experiment: make it appear on top of the listing at all times
-7. Lock/Unlock experiment: prevent further edition. If you're the one locking it, you'll be able to unlock it, but if it's locked by someone else, you won't
+1. Go back to the list of Experiment entries
+2. Switch to "view" mode
+3. Duplicate the Experiment: make a new entry with identical content (except attachments). The new entry will have the default Status and today's date
+4. Timestamp Experiment: create a signed, legally binding snapshot of the Experiment and store it alongside the attached files in an immutable archive
+5. Export menu: export the Experiment in various formats (PDF, ELN, CSV, etc...)
+6. Pin the Experiment: pin the Experiment entry to the top of the Experiment list 
+7. Lock/Unlock Experiment: prevent further editing. Only the user who locks an experient can unlock it. 
 8. Ellipsis menu:
-   - See revisions: the revisions system keeps track of changes in the main text of the experiment
-   - See changelog: the changelog system keeps track of all the other changes of the experiment
-   - Archive/Unarchive: allow hiding the entry from the default listing
-   - Delete: perform a soft-deletion of the experiment: mark the experiment as deleted but keep it in the backend database
+     - See revisions: the revisions system keeps track of changes to the main text of the Experiment entry
+     - See changelog: the changelog system keeps track of all other changes to the Experiment entry
+     - Archive/Unarchive: this removes the entry from the default list and adds it to the list of archived entries. 
+     - Delete: perform a soft-deletion of the Experiment. This will mark the Experiment as deleted but keep it in the backend database.
 
 
 
-Date (Started on)
+Date (started on)
 ^^^^^^^^^^^^^^^^^
-The date is today's date by default. You can edit it as you wish. The effective creation timestamp is stored in the backend database in another (read-only) attribute.
+The date is set to today's date by default. You can edit it as you wish. The effective creation timestamp is stored in the backend database in another (read-only) attribute.
 
 
 ID
 ^^
-This attribute is not editable and corresponds to the unique (scoped to the instance), immutable ID of the entry.
+This attribute is not editable and corresponds to the unique (to that instance) immutable ID of the entry.
 
 Custom ID
 ^^^^^^^^^
-This attribute (``null`` by default) can be set as a number, after selecting a Category. This number will then be automatically incremented when a new experiment of that category is created. One can also click the "Get next" button to fetch the next ID available for entries of this Category. The Custom ID is then displayed before the title.
+This attribute (``null`` by default) can be set as a number after a Category is selected. Custom ID numbers will then be automatically assigned in an incremental fashion when new Experiments with that Category are created. One can also click the "Get next" button to fetch the next available Custom ID for entries of that Category. The Custom ID is displayed before the title.
 
 Title
 ^^^^^
-The title of your experiment. A duplicated experiment will have a «I» character appended to the title upon creation.
+This is the title of the Experiment. A duplicated Experiment will have a «I» character appended to the title upon creation.
 
 Category
 ^^^^^^^^
-You can assign a "Category" to your experiments. Only an Admin can define the available categories in your team. They can correspond to projects or types of experiments for instance. It also makes it easier to browse a group of experiments by looking for entries within that category.
+You can assign a "Category" to each Experiment. Only an Admin can define the categories that are available for your team to use. Categories can correspond to projects, types of Experiments, and other strategies for grouping Experiment entries. You can easily browse groups of Experiments by Category from the main Experiment page.
 
 Status
 ^^^^^^
-This useful feature lets you set the 'status' of an experiment. By default you can have:
+This feature lets you set the 'Status' of an Experiment. The default status options are:
 
-- Running (selected upon creation)
-- Need to be redone
+- Running 
+- Needs to be redone
 - Success
 - Fail
 
-These status can be modified completely by the admin in the admin panel.
+These Status options can be modified by an admin via the admin panel.
 
 Tags
 ^^^^
-The tags allow you to easily group experiments together. You can think of it as folders, but more powerful because each experiment can have many tags, thus allowing you to cross-search efficiently!
-All experiments with the same tag will be accessible by clicking this tag or searching for it. To validate a tag, press Enter or click outside the input field. It is saved immediately. The number of tags is not limited. Click on a tag to remove it (in edit mode). Tags are common to a team. Autocompletion favors the reuse of existing tags.
+Tags allow users to easily group and sort Experiment entries. You can think of them as folders, but they are more powerful because each Experiment can have many different Tags. The Tag system thus enables efficient cross-searching.
+You can list all Experiments with a given Tag by clicking on the Tag or searching for it in the Tag search bar. To add a Tag to an Experiment entry, type the name of the tag in the Tag input field and press Enter or click anywhere outside the input field. You can add an unlimited number of Tags. Click on an existing Tag to launch a prompt that will allow you to remove it (in edit mode). Tags are common to each team. Autocompletion favors the reuse of existing Tags.
 
 .. only:: html
 
@@ -136,11 +140,11 @@ All experiments with the same tag will be accessible by clicking this tag or sea
 
 Permissions
 ^^^^^^^^^^^
-The "Visibility" and "Can write" part allow you to control who can access this entry. Click the `Edit` button to display a menu and add or remove permissions.
+The "Visibility" and "Can write" menus allow you to control who can access and change a given entry. Click the `Edit` button to view, add, or remove permissions.
 
-Experiment (body)
-^^^^^^^^^^^^^^^^^
-This is where you describe your experiment and write your results. It is a rich text editor where you can have formatting, tables, colors, images, links, etc…
+Main Text
+^^^^^^^^^
+Here is a space for you to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
@@ -148,12 +152,12 @@ This is where you describe your experiment and write your results. It is a rich 
 Inserting an image
 """"""""""""""""""
 
-To insert an image in the main text, simple drag and drop it in the text zone. You can also insert an already uploaded image by selecting "Insert in the text at cursor position" from the uploaded file menu (top right, three vertical dots).
+To insert an image into the main text, simply drag and drop it into the text editor. You can also insert an uploaded image by selecting "Insert in the text at cursor position" from the uploaded file menu (top right of attachment icon, three vertical dots).
 
 Importing templates
 """""""""""""""""""
 
-You can use the Import > Templates menu to select from existing experiments templates and import them directly in your text, which allows you to compose an experiment by merging several templates.
+You can use the Import > Templates menu to select from existing Experiments templates and import them directly in your text, which allows you to compose an Experiment by merging several templates.
 
 Using markdown
 """"""""""""""
@@ -184,7 +188,7 @@ It is possible to express mathematical/chemical notations in eLabFTW, and they w
 
 For this eLabFTW uses Mathjax with ams extension.
 
-Try this (make sure it is not pasted between `<pre>` tags!):
+Try this (make sure it is not pasted between `<pre>` Tags!):
 
 .. code:: latex
 
@@ -200,7 +204,7 @@ You can insert a timestamp by clicking the clock icon or "Ctrl-Shift-d". You can
 
 Steps
 ^^^^^
-Steps are a way to list the things one need to do during the experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long experiments spanning over several days, where the "Next step" will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular experiment.
+Steps are a way to list the things one need to do during the Experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long Experiments spanning over several days, where the "Next step" will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular Experiment.
 
 Note that you can also declare steps in a template.
 
@@ -208,11 +212,11 @@ Linked items
 ^^^^^^^^^^^^
 This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.
 
-This feature can also be used to link an experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all experiments linked to this project by clicking the Link icon.
+This feature can also be used to link an Experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all Experiments linked to this project by clicking the Link icon.
 
-Linked experiments
+Linked Experiments
 ^^^^^^^^^^^^^^^^^^
-Same as above, but for experiments.
+Same as above, but for Experiments.
 
 Attach a file
 ^^^^^^^^^^^^^
@@ -220,7 +224,7 @@ Attach a file
     :align: center
     :alt: file uploader
 
-You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an experiment.
+You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an Experiment.
 
 Some files are recognized by eLabFTW:
 
@@ -233,7 +237,7 @@ Some files are recognized by eLabFTW:
 Ellipsis menu (the three dots on the top right)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the experiment.
+The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the Experiment.
 
 ---------------
 
@@ -242,7 +246,7 @@ When you are done, click the «Save and go back» button.
 You are now in view mode.
 
 
-View mode of experiment
+View mode of Experiment
 -----------------------
 In the view mode, you will find an actions button bar in the upper left part:
 
@@ -255,21 +259,21 @@ In the view mode, you will find an actions button bar in the upper left part:
 ^^^^^^^^^^
 Go back to the listing.
 
-2. Edit
+1. Edit
 ^^^^^^^
 Switch to edit mode.
 
-3. Duplicate
+1. Duplicate
 ^^^^^^^^^^^^
-Duplicating an experiment allows you to quickly create a new entry with the same Title, tags, body and links, but with today's date and a running status. Uploaded files are not duplicated. A «I» character will be added to the title to denote that it is a replicate.
+Duplicating an Experiment allows you to quickly create a new entry with the same Title, Tags, body, and links, but with today's date and a running Status. Uploaded files are not duplicated. An «I» character will be added to the title to denote that it is a replicate.
 
-4. Timestamp
+1. Timestamp
 ^^^^^^^^^^^^
 When you click this button, a timestamp archive is created. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
 
 The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the :rfc:`3161` standard for Trusted Timestamping.
 
-The timestamped data and its token are then saved in the "Attached Files" section of the experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
+The timestamped data and its token are then saved in the "Attached Files" section of the Experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
 
 .. image:: img/show-archived-uploads.png
     :align: center
@@ -295,7 +299,7 @@ This button, representing blocks, will do the same timestamping as above, except
 
 The Export menu allows you to save the entry in different formats. The term "Long term storage" refers to the PDF or the PDF contained in the zip archive being of a particular kind: PDF/A, an ISO-standardized version of the PDF format. It is a PDF format designed for long term storage, but transparent PNG will appear with a black background, so they are no longer the default PDF format, but an option. The PDF/A will also include the changelog, unlike the normal PDF export. It is the PDF format used for timestamping.
 
-The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
+The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
 
 7. Toggle pin
@@ -304,7 +308,7 @@ Clicking this icon will make this entry appear on top of the listing (pin entry)
 
 8. Toggle lock
 ^^^^^^^^^^^^^^
-The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a user won't be able to unlock it.
+The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a User won't be able to unlock it.
 
 9. Ellipsis menu
 ^^^^^^^^^^^^^^^^
@@ -318,24 +322,24 @@ The lock icon allows you to lock the entry to prevent further editing. If you lo
 
 elabid
 ------
-In the bottom right part of the experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each experiment, and immutable (won't ever change). You can use it to reference an experiment with an external database.
+In the bottom right part of the Experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each Experiment, and immutable (won't ever change). You can use it to reference an Experiment with an external database.
 
 Comments
 --------
-People can leave comments on experiments. They cannot edit your experiment, but they can leave a comment. The owner of the experiment will receive an email if someone comment their experiment.
+People can leave comments on Experiments. They cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
 
 Templates
 =========
 
 In order to save time when creating Experiments, eLabFTW features a Templates system for Experiments.
 
-It is recommended to create Templates for experiments you often do. You can think of a Template as a skeleton of a real experiment. To create a template, select "Templates" from the User menu.
+It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the User menu.
 
 .. image:: img/user-templates-menu.png
 
 Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.
 
-By default, the template is "pinned", which means it will appear in the pop up window when you click "Create" and also in the menu next to the "Create" button on the "Experiments" page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned status by clicking the thumbtack icon:
+By default, the template is "pinned", which means it will appear in the pop up window when you click "Create" and also in the menu next to the "Create" button on the "Experiments" page. If at some point you do not wish to have this template available in this menu, you can toggle its pinned Status by clicking the thumbtack icon:
 
 
 .. image:: img/user-toggle-pin-templates.*
@@ -365,15 +369,15 @@ Once you have your Resources present, you can mention them in your Experiments b
 
 Furthermore, Resources can be made bookable, see section below.
 
-Booking resources
+Booking Resources
 =================
 
-It is possible to use the scheduler (calendar) present on the Team page's first tab to book resources.
+It is possible to use the scheduler (calendar) present on the Team page's first tab to book Resources.
 
-Making a resource bookable
+Making a Resource bookable
 --------------------------
 
-In order to book a resource, it needs to be bookable (they are not by default). To do that, go to the resource, and click "Modify booking parameters" from the top right menu with three vertical dots:
+In order to book a Resource, it needs to be bookable (they are not by default). To do that, go to the Resource, and click "Modify booking parameters" from the top right menu with three vertical dots:
 
 .. image:: img/modify-booking-menu.png
     :align: center
@@ -390,51 +394,51 @@ This will show a modal window with various settings:
 
    * - Setting
      - Description
-   * - Allow booking this resource
-     - This is a general toggle to allow booking of the resource
+   * - Allow booking this Resource
+     - This is a general toggle to allow booking of the Resource
    * - Allow overlapping slots
      - Control whether it is allowed to have more than one booking slot at the same time
    * - Maximum slot time (in minutes)
      - Maximum number of minutes allowed for a single booking slot
-   * - Maximum per-user future slot allowed
-     - Number of future slots allowed for a particular user/resource couple
+   * - Maximum per-User future slot allowed
+     - Number of future slots allowed for a particular User/Resource couple
    * - Allow cancelling a booking slot
-     - Control whether users are allowed to cancel a booking
+     - Control whether Users are allowed to cancel a booking
    * - Minimum time before a slot can be cancelled (in minutes)
      - If "now" is closer than this number of minutes to the start of the event, it will not be possible to cancel it
 
 Adjusting permissions
 ---------------------
 
-When a resource is bookable, a new permission appears: "Can book":
+When a Resource is bookable, a new permission appears: "Can book":
 
 .. image:: img/can-book-setting.png
     :align: center
     :alt: modify booking permissions
 
-By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this resource for booking it.
+By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this Resource for booking it.
 
 Using the scheduler
 -------------------
 
-Once all is set, users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.
+Once all is set, Users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.
 
 .. image:: img/book-item-button.png
     :align: center
     :alt: book item toolbar button
 
-Clicking an existing slot will display a modal window allowing several options such as binding the slot to an experiment or another resource, or cancel booking, with or without sending a notification to users.
+Clicking an existing slot will display a modal window allowing several options such as binding the slot to an Experiment or another Resource, or cancel booking, with or without sending a notification to Users.
 
 .. image:: img/book-edit-modal.png
     :align: center
     :alt: book item edit modal
 
-Note: "Past and future users who booked this resource" means all users who booked the resource in the past two months and the ones who booked it in the upcoming month.
+Note: "Past and future Users who booked this Resource" means all Users who booked the Resource in the past two months and the ones who booked it in the upcoming month.
 
 User panel
 ==========
 
-The user panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the user menu in the top right.
+The User panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the User menu in the top right.
 
 Preferences tab
 ---------------
@@ -459,81 +463,81 @@ Once this application is installed, on the eLabFTW page, select YES to "Use two-
 
 Templates tab
 -------------
-Manage your templates. Once a template has been created, you can add tags, steps and links to it. It will then be available from the Create menu.
+Manage your templates. Once a template has been created, you can add Tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
 ------------
-Create an API key for your account from this page. An API key is like a username+password for your account. It allows you to interact with eLabFTW programmatically, through the REST API. See :ref:`API documentation <api>`.
+Create an API key for your account from this page. An API key is like a Username+password for your account. It allows you to interact with eLabFTW programmatically, through the REST API. See :ref:`API documentation <api>`.
 
-How to have folders or projects grouping experiments?
+How to have folders or projects grouping Experiments?
 =====================================================
 
 There are several options:
 
-1. Use Categories for experiments: they are defined by an Admin and are common to the Team.
-2. Use tags/favorite tags: user or Admin defined, depending on the Team settings (by default users can create new tags).
+1. Use Categories for Experiments: they are defined by an Admin and are common to the Team.
+2. Use Tags/favorite Tags: User or Admin defined, depending on the Team settings (by default Users can create new Tags).
 3. Use a Resource of Category "Project" and the link system to link Experiments to that Project.
-4. Directly link experiments together using the link system.
+4. Directly link Experiments together using the link system.
 
 
 First, try to go beyond the nested, tree-like structure of hierarchical folders.
 
-Imagine you have an experiment which is:
+Imagine you have an Experiment which is:
 
 - about "Protein MR73"
 - using "Western blot"
 - an external collaboration
 - with "HEK cells"
 
-Now if that experiment was a file, you might want to store it in "Collaborations > Western Blot > MR73" maybe. Or "Project MR73 > Collaborations > HEK"?
+Now if that Experiment was a file, you might want to store it in "Collaborations > Western Blot > MR73" maybe. Or "Project MR73 > Collaborations > HEK"?
 
-But what if you have another one that is also using HEK cells but has nothing in common with the previous one. How would you go about looking for all the experiments with HEK? And all the experiments related to MR73 that involve a Western Blot?
+But what if you have another one that is also using HEK cells but has nothing in common with the previous one. How would you go about looking for all the Experiments with HEK? And all the Experiments related to MR73 that involve a Western Blot?
 
 In a traditional folder structure, you would need to search for it in almost each sub-folders.
 
-Enter **tags**.
+Enter **Tags**.
 
 Tags
 ====
 
-Tags are a way to label your experiments (and database objects) with defined keywords and you can have as many as you want!
+Tags are a way to label your Experiments (and database objects) with defined keywords and you can have as many as you want!
 
 .. image:: img/tags-view.png
     :align: center
-    :alt: tags
+    :alt: Tags
 
-Now with the experiments correctly tagged, finding them through different search angles becomes easy! You can search for one tag or many tags directly from the main page.
+Now with the Experiments correctly tagged, finding them through different search angles becomes easy! You can search for one Tag or many Tags directly from the main page.
 
-Favorite tags
+Favorite Tags
 -------------
 
-Over time, you will have some tags that become your favorites, as they are always the ones you look for for a set of experiments.
+Over time, you will have some Tags that become your favorites, as they are always the ones you look for for a set of Experiments.
 
-Since version 4.2.0 it is possible to define "Favorite tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a tag to add it to the list of Favorite tags.
+Since version 4.2.0 it is possible to define "Favorite Tags" that will appear in the left pane of the page listing entries. It allows quick overview of related entries. You should try this feature, start by clicking the arrow on the left of the screen to toggle the left pane. Click the + button and start typing a Tag to add it to the list of Favorite Tags.
 
     .. image:: img/favtags.*
         :align: center
-        :alt: favorite tags
+        :alt: favorite Tags
 
-Note that if you use a "Favorite tag" filter and then create an experiment, it will be tagged automatically with that tag.
+Note that if you use a "Favorite Tag" filter and then create an Experiment, it will be tagged automatically with that Tag.
 
 Using Projects
 --------------
 
-There is also another way to group experiments together, that you can use along with tags. It's using a Resource of category: Project.
+There is also another way to group Experiments together, that you can use along with Tags. It's using a Resource of Category: Project.
 
-Go to the Admin Panel and create a Resource Category: "Project". Go to the Resources tab and create a new "Project" entry describing a group of experiments, a project. Go to the Experiments tab and create an experiment. In the field "Linked resources", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This experiment is now linked to the project. So you can easily go to the project description from the experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all experiments linked to this project!
+Go to the Admin Panel and create a Resource Category: "Project". Go to the Resources tab and create a new "Project" entry describing a group of Experiments, a project. Go to the Experiments tab and create an Experiment. In the field "Linked Resources", type the name of the project and click on the autocompletion field appearing, and press enter (or click outside). This Experiment is now linked to the project. So you can easily go to the project description from the Experiment, but more importantly, you can from the Project entry, click the "Show related" icon (chainlink) and display all Experiments linked to this project!
 
-Make sure to create experiments templates that already link to that Project so the link will always be here when the experiment is created by a user.
+Make sure to create Experiments templates that already link to that Project so the link will always be here when the Experiment is created by a User.
 
 Using Categories
 ----------------
-An Admin can define several Experiments Categories, which are then available to users in the Team. It is a quick and easy way to group experiments together.
+An Admin can define several Experiments Categories, which are then available to Users in the Team. It is a quick and easy way to group Experiments together.
 
 Miscellaneous
 =============
 
-You can export experiments in .zip. If the experiment was timestamped you will find in the archive the timestamped pdf and the corresponding .asn1 token.
+You can export Experiments in .zip. If the Experiment was timestamped you will find in the archive the timestamped pdf and the corresponding .asn1 token.
 
 You can export and import items from the database (it can be several items).
 
@@ -562,7 +566,7 @@ In your Settings page, check the setting: "Enable french style signature block i
 Simple signatures
 -----------------
 
-In an authenticated application such as eLabFTW, where all users are identified and vetted, a signature can be clicking a checkbox, leaving a comment, or performing an action such as locking an experiment.
+In an authenticated application such as eLabFTW, where all Users are identified and vetted, a signature can be clicking a checkbox, leaving a comment, or performing an action such as locking an Experiment.
 
 The level of trust you can associate to this action is reinforced by using multi-factor authentication.
 
@@ -576,7 +580,7 @@ How does it work?
 
 At a high level
 """""""""""""""
-Each user gets a key pair composed of a private and public key. The private key is protected by a passphrase. In order to sign a document, the user provides their passphrase, and the document is cryptographically signed. The signature file is stored alongside the public key and the document being signed. This "Signature archive" also contains a small shell script to verify the signature with ``minisign``.
+Each User gets a key pair composed of a private and public key. The private key is protected by a passphrase. In order to sign a document, the User provides their passphrase, and the document is cryptographically signed. The signature file is stored alongside the public key and the document being signed. This "Signature archive" also contains a small shell script to verify the signature with ``minisign``.
 
 Before the signature, a meaning is selected (Review, Approval, etc...). The signature involves several actions:
 
@@ -609,7 +613,7 @@ And the public key::
     untrusted comment: <arbitrary text>
     base64(<signature_algorithm> || <key_id> || <public_key>)
 
-The private and public keys are stored under this form in the MySQL database, attached to a particular user.
+The private and public keys are stored under this form in the MySQL database, attached to a particular User.
 
 For signature, we extract the private key thanks to the provided passphrase and create a detached signature of the hash of the message (the message being a full json export of en entry here). This is the pre-hashed version of Ed25519: Ed25519ph (see `RFC8032 Section 5.1 <https://datatracker.ietf.org/doc/html/rfc8032#section-5.1>`_).
 
@@ -653,7 +657,7 @@ For an Experiment or Resource, there are two concepts: the Changelog, and the Re
 
 You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the view or edit page of an entry. The Revisions also allows you to compare two versions or restore a particular version.
 
-All administratives changes such as creating a new user, promoting a user to Admin, assigning a user in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.
+All administratives changes such as creating a new User, promoting a User to Admin, assigning a User in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.
 
 When deleting something, the entry/file is not actually deleted but simply marked as being deleted. This prevents destructive actions and allows for easy restoration of accidentally deleted things. This mechanism is called "soft-delete".
 
@@ -673,7 +677,7 @@ It is possible to allow Anonymous access to an eLabFTW installation, but this fu
 
 .. image:: img/sysconfig-anonymous.png
 
-Then, users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:
+Then, Users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:
 
 .. image:: img/user-anonymous-link.png
 
