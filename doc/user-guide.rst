@@ -53,7 +53,7 @@ By default, the page shows both Experiments created by you and those created by 
 
 Set the scope to "*Self*" to display only Experiments that you created. Note that the Resources or Templates pages also allow you to filter entries using the scope button, and your selection is remembered.
 
-You can create an Experiment by clicking the `Create` button on the top right of the screen. You will have the option of selecting an existing Experiment template or using a blank template. You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By detault, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
+You can create an Experiment by clicking the `Create` button on the top right of the screen. You will have the option of selecting an existing Experiment template or using a blank template. You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By default, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
 
 An Experiment entry can include many different types of information, such as: 
 
