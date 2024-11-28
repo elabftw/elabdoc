@@ -50,7 +50,7 @@ Select a `.eln` file to display import options. Then click Import.
 Importing through CLI
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: This approach is only available to Sysadmins wish shell access.
+.. note:: This approach is only available to Sysadmins with shell access.
 
 If you wish to import a rather large `.eln` archive (such as a full team export), the CLI is the better approach. Display the help with:
 
@@ -58,11 +58,11 @@ If you wish to import a rather large `.eln` archive (such as a full team export)
 
    docker exec -it elabftw bin/console import:eln -h
 
-As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/cache/elab` folder. Copy it with a command similar to this:
+As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/exports` folder. Copy it with a command similar to this:
 
 .. code-block:: bash
 
-   docker cp your.eln elabftw:/elabftw/cache/elab/
+   docker cp your.eln elabftw:/elabftw/exports/
 
 Figure out the Team ID by looking at the Team from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
 
@@ -71,7 +71,7 @@ Figure out the Team ID by looking at the Team from the Sysconfig panel, where th
    # import in team 12 and be verbose
    docker exec -it elabftw bin/console import:eln -vv your.eln 12
    # import in team 25, force everything to be owned by user 5 and be extra verbose
-   docker exec -it elabftw bin/console import:eln -vvv your.eln 12 --userid 5
+   docker exec -it elabftw bin/console import:eln -vvv your.eln 25 --userid 5
    # import in team 42, force everything to be of type "Resources" with category "6"
    docker exec -it elabftw bin/console import:eln --type items --category 6 your.eln 42
 
@@ -183,7 +183,19 @@ The Export tab from your Profile allows full export of all your data, in several
 
 Very long exports will still be processed if you close your browser or navigate away.
 
-Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in `cache` and will disappear if the container is destroyed.
+Note to Sysadmins: on a given instance, export jobs are processed only one at a time. Users can each keep only 6 exported files. They are stored in `exports` within the elabFTW root folder. The `exports` folder may be mapped to a path outside the container to prevent exceeding the disk usage quota of the container.
+This can be done by adding a corresponding entry to `/etc/elabftw.yml` beneath the existing mapping for the upload path. In the example below, the exports folder is mapped to `/var/elabftw/exports`.
+
+.. code:: yaml
+
+    volumes:
+        # this is where you will keep the uploaded files persistently
+        # for Windows users it might look like this
+        # - D:\Users\Nico\elab-data\web:/elabftw/uploads
+        # host:container
+        - /var/elabftw/web:/elabftw/uploads
+        # mapping of exports folder
+        - /var/elabftw/exports:/elabftw/exports
 
 Exporting through CLI
 ---------------------
