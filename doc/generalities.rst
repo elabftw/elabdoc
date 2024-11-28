@@ -1,8 +1,8 @@
 .. _generalities:
 
-************
-Generalities
-************
+*******
+General
+*******
 
 Lexicon
 =======
