@@ -294,11 +294,11 @@ Changes made to any other field are saved automatically, or saved when you click
 
 
 elabid
-------
+^^^^^^
 In the bottom right part of the Experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each Experiment, and immutable (won't ever change). You can use it to reference an Experiment with an external database.
 
 Comments
---------
+^^^^^^^^
 People can leave comments on Experiments. Not everyone cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
 
 Templates
@@ -350,7 +350,7 @@ Booking Resources
 It is possible to use the scheduler (calendar) present on the Team page's first tab to book Resources.
 
 Making a Resource bookable
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In order to book a Resource, it needs to be bookable (they are not by default). To do that, go to the Resource, and click "Modify booking parameters" from the top right menu with three vertical dots:
 
@@ -383,7 +383,7 @@ This will show a modal window with various settings:
      - If "now" is closer than this number of minutes to the start of the event, it will not be possible to cancel it
 
 Adjusting permissions
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 When a Resource is bookable, a new permission appears: "Can book":
 
@@ -394,7 +394,7 @@ When a Resource is bookable, a new permission appears: "Can book":
 By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this Resource for booking it.
 
 Using the scheduler
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 Once all is set, Users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.
 
@@ -416,11 +416,11 @@ User panel
 The User panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the User menu in the top right.
 
 Preferences tab
----------------
+^^^^^^^^^^^^^^^
 From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
 
 Account tab
------------
+^^^^^^^^^^^
 This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
 
 What is two factor authentication?
@@ -437,11 +437,11 @@ Once this application is installed, on the eLabFTW page, select YES to "Use two-
 **Note**: it is highly recommended to enable 2FA wherever you can.
 
 Templates tab
--------------
+^^^^^^^^^^^^^
 Manage your templates. Once a template has been created, you can add Tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
-------------
+^^^^^^^^^^^^
 Create an API key for your account from this page. An API key is like a Username+password for your account. It allows you to interact with eLabFTW programmatically, through the REST API. See :ref:`API documentation <api>`.
 
 How to have folders or projects grouping Experiments?
@@ -484,7 +484,7 @@ Tags are a way to label your Experiments (and database objects) with defined key
 Now with the Experiments correctly tagged, finding them through different search angles becomes easy! You can search for one Tag or many Tags directly from the main page.
 
 Favorite Tags
--------------
+^^^^^^^^^^^^^
 
 Over time, you will have some Tags that become your favorites, as they are always the ones you look for for a set of Experiments.
 
@@ -497,7 +497,7 @@ Since version 4.2.0 it is possible to define "Favorite Tags" that will appear in
 Note that if you use a "Favorite Tag" filter and then create an Experiment, it will be tagged automatically with that Tag.
 
 Using Projects
---------------
+^^^^^^^^^^^^^^
 
 There is also another way to group Experiments together, that you can use along with Tags. It's using a Resource of Category: Project.
 
@@ -506,11 +506,11 @@ Go to the Admin Panel and create a Resource Category: "Project". Go to the Resou
 Make sure to create Experiments templates that already link to that Project so the link will always be here when the Experiment is created by a User.
 
 Using Categories
-----------------
+^^^^^^^^^^^^^^^^
 An Admin can define several Experiments Categories, which are then available to Users in the Team. It is a quick and easy way to group Experiments together.
 
 To-Do List
-----------
+^^^^^^^^^^
 
 From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen. 
 
@@ -539,19 +539,19 @@ A signature can prove that this particular *data* has been approved by this part
 eLabFTW allows you to have three different types of signatures.
 
 Handwritten signatures
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 In your Settings page, check the setting: "Enable french style signature block in PDF Export", from the "PDF Configuration" section of the "General" tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.
 
 Simple signatures
------------------
+^^^^^^^^^^^^^^^^^
 
 In an authenticated application such as eLabFTW, where all Users are identified and vetted, a signature can be clicking a checkbox, leaving a comment, or performing an action such as locking an Experiment.
 
 The level of trust you can associate to this action is reinforced by using multi-factor authentication.
 
 Advanced cryptographic signatures
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since version 5.1, an advanced signature mechanism exists for eLabFTW. It uses the highly secure Ed25519 public-key signature system and is compatible with `minisign <https://jedisct1.github.io/minisign/>`_.
 
@@ -649,13 +649,13 @@ Sharing with external collaborators
 If you want to share your results with an external collaborator, you have two options:
 
 Option 1: Export and send
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 This option is pretty straightforward, you export your entry into a PDF or ZIP archive and send this by email or other means to your collaborator.
 
 If course, this option has its limitations, and is not always the best suited approach, but works 100% of the time.
 
 Option 2: Allow anonymous access
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:
 
 .. image:: img/sysconfig-anonymous.png
