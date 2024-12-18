@@ -138,6 +138,14 @@ By default, uploaded files are stored in the `uploads/` folder that is mounted o
 
 To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file. You can use `bin/console uploads:migrate` to migrate existing locally uploaded files to S3 storage.
 
+Example setting with Scaleway S3:
+
+* Bucket name: elabftw-example
+* S3 region: fr-par
+* S3 endpoint: https://s3.fr-par.scw.cloud
+* S3 path prefix: uploads
+* Verify TLS certificate: enabled
+
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
 =============================================================
 
