@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 5.1.12
+--------------
+
+* bug/medium: eln import: fix issue with resources categories import. fix #5356
+* bug/minor: eln import: honor userid setting. fix #5382
+* bug/minor: teamgroups: fix issue with comma in username. fix #5406
+* bug/minor: templates: fix steps not being duplicated. fix #5404
+* bug/minor: extra fields builder: fix number type field missing units (fix #5398)
+* bug/minor: extra fields: fix issue with incorrect groups definition. fix #5369
+* feat: minor: mask colon (:) for autocomplete searches (PR #5383 by Marcel Bolten) fix #5376
+* chore: composer: upgrade league/commonmark. fix vuln https://github.com/elabftw/elabftw/security/dependabot/64
+* chore: set min cross-spawn version to 7.0.5. fix for CVE-2024-21538
+
+
 Version 5.1.11
 --------------
 
