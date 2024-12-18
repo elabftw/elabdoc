@@ -1,7 +1,7 @@
 .. _user-guide:
 
 **********
-User guide
+User Guide
 **********
 
 This guide is for Users. See also the guides for :doc:`Admins <admin-guide>` and for :doc:`Sysadmins <sysadmin-guide>`.
@@ -16,7 +16,7 @@ While similar, they differ in the following ways:
 * Users can create Experiment templates but not Resource templates
 * Only Admins can create Resource templates
 
-Both Resources and Experiments can have Tags and links, along with a Category and a Status.
+Both Resources and Experiments can have Tags and links, along with a Category and a Status. Many of the options for creating and editing Experiment entries are the same as those for Resource entries.
 
 Experiments
 ===========
@@ -70,31 +70,77 @@ An Experiment entry can include many different types of information, such as:
 
 The only required information is the title.
 
-
-
-Edit mode
----------
-
 Toolbar
 ^^^^^^^
-In edit mode, the top part of the page displays a toolbar with several available actions, as described below. 
+For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below. 
 
-.. image:: img/user-guide-toolbar-edit.png
+.. image:: img/user-view-toolbar.png
+    :align: center
+    :alt: view mode numbered
+
+1. Go back
+^^^^^^^^^^
+Go back to the main page.
+
+2. Mode
+^^^^^^^
+Switch between "edit" mode and "view" mode.
+
+3. Duplicate entry
+^^^^^^^^^^^^^^^^^^
+Create a new entry with the same Title, Tags, text, and links, but with today's date and the Status set as "Running". A pop-up message will ask if you would like to copy the attached files to the duplicated entry. An «I» character is added to the title to indicate that it is a duplicate.
+
+4. Timestamp
+^^^^^^^^^^^^
+When you click this button, a timestamp archive is created. This is a signed, legally binding snapshot of the Experiment that is stored alongside the attached files in an immutable archive. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
+
+The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the :rfc:`3161` standard for Trusted Timestamping.
+
+The timestamped data and corresponding token are then saved in the "Attached Files" section of the Experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
+
+.. image:: img/show-archived-uploads.png
+    :align: center
+    :alt: timestamp archive
+
+This timestamp archive is immutable and cannot be modified or deleted.
+
+.. image:: img/timestamp-archive.png
+    :align: center
+    :alt: timestamp archive
 
 
-1. Go back to the list of Experiment entries
-2. Switch to "view" mode
-3. Duplicate the Experiment: make a new entry with identical content (except attachments). The new entry will have the default Status and today's date
-4. Timestamp Experiment: create a signed, legally binding snapshot of the Experiment and store it alongside the attached files in an immutable archive
-5. Export menu: export the Experiment in various formats (PDF, ELN, CSV, etc...)
-6. Pin the Experiment: pin the Experiment entry to the top of the Experiment list 
-7. Lock/Unlock Experiment: prevent further editing. Only the user who locks an experient can unlock it. 
-8. Ellipsis menu:
-     - See revisions: the revisions system keeps track of changes to the main text of the Experiment entry
-     - See changelog: the changelog system keeps track of all other changes to the Experiment entry
-     - Archive/Unarchive: this removes the entry from the default list and adds it to the list of archived entries. 
-     - Delete: perform a soft-deletion of the Experiment. This will mark the Experiment as deleted but keep it in the backend database.
+5. Blockchain timestamp 
+^^^^^^^^^^^^^^^^^^^^^^^
+This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
 
+6. Export button
+^^^^^^^^^^^^^^^^
+
+.. image:: img/export-options.png
+    :align: center
+    :alt: view mode export dropdown
+
+The Export menu allows you to save the entry in different formats. 
+
+The ELN format is a new file format based on RO-Crate specification. It contains a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. Learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
+
+
+7. Pin entry
+^^^^^^^^^^^^
+Clicking this icon will make this entry appear on top of the list on the main page (pin entry).
+
+8. Lock/unlock entry
+^^^^^^^^^^^^^^^^^^^^
+Use this to lock the entry and prevent further editing. Only an Admin or the user who locked an experiment can unlock it.
+
+9. Ellipsis menu
+^^^^^^^^^^^^^^^^
+   
+   - Transfer ownership: For entries you created, you can transfer ownership to a different user
+   - See revisions: View revisions to the main text of the entry
+   - See changelog: View the changelog for the entry
+   - Archive/Unarchive: Archiving removes the entry from the default list and adds it to the list of archived entries 
+   - Delete entry: Perform a soft-delete of the entry. The entry will be removed but a copy will be stored in the   backend database, where a Sysadmin can access it. See the section on "Restoring deleted entries".
 
 
 Date (started on)
@@ -142,9 +188,9 @@ Permissions
 ^^^^^^^^^^^
 The "Visibility" and "Can write" menus allow you to control who can access and change a given entry. Click the `Edit` button to view, add, or remove permissions.
 
-Main Text
+Main text
 ^^^^^^^^^
-Here is a space for you to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
+This is the space to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
@@ -152,24 +198,24 @@ Here is a space for you to freely describe your experimental setting, procedure,
 Inserting an image
 """"""""""""""""""
 
-To insert an image into the main text, simply drag and drop it into the text editor. You can also insert an uploaded image by selecting "Insert in the text at cursor position" from the uploaded file menu (top right of attachment icon, three vertical dots).
+To insert an image into the main text, simply drag and drop it into the text editor. You can also insert an uploaded image by clicking on the ellipsis menu on the file icon in the "Attached Files" section (three vertical dots on top right) and selecting "Insert in the text at cursor position".
 
-Importing templates
+Inserting templates
 """""""""""""""""""
 
-You can use the Import > Templates menu to select from existing Experiments templates and import them directly in your text, which allows you to compose an Experiment by merging several templates.
+From the Insert menu in the text editor, you can select "Insert template" to import the contents of the text editor from an existing Experiment template. This allows you to combine content from multiple templates.
 
-Using markdown
+Using Markdown
 """"""""""""""
 
     .. image:: img/markdown-editor.*
        :alt: Markdown editor
 
-You can also use markdown for the main text. Switch editor by clicking the Switch editor button at the bottom right of the main text edition zone. If you'd like the editor to become default, go to your Settings and enable "Disable the rich text editor and write Markdown directly".
+You can also use Markdown to create the main text. You can switch to Markdown by clicking the "Switch editor" button at the bottom right of the main text box. If you'd like Markdown to be the default option, go to Settings and select "Disable the rich text editor and write Markdown directly".
 
 Tables
 """"""
-If you add tables you might want to sort the data in the table dynamically. eLabFTW got you covered. Sort icons will be displayed in view mode when so called header cells (``<th>``) are defined and a table is set sortable. The table should have column names in the top row. You can select the top row with the mouse by clicking the left mouse button on the leftmost cell and while keeping the mouse button pressed move the mouse to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the rich text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change «Cell type» from «Cell» (``<td>``) to «Header cell» (``<th>``). Finally, you can activate the sorting by clicking the «sortable table» icon (|sortable-table-icon|) in the tool bar. The icon will also indicate whether a selected table is sortable. After you saved the changes you can go to view mode and dynamically sort the table. The changed order is not stored in eLabFTW. Merged cells in the top/header row (colspan) and in columns (rowspan) are not supported.
+If you add tables to the text editor you might want to dynamically sort the contained data. Don't worry, eLabFTW has you covered. Sort icons are displayed in "view" mode when "header cells" (``<th>``) are defined and a table is set as sortable. The table should have column names in the top row. You can select the top row by clicking the left mouse button with the cursor over the leftmost cell, and while keeping the mouse button pressed, move the cursor to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change the «Cell type» from «Cell» (``<td>``) to «Header cell» (``<th>``). Finally, you can activate sorting by clicking the «sortable table» icon (|sortable-table-icon|) in the tool bar. The icon will also indicate whether a selected table is sortable. After you have saved the changes (see "Saving your changes), you can go to "view" mode and dynamically sort the table. The changed order is not stored in eLabFTW. Merged cells in the top/header row (colspan) and in columns (rowspan) are not supported.
 
 .. |sortable-table-icon| image:: img/sortable-table-icon.png
    :align: middle
@@ -184,9 +230,9 @@ If you add tables you might want to sort the data in the table dynamically. eLab
 Using LaTeX
 """""""""""
 
-It is possible to express mathematical/chemical notations in eLabFTW, and they will be rendered properly in view mode but also in the pdf export.
+It is possible to express mathematical/chemical notation in eLabFTW, and formulas are rendered in both "view" mode and pdf exports.
 
-For this eLabFTW uses Mathjax with ams extension.
+To do this, eLabFTW uses Mathjax with the ams extension.
 
 Try this (make sure it is not pasted between `<pre>` Tags!):
 
@@ -199,24 +245,29 @@ Use one `$` for inline mode and `$$` for block mode.
 Miscellaneous
 """""""""""""
 
-You can insert a timestamp by clicking the clock icon or "Ctrl-Shift-d". You can also insert code snippets with highlighting, special characters, horizontal lines, etc...
+You can use basic text editor shortcuts and code snippets in the text editor to add highlighting, special characters, horizontal lines, etc...
 
+For a list of text shortcuts see this link: <https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/>
+
+Examples:
+
+    ctrl+shift+d : add date/time at cursor
+    ctrl+= : subscript
+    ctrl+shift+= : superscript
 
 Steps
 ^^^^^
-Steps are a way to list the things one need to do during the Experiment. So you can write several steps, and once they are done, click the checkbox to declare them finished. This is quite useful for long Experiments spanning over several days, where the "Next step" will be shown in Show mode (index list), so you can see at one glance what is the next thing to do for this particular Experiment.
+You can use steps to list actions that need to be taken in connection with a given Experiment or Resource. When a task has been completed, you can click on the corresponding checkbox to indicate that that step is done. The "Next step" for each Experiment or Resource will be shown on the main Experiments or Resources page (index list) under the title for that entry. This lets you easily view the next step for each entry. You can also view the next steps for your Experiments and Resources by clicking on the "To-Do List" icon at the top left side of the main page.
 
-Note that you can also declare steps in a template.
+You can also include steps when making a template.
 
-Linked items
-^^^^^^^^^^^^
-This field allows you to link an item from the database. Just begin to type the name of what you want to link and you will see an autocompletion list appear. Select the one you want and press Enter. The number of links is not limited.
+Linked Resources/Experiments 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
 
-This feature can also be used to link an Experiment to a particular Project. If you have a «Project» Item Type and have a Project item in your database, you will then be able to see all Experiments linked to this project by clicking the Link icon.
+This feature can be used to view the Resources or Experiments that are linked to a given entry. For example, you can view all the Experiments that use a particular Resource by looking at the Linked Experiments section in the entry for that Resource. 
 
-Linked Experiments
-^^^^^^^^^^^^^^^^^^
-Same as above, but for Experiments.
+You can also use this feature to organize entries by project, sort of like a folder. For example, you can create a Resource entry for a given project and link all the Experiments and Resources that are associated with that project. 
 
 Attach a file
 ^^^^^^^^^^^^^
@@ -224,100 +275,22 @@ Attach a file
     :align: center
     :alt: file uploader
 
-You can click this region to open a file browser, or drag-and-drop a file inside. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an Experiment.
+Click this region to open the file browser, or drag and drop a file to this region to add it to the entry. The file size limit depends on the server configuration, but there is no limit on file type. If you upload an image, a thumbnail will be created. There is no limit on the number of files you can attach to an Experiment.
 
-Some files are recognized by eLabFTW:
+Various file types are recognized by eLabFTW:
 
-* molecules files such as cif, pdb, sdf, mol files, they will display the molecule in 2D or 3D
-* DNA files such as fasta, gb, ape, dna, gff, they will display a fully featured viewer
-* images such as png, jpg, gif or tiff will get a thumbnail
-* pdf files also get a thumbnail and can optionally be included in pdf exports
-
-
-Ellipsis menu (the three dots on the top right)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Switch Editor entry will switch from the WYSIWYG editor (TinyMCE) to the markdown editor. And the Delete entry is to remove the Experiment.
-
----------------
-
-When you are done, click the «Save and go back» button.
-
-You are now in view mode.
+* molecule files such as cif, pdb, sdf, and mol files: The resulting icon will display the molecule in 2D or 3D
+* DNA files such as FASTA, gb, ape, dna, and gff: These will be displayed via a fully featured viewer
+* image files such as png, jpg, gif, and tiff/: These will show as a thumbnail icon
+* pdf files: These are shown as thumbnail icons and can optionally be included in pdf exports
 
 
-View mode of Experiment
------------------------
-In the view mode, you will find an actions button bar in the upper left part:
+Saving your changes
+^^^^^^^^^^^^^^^^^^^
 
+To save changes made to the text editor, click the floppy disk icon on the top left of the editor. Changes in the text editor are saved automatically every 7 seconds.
 
-.. image:: img/user-view-toolbar.png
-    :align: center
-    :alt: view mode numbered
-
-1. Go back
-^^^^^^^^^^
-Go back to the listing.
-
-1. Edit
-^^^^^^^
-Switch to edit mode.
-
-1. Duplicate
-^^^^^^^^^^^^
-Duplicating an Experiment allows you to quickly create a new entry with the same Title, Tags, body, and links, but with today's date and a running Status. Uploaded files are not duplicated. An «I» character will be added to the title to denote that it is a replicate.
-
-1. Timestamp
-^^^^^^^^^^^^
-When you click this button, a timestamp archive is created. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
-
-The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the :rfc:`3161` standard for Trusted Timestamping.
-
-The timestamped data and its token are then saved in the "Attached Files" section of the Experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
-
-.. image:: img/show-archived-uploads.png
-    :align: center
-    :alt: timestamp archive
-
-This timestamp archive is immutable and cannot be modified or deleted.
-
-.. image:: img/timestamp-archive.png
-    :align: center
-    :alt: timestamp archive
-
-
-5. Blockchain timestamp
-^^^^^^^^^^^^^^^^^^^^^^^
-This button, representing blocks, will do the same timestamping as above, except it will use the blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
-
-6. Export button
-^^^^^^^^^^^^^^^^
-
-.. image:: img/view-mode-export-dropdown.png
-    :align: center
-    :alt: view mode export dropdown
-
-The Export menu allows you to save the entry in different formats. The term "Long term storage" refers to the PDF or the PDF contained in the zip archive being of a particular kind: PDF/A, an ISO-standardized version of the PDF format. It is a PDF format designed for long term storage, but transparent PNG will appear with a black background, so they are no longer the default PDF format, but an option. The PDF/A will also include the changelog, unlike the normal PDF export. It is the PDF format used for timestamping.
-
-The ELN format is a new file format based on RO-Crate specification, containing a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is a format designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. You can learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
-
-
-7. Toggle pin
-^^^^^^^^^^^^^
-Clicking this icon will make this entry appear on top of the listing (pin entry).
-
-8. Toggle lock
-^^^^^^^^^^^^^^
-The lock icon allows you to lock the entry to prevent further editing. If you lock it yourself, you can later unlock it, but if it is locked by an admin, a User won't be able to unlock it.
-
-9. Ellipsis menu
-^^^^^^^^^^^^^^^^
-
-.. raw:: html
-
-    <em>Three dots speak volumes,<br>
-    Unveiling hidden options,<br>
-    Ellipsis unfolds.</em><br><br><br>
+Changes made to any other field are saved automatically, or saved when you click outside of the field. A successful save action is indicated by the "Saved" banner that will show at the top left of the screen.
 
 
 elabid
@@ -326,7 +299,7 @@ In the bottom right part of the Experiment, you can see something like: «Unique
 
 Comments
 --------
-People can leave comments on Experiments. They cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
+People can leave comments on Experiments. Not everyone cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
 
 Templates
 =========
@@ -350,6 +323,8 @@ As with Experiments or Resources, use the Scope button to select what you wish t
 Resources
 =========
 Resources are similar to Experiments, but serve a different purpose: listing and organizing *things* that are used in Experiments.
+
+Many of the options on the Resource entry are the same as those for an Experiment entry. 
 
 Only a team Admin can define the Resources Categories from the Admin Panel. Resources Categories could be:
 
@@ -534,6 +509,11 @@ Using Categories
 ----------------
 An Admin can define several Experiments Categories, which are then available to Users in the Team. It is a quick and easy way to group Experiments together.
 
+To-Do List
+----------
+
+From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen. 
+
 Miscellaneous
 =============
 
@@ -541,7 +521,7 @@ You can export Experiments in .zip. If the Experiment was timestamped you will f
 
 You can export and import items from the database (it can be several items).
 
-Press 't' to have a TODO list.
+
 
 .. raw:: html
 
@@ -655,11 +635,14 @@ In eLabFTW, changes are tracked with a different granularity depending on the in
 
 For an Experiment or Resource, there are two concepts: the Changelog, and the Revisions. The Revisions only tracks changes of the Main text (body) of the entry. The Changelog tracks all changes, except the content of the main text, as this is handled separately by the Revisions system.
 
-You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the view or edit page of an entry. The Revisions also allows you to compare two versions or restore a particular version.
+You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the page for an entry. The Revisions page allows you to compare two versions or restore a particular version of the entry.
 
-All administratives changes such as creating a new User, promoting a User to Admin, assigning a User in a team, changing an instance parameter, are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig Panel.
+All administrative changes, such as creating a new User, promoting a User to Admin, assigning a User in a team, and changing an instance parameter are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig panel.
 
-When deleting something, the entry/file is not actually deleted but simply marked as being deleted. This prevents destructive actions and allows for easy restoration of accidentally deleted things. This mechanism is called "soft-delete".
+Restoring deleted entries
+=========================
+
+eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it will still be accessible in the backend database as a deleted entity. To restore an entry, ask your Sysadmin to revert it by changing the State to 1 (See the Sysadmin guide for more information).
 
 Sharing with external collaborators
 ===================================
