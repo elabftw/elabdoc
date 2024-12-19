@@ -139,7 +139,7 @@ Use this to lock the entry and prevent further editing. Only an Admin or the use
    - See revisions: View revisions to the main text of the entry
    - See changelog: View the changelog for the entry
    - Archive/Unarchive: Archiving removes the entry from the default list and adds it to the list of archived entries
-   - Delete entry: Perform a soft-delete of the entry. The entry will be removed but a copy will be stored in the   backend database, where a Sysadmin can access it. See the section on "Restoring deleted entries".
+   - Delete entry: Perform a soft-delete of the entry. The entry will be removed but a copy will be stored in the   backend database, where a Sysadmin can access it. See the section on :ref:`Restoring deleted entries <restoring-deleted-entries>`.
 
 
 Date (started on)
@@ -637,6 +637,8 @@ For an Experiment or Resource, there are two concepts: the Changelog, and the Re
 You can access the Changelog or the Revisions through the ellipsis menu (three dots) in the top right of the page for an entry. The Revisions page allows you to compare two versions or restore a particular version of the entry.
 
 All administrative changes, such as creating a new User, promoting a User to Admin, assigning a User in a team, and changing an instance parameter are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig panel.
+
+.. _restoring-deleted-entries:
 
 Restoring deleted entries
 =========================
