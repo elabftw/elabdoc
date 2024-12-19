@@ -71,7 +71,7 @@ The only required information is the title.
 
 Toolbar
 -------
-For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below. 
+For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
 
 .. image:: img/user-view-toolbar.png
     :align: center
@@ -280,14 +280,14 @@ Various file types are recognized by eLabFTW:
 
 * molecule files such as cif, pdb, sdf, and mol files: The resulting icon will display the molecule in 2D or 3D
 * DNA files such as FASTA, gb, ape, dna, and gff: These will be displayed via a fully featured viewer
-* image files such as png, jpg, gif, and tiff/: These will show as a thumbnail icon
+* image files such as png, jpg, gif, and tiff: These will show as a thumbnail icon
 * pdf files: These are shown as thumbnail icons and can optionally be included in pdf exports
 
 
 Saving your changes
 -------------------
 
-To save changes made to the text editor, click the floppy disk icon on the top left of the editor. Changes in the text editor are saved automatically every 7 seconds.
+To save changes made to the text editor, click the floppy disk icon on the top left of the editor, or the Save button below it. Changes in the text editor are saved automatically 7 seconds after the user stopped typing.
 
 Changes made to any other field are saved automatically, or saved when you click outside of the field. A successful save action is indicated by the "Saved" banner that will show at the top left of the screen.
 
@@ -298,7 +298,7 @@ In the bottom right part of the Experiment, you can see something like: «Unique
 
 Comments
 --------
-People can leave comments on Experiments. Not everyone cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
+People can leave comments on Experiments. Not everyone can edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
 
 Templates
 =========
@@ -511,7 +511,7 @@ An Admin can define several Experiments Categories, which are then available to 
 To-Do List
 ----------
 
-From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen.
+From the main Experiments or Resources pages, press ``t`` to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen.
 
 Miscellaneous
 =============
@@ -519,7 +519,6 @@ Miscellaneous
 You can export Experiments in .zip. If the Experiment was timestamped you will find in the archive the timestamped pdf and the corresponding .asn1 token.
 
 You can export and import items from the database (it can be several items).
-
 
 
 .. raw:: html
@@ -646,7 +645,7 @@ Soft delete mechanism
 eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it is simply marked as being deleted: its State changes from Normal to Deleted (another possible State would be Archived). This means the entry will still be accessible in the backend database as a deleted entity.
 
 Restoring a deleted entry
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
 
