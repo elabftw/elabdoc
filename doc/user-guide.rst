@@ -643,7 +643,16 @@ All administrative changes, such as creating a new User, promoting a User to Adm
 Restoring deleted entries
 =========================
 
-eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it will still be accessible in the backend database as a deleted entity. To restore an entry, ask your Sysadmin to revert it by changing the State to 1 (See the Sysadmin guide for more information).
+eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it is simply marked as being deleted: its State changes from Normal to Deleted (another possible State would be Archived). This means the entry will still be accessible in the backend database as a deleted entity. Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
+
+Example MySQL query to restore an experiment with ID 42:
+
+.. code-block:: sql
+
+   UPDATE experiments SET state = 1 WHERE id = 42;
+
+Values for ``state`` can be found in the `source code <https://github.com/elabftw/elabftw/blob/master/src/Enums/State.php>`_.
+
 
 Sharing with external collaborators
 ===================================

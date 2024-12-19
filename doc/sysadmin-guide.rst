@@ -289,9 +289,3 @@ Use the :ref:`Restore backup <restore-backup>` instructions to copy your product
 Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.
 
 .. note:: It is recommended to post a general announcement from the Communications tab in the Sysconfig Panel to inform users that this is a test instance, preventing them from mistakenly entering data.
-
-
-Restoring deleted entries
-=========================
-
-eLabFTW uses a soft-delete mechanism for entries. When an experiment or a resource is deleted, it will still be accessible in the backend database as a deleted entity. To restore an entry, revert it by changing the State. For more information, see `<https://github.com/elabftw/elabftw/blob/master/src/Enums/State.php>`_
