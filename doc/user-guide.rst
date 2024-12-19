@@ -80,7 +80,7 @@ For both Experiment and Resource entries, the top part of the page displays a to
 
 1. Go back
 ^^^^^^^^^^
-Go back to the main page.
+Go back to the index page.
 
 2. Mode
 ^^^^^^^
@@ -92,11 +92,11 @@ Create a new entry with the same Title, Tags, text, and links, but with today's 
 
 4. Timestamp
 ^^^^^^^^^^^^
-When you click this button, a timestamp archive is created. This is a signed, legally binding snapshot of the Experiment that is stored alongside the attached files in an immutable archive. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
+When you click this button, a timestamp archive is created. This is a signed, legally binding snapshot of the entry that is stored alongside the attached files in an immutable archive. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
 
 The TSA acknowledges the existence of the data and sends back a signed token, which serves as proof that the data existed at that specific time. This process follows the :rfc:`3161` standard for Trusted Timestamping.
 
-The timestamped data and corresponding token are then saved in the "Attached Files" section of the Experiment as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
+The timestamped data and corresponding token are then saved in the "Attached Files" section of the entry as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
 
 .. image:: img/show-archived-uploads.png
     :align: center
@@ -111,7 +111,7 @@ This timestamp archive is immutable and cannot be modified or deleted.
 
 5. Blockchain timestamp 
 ^^^^^^^^^^^^^^^^^^^^^^^
-This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the BloxBerg consortium. You can learn more about it here: `BloxBerg website <https://bloxberg.org/discover/mission/>`_.
+This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the Bloxberg consortium. You can learn more about it here: `Bloxberg website <https://bloxberg.org/discover/mission/>`_.
 
 6. Export button
 ^^^^^^^^^^^^^^^^
@@ -120,14 +120,14 @@ This button will perform the same action as a timestamp, except it will use bloc
     :align: center
     :alt: view mode export dropdown
 
-The Export menu allows you to save the entry in different formats. 
+The Export menu allows you to save the entry in different file formats. 
 
 The ELN format is a new file format based on RO-Crate specification. It contains a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. Learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
 
 7. Pin entry
 ^^^^^^^^^^^^
-Clicking this icon will make this entry appear on top of the list on the main page (pin entry).
+Clicking this icon will make this entry appear on top of the list on the main page (pin entry). Use this to easily access frequently used entries.
 
 8. Lock/unlock entry
 ^^^^^^^^^^^^^^^^^^^^
@@ -247,13 +247,13 @@ Miscellaneous
 
 You can use basic text editor shortcuts and code snippets in the text editor to add highlighting, special characters, horizontal lines, etc...
 
-For a list of text shortcuts see this link: <https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/>
+For a list of text shortcuts see this link: `<https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/>`_
 
 Examples:
 
-    ctrl+shift+d : add date/time at cursor
-    ctrl+= : subscript
-    ctrl+shift+= : superscript
+    - ctrl+shift+d : add date/time at cursor
+    - ctrl+= : subscript
+    - ctrl+shift+= : superscript
 
 Steps
 ^^^^^

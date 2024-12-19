@@ -294,11 +294,4 @@ Before a major release, update the staging instance, optionally asking users if 
 Restoring deleted entries
 =========================
 
-eLabFTW uses a soft-delete mechanism for entries. When an experiment or a resource is deleted, it will still be accessible in the backend database as a deleted entity. To restore an entry, revert it by changing the State to 1.
-
-    case Normal = 1;
-    case Archived = 2;
-    case Deleted = 3;
-    case Pending = 4;
-    case Processing = 5;
-    case Error = 6;
+eLabFTW uses a soft-delete mechanism for entries. When an experiment or a resource is deleted, it will still be accessible in the backend database as a deleted entity. To restore an entry, revert it by changing the State. For more information, see `<https://github.com/elabftw/elabftw/blob/master/src/Enums/State.php>`_
