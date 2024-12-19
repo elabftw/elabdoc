@@ -139,7 +139,7 @@ Use this to lock the entry and prevent further editing. Only an Admin or the use
    - See revisions: View revisions to the main text of the entry
    - See changelog: View the changelog for the entry
    - Archive/Unarchive: Archiving removes the entry from the default list and adds it to the list of archived entries
-   - Delete entry: Perform a soft-delete of the entry. The entry will be removed but a copy will be stored in the   backend database, where a Sysadmin can access it. See the section on :ref:`Restoring deleted entries <restoring-deleted-entries>`.
+   - Delete entry: Perform a :ref:`soft-delete <soft-delete>` of the entry
 
 
 Date (started on)
@@ -638,12 +638,17 @@ You can access the Changelog or the Revisions through the ellipsis menu (three d
 
 All administrative changes, such as creating a new User, promoting a User to Admin, assigning a User in a team, and changing an instance parameter are logged in the Audit logs database table, and visible to the Sysadmin from the Audit Logs tab in Sysconfig panel.
 
-.. _restoring-deleted-entries:
+.. _soft-delete:
 
-Restoring deleted entries
-=========================
+Soft delete mechanism
+=====================
 
-eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it is simply marked as being deleted: its State changes from Normal to Deleted (another possible State would be Archived). This means the entry will still be accessible in the backend database as a deleted entity. Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
+eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment or a resource, it is simply marked as being deleted: its State changes from Normal to Deleted (another possible State would be Archived). This means the entry will still be accessible in the backend database as a deleted entity.
+
+Restoring a deleted entry
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
 
 Example MySQL query to restore an experiment with ID 42:
 
