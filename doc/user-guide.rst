@@ -27,9 +27,8 @@ Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments
 
 
 .. figure:: img/user-show-mode.png
-   :alt: eLabFTW Experiments 
+   :alt: eLabFTW Experiments
 
-   
 
 You can change the page layout by clicking the **Layout** button on the top right of the first listed Experiment:
 
@@ -55,7 +54,7 @@ Set the scope to "*Self*" to display only Experiments that you created. Note tha
 
 You can create an Experiment by clicking the `Create` button on the top right of the screen. You will have the option of selecting an existing Experiment template or using a blank template. You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By default, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
 
-An Experiment entry can include many different types of information, such as: 
+An Experiment entry can include many different types of information, such as:
 
 * A title
 * ID and custom ID numbers
@@ -72,7 +71,7 @@ The only required information is the title.
 
 Toolbar
 ^^^^^^^
-For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below. 
+For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
 
 .. image:: img/user-view-toolbar.png
     :align: center
@@ -109,7 +108,7 @@ This timestamp archive is immutable and cannot be modified or deleted.
     :alt: timestamp archive
 
 
-5. Blockchain timestamp 
+5. Blockchain timestamp
 ^^^^^^^^^^^^^^^^^^^^^^^
 This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the Bloxberg consortium. You can learn more about it here: `Bloxberg website <https://bloxberg.org/discover/mission/>`_.
 
@@ -120,7 +119,7 @@ This button will perform the same action as a timestamp, except it will use bloc
     :align: center
     :alt: view mode export dropdown
 
-The Export menu allows you to save the entry in different file formats. 
+The Export menu allows you to save the entry in different file formats.
 
 The ELN format is a new file format based on RO-Crate specification. It contains a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. Learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
@@ -135,11 +134,11 @@ Use this to lock the entry and prevent further editing. Only an Admin or the use
 
 9. Ellipsis menu
 ^^^^^^^^^^^^^^^^
-   
+
    - Transfer ownership: For entries you created, you can transfer ownership to a different user
    - See revisions: View revisions to the main text of the entry
    - See changelog: View the changelog for the entry
-   - Archive/Unarchive: Archiving removes the entry from the default list and adds it to the list of archived entries 
+   - Archive/Unarchive: Archiving removes the entry from the default list and adds it to the list of archived entries
    - Delete entry: Perform a soft-delete of the entry. The entry will be removed but a copy will be stored in the   backend database, where a Sysadmin can access it. See the section on "Restoring deleted entries".
 
 
@@ -168,7 +167,7 @@ Status
 ^^^^^^
 This feature lets you set the 'Status' of an Experiment. The default status options are:
 
-- Running 
+- Running
 - Needs to be redone
 - Success
 - Fail
@@ -261,13 +260,13 @@ You can use steps to list actions that need to be taken in connection with a giv
 
 You can also include steps when making a template.
 
-Linked Resources/Experiments 
+Linked Resources/Experiments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
 
-This feature can be used to view the Resources or Experiments that are linked to a given entry. For example, you can view all the Experiments that use a particular Resource by looking at the Linked Experiments section in the entry for that Resource. 
+This feature can be used to view the Resources or Experiments that are linked to a given entry. For example, you can view all the Experiments that use a particular Resource by looking at the Linked Experiments section in the entry for that Resource.
 
-You can also use this feature to organize entries by project, sort of like a folder. For example, you can create a Resource entry for a given project and link all the Experiments and Resources that are associated with that project. 
+You can also use this feature to organize entries by project, sort of like a folder. For example, you can create a Resource entry for a given project and link all the Experiments and Resources that are associated with that project.
 
 Attach a file
 ^^^^^^^^^^^^^
@@ -324,7 +323,7 @@ Resources
 =========
 Resources are similar to Experiments, but serve a different purpose: listing and organizing *things* that are used in Experiments.
 
-Many of the options on the Resource entry are the same as those for an Experiment entry. 
+Many of the options on the Resource entry are the same as those for an Experiment entry.
 
 Only a team Admin can define the Resources Categories from the Admin Panel. Resources Categories could be:
 
@@ -512,7 +511,7 @@ An Admin can define several Experiments Categories, which are then available to 
 To-Do List
 ^^^^^^^^^^
 
-From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen. 
+From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen.
 
 Miscellaneous
 =============
