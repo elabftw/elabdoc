@@ -70,8 +70,8 @@ An Experiment entry can include many different types of information, such as:
 The only required information is the title.
 
 Toolbar
-^^^^^^^
-For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
+-------
+For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below. 
 
 .. image:: img/user-view-toolbar.png
     :align: center
@@ -143,28 +143,28 @@ Use this to lock the entry and prevent further editing. Only an Admin or the use
 
 
 Date (started on)
-^^^^^^^^^^^^^^^^^
+-----------------
 The date is set to today's date by default. You can edit it as you wish. The effective creation timestamp is stored in the backend database in another (read-only) attribute.
 
 
 ID
-^^
+--
 This attribute is not editable and corresponds to the unique (to that instance) immutable ID of the entry.
 
 Custom ID
-^^^^^^^^^
+---------
 This attribute (``null`` by default) can be set as a number after a Category is selected. Custom ID numbers will then be automatically assigned in an incremental fashion when new Experiments with that Category are created. One can also click the "Get next" button to fetch the next available Custom ID for entries of that Category. The Custom ID is displayed before the title.
 
 Title
-^^^^^
+-----
 This is the title of the Experiment. A duplicated Experiment will have a «I» character appended to the title upon creation.
 
 Category
-^^^^^^^^
+--------
 You can assign a "Category" to each Experiment. Only an Admin can define the categories that are available for your team to use. Categories can correspond to projects, types of Experiments, and other strategies for grouping Experiment entries. You can easily browse groups of Experiments by Category from the main Experiment page.
 
 Status
-^^^^^^
+------
 This feature lets you set the 'Status' of an Experiment. The default status options are:
 
 - Running
@@ -175,7 +175,7 @@ This feature lets you set the 'Status' of an Experiment. The default status opti
 These Status options can be modified by an admin via the admin panel.
 
 Tags
-^^^^
+----
 Tags allow users to easily group and sort Experiment entries. You can think of them as folders, but they are more powerful because each Experiment can have many different Tags. The Tag system thus enables efficient cross-searching.
 You can list all Experiments with a given Tag by clicking on the Tag or searching for it in the Tag search bar. To add a Tag to an Experiment entry, type the name of the tag in the Tag input field and press Enter or click anywhere outside the input field. You can add an unlimited number of Tags. Click on an existing Tag to launch a prompt that will allow you to remove it (in edit mode). Tags are common to each team. Autocompletion favors the reuse of existing Tags.
 
@@ -184,28 +184,28 @@ You can list all Experiments with a given Tag by clicking on the Tag or searchin
     .. image:: img/quick_tags.*
 
 Permissions
-^^^^^^^^^^^
+-----------
 The "Visibility" and "Can write" menus allow you to control who can access and change a given entry. Click the `Edit` button to view, add, or remove permissions.
 
 Main text
-^^^^^^^^^
+---------
 This is the space to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
 
     .. image:: img/tinymce-editor.png
        :alt: Tinymce editor
 
 Inserting an image
-""""""""""""""""""
+^^^^^^^^^^^^^^^^^^
 
 To insert an image into the main text, simply drag and drop it into the text editor. You can also insert an uploaded image by clicking on the ellipsis menu on the file icon in the "Attached Files" section (three vertical dots on top right) and selecting "Insert in the text at cursor position".
 
 Inserting templates
-"""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^
 
 From the Insert menu in the text editor, you can select "Insert template" to import the contents of the text editor from an existing Experiment template. This allows you to combine content from multiple templates.
 
 Using Markdown
-""""""""""""""
+^^^^^^^^^^^^^^
 
     .. image:: img/markdown-editor.*
        :alt: Markdown editor
@@ -213,7 +213,7 @@ Using Markdown
 You can also use Markdown to create the main text. You can switch to Markdown by clicking the "Switch editor" button at the bottom right of the main text box. If you'd like Markdown to be the default option, go to Settings and select "Disable the rich text editor and write Markdown directly".
 
 Tables
-""""""
+^^^^^^
 If you add tables to the text editor you might want to dynamically sort the contained data. Don't worry, eLabFTW has you covered. Sort icons are displayed in "view" mode when "header cells" (``<th>``) are defined and a table is set as sortable. The table should have column names in the top row. You can select the top row by clicking the left mouse button with the cursor over the leftmost cell, and while keeping the mouse button pressed, move the cursor to the rightmost cell. Release the mouse button. The top row should be highlighted now. Next, from the text editor menu select «Table» → «Cell» → «Cell properties». In the dialog change the «Cell type» from «Cell» (``<td>``) to «Header cell» (``<th>``). Finally, you can activate sorting by clicking the «sortable table» icon (|sortable-table-icon|) in the tool bar. The icon will also indicate whether a selected table is sortable. After you have saved the changes (see "Saving your changes), you can go to "view" mode and dynamically sort the table. The changed order is not stored in eLabFTW. Merged cells in the top/header row (colspan) and in columns (rowspan) are not supported.
 
 .. |sortable-table-icon| image:: img/sortable-table-icon.png
@@ -227,7 +227,7 @@ If you add tables to the text editor you might want to dynamically sort the cont
        :alt: Sort table demo
 
 Using LaTeX
-"""""""""""
+^^^^^^^^^^^
 
 It is possible to express mathematical/chemical notation in eLabFTW, and formulas are rendered in both "view" mode and pdf exports.
 
@@ -242,7 +242,7 @@ Try this (make sure it is not pasted between `<pre>` Tags!):
 Use one `$` for inline mode and `$$` for block mode.
 
 Miscellaneous
-"""""""""""""
+^^^^^^^^^^^^^
 
 You can use basic text editor shortcuts and code snippets in the text editor to add highlighting, special characters, horizontal lines, etc...
 
@@ -255,12 +255,12 @@ Examples:
     - ctrl+shift+= : superscript
 
 Steps
-^^^^^
+-----
 You can use steps to list actions that need to be taken in connection with a given Experiment or Resource. When a task has been completed, you can click on the corresponding checkbox to indicate that that step is done. The "Next step" for each Experiment or Resource will be shown on the main Experiments or Resources page (index list) under the title for that entry. This lets you easily view the next step for each entry. You can also view the next steps for your Experiments and Resources by clicking on the "To-Do List" icon at the top left side of the main page.
 
 You can also include steps when making a template.
 
-Linked Resources/Experiments
+Linked Resources/Experiments 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
 
@@ -269,7 +269,7 @@ This feature can be used to view the Resources or Experiments that are linked to
 You can also use this feature to organize entries by project, sort of like a folder. For example, you can create a Resource entry for a given project and link all the Experiments and Resources that are associated with that project.
 
 Attach a file
-^^^^^^^^^^^^^
+-------------
 .. image:: img/user-file-uploader.png
     :align: center
     :alt: file uploader
@@ -285,7 +285,7 @@ Various file types are recognized by eLabFTW:
 
 
 Saving your changes
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 To save changes made to the text editor, click the floppy disk icon on the top left of the editor. Changes in the text editor are saved automatically every 7 seconds.
 
@@ -293,11 +293,11 @@ Changes made to any other field are saved automatically, or saved when you click
 
 
 elabid
-^^^^^^
+------
 In the bottom right part of the Experiment, you can see something like: «Unique elabid: 20150526-e72646c3ecf59b4f72147a52707629150bca0f91». This number is unique to each Experiment, and immutable (won't ever change). You can use it to reference an Experiment with an external database.
 
 Comments
-^^^^^^^^
+--------
 People can leave comments on Experiments. Not everyone cannot edit your Experiment, but they can leave a comment. The owner of the Experiment will receive an email if someone comment their Experiment.
 
 Templates
@@ -349,7 +349,7 @@ Booking Resources
 It is possible to use the scheduler (calendar) present on the Team page's first tab to book Resources.
 
 Making a Resource bookable
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 In order to book a Resource, it needs to be bookable (they are not by default). To do that, go to the Resource, and click "Modify booking parameters" from the top right menu with three vertical dots:
 
@@ -382,7 +382,7 @@ This will show a modal window with various settings:
      - If "now" is closer than this number of minutes to the start of the event, it will not be possible to cancel it
 
 Adjusting permissions
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 When a Resource is bookable, a new permission appears: "Can book":
 
@@ -393,7 +393,7 @@ When a Resource is bookable, a new permission appears: "Can book":
 By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this Resource for booking it.
 
 Using the scheduler
-^^^^^^^^^^^^^^^^^^^
+-------------------
 
 Once all is set, Users can click the "Book item" button in the toolbar, or select it from the Scheduler page, and click the calendar to drag a booking slot.
 
@@ -415,15 +415,15 @@ User panel
 The User panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the User menu in the top right.
 
 Preferences tab
-^^^^^^^^^^^^^^^
+---------------
 From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
 
 Account tab
-^^^^^^^^^^^
+-----------
 This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
 
 What is two factor authentication?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 Multi-factor authentication, MFA (or Two-factor authentication, 2FA) is a mechanism to further protect your account. After logging in with your password, you will need to enter a 6 digits code that changes every 30 seconds. This code will be displayed by a special application on your cellphone. If you have never used such a mechanism, you need to first install a 2FA application on your phone.
 
 * For Android phones, the recommended application is `Aegis <https://getaegis.app/>`_ (Open Source).
@@ -436,15 +436,15 @@ Once this application is installed, on the eLabFTW page, select YES to "Use two-
 **Note**: it is highly recommended to enable 2FA wherever you can.
 
 Templates tab
-^^^^^^^^^^^^^
+-------------
 Manage your templates. Once a template has been created, you can add Tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
-^^^^^^^^^^^^
+------------
 Create an API key for your account from this page. An API key is like a Username+password for your account. It allows you to interact with eLabFTW programmatically, through the REST API. See :ref:`API documentation <api>`.
 
-How to have folders or projects grouping Experiments?
-=====================================================
+How to group Experiments into Projects?
+=======================================
 
 There are several options:
 
@@ -483,7 +483,7 @@ Tags are a way to label your Experiments (and database objects) with defined key
 Now with the Experiments correctly tagged, finding them through different search angles becomes easy! You can search for one Tag or many Tags directly from the main page.
 
 Favorite Tags
-^^^^^^^^^^^^^
+-------------
 
 Over time, you will have some Tags that become your favorites, as they are always the ones you look for for a set of Experiments.
 
@@ -496,7 +496,7 @@ Since version 4.2.0 it is possible to define "Favorite Tags" that will appear in
 Note that if you use a "Favorite Tag" filter and then create an Experiment, it will be tagged automatically with that Tag.
 
 Using Projects
-^^^^^^^^^^^^^^
+--------------
 
 There is also another way to group Experiments together, that you can use along with Tags. It's using a Resource of Category: Project.
 
@@ -505,11 +505,11 @@ Go to the Admin Panel and create a Resource Category: "Project". Go to the Resou
 Make sure to create Experiments templates that already link to that Project so the link will always be here when the Experiment is created by a User.
 
 Using Categories
-^^^^^^^^^^^^^^^^
+----------------
 An Admin can define several Experiments Categories, which are then available to Users in the Team. It is a quick and easy way to group Experiments together.
 
 To-Do List
-^^^^^^^^^^
+----------
 
 From the main Experiments or Resources pages, press 't' to show your "To-Do List". You can also access the "To-Do List" by clicking on the icon at the top left side of the screen.
 
@@ -538,19 +538,19 @@ A signature can prove that this particular *data* has been approved by this part
 eLabFTW allows you to have three different types of signatures.
 
 Handwritten signatures
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 In your Settings page, check the setting: "Enable french style signature block in PDF Export", from the "PDF Configuration" section of the "General" tab. Now, when you generate a PDF, there will be a dedicated section at the bottom to allow signatures of the author and an observer.
 
 Simple signatures
-^^^^^^^^^^^^^^^^^
+-----------------
 
 In an authenticated application such as eLabFTW, where all Users are identified and vetted, a signature can be clicking a checkbox, leaving a comment, or performing an action such as locking an Experiment.
 
 The level of trust you can associate to this action is reinforced by using multi-factor authentication.
 
 Advanced cryptographic signatures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 Since version 5.1, an advanced signature mechanism exists for eLabFTW. It uses the highly secure Ed25519 public-key signature system and is compatible with `minisign <https://jedisct1.github.io/minisign/>`_.
 
@@ -664,13 +664,13 @@ Sharing with external collaborators
 If you want to share your results with an external collaborator, you have two options:
 
 Option 1: Export and send
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 This option is pretty straightforward, you export your entry into a PDF or ZIP archive and send this by email or other means to your collaborator.
 
 If course, this option has its limitations, and is not always the best suited approach, but works 100% of the time.
 
 Option 2: Allow anonymous access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:
 
 .. image:: img/sysconfig-anonymous.png
