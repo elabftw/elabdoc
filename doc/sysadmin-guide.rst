@@ -297,3 +297,29 @@ Use the :ref:`Restore backup <restore-backup>` instructions to copy your product
 Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.
 
 .. note:: It is recommended to post a general announcement from the Communications tab in the Sysconfig Panel to inform users that this is a test instance, preventing them from mistakenly entering data.
+
+Fix deprecation warning for old password storage
+================================================
+
+If your MySQL log is filled with "WARNING "sha256_password' is deprecated and will be removed in a future release." messages, you will want to update the password storage mechanism. This message is present because you have the line ``command: --default-authentication-plugin=mysql_native_password`` present in your compose file. It used to be necessary, but it is no longer the case and even deprecated.
+
+.. warning:: Make sure to have a working backup of your MySQL database first!
+
+First get a root mysql shell:
+
+.. code-block:: bash
+
+    docker exec -it mysql bash
+    mysql -uroot -p$MYSQL_ROOT_PASSWORD
+
+.. code-block:: mysql
+
+    -- List users
+    mysql> select host, user, plugin from mysql.user;
+    -- Change password and use modern mechanism
+    mysql> alter user 'elabftw'@'%' identified with caching_sha2_password by '<elabftw password>';
+    mysql> alter user 'root'@'%' identified with caching_sha2_password by '<root password>';
+    mysql> alter user 'root'@'localhost' identified with caching_sha2_password by '<root password>';
+
+
+Then delete the line in the docker compose file and restart the container.
