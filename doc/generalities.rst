@@ -59,7 +59,7 @@ There are two main types of records that exist: **Experiments** and **Resources*
 
 **Experiments** are the main aspect of the ELN: it is where users log their results.
 
-**Resources** correspond to a repository of *things* present in the lab, generally physical things, such as plasmids, equipments, antibodies, chemical products, etc... They have different properties than experiments, although both objects are similar in many aspects. A Resource can be made bookable (so they can be booked in the Scheduler) or procurable (so we can order more of it).
+**Resources** correspond to a repository of *things* present in the lab, generally physical things, such as plasmids, equipment, antibodies, chemical products, etc... They have different properties than experiments, although both objects are similar in many aspects. A Resource can be made bookable (so they can be booked in the Scheduler) or procurable (so we can order more of it).
 
 By default, Experiments and Resources are restricted to a team. But users can choose to extend this to all registered users or even anonymous users if enabled by the Sysadmin. An extensive fine-grained permission system is available for both types of records and their corresponding templates to have complete control on who get to read/write what.
 
