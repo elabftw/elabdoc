@@ -3,6 +3,20 @@
 Changelog
 =========
 
+Version 5.1.13
+--------------
+
+* bug/medium: fix steps not imported from template
+* bug/minor: import eln: actually use provided permissions
+
+    The user interface to import .eln files allow to set read and write
+    permissions, but they were not taken into account.
+    fix #5420
+* feat: allow setting persistent mode for PDO. Set ``USE_PERSISTENT_MYSQL_CONN`` to ``false`` as an environment variable to disable persistent connections to MySQL. Currently the MySQL connections are persistent. This change was made to avoid the overhead of establishing a TCP connection for SQL requests, but it can cause resources exhaustion on big instances, and in rare cases some firewalls cause improper severance leading to issues for the PHP workers.
+
+
+
+
 Version 5.1.12
 --------------
 
