@@ -68,7 +68,7 @@ Secret=elabftw-s3-sk,type=env,target=ELAB_AWS_SECRET_KEY
 # do NOT add :z here because NFS cause an issue #
 # host:container
 Volume=/mnt/data/elabftw_uploads:/elabftw/uploads
-# this is necessary if you enrypt mysql connection and thus want the container to have access to the mysql cert
+# this is necessary if you encrypt mysql connection and thus want the container to have access to the mysql cert
 Volume=/deltablot/mysql:/mysql-cert:z
 
 # NETWORKS
