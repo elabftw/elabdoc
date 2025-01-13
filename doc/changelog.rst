@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 5.1.14
+--------------
+
+No changes in eLabFTW, this is a re-release with a missing commit in elabimg repository for the new ``USE_PERSISTENT_MYSQL_CONN`` parameter.
+
+
 Version 5.1.13
 --------------
 
