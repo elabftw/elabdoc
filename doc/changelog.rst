@@ -3,6 +3,61 @@
 Changelog
 =========
 
+Version 5.1.14
+--------------
+
+No changes in eLabFTW, this is a re-release with a missing commit in elabimg repository for the new ``USE_PERSISTENT_MYSQL_CONN`` parameter.
+
+
+Version 5.1.13
+--------------
+
+* bug/medium: fix steps not imported from template
+* bug/minor: import eln: actually use provided permissions
+
+    The user interface to import .eln files allow to set read and write
+    permissions, but they were not taken into account.
+    fix #5420
+* feat: allow setting persistent mode for PDO. Set ``USE_PERSISTENT_MYSQL_CONN`` to ``false`` as an environment variable to disable persistent connections to MySQL. Currently the MySQL connections are persistent. This change was made to avoid the overhead of establishing a TCP connection for SQL requests, but it can cause resources exhaustion on big instances, and in rare cases some firewalls cause improper severance leading to issues for the PHP workers.
+
+
+
+
+Version 5.1.12
+--------------
+
+* bug/medium: eln import: fix issue with resources categories import. fix #5356
+* bug/minor: eln import: honor userid setting. fix #5382
+* bug/minor: teamgroups: fix issue with comma in username. fix #5406
+* bug/minor: templates: fix steps not being duplicated. fix #5404
+* bug/minor: extra fields builder: fix number type field missing units (fix #5398)
+* bug/minor: extra fields: fix issue with incorrect groups definition. fix #5369
+* feat: minor: mask colon (:) for autocomplete searches (PR #5383 by Marcel Bolten) fix #5376
+* chore: composer: upgrade league/commonmark. fix vuln https://github.com/elabftw/elabftw/security/dependabot/64
+* chore: set min cross-spawn version to 7.0.5. fix for CVE-2024-21538
+
+
+Version 5.1.11
+--------------
+
+* bug/medium: eln import: prevent duplication of resources categories. fix #5349. fix #5285
+* bug/medium: eln import: fix status and categories for templates
+   The bug was that experiments never timestamped would have the condition
+   always evaluate to false because you can't compare NULL with something like
+   that. The feature is adding -t option to target specific teams. fix #5319
+* bug/medium + feat: cli timestamp: fix and improve sql query
+* bug/minor: admin panel: fix newcomer banner message not correctly displayed
+* bug/minor: eln: make .eln valid ro-crate
+* bug/minor: listing: improve behavior with always show owned parameter
+* feat: tinymce image upload code revamp, add image plugin/upload-with-drop to templates (#5353)
+* feat: uploads api: allow filtering archived uploads with api. fix #5323
+* feat: import eln: display error instead of aborting if file shasum fails
+* feat: import eln: display checksums of failed imported files
+* feat: eln export: allow restricting users or resources categories when
+  exporting with export:eln, you can now add -u and -r to include only these
+  users and these resource categories id.
+
+
 Version 5.1.10
 --------------
 

@@ -56,7 +56,7 @@ If you wish to import a rather large `.eln` archive (such as a full team export)
 
 .. code-block:: bash
 
-   docker exec -it elabftw bin/console import:eln -h
+   docker exec -it -u nginx:nginx elabftw bin/console import:eln -h
 
 As you can see, there are two mandatory arguments, the path to the file, and the Team ID where the import will be performed. The first thing to do is to copy the file in the right place in the container. It must be in `/elabftw/exports` folder. Copy it with a command similar to this:
 
@@ -69,11 +69,11 @@ Figure out the Team ID by looking at the Team from the Sysconfig panel, where th
 .. code-block:: bash
 
    # import in team 12 and be verbose
-   docker exec -it elabftw bin/console import:eln -vv your.eln 12
+   docker exec -it -u nginx:nginx elabftw bin/console import:eln -vv your.eln 12
    # import in team 25, force everything to be owned by user 5 and be extra verbose
-   docker exec -it elabftw bin/console import:eln -vvv your.eln 25 --userid 5
+   docker exec -it -u nginx:nginx elabftw bin/console import:eln -vvv your.eln 25 --userid 5
    # import in team 42, force everything to be of type "Resources" with category "6"
-   docker exec -it elabftw bin/console import:eln --type items --category 6 your.eln 42
+   docker exec -it -u nginx:nginx elabftw bin/console import:eln --type items --category 6 your.eln 42
 
 By default (if no ``--userid`` setting is provided), the ownership of the items will be
 determined by comparing the email addresses of users between the export and import
