@@ -323,3 +323,14 @@ First get a root mysql shell:
 
 
 Then delete the line in the docker compose file and restart the container.
+
+Migrate uploads from local storage to S3
+========================================
+
+In some contexts, it might be advantageous to use S3 backed storage for uploaded files. If you want to move your existing uploaded files (``uploads/`` folder) to an S3 storage, here are the steps to follow:
+
+1. Run ``bin/console uploads:check`` just to verify everything is nice and dandy
+2. Configure the container to use S3 storage: add ``ELAB_AWS_{ACCESS/SECRET}_KEY`` env vars
+3. In the Sysconfig panel, configure your bucket from the "UPLOADS" tab, test by uploading a file in an experiment
+4. Once S3 is correctly configured, run ``bin/console uploads:migrate``. This will copy all your locally stored files into the S3 bucket
+5. The final step is to remove the bind mounted ``/elabftw/uploads/`` folder from the container runtime configuration
