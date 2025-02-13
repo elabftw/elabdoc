@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 5.1.15
+--------------
+
+WARNING: this release contains a SECURITY BUGFIX. The vulnerability is classified HIGH, so updating is highly recommended!
+
+Fix CVE-2025-25206
+
+* bug/minor: import eln: fix links in body. fix #5425
+* bug/medium: idps xml: allow Redirect binding for sso and POST for slo, instead of hardcoding them. fix #5463
+* bug/minor: fix teamgroup perm check to patch
+* bug/minor: permissions: use entity team column to check for admin access
+* bug/medium: remove api key of user when dissociating from team
+
 Version 5.1.14
 --------------
 
