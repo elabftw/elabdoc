@@ -602,7 +602,7 @@ We add a trusted comment to the signature data. This comment is trusted because 
     trusted_comment: <arbitrary text>
     base64(<global_signature>)
 
-A real world example::
+A real-world example::
 
     untrusted comment: elabftw/50100: signature from key f3690b6554b4f817
     RUTzaQtlVLT4F5C81w4VBNIodngF4Kna0RqfOTY3CGIB+6AlzsFeX2BPpm49HyIKVnZHHhUQ8C/osp/uTyhAo0WrCoASqm2d0w0=
