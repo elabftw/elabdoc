@@ -3,6 +3,77 @@
 Changelog
 =========
 
+Version 5.2.0-alpha
+-------------------
+
+This is an Alpha release, **NOT FOR PRODUCTION** usage.
+
+Note: this changelog is not exhaustive, only the main changes are described here.
+
+Added
+`````
+* Chemical compounds database
+* Chemical compounds sketcher
+* Import from PubChem (CAS or CID)
+* Safety icons for compounds
+* Inventory management
+* OpenCloning embed
+* Add possibility to make permissions of an experiment/resource immutable after creating it from template specifying this property
+* Allow creating entry via API with all possible fields (instead of having to create first then patch)
+* feat/minor: qrcode: add options for qr code generation (#5445)
+* feat/medium: editing: enforce exclusive edit mode setting for user (#5427)
+* Preview button in text editor, useful for Mathjax, by @ForeverFloating (PR #5358, fix #5295)
+* Cache result of Config in memory (still WIP)
+* doc: add reporting dashboard link in README (#5443 by Nikki Parks)
+* feat/medium: manage extra fields groups in metadata (#5390 by Mouss)
+* feat: tinymce: add rust in list of highlighted languages for code snippet. fix #5440
+* feat: eln export: skip empty extra fields values
+* doc: security.md: add note about attestations
+
+
+Fixed
+`````
+* bug/minor: team stats: count experiments per team, not user
+* bug/minor: policies: fix incorrect title on modal window. fix #5473
+* bug/minor: apidoc: fix issues reported in #5446
+* bug/minor: add orgid to the list of properties linked with identity
+* Full compliance with RGAA 4.1 accessibility rules
+* bug: eln export: add missing `@id` to PropertyValue nodes in .eln
+
+
+Removed
+```````
+* custom links for Admins (used to be Documentation by default)
+* removed flawed "Force permissions" admin section + code
+* all chemdoodle code
+
+
+Changed
+```````
+* Removed search page
+* Re-organized top menu bar
+* Updated api specification
+* Removed help modal
+* Removed Create button side dropdown
+* Ask for title in a proper modal window when creating a template
+* Improved the "Change password" UI when changing it from Sysconfig panel
+* Moved search input into page
+* Create dedicated Templates page to list templates -> they are no longer in Settings page
+* Remove separate section with pinned entities, instead, display them first
+* Use mastodon link in footer instead of X
+* ux: autocomplete: mention 3 chars are required to search. fix #5472
+* Add edit button for extra fields (PR #5476 by Mouss). fix #5160 #5331 #5375
+
+
+Dev stuff
+`````````
+* Upgrade to PHP 8.4
+* Use Alpine 3.21
+* Remove pageTitle property of App, replaced by getPageTitle() in controllers
+* Remove Entity.class and Templates.class + all template specific html code
+
+
+
 Version 5.1.14
 --------------
 
