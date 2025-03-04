@@ -414,9 +414,11 @@ Compounds
 
 A chemical compounds database is available to all users in all team, it is a common database for the instance, storing references of all existing compounds. You can access it from the Tools menu.
 
-.. image:: img/compounds-db.png
+.. figure:: img/compounds-db.png
     :align: center
     :alt: compounds database
+
+    The shared compounds database
 
 Compounds have specific properties such as a CAS number or a SMILES/InChI representation. They can also be associated with safety risks. Once a compound is present in the local eLabFTW database, it can be referenced (linked) from an Experiment or a Resource.
 
@@ -468,13 +470,13 @@ Fingerprints
 When you add a compound where the SMILES representation is defined, and if the instance is configured to use the Fingerprinting service, a fingerprint of the compound will be stored in the database, allowing the search for substructures.
 
 
-User panel
-==========
+Settings page
+=============
 
-The User panel is where you can adjust preferences for your account. You can access it by clicking the link in the bottom left of every page, or through the User menu in the top right.
+The Settins page is where you can adjust preferences for your account. You can access it by selecting "Settings" from the top right user menu.
 
-Preferences tab
----------------
+General tab
+-----------
 From here you can select a language, adjust the display settings, change the keyboard shortcuts, modify the PDF settings, select a different text editor and set the default permission settings.
 
 Account tab
@@ -493,10 +495,6 @@ If you already have a 2FA application, eLabFTW can work with it: you don't need 
 Once this application is installed, on the eLabFTW page, select YES to "Use two-factor authentication?" and click Save. You will then be presented with a QR code, scan it with the application on your phone and enter the code. That's it, now your account is secured with multi-factor authentication.
 
 **Note**: it is highly recommended to enable 2FA wherever you can.
-
-Templates tab
--------------
-Manage your templates. Once a template has been created, you can add Tags, steps and links to it. It will then be available from the Create menu.
 
 Api keys tab
 ------------
