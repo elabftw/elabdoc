@@ -435,7 +435,7 @@ Compounds can be imported from PubChem. From the Compounds page, click the "Impo
 
 You can specify a PubChem CID (a unique identifier for all compounds present in PubChem), or a CAS number (a unique identifier present for most compounds). Input the number (CID or CAS) and click Search. A preview of the data is displayed below. If that is the correct compound, click Import.
 
-Your newly imported compound is now visible in the table listing them all. Double-clik it to further edit its properties.
+Your newly imported compound is now visible in the table listing them all. Double-click it to further edit its properties.
 
 .. figure:: img/compounds-edit.png
     :align: center
@@ -445,7 +445,7 @@ Your newly imported compound is now visible in the table listing them all. Doubl
 
 From this window, you can edit all the properties of the compound. Only the "Name" is a mandatory field, all other fields are optional.
 
-The safety section allows you to define health hazards, but also if it is a controlled substance such as a drug precursor, or nanomaterials.
+The safety section allows you to define health hazards associated with that compound, and also if it is a controlled substance such as a drug precursor, or nanomaterials.
 
 .. figure:: img/compounds-safety.png
     :align: center
@@ -469,11 +469,37 @@ Fingerprints
 
 When you add a compound where the SMILES representation is defined, and if the instance is configured to use the Fingerprinting service, a fingerprint of the compound will be stored in the database, allowing the search for substructures.
 
+Chemical structure editor
+-------------------------
+
+Since version 5.2, a chemical structure editor is present in the Tools menu. It allows one to draw molecules and perform operation on them such as searching the compounds database for similar molecules, via a substructure search. This feature requires the compounds present in the common database to be associated with a fingerprint, which is the case if the fingerprinting service is active, and the compounds have a SMILES representation defined.
+
+.. figure:: img/compounds-editor.png
+    :align: center
+    :alt: compounds editor
+
+    Using the editor to draw, import or export molecules
+
+OpenCloning
+===========
+
+Since version 5.2, eLabFTW integrates the tool OpenCloning, developed by Manuel Lera Ramirez.
+
+.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment!
+
+
+.. figure:: img/opencloning.png
+   :align: center
+   :alt: OpenCloning
+
+   OpenCloning running inside eLabFTW
+
+A more complete documentation will be present somewhere, sometime. For now, you're on your own! ;)
 
 Settings page
 =============
 
-The Settins page is where you can adjust preferences for your account. You can access it by selecting "Settings" from the top right user menu.
+The Settings page is where you can adjust preferences for your account. You can access it by selecting "Settings" from the top right user menu.
 
 General tab
 -----------
