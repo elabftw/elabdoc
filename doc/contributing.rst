@@ -488,3 +488,20 @@ It is a good idea to use a pre-commit hook to run linters before the commit is a
     fi
 
 Now when you commit it should run this script and prevent the commit if there are errors.
+
+Running cypress locally
+=======================
+
+In docker: `yarn run cy` (where `yarn` is the local command, not the one in container, because this starts docker images)
+
+Locally: current workaround:
+
+.. code-block:: bash
+
+   cd /tmp
+   git clone -b hypernext https://github.com/elabftw/elabftw
+   cd elabftw
+   npm i cypress
+   ./node_modules/.bin/cypress open
+
+Not great, not terrible.
