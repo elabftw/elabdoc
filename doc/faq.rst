@@ -184,6 +184,93 @@ Is it compliant to 21CFR Part 11?
 
 7. Password policy: passwords are securely stored in the database and security mechanisms such as preventing too many authentication tries are in place. Password policies can also be enforced, and centralized authentication mechanisms can be setup.
 
+What about GMP compliance?
+==========================
+
+GMP Compliance Statement for eLabFTW
+
+1. Introduction
+
+eLabFTW is an open-source electronic lab notebook (ELN) and database designed for academic, industrial, and research institutions. This document outlines how eLabFTW complies with Good Manufacturing Practice (GMP) requirements, particularly in contexts where digital recordkeeping must meet regulatory standards.
+
+2. System Overview
+
+eLabFTW provides features essential for compliance with GMP, including:
+
+* Secure and tamper-evident electronic recordkeeping
+* Comprehensive audit trails
+* User authentication and access control
+* Version control of records
+* Role-based permission management
+* Timestamped entries
+
+3. GMP-Relevant Compliance Features
+
+3.1 Data Integrity and Security
+
+eLabFTW ensures data integrity through:
+
+* Enforced HTTPS connections
+* Encrypted data in transit
+* Automatic backups
+* Tamper-evident log entries
+
+3.2 Audit Trails
+
+Nearly every action performed in eLabFTW is logged. The audit trail includes:
+
+* Timestamp of the action
+* User identity
+* Nature of the change (e.g., edit, delete)
+* Linked records or experiments
+
+3.3 User Management and Access Control
+
+* Each user has a unique login with secure password requirements
+* Role-based access controls limit user permissions
+* Admins can assign and revoke roles
+* Inactive users can be disabled to maintain access security
+
+3.4 Electronic Signatures eLabFTW supports electronic signatures that are:
+
+* Unique to each user
+* Tied to a specific time and action
+* Stored in immutable archives
+* Using state of the art cryptography
+
+3.5 Validation and Qualification
+
+eLabFTW supports system validation through:
+
+* Open-source codebase (fully inspectable)
+* Documented update logs and change management
+
+3.6 Data Retention and Exportability
+
+* Data can be exported in human-readable and machine-readable formats
+* Archived data remains accessible and readable
+* Long-term retention complies with GMP recordkeeping requirements
+
+4. Implementation Best Practices
+
+To ensure GMP compliance, administrators should:
+
+* Implement validated backup strategies
+* Maintain system validation documentation
+* Define and enforce access policies
+* Perform regular audits using eLabFTW's built-in reporting tools
+* Train users on GMP principles and proper usage of eLabFTW
+
+5. Conclusion
+
+When properly configured and maintained, eLabFTW provides the necessary functionality to support GMP compliance in electronic documentation and laboratory recordkeeping environments. For full compliance, users must align eLabFTW usage with their internal SOPs and regulatory guidelines.
+
+6. References
+
+`EU GMP Annex 11: Computerised Systems <https://health.ec.europa.eu/system/files/2016-11/annex11_01-2011_en_0.pdf>`_
+
+
+
 What about compliance to standards?
 ===================================
 eLabFTW tries to comply to the following standards :
