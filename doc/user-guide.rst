@@ -453,7 +453,7 @@ The safety section allows you to define health hazards associated with that comp
 
     Editing safety information for a compound
 
-Now that your compound is correctly created, you can click the "Create resource from compound" button on top of this modal window to create a Resource linked with that compound. That resource can be seen as an instanciation of this abstract compound that is present in this common, shared compound database.
+Now that your compound is correctly created, you can click the "Create resource from compound" button on top of this modal window to create a Resource linked with that compound. That resource can be seen as an instantiation of this abstract compound that is present in this common, shared compound database.
 
 With a Resource, you can set permissions and also add more information, attach files, define inventory, and link to other Resources or Experiments.
 
