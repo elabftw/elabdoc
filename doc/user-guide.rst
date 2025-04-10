@@ -412,7 +412,7 @@ Note: "Past and future Users who booked this Resource" means all Users who booke
 Compounds
 =========
 
-A chemical compounds database is available to all users in all team, it is a common database for the instance, storing references of all existing compounds. You can access it from the Tools menu.
+A chemical compounds database is available to all users in all teams, it is a common database for the instance, storing references of all existing compounds. Note that the visibility cannot be changed. Compounds are always visible to everyone with access to the instance. You can access it from the Tools menu.
 
 .. figure:: img/compounds-db.png
     :align: center
@@ -462,7 +462,7 @@ A Resource (or an Experiment) can be linked to one or several existing Compound,
 Creating a compound manually
 ----------------------------
 
-Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound.
+Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential do not add it.
 
 Fingerprints
 ------------
