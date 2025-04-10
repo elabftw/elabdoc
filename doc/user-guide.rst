@@ -462,7 +462,7 @@ A Resource (or an Experiment) can be linked to one or several existing Compound,
 Creating a compound manually
 ----------------------------
 
-Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential do not add it.
+Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential, do not add it.
 
 Fingerprints
 ------------
