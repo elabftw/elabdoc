@@ -157,7 +157,7 @@ A **MySQL** database service is required. You can deploy a MySQL service with Do
 Requirements for the clients (users)
 ------------------------------------
 
-- Any operating system with either Firefox, or Chrome based browser (Chrome, Chromium, Edge, Brave, Opera). Safari is known to cause issues and is not officially supported. Internet Explorer is not supported.
+- Any operating system with either Firefox, or Chrome based browser (Chrome, Chromium, Edge, Brave, Opera). Safari is `known to cause issues <https://github.com/elabftw/elabftw/issues?q=is%3Aissue%20state%3Aclosed%20label%3A%22safari%20is%20the%20new%20IE%22>`_ and is not officially supported. Internet Explorer is not supported.
 - An internet connection.
 
 What about data retention/traceability
