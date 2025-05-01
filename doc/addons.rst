@@ -7,7 +7,7 @@ Addons
 What are addons?
 =================
 
-Addons are services that can be deployed to provide extended functionnality for eLabFTW. They are not a requirement but are definitely recommended.
+Addons are services that can be deployed to provide extended functionality for eLabFTW. They are not a requirement but are definitely recommended.
 
 Chem Plugin
 ===========
