@@ -385,6 +385,9 @@ Adding a lang
 * Get the tinymce translation from `this repository <https://github.com/mklkj/tinymce-i18n/tree/master/langs6>`_
 * Rename file to 4 letters code in `src/js/tinymce-langs`
 * Edit first line of file to match code
+* Import it in `tinymce.ts`
+* Run `bin/console dev:i18n4js`
+* Import it in `ts/i18n.ts`
 
 
 Adding a new term for js i18n
