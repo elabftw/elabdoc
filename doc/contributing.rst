@@ -377,13 +377,13 @@ Adding a lang
 
 * Add lang on poeditor.com
 * Get .po
+* Save it in a new folder in `src/langs`
 * Open with poeditor and fix issues
 * Save the .mo
 * Upload .po fixed to poeditor
-* Add the files in src/langs
-* Edit Tools to add lang to menu
-* Get the tinymce translation
-* Rename file to 4 letters code
+* Add it to `Enums/Language.php`
+* Get the tinymce translation from `this repository <https://github.com/mklkj/tinymce-i18n/tree/master/langs6>`_
+* Rename file to 4 letters code in `src/js/tinymce-langs`
 * Edit first line of file to match code
 
 
