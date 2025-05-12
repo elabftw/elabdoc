@@ -279,7 +279,7 @@ Import Links (2)
     For example, let's say there is an experiment (Time travel) that requires certain reagents (banana peel and beer) and devices (flux capacitor and Mr. Fusion) which are explained in more detail in the corresponding resource entries. The resources are linked to the experiment. Unfortunately, the experiment does not work the first time, so there is need for a second iteration (Time travel II). Time travel II gets a link to Time travel and now all the required reagents and devices can be imported easily by clicking the "Import Links" button.
 
 Import Body (3)
-    The text body of a linked entry is copied into the current entry at the curser position.
+    The text body of a linked entry is copied into the current entry at the cursor position.
 
 Attach a file
 -------------
