@@ -3,12 +3,8 @@
 Changelog
 =========
 
-Version 5.2.0-alpha
--------------------
-
-This is an Alpha release, **NOT FOR PRODUCTION** usage.
-
-Note: this changelog is not exhaustive, only the main changes are described here.
+Version 5.2.0
+-------------
 
 Added
 `````
@@ -29,6 +25,7 @@ Added
 * feat: tinymce: add rust in list of highlighted languages for code snippet. fix #5440
 * feat: eln export: skip empty extra fields values
 * doc: security.md: add note about attestations
+* Uzbek language
 
 
 Fixed
@@ -63,6 +60,10 @@ Changed
 * Use mastodon link in footer instead of X
 * ux: autocomplete: mention 3 chars are required to search. fix #5472
 * Add edit button for extra fields (PR #5476 by Mouss). fix #5160 #5331 #5375
+* Allow displaying archived uploaded files in view mode when no normal files exist (fix #5624)
+* Improve error message if timestamp has an error
+* Improve error handling during file upload
+* a11y: Make malleable content focusable and editable with keyboard
 
 
 Dev stuff
@@ -71,6 +72,7 @@ Dev stuff
 * Use Alpine 3.21
 * Remove pageTitle property of App, replaced by getPageTitle() in controllers
 * Remove Entity.class and Templates.class + all template specific html code
+* Upgrade twig and twig-trans
 
 
 
