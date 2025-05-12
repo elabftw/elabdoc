@@ -8,7 +8,7 @@ Install on a GNU/Linux server
     :align: center
     :alt: gnulinux
 
-These instructions will work for any of the GNU/Linux distributions where Docker is supported and can be installed.
+These instructions will work for any of the GNU/Linux distribution with a containerization technology such as Docker, Podman or any other OCI-compliant runtimes. The documentation is focused on Docker.
 
 .. warning:: Only 64 bits distributions are supported. Do not try to install on a 32 bits operating system!
 

@@ -56,6 +56,8 @@ Setup the IDentity Provider
 * SLO binding: Example: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
 * x509 cert: the public key of the IDP
 
+The SLO URL that the IDP needs to know to redirect the user to would be `/app/logout.php`.
+
 Attributes for the IDP
 ----------------------
 We need to specify where to look in the attributes sent in the response for email, team and name of the user. You can use the FriendlyName or the Name from the table below. Note that this will depend on your IDP and using the SAML Tracer plugin (see below) to see the response will be helpful in determining what fields you want to use.

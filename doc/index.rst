@@ -57,6 +57,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     install-cloud
     install-nas
     install-nolinux
+    addons
 
 .. toctree::
     :caption: Usage

@@ -138,6 +138,14 @@ By default, uploaded files are stored in the `uploads/` folder that is mounted o
 
 To use S3 storage, set `ELAB_AWS_ACCESS_KEY` and `ELAB_AWS_SECRET_KEY` in your config file. You can use `bin/console uploads:migrate` to migrate existing locally uploaded files to S3 storage.
 
+Example setting with Scaleway S3:
+
+* Bucket name: elabftw-example
+* S3 region: fr-par
+* S3 endpoint: https://s3.fr-par.scw.cloud
+* S3 path prefix: uploads
+* Verify TLS certificate: enabled
+
 Set up a cronjob to renew TLS certificates :sup:`(optional)`
 =============================================================
 
@@ -289,3 +297,40 @@ Use the :ref:`Restore backup <restore-backup>` instructions to copy your product
 Before a major release, update the staging instance, optionally asking users if everything looks good on this instance, and once everything is validated, you can upgrade the production instance.
 
 .. note:: It is recommended to post a general announcement from the Communications tab in the Sysconfig Panel to inform users that this is a test instance, preventing them from mistakenly entering data.
+
+Fix deprecation warning for old password storage
+================================================
+
+If your MySQL log is filled with "WARNING "sha256_password' is deprecated and will be removed in a future release." messages, you will want to update the password storage mechanism. This message is present because you have the line ``command: --default-authentication-plugin=mysql_native_password`` present in your compose file. It used to be necessary, but it is no longer the case and even deprecated.
+
+.. warning:: Make sure to have a working backup of your MySQL database first!
+
+First get a root mysql shell:
+
+.. code-block:: bash
+
+    docker exec -it mysql bash
+    mysql -uroot -p$MYSQL_ROOT_PASSWORD
+
+.. code-block:: mysql
+
+    -- List users
+    mysql> select host, user, plugin from mysql.user;
+    -- Change password and use modern mechanism
+    mysql> alter user 'elabftw'@'%' identified with caching_sha2_password by '<elabftw password>';
+    mysql> alter user 'root'@'%' identified with caching_sha2_password by '<root password>';
+    mysql> alter user 'root'@'localhost' identified with caching_sha2_password by '<root password>';
+
+
+Then delete the line in the docker compose file and restart the container.
+
+Migrate uploads from local storage to S3
+========================================
+
+In some contexts, it might be advantageous to use S3 backed storage for uploaded files. If you want to move your existing uploaded files (``uploads/`` folder) to an S3 storage, here are the steps to follow:
+
+1. Run ``bin/console uploads:check`` just to verify everything is nice and dandy
+2. Configure the container to use S3 storage: add ``ELAB_AWS_{ACCESS/SECRET}_KEY`` env vars
+3. In the Sysconfig panel, configure your bucket from the "UPLOADS" tab, test by uploading a file in an experiment
+4. Once S3 is correctly configured, run ``bin/console uploads:migrate``. This will copy all your locally stored files into the S3 bucket
+5. The final step is to remove the bind mounted ``/elabftw/uploads/`` folder from the container runtime configuration

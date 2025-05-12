@@ -49,6 +49,15 @@ You can also disable multifactor authentication for a particular User, if needed
 
 From this page, you can also directly add a new User to your Team. The new User will need to activate the "Reset password" functionality to access their account.
 
+Reinitializing 2FA
+------------------
+
+In case a user lost their phone, they might need to re-initialize two factors authentication. This action can be done by an Admin or Sysadmin account. 
+
+.. image:: img/disable-2fa.png
+    :align: center
+    :alt: Disable 2FA
+
 CATEGORIES tab
 ==============
 

@@ -377,14 +377,17 @@ Adding a lang
 
 * Add lang on poeditor.com
 * Get .po
+* Save it in a new folder in `src/langs`
 * Open with poeditor and fix issues
 * Save the .mo
 * Upload .po fixed to poeditor
-* Add the files in src/langs
-* Edit Tools to add lang to menu
-* Get the tinymce translation
-* Rename file to 4 letters code
+* Add it to `Enums/Language.php`
+* Get the tinymce translation from `this repository <https://github.com/mklkj/tinymce-i18n/tree/master/langs6>`_
+* Rename file to 4 letters code in `src/js/tinymce-langs`
 * Edit first line of file to match code
+* Import it in `tinymce.ts`
+* Run `bin/console dev:i18n4js`
+* Import it in `ts/i18n.ts`
 
 
 Adding a new term for js i18n
@@ -488,3 +491,20 @@ It is a good idea to use a pre-commit hook to run linters before the commit is a
     fi
 
 Now when you commit it should run this script and prevent the commit if there are errors.
+
+Running cypress locally
+=======================
+
+In docker: `yarn run cy` (where `yarn` is the local command, not the one in container, because this starts docker images)
+
+Locally: current workaround:
+
+.. code-block:: bash
+
+   cd /tmp
+   git clone -b hypernext https://github.com/elabftw/elabftw
+   cd elabftw
+   npm i cypress
+   ./node_modules/.bin/cypress open
+
+Not great, not terrible.
