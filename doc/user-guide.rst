@@ -260,8 +260,8 @@ You can use steps to list actions that need to be taken in connection with a giv
 
 You can also include steps when making a template.
 
-Linked Resources/Experiments 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Linked Resources/Experiments
+----------------------------
 You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
 
 This feature can be used to view the Resources or Experiments that are linked to a given entry. For example, you can view all the Experiments that use a particular Resource by looking at the Linked Experiments section in the entry for that Resource.
