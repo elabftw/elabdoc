@@ -71,3 +71,5 @@ Then enable it in ``elabftw`` container configuration:
     # This is for the integration of the DNA Cloning tool
     - USE_OPENCLONING=true
     - OPENCLONING_URL=http://opencloning-plugin:8000/
+
+Restart the ``elabftw`` container to take these changes into account.

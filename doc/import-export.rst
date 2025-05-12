@@ -64,7 +64,7 @@ As you can see, there are two mandatory arguments, the path to the file, and the
 
    docker cp your.eln elabftw:/elabftw/exports/
 
-Figure out the Team ID by looking at the Team from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
+Figure out the Team ID by looking at the Teams tab from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
 
 .. code-block:: bash
 
@@ -177,6 +177,34 @@ If you want to have complete control over the import process, you can use a few 
 We will use the `elabapi-python` library to make things easy. See `installation instructions <https://github.com/elabftw/elabapi-python#installation>`_.
 
 You can then have a look at `this example to import CSV using the API and metadata/extra fields <https://github.com/elabftw/elabapi-python/blob/master/examples/09-import-csv.py>`_.
+
+.. _compounds-import:
+
+Importing compounds through CLI (csv file)
+------------------------------------------
+
+.. note:: This approach is only available to Sysadmins with shell access.
+
+If you're working with a large database of compounds, using the CLI is a more efficient approach. Display the help with:
+
+.. code-block:: bash
+
+   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -h
+
+The file must be available inside the container at /elabftw/exports. Use the following to copy your file into the container:
+
+.. code-block:: bash
+
+   docker cp your_compounds.csv elabftw:/elabftw/exports/
+
+Figure out the Team ID by looking at the Teams tab from the Sysconfig panel, where the ID will be displayed next to the Team. Next, import your file with:
+
+.. code-block:: bash
+
+   # import in team 2 and be verbose
+   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -vv your_compounds.csv 2
+   # import in team 25, force everything to be owned by user 5 and be extra verbose
+   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -vvv your_compounds.csv 25 --userid 5
 
 .. _exporting-data:
 

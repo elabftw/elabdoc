@@ -23,16 +23,22 @@ Experiments
 
 Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments" from the menu bar at the top of the page to show a list of Experiment entries.
 
-.. image:: img/user-experiments-menu.png
+.. figure:: img/user-experiments-menu.png
+   :align: center
+   :alt: eLabFTW toolbar
 
+   Menu toolbar
 
 .. figure:: img/user-show-mode.png
+   :align: center
    :alt: eLabFTW Experiments
 
+   Experiments page
 
-You can change the page layout by clicking the **Layout** button on the top right of the first listed Experiment:
+You can change the page layout by clicking the **Layout** button on the top right of the experiments list:
 
 .. figure:: img/user-switch-layout.png
+   :align: center
    :alt: eLabFTW layout button
 
    Layout button
@@ -40,15 +46,18 @@ You can change the page layout by clicking the **Layout** button on the top righ
 To make the entries appear like this:
 
 .. figure:: img/user-alt-layout.png
+   :align: center
    :alt: eLabFTW alternate layout
 
    Alternate layout
 
-
-
 By default, the page shows both Experiments created by you and those created by other Users in your team. To see **only** your Experiments, you can change the **Scope** using the drop-down menu that appears after clicking the button on the right:
 
-.. image:: img/user-scope-button.png
+.. figure:: img/user-scope-button.png
+   :align: center
+   :alt: set scope to self
+
+   Set scope to self
 
 Set the scope to "*Self*" to display only Experiments that you created. Note that the Resources or Templates pages also allow you to filter entries using the scope button, and your selection is remembered.
 
@@ -61,9 +70,10 @@ An Experiment entry can include many different types of information, such as:
 * A Category
 * A Status
 * Tags
+* Permissions
 * The main text, which can include images, tables, and links
-* Steps
 * Extra fields
+* Steps
 * Links to other Experiments or Resources
 * Attachments
 
@@ -89,7 +99,11 @@ Switch between "edit" mode and "view" mode.
 ^^^^^^^^^^^^^^^^^^
 Create a new entry with the same Title, Tags, text, and links, but with today's date and the Status set as "Running". A pop-up message will ask if you would like to copy the attached files to the duplicated entry. An «I» character is added to the title to indicate that it is a duplicate.
 
-4. Timestamp
+4. Add signature
+^^^^^^^^^^^^^^^^
+Add a signature to prove that this entry has been approved by a referenced human. See :ref:`Signatures documentation <signatures>`.
+
+5. Timestamp
 ^^^^^^^^^^^^
 When you click this button, a timestamp archive is created. This is a signed, legally binding snapshot of the entry that is stored alongside the attached files in an immutable archive. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
 
@@ -108,11 +122,11 @@ This timestamp archive is immutable and cannot be modified or deleted.
     :alt: timestamp archive
 
 
-5. Blockchain timestamp
+6. Blockchain timestamp
 ^^^^^^^^^^^^^^^^^^^^^^^
 This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the Bloxberg consortium. You can learn more about it here: `Bloxberg website <https://bloxberg.org/discover/mission/>`_.
 
-6. Export button
+7. Export button
 ^^^^^^^^^^^^^^^^
 
 .. image:: img/export-options.png
@@ -124,16 +138,26 @@ The Export menu allows you to save the entry in different file formats.
 The ELN format is a new file format based on RO-Crate specification. It contains a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. Learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
 
-7. Pin entry
+8. Pin entry
 ^^^^^^^^^^^^
 Clicking this icon will make this entry appear on top of the list on the main page (pin entry). Use this to easily access frequently used entries.
 
-8. Lock/unlock entry
+9. Lock/unlock entry
 ^^^^^^^^^^^^^^^^^^^^
 Use this to lock the entry and prevent further editing. Only an Admin or the user who locked an experiment can unlock it.
 
-9. Ellipsis menu
-^^^^^^^^^^^^^^^^
+10. Request action
+^^^^^^^^^^^^^^^^^^
+Request another user to perform an action on a given entry.
+
+   - Archive
+   - Lock
+   - Review
+   - Sign
+   - Timestamp
+
+11. Ellipsis menu
+^^^^^^^^^^^^^^^^^
 
    - Transfer ownership: For entries you created, you can transfer ownership to a different user
    - See revisions: View revisions to the main text of the entry
@@ -305,9 +329,9 @@ Templates
 
 In order to save time when creating Experiments, eLabFTW features a Templates system for Experiments.
 
-It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the User menu.
+It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the menu bar at the top.
 
-.. image:: img/user-templates-menu.png
+.. image:: img/templates-menu.png
 
 Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.
 
@@ -346,7 +370,7 @@ Furthermore, Resources can be made bookable, see section below.
 Booking Resources
 =================
 
-It is possible to use the scheduler (calendar) present on the Team page's first tab to book Resources.
+It is possible to use the scheduler (calendar) present on the Scheduler page to book Resources.
 
 Making a Resource bookable
 --------------------------
@@ -463,6 +487,11 @@ Creating a compound manually
 ----------------------------
 
 Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential, do not add it.
+
+Creating a compound manually
+----------------------------
+
+Look at the :ref:`Import compounds through CLI <compounds-import>` section to learn how to import your compounds from a spreadsheet file or through the API.
 
 Fingerprints
 ------------
@@ -609,6 +638,8 @@ You can export and import items from the database (it can be several items).
    <iframe width="560" height="315" src="https://www.youtube.com/embed/maylkcTAarg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the editor, press Ctrl+shift+d to get today's date inserted at cursor position.
+
+.. _signatures:
 
 Signatures
 ==========
