@@ -763,4 +763,4 @@ Then, Users will have the possibility to generate a link with an access key in i
 
 Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
 
-For this feature to work, the instance must  be accessible from an external network.
+For this feature to work, the instance must be accessible from an external network.
