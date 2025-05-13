@@ -83,9 +83,11 @@ Toolbar
 -------
 For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
 
-.. image:: img/user-view-toolbar.png
-    :align: center
-    :alt: view mode numbered
+.. figure:: img/user-view-toolbar.png
+   :align: center
+   :alt: Viewing an entry
+
+   Viewing an entry
 
 1. Go back
 ^^^^^^^^^^
@@ -111,15 +113,19 @@ The TSA acknowledges the existence of the data and sends back a signed token, wh
 
 The timestamped data and corresponding token are then saved in the "Attached Files" section of the entry as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
 
-.. image:: img/show-archived-uploads.png
-    :align: center
-    :alt: timestamp archive
+.. figure:: img/show-archived-uploads.png
+   :align: center
+   :alt: timestamp archive
+
+   Show archived files
 
 This timestamp archive is immutable and cannot be modified or deleted.
 
-.. image:: img/timestamp-archive.png
-    :align: center
-    :alt: timestamp archive
+.. figure:: img/timestamp-archive.png
+   :align: center
+   :alt: timestamp archive
+
+   The archived zip
 
 
 6. Blockchain timestamp
@@ -129,9 +135,11 @@ This button will perform the same action as a timestamp, except it will use bloc
 7. Export button
 ^^^^^^^^^^^^^^^^
 
-.. image:: img/export-options.png
-    :align: center
-    :alt: view mode export dropdown
+.. figure:: img/export-options.png
+   :align: center
+   :alt: view mode export dropdown
+
+   List of available exports
 
 The Export menu allows you to save the entry in different file formats.
 
@@ -206,6 +214,7 @@ You can list all Experiments with a given Tag by clicking on the Tag or searchin
 .. only:: html
 
     .. image:: img/quick_tags.*
+        :alt: Adding a new tag
 
 Permissions
 -----------
@@ -215,8 +224,11 @@ Main text
 ---------
 This is the space to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
 
-    .. image:: img/tinymce-editor.png
-       :alt: Tinymce editor
+   .. figure:: img/tinymce-editor.png
+      :align: center
+      :alt: Tinymce editor
+
+      Tinymce editor
 
 Inserting an image
 ^^^^^^^^^^^^^^^^^^
@@ -257,11 +269,17 @@ It is possible to express mathematical/chemical notation in eLabFTW, and formula
 
 To do this, eLabFTW uses Mathjax with the ams extension.
 
-Try this (make sure it is not pasted between `<pre>` Tags!):
+Try the Mathjax expression below (make sure it is not pasted between `<pre>` Tags!):
 
 .. code:: latex
 
     $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+.. figure:: img/tinymce-editor-paragraph.png
+  :align: center
+  :alt: Tinymce editor paragraph
+
+  Change `<pre>` tag into a paragraph.
 
 Use one `$` for inline mode and `$$` for block mode.
 
@@ -488,7 +506,7 @@ Creating a compound manually
 
 Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential, do not add it.
 
-Creating a compound manually
+Importing compounds manually
 ----------------------------
 
 Look at the :ref:`Import compounds through CLI <compounds-import>` section to learn how to import your compounds from a spreadsheet file or through the API.
@@ -509,12 +527,20 @@ Since version 5.2, a chemical structure editor is present in the Tools menu. It 
 
     Using the editor to draw, import or export molecules
 
+For detailed instructions, click the (?) icon at the top of the editor.
+
+.. figure:: img/compounds-editor-help.png
+    :align: center
+    :alt: compounds editor
+
+    Editor documentation
+
 OpenCloning
 ===========
 
 Since version 5.2, eLabFTW integrates the tool OpenCloning, developed by Manuel Lera Ramirez.
 
-.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment!
+.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment! See :ref:`addons` section.
 
 
 .. figure:: img/opencloning.png
@@ -536,7 +562,7 @@ From here you can select a language, adjust the display settings, change the key
 
 Account tab
 -----------
-This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
+This page allows you to modify your email/password, enable multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
 
 What is two factor authentication?
 ----------------------------------
@@ -761,7 +787,7 @@ eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment 
 Restoring a deleted entry
 -------------------------
 
-Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
+In previous versions of eLabFTW, only a Sysadmin with MySQL access has the ability to restore an entry, by changing the `state` back to 1.
 
 Example MySQL query to restore an experiment with ID 42:
 
@@ -771,6 +797,13 @@ Example MySQL query to restore an experiment with ID 42:
 
 Values for ``state`` can be found in the `source code <https://github.com/elabftw/elabftw/blob/master/src/Enums/State.php>`_.
 
+As of version 5.2.0, the search page has been moved to the main pages (Experiments / Templates / Resources pages). You can now select the state as a filter and restore an entry by clicking on the Restore button.
+
+.. figure:: img/restore-entry.png
+   :align: center
+   :alt: eLabFTW toolbar
+
+   Filter deleted experiments and restore.
 
 Sharing with external collaborators
 ===================================
