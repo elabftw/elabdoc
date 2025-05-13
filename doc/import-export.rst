@@ -189,7 +189,7 @@ If you're working with a large database of compounds, using the CLI is a more ef
 
 .. code-block:: bash
 
-   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -h
+   docker exec -it elabftw bin/console import:compounds -h
 
 The file must be available inside the container at /elabftw/exports. Use the following to copy your file into the container:
 
@@ -202,9 +202,9 @@ Figure out the Team ID by looking at the Teams tab from the Sysconfig panel, whe
 .. code-block:: bash
 
    # import in team 2 and be verbose
-   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -vv your_compounds.csv 2
+   docker exec -it elabftw bin/console import:compounds -vv your_compounds.csv 2
    # import in team 25, force everything to be owned by user 5 and be extra verbose
-   docker exec -it -u nginx:nginx elabftw bin/console import:compounds -vvv your_compounds.csv 25 --userid 5
+   docker exec -it elabftw bin/console import:compounds -vvv your_compounds.csv 25 --userid 5
 
 .. _exporting-data:
 

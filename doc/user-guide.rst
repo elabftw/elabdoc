@@ -349,7 +349,11 @@ In order to save time when creating Experiments, eLabFTW features a Templates sy
 
 It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the menu bar at the top.
 
-.. image:: img/templates-menu.png
+.. figure:: img/templates-menu.png
+    :align: center
+    :alt: Templates page
+
+    The Templates page
 
 Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.
 
@@ -357,6 +361,8 @@ By default, the template is "pinned", which means it will appear in the pop up w
 
 
 .. image:: img/user-toggle-pin-templates.*
+    :align: center
+    :alt: toggle pinned templates
 
 As with Experiments or Resources, use the Scope button to select what you wish to be listed: only your own Templates (*Self*) or more.
 
