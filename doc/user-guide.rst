@@ -260,13 +260,26 @@ You can use steps to list actions that need to be taken in connection with a giv
 
 You can also include steps when making a template.
 
-Linked Resources/Experiments 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Linked Resources/Experiments
+----------------------------
 You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
 
 This feature can be used to view the Resources or Experiments that are linked to a given entry. For example, you can view all the Experiments that use a particular Resource by looking at the Linked Experiments section in the entry for that Resource.
 
 You can also use this feature to organize entries by project, sort of like a folder. For example, you can create a Resource entry for a given project and link all the Experiments and Resources that are associated with that project.
+
+Next to the possibility to preview the content of a linked entry (1) and to delete a link (4), in edit mode, there are two actions to import content from a linked entry:
+
+.. image:: img/user-linked-entries-tools.png
+    :align: center
+    :alt: link actions
+
+Import Links (2)
+    Links to entries that are present inside a linked entry are copied into the current entry.
+    For example, let's say there is an experiment (Time travel) that requires certain reagents (banana peel and beer) and devices (flux capacitor and Mr. Fusion) which are explained in more detail in the corresponding resource entries. The resources are linked to the experiment. Unfortunately, the experiment does not work the first time, so there is need for a second iteration (Time travel II). Time travel II gets a link to Time travel and now all the required reagents and devices can be imported easily by clicking the "Import Links" button.
+
+Import Body (3)
+    The text body of a linked entry is copied into the current entry at the cursor position.
 
 Attach a file
 -------------
@@ -763,4 +776,4 @@ Then, Users will have the possibility to generate a link with an access key in i
 
 Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
 
-For this feature to work, the instance must  be accessible from an external network.
+For this feature to work, the instance must be accessible from an external network.
