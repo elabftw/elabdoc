@@ -3,6 +3,30 @@
 Changelog
 =========
 
+Version 5.2.1
+-------------
+
+Fixed
+`````
+* bug/medium: fix number of displayed experiments categories (fix #5635)
+* bug/medium: scheduler: fix issue when binding exp/resources to events (fix #5424)
+* bug/medium: compounds: allow idempotent import (fix #5646)
+* bug/medium: fingerprinter: fix issue with instance level proxy setting
+* bug/minor: import compounds csv: fix title of resource when coming from PubChem
+* bug/minor: containers: fix issue when id of container is same as entity (fix #5637)
+* bug/minor: fix value type of immutable options in creation of entity
+
+Added
+`````
+* api spec: add compounds. (fix #5648)
+
+Changed
+```````
+* feat: comments: send notifications to all participating users (fix #4747)
+* ux: add note about pinned templates in create experiment modal (fix #5640)
+* ui: sysconfig: align is_admin with is_owner ui, use slider (fix #4539)
+
+
 Version 5.2.0
 -------------
 
