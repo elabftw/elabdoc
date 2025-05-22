@@ -825,11 +825,19 @@ Option 2: Allow anonymous access
 --------------------------------
 It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:
 
-.. image:: img/sysconfig-anonymous.png
+.. figure:: img/sysconfig-anonymous.png
+   :align: center
+   :alt: sysconfig anonymous
+
+   Registration and authentication configuration (Sysadmin panel)
 
 Then, Users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:
 
-.. image:: img/user-anonymous-link.png
+.. figure:: img/user-anonymous-link.png
+   :align: center
+   :alt: user anonymous
+
+   Link generation by a user
 
 Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
 
