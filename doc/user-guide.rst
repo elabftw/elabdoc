@@ -23,16 +23,22 @@ Experiments
 
 Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments" from the menu bar at the top of the page to show a list of Experiment entries.
 
-.. image:: img/user-experiments-menu.png
+.. figure:: img/user-experiments-menu.png
+   :align: center
+   :alt: eLabFTW toolbar
 
+   Menu toolbar
 
 .. figure:: img/user-show-mode.png
+   :align: center
    :alt: eLabFTW Experiments
 
+   Experiments page
 
-You can change the page layout by clicking the **Layout** button on the top right of the first listed Experiment:
+You can change the page layout by clicking the **Layout** button on the top right of the experiments list:
 
 .. figure:: img/user-switch-layout.png
+   :align: center
    :alt: eLabFTW layout button
 
    Layout button
@@ -40,15 +46,18 @@ You can change the page layout by clicking the **Layout** button on the top righ
 To make the entries appear like this:
 
 .. figure:: img/user-alt-layout.png
+   :align: center
    :alt: eLabFTW alternate layout
 
    Alternate layout
 
-
-
 By default, the page shows both Experiments created by you and those created by other Users in your team. To see **only** your Experiments, you can change the **Scope** using the drop-down menu that appears after clicking the button on the right:
 
-.. image:: img/user-scope-button.png
+.. figure:: img/user-scope-button.png
+   :align: center
+   :alt: set scope to self
+
+   Set scope to self
 
 Set the scope to "*Self*" to display only Experiments that you created. Note that the Resources or Templates pages also allow you to filter entries using the scope button, and your selection is remembered.
 
@@ -61,9 +70,10 @@ An Experiment entry can include many different types of information, such as:
 * A Category
 * A Status
 * Tags
+* Permissions
 * The main text, which can include images, tables, and links
-* Steps
 * Extra fields
+* Steps
 * Links to other Experiments or Resources
 * Attachments
 
@@ -73,9 +83,11 @@ Toolbar
 -------
 For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
 
-.. image:: img/user-view-toolbar.png
-    :align: center
-    :alt: view mode numbered
+.. figure:: img/user-view-toolbar.png
+   :align: center
+   :alt: Viewing an entry
+
+   Viewing an entry
 
 1. Go back
 ^^^^^^^^^^
@@ -89,7 +101,11 @@ Switch between "edit" mode and "view" mode.
 ^^^^^^^^^^^^^^^^^^
 Create a new entry with the same Title, Tags, text, and links, but with today's date and the Status set as "Running". A pop-up message will ask if you would like to copy the attached files to the duplicated entry. An «I» character is added to the title to indicate that it is a duplicate.
 
-4. Timestamp
+4. Add signature
+^^^^^^^^^^^^^^^^
+Add a signature to prove that this entry has been approved by a referenced human. See :ref:`Signatures documentation <signatures>`.
+
+5. Timestamp
 ^^^^^^^^^^^^
 When you click this button, a timestamp archive is created. This is a signed, legally binding snapshot of the entry that is stored alongside the attached files in an immutable archive. Timestamping an entry involves generating a full JSON export of the entry and creating a cryptographic hash of that data. This hash is then sent to a trusted third party: the TimeStamping Authority (TSA).
 
@@ -97,43 +113,59 @@ The TSA acknowledges the existence of the data and sends back a signed token, wh
 
 The timestamped data and corresponding token are then saved in the "Attached Files" section of the entry as a zip file. This file is initially in an "Archived" state, meaning it is hidden from view by default. To view archived files, click the "Show Archived" button on the right side of the "Uploaded Files" section in edit mode:
 
-.. image:: img/show-archived-uploads.png
-    :align: center
-    :alt: timestamp archive
+.. figure:: img/show-archived-uploads.png
+   :align: center
+   :alt: timestamp archive
+
+   Show archived files
 
 This timestamp archive is immutable and cannot be modified or deleted.
 
-.. image:: img/timestamp-archive.png
-    :align: center
-    :alt: timestamp archive
+.. figure:: img/timestamp-archive.png
+   :align: center
+   :alt: timestamp archive
+
+   The archived zip
 
 
-5. Blockchain timestamp
+6. Blockchain timestamp
 ^^^^^^^^^^^^^^^^^^^^^^^
 This button will perform the same action as a timestamp, except it will use blockchain technology and the service provided by the Bloxberg consortium. You can learn more about it here: `Bloxberg website <https://bloxberg.org/discover/mission/>`_.
 
-6. Export button
+7. Export button
 ^^^^^^^^^^^^^^^^
 
-.. image:: img/export-options.png
-    :align: center
-    :alt: view mode export dropdown
+.. figure:: img/export-options.png
+   :align: center
+   :alt: view mode export dropdown
+
+   List of available exports
 
 The Export menu allows you to save the entry in different file formats.
 
 The ELN format is a new file format based on RO-Crate specification. It contains a special file (in JSON-LD) describing the contents of the dataset (one or several Experiments). It is designed and promoted by The ELN Consortium, an association of several ELN vendors that agreed on an interchange format for export/import of datasets. Learn more about it here: `TheELNConsortium on GitHub <https://github.com/TheELNConsortium/>`_.
 
 
-7. Pin entry
+8. Pin entry
 ^^^^^^^^^^^^
 Clicking this icon will make this entry appear on top of the list on the main page (pin entry). Use this to easily access frequently used entries.
 
-8. Lock/unlock entry
+9. Lock/unlock entry
 ^^^^^^^^^^^^^^^^^^^^
 Use this to lock the entry and prevent further editing. Only an Admin or the user who locked an experiment can unlock it.
 
-9. Ellipsis menu
-^^^^^^^^^^^^^^^^
+10. Request action
+^^^^^^^^^^^^^^^^^^
+Request another user to perform an action on a given entry.
+
+   - Archive
+   - Lock
+   - Review
+   - Sign
+   - Timestamp
+
+11. Ellipsis menu
+^^^^^^^^^^^^^^^^^
 
    - Transfer ownership: For entries you created, you can transfer ownership to a different user
    - See revisions: View revisions to the main text of the entry
@@ -182,6 +214,7 @@ You can list all Experiments with a given Tag by clicking on the Tag or searchin
 .. only:: html
 
     .. image:: img/quick_tags.*
+        :alt: Adding a new tag
 
 Permissions
 -----------
@@ -191,8 +224,11 @@ Main text
 ---------
 This is the space to freely describe your experimental setting, procedure, results, and any other information you wish to include about your research. In this rich text editor, you can add text with various formatting options, create tables, and add images, links, etc…
 
-    .. image:: img/tinymce-editor.png
-       :alt: Tinymce editor
+   .. figure:: img/tinymce-editor.png
+      :align: center
+      :alt: Tinymce editor
+
+      Tinymce editor
 
 Inserting an image
 ^^^^^^^^^^^^^^^^^^
@@ -233,11 +269,17 @@ It is possible to express mathematical/chemical notation in eLabFTW, and formula
 
 To do this, eLabFTW uses Mathjax with the ams extension.
 
-Try this (make sure it is not pasted between `<pre>` Tags!):
+Try the Mathjax expression below (make sure it is not pasted between `<pre>` Tags!):
 
 .. code:: latex
 
     $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+.. figure:: img/tinymce-editor-paragraph.png
+  :align: center
+  :alt: Tinymce editor paragraph
+
+  Change `<pre>` tag into a paragraph.
 
 Use one `$` for inline mode and `$$` for block mode.
 
@@ -318,9 +360,13 @@ Templates
 
 In order to save time when creating Experiments, eLabFTW features a Templates system for Experiments.
 
-It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the User menu.
+It is recommended to create Templates for Experiments you often do. You can think of a Template as a skeleton of a real Experiment. To create a template, select "Templates" from the menu bar at the top.
 
-.. image:: img/user-templates-menu.png
+.. figure:: img/templates-menu.png
+    :align: center
+    :alt: Templates page
+
+    The Templates page
 
 Then, click the "Create" button, enter a title, and start editing your template. Once you are satisfied with it, click save. As you can see, you can have different permissions for the template itself, and for the Experiment that will be created from that template.
 
@@ -328,6 +374,8 @@ By default, the template is "pinned", which means it will appear in the pop up w
 
 
 .. image:: img/user-toggle-pin-templates.*
+    :align: center
+    :alt: toggle pinned templates
 
 As with Experiments or Resources, use the Scope button to select what you wish to be listed: only your own Templates (*Self*) or more.
 
@@ -359,7 +407,7 @@ Furthermore, Resources can be made bookable, see section below.
 Booking Resources
 =================
 
-It is possible to use the scheduler (calendar) present on the Team page's first tab to book Resources.
+It is possible to use the scheduler (calendar) present on the Scheduler page to book Resources.
 
 Making a Resource bookable
 --------------------------
@@ -477,6 +525,11 @@ Creating a compound manually
 
 Maybe you've just created an never-seen before chemical compound, which means you cannot import it from PubChem. In this case, click the "Add compound" button to manually add a compound. Be aware, as mentioned above, the new compound will be visible by all users of the instance. In case you want to keep it confidential, do not add it.
 
+Importing compounds manually
+----------------------------
+
+Look at the :ref:`Import compounds through CLI <compounds-import>` section to learn how to import your compounds from a spreadsheet file or through the API.
+
 Fingerprints
 ------------
 
@@ -493,12 +546,20 @@ Since version 5.2, a chemical structure editor is present in the Tools menu. It 
 
     Using the editor to draw, import or export molecules
 
+For detailed instructions, click the (?) icon at the top of the editor.
+
+.. figure:: img/compounds-editor-help.png
+    :align: center
+    :alt: compounds editor
+
+    Editor documentation
+
 OpenCloning
 ===========
 
 Since version 5.2, eLabFTW integrates the tool OpenCloning, developed by Manuel Lera Ramirez.
 
-.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment!
+.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment! See :ref:`addons` section.
 
 
 .. figure:: img/opencloning.png
@@ -520,7 +581,7 @@ From here you can select a language, adjust the display settings, change the key
 
 Account tab
 -----------
-This page allows you to modify your email/password, activate multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
+This page allows you to modify your email/password, enable multi-factor authentication and change your name or add your `ORCID <https://orcid.org/>`_ if you have one.
 
 What is two factor authentication?
 ----------------------------------
@@ -622,6 +683,8 @@ You can export and import items from the database (it can be several items).
    <iframe width="560" height="315" src="https://www.youtube.com/embed/maylkcTAarg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 In the editor, press Ctrl+shift+d to get today's date inserted at cursor position.
+
+.. _signatures:
 
 Signatures
 ==========
@@ -743,7 +806,7 @@ eLabFTW uses a soft-delete mechanism for entries. When you delete an experiment 
 Restoring a deleted entry
 -------------------------
 
-Currently, only a Sysadmin with MySQL access is able to restore an entry, by changing the State back to 1.
+In previous versions of eLabFTW, only a Sysadmin with MySQL access has the ability to restore an entry, by changing the `state` back to 1.
 
 Example MySQL query to restore an experiment with ID 42:
 
@@ -753,6 +816,13 @@ Example MySQL query to restore an experiment with ID 42:
 
 Values for ``state`` can be found in the `source code <https://github.com/elabftw/elabftw/blob/master/src/Enums/State.php>`_.
 
+As of version 5.2.0, the search page has been moved to the main pages (Experiments / Templates / Resources pages). You can now select the state as a filter and restore an entry by clicking on the Restore button.
+
+.. figure:: img/restore-entry.png
+   :align: center
+   :alt: eLabFTW toolbar
+
+   Filter deleted experiments and restore.
 
 Sharing with external collaborators
 ===================================
@@ -768,11 +838,19 @@ Option 2: Allow anonymous access
 --------------------------------
 It is possible to allow Anonymous access to an eLabFTW installation, but this functionality is disabled by default. The Sysadmin must check this parameter from the Sysconfig Panel:
 
-.. image:: img/sysconfig-anonymous.png
+.. figure:: img/sysconfig-anonymous.png
+   :align: center
+   :alt: sysconfig anonymous
+
+   Registration and authentication configuration (Sysadmin panel)
 
 Then, Users will have the possibility to generate a link with an access key in its URL, from the Visibility permissions window of an entry, near the bottom:
 
-.. image:: img/user-anonymous-link.png
+.. figure:: img/user-anonymous-link.png
+   :align: center
+   :alt: user anonymous
+
+   Link generation by a user
 
 Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
 
