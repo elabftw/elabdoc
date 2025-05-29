@@ -3,6 +3,33 @@
 Changelog
 =========
 
+Version 5.2.2
+-------------
+
+This patch version fixes a few bugs and adds some quality of life features and UI/UX improvements. All instances running 5.2.x should upgrade to this version.
+
+* bug/medium: admin export: prevent illegal access from stopping export (fix #5673)
+* bug/medium: compounds: fix upsert forgetting about binary settings (fix #5662)
+* bug/minor: ux: fix invalid input in create user (#5677)
+* bug/minor: thumbnails: add support for heif files
+* bug/minor: fix notifications settings link (#5679)
+* bug/minor: entities: fix issue with user leaving team with created entities (#5651)
+* bug/minor: scope/tags: honor scope settings when filtering with tags (fix #5316)
+* bug/minor: exp cat/stat: fix limit to 15 in admin panel
+* ux: improve error message if user already exists when creating new user
+* ux: api: allow sending tags as string instead of array
+* ux: notifications: use Reply-To header (fix #5668)
+* ux: import compounds csv: continue execution on 404 errors
+* ui: disable opencloning menu and page if env is false (fix #5667)
+* ui: notifications: make notifications fancier (#5657)
+* ui: create new: modify note about templates
+* ui: pdf: fix old Item instead of Resource. (fix #5653)
+* i18n: improve translations (#5675)
+* feat: containers: add Bar and Metre units
+* feat: add "About eLabFTW" in help menu with info about running instance (see #5658)
+* feat: compounds: add restore compound functionality (#5652)
+* cleanup: remove old pinned-entities reload code
+
 Version 5.2.1
 -------------
 
