@@ -3,6 +3,17 @@
 Changelog
 =========
 
+Version 5.2.3
+-------------
+
+This patch fixes an issue with OpenCloning exports, adds a random delay so notifications don't all go at 00 seconds on the minute, adds support for HEIC files back. It also contains a fix for the upcoming Bloxberg API change and allows sending metadata as an array when creating templates. It also upgrades many JS dependencies and fixes an issue with the api spec preventing its build by the new client builder (see https://github.com/elabftw/elabapi-python/pull/30).
+
+* bug/medium: opencloning: adjust CSP connect-src (#57) fix elabftw/elabftw#5686
+* feat: add jitter to avoid chronos execution at same exact second. At container startup, a random delay is chosen (between 0 and 59 seconds) and applied to all chronos subroutines.
+* api: handle metadata array by json encoding it for templates same as what was done for concrete entities. fix #5694
+* bloxberg: handle breaking api change with api_key to api-key
+
+
 Version 5.2.2
 -------------
 
