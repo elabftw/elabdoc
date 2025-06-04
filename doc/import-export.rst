@@ -206,6 +206,31 @@ Figure out the Team ID by looking at the Teams tab from the Sysconfig panel, whe
    # import in team 25, force everything to be owned by user 5 and be extra verbose
    docker exec -it elabftw bin/console import:compounds -vvv your_compounds.csv 25 --userid 5
 
+Preparing the CSV file for import
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One thing to know, is that the import command has an option (``-p``) to match compounds with PubChem, through the CAS or PubChem CID. So a .csv file with a single column ``cas`` or ``pubchemcid`` is enough to import compounds in eLabFTW.
+
+When importing, there is an option to automatically create a Resource for each imported Compound. The Resource will be linked to the Compound, and its title will be the Compound name. For this, simply provide the Resource Category ID with the ``-c`` flag.
+
+To also import locations/containers with quantity and units, use columns:
+
+- ``location``: as a ``/`` separated value. For example: "Building C / Floor 2 / Chemistry room". Note that it is possible to specify another separator, which might be useful if your existing data is using another character than ``/``.
+- ``quantity``: this should be a number corresponding to the quantity stored at the location
+- ``unit``: this should be a value such as μg, mg, g, kg, mL, L
+
+Other columns such as ``inchi``, ``smiles``, ``molecularweight``, ``molecularformula`` will also match and be imported to the compound. The full list of columns matched is accessible `here <https://github.com/elabftw/elabftw/blob/master/src/commands/ImportCompoundsCsv.php#L56>`_.
+
+Once you have your CSV file ready, send it to your Sysadmin and let them know if it should be imported with PubChem and if you want to create Resources, too.
+
+Matching an existing database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Maybe you already have a Resource Category: "Chemical compounds" for instance, with Compounds associated to a "CAS" extra field. And you'd like to import the already existing compounds in the Compounds table in eLab so they exist as proper compounds.
+
+To do that, the import should be done with the ``--match-with`` command option, which will match an existing Resource through its extra field value. For example: ``--match-with cas`` will import the compound and link it to the Resource where an extra field ``cas`` has the same value as the row from the column ``cas`` in the .csv.
+
+
 .. _exporting-data:
 
 Exporting data
