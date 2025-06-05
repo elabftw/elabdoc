@@ -3,6 +3,18 @@
 Changelog
 =========
 
+Version 5.2.4
+-------------
+
+This version fixes a critical performance issue in the MySQL query used to list experiments. All users must update to this version, especially if they have teams with many experiments and a modest MySQL server. It also fixes the issue where entries with a visibility set to "Everyone" would appear with a Team scope.
+
+* bug/major: sql: improve query pref for big teams with many experiments. revert #5651
+* bug/medium: fix bug where public entries would appear even with scope set to team
+* bug/minor: search: fix boolean operators in other languages. fix #5700
+* bug/minor: dashboard: fix experiments categories limited to 15. fix #5695
+* feat: import compounds csv: add --match-with option to match with existing resources's extra fields.
+
+
 Version 5.2.3
 -------------
 
