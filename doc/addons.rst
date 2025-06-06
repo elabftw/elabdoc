@@ -95,7 +95,7 @@ Loading resources into OpenCloning
 Loading a sequence
 """"""""""""""""""
 
-To load a sequence in OpenCloning from eLabFTW, you need a resource entry of any type with a sequence file attached. The file can be in various formats like GenBank, FASTA, or SnapGene, and from json files created by OpenCloning (they also contain the cloning history).
+To load a sequence in OpenCloning from eLabFTW, you need a resource entry of any type with a sequence file attached. The file can be in various formats like GenBank, FASTA, or SnapGene, and from JSON files created by OpenCloning (they also contain the cloning history).
 
 In the example below, I have a `Plasmid` resource entry called `pFA6a-kanMX6-P81nmt1` with a sequence file attached:
 
@@ -106,7 +106,7 @@ To load it in OpenCloning, you can go to an empty source, and click on `Source t
 .. image:: img/opencloning/sequence-load.gif
 
 .. note::
-   If you created the resource entry using OpenCloning, you can load the json file instead, and the cloning history will be loaded automatically.
+   If you created the resource entry using OpenCloning, you can load the JSON file instead, and the cloning history will be loaded automatically.
 
 Loading a primer
 """"""""""""""""
@@ -122,7 +122,7 @@ To load it in Opencloning, you can go to the `Primers` tab, click on `Import fro
 .. image:: img/opencloning/primer-load.gif
 
 Creating resources from OpenCloning
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Creating a sequence
 """""""""""""""""""
@@ -140,30 +140,26 @@ When you save the sequence, a new resource entry is created with:
 The sequence border will turn green in the OpenCloning interface, indicating that it is saved in the eLabFTW database, and instead of the floppy disk icon, you will see a link icon. Clicking on it will open the eLabFTW entry in a new tab.
 
 In addition, if your sequence used primers (e.g. if that sequence is a PCR product), OpenCloning will ask you to select a category to save those primers in the database.
-* If you leave it empty, resource entries for the primers will not be created, but they will be stored in the json file, so they won't be lost.
+
+* If you leave it empty, resource entries for the primers will not be created, but they will be stored in the JSON file, so they won't be lost.
 * If you select a category, a new resource entry will be created for each primer. The name of the resource will be the same as the name of the primer in OpenCloning.
 
 .. image:: img/opencloning/sequence-save-with-primers.png
 
-You might not want to save certain intermediate sequences as entries in the eLabFTW (e.g. a PCR product that you used in a Gibson assembly). In that case, you can save the final product (The Gibson assembly product in the example below). The intermediate sequences will be stored in the json file, so they won't be lost. If you do that, you will see that only the final product turns green.
+You might not want to save certain intermediate sequences as entries in the eLabFTW (e.g. a PCR product that you used in a Gibson assembly). In that case, you can save the final product (The Gibson assembly product in the example below). The intermediate sequences will be stored in the JSON file, so they won't be lost. If you do that, you will see that only the final product turns green.
 
 .. image:: img/opencloning/sequence-intermediates-example.png
 
 
-.. admonition:: Should I create resource entries by loading files or importing from OpenCloning?
 
-   While both approaches work, creating resources directly from OpenCloning is recommended as it automatically:
+.. admonition:: Should I create sequence entries directly in eLabFTW or export from OpenCloning?
 
-   * Creates properly formatted entries with standardized fields
-   * Attaches all relevant files (GenBank, FASTA, JSON history)
-   * Ensures consistency between the sequence data and metadata
-   * Preserves the complete cloning history for future reference
-
-   Only use manual file loading if you're importing sequences from external sources that weren't created in OpenCloning.
+   While both approaches work, creating resources directly from OpenCloning will  automatically store provenance information. For instance, for plasmids from AddGene, it stores their unique identifier. For genomic sequences, it stores the assembly and sequence accession numbers as well as the coordinates and gene identifiers. Even if you are loading a sequence from a file, you can drag-and-drop it into OpenCloning, and then save it as a resource entry.
 
 
-Saving a primer
-"""""""""""""
+Creating a primer
+""""""""""""""""
+
 You can save primers when you save sequences that use them (see above), or by clicking on the floppy disk icon next to the primer in the OpenCloning interface.
 
 .. image:: img/opencloning/primer-save.png
@@ -171,11 +167,11 @@ You can save primers when you save sequences that use them (see above), or by cl
 When you save a primer, a new resource entry is created with a "sequence" field containing the primer sequence. Once saved, you can no longer edit the sequence or name in OpenCloning. You will have to edit the sequence in the eLabFTW entry, and reload the primer in OpenCloning.
 
 Removing resources from the session
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 OpenCloning cannot delete resource entries from the eLabFTW database. If you have saved a sequence or a primer in the database and you click on the delete icons in OpenCloning, they will be removed from the OpenCloning interface, but the resource entry will NOT be deleted.
 
-Other features
+Miscellaneous
 ^^^^^^^^^^^^^^
 
 Sequencing data
