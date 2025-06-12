@@ -125,7 +125,7 @@ To load it in Opencloning, you can go to the ``Primers`` tab, click on ``Import 
    :align: center
 
 Creating resources from OpenCloning
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Creating a sequence
 """""""""""""""""""
@@ -165,7 +165,7 @@ You might not want to save certain intermediate sequences as entries in the eLab
 
 
 Creating a primer
-""""""""""""""""
+"""""""""""""""""
 
 In addition to creating primers when you save sequences that use them (as above), you can also save primers by clicking on the floppy disk icon next to them in the OpenCloning interface.
 
@@ -174,12 +174,12 @@ In addition to creating primers when you save sequences that use them (as above)
 When you save a primer, a new resource entry is created with a "sequence" field containing the primer sequence. Once saved, you can no longer edit the sequence or name in OpenCloning. You will have to edit the sequence in the eLabFTW entry, and reload the primer in OpenCloning.
 
 Removing resources from the session
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 OpenCloning cannot delete resource entries from the eLabFTW database. If you have saved a sequence or a primer in the database and you click on the delete icons in OpenCloning, they will be removed from the OpenCloning interface, but the resource entry will NOT be deleted.
 
 Sequencing data
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 To load sequencing data from eLabFTW and align it to your resource sequence:
 
@@ -196,7 +196,7 @@ To load sequencing data from eLabFTW and align it to your resource sequence:
 
 
 Resource type organization
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To manage plasmids and primers, you don't need to do anything else, just follow the above instructions, and OpenCloning will handle the relationships between the resources. If you want to represent cell lines and strains, we recommend the below configuration.
 
@@ -237,7 +237,7 @@ Now, whenever you want to create a new allele of the ase1 gene, instead of loadi
    When loading a locus in OpenCloning via ``Genome region``, you can specify how many bases upstream and downstream of the gene you want to load. By default this is 1000, but you should increase it if you think you will use a larger region for cloning in this locus in the future, since you will keep using the same sequence for all the alleles generated from this locus.
 
 Creating strains and cell lines
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""
 
 You must start with a reference strain or cell line. Create a resource, and ideally indicate some unique identifier for it (e.g. catalogue number in a stock center). You can also create a template for children strains / cell lines. Something basic like this:
 
