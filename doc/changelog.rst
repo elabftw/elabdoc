@@ -3,6 +3,24 @@
 Changelog
 =========
 
+Version 5.2.5
+-------------
+
+Another iteration with bugfixes for the 5.2 branch. Warning: this version requires a database schema update (`bin/console db:update`). Note that you can also declare `AUTO_DB_UPDATE=true` as en ENV var for eLabFTW container so it does this automatically upon container startup.
+
+* bug/medium: restore anonymous sharing feature. fix #5722
+* bug/minor: api: return null if no exclusive edit mode is present. fix #5724
+* bug/minor: api: fix category on creating items. fix #5725
+* bug/minor: events: fix link on view mode. closes #5726
+* bug/minor: scheduler: add scope for events (#5719) fix #5706
+* bug/minor: permissions immutability: also prevent changing on concrete entities
+* bug/minor: enforce immutable permissions on the backend
+* bug/minor: templates: add missing rating column in select sql
+* bug/minor: add missing compounds field to experiment object in openapi (#5712)
+* ux: compounds: prevent soft-deletion of linked compound
+* ux: improve handling of incorrect metadata
+
+
 Version 5.2.4
 -------------
 
