@@ -2,7 +2,7 @@
    sphinx-quickstart on Fri Jul 24 17:28:23 2015.
 
 *****************************************
-Welcome to the documentation for eLabFTW! 
+Welcome to the documentation for eLabFTW!
 *****************************************
 
 .. image:: img/elabftw-logo.png
@@ -69,6 +69,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     import-export
     metadata
     api
+    opencloning
 
 .. toctree::
     :caption: Documentation
