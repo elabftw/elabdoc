@@ -54,17 +54,19 @@ Restart the ``elabftw`` container to take these changes into account.
 OpenCloning addon
 =================
 
+.. _opencloning-install:
+
 Description
 -----------
 
-OpenCloning is an application useful to plan and document cloning. It allows loading DNA data from various sources and is tightly integrated with eLabFTW. This means that you can easily use your Resources in eLabFTW and their attached files to perform cloning operations.
+`OpenCloning <https://github.com/manulera/OpenCloning>`_ is an application used to plan and document cloning. DNA data can be loaded from various sources, and the application is tightly integrated with eLabFTW. This means that you can easily use Resource entries in eLabFTW and their attached files to perform cloning operations. See :ref:`usage documentation <opencloning-use>`.
 
 How to install
 --------------
 
-To enable OpenCloning in eLabFTW, deploy a container like shown in the `example docker-compose.yml <https://github.com/elabftw/elabimg/blob/e1e5a2da33db11ae8d54924c15a227d6abcd4e43/src/docker-compose.yml-EXAMPLE#L421-L432>`_.
+To enable OpenCloning in eLabFTW, deploy a container. See this example: `example docker-compose.yml <https://github.com/elabftw/elabimg/blob/7a6940475e9866492166e4c2450fc63f38587566/src/docker-compose.yml-EXAMPLE#L429-L440>`_.
 
-Then enable it in ``elabftw`` container configuration:
+Then enable it in the ``elabftw`` container configuration:
 
 .. code:: yaml
 
@@ -72,4 +74,4 @@ Then enable it in ``elabftw`` container configuration:
     - USE_OPENCLONING=true
     - OPENCLONING_URL=http://opencloning-plugin:8000/
 
-Restart the ``elabftw`` container to take these changes into account.
+Restart the ``elabftw`` container to apply these changes.
