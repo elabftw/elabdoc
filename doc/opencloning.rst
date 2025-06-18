@@ -43,9 +43,11 @@ In the example below, we have created a resource entry of type Plasmid called pF
 
 To load this file in OpenCloning, go to an empty source, click on ``Source type``, and select ``Import from eLabFTW``. Then, you can select the resource entry you want to load, and the file that contains the sequence.
 
-.. image:: img/opencloning/sequence-load.gif
-   :width: 500px
-   :align: center
+.. only:: html
+
+    .. image:: img/opencloning/sequence-load.gif
+       :width: 500px
+       :align: center
 
 .. note::
    If a resource entry was created using OpenCloning, you can load the JSON file instead, and the cloning history will be loaded automatically.
@@ -63,9 +65,11 @@ In the example below, we have a resource entry in eLabFTW with a sequence field 
 
 To load it in OpenCloning, go to the ``Primers`` tab, click on ``Import from eLabFTW``, and then select the resource entry you want to load. The sequence will then be displayed, and you can click on ``Import Primer`` to add it to the session. You can continue loading primers this way, and then close the import section by clicking ``Cancel``.
 
-.. image:: img/opencloning/primer-load.gif
-   :width: 500px
-   :align: center
+.. only:: html
+
+    .. image:: img/opencloning/primer-load.gif
+       :width: 500px
+       :align: center
 
 Creating resources using OpenCloning
 ===================================
