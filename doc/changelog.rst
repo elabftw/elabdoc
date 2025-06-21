@@ -3,6 +3,21 @@
 Changelog
 =========
 
+Version 5.2.7
+-------------
+
+One last (?) iteration to address the missing features of Inventory locations (namely rename/delete).
+
+* feat: storage: allow add rename button. fix #5591
+* add collapse all button on storage list page. fix #5591
+* ux: keep storage locations open after adding children
+* allow edition of root storage units name. see #5632
+* fix duplication in results when listing storage units content
+* improve storage ui
+* add button to delete root storage location
+* prevent deletion if content is not empty or has children. see #5632
+
+
 Version 5.2.6
 -------------
 
