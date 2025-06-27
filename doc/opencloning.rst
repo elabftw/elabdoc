@@ -72,7 +72,7 @@ To load it in OpenCloning, go to the ``Primers`` tab, click on ``Import from eLa
        :align: center
 
 Creating resources using OpenCloning
-===================================
+====================================
 
 Creating a sequence
 -------------------

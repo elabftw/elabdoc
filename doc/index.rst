@@ -67,6 +67,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     admin-guide
     sysadmin-guide
     import-export
+    inventory
     metadata
     api
     opencloning

@@ -3,6 +3,37 @@
 Changelog
 =========
 
+Version 5.2.7
+-------------
+
+One last (?) iteration to address the missing features of Inventory locations (namely rename/delete).
+
+* feat: storage: allow add rename button. fix #5591
+* add collapse all button on storage list page. fix #5591
+* ux: keep storage locations open after adding children
+* allow edition of root storage units name. see #5632
+* fix duplication in results when listing storage units content
+* improve storage ui
+* add button to delete root storage location
+* prevent deletion if content is not empty or has children. see #5632
+
+
+Version 5.2.6
+-------------
+
+Probably the last iteration of branch 5.2 as development branch is now pretty
+far ahead and we want to focus on releasing a 5.3 alpha quickly.
+
+* bug/medium: scheduler: fix scope being to wide for events (#5750). fix #5746
+* bug/medium: compounds: fix templates not displaying compounds. fix duplicate forgetting compounds
+* bug/minor: apidoc: fix wrong upload.userid type. fix #5728
+* bug/minor: apidoc: replace boolean with integer enum 0 1. fix #5734
+* bug/minor: api spec: molecular_formula is a string. fix #5733
+* bug/minor: import csv: fix body and rating missing from processedColumns
+* bug/minor: csv users report: fix header missing one column (#5749) fix #5747
+* perf: sysconfig: quick and dirty fix to sysconfig page taking very long
+
+
 Version 5.2.5
 -------------
 
