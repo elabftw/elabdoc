@@ -24,7 +24,7 @@ Add children to the root element(s) created. This is where containers will be de
 Adding containers
 =================
 
-From an Experiment or Ressource entry, navigate to the "Containers" section and click "Add container".
+From an Experiment or Resource entry, navigate to the "Containers" section and click "Add container".
 
 .. figure:: img/add-container.png
    :align: center
