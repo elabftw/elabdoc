@@ -3,6 +3,19 @@
 Changelog
 =========
 
+Version 5.2.8
+-------------
+
+* bug/medium: inventory export: fix permission issue the inventory export was not correctly filtering out containers based on entity permissions
+* bug/medium: scheduler: permissions & scope (#5758)
+* bug/minor + feat: pubchem fixes with cid and search by name (#5768)
+* allow searching by name: fix #5608
+* allow display of several results on the page for when CAS/Name searches return several compounds, with possibility to only import the ones we want. Fix #5661.
+* bug/minor: autocomplete: force scope in autocomplete query to be everything. fix scope being taken into account in such places. fix #5761
+*  bug/medium: ldap: fix issue with automatic team creation allow team creation instance setting wasn't propagated to the user creation function fix #5762
+*  bug/minor: exclusive edit mode: fix incorrect message display when stale fix #5764
+
+
 Version 5.2.7
 -------------
 
