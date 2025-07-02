@@ -508,3 +508,20 @@ Locally: current workaround:
    ./node_modules/.bin/cypress open
 
 Not great, not terrible.
+
+Debugging mysql queries
+=======================
+
+Connect as root in the MySQL container:
+
+.. code-block:: bash
+
+   docker exec -it mysql
+   mysql -uroot -p$MYSQL_ROOT_PASSWORD
+   mysql> SET GLOBAL general_log = ON;
+   # check where it is saved
+   mysql> SHOW VARIABLES WHERE Variable_name IN ('general_log','log_output','general_log_file');
+   # exit mysql
+   tail -f /var/lib/mysql/abcd1234.log
+
+This will log ALL queries.
