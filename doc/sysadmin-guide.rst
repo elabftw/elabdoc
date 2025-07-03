@@ -334,3 +334,14 @@ In some contexts, it might be advantageous to use S3 backed storage for uploaded
 3. In the Sysconfig panel, configure your bucket from the "UPLOADS" tab, test by uploading a file in an experiment
 4. Once S3 is correctly configured, run ``bin/console uploads:migrate``. This will copy all your locally stored files into the S3 bucket
 5. The final step is to remove the bind mounted ``/elabftw/uploads/`` folder from the container runtime configuration
+
+Command line tools
+==================
+
+The container comes with two CLI tools: ``bin/console`` and ``bin/init``. They provide utilities for Sysadmins such as team export as .eln.
+
+You can list available commands with ``bin/console list`` or ``bin/init list``.
+
+Example: ``docker exec -it elabftw bin/console list``.
+
+Check a command manual with ``-h`` flag. For example: ``bin/console prune:experiments -h``.
