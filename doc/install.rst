@@ -53,7 +53,7 @@ The following MySQL modes are known to work fine with eLabFTW codebase:
 Strongly recommended dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * `curl <https://curl.haxx.se/>`_, to get files from command line (very likely already installed)
-* `docker compose plugin <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`. It can be installed with the `docker-compose-plugin` package.
+* `docker compose plugin <https://docs.docker.com/compose/install/>`_, the tool to orchestrate containers, required by `elabctl`. It can be installed with the `docker-compose-plugin` package. You might need to enable Docker repositories to get this plugin. Make sure to **NOT** use the old `docker-compose` package/tool but to use the actual `compose plugin` of Docker, which might or might not come with Docker depending on your distribution/method of installation.
 * `dialog <https://en.wikipedia.org/wiki/Dialog_(software)>`_, required by `elabctl install`
 * `borgbackup <https://borgbackup.readthedocs.io/en/stable/>`_, a backup tool required by `elabctl backup`. Not required during installation.
 
@@ -144,6 +144,8 @@ Start eLabFTW
 
     elabctl start
 
+Then go to section :ref:`Initialize your database <db-init>`.
+
 
 Without elabctl (advanced users)
 --------------------------------
@@ -158,6 +160,8 @@ Edit this file and ``docker compose up -d`` to launch the containers.
 
 Initialize your database
 ========================
+
+.. _db-init:
 
 * Import the database structure with:
 
