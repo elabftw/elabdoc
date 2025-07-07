@@ -42,9 +42,9 @@ In the directory where you have the `docker-compose.yml` file:
 
 .. code-block:: bash
 
-    docker-compose pull
-    docker-compose down
-    docker-compose up -d
+    docker compose pull
+    docker compose down
+    docker compose up -d
 
 STEP 3: Run the database migration
 ==================================
