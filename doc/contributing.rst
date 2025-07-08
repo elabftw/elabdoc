@@ -243,18 +243,6 @@ Install the database
    docker exec -it elabftw bin/init db:install
 
 
-* Enable debug mode to disable the caching of Twig templates
-
-.. code-block:: bash
-
-    # go back to where elabctl is present
-    cd $dev
-    ./elabctl mysql
-    # you are now on the mysql command line
-    mysql> update config set conf_value = '1' where conf_name = 'debug';
-    exit;
-    exit
-
 Finishing up
 ^^^^^^^^^^^^
 
