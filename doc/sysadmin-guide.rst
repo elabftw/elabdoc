@@ -73,12 +73,39 @@ Configure authentication :sup:`(optional)`
 
 eLabFTW currently supports four authentication mechanisms:
 
-* Local authentication: email + password stored locally, this is the default
+* Local authentication: email + password stored locally (in the eLabFTW database), this is the default
 * SAML authentication: use one or several Identity Provider (IDP) to authenticate users. See dedicated :ref:`SAML documentation page <saml>`.
 * LDAP authentication: verify the login with an LDAP service. See dedicated :ref:`LDAP documentation page <ldap>`.
-* External authentication: use request headers added by your own middleware to authenticate the user (e.g. Apache's auth_mellon)
+* External authentication: use request headers added by your own middleware to authenticate the user (_e.g._ Apache's auth_mellon)
 
 It is possible to have several mechanisms at the same time but recommended to only leave one visible to users. So if you configure LDAP or SAML, disable the Local login so Users are not confused.
+
+Example configuration 1: only Admins can create accounts
+--------------------------------------------------------
+
+If you want to prevent users from registering accounts from the Register page but still want to allow Admins to create local user accounts in their team, use these settings:
+
+- enable "Admins can create local accounts" from the Server tab of Sysconfig panel (it is enabled by default)
+- in the Local Auth tab, disable "Enable local account creation"
+
+Example configuration 2: accounts can only be created from SAML
+---------------------------------------------------------------
+
+If you want user accounts to only exist through a valid SAML response, use these settings:
+
+- disable "Admins can create local accounts" from the Server tab of Sysconfig panel (it is enabled by default)
+- in the Local Auth tab, disable "Enable local account creation" and "Show local login form"
+- in the SAML tab, set "If the user doesn't exist yet, what to do?" to "Create the user on the fly"
+
+Example configuration 3: use LDAP mainly, but allow Admins to create local user accounts for external collaborators
+-------------------------------------------------------------------------------------------------------------------
+
+Configure the LDAP settings from the LDAP tab. Then you have a choice: you can either mask local login form with "Show local login form" disabled from the Local Auth tab, or keep it enabled and users can select "Local" or "LDAP" from the login page (LDAP will be selected by default), which might be confusing to some users (as they don't know what Local or LDAP corresponds to). It's up to you. If you mask local login, external collaborators will need to append "?letmein" to the login page URL so they can select Local login.
+
+Make sure that "Admins can create local accounts" from first tab is enabled, and that if you have a filter on email domains, the external collaborators emails can fit.
+
+Help, I'm locked out!
+---------------------
 
 If you disabled Local authentication and cannot login back because your other method fails, you'll want to run this SQL query (`elabctl mysql` will give you a MySQL prompt if you're using Dockerized MySQL service):
 
