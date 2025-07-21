@@ -7,7 +7,7 @@ Coordinator guide
 What is an Instance Coordinator
 ===============================
 
-An instance coordinator helps manage the users in an instance. For instance, they may add and remove users from different teams, and help to implement exit strategies for users and data. More information about the utility of this role and helpful strategies will be added soon!
+An instance coordinator helps manage the users in an instance. For example, they may add and remove users from different teams, and help to implement exit strategies for users and data. More information about the utility of this role and helpful strategies will be added soon!
 
 
 Different strategies for managing users in teams
@@ -25,4 +25,4 @@ Another exit strategy involves explicitly setting the visibility and write permi
  3. Transferring ownership or duplicating entries
 Another option is to transfer ownership of the entries to another team member. Alternatively, relevant entries can be duplicated before the person is removed from the team. Once a person is removed from the team, their entries are no longer visible to the team, which also means that the original ownership becomes unclear. To avoid this, the name of the original creator can be added to the entry title or stored as a tag to make the data origin more transparent.
  4. Restricting the visibility of entries
-Instead of removing the person from the team, they can remain a member while limiting the visibility of their entries. Access rights can be managed so that only the original owner and admins have access to certain entries. This ensures that the person leaving the team cannot access information irrelevant to them, while still technically remaining in the team.h
+Instead of removing the person from the team, they can remain a member while limiting the visibility of their entries. Access rights can be managed so that only the original owner and admins have access to certain entries. This ensures that the person leaving the team cannot access information irrelevant to them, while still technically remaining in the team.
