@@ -66,6 +66,7 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     user-guide
     admin-guide
     sysadmin-guide
+    coordinator-guide
     import-export
     inventory
     metadata
