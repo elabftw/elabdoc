@@ -16,4 +16,4 @@ Different strategies to manage users in teams
 User leaving
 ------------
 
-blih
+blihdfsfgs
