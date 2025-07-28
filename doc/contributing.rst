@@ -243,18 +243,6 @@ Install the database
    docker exec -it elabftw bin/init db:install
 
 
-* Enable debug mode to disable the caching of Twig templates
-
-.. code-block:: bash
-
-    # go back to where elabctl is present
-    cd $dev
-    ./elabctl mysql
-    # you are now on the mysql command line
-    mysql> update config set conf_value = '1' where conf_name = 'debug';
-    exit;
-    exit
-
 Finishing up
 ^^^^^^^^^^^^
 
@@ -508,3 +496,20 @@ Locally: current workaround:
    ./node_modules/.bin/cypress open
 
 Not great, not terrible.
+
+Debugging mysql queries
+=======================
+
+Connect as root in the MySQL container:
+
+.. code-block:: bash
+
+   docker exec -it mysql
+   mysql -uroot -p$MYSQL_ROOT_PASSWORD
+   mysql> SET GLOBAL general_log = ON;
+   # check where it is saved
+   mysql> SHOW VARIABLES WHERE Variable_name IN ('general_log','log_output','general_log_file');
+   # exit mysql
+   tail -f /var/lib/mysql/abcd1234.log
+
+This will log ALL queries.

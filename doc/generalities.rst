@@ -14,6 +14,8 @@ Let's define a few terms first:
 * **Admin**: a user with Admin rights for a given team has access to the Admin Panel and can manage settings related to their Team. A given user can be Admin in Team A and User in Team B
 * **User**: a user with an account on the Instance, belonging to at least one Team
 
+We could also mention the role of **Instance Coordinator**, someone identified by the Users as the person to go to for all things eLab in the institution. It might be Research Data Managers, or a designated Researcher or Engineer that is very familiar with eLabFTW. This person could have access to managing the relationship between users and teams. They could animate the internal chat room related to eLabFTW usage.
+
 General principles
 ==================
 

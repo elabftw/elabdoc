@@ -239,6 +239,49 @@ This timestamp archive is immutable and cannot be modified or deleted.
 
    The archived zip
 
+Verifying the timestamp
+"""""""""""""""""""""""
+
+To verify locally the validity of the timestamp, you can use ``openssl`` with a command similar to:
+
+.. code:: bash
+
+   openssl ts -verify -CAfile /etc/ssl/cert.pem -data /path/to/X-timestamped.json -in /path/to/X-timestamped.asn1 -text
+
+If it was signed with a certificate trusted on your system, it should output "Verification: OK". You can also check the token content directly with:
+
+.. code:: bash
+
+    openssl ts -reply -in /path/to/X-timestamped.asn1 -text
+
+The output should look like:
+
+.. code-block:: console
+
+    Using configuration from /etc/ssl/openssl.cnf
+    Status info:
+    Status: Granted.
+    Status description: Operation Okay
+    Failure info: unspecified
+
+    TST info:
+    Version: 1
+    Policy OID: 1.3.6.1.4.1.22177.300.22.1
+    Hash Algorithm: sha256
+    Message data:
+        0000 - 5a 58 7b 86 c3 a6 79 27-35 b8 4d 57 bc 5a 7e 80   ZX{...y'5.MW.Z~.
+        0010 - 52 89 92 60 0b 8d 03 d4-f2 9e 4a 4c 6d ec 91 a4   R..`......JLm...
+    Serial number: 0xCDAB07382DF7B1BBE0CC970E93A7625B63F4DB7A
+    Time stamp: Jul 16 23:07:34 2025 GMT
+    Accuracy: unspecified
+    Ordering: no
+    Nonce: unspecified
+    TSA: unspecified
+    Extensions:
+
+The "Time stamp" line gives you the timestamp time. The "Hash Algorithm" and "Message data" should correspond to the digest of the data file (the .json). Compare it with: ``openssl dgst -sha256 /path/to/X-timestamped.json``
+
+
 
 6. Blockchain timestamp
 ^^^^^^^^^^^^^^^^^^^^^^^

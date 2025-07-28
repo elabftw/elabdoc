@@ -152,6 +152,21 @@ Now you need to have a column named **title**. This is the column that will be p
 
 If you wish to include tags during the import, specify a column "tags" that will contain the tags separated by a "|" character. You can also have a "metadata" column containing JSON. The same logic applies to "metadata" column which can contain JSON that will be included in the metadata of the created entry.
 
+How columns are processed
+"""""""""""""""""""""""""
+
+* ``title`` becomes ``title``
+* ``body`` becomes the main text (HTML). If you wish to import markdown, have a column ``content_type`` with value `2` (`1` being for HTML content)
+* ``date`` becomes the user defined date. Prefer YYYY-MM-DD format
+  ``category_title`` and ``status_title`` will become the category or status (a new category/status will be created if necessary)
+  ``metadata`` will be processed as eLabFTW metadata (in JSON)
+  ``tags`` will get added as tags, they must be separated by ``|`` character
+  ``canread``, ``canwrite`` and ``canbook`` are the JSON permissions suitable for eLabFTW
+  ``rating``, if present, must be a value between 0 and 5 (stars rating)
+
+The rest of the columns will get added as Text Extra field.
+
+
 Once you are satisfied with the file, export it as a **.csv** (in File > Save as...). Make a copy of only the first 3 rows and export that too as csv, this will be our test file.
 
 2. Importing the file
