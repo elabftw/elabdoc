@@ -79,6 +79,118 @@ An Experiment entry can include many different types of information, such as:
 
 The only required information is the title.
 
+.. _archive-experiments:
+
+Archiving an experiment
+-----------------------
+
+Experiments can be archived to keep your workspace organized. To archive an experiment, open the entry and click on the "More options" button on the top-right corner of the toolbar and click "Archive":
+
+.. figure:: img/experiments-archive.png
+   :align: center
+   :alt: Archive an experiment
+
+   Archive an experiment
+
+Once archived, an experiment will no longer appear in the default search results or be included in exported data.
+
+Viewing Archived Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To display archived experiments:
+
+1. Navigate to the Experiments list.
+""""""""""""""""""""""""""""""""""""
+
+2. Click on the Show more filters button:
+"""""""""""""""""""""""""""""""""""""""""
+
+.. figure:: img/experiments-show-more-filters.png
+   :align: center
+   :alt: Show more filters
+
+   Show more filters
+
+3. Use the Select state filter and choose Archived.
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Archived experiments will now appear in the list, indicated by a small archive icon.
+
+Working with Archived Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While archived experiments remain viewable, they are read-only. To edit it again, you must first unarchive the experiment.
+
+You can multiselect experiments to unarchive them in bulk:
+
+.. figure:: img/archived-experiments-multiselect.png
+   :align: center
+   :alt: Select multiple experiments
+
+   Select multiple experiments to perform actions
+
+Alternatively, you can open an individual archived experiment to review its content. If you decide to restore it, click on the "More options" button located at the top-right corner of the toolbar.
+
+.. figure:: img/archived-experiment-more-options.png
+   :align: center
+   :alt: More options to unarchive
+
+   More options > unarchive
+
+Once unarchived, the experiment will return to the active list and be fully editable again.
+
+.. _delete-experiments:
+
+Deleting an experiment
+----------------------
+
+Experiments can be deleted when they are no longer relevant. Once deleted, an experiment is removed from the active list and placed in the trash. Deleted experiments are not included in searches or exports.
+
+Viewing Deleted Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To display deleted experiments:
+
+1. Navigate to the Experiments list.
+""""""""""""""""""""""""""""""""""""
+
+2. Click on the Show more filters button:
+"""""""""""""""""""""""""""""""""""""""""
+
+.. figure:: img/experiments-show-more-filters.png
+   :align: center
+   :alt: Show more filters
+
+   Show more filters
+
+3. Use the Select state filter and choose Deleted.
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Deleted experiments will now appear in the list, indicated by a trash bin icon.
+
+Working with Deleted Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deleted experiments can still be accessed and restored, but they remain read-only until restored.
+
+You can multiselect deleted experiments to restore them in bulk:
+
+.. figure:: img/deleted-experiment-multiselect.png
+   :align: center
+   :alt: Select multiple deleted experiments
+
+   Select multiple experiments to perform actions
+
+Alternatively, open an individual deleted experiment to review its content. To restore it, click on the "Restore entry" button.
+
+.. figure:: img/deleted-experiment-restore-entry.png
+   :align: center
+   :alt: Restore entry
+
+   Restore a deleted experiment
+
+Once restored, the experiment will return to the active list and become editable and exportable again.
+
 Toolbar
 -------
 For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
@@ -495,6 +607,13 @@ When a Resource is bookable, a new permission appears: "Can book":
     :alt: modify booking permissions
 
 By default, it will match who can read the entry, but it can be adjusted to fine tune who exactly has access to this Resource for booking it.
+
+Archiving and deleting resources
+--------------------------------
+
+Resources can be archived or deleted just like experiments. The behavior is exactly the same.
+
+For details on how archiving and deletion work, refer to the :ref:`Archive Experiments <archive-experiments>` and :ref:`Delete an Experiment <delete-experiments>` sections.
 
 Using the scheduler
 -------------------
