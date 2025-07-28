@@ -12,7 +12,7 @@ An instance coordinator helps manage the users in an instance. For example, they
 Training sessions
 =================
 
-As an instance coordinator, it is a good idea to organize training sessions for users. You can either opt for Deltablot's training session or make one yourself. It can also just be a discussion with users about their use of the software and the difficulties they might have with it and how to adress them.
+As an instance coordinator, it is a good idea to organize training sessions for users. You can either opt for Deltablot's training session or make one yourself. It can also just be a discussion with users about their use of the software and the difficulties they might have with it and how to address them.
 
 Internal exchange
 =================
