@@ -119,7 +119,7 @@ Archived experiments will now appear in the list, indicated by a small archive i
 Working with Archived Experiments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-While archived experiments remain viewable, they are read-only. To perform any actions such as editing, duplicating, or exporting, you must first unarchive the experiment.
+While archived experiments remain viewable, they are read-only. To edit it again, you must first unarchive the experiment.
 
 You can multiselect experiments to unarchive them in bulk:
 
@@ -137,7 +137,7 @@ Alternatively, you can open an individual archived experiment to review its cont
 
    More options > unarchive
 
-Once unarchived, the experiment will return to the active list and be fully editable and exportable again.
+Once unarchived, the experiment will return to the active list and be fully editable again.
 
 .. _delete-experiments:
 
