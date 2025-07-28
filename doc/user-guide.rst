@@ -79,6 +79,56 @@ An Experiment entry can include many different types of information, such as:
 
 The only required information is the title.
 
+Archiving an experiment
+-----------------------
+
+Experiments can be archived to keep your workspace organized. Once archived, an experiment will no longer appear in the default search results or be included in exported data.
+
+Viewing Archived Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To display archived experiments:
+
+1. Navigate to the Experiments list.
+""""""""""""""""""""""""""""""""""""
+
+2. Click on the Show more filters button:
+"""""""""""""""""""""""""""""""""""""""""
+
+.. figure:: img/experiments-show-more-filters.png
+   :align: center
+   :alt: Show more filters
+
+   Show more filters
+
+3. Use the Select state filter and choose Archived.
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Archived experiments will now appear in the list, indicated by a small archive icon.
+
+Working with Archived Experiments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While archived experiments remain viewable, they are read-only. To perform any actions such as editing, duplicating, or exporting, you must first unarchive the experiment.
+
+You can multiselect experiments to unarchive them in bulk:
+
+.. figure:: img/archived-experiments-multiselect.png
+   :align: center
+   :alt: Select multiple experiments
+
+   Select multiple experiments to perform actions
+
+Alternatively, you can open an individual archived experiment to review its content. If you decide to restore it, click on the "More options" button located at the top-right corner of the toolbar.
+
+.. figure:: img/archived-experiment-more-options.png
+   :align: center
+   :alt: More options to unarchive
+
+   More options > unarchive
+
+Once unarchived, the experiment will return to the active list and be fully editable and exportable again.
+
 Toolbar
 -------
 For both Experiment and Resource entries, the top part of the page displays a toolbar with several available actions, as described below.
