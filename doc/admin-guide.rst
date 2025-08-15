@@ -5,6 +5,12 @@ Admin guide
 ***********
 This guide is intended for Admins of Teams. An Admin is a User in a Team with Admin rights, and access to the Admin Panel (accessed via the top right menu). A Team can have several Admins and must have at least one.
 
+.. figure:: img/admin-panel-menu.png
+    :align: center
+    :alt: Admin panel menu link
+
+    Link to the Admin Panel
+
 How to become an Admin?
 =======================
 A User is automatically an Admin if they are the first User in a Team. An Admin can promote another User to the Admin level from the Admin Panel > Users tab. A Sysadmin can promote a User to the Admin level in the same way (from the Sysadmin Panel).
