@@ -8,26 +8,36 @@ This guide is for Users. See also the guides for :doc:`Admins <admin-guide>` and
 
 Introduction
 ============
-There are two main types of entries in eLabFTW: Experiments and Resources. Experiments are owned by a particular User, whereas Resources belong to a team.
+There are two main types of entries in eLabFTW: Experiments and Resources.
 
 While similar, they differ in the following ways:
 
-* Resources but not Experiments can be booked using the Scheduler
-* Users can create Experiment templates but not Resource templates
-* Only Admins can create Resource templates
+* Resources can be booked using the Scheduler
+* Resources can be re-ordered through the procurement system
 
 Both Resources and Experiments can have Tags and links, along with a Category and a Status. Many of the options for creating and editing Experiment entries are the same as those for Resource entries.
 
 Experiments
 ===========
 
-Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments" from the menu bar at the top of the page to show a list of Experiment entries.
+Listing experiments
+-------------------
+
+Experiment entries are the core of the eLabFTW lab notebook. Select "Experiments" from the menu bar at the top of the page to access the Experiments index.
 
 .. figure:: img/user-experiments-menu.png
    :align: center
-   :alt: eLabFTW toolbar
+   :alt: eLabFTW main menu
 
-   Menu toolbar
+   Main menu bar
+
+This menu contains several entries for listing Experiments by Category or accessing Templates, Categories or Status.
+
+.. figure:: img/user-experiments-menu-opened.png
+   :align: center
+   :alt: eLabFTW experiments menu
+
+   Experiments menu (yours will be different!)
 
 .. figure:: img/user-show-mode.png
    :align: center
@@ -51,6 +61,11 @@ To make the entries appear like this:
 
    Alternate layout
 
+Scope
+^^^^^
+
+An important aspect of the software, is that entries can be shared between users, user groups and teams. If many entries are visible to you, it might get overwhelming. You can select what is listed by using the **Scope button**.
+
 By default, the page shows both Experiments created by you and those created by other Users in your team. To see **only** your Experiments, you can change the **Scope** using the drop-down menu that appears after clicking the button on the right:
 
 .. figure:: img/user-scope-button.png
@@ -61,7 +76,30 @@ By default, the page shows both Experiments created by you and those created by 
 
 Set the scope to "*Self*" to display only Experiments that you created. Note that the Resources or Templates pages also allow you to filter entries using the scope button, and your selection is remembered.
 
-You can create an Experiment by clicking the `Create` button on the top right of the screen. You will have the option of selecting an existing Experiment template or using a blank template. You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By default, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
+To _see_ entries from another team, make sure to set the Scope to **Everything**.
+
+Creating your first experiment
+------------------------------
+
+You can create an Experiment by clicking the `Create` button on the top right of the screen:
+
+.. figure:: img/user-create-experiment.png
+   :align: center
+   :alt: create experiment button
+
+   Create an Experiment
+
+A modal window appears, allowing you to select an existing Template or to create an empty Experiment in a given Category:
+
+.. figure:: img/user-create-experiment-modal.png
+   :align: center
+   :alt: create experiment modal
+
+   Select an Experiment Template or a Category or a Blank entry
+
+You can also select **Blank entry** to get a completely empty experiment.
+
+You will then be presented with a new Experiment entry. Experiment entries have two different modes: 'edit' and 'view'. By default, when an Experiment is created it will appear in 'edit' mode (you can see 'mode=edit' in the URL).
 
 An Experiment entry can include many different types of information, such as:
 

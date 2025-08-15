@@ -225,13 +225,29 @@ Users tab
 
 The Sysadmin can manage Users the same way Admins can manage Users from their Team, but with more options, such as changing the password or attributes, and manage the teams for users.
 
-To make a user part of multiple teams, search for a user, and click the three vertical dot button on the right to open a menu, and select "Manage teams for user". A modal window will allow you to add teams to this user. A user can be admin in a team and not admin in another.
+To make a User part of multiple teams, search for a User, and double click its row to open a modal window. From the section "Manage teams for user" you can add or remove teams, or archive a User in a given team. A User can be Admin in a team and not Admin in another.
 
-.. image:: img/sysadmin-manage-teams.png
+.. figure:: img/sysadmin-manage-teams.png
     :align: center
     :alt: sysadmin user team management
 
-The attribute "is owner" allows you to determine which of the Admins in a Team are the "owner" of the team. It has no impact anywhere and is purely an informational attribute.
+    Manage teams for a user
+
+The attribute "Is Owner" allows you to determine which of the Admins in a Team are the "owner" of the team. It has no impact anywhere and is purely an informational attribute.
+
+Note that you can give an Admin the rights to also manage the association between users and teams.
+
+Reinitializing 2FA
+^^^^^^^^^^^^^^^^^^
+
+In case a user lost their phone, they might need to re-initialize two factors authentication. This action can only be done by a Sysadmin account. Double click the user row from the users table and select "Disable 2FA" at the bottom of the modal window.
+
+.. figure:: img/disable-2fa.png
+    :align: center
+    :alt: Disable 2FA
+
+    Disable 2FA button on user modal
+
 
 Monitoring
 ==========
