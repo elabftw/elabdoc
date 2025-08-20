@@ -111,6 +111,19 @@ How does it work?
 
 When a user successfully logins to the IDP, the email address is looked up. If it doesn't exist, the user is created. If the team doesn't exist either, it is created on the fly. You can configure this behavior from the Sysconfig panel.
 
+Federation and metadata synchronization
+=======================================
+
+The application allows you to fetch a list of IDPs from an URL pointing to XML content.
+
+.. figure:: img/sysconfig-saml-idps-xml.png
+   :align: center
+   :alt: Adding IDPs via URL
+
+   Example of adding IDPs via URL
+
+After adding the URL, click the "Refresh" button so the application can synchronize the local list of IDPs with the XML content. The "Auto-refresh" toggle will trigger this synchronization every day (**WARNING**: this means that any manual change you make to the IDP will get overwritten!).
+
 Debugging
 =========
 
