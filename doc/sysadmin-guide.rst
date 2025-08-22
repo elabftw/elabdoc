@@ -14,17 +14,11 @@ The Sysadmin
 * Can create/edit/delete teams
 * Can send a mass email to all users
 * Can set the default language
-* Can configure timestamping (if another TSA is wanted)
-* Can change security settings (number of login attempts, manual validation of new users)
+* Can configure timestamping services
+* Can change security settings (number of login attempts, manual validation of new users, multi-factor authentication, password complexity, etc...)
 * It is possible to have multiple 'Sysadmin' accounts
 
-Account creation
-----------------
-New users need to register an account on the register page, accessible from the login page. They need to choose a team from the list.
-
-By default, newly created accounts are disabled. The admin of the team needs to validate them by going into the admin panel and activate new users.
-This guide assumes you already have a working installation of eLabFTW on a server.
-The Sysadmin has access to core settings of the eLabFTW instance like email configuration or security preferences.
+Generally, a Sysadmin account will be assigned to a technical person. The same person that has console access to the server.
 
 Setting up email (required)
 ===========================
