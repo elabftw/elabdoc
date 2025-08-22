@@ -388,3 +388,17 @@ You can list available commands with ``bin/console list`` or ``bin/init list``.
 Example: ``docker exec -it elabftw bin/console list``.
 
 Check a command manual with ``-h`` flag. For example: ``bin/console prune:experiments -h``.
+
+External connections
+====================
+
+If you are running eLabFTW behind a proxy blocking all outgoing connections, you will need to allow these connections for the application to work properly:
+
+- your timestamping service (for example, Universign will be https://ws.universign.eu)
+- for blockchain timestamps: https://certify.bloxberg.org
+
+You'll also want to make sure the eLabFTW container can connect to ``chem-plugin`` and ``opencloning`` services if they are not hosted on the same network or are firewalled out.
+
+That's the only external endpoints that the service needs to access. Otherwise, it runs completely isolated from the external world.
+
+For OpenCloning, the backend needs to access a few services, depending on the ones that you allow, see OpenCloning configuration: https://github.com/manulera/OpenCloning/blob/c6ab6e07477853369f042166f59803a81b7b7d96/docker-compose.yml#L38-L39.
