@@ -492,8 +492,11 @@ Locally: current workaround:
    cd /tmp
    git clone -b hypernext https://github.com/elabftw/elabftw
    cd elabftw
-   npm i cypress
+   npm i --no-save --no-lockfile cypress cypress-terminal-report
    ./node_modules/.bin/cypress open
+   # then once it's fixed
+   git checkout -- yarn.lock
+   rm -rf node_modules
 
 Not great, not terrible.
 
