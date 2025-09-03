@@ -124,6 +124,19 @@ The application allows you to fetch a list of IDPs from an URL pointing to XML c
 
 After adding the URL, click the "Refresh" button so the application can synchronize the local list of IDPs with the XML content. The "Auto-refresh" toggle will trigger this synchronization every day (**WARNING**: this means that any manual change you make to the IDP will get overwritten!).
 
+Renewing certificates
+=====================
+
+IDP is changing certs
+---------------------
+
+Go to the Sysconfig panel, edit the corresponding IDP and add the new certificate into the "x509 Certificate" field. Add the old one into "x509 Certificate (additional for rollover)" so the transition is smooth.
+
+SP is changing certs
+--------------------
+
+From the SAML tab of the Sysconfig panel, in the "Service provider" section, change "x509 Certificate in PEM format" and "x509 Certificate private key". Note from the developers: we never used the rollover thingy and have no idea if it even works.
+
 Debugging
 =========
 
