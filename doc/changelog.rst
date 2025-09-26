@@ -44,6 +44,7 @@ Examples:
 
     teams:
       - name: First team
+        random_users: 0
         users:
          - email: example@example.com
            team: First team
