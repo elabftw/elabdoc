@@ -3,6 +3,52 @@
 Changelog
 =========
 
+Version 5.3.0
+-------------
+
+Breaking changes
+````````````````
+
+Populate script
+"""""""""""""""
+
+If you use the `bin/init db:populate` script to seed instances, this new version bring some incompatible changes. Mainly:
+
+- Users belong to teams
+
+Before you had a `teams:` root key and a `users:` root key with a `team:` attribute. Now users belong to teams, meaning that you still have the `teams:` root key, but inside you have a `users:` key which lists users.
+
+- Random users seeding
+
+Make sure to set the team's `random_users` property to 0 if you don't want random users being created.
+
+The other changes allow seeding of inventory locations or compounds and the use of name instead of id to reference another thing (status/category).
+
+Examples:
+
+**5.2 version**:
+
+.. code-block:: yaml
+
+    teams:
+     - name: First team
+
+    users:
+     - email: example@example.com
+       team: First team
+       api_key: secr3t
+
+**5.3 version**:
+
+.. code-block:: yaml
+
+    teams:
+      - name: First team
+        users:
+         - email: example@example.com
+           team: First team
+           api_key: secr3t
+
 Version 5.2.8
 -------------
 
