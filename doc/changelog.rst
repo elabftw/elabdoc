@@ -47,7 +47,6 @@ Examples:
         random_users: 0
         users:
          - email: example@example.com
-           team: First team
            api_key: secr3t
 
 Version 5.2.8
