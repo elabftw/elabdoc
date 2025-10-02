@@ -6,8 +6,15 @@ Changelog
 Version 5.3.0
 -------------
 
+See the `blog post on Deltablot.com <https://www.deltablot.com/posts/release-50300/>`_.
+
 Breaking changes
 ````````````````
+
+API
+"""
+
+The `items_types` endpoint is now split into: `items_types` that holds Resources Templates, and `teams/current/resources_categories` for Resources Categories (previously these two concepts were merged).
 
 Populate script
 """""""""""""""

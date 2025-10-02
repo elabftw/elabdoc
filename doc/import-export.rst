@@ -234,7 +234,7 @@ To also import locations/containers with quantity and units, use columns:
 - ``quantity``: this should be a number corresponding to the quantity stored at the location
 - ``unit``: this should be a value such as μg, mg, g, kg, mL, L
 
-Other columns such as ``inchi``, ``smiles``, ``molecularweight``, ``molecularformula`` will also match and be imported to the compound. The full list of columns matched is accessible `here <https://github.com/elabftw/elabftw/blob/master/src/commands/ImportCompoundsCsv.php#L56>`_.
+Other columns such as ``inchi``, ``smiles``, ``molecularweight``, ``molecularformula`` will also match and be imported to the compound. The full list of columns matched is accessible `here <https://github.com/elabftw/elabftw/blob/master/src/Commands/ImportCompoundsCsv.php#L57>`_.
 
 Once you have your CSV file ready, send it to your Sysadmin and let them know if it should be imported with PubChem and if you want to create Resources, too.
 
