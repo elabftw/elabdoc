@@ -29,6 +29,12 @@ To learn about about the generic functionality of OpenCloning, please refer to t
 
 We cover the features specific to the integration of OpenCloning in eLabFTW in the following section.
 
+See also the video below:
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/5LEFR1vQwZU?si=4uD0sdB7-MNVeR6T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Loading resources into OpenCloning
 ==================================
 
