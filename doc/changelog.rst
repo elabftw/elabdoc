@@ -3,6 +3,15 @@
 Changelog
 =========
 
+Version 5.3.1
+-------------
+
+* bug/minor: compounds: fix disabled button on editor page to add compounds when it should not be disabled (#6041)
+* bug/minor: compounds csv import: allow longer name (#6036)
+* feat: ui: ensure tables are readable on small screens (#6035)
+* ui/ux: dashboard: titles redirect to referred section (#6039)
+
+
 Version 5.3.0
 -------------
 
