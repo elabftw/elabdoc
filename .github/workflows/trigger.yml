@@ -2,6 +2,9 @@ name: Trigger doc rebuild
 
 on:
   push:
+    branches:
+      - master
+      - next
 
 jobs:
   buildandpush:
