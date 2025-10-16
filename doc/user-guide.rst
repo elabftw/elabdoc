@@ -506,13 +506,6 @@ With version 5.3 comes a new spreadsheet editor, present in the edit page of an 
 
     Editing tabular data within eLabFTW
 
-.. This feature is currently in BETA, use with caution.
-..
-.. What formula / function support does this spreadsheet provide?
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-..
-.. Here’s a summary of what the editor supports (or is known to support) in terms of formulas and functions.
-
 General formula support
 ^^^^^^^^^^^^^^^^^^^^^^^
 
