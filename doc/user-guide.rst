@@ -809,22 +809,6 @@ For detailed instructions, click the (?) icon at the top of the editor.
 
     Editor documentation
 
-OpenCloning
-===========
-
-Since version 5.2, eLabFTW integrates the tool OpenCloning, developed by Manuel Lera Ramirez.
-
-.. note:: To make this tool available in eLabFTW, a specific configuration is required during deployment! See :ref:`addons` section.
-
-
-.. figure:: img/opencloning.png
-   :align: center
-   :alt: OpenCloning
-
-   OpenCloning running inside eLabFTW
-
-A more complete documentation will be present somewhere, sometime. For now, you're on your own! ;)
-
 Settings page
 =============
 

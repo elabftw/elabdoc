@@ -82,7 +82,6 @@ Join the `chat room <https://gitter.im/elabftw/elabftw>`_ if you want to ask a q
     faq
     features
     docker-doc
-    upgrade-to-docker
     ldap
     saml
     debug

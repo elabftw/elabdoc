@@ -38,6 +38,8 @@ Experiments and Resources
 * Support for various file types that will render in 2D or 3D (.mol, .sdf, .pdb, etc...)
 * Links between entities
 * Molecule editor
+* Integration with PubChem
+* Integration with OpenCloning
 * User groups to restrict read access among a team
 * Doodle canvas
 * Rating system
