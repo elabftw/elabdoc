@@ -495,6 +495,61 @@ You can use steps to list actions that need to be taken in connection with a giv
 
 You can also include steps when making a template.
 
+Spreadsheet Editor
+------------------
+
+With version 5.3 comes a new spreadsheet editor, present in the edit page of an entry. It lets users display and manipulate tabular data directly inside eLabFTW, with support for common spreadsheet operations and formula calculations (e.g. CSV / XLSX import-export, cell arithmetic, SUM, ROW, etc.).
+
+.. only:: html
+
+    .. figure:: img/spreadsheet-editor.webp
+        :align: center
+        :alt: spreadsheet editor
+
+.. only:: latex
+
+    .. figure:: img/spreadsheet-editor.png
+        :align: center
+        :alt: spreadsheet editor
+
+    Editing tabular data within eLabFTW
+
+General formula support
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The spreadsheet editor supports common spreadsheet formulas and operators, allowing users to perform calculations directly in cells. Formulas are parsed when expressions start with the ``=`` character.
+
+When cells referenced by a formula change, all dependent formulas are recalculated automatically (reactive updates). Copy, paste, and drag-fill behavior also adjusts formula references appropriately (relative vs. absolute).
+
+Arithmetic operations
+"""""""""""""""""""""
+
+You can use the ``SUM`` function for addition, and simple inline operators for subtraction, multiplication, and division directly in cells.
+
+For example::
+
+    =SUM(A1:A5)
+    =D1 - D2
+    =A5 * E7
+    =SUM(B1, C1 * D1)
+
+These formulas follow standard spreadsheet behavior, supporting mixed operations and cell references.
+
+Special / built-in helper functions
+"""""""""""""""""""""""""""""""""""
+
+In addition to standard functions such as ``SUM`` or ``AVERAGE``, several helper formulas are available::
+
+    =CELL()         Returns the cell reference (for example `A1`).
+    =COLUMN()       Returns the current column number.
+    =ROW()          Returns the current row number.
+    =VALUE(c, r)    Returns the value of the cell at the given column and row.
+    col: Number, row: Number, processedValue: Boolean.
+
+This feature is currently in **BETA** and should be used with caution, when manipulating important data.
+
+See more from the `jspreadsheet-ce documentation <https://jspreadsheet.com/docs/v8/formulas>`_.
+
 Linked Resources/Experiments
 ----------------------------
 You can link a Resource or Experiment entry to another Experiment or Resource entry. Just begin to type the name of the entry you want to link in the text editor, Linked Resources field, or Linked Experiments field, and an autocompletion list will appear. Select the entry you want to link and press enter. If you link an entry from the text editor, it will automatically be added to the Linked Experiments/Resources section. The number of links is unlimited.
