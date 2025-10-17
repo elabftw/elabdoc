@@ -500,9 +500,17 @@ Spreadsheet Editor
 
 With version 5.3 comes a new spreadsheet editor, present in the edit page of an entry. It lets users display and manipulate tabular data directly inside eLabFTW, with support for common spreadsheet operations and formula calculations (e.g. CSV / XLSX import-export, cell arithmetic, SUM, ROW, etc.).
 
-.. figure:: img/spreadsheet-editor.webp
-    :align: center
-    :alt: spreadsheet editor
+.. only:: html
+
+    .. figure:: img/spreadsheet-editor.webp
+        :align: center
+        :alt: spreadsheet editor
+
+.. only:: latex
+
+    .. figure:: img/spreadsheet-editor.png
+        :align: center
+        :alt: spreadsheet editor
 
     Editing tabular data within eLabFTW
 
