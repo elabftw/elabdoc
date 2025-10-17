@@ -516,7 +516,7 @@ When cells referenced by a formula change, all dependent formulas are recalculat
 Arithmetic operations
 """""""""""""""""""""
 
-You can use the ``SUM`` function for basic arithmetic operations such as addition, subtraction, and multiplication, as well as simple inline operators directly in cells.
+You can use the ``SUM`` function for addition, and simple inline operators for subtraction, multiplication, and division directly in cells.
 
 For example::
 
@@ -536,6 +536,7 @@ In addition to standard functions such as ``SUM`` or ``AVERAGE``, several helper
     =COLUMN()       Returns the current column number.
     =ROW()          Returns the current row number.
     =VALUE(c, r)    Returns the value of the cell at the given column and row.
+    col: Number, row: Number, processedValue: Boolean.
 
 This feature is currently in **BETA** and should be used with caution, when manipulating important data.
 
