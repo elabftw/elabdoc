@@ -3,6 +3,23 @@
 Changelog
 =========
 
+Version 5.3.2
+-------------
+
+* ui: showpage: custom id no wrap on text by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6059
+* bug/medium: eln: add archived files to .eln exports by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6061
+* bug/medium: import: fix import category/type toggle js code by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6064
+* bug/major: auth: fix bug when user doesn't exist and use external auth by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6060
+* bug/minor: metadata: revisions page only needs body content by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6071
+* feat: scheduler: exports by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6054
+* ui/ux: scheduler: multiselect behavior by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6058
+* bug/minor: eln import: fix sampledb import by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6068
+* bug/medium: scheduler: non-admin users could no longer cancel a booking by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6076
+* bug/minor: fix: create resource from compound modal missing categories by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6081
+
+
+**Full Changelog**: https://github.com/elabftw/elabftw/compare/5.3.1...5.3.2
+
 Version 5.3.1
 -------------
 
