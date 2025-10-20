@@ -15,7 +15,7 @@ While similar, they differ in the following ways:
 * Resources can be booked using the Scheduler
 * Resources can be re-ordered through the procurement system
 
-Both Resources and Experiments can have Tags and links, along with a Category and a Status. Many of the options for creating and editing Experiment entries are the same as those for Resource entries.
+Both Resources and Experiments can have Templates, Tags and links, along with a Category and a Status. Many of the options for creating and editing Experiment entries are the same as those for Resource entries.
 
 Experiments
 ===========
@@ -634,7 +634,7 @@ Resources are similar to Experiments, but serve a different purpose: listing and
 
 Many of the options on the Resource entry are the same as those for an Experiment entry.
 
-Only a team Admin can define the Resources Categories from the Admin Panel. Resources Categories could be:
+Resources Categories can be defined at the team level from the "Resources Categories" page available in the Resources dropdown menu. You can for example have such categories:
 
 * Antibodies
 * Microscopes
@@ -644,7 +644,11 @@ Only a team Admin can define the Resources Categories from the Admin Panel. Reso
 * Equipment
 * Projects
 
-Resources' default permissions allow anyone from the Team to edit them, but you are free to configure them differently.
+Once you have Resources Categories (which are simply composed of the name and a color), you can create a Resource Template with that category assigned. This allows you to have several Resources Templates for a given Category.
+
+For instance, in the Resource Category "Antibodies", you might want to have a Resource Template for "Primary Antibody" and one for "Secondary Antibody". It's also fine to keep a one-to-one relationship between Resources Templates and Resources Categories.
+
+Resources' default permissions allow anyone from the Team to edit them, but you are free to configure them differently from their Template.
 
 Look at the :ref:`importing-data` section to learn how to import your Resources from a spreadsheet file or through the API.
 
