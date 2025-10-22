@@ -493,7 +493,20 @@ Steps
 -----
 You can use steps to list actions that need to be taken in connection with a given Experiment or Resource. When a task has been completed, you can click on the corresponding checkbox to indicate that that step is done. The "Next step" for each Experiment or Resource will be shown on the main Experiments or Resources page (index list) under the title for that entry. This lets you easily view the next step for each entry. You can also view the next steps for your Experiments and Resources by clicking on the "To-Do List" icon at the top left side of the main page.
 
-You can also include steps when making a template.
+.. figure:: img/steps-on-experiment.webp
+    :align: center
+    :alt: Steps on an experiment
+
+    Steps on an experiment
+
+You can also add steps when creating a template, and choose to lock them. When a new Experiment or Resource is created from that template, the locked steps will appear as read-only and cannot be modified or deleted.
+
+.. figure:: img/steps-on-template.webp
+    :align: center
+    :alt: Steps on an experiment template
+
+    Steps on an experiment template
+
 
 Spreadsheet Editor
 ------------------
