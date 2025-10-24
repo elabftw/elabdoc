@@ -1,0 +1,10 @@
+[project]
+name = "elabdoc"
+version = "5.3.0"
+description = "eLabFTW documentation repository"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sphinx>=8.2.3",
+    "sphinx-rtd-theme>=3.0.2",
+]
