@@ -11,9 +11,7 @@ Main project repository: [elabftw/elabftw](https://github.com/elabftw/elabftw).
 ~~~bash
 git clone https://github.com/elabftw/elabdoc
 cd elabdoc
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+uv sync
 ~~~
 
 ## Config examples
@@ -26,7 +24,7 @@ To generate the HTML documentation:
 
 ~~~bash
 cd doc
-make html
+uv run make html
 ~~~
 
 Then point your browser to the `_build/html/index.html` file inside the `doc/` folder.
