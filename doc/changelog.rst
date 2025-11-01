@@ -3,6 +3,28 @@
 Changelog
 =========
 
+Version 5.3.5
+-------------
+
+* bug/medium: eln import: fix issue when " is present in title (#6126)
+
+Version 5.3.4
+-------------
+
+* bug/minor: populate: fix counting (#6109)
+
+Version 5.3.3
+-------------
+
+* fix: spreadsheet: load in spreadsheet editor from dropdown menu by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6087
+* bug/minor: populate: fix issue with is_sysadmin by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6097
+* feat: order storage units alphabetically by name by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6099
+* feat: doc: update resource categories & templates, steps by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6100
+* bug/major: auth: fix issue with archived accounts being selected by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6102
+* bug/minor: ux: revert checkbox value for users2teams patch too by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6098
+* bug/minor: ux: allow empty fields with collectForm by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6107
+* apidoc: compounds: add spec for compounds links by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6108
+
 Version 5.3.2
 -------------
 
