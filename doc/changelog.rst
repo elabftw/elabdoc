@@ -3,6 +3,12 @@
 Changelog
 =========
 
+Version 5.3.6
+-------------
+
+* bug/minor: inventory search query limited (#6119) fix #6116
+number of results was limited to 15 for any queries made on the inventory page. Set that limit higher.
+
 Version 5.3.5
 -------------
 
