@@ -10,11 +10,13 @@ jobs:
       - image: cimg/python:3.12
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
       - run:
           name: Install texlive and rsvgconverter
           command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra xindy latexmk'
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+      - name: Set up Python
+        run: uv python install
       - run:
           name: Build html
           command: cd doc && make html
