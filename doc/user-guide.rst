@@ -8,6 +8,7 @@ This guide is for Users. See also the guides for :doc:`Admins <admin-guide>` and
 
 Introduction
 ============
+
 There are two main types of entries in eLabFTW: Experiments and Resources.
 
 While similar, they differ in the following ways:
