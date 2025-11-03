@@ -11,23 +11,41 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install texlive and rsvgconverter
-          command: 'sudo apt update && sudo apt install -y texlive texlive-xetex texlive-fonts-extra texlive-latex-extra xindy latexmk'
+          name: Install TeX Live and tools
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              texlive texlive-xetex texlive-fonts-extra texlive-latex-extra \
+              xindy latexmk librsvg2-bin
+
       - run:
           name: Install uv
-          uses: astral-sh/setup-uv@v6
+          command: |
+            curl -LsSf https://astral.sh/uv/install.sh | sh
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$BASH_ENV"
+            source "$BASH_ENV"
+            uv --version
+
       - run:
           name: Set up Python
           command: uv python install
+
+      - run:
+          name: Install project dependencies
+          command: uv sync --all-extras --dev
+
       - run:
           name: Build html
-          command: cd doc && make html
+          command: make -C doc html
+
       - store_artifacts:
           path: doc/_build/html
           destination: html
+
       - run:
           name: Build pdf
-          command: cd doc && make latexpdf -e LATEXOPTS="-interaction=nonstopmode"
+          command: make -C doc latexpdf -e LATEXOPTS="-interaction=nonstopmode"
+
       - store_artifacts:
           path: doc/_build/latex/elabftw.pdf
           destination: pdf
