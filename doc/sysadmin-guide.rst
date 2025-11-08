@@ -262,7 +262,9 @@ To gather metrics from the php-fpm service, use ``/php-status``, which replies w
 
 To gather metrics from the nginx service, use ``/nginx-status``, which replies with information about nginx processes. See the `Nginx status module documentation <https://nginx.org/en/docs/http/ngx_http_stub_status_module.html>`_ for more details.
 
-The ``/php-status`` and ``/nginx-status`` pages are protected with **Basic authentication**:
+To gather metrics on the eLabFTW instance itself such as the number of experiments or uploaded files, an OpenMetrics 1.0 endpoint is exposed on ``/metrics``. Point your collector such as Prometheus to this endpoint to gather metrics periodically.
+
+The ``/php-status``, ``/nginx-status`` and ``/metrics`` pages are protected with **Basic authentication**:
 
 * user: ``elabftw``
 * password: the value of ``STATUS_PASSWORD`` environment variable
