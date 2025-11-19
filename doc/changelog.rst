@@ -3,6 +3,59 @@
 Changelog
 =========
 
+Version 5.3.9
+-------------
+
+* perf: uploads: remove uploads join from entity listing to fix slow queries (#6219)
+* bug/medium: admins: allow admins to manage status of users again (#6218)
+* bug/minor: eln: import with archived files displays all uploads as active (#6195) fix #6180
+
+
+Version 5.3.8
+-------------
+
+This release contains a security fix for CVE-2025-64500 (altough we do not believe eLab would be impacted by it).
+
+* bug/minor: inventory: fix containers display by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6184
+* bug/minor: purifier: fix warning with cache folder by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6185
+* small feat: use custom_id column for custom_id field during csv import by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6183
+*  i18n: fix some strings
+* security: upgrade symfony/http-foundation to 6.4.29
+
+Fix CVE-2025-64500
+The Request class improperly interprets some PATH_INFO in a way that
+leads to representing some URLs with a path that doesn't start with a /.
+This can allow bypassing some access control rules that are built with
+this /-prefix assumption.
+
+Does it impacts eLabFTW? Unlikely. We're still going to patch it and
+issue a release.
+
+**Full Changelog**: https://github.com/elabftw/elabftw/compare/5.3.7...5.3.8
+
+Version 5.3.7
+-------------
+
+* bug/major: auth: prevent cookies from messing up auth by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6163
+* bug/medium: scheduler: filter by category was using wrong source array by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6136
+* bug/medium: signature/timpstamp actions: fix require write access by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6151
+* bug/minor: view: tables readability in view mode by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6141
+* bug/minor: metadata: Allow loading metadata from both experiment and resource templates  by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6135
+* bug/minor: fix issue with load more button missing the scope state by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6154
+* bug/minor: dashboard: create button does not display resources templates by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6158
+* bug/minor: teamgroups: fix usernames missing when too many users by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6160
+* bug/minor: compounds: create resource from compound with no category doesnt link compound by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6167
+* bug/minor: sysadmin: checkboxes for canmanage permissions not collected after first modal submit by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6170
+* bug/minor: 404: fix js error by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6169
+* bug/minor: metadata: editing an extra field creates duplicate entries by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6168
+* bug/minor: api: fix teams response by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6157
+* ui: make entity menus listing order follow native scope order by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6161
+* deprecate open_science: add message by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6165
+* ui: don't auto select team on switch team action by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6166
+
+
+**Full Changelog**: https://github.com/elabftw/elabftw/compare/5.3.6...5.3.7
+
 Version 5.3.6
 -------------
 
