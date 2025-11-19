@@ -14,7 +14,7 @@ Version 5.3.9
 Version 5.3.8
 -------------
 
-This release contains a security fix for CVE-2025-64500 (altough we do not believe eLab would be impacted by it).
+This release contains a security fix for CVE-2025-64500 (although we do not believe eLab would be impacted by it).
 
 * bug/minor: inventory: fix containers display by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6184
 * bug/minor: purifier: fix warning with cache folder by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6185
@@ -44,7 +44,7 @@ Version 5.3.7
 * bug/minor: fix issue with load more button missing the scope state by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6154
 * bug/minor: dashboard: create button does not display resources templates by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6158
 * bug/minor: teamgroups: fix usernames missing when too many users by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6160
-* bug/minor: compounds: create resource from compound with no category doesnt link compound by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6167
+* bug/minor: compounds: create resource from compound with no category does not link compound by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6167
 * bug/minor: sysadmin: checkboxes for canmanage permissions not collected after first modal submit by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6170
 * bug/minor: 404: fix js error by @NicolasCARPi in https://github.com/elabftw/elabftw/pull/6169
 * bug/minor: metadata: editing an extra field creates duplicate entries by @MoustaphaCamara in https://github.com/elabftw/elabftw/pull/6168
