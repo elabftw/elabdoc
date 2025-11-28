@@ -508,6 +508,12 @@ You can also add steps when creating a template, and choose to lock them. When a
 
     Steps on an experiment template
 
+.. figure:: img/steps-on-template.png
+    :align: center
+    :alt: Steps on an experiment template
+
+    Steps on an experiment template
+
 Spreadsheet Editor
 ------------------
 
