@@ -37,7 +37,7 @@ From the Admin Panel, double-click a User from your team and toggle the section 
 
 Note that the Archived status of a User is team-dependent, meaning that a User can be archived in a Team and not in another.
 
-.. figure:: img/archive-action.webp
+.. figure:: img/archive-action.png
    :align: center
    :alt: Archiving a user
 
