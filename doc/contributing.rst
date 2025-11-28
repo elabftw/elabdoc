@@ -55,7 +55,7 @@ Contributing to the code
 
 Word of caution
 ---------------
-It is possible that the gap between the current development version and the current stable version will render this documentation obsolete in parts. It is highly recommended to use the `next` branch of `elabftw/elabdoc`, which is published here: https://doc.elabftw.net/next.
+It is possible that the gap between the current development version and the current stable version will render this documentation obsolete in parts. It is highly recommended to use the `next` branch of `elabftw/elabdoc`, which is published here: https://doc.elabftw.net/next/.
 
 => Read this page on the `next` branch: https://doc.elabftw.net/next/contributing.html#contributing-to-the-code
 

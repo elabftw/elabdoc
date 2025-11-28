@@ -1100,7 +1100,7 @@ As of version 5.2.0, the search page has been moved to the main pages (Experimen
 
 Sharing with external collaborators
 ===================================
-If you want to share your results with an external collaborator, you have two options:
+If you want to share your results with an external collaborator, you have a few options:
 
 Option 1: Export and send
 -------------------------
@@ -1129,3 +1129,50 @@ Then, Users will have the possibility to generate a link with an access key in i
 Sharing this link will give read access to the recipient. If the checkbox is unchecked, previously shared links become obsolete. Using this has the advantage that the recipient can follow the evolution of the results over time.
 
 For this feature to work, the instance must be accessible from an external network.
+
+Option 3: Share with a user on the instance
+-------------------------------------------
+You might want to share some entries with a specific user, group, or team present on the Instance. For that, go to the Permissions section of an entry:
+
+.. figure:: img/user-permission-view.webp
+   :align: center
+   :alt: permissions
+
+   Permissions for an entry
+
+Click the + sign to display a modal window. From there you can for instance select a Team to add to the base permissions:
+
+
+.. figure:: img/user-permission-view-team.webp
+   :align: center
+   :alt: permissions for team
+
+   Adding a full team
+
+This will add all the members of that Team. If you want to be more precise, you can select a Group, or a single user by typing their name in the section at the bottom:
+
+.. figure:: img/user-permission-view-user1.webp
+   :align: center
+   :alt: permissions for user
+
+   Start typing the name of the collaborator
+
+Select the autocompleted user and click "Add".
+
+.. figure:: img/user-permission-view-user2.webp
+   :align: center
+   :alt: permissions for user 2
+
+   Collaborator is now selected
+
+Click "Save" and it will look similar to this now:
+
+.. figure:: img/user-permission-view-user3.webp
+   :align: center
+   :alt: permissions for user 2
+
+   All members of Team "External Collaborators" + Tata Rohan now have access to this entry
+
+You can also do something similar for edition permissions.
+
+

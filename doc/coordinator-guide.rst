@@ -26,25 +26,24 @@ Different strategies for managing users in teams
 When a user leaves a team
 -------------------------
 
-In eLabFTW, there are currently several options for handling the data of users who are about to leave a team. Here are four exit strategies to consider:
+In eLabFTW, there are currently several options for handling the data of users who are about to leave a team. Here are a few exit strategies to consider:
 
-A. Archiving the user and their entries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A. The User is completely gone
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+If someone stopped working in the lab and will likely not come back, archiving them is the best option. It prevents them from using their account while still allowing other team members to see their past work.
 
-If a person is only a member of one team, they can be archived. In this process, it's possible to choose whether their associated entries should also be locked and archived. This method ensures a clean separation, but it is only suitable if the person belongs to a single team. If the person is active in multiple teams, archiving them would also archive them in the other teams, which is usually not desired.
+From the Admin Panel, double-click a User from your team and toggle the section "Manage teams for user". From there, you can Archive someone by toggling the "Is Archived" property of the User in the team.
 
-B. Adjusting visibility and write permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Note that the Archived status of a User is team-dependent, meaning that a User can be archived in a Team and not in another.
 
-Another exit strategy involves explicitly setting the visibility and write permissions of the entries for the team the person is leaving. To ensure that the entries remain visible to the team after the user’s departure, the corresponding permissions for all entries need to be updated. This can be done by a team admin as a bulk action through the admin control panel. This way, the team retains access to experiments and entries without the person remaining part of the team.
+.. figure:: img/archive-action.webp
+   :align: center
+   :alt: Archiving a user
 
-C. Transferring ownership or duplicating entries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   Archiving a user
 
-Another option is to transfer ownership of the entries to another team member. Alternatively, relevant entries can be duplicated before the person is removed from the team. Once a person is removed from the team, their entries are no longer visible to the team, which also means that the original ownership becomes unclear. To avoid this, the name of the original creator can be added to the entry title or stored as a tag to make the data origin more transparent.
+B. The User joins another team
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-D. Restricting the visibility of entries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Instead of removing the person from the team, they can remain a member while limiting the visibility of their entries. Access rights can be managed so that only the original owner and admins have access to certain entries. This ensures that the person leaving the team cannot access information irrelevant to them, while still technically remaining in the team.
+As a Sysadmin or an Admin with "Can manage users/teams association" permissions, add the User to the new Team and Archive them in the old one. If they still need access to their old entries, they can export them from their Profile page and re-import them in the new team, or you can leave the account active in both teams, depending on use case.
