@@ -494,54 +494,28 @@ Steps
 -----
 You can use steps to list actions that need to be taken in connection with a given Experiment or Resource. When a task has been completed, you can click on the corresponding checkbox to indicate that that step is done. The "Next step" for each Experiment or Resource will be shown on the main Experiments or Resources page (index list) under the title for that entry. This lets you easily view the next step for each entry. You can also view the next steps for your Experiments and Resources by clicking on the "To-Do List" icon at the top left side of the main page.
 
-.. only:: html
+.. figure:: img/steps-on-experiment.png
+    :align: center
+    :alt: Steps on an experiment
 
-    .. figure:: img/steps-on-experiment.webp
-        :align: center
-        :alt: Steps on an experiment
-
-        Steps on an experiment
-
-.. only:: latex
-
-    .. figure:: img/steps-on-experiment.png
-        :align: center
-        :alt: Steps on an experiment
+    Steps on an experiment
 
 You can also add steps when creating a template, and choose to lock them. When a new Experiment or Resource is created from that template, the locked steps will appear as read-only and cannot be modified or deleted.
 
-.. only:: html
+.. figure:: img/steps-on-template.png
+    :align: center
+    :alt: Steps on an experiment template
 
-    .. figure:: img/steps-on-template.webp
-        :align: center
-        :alt: Steps on an experiment template
-
-        Steps on an experiment template
-
-.. only:: latex
-
-    .. figure:: img/steps-on-experiment.png
-        :align: center
-        :alt: Steps on an experiment
-
-        Steps on an experiment template
+    Steps on an experiment template
 
 Spreadsheet Editor
 ------------------
 
 With version 5.3 comes a new spreadsheet editor, present in the edit page of an entry. It lets users display and manipulate tabular data directly inside eLabFTW, with support for common spreadsheet operations and formula calculations (e.g. CSV / XLSX import-export, cell arithmetic, SUM, ROW, etc.).
 
-.. only:: html
-
-    .. figure:: img/spreadsheet-editor.webp
-        :align: center
-        :alt: spreadsheet editor
-
-.. only:: latex
-
-    .. figure:: img/spreadsheet-editor.png
-        :align: center
-        :alt: spreadsheet editor
+.. figure:: img/spreadsheet-editor.png
+    :align: center
+    :alt: spreadsheet editor
 
     Editing tabular data within eLabFTW
 
@@ -1134,7 +1108,7 @@ Option 3: Share with a user on the instance
 -------------------------------------------
 You might want to share some entries with a specific user, group, or team present on the Instance. For that, go to the Permissions section of an entry:
 
-.. figure:: img/user-permission-view.webp
+.. figure:: img/user-permission-view.png
    :align: center
    :alt: permissions
 
@@ -1143,7 +1117,7 @@ You might want to share some entries with a specific user, group, or team presen
 Click the + sign to display a modal window. From there you can for instance select a Team to add to the base permissions:
 
 
-.. figure:: img/user-permission-view-team.webp
+.. figure:: img/user-permission-view-team.png
    :align: center
    :alt: permissions for team
 
@@ -1151,7 +1125,7 @@ Click the + sign to display a modal window. From there you can for instance sele
 
 This will add all the members of that Team. If you want to be more precise, you can select a Group, or a single user by typing their name in the section at the bottom:
 
-.. figure:: img/user-permission-view-user1.webp
+.. figure:: img/user-permission-view-user1.png
    :align: center
    :alt: permissions for user
 
@@ -1159,7 +1133,7 @@ This will add all the members of that Team. If you want to be more precise, you 
 
 Select the autocompleted user and click "Add".
 
-.. figure:: img/user-permission-view-user2.webp
+.. figure:: img/user-permission-view-user2.png
    :align: center
    :alt: permissions for user 2
 
@@ -1167,7 +1141,7 @@ Select the autocompleted user and click "Add".
 
 Click "Save" and it will look similar to this now:
 
-.. figure:: img/user-permission-view-user3.webp
+.. figure:: img/user-permission-view-user3.png
    :align: center
    :alt: permissions for user 2
 
